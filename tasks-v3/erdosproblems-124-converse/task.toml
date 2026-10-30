@@ -21,6 +21,14 @@ difficulty_explanation = "The agent must construct a Lean 4 proof of a research-
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
 verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
 
+statement_status = "consistent"
+statement_sources = ["https://www.erdosproblems.com/124", "https://mathweb.ucsd.edu/~ronspubs/96_05_integer_powers.pdf"]
+statement_note = "对照题目来源页面的检索缓存及 BEGL96 第133页（已读取作者网站扫描图像）。当前目标是有限个不同整数底数 d≥3、k=0 时覆盖所有充分大自然数所必需的 Σ 1/(d−1)≥1；Finset、空和、可选系数、点态集合和及 ℚ 中的倒数与该陈述一致。原网页直接访问为403；未修改数学陈述、前缀定义或 golden。"
+public_lean4_proof = true
+public_lean4_proof_status = "found"
+public_lean4_proof_urls = ["https://github.com/arex1337/formal-conjectures-proofs/blob/3b7d581c75fd00e482deabfb20675cf3ccfaf49f/Erdos124/Converse.lean#L93"]
+public_lean4_proof_note = "完整 task ID 精确命中 skills/lean-task-repair/references/public-lean4-proofs.csv；按 skill 采用索引确认结果，未重新联网核验或在本题环境编译，未将证明放入镜像。"
+
 [verifier]
 timeout_sec = 7200.0
 

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-124-converse",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 及其 .lake/packages。bash -n 与参数核对通过；使用固定 mathlib 提交的真实 Nat.Prime 源码在临时隐藏 packages 布局中搜索成功（exit 0，无路径/权限错误）。本工作区无实际容器挂载，未在容器中运行该搜索。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无需额外上游 import；保留 ProblemImports 预编译命令。在复制、清理及权限设置后，Dockerfile 以 WORKDIR /app、HOME=/home/ubuntu、USER ubuntu 下的 RUN lake build +FormalConjecturesBench.Target 结尾。已静态核对；按 skill 未构建镜像。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "运行 skill 的 check_unicode_header.py：case=no_issue；两份 checker、原始 Target 和两份 golden 匹配，原始头通过，修改头/移除 := 被拒绝。无需修复。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "两份 checker 同步修复：独立临时工程中从固定哈希 golden Target 移除 Submission 导入，保留原名前缀定义；由 Lean elaborator 提取目标完整 type 和 universe 参数，存为 FCBTrustedSpec.ExpectedType 的定义值并审计传递公理，探针占位证明不进入该值。Spec 编译并保护后才复制候选源码，临时 Target 仅复用 Spec 前缀；固定编译器和依赖搜索路径，不使用候选 Lake 配置/缓存；内核以同一环境的 ExpectedType.value 检查完整候选常量，保留冻结检查、源码限制、公理审计和 sorry canary。依赖要求 root 只读，编译子进程以 Landlock 限制写入自身临时工程，Spec 额外 chmod 并复核哈希，记录输入哈希和版本。仅静态验证，未运行 Lean 或验证原题证明；运行时要求 Linux x86_64/aarch64 且可用 Landlock ABI≥3，不满足时拒绝验证，无不安全回退。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "对照题目来源页面的检索缓存及 BEGL96 第133页（已读取作者网站扫描图像）。当前目标是有限个不同整数底数 d≥3、k=0 时覆盖所有充分大自然数所必需的 Σ 1/(d−1)≥1；Finset、空和、可选系数、点态集合和及 ℚ 中的倒数与该陈述一致。原网页直接访问为403；未修改数学陈述、前缀定义或 golden。 来源：https://www.erdosproblems.com/124；https://mathweb.ucsd.edu/~ronspubs/96_05_integer_powers.pdf，第133页。task.toml 已标 statement_status=consistent。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "erdosproblems-124-converse 精确命中本地完整证明索引，已在 task.toml 标 public_lean4_proof=true。来源：https://github.com/arex1337/formal-conjectures-proofs/blob/3b7d581c75fd00e482deabfb20675cf3ccfaf49f/Erdos124/Converse.lean#L93。按 skill 无需重新联网确认；未在本题环境编译，未替换目标或注入公开答案。"
+    }
+  }
+}
