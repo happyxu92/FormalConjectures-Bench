@@ -1,6 +1,6 @@
 ---
 name: lean-task-repair
-description: 在用户指定的单个 Lean task 当前目录中直接检查并修复任务，依次排查 instruction 搜索路径、Lean 依赖、Unicode 定理头、checker 语义遮蔽、原题一致性和公开完整 Lean4 证明，并记录逐项处理与验证结果。
+description: 检查并修复用户指定的单个 Lean task，依次排查搜索路径、Lean 依赖、Unicode 定理头、checker 语义遮蔽、原题一致性和公开完整 Lean4 证明；运行实际 checker 入口，并记录验证覆盖范围。
 ---
 
 # 单个 Task 六项检查与修复
@@ -97,9 +97,21 @@ python3 scripts/check_unicode_header.py "<task根目录绝对路径>"
    多态目标按可信 universe 参数实例化。元程序辅助比较时，应比较 ExpectedType 的 **value** 与目标的 **type**，并引用同一份可信定义；不能在候选环境重新解析预期命题，或跨环境仅按常量名判等。
 4. **同步本题入口。** 默认只修改 `tests/test_target.py` 和 `environment/data/checker/test_target.py`。Spec、辅助 Lean 文件和验证副本均由 Python 在运行时生成到临时目录；`golden_env` 作为只读基线，不改仓库中的 `GoldenCheck.lean` 或 Dockerfile。若现有环境无法满足依赖或隔离要求，再按具体缺口最小修改并说明原因。记录输入哈希及 Lean/依赖版本，保留原冻结检查、源码限制、公理审计和 sorry canary；可信类型及依赖也须审计，不全面禁用正常的 `def`、`lemma`、`instance`。
 
-**验证：仅做静态检查。** 用 Python AST 解析检查两份 `test_target.py` 的语法，不执行 checker；核对两个入口逻辑一致、Spec 输入可信且先于候选加载、产物及依赖受保护、完整类型及 universe 参数进入检查，并确认原冻结检查、公理审计和 sorry canary 的调用路径保留。只审查运行时生成代码及其调用链，不运行样例、Lean 编译、两个测试入口或 Docker 构建。
+**静态检查：** 用 Python AST 解析检查两份 `test_target.py` 的语法；核对两个入口逻辑一致、Spec 输入可信且先于候选加载、产物及依赖受保护、完整类型及 universe 参数进入检查，并确认原冻结检查、公理审计和 sorry canary 的调用路径保留。Python AST 通过只能说明 Python 语法合法，不能验证字符串中生成的 Lean 代码。
 
-**结果与受阻处理：** 完成修复且上述静态检查通过时可填 `repaired`，note 注明“仅静态验证，未运行 Lean 或验证原题证明”。实现不完整或关键路径无法静态确认时填 `not_repaired`，记录具体缺口；不因缺少运行环境要求构建镜像，也不能退回受候选影响的检查并判通过。
+**实际入口验证：** 在任务锁定的工具链、依赖及隔离环境中，实际运行修复后的 `tests/test_target.py`，验证 Python 编排路径。用隔离工作目录准备固定配置及原始目标源码，不把 checker 自身的源码目录混入提交目录。例如：
+
+```bash
+FCB_TASK_DIR="<隔离的 task 工作目录>" \
+FCB_TESTS_DIR="<task根目录>/tests" \
+python3 "<task根目录>/tests/test_target.py"
+```
+
+记录实际命令、退出码、日志和最后到达阶段，区分输入被预期规则拒绝与 checker 自身故障。工具链定位、依赖权限、临时目录、编译顺序、结果解析、公理审计及 canary 均可能出现运行时问题，单独编译 Lean 或导入 Python 模块不能代替这一项。两份 checker 内容一致时可运行正式入口并核对本地入口一致性；有差异时须分别验证。
+
+修复任务不要求提供或构造原题完整证明，也不以 checker 返回 0 为验收条件。原始 Target 含 `sorry`，通常会在源码限制检查处提前退出；这只覆盖已执行的检查，不能据此判定后续流程正确。对尚未到达的关键路径，在独立临时验证程序中调用同一份 checker 的实际函数，补测可信 Spec 和审计代码的生成与编译、候选编译、完整类型检查、公理审计及 canary。需要编译候选时可在隔离 fixture 中保留占位证明，并确认其 `sorryAx` 可见且会被拒绝；不得为此放宽正式 checker、修改公开 Target 或刷新 golden 基线。
+
+**结果与受阻处理：** 实现完整、静态检查通过、实际入口已运行且后续关键路径已按上述方式验证，确认 checker 自身故障已排除后，才可填 `repaired`。note 分别说明入口的预期退出原因、组件验证结果及未覆盖阶段；组件验证通过不等于完整入口所有分支均已验证，更不等于原题证明通过。缺少锁定工具链、依赖或隔离能力，或关键路径尚未验证时，可完成静态修改，但填 `not_repaired` 并注明“已修改，待运行验证”及具体缺口；不因缺少运行环境强制构建镜像，也不能退回受候选影响的检查并判通过。
 
 ## 5. Lean 陈述及定义是否与原题一致
 

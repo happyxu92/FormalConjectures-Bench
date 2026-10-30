@@ -26,7 +26,7 @@ RUN git clone https://github.com/google-deepmind/formal-conjectures.git /opt/for
     git -C /opt/formal-conjectures checkout "${FORMAL_CONJECTURES_COMMIT}" && \
     cd /opt/formal-conjectures && \
     lake exe cache get && \
-    lake build FormalConjectures.Util.ProblemImports && \
+    lake build FormalConjectures.Util.ProblemImports Cli && \
     find /opt/formal-conjectures -type d -name .git -prune -exec rm -rf {} + && \
     rm -rf /root/.cache /tmp/*
 

@@ -104,8 +104,7 @@ private def checkType (env : Lean.Environment) : IO Unit := do
   }
   match env.addDeclCore 0 declaration none (doCheck := true) with
   | .ok _ => IO.println "FCB_TYPE_CHECK_OK"
-  | .error _ => throw <| IO.userError
-      "Target type differs from the independently compiled specification"
+  | .error _ => throw <| IO.userError "Target type differs from the independently compiled specification"
 
 def main (args : List String) : IO Unit := do
   Lean.initSearchPath (← Lean.getBuildDir)

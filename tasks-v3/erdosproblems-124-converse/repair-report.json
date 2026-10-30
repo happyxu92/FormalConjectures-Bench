@@ -9,7 +9,7 @@
     "lean_dependency": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Target 无需额外上游 import；保留 ProblemImports 预编译命令。在复制、清理及权限设置后，Dockerfile 以 WORKDIR /app、HOME=/home/ubuntu、USER ubuntu 下的 RUN lake build +FormalConjecturesBench.Target 结尾。已静态核对；按 skill 未构建镜像。"
+      "note": "Target 无需额外上游 import；保留 ProblemImports 预编译命令。在复制、清理及权限设置后，Dockerfile 以 WORKDIR /app、HOME=/home/ubuntu、USER ubuntu 下的 RUN lake build +FormalConjecturesBench.Target 结尾。已静态核对；按 skill 未构建镜像。 实测发现 ProofWidgets 发布包保留 uid 1001 的 .lake/build 目录，导致可信依赖所有权检查失败；已在 Dockerfile 切换普通用户前统一将可信 .lake/build 产物设为 root:root 并移除组/其他用户写权限。按相同所有权要求准备本地固定依赖后，locked_compiler 与后续编译验证通过；仍未构建镜像。"
     },
     "unicode_header": {
       "has_issue": false,
@@ -19,7 +19,7 @@
     "semantic_checker": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "两份 checker 同步修复：独立临时工程中从固定哈希 golden Target 移除 Submission 导入，保留原名前缀定义；由 Lean elaborator 提取目标完整 type 和 universe 参数，存为 FCBTrustedSpec.ExpectedType 的定义值并审计传递公理，探针占位证明不进入该值。Spec 编译并保护后才复制候选源码，临时 Target 仅复用 Spec 前缀；固定编译器和依赖搜索路径，不使用候选 Lake 配置/缓存；内核以同一环境的 ExpectedType.value 检查完整候选常量，保留冻结检查、源码限制、公理审计和 sorry canary。依赖要求 root 只读，编译子进程以 Landlock 限制写入自身临时工程，Spec 额外 chmod 并复核哈希，记录输入哈希和版本。仅静态验证，未运行 Lean 或验证原题证明；运行时要求 Linux x86_64/aarch64 且可用 Landlock ABI≥3，不满足时拒绝验证，无不安全回退。"
+      "note": "两份 checker 同步修复：独立临时工程中从固定哈希 golden Target 移除 Submission 导入，保留原名前缀定义；由 Lean elaborator 提取目标完整 type 和 universe 参数，存为 FCBTrustedSpec.ExpectedType 的定义值并审计传递公理，探针占位证明不进入该值。Spec 编译并保护后才复制候选源码，临时 Target 仅复用 Spec 前缀；固定编译器和依赖搜索路径，不使用候选 Lake 配置/缓存；内核以同一环境的 ExpectedType.value 检查完整候选常量，保留冻结检查、源码限制、公理审计和 sorry canary。依赖要求 root 只读，编译子进程以 Landlock 限制写入自身临时工程，Spec 额外 chmod 并复核哈希，记录输入哈希和版本。运行时要求 Linux x86_64/aarch64 且可用 Landlock ABI≥3，不满足时拒绝验证，无不安全回退。 2026-10-30 实际复核：没有 Ramanujan task 中 throw <| IO.userError 的跨行问题；发现 elan which --toolchain 参数无效，已同步修改两份 checker 为 elan which lean，并显式固定 ELAN_TOOLCHAIN。使用锁定 Lean 4.27.0、FormalConjectures/Mathlib 固定提交及宿主 Landlock 实测：两份 checker 一致且 Python AST 通过，可信 Spec 编译及其公理审计通过，临时占位 fixture 和完整类型审计代码编译成功且 sorryAx 可见，sorry canary 实际检出 sorryAx，Spec 哈希保持不变。占位 fixture 仅用于验证生成代码，不是原题证明；未验证完整原题证明、未构建 Docker 镜像。日志：/root/results/erdos124-converse-check-20261030/validation.log。"
     },
     "statement_fidelity": {
       "has_issue": false,

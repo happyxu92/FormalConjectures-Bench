@@ -30,6 +30,13 @@ RUN git clone https://github.com/google-deepmind/formal-conjectures.git /opt/for
     find /opt/formal-conjectures -type d -name .git -prune -exec rm -rf {} + && \
     rm -rf /root/.cache /tmp/*
 
+# Cloud release archives can retain non-root owners (for example ProofWidgets).
+# The checker requires all trusted build artifacts and their parents to be root-owned.
+RUN find /opt/formal-conjectures -type d -path '*/.lake/build' -prune \
+      -exec chown -R root:root {} + \
+  && find /opt/formal-conjectures -type d -path '*/.lake/build' -prune \
+      -exec chmod -R go-w {} +
+
 RUN id -u ubuntu >/dev/null 2>&1 || useradd -ms /bin/bash ubuntu
 
 RUN apt-get update && apt-get install -y \

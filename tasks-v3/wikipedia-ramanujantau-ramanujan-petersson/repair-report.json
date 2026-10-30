@@ -9,7 +9,7 @@
     "lean_dependency": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Target 仅导入 ProblemImports 和本地 Submission，无额外上游 import；保留原预编译命令，并在复制、清理和权限设置之后，以 WORKDIR /app、HOME=/home/ubuntu、USER ubuntu 结尾添加 RUN lake build +FormalConjecturesBench.Target。静态核对通过，未构建 Docker。"
+      "note": "Target 仅导入 ProblemImports 和本地 Submission，无额外上游 import；保留原预编译命令，并在复制、清理和权限设置之后，以 WORKDIR /app、HOME=/home/ubuntu、USER ubuntu 结尾添加 RUN lake build +FormalConjecturesBench.Target。静态核对通过，未构建 Docker。另补充上游预编译 Cli：可信 manifest 会逐一解析依赖产物目录，仅构建 ProblemImports 不会生成 Cli/.lake/build/lib/lean。已在锁定环境实际构建 ProblemImports 和 Cli；仍未构建 Docker 镜像。"
     },
     "unicode_header": {
       "has_issue": false,
@@ -19,7 +19,7 @@
     "semantic_checker": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "两份 checker 同步在全新临时工程中从只读 golden 生成 Spec，移除 Submission 导入；Lean parser/elaborator 捕获完整类型和 universe 参数，恢复原环境以丢弃占位声明，以内核检查的 def 保存 ExpectedType。可信 Spec、审计程序、driver 和 sorry canary 在复制候选前编译完成，Spec 类型及传递依赖先经公理审计。依赖路径直接取可信 manifest，不再运行 Lake 配置或使用候选/可写配置缓存。审计程序只静态导入可信 Lean，在运行时以 importModules(loadExts := false) 读取候选声明，禁用候选扩展/初始化代码；以根限定 Name、ExpectedType 的 value 和刚性 universe 参数生成内核 wrapper，强制 addDeclCore(doCheck := true) 比较完整定理类型。Spec、目标和 canary 共享 Lean v4.27.0 的 CollectAxioms.collect 审计实现。Linux Landlock ABI>=3 将每次候选编译写入限制在单独 staging 目录；复制的候选源码、Spec、已发布 olean、工具链和依赖均不能被该进程写入，审计进程无可写工程；隔离不可用则失败。仅转换临时 Target，公开 Target、golden、冻结检查、源码限制、公理审计和 canary 调用路径保留，记录输入/生成文件 SHA256 及锁定版本。已对照 v4.27.0 官方源码核对使用的 API，并通过 Python AST、两入口一致性和完整调用链静态复核；仅静态验证，未运行 Lean 或验证原题证明，未构建 Docker，未实测宿主 Landlock 支持。"
+      "note": "两份 checker 同步在全新临时工程中从只读 golden 生成 Spec，移除 Submission 导入；Lean parser/elaborator 捕获完整类型和 universe 参数，恢复原环境以丢弃占位声明，以内核检查的 def 保存 ExpectedType。可信 Spec、审计程序、driver 和 sorry canary 在复制候选前编译完成，Spec 类型及传递依赖先经公理审计。依赖路径直接取可信 manifest，不再运行 Lake 配置或使用候选/可写配置缓存。审计程序只静态导入可信 Lean，在运行时以 importModules(loadExts := false) 读取候选声明，禁用候选扩展/初始化代码；以根限定 Name、ExpectedType 的 value 和刚性 universe 参数生成内核 wrapper，强制 addDeclCore(doCheck := true) 比较完整定理类型。Spec、目标和 canary 共享 Lean v4.27.0 的 CollectAxioms.collect 审计实现。Linux Landlock ABI>=3 将每次候选编译写入限制在单独 staging 目录；复制的候选源码、Spec、已发布 olean、工具链和依赖均不能被该进程写入，审计进程无可写工程；隔离不可用则失败。仅转换临时 Target，公开 Target、golden、冻结检查、源码限制、公理审计和 canary 调用路径保留，记录输入/生成文件 SHA256 及锁定版本。已同步修复两份 checker 生成的审计程序中 throw <| IO.userError 跨行缩进导致的 Lean 编译错误。2026-10-30 实际使用锁定 Lean 4.27.0、FormalConjectures 233a10e857ef78e79fd9fe661d37db724089170a、Mathlib a3a10db0e9d66acbebf76c5e6a135066525ac900 和宿主 Landlock ABI 4 验证：可信 Spec、审计程序、driver、sorry canary 编译通过，可信类型公理审计通过，canary 实际检出 sorryAx；两份 checker 一致且 Python AST 通过。原封不动重放 execution-8ef1e7e9f5ee4a8ca76bab570c61f7ef.tar.gz 中 Target/Submission，候选编译成功后在独立类型比较处明确拒绝，报 Target type differs from the independently compiled specification。验证使用仓库实际 tests/test_target.py，非临时修正副本；日志和哈希见 /root/results/ramanujan-petersson-semantic-replay-20261030/repository-fixed/。未验证原题完整证明，未构建 Docker 镜像。"
     },
     "statement_fidelity": {
       "has_issue": false,

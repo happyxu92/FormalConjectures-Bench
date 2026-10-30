@@ -248,8 +248,8 @@ def locked_compiler() -> tuple[Path, list[Path]]:
     elan = Path("/opt/elan/bin/elan")
     require_protected(elan.resolve())
     result = subprocess.run(
-        [str(elan), "which", "--toolchain", LOCKED_TOOLCHAIN, "lean"],
-        cwd="/", env=compiler_environment([]), text=True,
+        [str(elan), "which", "lean"],
+        cwd="/", env={**compiler_environment([]), "ELAN_TOOLCHAIN": LOCKED_TOOLCHAIN}, text=True,
         stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=30,
     )
     if result.returncode:
