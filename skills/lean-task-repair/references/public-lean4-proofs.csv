@@ -1,0 +1,212 @@
+task,proof_urls
+erdosproblems-1-erdos-1-refute,https://github.com/tadamcz/erdos1/blob/0e395153306f34b3829d118b85bdd704136f2843/Erdos1/Resolutions/Erdos1_219usd_38h.lean#L2419
+erdosproblems-1-lb,https://github.com/MyTH-zyxeon/formal-conjectures/blob/362eed1a8864d142ae65f51af7981a7c7530956e/FormalConjectures/Scratch/HarperCompression.lean#L2174
+erdosproblems-1-lb-strong,https://github.com/MyTH-zyxeon/formal-conjectures/blob/362eed1a8864d142ae65f51af7981a7c7530956e/FormalConjectures/Scratch/HarperCompression.lean#L2174
+erdosproblems-1-least-n-5,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/1.lean#L280
+erdosproblems-10-grechuk-example,https://github.com/linrock/math-proofs/blob/bed1ae569eaac7109327f644fa149b902b562873/erdos-10/Solution.lean#L36
+erdosproblems-10-grechuk-prove,https://gist.github.com/DaryxXx/e112c74cc648b08a420b0959315cf65f/4b347897ff1811f1db1d82594c581f54b8f31b7d#file-main-lean-L2287
+erdosproblems-10-two-pows,https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/5da9642575b26c2c816a49bcb56b33fed5456619/Proofs/T_Erdos10_erdos_10_variants_two_pows.lean#L340 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos10_erdos_10_variants_two_pows.lean#L340
+erdosproblems-1002-erdos-1002-prove,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos1002.lean#L10
+erdosproblems-1049-geq-2-integer,https://github.com/wcook04/plectis-erdos-lean/blob/c4eab2571b4692ee9c08d3ec138176f7fbfa09a9/verification/FCMergedIntegerAdapters/research/adapters/FormalConjecturesAdapter.lean#L96-L107
+erdosproblems-1054-i-refute,https://github.com/linrock/math-proofs/blob/0917cd01090b52088aa82b09c8c84689047b8171/erdos-1054/Solution.lean#L97
+erdosproblems-1054-ii-refute,https://github.com/linrock/math-proofs/blob/0917cd01090b52088aa82b09c8c84689047b8171/erdos-1054/Solution.lean#L103
+erdosproblems-1054-iii-prove,https://github.com/linrock/math-proofs/blob/0917cd01090b52088aa82b09c8c84689047b8171/erdos-1054/Solution.lean#L110
+erdosproblems-1062-lower-bound,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/1062.lean#L55
+erdosproblems-1063-cambie-upper-bound,https://github.com/lfsong-google/formal-conjectures/blob/ff33e501bb78a90ae4703e22e052f8bb38e10146/FormalConjectures/ErdosProblems/1063.lean#L5541 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos1063_erdos_1063_variants_cambie_upper_bound.lean#L281
+erdosproblems-1063-exists-exception,https://github.com/lfsong-google/formal-conjectures/blob/ff33e501bb78a90ae4703e22e052f8bb38e10146/FormalConjectures/ErdosProblems/1063.lean#L5533 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos1063_erdos_1063_variants_exists_exception.lean#L122
+erdosproblems-1063-exp-upper-bound,https://github.com/lfsong-google/formal-conjectures/blob/ff33e501bb78a90ae4703e22e052f8bb38e10146/FormalConjectures/ErdosProblems/1063.lean#L5545
+erdosproblems-1063-monier-upper-bound,https://github.com/lfsong-google/formal-conjectures/blob/ff33e501bb78a90ae4703e22e052f8bb38e10146/FormalConjectures/ErdosProblems/1063.lean#L5537 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos1063_erdos_1063_variants_monier_upper_bound.lean#L250
+erdosproblems-1063-small-values,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/1063.lean#L99 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos1063_erdos_1063_variants_exists_exception.lean#L182 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos1063_erdos_1063_variants_cambie_upper_bound.lean#L73 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos1063_erdos_1063_variants_monier_upper_bound.lean#L73
+erdosproblems-1064-erdos-1064,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos1064.lean#L913
+erdosproblems-1064-general-function,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos1064.lean#L947
+erdosproblems-1064-k2,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/1064.lean#L50 | https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos1064.lean#L920
+erdosproblems-1074-pillaiprimes-infinite,https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/5da9642575b26c2c816a49bcb56b33fed5456619/Proofs/T_Erdos1074_erdos_1074_variants_PillaiPrimes_infinite.lean#L178 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos1074_erdos_1074_variants_PillaiPrimes_infinite.lean#L178
+erdosproblems-1097-erdos-1097-refute,https://github.com/mo271/formal-conjectures/blob/f13dd54b520cdf2136fdd3a04f0f9fa50e311358/FormalConjectures/ErdosProblems/1097.lean#L306
+erdosproblems-1102-density-zero-of-p,https://github.com/Woett/Lean-files/blob/1e075c4f6e8a907b924647fa88238f978e941742/ErdosProblem1102PropertyP.lean
+erdosproblems-1102-exists-sequence-with-p,https://github.com/Woett/Lean-files/blob/1e075c4f6e8a907b924647fa88238f978e941742/ErdosProblem1102PropertyP.lean
+erdosproblems-1102-lower-density-q-exists,https://github.com/Woett/Lean-files/blob/1e075c4f6e8a907b924647fa88238f978e941742/ErdosProblem1102PropertyQDensity.lean
+erdosproblems-1102-upper-density-q,https://github.com/Woett/Lean-files/blob/1e075c4f6e8a907b924647fa88238f978e941742/ErdosProblem1102PropertyQDensity.lean
+erdosproblems-1113-infinitely-many-sierpinski,https://github.com/HowieHwong/lean-erdos-proofs/blob/b8b641ba2d00dc4d1fe205a078a4159372672459/Erdos/P1113.lean#L22
+erdosproblems-1148-weaker,https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos1148_erdos_1148_variants_weaker.lean#L106
+erdosproblems-1196-erdos-1196,https://github.com/math-inc/Erdos1196/blob/02fba13be7487cc51315f68d8fa7ef277633d3c8/PrimitiveSetsAboveX/FormalConjecturesErdos1196.lean | https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos1196.lean#L3905
+erdosproblems-123-erdos-123-prove,https://github.com/plby/lean-proofs/blob/a28a04b6b8ce43d5260a7466677c1f23833bfc38/src/latest/ErdosProblems/Erdos123.lean | https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos123.lean#L3360
+erdosproblems-123-erdos-lewin-3-5-7,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos123.lean#L3360
+erdosproblems-124-converse,https://github.com/arex1337/formal-conjectures-proofs/blob/3b7d581c75fd00e482deabfb20675cf3ccfaf49f/Erdos124/Converse.lean#L93
+erdosproblems-125-positive-unequal-density-refute,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos125.lean#L1089
+erdosproblems-126-erdos-126-prove,https://github.com/tadamcz/erdos126/blob/2516785fe6bbc43e979cf6029c976d9f998a7fba/Erdos126/Resolutions/Erdos126_132usd_25h.lean#L3053
+erdosproblems-13-erdos-13,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos13.lean#L8261
+erdosproblems-138-dvd-two-pow-prove,https://github.com/niketp03/atlas-fc-verified/blob/15e4b3a7584e218cec531aeaf71cce72a8a9ecb1/AtlasFCSolutions/Erdos138.lean#L1033
+erdosproblems-138-erdos-138-prove,https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/Combinatorics/ProgressionColoring/Main.lean#L12
+erdosproblems-138-monoap-guarantee-set-nonempty,https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos138_monoAP_guarantee_set_nonempty.lean#L127
+erdosproblems-139-erdos-139,https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos139.lean#L36 | https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos139.lean#L36
+erdosproblems-141-first-cases,https://github.com/conjectures-io/conjectures-contribution/blob/main/contributions/erdos-141-variants-eleven/2448e529d4a2e6f8d716de45021d560bc38aabba4e526640deaf5ec4bfc67ed0/script.lean#L5149
+erdosproblems-168-limit-exists,https://github.com/baobingzhang/jsp-000165-erdos168-lean/blob/main/Erdos168.lean
+erdosproblems-18-erdos-18-upper-bound,https://github.com/linrock/math-proofs/blob/b246a4165f55ada0614aa2b85c8bc6381522e808/erdos-18/Solution.lean#L31 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos18_erdos_18_upper_bound.lean#L318
+erdosproblems-196-erdos-196-refute,https://github.com/lkruer/conjectures/blob/8ede860e8fc90a300207a2c17e8aefe6167b3086/problems/erdos-196/lean/Erdos196.lean#L625
+erdosproblems-219-erdos-219,https://github.com/plby/lean-proofs/blob/1268917deaaaa0d674f651287027baa26cea9920/src/latest/ErdosProblems/Erdos219.lean | https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos219.lean#L37
+erdosproblems-239-erdos-239,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos239.lean#L1617
+erdosproblems-245-erdos-245,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos245.lean#L48
+erdosproblems-248-erdos-248,https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos248.lean#L47 | https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos248.lean#L47
+erdosproblems-250-erdos-250,https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos250.lean#L97 | https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos250.lean#L97
+erdosproblems-252-erdos-252-prove,https://github.com/tokengr1nder/Erdos252/blob/46b9fd26361faf669bcd7e4495e63678bfa6a735/Erdos252/Solution.lean#L1066
+erdosproblems-252-k-eq-four,https://github.com/tokengr1nder/Erdos252/blob/46b9fd26361faf669bcd7e4495e63678bfa6a735/Erdos252/Solution.lean#L1066
+erdosproblems-252-k-eq-one,https://github.com/tokengr1nder/Erdos252/blob/46b9fd26361faf669bcd7e4495e63678bfa6a735/Erdos252/Solution.lean#L1066
+erdosproblems-252-k-eq-three,https://github.com/tokengr1nder/Erdos252/blob/46b9fd26361faf669bcd7e4495e63678bfa6a735/Erdos252/Solution.lean#L1066
+erdosproblems-252-k-eq-two,https://github.com/tokengr1nder/Erdos252/blob/46b9fd26361faf669bcd7e4495e63678bfa6a735/Erdos252/Solution.lean#L1066
+erdosproblems-252-k-eq-zero,https://github.com/tokengr1nder/Erdos252/blob/46b9fd26361faf669bcd7e4495e63678bfa6a735/Erdos252/Solution.lean#L1066
+erdosproblems-252-k-ge-five-prove,https://github.com/tokengr1nder/Erdos252/blob/46b9fd26361faf669bcd7e4495e63678bfa6a735/Erdos252/Solution.lean#L1066
+erdosproblems-252-prime-tuples,https://github.com/tokengr1nder/Erdos252/blob/46b9fd26361faf669bcd7e4495e63678bfa6a735/Erdos252/Solution.lean#L1066
+erdosproblems-252-schinzel,https://github.com/tokengr1nder/Erdos252/blob/46b9fd26361faf669bcd7e4495e63678bfa6a735/Erdos252/Solution.lean#L1066
+erdosproblems-253-erdos-253,https://github.com/plby/lean-proofs/blob/1268917deaaaa0d674f651287027baa26cea9920/src/latest/ErdosProblems/Erdos253.lean#L699
+erdosproblems-254-cassels,https://github.com/williamjblair/lean-proofs/blob/4f915a323443bfb1709a6805a013812016dca88a/starfleet/erdos-254/Research/Basic.lean
+erdosproblems-254-erdos-254-prove,https://github.com/williamjblair/lean-proofs/blob/4f915a323443bfb1709a6805a013812016dca88a/starfleet/erdos-254/Research/Basic.lean
+erdosproblems-257-tsum-top,https://github.com/wcook04/plectis-erdos-lean/blob/c4eab2571b4692ee9c08d3ec138176f7fbfa09a9/verification/FCMergedIntegerAdapters/research/adapters/FormalConjecturesAdapter.lean#L121-L134
+erdosproblems-258-constant,https://github.com/wcook04/plectis-erdos-lean/blob/c4eab2571b4692ee9c08d3ec138176f7fbfa09a9/verification/FCMergedIntegerAdapters/research/adapters/FormalConjecturesAdapter.lean#L112-L117
+erdosproblems-26-rusza,https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos26.lean#L752 | https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos26.lean#L752
+erdosproblems-260-erdos-260-prove,https://github.com/Hanziwww/erdos260/blob/1f2baf4547f2c2805cdd160611b0b983f43941aa/Erdos260/DeepMind.lean#L92-L132
+erdosproblems-263-doubly-exponential-all-but-countable,https://github.com/baobingzhang/jsp-000227-erdos263-lean/blob/d209b056219b09d296a906e9398a738a031cdf6f/Erdos263.lean#L299
+erdosproblems-263-folklore,https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/5da9642575b26c2c816a49bcb56b33fed5456619/Proofs/T_Erdos263_erdos_263_variants_folklore.lean#L399 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos263_erdos_263_variants_folklore.lean#L399
+erdosproblems-263-super-doubly-exponential,https://github.com/arex1337/erdos-263-lean/blob/95de79a5cd49050df80e95be6cfc161580830799/Erdos263/Folklore.lean#L700
+erdosproblems-264-example,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos264b.lean#L1204
+erdosproblems-264-i,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos264b.lean#L656
+erdosproblems-266-all-rationals,https://github.com/benkeene/erdos266/blob/ef01b23804a60669f24b25733f1a2b688084609d/Solution.lean#L27
+erdosproblems-266-erdos-266,https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos266.lean#L306
+erdosproblems-267-erdos-267-prove,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos267.lean#L12
+erdosproblems-277-erdos-277,https://github.com/plby/lean-proofs/blob/1268917deaaaa0d674f651287027baa26cea9920/src/latest/ErdosProblems/Erdos277.lean#L1294 | https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos277.lean#L1294
+erdosproblems-283-erdos-283-prove,https://github.com/Shashi456/erdos-formalizations/blob/286f856aa3fc08957b80950fd18a45aab8d045ea/Erdos/P283/Proof_flat.lean#L9738-L9746 | https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos283.lean#L65 | https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos283b.lean#L820
+erdosproblems-283-graham,https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/5da9642575b26c2c816a49bcb56b33fed5456619/Proofs/T_Erdos283_erdos_283_variants_graham.lean#L383 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos283_erdos_283_variants_graham.lean#L383
+erdosproblems-285-erdos-285,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos285.lean#L52
+erdosproblems-285-lb,https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos285_erdos_285_variants_lb.lean#L175
+erdosproblems-289-erdos-289-prove,https://github.com/lfsong-google/formal-conjectures/blob/ff33e501bb78a90ae4703e22e052f8bb38e10146/FormalConjectures/ErdosProblems/289.lean#L9514
+erdosproblems-298-erdos-298,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos298.lean#L23
+erdosproblems-298-upper-density,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos298.lean#L23
+erdosproblems-299-density,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos298.lean#L23
+erdosproblems-299-erdos-299,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos299.lean#L22
+erdosproblems-3-erdos-3-prove,https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/Combinatorics/Progressions/Results/Conclusions.lean#L38
+erdosproblems-304-lower-1950,https://github.com/thepriceisright/publications/blob/8f055eb3fd1485477c92cbfbdfa4b3c56f192610/erdos/304/Lower1950.lean
+erdosproblems-304-upper-bound-prove,https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/ShortEgyptian/Main.lean#L33
+erdosproblems-306-erdos-306-prove,https://github.com/linrock/math-proofs/blob/e1a5e2a3317007f0e31b98bf2e80383187b31238/erdos-306/Solution.lean#L34
+erdosproblems-306-integer-three-primes,https://github.com/linrock/math-proofs/blob/e1a5e2a3317007f0e31b98bf2e80383187b31238/erdos-306/Solution.lean#L48
+erdosproblems-316-generalized,https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/5da9642575b26c2c816a49bcb56b33fed5456619/Proofs/T_Erdos316_erdos_316_variants_generalized.lean#L252 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos316_erdos_316_variants_generalized.lean#L252
+erdosproblems-318-infinite-ap,https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos318.lean#L599 | https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos318.lean#L599
+erdosproblems-318-odd,https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos318.lean#L782 | https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos318.lean#L782
+erdosproblems-318-univ,https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos318.lean#L761 | https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos318.lean#L761
+erdosproblems-33-one-mem-lowerbounds,https://github.com/linrock/math-proofs/blob/8c9a8ab727c1f06935b48a5ab4db145572cab9e9/erdos-33/Solution.lean
+erdosproblems-33-vandoorn,https://github.com/linrock/math-proofs/blob/8c9a8ab727c1f06935b48a5ab4db145572cab9e9/erdos-33/Solution.lean#L75
+erdosproblems-341-erdos-341-refute,https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos341.lean#L12
+erdosproblems-346-f-not-isaddcomplete,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/346.lean#L151
+erdosproblems-346-gt-goldenratio-not-isaddcomplete,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/346.lean#L159
+erdosproblems-351-erdos-351-prove,https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos351.lean | https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos351.lean#L44
+erdosproblems-357-weisenberg,https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos357_erdos_357_variants_weisenberg.lean#L227
+erdosproblems-358-i,https://github.com/plby/lean-proofs/blob/1268917deaaaa0d674f651287027baa26cea9920/src/latest/ErdosProblems/Erdos358.lean#L9111
+erdosproblems-358-ii,https://github.com/plby/lean-proofs/blob/1268917deaaaa0d674f651287027baa26cea9920/src/latest/ErdosProblems/Erdos358.lean#L9115
+erdosproblems-36-erdos-1955-2,https://github.com/linrock/math-proofs/blob/22db103d7b6109baca46f2623a7287b965a56936/erdos-36/Solution.lean#L68 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos36_minimum_overlap_variants_upper_erdos_1955.lean#L360
+erdosproblems-36-scherk-1955,https://github.com/linrock/math-proofs/blob/22db103d7b6109baca46f2623a7287b965a56936/erdos-36/Solution.lean#L56
+erdosproblems-36-swierczkowski-1958,https://github.com/linrock/math-proofs/blob/22db103d7b6109baca46f2623a7287b965a56936/erdos-36/Solution.lean#L60
+erdosproblems-371-erdos-371-prove,https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/JointDickman/PaperMain.lean#L21
+erdosproblems-375-le-two,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/375.lean#L67
+erdosproblems-387-easy,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/387.lean#L68
+erdosproblems-394-factorial-gap-10,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/394.lean#L130 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos394_erdos_394_variants_lower_bound.lean#L250
+erdosproblems-394-i-prove,https://github.com/williamjblair/lean-proofs/blob/4f915a323443bfb1709a6805a013812016dca88a/starfleet/erdos-394/Research/FirstQuestion.lean#L136
+erdosproblems-394-ii-prove,https://github.com/williamjblair/lean-proofs/blob/4f915a323443bfb1709a6805a013812016dca88a/starfleet/erdos-394/Research/DenseHierarchyLittleO.lean#L79
+erdosproblems-399-cambie,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/399.lean#L76
+erdosproblems-4-erdos-4,https://github.com/openai/LongGapsBetweenPrimes/blob/master/LongGapsBetweenPrimes.lean
+erdosproblems-400-upper-bound,https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos400_erdos_400_variants_upper_bound.lean#L129
+erdosproblems-416-i-prove,https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/TotientAsymptotic/UnconditionalMain.lean#L12
+erdosproblems-418-conditional,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/418.lean#L69
+erdosproblems-42-constructive-prove,https://github.com/KitaKen1/erdos-42-constructive-variant/blob/1f82c76be43cb56f22e2f7f792e392d5fb3ff78c/lean/Erdos42Constructive.lean
+erdosproblems-42-erdos-42-prove,https://github.com/Shashi456/erdos-formalizations/blob/main/Erdos/P42/CompactCayley/Proof.lean#L14787
+erdosproblems-421-erdos-421-prove,https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos421.lean#L121
+erdosproblems-427-of-shiu,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos427.lean#L84
+erdosproblems-442-erdos-442,https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos442.lean#L995
+erdosproblems-470-abundancy-index,https://github.com/HowieHwong/lean-erdos-proofs/blob/40216cfee225ec5c9f122a48703e671a9f47db90/Erdos/P470.lean#L88
+erdosproblems-48-erdos-48,https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos48.lean#L599
+erdosproblems-480-erdos-480,https://github.com/plby/lean-proofs/blob/1268917deaaaa0d674f651287027baa26cea9920/src/latest/ErdosProblems/Erdos480.lean#L973 | https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos480.lean#L973
+erdosproblems-489-erdos-489-prove,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos489.lean#L12
+erdosproblems-539-isbigo-sq-refute,https://github.com/KitaKen1/erdos-539-sqrt-disproof/blob/f4b14f9ef32c111162d3fd587e1c65b27a1524d5/lean/Erdos539SqrtFC.lean#L36-L39
+erdosproblems-539-sq-cube-root-isbigo-refute,https://github.com/KitaKen1/erdos-539-formal-conjectures/blob/79897cf9241390eb168572f4a481e29e0e64b5f7/lean/Erdos539/FC.lean#L227
+erdosproblems-539-sq-cube-root-refute,https://github.com/KitaKen1/erdos-539-formal-conjectures/blob/79897cf9241390eb168572f4a481e29e0e64b5f7/lean/Erdos539/FC.lean#L272
+erdosproblems-539-sq-refute,https://github.com/KitaKen1/erdos-539-sqrt-disproof/blob/f4b14f9ef32c111162d3fd587e1c65b27a1524d5/lean/Erdos539SqrtFC.lean#L41-L44
+erdosproblems-587-nguyen-vu,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos587.lean#L281
+erdosproblems-6-erdos-6,https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos6.lean#L154 | https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos6.lean#L154
+erdosproblems-647-twenty-four,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/647.lean#L42
+erdosproblems-672-euler,https://github.com/herakles-dev/erdos672-four-squares-lean/blob/68adec55180c6103ac5511a5c91c84b25a5044f9/Erdos672/Statement.lean#L41
+erdosproblems-686-four-two,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/686.lean#L72
+erdosproblems-686-nine,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/686.lean#L104
+erdosproblems-686-non-square,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/686.lean#L128
+erdosproblems-689-erdos-689-prove,https://github.com/linrock/math-proofs/blob/54f272582dd71321ab9d458663d675edd3d0a463/erdos-689/Solution.lean#L18
+erdosproblems-69-specialisation-of-erdos-257,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/69.lean#L50
+erdosproblems-697-density-exists,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos697.lean#L364
+erdosproblems-730-delta-ne-one,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/730.lean#L71
+erdosproblems-730-erdos-730-prove,https://github.com/williamjblair/lean-proofs/blob/03729c9cbb0b602f5a828bb850c85e84c5a6d460/ErdosProblems/Erdos730/FullDensityTheorem.lean#L40 | https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos730.lean#L44
+erdosproblems-825-erdos-825,https://github.com/plby/lean-proofs/blob/dfe2d78128b493c572cf525b1b8edf4897fb7664/src/latest/ErdosProblems/Erdos825.lean#L5893 | https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos825.lean#L5886
+erdosproblems-825-necessary-cond,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/825.lean#L54 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos825_erdos_825_variants_necessary_cond.lean#L63
+erdosproblems-847-erdos-847,https://github.com/plby/lean-proofs/blob/dfe2d78128b493c572cf525b1b8edf4897fb7664/src/latest/ErdosProblems/Erdos847.lean#L113
+erdosproblems-865-erdos-865-prove,https://github.com/Jayyhk/erdos-lean/blob/f8a51976fd2e66a52b4928c109fb9ae877a1a507/problems/865/Erdos865.lean | https://github.com/mrricky22/erdos-865-lean/blob/f861539107a7adeaa97462ce7c7171127696b63a/RequestProject/Main.lean#L45 | https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos865.lean#L60
+erdosproblems-865-k2,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/865.lean#L67
+erdosproblems-868-hartter-nathanson,https://github.com/hjyuh/formal-conjectures/blob/e0da6ec78953b17618895a093d4bee90fd3f6f67/FormalConjectures/ErdosProblems/868.lean#L132
+erdosproblems-868-i,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos868.lean#L6705
+erdosproblems-868-ii,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos868.lean#L6713
+erdosproblems-885-k-eq-2,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/885.lean#L76 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos885_erdos_885_variants_k_eq_2.lean#L76
+erdosproblems-885-k-eq-3,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/885.lean#L100 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos885_erdos_885_variants_k_eq_3.lean#L87
+erdosproblems-885-k-eq-4,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/885.lean#L130 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos885_erdos_885_variants_k_eq_2.lean#L116 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos885_erdos_885_variants_k_eq_3.lean#L125
+erdosproblems-886-rosenfeld-bound,https://github.com/linrock/math-proofs/blob/4a1f92f2aca5f32edb0c681f1e8fdca88b5d9494/erdos-886/Solution.lean#L45
+erdosproblems-886-rosenfeld-infinite,https://github.com/linrock/math-proofs/blob/4a1f92f2aca5f32edb0c681f1e8fdca88b5d9494/erdos-886/Solution.lean#L38 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos886_erdos_886_variants_rosenfeld_infinite.lean#L145
+erdosproblems-887-rosenfeld-4-refute,https://github.com/mnn31/erdos-lean/blob/5cb725981b3ad137103ef908eb6ecff9e7ed9bdf/ErdosLean/Erdos887.lean#L538
+erdosproblems-887-rosenfeld-infinite,https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos887_erdos_887_variants_rosenfeld_infinite.lean#L143
+erdosproblems-888-primes,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos888.lean#L47
+erdosproblems-888-sarkozy,https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos888.lean#L47
+erdosproblems-889-v0-gt-1,https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos889_erdos_889_variants_v0_gt_1.lean#L103
+erdosproblems-889-v1-eq-1-finite-2-prove,https://github.com/KitaKen1/erdos-889-capital-v1-finite/blob/44d38dd7f618dbaa0b08fb976c0378b4897021cd/lean/Erdos889V1FiniteFC.lean#L999-L1004
+erdosproblems-897-log-growth,https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos491.lean#L34
+erdosproblems-9-infinite,https://github.com/linrock/math-proofs/blob/de08009e59829727653bfa20b8d8f7ed1b1baf79/erdos-9/Solution.lean#L25 | https://github.com/conjectures-io/conjectures-contribution/blob/main/contributions/erdos-9/209a1457e76ff910a3e56e0096977375a1658265a71723541f8a95625bc19800/script.lean#L550
+erdosproblems-913-conditional,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/913.lean#L54
+erdosproblems-931-additional-condition-nonempty,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/931.lean#L61
+erdosproblems-939-eight,https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos939_erdos_939_variants_eight.lean#L163
+erdosproblems-939-euler,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/939.lean#L156 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos939_erdos_939_variants_finite.lean#L577 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos939_erdos_939_variants_eight.lean#L209 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos939_erdos_939_variants_infinite_of_six_le.lean#L573 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos939_erdos_939_variants_seven.lean#L202
+erdosproblems-939-examples,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/939.lean#L117 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos939_erdos_939_variants_finite.lean#L538 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos939_erdos_939_variants_eight.lean#L117 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos939_erdos_939_variants_infinite_of_six_le.lean#L534 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos939_erdos_939_variants_seven.lean#L117
+erdosproblems-939-seven,https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos939_erdos_939_variants_seven.lean#L152
+erdosproblems-944-k-eq-four-prove,https://github.com/KitaKen1/erdos-944-dirac-k4-lean/blob/9606d77/lean4web/Erdos944K4R1Lean4Web.lean#L676-L690
+erdosproblems-946-erdos-946,https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos946.lean#L75
+erdosproblems-952-erdos-952-refute,https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/GaussianMoat/Main.lean#L102
+erdosproblems-978-ii-prove,https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/PowerFree/Main.lean#L144
+erdosproblems-978-iii-prove,https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/PowerFree/Main.lean#L144
+erdosproblems-979-k3,https://github.com/KitaKen1/erdos-979-k3/blob/930fcc877fa4a2b4fc7c59614cbbab04a6d834ca/lean/K3Lean/Erdos979K3Final.lean#L46-L47
+greensopenproblems-14-w-3-20-lower-prove,https://github.com/DomTheDeveloper/formal-conjectures/blob/013a0f04de0057d2bd1034c7cc4caf10ac8dc2cf/FormalConjectures/GreensOpenProblems/Green14FastKernel20.lean#L46
+greensopenproblems-14-w-3-3,https://github.com/Konamiu/formal-conjectures/blob/d6a68af97f6ca7856d892569d88ab1ecc8e927bf/FormalConjectures/GreensOpenProblems/14.lean#L289
+greensopenproblems-14-w-3-4,https://github.com/Konamiu/formal-conjectures/blob/d6a68af97f6ca7856d892569d88ab1ecc8e927bf/FormalConjectures/GreensOpenProblems/14.lean#L301
+greensopenproblems-14-w-3-5,https://github.com/Konamiu/formal-conjectures/blob/d6a68af97f6ca7856d892569d88ab1ecc8e927bf/FormalConjectures/GreensOpenProblems/14.lean#L313
+greensopenproblems-15-green-15-ap4,https://conjectures.io/results/66df312f-30b4-4331-b1fa-04be52f7f8ca/solution#L140 | https://conjectures.io/results/66df312f-30b4-4331-b1fa-04be52f7f8ca/solution#L476
+greensopenproblems-15-green-15-prove,https://conjectures.io/results/66df312f-30b4-4331-b1fa-04be52f7f8ca/solution#L140 | https://conjectures.io/results/66df312f-30b4-4331-b1fa-04be52f7f8ca/solution#L476
+greensopenproblems-18-bmz-corners,https://github.com/conjectures-io/conjectures-contribution/blob/main/contributions/green-18/4beb78dddc2936f0407d4d88684ab929f406f9ddbc70f94166db51bc1f916da6/script.lean#L135
+greensopenproblems-2-green-2-upper-bound-erdos,https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Green2_green_2_upper_bound_erdos.lean#L210
+greensopenproblems-24-lower-hl,https://github.com/conjectures-io/conjectures-contribution/blob/main/contributions/green-24-variants-conjecture/10e86c934afdeeb8cb74f4b0ae90e14953920084c1118c6d6a5ede4ad19411a3/script.lean#L114
+greensopenproblems-24-upper-trivial,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/GreensOpenProblems/24.lean#L68
+greensopenproblems-25-upper-ess89-trivial,https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Green25_green_25_variants_upper_ess89_trivial.lean#L149
+greensopenproblems-27-lower-be23,https://github.com/xinjiegit/ben_27_formalization/blob/f70352964007662e97a810c880abbfea1e2ea262/Solution.lean
+greensopenproblems-27-previous-upper,https://github.com/mkwatson/unique-sums-notes/blob/d4383f93a52e3a916ccce78d5fb7739c3bf3dabc/Green27Upper/Theorem.lean#L26
+greensopenproblems-27-upper-be23,https://github.com/mkwatson/unique-sums-notes/blob/d4383f93a52e3a916ccce78d5fb7739c3bf3dabc/Green27Upper/Theorem.lean#L26
+mathoverflow-75792-complexity-five-pow,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/Mathoverflow/75792.lean#L204
+oeis-306477-conjecture-refute,https://github.com/epoch-research/LeanOpenProblems-results/blob/fd09021e79869476ef83cda231312f1a2a89c8d7/runs/oeis-open-lite-fable51-wm0v421z5ygi8f6b/oeis_306477_conjecture_1/Submission/Spec.lean#L793
+oeis-34693-exists-k-best-possible,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/OEIS/34693.lean#L73
+oeis-358684-oeis-358684-conjecture-0,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/OEIS/358684.lean#L152
+oeis-63880-exists-primitive-of-a,https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/5da9642575b26c2c816a49bcb56b33fed5456619/Proofs/T_OeisA63880_exists_primitive_of_a.lean#L491 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_OeisA63880_exists_primitive_of_a.lean#L491
+optimizationconstants-1a-c1a-upper-bound,https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Constant1a_c1a_upper_bound.lean#L907
+other-beavermatholympiad-beaver-math-olympiad-problem-3,https://github.com/gotrevor/collatz-cryptid/blob/62a4b7b0c0af9400098694cb5c5e65120ad4dc67/lean/Collatz/BMO/Problem3.lean#L296
+other-beavermatholympiad-beaver-math-olympiad-problem-4,https://github.com/gotrevor/collatz-cryptid/blob/62a4b7b0c0af9400098694cb5c5e65120ad4dc67/lean/Collatz/BMO/Problem4.lean#L106
+wikipedia-agohgiuga-isstronggiuga-iff,https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_AgohGiuga_isStrongGiuga_iff.lean#L412
+wikipedia-agohgiuga-isstronggiuga-implies-iscarmichael,https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/394ec1c1ff92bdf2fa10f30d62ae9d0455d3ce20/Proofs/T_AgohGiuga_agoh_giuga_variants_isStrongGiuga_implies_isCarmichael.lean#L283 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_AgohGiuga_agoh_giuga_variants_isStrongGiuga_implies_isCarmichael.lean#L283
+wikipedia-agohgiuga-isweakgiuga-iff-sum-primefactors,https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_AgohGiuga_isWeakGiuga_iff_sum_primeFactors.lean#L242
+wikipedia-artinprimitiverootsconjecture-part-ii-square-or-minus-one,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/Wikipedia/ArtinPrimitiveRootsConjecture.lean#L198
+wikipedia-catalan-catalans-conjecture,https://github.com/cadamcat/catalan-lean4/blob/4bf1f742eb341decbdfc59ec56e1616f4d13e33b/Catalan/Final/Assembly.lean#L32
+wikipedia-classnumberproblem-imaginary,https://github.com/DrMurphyIsIn/tenth-discriminant/tree/f0995bf604056a98f0af0d182ed152c6bd996419/determinant/formalization
+wikipedia-eulersumofpowers-false-for-k4,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/Wikipedia/EulerSumOfPowers.lean#L45
+wikipedia-eulersumofpowers-false-for-k5,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/Wikipedia/EulerSumOfPowers.lean#L55
+wikipedia-irrational-irrational-catalanconstant-prove,https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/Catalan/Results/Conclusions.lean#L11
+wikipedia-regularprimes-infinitude-of-irregularprimes,https://github.com/riccardobrasca/KummerCriterion/tree/2a62085d1dd879554ae1c482bfe16ddef6360e47
+wikipedia-riemannzetavalues-exists-irrational-of-five-seven-nine-eleven,https://github.com/mo271/formal-conjectures/blob/a14b09f420e81b662b9b3e18d0b9b7ccefbdbeef/FormalConjectures/Wikipedia/RiemannZetaValues.lean#L38 | https://github.com/mo271/Zeta5/blob/2c80b320d06b4395605edbd413649d19094507af/Apery/Main.lean#L26
+wikipedia-riemannzetavalues-irrational-five-prove,https://github.com/mo271/formal-conjectures/blob/a14b09f420e81b662b9b3e18d0b9b7ccefbdbeef/FormalConjectures/Wikipedia/RiemannZetaValues.lean#L38 | https://github.com/mo271/Zeta5/blob/2c80b320d06b4395605edbd413649d19094507af/Apery/Main.lean#L26
+wikipedia-riemannzetavalues-irrational-three,https://github.com/ahhwuhu/zeta_3_irrational/blob/master/Zeta3Irrational/Basic.lean#L1298
+wikipedia-selfridge-sufficient-condition,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/Wikipedia/Selfridge.lean#L147
+wikipedia-sierpinskinumber-selfridge-78557,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/Wikipedia/SierpinskiNumber.lean#L56
+wikipedia-sumofthreecubes-issumofthreecubesrat-any,https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/Wikipedia/SumOfThreeCubes.lean#L78
