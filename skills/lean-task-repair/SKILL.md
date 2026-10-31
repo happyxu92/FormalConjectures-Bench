@@ -99,7 +99,7 @@ python3 scripts/check_unicode_header.py "<task根目录绝对路径>"
 两份 `test_target.py` 只增加加载可信包、组装验证副本和完整类型检查所需的逻辑，保留原冻结检查、源码限制、公理审计和 sorry canary，不全面禁用正常的 `def`、`lemma`、`instance`。
 
 - **加载前校验。** 根据固定的可信位置读取清单和预编译产物，核对输入、版本、产物哈希及本题目标是否匹配；缺失、损坏或不兼容时明确失败。运行时不从候选目录寻找替代 Spec，不调用生成器，也不从候选环境重新解析 ExpectedType 的定义。
-- **沿用可信目录。** 优先利用现有 Dockerfile 对 `environment/data/checker/` 的复制和权限设置，将本地包放入 `/opt/formal-conjectures-bench-checker/trusted_spec/`；正式入口可使用 Harbor 提供的 `/tests/trusted_spec/`。实际核对目录、父目录、源码、编译产物及传递依赖均不能被 agent/候选用户替换或改写，不假定 `/tests` 自动只读；若其权限不满足要求，可让正式入口也读取现有 `/opt` 可信副本，并核对它与本地及 `/tests` 的包一致。不要将 Spec 复制为候选用户拥有的可写临时副本。哈希校验不能代替文件和目录的权限隔离。
+- **统一加载位置。** 正式 verifier 执行前，Harbor 将宿主任务的 `tests/` 上传到容器 `/tests/`，包括预编译 Spec。checker 使用 `SPEC_DIR = TESTS_DIR / "trusted_spec"`：正式入口取 `/tests/trusted_spec/`；本地 `check.sh` 通过已有 `FCB_TESTS_DIR` 取 `/opt/formal-conjectures-bench-checker/trusted_spec/`，沿用 Dockerfile 的复制及权限设置。正式入口不改读 agent 阶段预装的副本，也不要求两处在运行时互相比对。
 - **固定搜索路径。** 使用锁定工具链和可信依赖路径，保证 `FCBTrustedSpec` 只解析到已验证的预编译模块；候选同名模块、`.lake` 缓存或环境变量不能覆盖它。不使用候选 Lake 配置重建可信模块或依赖。
 - **组装临时候选。** 仅复制允许的候选 Lean 源码，不复用候选编译缓存。先导入可信 Spec，再加载 Submission/helper 和目标证明；临时 Target 中的前缀定义统一来自 Spec，避免重复定义同名常量。保留目标所需的 namespace、scoped 设置及上下文。只转换临时副本，不修改公开 Target 或刷新冻结基线；候选编译仍以真实用户 `ubuntu` 执行。
 - **检查完整类型。** 替换原先复制并执行 `GoldenCheck.lean` 的类型检查路径。checker 可以生成一个临时 Lean 检查文件，但其中只引用已编译的 ExpectedType，不重复书写或解析原命题。例如无 universe 参数时：
@@ -114,7 +114,7 @@ python3 scripts/check_unicode_header.py "<task根目录绝对路径>"
 
   用本题实际的根限定目标名替换示例。多态目标按可信清单记录的 universe 参数完整实例化。若用元程序辅助比较，应在同一环境中比较可信 ExpectedType 的 **value** 与目标的 **type**，不能只比较 ExpectedType 自身的类型，也不能跨环境仅按常量名判等。导入预编译 Spec 后，名称和实例选择已经固定；候选新实例若改变目标类型，完整类型检查应拒绝。
 
-**修改范围：** 默认只修改两份 `test_target.py` 并新增两份一致的可信 Spec 包，沿用原有 `check.sh` 和 `/tests/test.sh`。现有复制及权限设置满足要求时，本项不修改 Dockerfile，不新增 `sudo`、运行时提权或新的 root supervisor。若实际存在打包或可信目录权限缺口，只按具体缺口做最小修改并记录原因，不放宽可信目录权限。步骤 2 要求的 Dockerfile 末尾普通用户依赖验证仍须保留。
+**修改范围：** 只增加两份 checker 的 Spec 加载、临时副本和类型比较逻辑，新增两份一致的 Spec 包；复用原有检查、构建流程及入口，必要时仅调整编译搜索路径。不要求文件一律归 root 所有，不新增全依赖权限扫描或 Dockerfile 的 `chown/chmod` 加固。实际打包或加载故障按证据做最小修复，不新增 `sudo` 或 root supervisor。步骤 2 的 Dockerfile 末尾普通用户依赖验证仍须保留。
 
 ### 验证与验收
 
@@ -122,7 +122,7 @@ python3 scripts/check_unicode_header.py "<task根目录绝对路径>"
 
 **实际入口：使用当前本地 task 构建 Harbor Docker 子容器。** 使用本题修改后的 checker、可信 Spec 包、`environment/Dockerfile` 和 `task.toml`，不能拉取 registry 的旧 task 替代。构建、启动及保留容器的参数以本机 Harbor CLI 帮助为准；不挂载 Docker socket 或额外宿主机依赖，不放宽权限。预编译使用过的环境不能代替最终交付包的本地 Harbor 构建验收。
 
-逐一核对容器内 `/tests/test_target.py`、`/opt/formal-conjectures-bench-checker/test_target.py`、两份 Spec 包和 golden 与本地对应文件的哈希，验证实际加载路径及 agent/候选用户对可信文件和目录的不可写性。由 Harbor 提供 `/tests` 和 `/logs/verifier` 后运行正式入口，例如：
+核对容器内两份 checker、Spec 包和 golden 与本地的哈希一致，确认 `/tests` 由 Harbor 在 verifier 阶段提供，正式与本地入口分别加载 `/tests` 和 `/opt` 下的包。由 Harbor 提供 `/logs/verifier` 后运行正式入口，例如：
 
 ```bash
 docker exec "<Harbor task 子容器名>" bash /tests/test.sh
@@ -134,7 +134,7 @@ docker exec "<Harbor task 子容器名>" bash /tests/test.sh
 
 同时确认冻结修改、越界源码和语义偷换负例被拒绝；至少覆盖一个冻结文字不变而名称或实例改变目标含义的负例。检查同名候选模块或缓存不能遮蔽可信 Spec，预编译产物缺失或哈希不符时明确失败且不会触发运行时重新生成。记录各路径实际到达的阶段和预期结果，不能由提前退出推断后续逻辑正常。Python 异常、产物兼容性、Lean 生成代码、工具链/依赖权限、临时目录、结果解析或入口故障均须排查，不能归为“证明不通过”。
 
-**结果与受阻处理：** 只有提前生成和审计已完成、两份可信包同步、静态核对通过、当前 task 的本地 Harbor Docker 构建及上述入口/关键路径实际验证完毕，且除预期证明失败外没有其他故障，才填 `repaired`。记录生成及构建/运行命令、镜像标识、可信输入和产物哈希、版本、退出码及日志位置；说明预期证明失败和未覆盖分支，不把本项通过写成原题证明通过。Docker/Harbor 不可用、预编译包缺失或不兼容、可信目录可写、镜像构建失败或关键路径未验证时填 `not_repaired`，明确具体缺口及“已修改，待本地 Docker/Harbor 运行验证”（如适用），并继续其他独立检查。不得退回候选环境解析预期命题或在 verifier 中临时生成 Spec 后宣称符合本方案。
+**结果与受阻处理：** 只有提前生成和审计已完成、两份可信包同步、静态核对通过、当前 task 的本地 Harbor Docker 构建及上述入口/关键路径实际验证完毕，且除预期证明失败外没有其他故障，才填 `repaired`。记录生成及构建/运行命令、镜像标识、可信输入和产物哈希、版本、退出码及日志位置；说明预期证明失败和未覆盖分支，不把本项通过写成原题证明通过。Docker/Harbor 不可用、预编译包缺失或不兼容、正式入口未加载本次上传的包、镜像构建失败或关键路径未验证时填 `not_repaired`，说明具体缺口并继续其他独立检查。不得退回候选环境解析预期命题或在 verifier 中临时生成 Spec 后宣称符合本方案。
 
 ## 5. Lean 陈述及定义是否存在导致目标无法成立的明显问题
 

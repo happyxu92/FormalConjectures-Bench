@@ -1,8 +1,0 @@
-audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
-audited Erdos1.IsSumDistinctSet: [propext, Quot.sound, Classical.choice]
-universe parameters: []
-def FCBTrustedSpec.ExpectedType : Prop :=
-∃ o,
-  ∃ (_ : o =o[Filter.atTop] 1),
-    ∀ (N : ℕ) (A : Finset ℕ), Erdos1.IsSumDistinctSet A N → (1 / 4 - o A.card) * 2 ^ A.card / √↑A.card ≤ ↑N
-'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
