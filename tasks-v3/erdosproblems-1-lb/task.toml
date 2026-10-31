@@ -8,6 +8,9 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = true
+public_lean4_proof_urls = ["https://github.com/MyTH-zyxeon/formal-conjectures/blob/362eed1a8864d142ae65f51af7981a7c7530956e/FormalConjectures/Scratch/HarperCompression.lean#L2174"]
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/1.lean"
