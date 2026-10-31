@@ -99,19 +99,21 @@ python3 scripts/check_unicode_header.py "<task根目录绝对路径>"
 
 **静态检查：** 用 Python AST 解析检查两份 `test_target.py` 的语法；核对两个入口逻辑一致、Spec 输入可信且先于候选加载、产物及依赖受保护、完整类型及 universe 参数进入检查，并确认原冻结检查、公理审计和 sorry canary 的调用路径保留。Python AST 通过只能说明 Python 语法合法，不能验证字符串中生成的 Lean 代码。
 
-**实际入口验证：** 在任务锁定的工具链、依赖及隔离环境中，实际运行修复后的 `tests/test_target.py`，验证 Python 编排路径。用隔离工作目录准备固定配置及原始目标源码，不把 checker 自身的源码目录混入提交目录。例如：
+**实际入口验证：直接使用本地 Docker 构建 Harbor task 子容器。** 使用当前 task 的本地目录及修改后的 checker，通过 Harbor 的 Docker backend 构建并启动该 task 的子容器；使用本题 `environment/Dockerfile`、构建上下文和 `task.toml` 配置，不从 registry 拉取旧版 task 代替本地修改。Harbor 的具体构建、启动及保留容器选项以本机版本的 CLI 帮助为准。必须实际完成镜像构建及容器内验证，不能以宿主机运行 Python、已有镜像未更新 checker、单独编译 Lean 或导入 Python 模块代替。子容器内不挂载 Docker socket 或额外宿主机依赖，不放宽可信目录权限。
+
+确认容器中的 `/tests/test_target.py` 和 `/opt/formal-conjectures-bench-checker/test_target.py` 分别与本地两份修改后的 checker 一致，`golden_env` 与本题可信基线一致。沿用任务锁定的工具链、依赖、搜索路径和权限；候选构建按真实运行用户 `ubuntu` 执行。由 Harbor 提供 `/tests` 和 `/logs/verifier` 后，运行正式 verifier 入口，例如：
 
 ```bash
-FCB_TASK_DIR="<隔离的 task 工作目录>" \
-FCB_TESTS_DIR="<task根目录>/tests" \
-python3 "<task根目录>/tests/test_target.py"
+docker exec "<Harbor task 子容器名>" bash /tests/test.sh
 ```
 
-记录实际命令、退出码、日志和最后到达阶段，区分输入被预期规则拒绝与 checker 自身故障。工具链定位、依赖权限、临时目录、编译顺序、结果解析、公理审计及 canary 均可能出现运行时问题，单独编译 Lean 或导入 Python 模块不能代替这一项。两份 checker 内容一致时可运行正式入口并核对本地入口一致性；有差异时须分别验证。
+同时核对 `/tests/test.sh` 实际以 `FCB_TASK_DIR=/app`、`FCB_TESTS_DIR=/tests` 调用修复后的 checker，检查退出码、日志和 `/logs/verifier/reward.txt`。两份 checker 内容一致时可运行正式入口并核对本地入口一致性；有差异时，还须在同一子容器中运行 `/app/check.sh`，验证镜像内本地 checker 入口。不要把 checker 自身的源码目录混入提交目录。
 
-修复任务不要求提供或构造原题完整证明，也不以 checker 返回 0 为验收条件。原始 Target 含 `sorry`，通常会在源码限制检查处提前退出；这只覆盖已执行的检查，不能据此判定后续流程正确。对尚未到达的关键路径，在独立临时验证程序中调用同一份 checker 的实际函数，补测可信 Spec 和审计代码的生成与编译、候选编译、完整类型检查、公理审计及 canary。需要编译候选时可在隔离 fixture 中保留占位证明，并确认其 `sorryAx` 可见且会被拒绝；不得为此放宽正式 checker、修改公开 Target 或刷新 golden 基线。
+**忽略证明不通过，但不忽略其他验证故障。** 不要求提供或构造原题完整证明，不以 checker 返回 0 或 reward 为 1 作为本项验收条件。原始 Target 含 `sorry`、证明未完成或由此触发公理拒绝属于可接受的预期结果，须明确记录；Python 异常、Lean 生成代码错误、工具链定位、依赖权限、临时目录、编译顺序、结果解析或入口脚本故障均须排查修复，不能归为“证明不通过”跳过。
 
-**结果与受阻处理：** 实现完整、静态检查通过、实际入口已运行且后续关键路径已按上述方式验证，确认 checker 自身故障已排除后，才可填 `repaired`。note 分别说明入口的预期退出原因、组件验证结果及未覆盖阶段；组件验证通过不等于完整入口所有分支均已验证，更不等于原题证明通过。缺少锁定工具链、依赖或隔离能力，或关键路径尚未验证时，可完成静态修改，但填 `not_repaired` 并注明“已修改，待运行验证”及具体缺口；不因缺少运行环境强制构建镜像，也不能退回受候选影响的检查并判通过。
+入口因 `sorry` 等预期规则提前退出，只覆盖已执行的检查。对尚未到达的关键路径，必须在同一 Harbor task 子容器内使用独立临时验证程序，调用该 checker 的实际函数，补测可信 Spec 和审计代码的生成与编译、候选编译、完整类型检查、公理审计及 sorry canary；同时验证冻结检查、源码限制及语义偷换负例会按预期被拒绝。需要编译候选时，可在隔离 fixture 中保留占位证明，以覆盖类型检查等路径，并确认公理审计能看到且拒绝其 `sorryAx`。临时 fixture 不得改动公开 Target、golden 基线或正式 checker，不得关闭、放宽或伪造任何正式检查；每条路径均须记录实际到达阶段及预期结果，不能用提前退出推断后续逻辑正常。
+
+**结果与受阻处理：** 实现完整、静态检查通过、本地 Docker 已完成当前 task 的 Harbor 子容器构建、实际入口及上述关键路径均在容器内验证，且除预期证明失败外没有其他验证逻辑故障，才可填 `repaired`。记录构建和运行命令、镜像标识、checker 输入哈希、退出码及日志位置；note 简述入口的预期退出原因、组件验证结果和未覆盖分支，不把本项通过写成原题证明通过。Docker/Harbor 不可用、镜像构建失败、缺少锁定依赖或关键路径尚未验证时，填 `not_repaired`，注明“已修改，待本地 Docker/Harbor 运行验证”及具体缺口；必须尝试本地构建并如实记录阻塞，不以宿主机验证降级验收，也不能退回受候选影响的检查并判通过。
 
 ## 5. Lean 陈述及定义是否存在导致目标无法成立的明显问题
 
