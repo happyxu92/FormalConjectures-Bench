@@ -26,7 +26,7 @@ RUN git clone https://github.com/google-deepmind/formal-conjectures.git /opt/for
     git -C /opt/formal-conjectures checkout "${FORMAL_CONJECTURES_COMMIT}" && \
     cd /opt/formal-conjectures && \
     lake exe cache get && \
-    lake build FormalConjectures.Util.ProblemImports Cli && \
+    lake build FormalConjectures.Util.ProblemImports && \
     find /opt/formal-conjectures -type d -name .git -prune -exec rm -rf {} + && \
     rm -rf /root/.cache /tmp/*
 
@@ -73,7 +73,3 @@ RUN mkdir -p /opt/formal-conjectures-bench-checker \
 WORKDIR /app
 ENV HOME=/home/ubuntu
 USER ubuntu
-
-# Exercise the same build as the checker without granting write access to the
-# trusted dependency. Missing precompiled imports must fail the image build.
-RUN lake build +FormalConjecturesBench.Target

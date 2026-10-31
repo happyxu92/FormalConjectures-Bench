@@ -21,14 +21,6 @@ difficulty_explanation = "The agent must construct a Lean 4 proof of a research-
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
 verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
 
-statement_status = "consistent"
-statement_sources = ["https://arxiv.org/html/2006.12988", "https://www.combinatorics.org/ojs/index.php/eljc/article/download/v5i1r3/pdf/", "https://www.erdosproblems.com/1"]
-statement_note = "任务为已知 Erdős–Moser 1/4 下界变体；核对锁定上游 1.lean 的定义及 lb、Dubroff–Fox–Xu 论文引言和 Bohman 1998 第1页。IsSumDistinctSet 编码正整数区间内全部子集和互异，o=o(1) 仅依赖基数；空集时 Lean 除以0得0，不导致错误。未发现明显数学问题，保留数学陈述与 golden。题目网站直接访问403，另有可读论文支持。"
-public_lean4_proof = true
-public_lean4_proof_status = "found"
-public_lean4_proof_urls = ["https://github.com/MyTH-zyxeon/formal-conjectures/blob/362eed1a8864d142ae65f51af7981a7c7530956e/FormalConjectures/Scratch/HarperCompression.lean#L2174"]
-public_lean4_proof_note = "完整 task ID 精确命中 skills/lean-task-repair/references/public-lean4-proofs.csv，按 skill 采用清单结果确认已有公开完整 Lean4 证明；未另行联网核验或在本题环境编译该证明，未将答案放入镜像。"
-
 [verifier]
 timeout_sec = 7200.0
 

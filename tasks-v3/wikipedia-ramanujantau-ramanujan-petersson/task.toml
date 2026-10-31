@@ -21,15 +21,6 @@ difficulty_explanation = "The agent must construct a Lean 4 proof of a research-
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
 verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
 
-statement_status = "consistent"
-statement_status_note = "Checked the full frozen prefix and theorem against the Ramanujan conjecture section: Delta = q product_(n>0) (1-q^n)^24, tau is its integer coefficient, and |tau(p)| <= 2 p^(11/2) for every prime p. No mathematical statement, definition, header, or golden baseline changed."
-statement_sources = ["https://en.wikipedia.org/wiki/Ramanujan%E2%80%93Petersson_conjecture#Ramanujan_conjecture", "https://en.wikipedia.org/wiki/Ramanujan_tau_function#Main_properties"]
-public_lean4_proof = false
-public_lean4_proof_status = "searched"
-public_lean4_proof_checked_at = "2026-10-30"
-public_lean4_proof_note = "No known public complete Lean4 proof found after exact local CSV lookup and searches by task ID, RamanujanTau, ramanujan_petersson, Ramanujan-Petersson/Deligne/tau and Lean4. Inspected current upstream source, all five matching upstream issues/PRs, Mathlib source, Lean-eval statement, and relevant repositories. PRs 2555/3079 retain sorry; PR 7671 proves only multipliable. lioristhmus assumes purity/representation inputs and introduces interface axioms; AxiomMath assumes deligne_bound as a structure field; math-proof1 proves other tau identities, coefficient estimates and partial nonvanishing, not this prime bound. This is a search result, not a proof of nonexistence; no public proof was compiled in this task."
-public_lean4_proof_sources = ["https://github.com/google-deepmind/formal-conjectures/blob/feacabbcf6ed2e7b622663c3e1c0f61038183392/FormalConjectures/Wikipedia/RamanujanTau.lean", "https://github.com/google-deepmind/formal-conjectures/pull/2555", "https://github.com/google-deepmind/formal-conjectures/pull/3079", "https://github.com/google-deepmind/formal-conjectures/pull/7671", "https://github.com/lioristhmus/ramanujan-petersson/blob/8a3653c935925d7adc88c8312ac1820c13a7bcca/lean/RamanujanPetersson/PaperFaithfulCore.lean", "https://github.com/AxiomMath/ramanujan-tau-misses-primes/blob/58669f754852dbd4b7afa061b0272bd93ecf35b4/RamanujanTauMissesPrimes/problem.lean", "https://github.com/picodozbotdoz/math-proof1/tree/0da7f5b6a4be201bb7defa9836367e04538cd184/MathProof/Tau", "https://github.com/leanprover-community/mathlib4/blob/70078b363d019ff4e975ac0f06eabd3cdb64b0de/Mathlib/NumberTheory/ModularForms/Discriminant.lean", "https://leanprover.github.io/lean-eval-leaderboard/problems/ramanujan_petersson/"]
-
 [verifier]
 timeout_sec = 7200.0
 

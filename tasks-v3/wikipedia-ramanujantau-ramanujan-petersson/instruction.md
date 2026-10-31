@@ -40,24 +40,10 @@ cd /app && ./check.sh
 This runs the same substantive checks as the official verifier. If it passes
 without modifying the checker itself, the official verifier is intended to pass.
 
-The verifier first compiles the frozen definitions and full expected theorem
-type without importing editable helpers. Its temporary proof project imports
-these trusted definitions before `Submission`; the public `Target.lean` remains
-unchanged. The complete theorem type and its axioms are checked against this
-independently compiled specification. Verification requires Linux Landlock
-ABI 3 or newer to protect the specification and dependencies from compiler
-writes; if write confinement is unavailable, verification fails.
-The audit program is compiled before candidate modules and checks their
-compiled declarations with candidate extension loading disabled. Dependency
-paths come from the trusted manifest; project caches are not used.
-
 For source search, prefer commands such as:
 
 ```bash
-rg --glob '*.lean' 'search term' \
-  /app \
-  /opt/formal-conjectures \
-  /opt/formal-conjectures/.lake/packages
+rg --glob '*.lean' 'search term' /app /opt/formal-conjectures
 ```
 
 Internet access is enabled for this task. You may use external literature and web resources, but the final Lean proof must pass the local verifier.

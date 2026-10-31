@@ -21,15 +21,6 @@ difficulty_explanation = "The agent must construct a Lean 4 proof of a research-
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
 verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
 
-statement_status = "mismatch"
-statement_status_note = "Target.lean:77-86 cites Huxley, Chapter 11 of GHH97, but admits alpha = 11/3 through Set.Icc; the cited result only gives 0 <= alpha < 11/3. Chan arXiv:2310.08448, Introduction after (4), explicitly records the strict range; upstream merged PR #5809 makes the same correction. This is a mismatch with the cited result, not a counterexample: Chan’s later range alpha < 3.75 includes this endpoint. Definitions s and A, zero-based indexing, real-valued gaps, real exponent, real atTop limit and normalization agree with the problem page. Mathematical statements, definitions, target headers and golden baselines were preserved."
-statement_sources = ["https://www.erdosproblems.com/145", "https://arxiv.org/html/2310.08448#S1", "https://github.com/google-deepmind/formal-conjectures/pull/5809"]
-public_lean4_proof = false
-public_lean4_proof_status = "searched"
-public_lean4_proof_checked_at = "2026-10-30"
-public_lean4_proof_note = "No known public complete Lean4 proof found for the retained closed-interval target after exact CSV lookup and multi-query searches by task ID, Erdos145, erdos_145, le_eleven_thirds, lt_eleven_thirds, squarefree gap moments, Huxley and Chan with Lean/Lean4. Read upstream and all three candidate fork sources from PRs #2515, #2836 and #3352: they change category attributes but retain sorry. Reviewed upstream issue/PR search, endpoint correction #5809, the AlphaProof Nexus recursive tree (no 145 proof), pinned Mathlib source, and the related PowerFree/Main.lean lead, which concerns polynomial values rather than gap moments. No promising unresolved proof lead remained. Search results do not prove nonexistence; no public proof was compiled or added to the image."
-public_lean4_proof_sources = ["https://github.com/google-deepmind/formal-conjectures/blob/7db2ea3b91bfbd0ab620215163e6c488bbb916d5/FormalConjectures/ErdosProblems/145.lean", "https://github.com/google-deepmind/formal-conjectures/pull/2515", "https://github.com/google-deepmind/formal-conjectures/pull/2836", "https://github.com/google-deepmind/formal-conjectures/pull/3352", "https://github.com/google-deepmind/alphaproof-nexus-results", "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/PowerFree/Main.lean", "https://github.com/leanprover-community/mathlib4/blob/a3a10db0e9d66acbebf76c5e6a135066525ac900/Mathlib/Data/Nat/Squarefree.lean"]
-
 [verifier]
 timeout_sec = 7200.0
 
