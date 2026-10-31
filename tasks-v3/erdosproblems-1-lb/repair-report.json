@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1-lb",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 和 /opt/formal-conjectures/.lake/packages。在最终 Harbor 子容器内以 ubuntu 按修复命令搜索 ^theorem add_comm，退出码 0，并匹配 Mathlib/CategoryTheory/Abelian/NonPreadditive.lean:358 等真实 package 定义；日志 /tmp/fcb-repair-erdos1/search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 仅导入 ProblemImports 和本地 Submission，无需追加上游模块。补齐 Dockerfile 末尾 WORKDIR /app、HOME=/home/ubuntu、USER ubuntu 后的 RUN lake build +FormalConjecturesBench.Target；当前本地 task 的 Harbor 镜像构建成功。另将归档遗留的非 root 所有者或可写可信构建文件恢复为 root 所有且禁止 group/other 写入（实际发现 ProofWidgets .lake/build 所有者 UID 1001）；不改变 Lake config cache 的原有权限。Docker build 最后一步及最终子容器中的 ubuntu 候选编译均通过。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按 skill 执行 scripts/check_unicode_header.py，首次及最终复查均为 no_issue、退出码 0；原始头匹配，修改头及移除 := 被拒绝，两份 checker 一致。未修改 EXPECTED_HEADER、冻结哈希或 Target。日志 /tmp/fcb-repair-erdos1/unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重新解析 GoldenCheck，存在名称/实例语义遮蔽。现交付两份一致的 tests/trusted_spec 与 environment/data/checker/trusted_spec；运行时仅从受保护 /opt/formal-conjectures-bench-checker/trusted_spec 加载固定预编译 Spec，固定 Lean 及依赖路径，检查清单/输入/产物哈希、版本和 root 所有权及全部祖先目录权限。候选仅复制 Lean 源码，忽略 Lake 配置、缓存和环境变量，以 ubuntu 直接编译；临时 Target 复用 Spec 前缀，完整类型引用根限定 ExpectedType。保留冻结、源码限制、目标公理审计及 sorry canary；未修改公开 Target、golden、冻结基线或 GoldenCheck。修复时以干净 Docker 镜像 sha256:6439b28a6dbf43a6c975f7593983e9efe9f9eba724294d3c6cd42fe08ef48407、Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release) 生成；原 golden Target SHA256=91fb8cc13a3a246b8c2eded5608a699babe064f85af2479f728096d0c692296c；Spec .olean SHA256=a921979bf4e783a0228d7901fe68cd5a890b4bb18a102c34f80eff652def84b7。可复现命令 bash tests/trusted_spec/reproduce.sh（仅修复阶段执行）；完整 golden/source/code/artifact 哈希及依赖修订见包内 manifest.json。生成器用 Lean parser/elaborator 读取完整声明，移除临时定理后存储实际类型表达式；universe_params=[]，独立审计证明其定义值及 IsSumDistinctSet 的传递依赖仅含 propext、Classical.choice、Quot.sound，无临时定理或 sorryAx，审计退出码 0。最终验收命令：harbor trial start --path /root/FormalConjectures-Bench/tasks-v3/erdosproblems-1-lb --agent nop --env docker --force-build --no-delete --environment-kwarg keep_containers=true --trial-name erdos1-lb-repair-final-20261031 --trials-dir /tmp/fcb-repair-erdos1/harbor；Harbor 退出码 0，最终镜像 sha256:d088b31014ca8b2c46cf5fb321c442cb13345075eee859f27fc2cbe1b2ec6f8c，保留并重新启动同一子容器 erdos1-lb-repair-final-20261031__env-main-1，无宿主依赖挂载。docker exec <该容器> bash /tests/test.sh 和 docker exec --user ubuntu <该容器> bash /app/check.sh 均退出 1，原因是原始 Target 的 sorry 被源码限制拒绝，reward.txt=0，属于预期证明失败。随后在同一容器以内置实际 checker 函数运行独立隔离 fixture：Spec 加载及类型/传递公理审计、ubuntu 编译、完整类型匹配、sorry canary 均通过；目标 sorryAx 被公理审计拒绝。冻结前缀、定理头、:=、越界源码、非 Lean 文件负例均被拒绝；冻结文字不变的高优先级 LE ℝ 实例负例可编译但被完整类型比较拒绝。同名候选模块、毒化缓存及 LEAN_PATH 无法遮蔽 Spec；独立受保护 fixture 的 .olean 缺失或哈希损坏均明确失败，不触发编译/重新生成。另以 root 入口调用候选编译，产物 UID=1000，确认降权路径。补测退出码 0。最终逐一核对容器内两份 checker、Spec、golden 及公开输入共 41 个文件哈希与本地一致；ubuntu 无法写入可信文件及其所有祖先。AST、包同步、manifest 和 TOML 校验通过。日志：/tmp/fcb-repair-erdos1/harbor-final.log、harbor/erdos1-lb-repair-final-20261031/、validation.log、validation-results.json、delivery-hashes.json、delivery-validation.json、official-entry.log、local-entry.log、root-entry-build.log；独立验证程序 /tmp/fcb-repair-erdos1/validate_paths.py、verify_delivery.py。未构造原题完整证明，未覆盖无 sorry 的原题完整证明成功分支；原始占位证明的预期失败不影响本次 checker 修复验收。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata.statement_status=consistent。任务定位为 Erdos1.erdos_1.variants.lb 的已知 Erdős–Moser 下界，非原开放猜想。核对 pinned 上游 FormalConjectures/ErdosProblems/1.lean:35–36、83–87 与本地 Target.lean:37–38、86–89：A⊆[1,N]、子集和注入性、实数 sqrt/幂/除法、o(n)=o(1) 及全称量词一致。Dubroff–Fox–Xu 原论文 https://arxiv.org/html/2006.12988v2 引言公式明确记录 a_n ≥ (1/4)n^(-1/2)2^n；该全 n 下界可取 o=0。A 为空或 N=0 时 Lean 中除以 0 等于 0，左侧为 0，亦不矛盾。题目站点返回 403，但论文及 pinned 上游源码已实际读取，证据充分。未发现导致目标不成立的明显错误，未改数学陈述或定义。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确命中 skills/lean-task-repair/references/public-lean4-proofs.csv:3，按 skill 标记 metadata.public_lean4_proof=true。来源：https://github.com/MyTH-zyxeon/formal-conjectures/blob/362eed1a8864d142ae65f51af7981a7c7530956e/FormalConjectures/Scratch/HarperCompression.lean#L2174 。本次依据本地可信集合判定，无需再次联网确认；未将公开证明放入镜像，未在本题锁定环境编译该公开证明。"
+    }
+  }
+}

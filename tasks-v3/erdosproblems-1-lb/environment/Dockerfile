@@ -45,6 +45,11 @@ RUN chmod go-w \
     /opt/formal-conjectures \
     /opt/formal-conjectures/.lake \
     /opt/formal-conjectures/.lake/packages
+# Cache archives can retain foreign ownership (notably ProofWidgets uid 1001).
+# All precompiled libraries and their parents are part of the trusted imports.
+RUN find /opt/formal-conjectures/.lake -path '*/.lake/build*' \
+    \( ! -user root -o -perm /022 \) \
+    -exec chown root:root {} + -exec chmod go-w {} +
 RUN mkdir -p /opt/formal-conjectures-bench-dependency-config \
   && cd /opt/formal-conjectures \
   && find .lake/packages -path '*/.lake/config/*/lakefile.olean*' -type f \
@@ -73,3 +78,7 @@ RUN mkdir -p /opt/formal-conjectures-bench-checker \
 WORKDIR /app
 ENV HOME=/home/ubuntu
 USER ubuntu
+
+# Exercise the same build as the checker without granting write access to the
+# trusted dependency. Missing precompiled imports must fail the image build.
+RUN lake build +FormalConjecturesBench.Target
