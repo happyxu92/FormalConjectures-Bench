@@ -81,39 +81,60 @@ python3 scripts/check_unicode_header.py "<task根目录绝对路径>"
 
 ## 4. checker 是否只冻结文字，仍允许语义偷换
 
-**检查：** 查看 Target 是否先导入可编辑的 Submission/helper，golden 是否在导入 Target 后才解析预期命题。提交可能通过名称、记号或类型类实例改变命题及前缀定义的含义，定理头和哈希不变仍可通过。已有 Spec 时，也须检查其生成过程和依赖是否受候选影响。
+**检查：** 查看 Target 是否先导入可编辑的 Submission/helper，checker 是否在加载候选后才解析预期命题。提交可以通过名称、记号或类型类实例改变命题及前缀定义的含义，即使定理头和冻结哈希未变。已有 Spec 时，也须核对它的生成输入、编译环境、存放位置和实际加载路径是否可信。
 
-**存在则修复：先编译可信 Spec，再加载候选，检查完整定理类型。**
+**修复方案：修复 task 时提前生成、预编译可信 Spec；verifier 直接加载固定产物，检查完整定理类型。** 预期命题在没有候选参与的环境中完成 elaboration，保存为 Lean 类型表达式。只保存定理头字符串，之后在候选环境中重新解析，仍会留下语义遮蔽问题。verifier 不生成、提取或重新编译 Spec，也不在产物缺失时自动回退到源码编译。
 
-1. **生成 Spec。** verifier 从本题原始 `golden_env` 取前缀定义和目标声明，移除对 Submission/helper 的导入，在全新临时工程中用锁定的 Lean 和可信依赖编译，不复用候选缓存或配置。用 Lean parser/elaborator 提取完整目标类型及 universe 参数，保留全部显式、隐式和实例参数。前缀定义保留原名；完整命题存为 `FCBTrustedSpec.ExpectedType` 的定义值，不用字符串、新 axiom 或正则拼接类型，提取时的占位证明不得进入其依赖。
-2. **组装验证副本。** 加载任何候选文件前完成 Spec 编译，保护其源码、产物和传递依赖，固定搜索路径以防同名模块或缓存遮蔽。仅复制允许的候选源码，先导入 Spec，再加载 Submission/helper 和目标证明；前缀定义统一来自 Spec。只转换临时 Target，不改公开 Target 或刷新冻结基线。
-3. **检查目标定理。** 由 `test_target.py` 生成临时 Lean 检查文件，用根限定名检查整条定理类型，替换原先复制并执行 `GoldenCheck.lean` 的类型检查路径。例如无 universe 参数的目标：
+### 修复阶段：生成并交付可信产物
 
-   ```lean
-   example : _root_.FCBTrustedSpec.ExpectedType :=
-     @_root_.Arxiv.«0912.2382».curling_number_conjecture
-   ```
+1. **确定可信输入。** 从本题原始 `golden_env` 取得完整前缀及目标声明，移除对 Submission/helper 的导入。在与本题锁定的 Lean、依赖修订和目标平台匹配的干净环境中生成、编译，不加载候选源码、Lake 配置或缓存。优先使用匹配的本地 Docker 环境完成预编译；不能将宿主机其他版本生成的 `.olean` 直接视为兼容。
+2. **提取完整类型。** 用 Lean parser/elaborator 提取完整目标类型及 universe 参数，保留全部显式、隐式和实例参数。前缀定义保留原名；将完整类型表达式存为 `FCBTrustedSpec.ExpectedType` 的定义值。不能用字符串常量、新 axiom 或正则拼接类型替代。提取时如使用占位证明，临时目标声明不得导出到交付 Spec，其证明也不得进入 ExpectedType 或其传递依赖。交付模块应能独立于候选加载。
+3. **预编译并审计。** 编译生成 Spec 的 `.olean` 及该工具链实际需要的配套产物；保留可复现的源码和生成代码或命令。独立导入该模块，核对 ExpectedType 的定义值、完整参数和 universe 参数，并审计它及其引用的前缀定义的传递依赖。只能依赖任务允许的标准 Lean 公理，不能依赖临时占位证明的 `sorryAx` 或新增公理。生成或审计失败时先修复，不能交付未验证的产物。
+4. **同步两份可信包。** 将同一次生成的源码、编译产物和清单分别保存到 `tests/trusted_spec/` 与 `environment/data/checker/trusted_spec/`；如本题已有等价布局则沿用。清单记录 task ID、目标名、原始 golden 输入哈希、生成源码/代码及编译产物哈希、Lean 版本、平台、依赖修订和 universe 参数的名称与顺序。两份包内容须一致，清单及其哈希依据也属于可信文件。原始数学输入、工具链或依赖发生变化后，须在修复阶段重新生成、审计并同步，不由 verifier 自行刷新。
 
-   多态目标按可信 universe 参数实例化。元程序辅助比较时，应比较 ExpectedType 的 **value** 与目标的 **type**，并引用同一份可信定义；不能在候选环境重新解析预期命题，或跨环境仅按常量名判等。
-4. **同步本题入口。** 默认只修改 `tests/test_target.py` 和 `environment/data/checker/test_target.py`。Spec、辅助 Lean 文件和验证副本均由 Python 在运行时生成到临时目录；`golden_env` 作为只读基线，不改仓库中的 `GoldenCheck.lean` 或 Dockerfile。若现有环境无法满足依赖或隔离要求，再按具体缺口最小修改并说明原因。记录输入哈希及 Lean/依赖版本，保留原冻结检查、源码限制、公理审计和 sorry canary；可信类型及依赖也须审计，不全面禁用正常的 `def`、`lemma`、`instance`。
+`golden_env`、公开 Target、冻结前缀哈希和定理头均保留原样，不改仓库中的 `GoldenCheck.lean`。新增 Spec 是由可信原题导出的评测产物，不是修改数学陈述或引入任务答案。
 
-**静态检查：** 用 Python AST 解析检查两份 `test_target.py` 的语法；核对两个入口逻辑一致、Spec 输入可信且先于候选加载、产物及依赖受保护、完整类型及 universe 参数进入检查，并确认原冻结检查、公理审计和 sorry canary 的调用路径保留。Python AST 通过只能说明 Python 语法合法，不能验证字符串中生成的 Lean 代码。
+### verifier 阶段：加载固定 Spec 并检查候选
 
-**实际入口验证：直接使用本地 Docker 构建 Harbor task 子容器。** 使用当前 task 的本地目录及修改后的 checker，通过 Harbor 的 Docker backend 构建并启动该 task 的子容器；使用本题 `environment/Dockerfile`、构建上下文和 `task.toml` 配置，不从 registry 拉取旧版 task 代替本地修改。Harbor 的具体构建、启动及保留容器选项以本机版本的 CLI 帮助为准。必须实际完成镜像构建及容器内验证，不能以宿主机运行 Python、已有镜像未更新 checker、单独编译 Lean 或导入 Python 模块代替。子容器内不挂载 Docker socket 或额外宿主机依赖，不放宽可信目录权限。
+两份 `test_target.py` 只增加加载可信包、组装验证副本和完整类型检查所需的逻辑，保留原冻结检查、源码限制、公理审计和 sorry canary，不全面禁用正常的 `def`、`lemma`、`instance`。
 
-确认容器中的 `/tests/test_target.py` 和 `/opt/formal-conjectures-bench-checker/test_target.py` 分别与本地两份修改后的 checker 一致，`golden_env` 与本题可信基线一致。沿用任务锁定的工具链、依赖、搜索路径和权限；候选构建按真实运行用户 `ubuntu` 执行。由 Harbor 提供 `/tests` 和 `/logs/verifier` 后，运行正式 verifier 入口，例如：
+- **加载前校验。** 根据固定的可信位置读取清单和预编译产物，核对输入、版本、产物哈希及本题目标是否匹配；缺失、损坏或不兼容时明确失败。运行时不从候选目录寻找替代 Spec，不调用生成器，也不从候选环境重新解析 ExpectedType 的定义。
+- **沿用可信目录。** 优先利用现有 Dockerfile 对 `environment/data/checker/` 的复制和权限设置，将本地包放入 `/opt/formal-conjectures-bench-checker/trusted_spec/`；正式入口可使用 Harbor 提供的 `/tests/trusted_spec/`。实际核对目录、父目录、源码、编译产物及传递依赖均不能被 agent/候选用户替换或改写，不假定 `/tests` 自动只读；若其权限不满足要求，可让正式入口也读取现有 `/opt` 可信副本，并核对它与本地及 `/tests` 的包一致。不要将 Spec 复制为候选用户拥有的可写临时副本。哈希校验不能代替文件和目录的权限隔离。
+- **固定搜索路径。** 使用锁定工具链和可信依赖路径，保证 `FCBTrustedSpec` 只解析到已验证的预编译模块；候选同名模块、`.lake` 缓存或环境变量不能覆盖它。不使用候选 Lake 配置重建可信模块或依赖。
+- **组装临时候选。** 仅复制允许的候选 Lean 源码，不复用候选编译缓存。先导入可信 Spec，再加载 Submission/helper 和目标证明；临时 Target 中的前缀定义统一来自 Spec，避免重复定义同名常量。保留目标所需的 namespace、scoped 设置及上下文。只转换临时副本，不修改公开 Target 或刷新冻结基线；候选编译仍以真实用户 `ubuntu` 执行。
+- **检查完整类型。** 替换原先复制并执行 `GoldenCheck.lean` 的类型检查路径。checker 可以生成一个临时 Lean 检查文件，但其中只引用已编译的 ExpectedType，不重复书写或解析原命题。例如无 universe 参数时：
+
+  ```lean
+  import FCBTrustedSpec
+  import FormalConjecturesBench.Target
+
+  example : _root_.FCBTrustedSpec.ExpectedType :=
+    @_root_.Arxiv.«0912.2382».curling_number_conjecture
+  ```
+
+  用本题实际的根限定目标名替换示例。多态目标按可信清单记录的 universe 参数完整实例化。若用元程序辅助比较，应在同一环境中比较可信 ExpectedType 的 **value** 与目标的 **type**，不能只比较 ExpectedType 自身的类型，也不能跨环境仅按常量名判等。导入预编译 Spec 后，名称和实例选择已经固定；候选新实例若改变目标类型，完整类型检查应拒绝。
+
+**修改范围：** 默认只修改两份 `test_target.py` 并新增两份一致的可信 Spec 包，沿用原有 `check.sh` 和 `/tests/test.sh`。现有复制及权限设置满足要求时，本项不修改 Dockerfile，不新增 `sudo`、运行时提权或新的 root supervisor。若实际存在打包或可信目录权限缺口，只按具体缺口做最小修改并记录原因，不放宽可信目录权限。步骤 2 要求的 Dockerfile 末尾普通用户依赖验证仍须保留。
+
+### 验证与验收
+
+**静态核对：** 用 Python AST 检查两份 checker 语法，核对入口逻辑和可信包内容一致；检查 Spec 的可信输入、预编译/审计记录及完整参数，确认运行时仅加载固定产物，候选缓存不能遮蔽它。确认临时 Target 引用同一份前缀定义，以及冻结检查、源码限制、公理审计和 sorry canary 的调用路径保留。AST 通过不代表生成的 Lean 检查代码正确，也不代表预编译产物能在 task 中加载。
+
+**实际入口：使用当前本地 task 构建 Harbor Docker 子容器。** 使用本题修改后的 checker、可信 Spec 包、`environment/Dockerfile` 和 `task.toml`，不能拉取 registry 的旧 task 替代。构建、启动及保留容器的参数以本机 Harbor CLI 帮助为准；不挂载 Docker socket 或额外宿主机依赖，不放宽权限。预编译使用过的环境不能代替最终交付包的本地 Harbor 构建验收。
+
+逐一核对容器内 `/tests/test_target.py`、`/opt/formal-conjectures-bench-checker/test_target.py`、两份 Spec 包和 golden 与本地对应文件的哈希，验证实际加载路径及 agent/候选用户对可信文件和目录的不可写性。由 Harbor 提供 `/tests` 和 `/logs/verifier` 后运行正式入口，例如：
 
 ```bash
 docker exec "<Harbor task 子容器名>" bash /tests/test.sh
 ```
 
-同时核对 `/tests/test.sh` 实际以 `FCB_TASK_DIR=/app`、`FCB_TESTS_DIR=/tests` 调用修复后的 checker，检查退出码、日志和 `/logs/verifier/reward.txt`。两份 checker 内容一致时可运行正式入口并核对本地入口一致性；有差异时，还须在同一子容器中运行 `/app/check.sh`，验证镜像内本地 checker 入口。不要把 checker 自身的源码目录混入提交目录。
+核对 `/tests/test.sh` 实际以 `FCB_TASK_DIR=/app`、`FCB_TESTS_DIR=/tests` 调用修复后的 checker，检查退出码、日志和 `/logs/verifier/reward.txt`。在同一子容器中以 ubuntu 运行 `/app/check.sh`，确认本地入口也直接使用相同的预编译 Spec；不要把 checker 或 Spec 源码目录混入提交目录。
 
-**忽略证明不通过，但不忽略其他验证故障。** 不要求提供或构造原题完整证明，不以 checker 返回 0 或 reward 为 1 作为本项验收条件。原始 Target 含 `sorry`、证明未完成或由此触发公理拒绝属于可接受的预期结果，须明确记录；Python 异常、Lean 生成代码错误、工具链定位、依赖权限、临时目录、编译顺序、结果解析或入口脚本故障均须排查修复，不能归为“证明不通过”跳过。
+**补测提前退出后未覆盖的路径。** 不要求提供或构造原题完整证明，也不要求 checker 返回 0 或 reward 为 1；原始 Target 的 `sorry`、证明未完成或公理审计因此拒绝，属于可记录的预期结果。若正式入口提前退出，须在同一 Harbor 子容器内用独立临时验证程序调用该 checker 的实际函数，补测预编译 Spec 的加载和可信类型审计、ubuntu 候选编译、完整类型检查、目标公理审计及 sorry canary。可在隔离 fixture 中保留占位证明来覆盖后续路径，并确认公理审计检测、拒绝其 `sorryAx`；不得修改正式 checker、公开 Target 或 golden，也不得关闭、放宽或伪造正式检查。
 
-入口因 `sorry` 等预期规则提前退出，只覆盖已执行的检查。对尚未到达的关键路径，必须在同一 Harbor task 子容器内使用独立临时验证程序，调用该 checker 的实际函数，补测可信 Spec 和审计代码的生成与编译、候选编译、完整类型检查、公理审计及 sorry canary；同时验证冻结检查、源码限制及语义偷换负例会按预期被拒绝。需要编译候选时，可在隔离 fixture 中保留占位证明，以覆盖类型检查等路径，并确认公理审计能看到且拒绝其 `sorryAx`。临时 fixture 不得改动公开 Target、golden 基线或正式 checker，不得关闭、放宽或伪造任何正式检查；每条路径均须记录实际到达阶段及预期结果，不能用提前退出推断后续逻辑正常。
+同时确认冻结修改、越界源码和语义偷换负例被拒绝；至少覆盖一个冻结文字不变而名称或实例改变目标含义的负例。检查同名候选模块或缓存不能遮蔽可信 Spec，预编译产物缺失或哈希不符时明确失败且不会触发运行时重新生成。记录各路径实际到达的阶段和预期结果，不能由提前退出推断后续逻辑正常。Python 异常、产物兼容性、Lean 生成代码、工具链/依赖权限、临时目录、结果解析或入口故障均须排查，不能归为“证明不通过”。
 
-**结果与受阻处理：** 实现完整、静态检查通过、本地 Docker 已完成当前 task 的 Harbor 子容器构建、实际入口及上述关键路径均在容器内验证，且除预期证明失败外没有其他验证逻辑故障，才可填 `repaired`。记录构建和运行命令、镜像标识、checker 输入哈希、退出码及日志位置；note 简述入口的预期退出原因、组件验证结果和未覆盖分支，不把本项通过写成原题证明通过。Docker/Harbor 不可用、镜像构建失败、缺少锁定依赖或关键路径尚未验证时，填 `not_repaired`，注明“已修改，待本地 Docker/Harbor 运行验证”及具体缺口；必须尝试本地构建并如实记录阻塞，不以宿主机验证降级验收，也不能退回受候选影响的检查并判通过。
+**结果与受阻处理：** 只有提前生成和审计已完成、两份可信包同步、静态核对通过、当前 task 的本地 Harbor Docker 构建及上述入口/关键路径实际验证完毕，且除预期证明失败外没有其他故障，才填 `repaired`。记录生成及构建/运行命令、镜像标识、可信输入和产物哈希、版本、退出码及日志位置；说明预期证明失败和未覆盖分支，不把本项通过写成原题证明通过。Docker/Harbor 不可用、预编译包缺失或不兼容、可信目录可写、镜像构建失败或关键路径未验证时填 `not_repaired`，明确具体缺口及“已修改，待本地 Docker/Harbor 运行验证”（如适用），并继续其他独立检查。不得退回候选环境解析预期命题或在 verifier 中临时生成 Spec 后宣称符合本方案。
 
 ## 5. Lean 陈述及定义是否存在导致目标无法成立的明显问题
 
