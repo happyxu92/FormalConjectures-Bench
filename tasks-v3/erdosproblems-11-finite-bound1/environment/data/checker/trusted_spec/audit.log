@@ -1,0 +1,5 @@
+audited FCBTrustedSpec.ExpectedType: [propext]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ), Odd n → n < 10 ^ 7 → 1 < n → ∃ k l, Squarefree k ∧ n = k + 2 ^ l
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]

@@ -1,0 +1,6 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos13.IsForbiddenTripleFree: [propext, Quot.sound]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ C, ∀ (N : ℕ), ∀ A ⊆ Finset.Icc 1 N, Erdos13.IsForbiddenTripleFree A → ↑A.card ≤ ↑N / 3 + C
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

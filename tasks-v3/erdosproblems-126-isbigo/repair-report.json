@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-126-isbigo",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "源码搜索命令已显式补充 /opt/formal-conjectures/.lake/packages。最终 Harbor 子容器中以 ubuntu 对三个路径运行 rg --glob '*.lean' '^theorem card_powerset'，退出0且命中 Mathlib/Data/Finset/Powerset.lean；无路径或权限错误。证据 /tmp/repair126-current/delivery.json。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 只有 ProblemImports 和本地 Submission，无额外上游 import。Dockerfile 末尾已在复制、清理、权限设置及 HOME=/home/ubuntu、USER ubuntu 之后加入 RUN lake build +FormalConjecturesBench.Target；最终当前本地 task Harbor 构建成功，未放宽依赖权限。镜像 sha256:6a7dd3a2931d76712c89c0acb337586cd56484deafff744d6dac5e6309d77afa。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "执行 skill 的 check_unicode_header.py，退出0、case=no_issue；原始头通过、修改头与移除 := 被拒绝、两份 checker 一致，三份 Target 哈希相同。证据 /tmp/repair126-current/unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重新解析预期命题，存在语义遮蔽。现只加载 TESTS_DIR/trusted_spec 固定预编译产物，校验清单、输入、版本、依赖和产物哈希，固定 Lean/搜索路径，忽略候选 Lake/缓存/环境变量；临时 Target 先导入 Spec 并复用可信前缀，再导入 Submission，完整类型检查引用 ExpectedType 定义值，原冻结/源码限制/公理审计/canary 保留。修复时在无网络的匹配 Docker 镜像 fcb-local/erdosproblems-1-lb:v3（sha256:f20c4428fec05d7404cfdfa284a3840eabf45e291f051ce22168fd476a34d951）执行 trusted_spec/reproduce.sh：从原 golden 移除 Submission import，Lean parser/elaborator 提取完整 f、hf，universe=[]；恢复环境后导出 ExpectedType，临时目标未导出。独立导入审计 ExpectedType 与 IsMaximalAddFactorsCard 传递公理仅 propext/Classical.choice/Quot.sound。两份包完全相同，含源码、生成器、命令、olean/ilean、清单和审计。golden SHA256=abdc8e8b1e2b5d82e8c7384b29a2f799fee78434adc71a67182522c48d33f29e；olean SHA256=fe70a7fc2a3b2ac23cd80b5483c5a6c0b85143bb476f8eee92f8fc24d5100cac；manifest SHA256=6c3a88e1343aa6b2b5a7ca4ebb067514cd4056c9d34e5452ad476353f8bf17e0；Lean4.27.0/x86_64 Linux，FC233a10e857ef78e79fd9fe661d37db724089170a、Mathlib a3a10db0e9d66acbebf76c5e6a135066525ac900。最终验收命令 harbor trial start -p tasks-v3/erdosproblems-126-isbigo -a nop --env docker --force-build --no-delete --environment-kwarg keep_containers=true --trial-name erdos126-final-20261101 --trials-dir /tmp/repair126-current/harbor，退出0，无构建/运行异常；容器 erdos126-final-20261101__env-main-1，镜像 sha256:6a7dd3a2931d76712c89c0acb337586cd56484deafff744d6dac5e6309d77afa。Harbor 上传 /tests 与本地 checker/Spec/golden 全哈希一致，/opt 包独立核对一致。正式 bash /tests/test.sh 与 ubuntu /app/check.sh 均退出1、reward0，仅因原始 sorry 被源码规则拒绝。最终同一容器 /tests(root降权ubuntu编译)、/opt(ubuntu)各27项实际函数隔离补测均退出0、ALL CHECKS PASSED：加载/可信类型审计、候选编译、完整类型、目标 sorryAx 拒绝、canary；冻结前缀/头/赋值、越界源码、非Lean、symlink、helper axiom、配置修改拒绝；正常def/lemma/instance允许；冻结文字不变的 Erdos126.Real.log 名称遮蔽可编译但完整类型比较拒绝。同名模块/缓存/env不可遮蔽Spec；预编译产物缺失/损坏/清单哈希不符明确失败且不重新生成。AST、包一致性和原Target/golden/GoldenCheck不变通过。证据 /tmp/repair126-current/{generation.log,harbor-final.log,delivery.json,validate.py,validation-final-official.log,validation-final-local.log}。未提供原题完整证明，未覆盖真实无sorry目标最终成功公理审计路径；占位仅在隔离fixture中使用。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata.statement_status=consistent。核对锁定上游126.lean、Target:31–36定义和57–61目标，IsGreatest正确表达所有n元有限集的最小素因子数，offDiag为不同元素的有序对，重复乘积不改变不同素因子集合。读取原论文 https://www.renyi.hu/~p_erdos/1934-03.pdf pp608–610，Theorem I给正整数集对数下界；自然数允许0时去除0损失至多1，不影响渐近下界。上界由 A={1,…,n} 的所有和小于2n，结合素数计数上界得到；题目来源 https://www.erdosproblems.com/history/126 的索引正文亦明确说明双边界和此构造。n=0/1与log0/log1不影响atTop Big-O；n≥2的offDiag和均正。无明显数学错误，这是已知双边界变体而非宣称解决原极限问题。论文已下载并pdftotext，来源页直接访问403但web索引可读；当前上游双边目标不变，未修改任何数学输入。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整task ID未命中CSV。多组关键词精确目标、IsMaximalAddFactorsCard、Erdos126、Erdos/Turan/prime factors/log upper/Lean，覆盖锁定和当前FormalConjectures、Mathlib源码、GitHub全局issues/PR及repository搜索、作者仓库/题目来源。上游精确solve PR https://github.com/google-deepmind/formal-conjectures/pull/3052 与 /pull/2527 实际读取head Lean，目标均仍by sorry，作者明确说明sorryAx loophole，排除。当前upstream本目标也sorry。跟进#5583/#5280、公开目录来源及 https://github.com/tadamcz/erdos126，clone commit158bfe26a3c13309613fe997f6f622f4ef3a5c17，实际检索四份resolution和相关theorem源码：它们证明原问题极限及更强下界，虽IsMaximalAddFactorsCard一致，却未提供本任务合取中的 f(n)=O(n/log n) 上界，不能算完整覆盖本目标。https://github.com/Jun4M/erdos126 README明确只是有限计算和搜索，不是该渐近合取定理；其他JSP-000126 PR实为图论题且仅小实例，排除。Mathlib没有相关目标/定义命中。经充分检索未找到已知公开完整Lean4证明，不表示不存在；metadata.public_lean4_proof=false、public_lean4_proof_status=searched。关键有效线索均已核查；个别API403已用raw源码/clone读取替代，问题页直接403不妨碍已读取实际候选证明。记录/源码 /tmp/repair126-current/{github-*.json,pr-*-126.lean,erdos126-public/,Jun4M-README.md,mathlib-search.log,proof-search.log}。未把公开证明放入镜像，也未在本task环境编译外部证明。"
+    }
+  }
+}

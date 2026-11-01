@@ -1,0 +1,9 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos126.IsMaximalAddFactorsCard: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (f : ℕ → ℕ),
+  Erdos126.IsMaximalAddFactorsCard f →
+    ((fun n => Real.log ↑n) =O[Filter.atTop] fun n => ↑(f n)) ∧
+      (fun n => ↑(f n)) =O[Filter.atTop] fun n => ↑n / Real.log ↑n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

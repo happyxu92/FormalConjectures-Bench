@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-10-gallagher",
+  "mode": "auto_repair",
+  "status": "passed",
+  "case": "no_issue",
+  "has_problem": false,
+  "has_unicode_issue": false,
+  "repair_attempted": false,
+  "repair_success": null,
+  "modified": false,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "6fc3ca9a5c00540524115e17283d3fa6d368e90038ba2d1f69403136c9d882ed",
+      "header_before": "theorem erdos_10.variants.gallagher (\u03b5 : \u211d)\n    (h\u03b5 : 0 < \u03b5) : \u2203 k, 1 - \u03b5 \u2264 (sumPrimeAndTwoPows k).lowerDensity",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem erdos_10.variants.gallagher (\u03b5 : \u211d)\n    (h\u03b5 : 0 < \u03b5) : \u2203 k, 1 - \u03b5 \u2264 (sumPrimeAndTwoPows k).lowerDensity",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "6fc3ca9a5c00540524115e17283d3fa6d368e90038ba2d1f69403136c9d882ed",
+      "header_after": "theorem erdos_10.variants.gallagher (\u03b5 : \u211d)\n    (h\u03b5 : 0 < \u03b5) : \u2203 k, 1 - \u03b5 \u2264 (sumPrimeAndTwoPows k).lowerDensity"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "6fc3ca9a5c00540524115e17283d3fa6d368e90038ba2d1f69403136c9d882ed",
+      "header_before": "theorem erdos_10.variants.gallagher (\u03b5 : \u211d)\n    (h\u03b5 : 0 < \u03b5) : \u2203 k, 1 - \u03b5 \u2264 (sumPrimeAndTwoPows k).lowerDensity",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem erdos_10.variants.gallagher (\u03b5 : \u211d)\n    (h\u03b5 : 0 < \u03b5) : \u2203 k, 1 - \u03b5 \u2264 (sumPrimeAndTwoPows k).lowerDensity",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "6fc3ca9a5c00540524115e17283d3fa6d368e90038ba2d1f69403136c9d882ed",
+      "header_after": "theorem erdos_10.variants.gallagher (\u03b5 : \u211d)\n    (h\u03b5 : 0 < \u03b5) : \u2203 k, 1 - \u03b5 \u2264 (sumPrimeAndTwoPows k).lowerDensity"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "1ef639a7ed6077354ae2f1be387b9a39e9fa4c5f96999be077504c37136ee95b"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "1ef639a7ed6077354ae2f1be387b9a39e9fa4c5f96999be077504c37136ee95b"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "1ef639a7ed6077354ae2f1be387b9a39e9fa4c5f96999be077504c37136ee95b"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 0
+}

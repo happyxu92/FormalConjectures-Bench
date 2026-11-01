@@ -1,0 +1,8 @@
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/NumberTheory/WellApproximable.lean:# Well-approximable numbers and Gallagher's ergodic theorem
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/NumberTheory/WellApproximable.lean:Gallagher's ergodic theorem is a result in metric number theory. It thus belongs to that branch of
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/NumberTheory/WellApproximable.lean:Gallagher's theorem concerns the approximation of real numbers by rational numbers. The input is a
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/NumberTheory/WellApproximable.lean:This result was proved by Gallagher in 1959
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/NumberTheory/WellApproximable.lean:[P. Gallagher, *Approximation by reduced fractions*][Gallagher1961]. It is formalised here as
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/NumberTheory/WellApproximable.lean:deciding which of the two cases in the conclusion of Gallagher's theorem actually occurs. It was
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/NumberTheory/WellApproximable.lean:* `AddCircle.addWellApproximable_ae_empty_or_univ`: *Gallagher's ergodic theorem* says that for
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/NumberTheory/WellApproximable.lean:/-- **Gallagher's ergodic theorem** on Diophantine approximation. -/

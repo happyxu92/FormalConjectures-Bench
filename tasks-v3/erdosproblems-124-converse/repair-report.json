@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-124-converse",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式补充 /opt/formal-conjectures/.lake/packages；Harbor 子容器中以 ubuntu 对三个路径执行 rg --glob '*.lean' '^theorem card_powerset'，退出码0并命中 mathlib，未出现路径或权限错误。证据 /tmp/repair124-current/delivery.json。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target仅有ProblemImports和本地Submission，无额外上游import；Dockerfile末尾已添加HOME=/home/ubuntu、USER ubuntu后的RUN lake build +FormalConjecturesBench.Target，当前本地Harbor构建成功，未放宽依赖权限。镜像 sha256:2bc30e149e40ef2b8b3ce303c14133ff9487a7eba6e5c5803065a76fc4aedfe0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按skill运行check_unicode_header.py，退出码0、case=no_issue；原始头通过，修改头和移除:=被拒绝，两份checker与三份Target基线一致。证据 /tmp/repair124-current/unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原checker在候选环境重新解析GoldenCheck，存在语义遮蔽。现仅加载TESTS_DIR/trusted_spec固定预编译包并验证清单/产物/原始输入/工具链和依赖版本哈希，固定搜索路径且不加载候选Lake配置或缓存。临时Target先导入Spec，再导入Submission，保留Filter与Pointwise上下文并共享可信前缀；完整类型只引用ExpectedType定义值，保留冻结检查、源码限制、公理审计和sorry canary。修复阶段在匹配Lean4.27.0 x86_64无网络Docker容器erdos124-spec-current中执行trusted_spec/reproduce.sh，从可信golden移除Submission导入后用Lean parser/elaborator提取完整类型；临时目标环境回滚，不导出目标声明。ExpectedType完整保留隐式D、hD₃和h，universe_params=[]；独立导入审计ExpectedType及sumsOfDistinctPowers的传递依赖仅标准公理propext/Classical.choice/Quot.sound；其他无关原前缀sorry定理不是类型依赖。两份包字节一致，含源码、生成器、命令、olean/ilean、清单和审计。golden Target SHA256=f4fc1c053617c49e3ee849aeea3d5343f4ac08f886aa4ecdc506cbdf7e226956；olean SHA256=548188fccf12d045fd9dfc3980b8800094d80fe9b669601d6f8351a9e70e3bdd；manifest SHA256=8021193d7a7e8db4c033ef21f69b00e5263f6a42c2400eae1bd4af5736ee5941；FC 233a10e857ef78e79fd9fe661d37db724089170a，Mathlib a3a10db0e9d66acbebf76c5e6a135066525ac900。验收命令：harbor trial start -p tasks-v3/erdosproblems-124-converse -a nop --env docker --force-build --no-delete --environment-kwarg keep_containers=true --trial-name erdos124-current-20261101 --trials-dir /tmp/repair124-current/harbor；退出0，无异常。保留子容器erdos124-current-20261101__env-main-1中/tests由Harbor上传，与本地/tests和安装/opt包逐文件哈希相同。正式bash /tests/test.sh和ubuntu /app/check.sh均退出1、reward=0，仅因原始sorry源码规则拒绝。两套隔离fixture调用实际checker函数，覆盖固定Spec加载/可信类型审计、ubuntu编译（root verifier降权）、完整类型比较、目标sorryAx拒绝、canary；冻结前缀/头/缺少:=、越界Lean、非Lean、符号链接、helper axiom、冻结配置修改均拒绝；普通def/lemma/instance允许。冻结文字不变的LE ℚ实例偷换能编译但完整类型不匹配被拒绝。同名候选模块/缓存/环境变量不能遮蔽Spec；预编译产物缺失、损坏、清单哈希错误明确失败且未运行时生成替代产物。AST、包/清单哈希、immutable输入检查均通过，公开Target/golden/GoldenCheck原样。日志 /tmp/repair124-current/{generation.log,harbor.log,delivery.json,validate.py,validation-official.log,validation-local.log}。未提供原题完整证明，未覆盖真实无sorry目标成功通过最终公理审计的分支；占位fixture仅用于验证后续路径且被sorryAx审计拒绝。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata.statement_status=consistent。已读取锁定上游FormalConjectures/ErdosProblems/124.lean并逐项核对Target:34–35、87–88：sumsOfDistinctPowers d 0按有限指数集求和，有限Set求和为各底数的Minkowski和；D为互异且≥3的自然数，最终覆盖全部自然数蕴含有理数倒数和≥1，方向和参数正确。原论文Burr–Erdős–Graham–Li (1996), Complete sequences of sets of integer powers, p.133明确把充分大整数覆盖定义为complete，并记载Pomerance观察：倒数和小于1时子集和集上密度小于1，故必要条件成立。来源 https://matwbn.icm.edu.pl/ksiazki/aa/aa77/aa7722.pdf ，通过搜索索引读取相关原始第一页文字；PDF直连403，出版社身份页 https://www.impan.pl/en/publishing-house/journals-and-series/acta-arithmetica/all/77/2/109048/complete-sequences-of-sets-of-integer-powers 可读。论文从正指数起，任务k=0每个base仅多一个可选1；这只产生有限平移，不改变必要条件。D为空时覆盖假设不成立；d≥3避免分母为0或负数。未发现导致目标无法成立的明显问题，不修改数学输入。来源记录 /tmp/repair124-current/{upstream.lean,statement-source.txt}。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整task ID精确命中skills/lean-task-repair/references/public-lean4-proofs.csv的task列，按skill直接标metadata.public_lean4_proof=true并记录 https://github.com/arex1337/formal-conjectures-proofs/blob/3b7d581c75fd00e482deabfb20675cf3ccfaf49f/Erdos124/Converse.lean#L93 。来源为预核对公开完整Lean4证明集合；本次未另在任务环境编译该答案，未加入镜像。"
+    }
+  }
+}

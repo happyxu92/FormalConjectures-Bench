@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-11-finite-bound1",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已将 instruction.md 的 rg 命令改为显式包含 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages。最终 Harbor 子容器中以 ubuntu 实际搜索 '^theorem card_powerset'，退出 0，命中 mathlib/Mathlib/Data/Finset/Powerset.lean，无路径/权限错误。证据 /tmp/repair11-current/delivery.json。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 仅导入 ProblemImports 与本地 Submission，无额外上游 import。Dockerfile 末尾已在复制、清理和权限设置后以 HOME=/home/ubuntu、USER ubuntu 运行 lake build +FormalConjecturesBench.Target；当前本地 task 的最终 Harbor 构建成功，镜像 sha256:9a1f45bdfed8dfc53e37b24f16f5289bab3fa46b98864f03627466b664d8de83。未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已按 skill 运行 check_unicode_header.py，退出 0、case=no_issue。原始头通过，改头及删除 := 被拒绝，两份 checker、Target 与两份 golden 的冻结基线一致；无需改头。日志 /tmp/repair11-current/unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重解析 GoldenCheck，允许实例改变目标类型。现加载 TESTS_DIR/trusted_spec 固定预编译包，验证 manifest/产物/golden/工具链/依赖哈希和目标；固定 LEAN_PATH 将可信模块置于候选及缓存之前，不使用候选 Lake 配置。可信 Spec 在无网络匹配 Docker 镜像 sha256:f20c4428fec05d7404cfdfa284a3840eabf45e291f051ce22168fd476a34d951 中从原始 golden 去掉 Submission 导入，以 Lean parser/elaborator 提取完整类型并丢弃临时目标。独立导入审计 ExpectedType 的定义值，完整保留 n、Odd n、n<10^7、1<n 参数，universe_params=[]，传递公理只有 propext；原前缀其他无关 sorry 定理保留，但 ExpectedType 不引用它们。源码、generate.py、reproduce.sh、审计代码/日志和 .olean/.ilean 随两份完全一致包交付。Lean 4.27.0 x86_64 Linux，FormalConjectures 233a10e857ef78e79fd9fe661d37db724089170a，Mathlib a3a10db0e9d66acbebf76c5e6a135066525ac900。golden Target SHA256=70f53ed7be06762fb94468314002c2d0ed57c390105eb712d741c14834f793d1；Spec .olean SHA256=4295d88fadaddbc8ed95925b4b31ac93eab81b32416a7efe01325d9279bf60e2；manifest SHA256=9655a9de27518fbc01768036a981dd4aa2025209cf233bd298efc2b0f1364cd8。生成命令记录于 manifest，日志 /tmp/repair11-current/generation.log。最终验收：harbor trial start -p tasks-v3/erdosproblems-11-finite-bound1 -a nop --env docker --force-build --no-delete --environment-kwarg keep_containers=true --trial-name erdos11-final-20261101 --trials-dir /tmp/repair11-current/harbor，退出 0。保留容器 erdos11-final-20261101__env-main-1 中 /tests 由 Harbor 上传，与本地及 /opt 安装包逐文件哈希一致。正式 bash /tests/test.sh 与 ubuntu /app/check.sh 均退出 1、reward=0，仅因原始 sorry 源码拒绝。隔离 fixture 分别调用实际 /tests checker（root 启动、候选降权 ubuntu）及 /opt checker（ubuntu 启动），加载/可信类型审计、候选编译、完整类型检查、目标 sorryAx 拒绝和 canary 均覆盖，两个日志均 ALL CHECKS PASSED、退出 0。冻结前缀/头/配置修改、缺失 :=、越界源码、非 Lean 文件、symlink 和 helper axiom 均拒绝；普通 def/lemma/instance 仍合法。冻结文字不变的 LT ℕ := True 实例攻击可编译但完整类型比较拒绝；同名模块、候选缓存和环境变量无法遮蔽可信包；产物缺失、损坏及 manifest 哈希错误明确失败且不重新生成。AST 和两份包一致性通过，公开 Target/golden/GoldenCheck 未修改。日志及验证程序 /tmp/repair11-current/{harbor-final.log,delivery.json,validate.py,validation-official.log,validation-local.log}。未构造原题完整无 sorry 证明；真实完整证明成功路径未覆盖，补测占位 fixture 的公理审计按预期拒绝，不等于原题证明通过。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata.statement_status=consistent。task.toml 指定的锁定上游 FormalConjectures/ErdosProblems/11.lean 与 Target:60–62 的有限变体一致：所有自然数 n 满足 Odd n、1<n、n<10^7 时存在自然数 k,l，Squarefree k 且 n=k+2^l。无额外本地数学定义。Hercher 原论文 https://cs.uwaterloo.ca/journals/JIS/VOL28/Hercher2/hercher24.pdf 第1–2页（§1.1）明确回顾 Odlyzko 已检查到10^7，并扩展至2^50；https://arxiv.org/abs/2411.01964 与来源 https://www.erdosproblems.com/forum/thread/11?embed=1 同样支持该有限结果。当前原问题改为充分大的奇数，不影响此有限已知变体。检查自然数、严格上界、奇偶、1 的边界及零幂均未发现导致目标无解的问题；不改数学陈述。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata.public_lean4_proof=false、public_lean4_proof_status=searched；表示经充分检索未找到覆盖当前10^7范围的已知公开完整Lean4证明，不表示证明绝对不存在。CSV按完整task ID精确匹配未命中。检索完整定理名、Erdos11/erdos_11、squarefree power of two Lean、Odlyzko Lean、10^7 Lean 等，覆盖锁定及当前 FormalConjectures、GitHub issues/PR/仓库搜索、Mathlib、作者论文/来源。实际读取并排除 FormalConjectures PR https://github.com/google-deepmind/formal-conjectures/pull/2523、/2811、/3327 的11.lean：只改 formally solved 标记，目标仍 sorry。读取 https://github.com/thiago-monteiro/erdos11 的两个完整Lean文件：Erdos11.lean只有带 solverSucceedsUpTo B=true 假设的有限桥接和条件渐近结论，没有10^7证书；Erdos11Infinite.lean只证无限多个，非所有范围内奇数。读取 https://github.com/rjwalters/lean-genius/pull/28672、/35026、/39554 及当前对应源文件：前两者仅证1<n<100，后者只证可表示集合无限，不覆盖本目标；当前上游本目标仍 sorry。未发现尚待跟进的有效证明线索。直接erdosproblems主页访问受限，已读官方embed及作者原论文；末尾补充GitHub搜索触及403限流，已成功读取上述关键源码，不影响已核查候选结论。未在本题环境编译外部证明，未加入公开答案。检索API结果及候选原文保留 /tmp/repair11-current/{github-search.json,github-search-followup.json,github-repositories.json,pr-*-11.lean,candidate-Erdos11*.lean,lean-genius-*}。"
+    }
+  }
+}

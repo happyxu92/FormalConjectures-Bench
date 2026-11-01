@@ -4,32 +4,32 @@
     "instruction_search": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "已显式补充 /opt/formal-conjectures/.lake/packages。Harbor 子容器中以 ubuntu 使用三个路径执行 rg --glob '*.lean' '^theorem card_powerset'，退出码 0，实际命中 mathlib/Mathlib/Data/Finset/Powerset.lean；无路径或权限错误。证据：/tmp/erdos1-repair-current/delivery.json。"
+      "note": "现有修复已显式包含 /app、/opt/formal-conjectures 和 /opt/formal-conjectures/.lake/packages。本次在当前本地任务构建的 Harbor 子容器以 ubuntu 执行 rg --glob '*.lean' '^theorem card_powerset' 三路径，退出 0、命中 mathlib/Mathlib/Data/Finset/Powerset.lean，无路径/权限错误。证据：/tmp/repair-erdos1-lb-20261101/delivery.json。"
     },
     "lean_dependency": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Target 只有 ProblemImports 和本地 Submission，无额外上游 import。已在 Dockerfile 复制、清理及权限设置之后，以 HOME=/home/ubuntu、USER ubuntu 添加末尾 RUN lake build +FormalConjecturesBench.Target。当前本地任务 Harbor 镜像构建成功，未放宽依赖权限；镜像 sha256:ac46f62365597733832c06a9450616412e429f1562b9f47ab63cfb65bbbbdabb。"
+      "note": "Target 仅导入 ProblemImports 和本地 Submission，无额外上游 import。现有 Dockerfile 在复制/清理/权限设置后，以 HOME=/home/ubuntu、USER ubuntu 末尾 RUN lake build +FormalConjecturesBench.Target。本次 harbor run -p tasks-v3/erdosproblems-1-lb -a nop --env docker --force-build --no-delete --ek keep_containers=true --job-name repair-erdos1-lb-keep-20261101 --jobs-dir /tmp/repair-erdos1-lb-jobs -n 1 实际构建成功，退出 0、无异常；当前镜像 sha256:f6e4f8f57b020f6f504bc28c4685264d0ce3b5ad0c19dd9238b2d3b393f97aba，未放宽依赖权限。"
     },
     "unicode_header": {
       "has_issue": false,
       "repair_status": "not_needed",
-      "note": "按 skill 执行 check_unicode_header.py，case=no_issue、退出码 0。两份 checker 一致，原始头通过，修改头及移除 := 被拒绝，公开 Target 和两份 golden 哈希一致；定理头无需修改。证据：/tmp/erdos1-repair-current/unicode.json。"
+      "note": "本次运行 skills/lean-task-repair/scripts/check_unicode_header.py，退出 0、case=no_issue；两份 checker 相同、原始头通过、改头/移除 := 拒绝，三份原题 Target 哈希一致。日志 /tmp/repair-erdos1-lb-20261101/unicode.json。"
     },
     "semantic_checker": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "原 checker 在候选环境重新解析命题，存在语义遮蔽。现仅加载 TESTS_DIR/trusted_spec 固定预编译产物；正式 /tests 与本地 /opt 路径分别验证，不互相依赖。可信 golden Target SHA256=91fb8cc13a3a246b8c2eded5608a699babe064f85af2479f728096d0c692296c；Spec .olean SHA256=a921979bf4e783a0228d7901fe68cd5a890b4bb18a102c34f80eff652def84b7；清单 SHA256=2ebd7cb43e9ac2d3137c7b44b925b610334612403951965aafa3d44faac3686a。Lean 4.27.0 / x86_64 Linux，FormalConjectures 233a10e857ef78e79fd9fe661d37db724089170a，Mathlib a3a10db0e9d66acbebf76c5e6a135066525ac900；完整参数保留，universe_params=[]。修复阶段在无网络的匹配 Docker 镜像中执行 trusted_spec/reproduce.sh 重新生成、编译并独立导入审计；输入未加载候选代码或 Lake 配置，生成器/源码/命令/版本/依赖/产物哈希及审计记录随两份一致包交付。ExpectedType 的 value 和 IsSumDistinctSet 的传递依赖仅含允许的三个标准公理，临时目标未导出。静态 AST、冻结基线和包一致性通过。验收命令：harbor trial start -p tasks-v3/erdosproblems-1-lb -a nop --env docker --force-build --no-delete --environment-kwarg keep_containers=true --trial-name erdos1-lb-current-20261031 --trials-dir /tmp/erdos1-repair-current/harbor；退出码 0，构建及运行无异常。子容器 erdos1-lb-current-20261031__env-main-1 内 /tests 由 Harbor 上传，与本地 checker/Spec/golden 逐文件哈希一致；正式 bash /tests/test.sh 和 ubuntu /app/check.sh 均退出 1，reward=0，原因仅为原始 sorry 源码限制。独立隔离 fixture 调用实际 checker 函数，已覆盖固定 Spec 加载和类型/公理审计、ubuntu 编译（含 root verifier 降权）、完整类型比较、目标 sorryAx 拒绝、sorry canary；冻结头/前缀修改、越界源码、非 Lean 文件、符号链接、helper axiom、冻结配置修改均被拒绝。冻结文本不变的 LE ℝ 实例偷换可编译但完整类型比较拒绝；同名候选模块、缓存及环境变量不能遮蔽 Spec；产物缺失、损坏和清单哈希不符明确失败且无重新生成。另以 ubuntu 从 /opt 包实际加载并审计通过。验证日志及程序：/tmp/erdos1-repair-current/{generation.log,harbor.log,delivery.json,validate.py,validation-official.log,validation-local-root.log,local-ubuntu-spec.log}。未提供完整原题证明，未覆盖无 sorry 的真实目标成功通过公理审计路径；占位 fixture 仅用于验证后续检查，不修改正式源码或放宽限制。"
+      "note": "现有修复通过本次重新验收：仅从 TESTS_DIR/trusted_spec 加载固定预编译 Spec，实际正式 /tests 和本地 /opt 两包各自加载；固定工具链/依赖搜索路径、重组临时 Target，完整类型引用 ExpectedType value，不在候选环境重解析预期命题。可信 golden Target SHA256=91fb8cc13a3a246b8c2eded5608a699babe064f85af2479f728096d0c692296c；Spec olean=a921979bf4e783a0228d7901fe68cd5a890b4bb18a102c34f80eff652def84b7，manifest=2ebd7cb43e9ac2d3137c7b44b925b610334612403951965aafa3d44faac3686a。Lean 4.27.0 x86_64 Linux、FormalConjectures 233a10e857ef78e79fd9fe661d37db724089170a、Mathlib a3a10db0e9d66acbebf76c5e6a135066525ac900、universes=[]。原生成代码/输入/修订/哈希/命令及审计记录随两份一致包保留；本次在匹配 Harbor 子容器仅复制可信 golden/Spec 到 /tmp/repair-reproduce 后运行 reproduce.sh，再生成源码、olean、ilean 与交付文件哈希完全相同，独立导入审计确认 ExpectedType 和 IsSumDistinctSet 仅依赖允许三公理，临时目标未导出。Python AST、两份包及其 manifest 全部哈希通过。当前本地 task Harbor 构建/运行命令见 lean_dependency，退出 0、无异常；容器 erdosproblems-1-lb__tsgfv8g__env-main-1、镜像 sha256:f6e4f8f57b020f6f504bc28c4685264d0ce3b5ad0c19dd9238b2d3b393f97aba；Harbor 完成后保留并 docker start 继续同容器测试。/tests 由本次 Harbor 上传，正式 /tests 和预装 /opt 的 checker/Spec/golden 全文件哈希与本地一致。bash /tests/test.sh、ubuntu /app/check.sh 均退出 1、reward=0，仅因原始 sorry 源码限制，非构建或加载故障。隔离 fixture 调用实际 checker 函数覆盖固定 Spec 加载/类型/公理审计、ubuntu 候选编译（含 root verifier 降权）、完整类型匹配、目标 sorryAx 拒绝和 sorry canary；冻结前缀/头/赋值、越界 Lean、非 Lean 文件、符号链接、helper axiom、冻结配置修改拒绝，普通 def/lemma/instance 允许。冻结文字不变的 LE ℝ 实例攻击可编译但完整类型比较拒绝；同名模块/缓存/LEAN_PATH 等环境覆盖无效；预编译产物缺失/损坏、manifest 哈希不符明确失败且不生成产物。以上在正式 root 路径和本地 ubuntu 路径分别重跑。证据 /tmp/repair-erdos1-lb-20261101/{delivery.json,validate.py,generation.log,validation-official.log,validation-local-ubuntu.log}，Harbor 日志 /tmp/repair-erdos1-lb-harbor-keep.log 和 /tmp/repair-erdos1-lb-jobs/repair-erdos1-lb-keep-20261101/。未构造原题完整证明，未验证真实无 sorry 目标通过的成功路径；fixture 占位证明仅覆盖后续检查，未改公开 Target/golden 或放宽检查。"
     },
     "statement_fidelity": {
       "has_issue": false,
       "repair_status": "not_needed",
-      "note": "已设 metadata.statement_status=consistent。核对锁定上游 FormalConjectures/ErdosProblems/1.lean 的 erdos_1.variants.lb 与当前 Target:38–40、86–88：自然数有限集包含于 [1,N]，所有子集和单射，统一 o(n)=o(1)，常数 1/4、分母 sqrt(card A) 及方向 ≤ 正确。这是 Erdős 1 的已知 Erdős–Moser 下界变体。参考 https://arxiv.org/pdf/2006.12988 第 1 页（明确回顾 1/4·2^n/sqrt(n) 下界）及 https://www.erdosproblems.com/1 的搜索索引内容（正文直接访问 403）。空集时 Lean 分母为 0、商为 0，不造成反例；N=0 时假设迫使 A 为空。未发现导致目标无法成立的明显错误；数学定义、定理头、golden 和冻结哈希保持不变。"
+      "note": "保留 metadata.statement_status=consistent。本次重新读取锁定上游 FormalConjectures/ErdosProblems/1.lean:32–33,77–80（https://raw.githubusercontent.com/google-deepmind/formal-conjectures/233a10e857ef78e79fd9fe661d37db724089170a/FormalConjectures/ErdosProblems/1.lean）和 Dubroff/Fox/Xu 论文 https://arxiv.org/pdf/2006.12988 第1页，其回顾 Erdős–Moser 的 1/4·2^n/sqrt(n) 下界。当前 Target:38–40,86–88 的正整数范围、子集和单射、统一 o(n)=o(1)、常数/方向一致，是合理已知下界变体。空集的除零商为 0；N=0 强迫 A 为空，无反例。erdosproblems.com/1 正文直接访问被限制，由论文和锁定源码覆盖。未发现明显数学错误，陈述/定义/golden/冻结哈希未改。"
     },
     "public_lean4_proof": {
       "has_issue": true,
       "repair_status": "marked",
-      "note": "完整 task ID 精确命中 skills/lean-task-repair/references/public-lean4-proofs.csv 的 task 列（第 3 行），按 skill 直接标记 metadata.public_lean4_proof=true，并保存 proof URL：https://github.com/MyTH-zyxeon/formal-conjectures/blob/362eed1a8864d142ae65f51af7981a7c7530956e/FormalConjectures/Scratch/HarperCompression.lean#L2174 。来源为预核对的公开完整 Lean4 证明集合；本次未将该证明在任务环境编译，未将公开答案加入镜像。"
+      "note": "本次按完整 task ID 精确命中 skills/lean-task-repair/references/public-lean4-proofs.csv（第3行）；按 skill 保留 metadata.public_lean4_proof=true 和 https://github.com/MyTH-zyxeon/formal-conjectures/blob/362eed1a8864d142ae65f51af7981a7c7530956e/FormalConjectures/Scratch/HarperCompression.lean#L2174 。命中集合无需再联网确认；本次未在任务环境编译公开证明、未将答案加入镜像。"
     }
   }
 }

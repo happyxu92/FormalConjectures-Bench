@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-123-erdos-lewin-3-5-7",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原搜索遗漏隐藏 packages；已显式补充 /opt/formal-conjectures/.lake/packages。Harbor 子容器以 ubuntu 对三个路径执行 rg --glob '*.lean' '^theorem card_powerset'，退出码0，实际命中 mathlib/Mathlib/Data/Finset/Powerset.lean，无路径/权限错误。证据 /tmp/repair123-current/delivery.json。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 仅导入 ProblemImports 与本地 Submission，无额外上游 import。Dockerfile 在复制、清理和权限设置后，以 HOME=/home/ubuntu、USER ubuntu 添加末尾 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的 Harbor Docker 构建通过，未放宽依赖权限；镜像 sha256:a9c4a058443a6dc8e848a48e551da8aa3465946d7cceba77595f4b57b8d0e0df。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "执行技能 check_unicode_header.py，退出码0、case=no_issue；两份 checker 一致，原始头通过、修改头与删除 := 被拒绝，三份原始 Target 保持一致。证据 /tmp/repair123-current/unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重新解析预期命题，存在语义遮蔽。现仅加载 TESTS_DIR/trusted_spec 中经固定清单哈希验证的预编译产物；固定 Lean/依赖路径，忽略候选 Lake 配置、缓存和环境变量。临时候选先导入 Spec，共享已 elaborated 的前缀定义，保留 Filter/Submonoid/Pointwise 上下文，使用 @_root_.Erdos123.erdos_123.variants.erdos_lewin_3_5_7 对 ExpectedType 完整类型检查；保留冻结检查、源码限制、公理审计和 sorry canary。修复阶段在无网络的 erdos123-spec-current（生成镜像 sha256:f20c4428fec05d7404cfdfa284a3840eabf45e291f051ce22168fd476a34d951）以 trusted_spec/reproduce.sh 从原始 golden 移除 Submission import 后，用 Lean parser/elaborator 提取完整类型并回滚临时目标环境；交付的 ExpectedType 为定义值，无 universe 参数，临时目标未导出。独立导入审计 ExpectedType 和其引用前缀定义 IsDComplete 的传递依赖仅标准公理 propext/Classical.choice/Quot.sound；无关原前缀 sorry 定理保留但不在其依赖中。两份包完全一致，包含源码、生成器、命令、olean/ilean、清单、审计。golden Target SHA256=25e2dd8d3c3ca99e587c39db992b7b13fcc01e16bf8c1f58518e09373e467fe0；olean SHA256=0a7d05fa9e35ce1447a1cab8626ea353b8cc2b7101febc0eece8a707f2babf80；清单 SHA256=191ab089d638b7166bf6244cdd94be11bc754eebc542138f8894c2364f657c25。Lean4.27.0、x86_64 Linux、FC233a10e857ef78e79fd9fe661d37db724089170a、Mathlib a3a10db0e9d66acbebf76c5e6a135066525ac900。实际验收命令 harbor trial start -p tasks-v3/erdosproblems-123-erdos-lewin-3-5-7 -a nop --env docker --force-build --no-delete --environment-kwarg keep_containers=true --trial-name erdos123-current-20261101 --trials-dir /tmp/repair123-current/harbor；退出码0，当前本地镜像构建成功。保留子容器 erdos123-current-20261101__env-main-1 的 /tests 由 Harbor verifier 阶段上传，/tests 与 /opt 两份 checker/Spec/golden 逐文件哈希均与本地匹配；正式 bash /tests/test.sh、ubuntu /app/check.sh 均退出1、reward=0，仅因为原始 sorry 源码规则。独立隔离 fixture 调用实际 checker 函数，root /tests 与 ubuntu /opt 两套均 ALL CHECKS PASSED（各27个路径）：固定 Spec 加载/审计、ubuntu 候选编译（root verifier 降权）、完整类型检查、目标 sorryAx 拒绝、sorry canary，以及冻结头/前缀/缺少赋值、越界源码、非Lean、符号链接、helper axiom、冻结配置负例。冻结文字不变的 helper 定义 Erdos123.powers 遮蔽 Submonoid.powers，可编译但完整类型检查拒绝；同名候选模块/缓存/环境变量不能遮蔽 Spec；产物缺失、损坏、清单哈希不符明确失败且无重新生成。静态AST、两份包一致性通过，公开Target/golden/GoldenCheck/冻结基线未修改。日志与程序 /tmp/repair123-current/{generation.log,harbor.log,delivery.json,validate.py,validation-official.log,validation-local.log}；未提供原题完整证明，未覆盖真实无sorry目标最终成功公理审计路径，占位fixture仅验证后续机制。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata.statement_status=consistent。已核对 task.toml 锁定源 FormalConjectures/ErdosProblems/123.lean、当前 Target:40–47 的 IsDComplete 与88–90目标。IsDComplete 要求所有充分大自然数为有限互异集合之和，集合元素来自3、5、7非负整数幂的乘积，IsAntichain (·∣·) 排除互相整除；这与 Erdős–Lewin《d-Complete Sequences of Integers》(1996), pp839–840 Proposition4 相符，该命题给出185之后均可表示。原论文 https://brand.site.co.il/riddles/201507a_files/2153618.pdf 已读取，第837页定义、第839–840页命题与证明均核查；源文和论文副本 /tmp/repair123-current/{upstream.lean,Erdos-Lewin-1996.pdf,Erdos-Lewin-1996.txt}。本任务是3/5/7已知变体，不是一般三底数开放问题；未发现目标无法成立的明显问题，未修改数学输入。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整task ID精确命中 skills/lean-task-repair/references/public-lean4-proofs.csv 的 task 列第33行，按技能直接标 metadata.public_lean4_proof=true，并记录来源 https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos123.lean#L3360 。这是预核对的公开完整Lean4证明集合；本次未在任务环境编译该公开答案，未将答案加入镜像。"
+    }
+  }
+}

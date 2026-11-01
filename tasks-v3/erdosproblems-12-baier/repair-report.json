@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-12-baier",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原搜索命令未显式覆盖隐藏的 packages。已添加 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages 三路径；最终 Harbor 子容器以 ubuntu 执行 rg --glob *.lean ^theorem card_powerset 命中 Mathlib，退出 0，无路径/权限错误。见 /tmp/repair12-current/delivery.json。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 仅有 ProblemImports 与本地 Submission 两个 import，无额外上游模块。原 Dockerfile 缺少普通用户构建验收；现末尾在源码复制/清理/权限设置之后保留 HOME=/home/ubuntu、USER ubuntu、RUN lake build +FormalConjecturesBench.Target。最终当前本地 task Harbor 镜像构建成功，未放宽依赖权限；镜像 sha256:69534f16bed4bc8e968f5c3e6e2f484a7c480a6439fd112952d5d3db53393ee7。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "执行 skill 的 check_unicode_header.py，case=no_issue，退出 0；两份 checker 原始头、冻结前缀和 := 边界匹配，改头和移除 := 均被拒绝，无 Unicode 代理码点修复。证据 /tmp/repair12-current/unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原检查器在候选加载后重新解析预期命题，允许语义偷换。现固定加载 TESTS_DIR/trusted_spec 预编译包：正式 /tests 和本地 /opt 各自使用对应可信位置；清单固定哈希、golden 输入、Lean版本、平台、依赖清单和产物哈希均验证，缺失/损坏明确失败，无运行时生成或源码回退。golden Target SHA256=ef81cec4c74a8eacb6b220beaf19927e0c77a2386ee7c4f0ff0deb09a9360af5；Spec olean SHA256=b6462c1ee9682c06e80183107254ff46f9d2f6d4b8f3a9944a0fd20634347118；清单 SHA256=40b6d8d123bf91a2e732888d4ef1b4258f07facab5df27e6bd0f66cf25d1ae83。修复阶段在无网络匹配 Docker 镜像 sha256:f20c4428fec05d7404cfdfa284a3840eabf45e291f051ce22168fd476a34d951 中复制本题 tests/trusted_spec 与 tests/golden_env 至 /tmp/repair-bundle，执行 docker exec -u root erdos12-spec-current bash /tmp/repair-bundle/trusted_spec/reproduce.sh；只加载锁定依赖，不加载候选源码/Lake配置/缓存。交付源码、generate.py、reproduce.sh、olean、ilean及独立导入审计记录在两份包内一致。Lean 4.27.0/x86_64 Linux，FormalConjectures 233a10e857ef78e79fd9fe661d37db724089170a，Mathlib a3a10db0e9d66acbebf76c5e6a135066525ac900。ExpectedType value 完整保留 A、hA、hA'；universe_params=[]；临时目标未导出，ExpectedType及IsGood传递依赖只含三个允许标准公理。原有其他前缀定理的占位仍保留，但不被 ExpectedType 引用。临时候选先 import 固定 Spec，再加载 Submission/目标，所有前缀定义来自 Spec；编译器使用固定工具链与搜索路径、真实 ubuntu 用户，仅复制允许 Lean 源码且不复用候选编译缓存；完整类型检查引用已编译 ExpectedType，原冻结、源码限制、公理审计、sorry canary 保留。静态 AST、包一致性、公开Target/golden/冻结基线不变检查通过。最终验收命令 harbor trial start -p tasks-v3/erdosproblems-12-baier -a nop --env docker --force-build --no-delete --environment-kwarg keep_containers=true --trial-name erdos12-baier-final --trials-dir /tmp/repair12-current/harbor；退出0，exception_info=null，当前本地Docker构建成功。子容器 erdos12-baier-final__env-main-1 的 /tests 由Harbor上传；两份 checker/Spec/golden 与本地逐文件哈希一致，/tests/test.sh 实际设置 FCB_TASK_DIR=/app FCB_TESTS_DIR=/tests；正式 bash /tests/test.sh 和 ubuntu /app/check.sh 均只因原始 sorry 退出1、reward=0。最终同一子容器内 root-/tests 和 ubuntu-/opt 两套隔离fixture调用实际checker函数均 ALL CHECKS PASSED、退出0，覆盖 Spec加载/可信类型审计、ubuntu编译、完整类型通过、sorryAx拒绝、canary、冻结头/前缀/配置修改、越界源码/非Lean/符号链接/新axiom拒绝、普通def/lemma/instance允许。冻结文字不变的 HPow ℝ ℝ ℝ 实例偷换可编译但完整类型拒绝；候选同名模块/缓存/环境不能遮蔽Spec；产物缺失/损坏/清单哈希不符拒绝且包未被修改或重新生成。日志与验证程序位于 /tmp/repair12-current/{generation.log,harbor-final.log,delivery.json,verify-delivery.py,validate.py,validation-final-official.log,validation-final-local.log}。未提供原题完整证明，未覆盖无sorry真实证明最终通过目标公理审计的路径；占位fixture仅补测拒绝路径，不改变正式源码或放宽检查。"
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "metadata.statement_status=suspect。当前 Target:35–37 的 IsGood、无限性及Pairwise Nat.Coprime均已检查；自然数0/1/2不导致额外反例（在无限两两互素的good集合中这些小元素被条件排除），有限Icc的ncard及log的初始零值不影响渐近式。具体疑点在Target:137–138：本题 =O[atTop] 表示对所有充分大N存在统一上界，而Baier原论文 A note on P-sets (Integers 4 (2004), A13) 第2页Theorem只给无限多个N的上界，https://math.colgate.edu/~integers/e13/e13.pdf 。上游已在 https://github.com/google-deepmind/formal-conjectures/pull/5813 （修复issue5625）将Schoen/Baier改为 ∃ C>0,{N | ...≤C*N^(2/3)/log N}.Infinite；当前main的12.lean:125–127可核对。此为具体量词疑点：来源不支持本任务强化，尚未构造反例或确认强化命题为假，不据差异本身断言任务无解。保持当前数学陈述、定义、golden、定理头、冻结哈希和由原题提取的Spec不变；本次不修改配对Schoen任务。论文的P-set允许相同b,c，而在无限两两互素假设下重复条件可由a≥3、a与b互素排除，不单独据此判错。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 task ID 未命中 skill CSV。充分检索了完整名 erdos_12.variants.baier、Erdos12、Baier/P-sets、两两互素N^(2/3)/log N及Lean/Lean4关键词组合，覆盖上游main与锁定提交、GitHub PR/issues API、相关fork、Mathlib、AlphaProof Nexus公开结果及原作者论文来源。精确PR https://github.com/google-deepmind/formal-conjectures/pull/3070 与 /pull/2545 已读取描述/diff并下载head 12.lean：目标均仍 by sorry，作者明确称 formally-solved loophole、sorryAx present，排除。mo271/formal-conjectures 的8d872b465955e46e2d28bc165d186ea41fd0da9e文件中parts.i有证明，但baier:888–890仍sorry；当前main则已改为Infinite变体且仍sorry。google-deepmind/alphaproof-nexus-results公开树仅包含Erdos12 parts.i/ii，不覆盖此上界目标；锁定Mathlib按baier|schoen|erdos_12|P-sets检索无匹配。PR5813仅修陈述、无证明。API最初403限流，通过调整请求头和per_page后已恢复，相关有效线索均读取；erdosproblems.com正文403，检索索引及原始论文可读，不留未核实的具体证明线索。经充分检索未找到当前完整目标的已知公开完整Lean4证明；metadata.public_lean4_proof=false、status=searched仅表检索结果，不证明不存在。证据 /tmp/repair12-current/{api-success-*.json,pr-*.json,pr-*-12.lean,main.txt,pinned.txt,fork-parts-i.txt,nexus-tree.json,mathlib-search.log}。没有将公开答案放入镜像。"
+    }
+  }
+}

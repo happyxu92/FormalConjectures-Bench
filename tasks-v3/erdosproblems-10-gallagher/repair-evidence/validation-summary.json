@@ -1,0 +1,34 @@
+{
+  "task_id": "erdosproblems-10-gallagher",
+  "harbor_command": "harbor run -p tasks-v3/erdosproblems-10-gallagher -a nop --env docker --no-delete --environment-kwarg keep_containers=true --force-build --job-name gallagher-repair-delivery-20261101 --jobs-dir /tmp/gallagher-harbor",
+  "harbor_job_result": "/tmp/gallagher-harbor/gallagher-repair-delivery-20261101/result.json",
+  "container": "erdosproblems-10-gallagher__pkg6avm__env-main-1",
+  "image": "sha256:4ab4a96597bec704ed40dc96d15fdd1b88fbebb6d34f761958a48999691dad4d",
+  "retention_note": "Harbor --no-delete alone removes Docker containers in this installed version. keep_containers=true retains stopped containers; docker start restored the final same Harbor child for actual direct tests.",
+  "formal_entry": {
+    "command": "docker exec -u root erdosproblems-10-gallagher__pkg6avm__env-main-1 bash /tests/test.sh",
+    "exit_code": 1,
+    "reward": 0,
+    "expected_reason": "Unmodified original proof contains sorry; source policy rejects it before compilation."
+  },
+  "local_entry": {
+    "command": "docker exec -u ubuntu erdosproblems-10-gallagher__pkg6avm__env-main-1 /app/check.sh",
+    "exit_code": 1,
+    "expected_reason": "Unmodified original proof contains sorry."
+  },
+  "supplementary_tests": {
+    "official_command": "docker exec -u root erdosproblems-10-gallagher__pkg6avm__env-main-1 python3 /tmp/validate-gallagher.py",
+    "local_command": "docker exec -u ubuntu -e FCB_TESTS_DIR=/opt/formal-conjectures-bench-checker -e FCB_TASK_DIR=/app erdosproblems-10-gallagher__pkg6avm__env-main-1 python3 /tmp/validate-gallagher.py",
+    "fixture": "Isolated golden copies; actual production checker functions; original Target, golden, checker and Spec not changed by fixtures. Placeholders only in isolated fixtures to reach type comparison, then actual axiom audit rejects sorryAx.",
+    "official_exit_code": 0,
+    "local_exit_code": 0
+  },
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "generation_image": "sha256:4f18277e01dad6bb5dac8f0c80844b9264cb8670999d425151a5436e38746ec6",
+  "generation_command": "docker run -d --network none --name gallagher-spec --entrypoint sleep fcb-v3-erdos1-prepared-main:latest infinity; docker exec -u root gallagher-spec mkdir -p /tmp/repair-bundle; docker cp tests/trusted_spec gallagher-spec:/tmp/repair-bundle/; docker cp tests/golden_env gallagher-spec:/tmp/repair-bundle/; docker exec -u root gallagher-spec bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "golden_target_sha256": "1ef639a7ed6077354ae2f1be387b9a39e9fa4c5f96999be077504c37136ee95b",
+  "spec_olean_sha256": "acf0ac07010efd5f99280b244f8c5c8734a733a9b1aed19cffe98b793a9e96e5",
+  "spec_manifest_sha256": "81e815c62ab02761119b72195607413aa49dba8a6cfa019035264ba152484003",
+  "static_checks": "Python AST valid; copies of checker and Spec package byte-identical; original public Target, both golden Targets and both GoldenCheck files byte-identical to git HEAD; final Dockerfile retains ubuntu dependency build; TOML valid.",
+  "coverage_limit": "No complete mathematical proof supplied or required. Original target still has sorry and does not pass verifier; success branch for an actual complete Gallagher proof is not demonstrated."
+}

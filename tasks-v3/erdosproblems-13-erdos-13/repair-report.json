@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-13-erdos-13",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原搜索遗漏隐藏 packages；已显式添加 /opt/formal-conjectures/.lake/packages。Harbor 子容器中以 ubuntu 对三个路径执行 rg --glob '*.lean' '^theorem card_powerset'，退出码0，命中 Mathlib/Data/Finset/Powerset.lean，无路径或权限错误。证据 /tmp/repair13-current/delivery.json。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 仅导入 ProblemImports 与本地 Submission，无额外上游 import。Dockerfile 末尾在复制、清理、权限设置和 USER ubuntu、HOME=/home/ubuntu 后添加 RUN lake build +FormalConjecturesBench.Target；当前本地 task 的 Harbor Docker 构建成功，未放宽依赖权限。镜像 sha256:dabcf31cf8d275961f4c2f9c46dd14d1df4b58b77909b5a4d85af6dc2f98023b。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按 skill 运行 check_unicode_header.py，修复前和最终复验均退出0、case=no_issue；两份 checker 一致，原始头通过，修改头/移除 := 被拒绝，三份原始 Target 相同。证据 /tmp/repair13-current/{unicode.json,unicode-final.json}。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重新解析 GoldenCheck，存在语义遮蔽。现只加载 TESTS_DIR/trusted_spec 的固定预编译包并核对固定 manifest、golden 输入、版本、依赖及产物哈希；固定工具链和搜索路径，不使用候选 Lake 配置、缓存或环境变量。临时 Target 先导入 Spec 再导入 Submission，共享可信前缀，保留 open Finset Nat / namespace Erdos13；完整类型检查使用 @_root_.Erdos13.erdos_13 与 ExpectedType 的定义值，保留原冻结、源码、公理和 sorry canary 检查。修复阶段从 golden 移除 Submission 导入，在无网络的匹配容器 erdos13-spec-current（生成镜像 sha256:f20c4428fec05d7404cfdfa284a3840eabf45e291f051ce22168fd476a34d951）执行 trusted_spec/reproduce.sh，用 Lean parser/elaborator 提取完整类型并回滚临时目标环境，临时目标未导出。独立导入审计 ExpectedType 及 IsForbiddenTripleFree 传递依赖仅 propext/Classical.choice/Quot.sound，完整 ∃C/∀N/∀A/子集/定义假设均保留，universe_params=[]。两份包一致，交付源码/生成器/命令/olean/ilean/清单/审计。golden Target SHA256=bdbc9e14be5c2f7217bdee90268d206be1a720ffc1c6671a52327ccb0c0d7e6b；olean SHA256=f9665292287d9ad9e178312e61f5e48781223512451393373fd9478cf7b302da；manifest SHA256=61c56700a3117485958f10b063d0a5717b67313e636188e9a59d6c288478a2df。Lean4.27.0，x86_64 Linux，FC233a10e857ef78e79fd9fe661d37db724089170a，Mathlib a3a10db0e9d66acbebf76c5e6a135066525ac900。\n验收命令 harbor trial start -p tasks-v3/erdosproblems-13-erdos-13 -a nop --env docker --force-build --no-delete --environment-kwarg keep_containers=true --trial-name erdos13-current-20261101 --trials-dir /tmp/repair13-current/harbor；退出0、无异常，镜像 sha256:dabcf31cf8d275961f4c2f9c46dd14d1df4b58b77909b5a4d85af6dc2f98023b。同一保留子容器 erdos13-current-20261101__env-main-1 的 /tests 由 Harbor verifier 上传，/tests 与 /opt 两份 checker/Spec/golden 逐文件哈希匹配本地；正式 bash /tests/test.sh 和 ubuntu /app/check.sh 均退出1、reward=0，仅因原始 sorry 源码限制。\n在同容器隔离 fixture 中直接调用实际 checker，root /tests 与 ubuntu /opt 各27条路径均 ALL CHECKS PASSED、退出0：固定 Spec 加载和可信类型审计、ubuntu 候选编译（root 降权）、完整类型、目标 sorryAx 拒绝、sorry canary；冻结前缀/头/缺少赋值、越界源码、非Lean、符号链接、helper axiom、冻结配置均拒绝，普通 def/lemma/instance 仍允许。冻结文字不变的 LE ℝ 实例偷换可编译但被完整类型拒绝；同名候选模块/cache/环境变量不能遮蔽 Spec；产物缺失、损坏和 manifest 哈希不符明确失败且无运行时重生成。AST/包一致性和原数学输入未变核对通过。证据与程序 /tmp/repair13-current/{generation.log,harbor.log,delivery.json,validate.py,validation-official.log,validation-local.log}。未提供原题完整证明，未验证真实无sorry目标最终成功公理审计分支；占位 fixture 仅覆盖检查机制。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata.statement_status=consistent。核对锁定上游 FormalConjectures/ErdosProblems/13.lean 及当前 Target:37–38 定义、50–51 目标：IsForbiddenTripleFree 对所有 a,b,c∈A（允许 b=c），a<min b c 时禁止 a∣b+c；A⊆Icc 1 N 保证正整数；存在统一实常数 C 对所有自然数 N、所有 A 给出 |A|≤N/3+C。Bedert 原论文 https://arxiv.org/html/2301.07065v1 Definition1 与 Theorem1 完全对应；论文 Lemma1 证明使用 a+a，确认 b=c 被允许。N=0 时 A为空，只需C≥0，与统一常数兼容。未发现导致目标无法成立的明显问题；未修改数学定义/陈述/golden。来源副本 /tmp/repair13-current/{upstream.lean,bedert.html}。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确命中 skills/lean-task-repair/references/public-lean4-proofs.csv 的 task 列第37行，按 skill 直接标记 metadata.public_lean4_proof=true 并记录来源 https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos13.lean#L8261 。集合已预核对为公开完整 Lean4 证明；本次未在本任务环境编译该公开答案，未将答案放入镜像。"
+    }
+  }
+}

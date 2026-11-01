@@ -1,0 +1,102 @@
+{
+  "total_count": 1,
+  "incomplete_results": false,
+  "items": [
+    {
+      "url": "https://api.github.com/repos/google-deepmind/formal-conjectures/issues/5041",
+      "repository_url": "https://api.github.com/repos/google-deepmind/formal-conjectures",
+      "labels_url": "https://api.github.com/repos/google-deepmind/formal-conjectures/issues/5041/labels{/name}",
+      "comments_url": "https://api.github.com/repos/google-deepmind/formal-conjectures/issues/5041/comments",
+      "events_url": "https://api.github.com/repos/google-deepmind/formal-conjectures/issues/5041/events",
+      "html_url": "https://github.com/google-deepmind/formal-conjectures/pull/5041",
+      "id": 5185927598,
+      "node_id": "PR_kwDOOogmB88AAAABAMhSqw",
+      "number": 5041,
+      "title": "Erd\u0151s 269: add the three-prime smooth-prefix LCM identity",
+      "user": {
+        "login": "wcook04",
+        "id": 46428721,
+        "node_id": "MDQ6VXNlcjQ2NDI4NzIx",
+        "avatar_url": "https://avatars.githubusercontent.com/u/46428721?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/wcook04",
+        "html_url": "https://github.com/wcook04",
+        "followers_url": "https://api.github.com/users/wcook04/followers",
+        "following_url": "https://api.github.com/users/wcook04/following{/other_user}",
+        "gists_url": "https://api.github.com/users/wcook04/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/wcook04/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/wcook04/subscriptions",
+        "organizations_url": "https://api.github.com/users/wcook04/orgs",
+        "repos_url": "https://api.github.com/users/wcook04/repos",
+        "events_url": "https://api.github.com/users/wcook04/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/wcook04/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "id": 8683921618,
+          "node_id": "LA_kwDOOogmB88AAAACBZog0g",
+          "url": "https://api.github.com/repos/google-deepmind/formal-conjectures/labels/erdos-problems",
+          "name": "erdos-problems",
+          "color": "d0e517",
+          "default": false,
+          "description": "Erd\u0151s Problems",
+          "archived_at": null,
+          "archived_by": null
+        },
+        {
+          "id": 11599806168,
+          "node_id": "LA_kwDOOogmB88AAAACs2b-2A",
+          "url": "https://api.github.com/repos/google-deepmind/formal-conjectures/labels/for-mathlib",
+          "name": "for-mathlib",
+          "color": "16495e",
+          "default": false,
+          "description": "touching our `FormalConjecturesForMathlib` dir",
+          "archived_at": null,
+          "archived_by": null
+        }
+      ],
+      "state": "closed",
+      "locked": false,
+      "assignees": [],
+      "milestone": null,
+      "comments": 1,
+      "created_at": "2026-08-18T20:19:01Z",
+      "updated_at": "2026-09-22T21:30:12Z",
+      "closed_at": "2026-09-22T21:30:12Z",
+      "assignee": null,
+      "author_association": "CONTRIBUTOR",
+      "issue_field_values": [],
+      "type": null,
+      "active_lock_reason": null,
+      "draft": false,
+      "pull_request": {
+        "url": "https://api.github.com/repos/google-deepmind/formal-conjectures/pulls/5041",
+        "html_url": "https://github.com/google-deepmind/formal-conjectures/pull/5041",
+        "diff_url": "https://github.com/google-deepmind/formal-conjectures/pull/5041.diff",
+        "patch_url": "https://github.com/google-deepmind/formal-conjectures/pull/5041.patch",
+        "merged_at": null
+      },
+      "body": "Closes #5051.\n\nThis PR adds a finite structural identity associated with Erd\u0151s Problem 269.\n\nFor three pairwise distinct primes `p`, `q`, `r` and **any** cutoff `x`, the\nleast common multiple of all values `p^i q^j r^k \u2264 x` is\n\n    p^(Nat.log p x) * q^(Nat.log q x) * r^(Nat.log r x).\n\nUnlike my other contributions, **the proof is entirely in this repository** \u2014\nthere is no external `formal_proof` link and no trust dependency outside\nMathlib. It is short: every smooth-prefix value divides the coordinatewise\nmaximal product, each maximal pure power occurs in the prefix, and pairwise\ncoprimality of powers of distinct primes gives the reverse divisibility.\n\nThe pairwise-distinctness hypotheses are load-bearing rather than decorative.\nAt `p = q = 2`, `r = 5`, `x = 100` the two sides are `1600` and `102400`.\nA worked positive instance: at `p,q,r = 2,3,5` and `x = 100`, both sides are\n`129600 = 2\u2076\u00b73\u2074\u00b75\u00b2`.\n\nThe identity holds at `x = 0` as well, where the prefix is empty and both\nsides are `1`, so the statement carries no non-vacuity hypothesis.\n\n## Category\n\n`textbook`, following CONTRIBUTING: this is elementary valuation bookkeeping\nincluded as a building block of a research problem, not a research-level\nresult. The running least common multiple is the object Erd\u0151s 269 is about,\nso the identity is directly related to the problem.\n\n## Files\n\n- `FormalConjecturesForMathlib/NumberTheory/ThreePrimeSmoothLcm.lean` (new)\n- `FormalConjecturesForMathlib.lean` (index import)\n- `FormalConjectures/ErdosProblems/269.lean` (one restatement)\n\n## Validation\n\n- `lake --wfail build FormalConjecturesForMathlib.NumberTheory.ThreePrimeSmoothLcm`\n- `lake --wfail build FormalConjecturesForMathlib`\n- `lake --wfail build 'FormalConjectures.ErdosProblems.\u00ab269\u00bb'`\n- `#print axioms` on both new theorems: `[propext, Classical.choice, Quot.sound]`,\n  no `sorryAx`\n- No `sorry`, `axiom` or `opaque` in the new file\n\n## Scope\n\nThis does not prove rationality, irrationality or transcendence of `series`.\nThe finite-prime case of Erd\u0151s 269, including the three-prime case, remains\nopen. The two existing open declarations are untouched. The identity is\nelementary and no originality or priority claim is made.\n\nAI Usage Disclosure: the linked Lean development and this contribution were produced with AI assistance. I have reviewed the statement identity, the linked proofs, and this diff, and I take responsibility for the submission.\n",
+      "reactions": {
+        "url": "https://api.github.com/repos/google-deepmind/formal-conjectures/issues/5041/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "timeline_url": "https://api.github.com/repos/google-deepmind/formal-conjectures/issues/5041/timeline",
+      "performed_via_github_app": null,
+      "state_reason": null,
+      "score": 1.0
+    }
+  ],
+  "search_type": "lexical"
+}

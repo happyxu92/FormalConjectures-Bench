@@ -1,0 +1,168 @@
+Loaded fixed precompiled trusted Spec
+PASS fixed artifact hash/version/dependency validation
+PASS original frozen prefix and header
+PASS rejection: frozen prefix mutation
+PASS rejection: header mutation
+PASS rejection: missing assignment
+PASS rejection: original sorry source policy
+PASS valid tree shape
+PASS rejection: unconfined Lean file
+PASS rejection: non-Lean editable file
+PASS rejection: symlink
+PASS frozen files
+PASS rejection: changed frozen config
+PASS rejection: helper axiom source ban
+PASS ordinary def lemma and instance accepted
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos10.sumPrimeAndTwoPows: [propext, Quot.sound]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (ε : ℝ), 0 < ε → ∃ k, 1 - ε ≤ (Erdos10.sumPrimeAndTwoPows k).lowerDensity
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS Spec import audit despite module/cache/env shadowing
+Candidate compiled as ubuntu with fixed import paths
+PASS candidate compiled as ubuntu
+Complete theorem type matches trusted Spec
+PASS complete type comparison of placeholder fixture
+PASS rejection: placeholder theorem axiom audit
+PASS sorry canary
+PASS semantic attack keeps frozen text
+PASS semantic instance is source legal
+Candidate compiled as ubuntu with fixed import paths
+PASS semantic instance attack compiles
+PASS rejection: semantic LE attack type mismatch
+PASS rejection: missing precompiled package
+PASS rejection: tampered precompiled package
+PASS rejection: manifest precompiled package
+Loaded fixed precompiled trusted Spec
+PASS original package restored
+{
+  "uid": 0,
+  "checker": "/tests/test_target.py",
+  "spec": "/tests/trusted_spec",
+  "results": [
+    {
+      "case": "fixed artifact hash/version/dependency validation",
+      "result": "passed"
+    },
+    {
+      "case": "original frozen prefix and header",
+      "result": "passed"
+    },
+    {
+      "case": "frozen prefix mutation",
+      "result": "rejected",
+      "message": "Code above the benchmark target marker changed"
+    },
+    {
+      "case": "header mutation",
+      "result": "rejected",
+      "message": "Target theorem header changed"
+    },
+    {
+      "case": "missing assignment",
+      "result": "rejected",
+      "message": "Target theorem no longer has a proof assignment"
+    },
+    {
+      "case": "original sorry source policy",
+      "result": "rejected",
+      "message": "Banned Lean feature found in proof region at line 2: \\bsorry\\b"
+    },
+    {
+      "case": "valid tree shape",
+      "result": "passed"
+    },
+    {
+      "case": "unconfined Lean file",
+      "result": "rejected",
+      "message": "Unexpected added Lean source outside editable subtree: Outside.lean"
+    },
+    {
+      "case": "non-Lean editable file",
+      "result": "rejected",
+      "message": "Unexpected non-Lean file in editable source tree: FormalConjecturesBench/bad.txt"
+    },
+    {
+      "case": "symlink",
+      "result": "rejected",
+      "message": "Symlinks are not allowed in the editable source tree: FormalConjecturesBench/bad.lean"
+    },
+    {
+      "case": "frozen files",
+      "result": "passed"
+    },
+    {
+      "case": "changed frozen config",
+      "result": "rejected",
+      "message": "Trusted benchmark file was modified: lean-toolchain"
+    },
+    {
+      "case": "helper axiom source ban",
+      "result": "rejected",
+      "message": "Found banned Lean syntax:\nFormalConjecturesBench/Submission.lean:1: pattern '(?m)^\\\\s*(?:private\\\\s+|protected\\\\s+)?axiom\\\\b'\nFormalConjecturesBench/Target.lean:4: pattern '\\\\bsorry\\\\b'"
+    },
+    {
+      "case": "ordinary def lemma and instance accepted",
+      "result": "passed"
+    },
+    {
+      "case": "Spec import audit despite module/cache/env shadowing",
+      "result": "passed"
+    },
+    {
+      "case": "candidate compiled as ubuntu",
+      "result": "passed"
+    },
+    {
+      "case": "complete type comparison of placeholder fixture",
+      "result": "passed"
+    },
+    {
+      "case": "placeholder theorem axiom audit",
+      "result": "rejected",
+      "message": "Unexpected axioms for Erdos10.erdos_10.variants.gallagher: ['sorryAx']\n'Erdos10.erdos_10.variants.gallagher' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]"
+    },
+    {
+      "case": "sorry canary",
+      "result": "passed"
+    },
+    {
+      "case": "semantic attack keeps frozen text",
+      "result": "passed"
+    },
+    {
+      "case": "semantic instance is source legal",
+      "result": "passed"
+    },
+    {
+      "case": "semantic instance attack compiles",
+      "result": "passed"
+    },
+    {
+      "case": "semantic LE attack type mismatch",
+      "result": "rejected",
+      "message": "Lean audit command failed\n/tmp/formal_conjectures_bench_aqog_2yc/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch\n  Erdos10.erdos_10.variants.gallagher\nhas type\n  \u2200 (\u03b5 : \u211d), 0 < \u03b5 \u2192 \u2203 k, 1 - \u03b5 \u2264 (Erdos10.sumPrimeAndTwoPows k).lowerDensity\nbut is expected to have type\n  FCBTrustedSpec.ExpectedType"
+    },
+    {
+      "case": "missing precompiled package",
+      "result": "rejected",
+      "message": "Missing trusted Spec artifact: FCBTrustedSpec.olean"
+    },
+    {
+      "case": "tampered precompiled package",
+      "result": "rejected",
+      "message": "Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean"
+    },
+    {
+      "case": "manifest precompiled package",
+      "result": "rejected",
+      "message": "Trusted Spec manifest hash mismatch"
+    },
+    {
+      "case": "original package restored",
+      "result": "passed"
+    }
+  ]
+}
+ALL CHECKS PASSED

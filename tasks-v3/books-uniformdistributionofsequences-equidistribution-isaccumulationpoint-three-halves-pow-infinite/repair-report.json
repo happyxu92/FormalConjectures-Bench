@@ -1,0 +1,35 @@
+{
+  "task_id": "books-uniformdistributionofsequences-equidistribution-isaccumulationpoint-three-halves-pow-infinite",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；Harbor 子容器中以 ubuntu 对三个路径执行 rg --glob '*.lean' '^theorem card_powerset'，退出码 0，命中 mathlib/Mathlib/Data/Finset/Powerset.lean，无路径或权限错误。证据 /tmp/books-repair-current/delivery.json。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 仅导入 ProblemImports 和本地 Submission，无额外上游 import。Dockerfile 末尾已补 HOME=/home/ubuntu、USER ubuntu 后的 RUN lake build +FormalConjecturesBench.Target；当前 task 的本地 Harbor Docker 构建通过，未放宽依赖权限。镜像 sha256:2258a353887ebaac1a1025f773d25e39160724ce75f5759a2d567f51e80d7df7。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按 skill 执行 check_unicode_header.py，退出码 0、case=no_issue；两份 checker 一致，原始头通过，修改头与移除 := 被拒绝，三份 Target 哈希一致。证据 /tmp/books-repair-current/unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境解析预期命题，存在语义遮蔽。已改为仅加载 TESTS_DIR/trusted_spec 的固定预编译 Spec，固定工具链/依赖/搜索路径，忽略候选 Lake 配置、缓存和环境变量；临时 Target 导入同一可信前缀后加载 Submission，完整类型引用 ExpectedType 的定义值。原冻结检查、源码限制、公理审计和 sorry canary 保留。修复阶段以匹配的 Docker 镜像 fcb-v3-erdos1-prepared-main:latest（sha256:4f18277e01dad6bb5dac8f0c80844b9264cb8670999d425151a5436e38746ec6）在 --network none 的 books-spec-current 容器执行 trusted_spec/reproduce.sh，从原始 golden（移除 Submission import）用 Lean parser/elaborator 提取完整类型；临时目标环境回滚后导出 ExpectedType，无 universe 参数。独立导入审计 ExpectedType 和 IsAccumulationPoint 的传递依赖仅含 propext、Classical.choice、Quot.sound，临时目标未导出。两份包逐字节一致，包含生成器、可复现命令、源码、olean/ilean、清单与审计。golden Target SHA256=5c1442387130d4daab9b4bc2757614abfc408cd44e141a7190449750600ff960；olean SHA256=7baf7220173731dfef9cce336d82b4f31c96ca20d541a3afaa2e7d756a21da73；manifest SHA256=94e8085aaaf428ae387ec53e0d4c0f1337a8d7ec8c8bb20a698d279a6a8673b8。Lean 4.27.0、x86_64 Linux、FC 233a10e857ef78e79fd9fe661d37db724089170a、Mathlib a3a10db0e9d66acbebf76c5e6a135066525ac900。验收命令：harbor trial start -p tasks-v3/books-uniformdistributionofsequences-equidistribution-isaccumulationpoint-three-halves-pow-infinite -a nop --env docker --force-build --no-delete --environment-kwarg keep_containers=true --trial-name books-repair-current --trials-dir /tmp/books-repair-current/harbor；退出码 0、无异常。子容器 books-repair-current__env-main-1 经 Harbor 上传 /tests，逐文件校验 /tests 与 /opt checker/Spec/golden、本地包完全相同；正式 bash /tests/test.sh 与 ubuntu /app/check.sh 均退出 1、reward=0，仅因原始 sorry 被源码规则拒绝。独立 fixture 调用实际 checker 函数补测：固定 Spec 加载/审计、ubuntu 编译（含 root 降权）、完整类型检查、sorryAx 拒绝、sorry canary；冻结前缀/头、缺少 :=、越界 Lean、非 Lean 文件、符号链接、helper axiom、冻结配置修改均拒绝。冻结文本不变的 Equidistribution.Int.fract 名称遮蔽可编译，但完整类型检查拒绝。候选同名模块、伪造缓存和环境变量无法覆盖 Spec；预编译产物缺失/损坏、清单哈希不符明确失败且未生成替代产物。两份 checker AST 与包一致性通过；公开 Target/golden/GoldenCheck/冻结基线保持不变。证据 /tmp/books-repair-current/{generation.log,harbor.log,delivery.json,validate.py,validation-official.log,validation-local.log}。未提供完整原题证明，未覆盖真实无 sorry 目标最终成功公理审计路径；fixture 仅覆盖验证机制。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata.statement_status=consistent。已核对锁定上游 233a10e857ef78e79fd9fe661d37db724089170a 的 Equidistribution.lean 和当前 Target:61–62、94–95：IsAccumulationPoint 是 punctured range 的闭包，目标为 Int.fract((3/2)^n) 的聚点集合无限，量词、基数和方向一致。作者网页论文 https://web.pdx.edu/~veerman/numbertheorypaper.pdf 第1页明确记载 Pisot/Vijayaraghavan 的无限聚点定理；其序列项有不同的约分分母 2^n，故序列极限点与此 punctured-range 定义兼容，n=0 只增加一个点不改变结论。当前上游同目标也标 research solved，未发现目标无法成立的明显问题。另冻结前缀:81–87 中无关的“每个超越 x 都均匀分布”已在上游 issue https://github.com/google-deepmind/formal-conjectures/issues/5003 与 PR #5838 修正；它不是本任务目标或 ExpectedType 依赖，未据此把真实的无限聚点目标判错，也未修改任何数学输入。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 task ID 未命中本地 public-lean4-proofs.csv。已充分检索目标全名、three_halves_pow/three halves、Lean/Lean4、Pisot/Vijayaraghavan、rational powers/limit points/accumulation points 等多组关键词，覆盖 Google-DeepMind FormalConjectures 锁定及当前源码、Mathlib 本地全部源码、GitHub PR/fork、Mahler 作者仓库和相关论文。GitHub issues API 精确检索发现 solve PR https://github.com/google-deepmind/formal-conjectures/pull/3152 和 /pull/2628；实际读取各 head 590763789d32b5f02dcd9dbd2f2f224c3084ce43、78ecaf1ad787ee0feb599191b313986f449553ce 的 Lean，目标均仍为 by sorry，仅 category loophole 宣称，排除。当前上游该目标同样 sorry；仅其相邻 subsequence/injectivity 引理有证明，不能覆盖本目标。实际 clone 并检索 https://github.com/jjc16/mahler-3-2-lean4（27314bbfcb2728b5da4ac086237bc483c1a450ef）以及读取 DubickasConfinementAndComplexityExtension.lean 等，内容为窗口排除、Mahler 约化和周期族聚集，不证明该固定幂序列聚点无限；相关 placego/MAHLER.md 自称不提供主问题证明。经充分检索未找到已知公开完整 Lean4 证明，不表示不存在。metadata.public_lean4_proof=false、public_lean4_proof_status=searched；未将公开答案加入镜像。检索记录及候选源码保存在 /tmp/books-repair-current/{github-*.json,PR-3152.lean,PR-2628.lean,mahler-lean/}。GitHub API web 页面工具访问失败后已通过公开 HTTP API 成功核查，无尚待核实的有效线索。"
+    }
+  }
+}

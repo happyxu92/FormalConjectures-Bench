@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-137-perfect-power",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已将源码搜索命令显式补齐 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages。Harbor 子容器内 ubuntu 实际对三路径 rg --glob *.lean ^theorem card_powerset 退出0，命中 mathlib/Data/Finset/Powerset.lean，无路径/权限错误；证据 /tmp/repair137-current/delivery.json。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 仅导入 ProblemImports 与本地 Submission，无额外上游 import。Dockerfile 复制、清理及权限设置后，在 HOME=/home/ubuntu、USER ubuntu 末尾增加 RUN lake build +FormalConjecturesBench.Target。本题当前本地 Harbor Docker 构建成功，未放宽依赖权限；镜像 sha256:b58c25fa1de719d784a6f7e7fb0d07868881c919a374a49afab1d18a4012837f。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按 skill 运行 check_unicode_header.py，初检及最终复验均退出0、case=no_issue；两份checker一致，原始头通过，改头及移除 := 拒绝，公开Target与两份golden一致；日志 /tmp/repair137-current/unicode{,-final}.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原checker在候选环境解析GoldenCheck，允许冻结文字不变的语义偷换。已仅加载 TESTS_DIR/trusted_spec 的固定预编译产物，校验固定清单/产物/golden/Lean版本/依赖哈希，固定工具链和LEAN_PATH，忽略候选Lake配置、缓存与环境变量。修复阶段在匹配Docker镜像 sha256:4f18277e01dad6bb5dac8f0c80844b9264cb8670999d425151a5436e38746ec6 的无网络 erdos137-spec-current 容器，从原始golden移除Submission import，用Lean parser/elaborator提取完整类型；回滚临时声明环境后导出 ExpectedType 定义值。完整保留k/hk/n/x/l/hl，universe=[]；独立导入审计仅三标准公理，临时目标未导出。两份包同一次生成且逐字节一致，保留generate.py、reproduce.sh、源码、olean/ilean、清单和审计记录。golden Target SHA256=f7bc5083a9b2d27f15cae189a3bc5e1b201d1263f9158c6cee2efd24b2e2db89；olean SHA256=64fe55ddf4952ea3866c715b1e7dd994e41e6a19b8bf376871835a09a9cd88bc；manifest SHA256=6e3e6b1a21a0826a402588e62fb82d42c25d9f6d94962aab77dc047c5b2e6c06。Lean4.27.0/x86_64 Linux，FormalConjectures 233a10e857ef78e79fd9fe661d37db724089170a，Mathlib a3a10db0e9d66acbebf76c5e6a135066525ac900。生成命令见manifest，验收命令：harbor trial start -p tasks-v3/erdosproblems-137-perfect-power -a nop --env docker --force-build --no-delete --environment-kwarg keep_containers=true --trial-name erdos137-current-20261101 --trials-dir /tmp/repair137-current/harbor；退出0，无基础设施异常，镜像 sha256:b58c25fa1de719d784a6f7e7fb0d07868881c919a374a49afab1d18a4012837f，容器 erdos137-current-20261101__env-main-1。/tests由Harbor verifier上传；与本地、/opt checker/Spec/golden逐文件哈希相符。正式bash /tests/test.sh及ubuntu /app/check.sh均因原始sorry预期退出1、reward0。独立隔离fixture调用实际checker函数补测固定Spec加载/可信类型审计、ubuntu候选编译（root正式入口降权）、完整类型、目标sorryAx拒绝、sorry canary；冻结前缀/头、移除:=、越界源码、非Lean文件、符号链接、helper axiom、冻结配置修改均拒绝；普通def/lemma/instance允许。冻结文字不变的HPow ℕ ℕ ℕ实例偷换编译成功但完整类型拒绝。同名候选模块/伪造缓存/环境变量不能覆盖Spec，产物缺失/损坏和清单哈希不符明确失败且不重新生成。两套各27项均ALL CHECKS PASSED退出0。证据 /tmp/repair137-current/{generation.log,harbor.log,delivery.json,validate.py,validation-official.log,validation-local.log}。未提供原题完整证明，真实无sorry证明的最终成功分支未演示；隔离占位仅用于覆盖后续检查，不修改正式源码或放宽规则。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata.statement_status=consistent。已核对task.toml锁定上游137.lean与当前Target:46–47：k≥2、l≥2、n:ℕ，Finset.Ioc n (n+k)恰为n+1,…,n+k，均为正；x为自然数且0/1不会造成反例。原论文 Erdős–Selfridge 1975 https://users.renyi.hu/~p_erdos/1975-46.pdf p292 Introduction及Theorem1明确相同k,l≥2,n≥0无整数解。无额外目标前缀定义；无关开放powerful定理保留但ExpectedType不依赖其sorry。未发现目标无法成立的明显问题，未修改数学陈述、Target、golden或GoldenCheck。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整task ID未命中public-lean4-proofs.csv。充分检索关键词包括完整定理名、Erdos137、Erdős/Selfridge、product consecutive integers/perfect power和Lean/Lean4，覆盖锁定及当前FormalConjectures、相关930等价表述、Mathlib、作者仓库、GitHub PR/fork及奖项注册。精确PR https://github.com/google-deepmind/formal-conjectures/pull/3346、/2830、/2513和原声明PR/521均实际读取head源码，目标仍sorry；三solve PR正文承认category loophole，排除。当前上游137与930同目标仍sorry。实际clone https://github.com/scottdhughes/erdos137（3027d9add77a1f2b203977501987c7def955475d），读取Finiteness.lean:161–162、238–239及相关模块，主结果需RadLB/BlockRadLB显式额外假设、结论为最终/有限性，不覆盖无条件全n的perfect_power；LeanPool/lean-pool PR198是同库移植，排除。TheJustinSunPrize/awards PR3071宣称plby/lean-proofs的src/latest/ErdosProblems/Erdos137.lean有证明，raw返回404后已成功git clone并核查其精确pin 8822f7ddef30fadbd92e1c6ab4ed897af356af5e完整git树，宣称路径/模块不存在，排除该来源；并非因API403未核实。奖项PR2103的dcdreamy源码实际仅4个True/trivial定理，排除。StarFleet检索命中页面为其他题，并无137目标。经充分检索未找到已知公开完整Lean4证明，不表示不存在；metadata.public_lean4_proof=false、public_lean4_proof_status=searched。GitHub API一度403，通过公开HTTP和git克隆补齐有效线索，无待跟进来源；erdosproblems.com正文工具受限，但原论文已读。日志和候选源码 /tmp/repair137-current/{github-search-*.json,followup.log,pr-*-137.lean,scott/,plby-tree.txt,dcdreamy-Erdos137.lean,mathlib-search.log}。未将公开答案加入镜像。"
+    }
+  }
+}

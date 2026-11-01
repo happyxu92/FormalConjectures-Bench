@@ -1,0 +1,8 @@
+FCBTrustedSpec.lean:41:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos10.sumPrimeAndTwoPows: [propext, Quot.sound]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (ε : ℝ), 0 < ε → ∃ k, 1 - ε ≤ (Erdos10.sumPrimeAndTwoPows k).lowerDensity
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

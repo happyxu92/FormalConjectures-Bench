@@ -1,0 +1,8 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos12.IsGood: []
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (A : Set ℕ),
+  Erdos12.IsGood A →
+    A.Pairwise Nat.Coprime → (fun N => ↑(A ∩ Set.Icc 1 N).ncard) =O[Filter.atTop] fun N => ↑N ^ (2 / 3) / Real.log ↑N
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

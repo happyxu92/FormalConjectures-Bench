@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "bca05ba967d1551d7b926b6930b844432dae0767",
+    "filename": "FormalConjectures/ErdosProblems/10.lean",
+    "status": "modified",
+    "additions": 7,
+    "deletions": 3,
+    "changes": 10,
+    "blob_url": "https://github.com/google-deepmind/formal-conjectures/blob/5de168f974310a9844e84356b90957dae7960ce4/FormalConjectures%2FErdosProblems%2F10.lean",
+    "raw_url": "https://github.com/google-deepmind/formal-conjectures/raw/5de168f974310a9844e84356b90957dae7960ce4/FormalConjectures%2FErdosProblems%2F10.lean",
+    "contents_url": "https://api.github.com/repos/google-deepmind/formal-conjectures/contents/FormalConjectures%2FErdosProblems%2F10.lean?ref=5de168f974310a9844e84356b90957dae7960ce4",
+    "patch": "@@ -47,7 +47,8 @@ many powers of $2$ has lower density at least $1 - \u03f5$.\n \n Ref: Gallagher, P. X., _Primes and powers of 2_.\n -/\n-@[category research solved, AMS 5 11]\n+@[category research formally solved using formal_conjectures at\n+\"https://www.erdosproblems.com/10\", AMS 5 11]\n theorem erdos_10.variants.gallagher (\u03b5 : \u211d)\n     (h\u03b5 : 0 < \u03b5) : \u2203 k, 1 - \u03b5 \u2264 (sumPrimeAndTwoPows k).lowerDensity := by\n   sorry\n@@ -68,16 +69,19 @@ theorem erdos_10.variants.granville_soundararajan_odd :\n /--\n Bogdan Grechuk has observed that `1117175146` is not the sum of a prime\n and at most $3$ powers of $2$.\n+\n+Ref: Grechuk, B., _Landscape of 21st Century Mathematics: Selected Advances, 2001-2020_, Springer 2021.\n -/\n-@[category research solved, AMS 5 11]\n+@[category research formally solved using formal_conjectures at \"https://github.com/theaustinhatfield/formal-conjectures/blob/solve-erdos-10-grechuk/FormalConjectures/ErdosProblems/10.lean\", AMS 5 11]\n theorem erdos_10.variants.grechuk_example :\n     1117175146 \u2209 sumPrimeAndTwoPows 3 := by\n   sorry\n \n /--\n There are infinitely many even integers not the sum of a prime and $2$ powers of $2$\n -/\n-@[category research solved, AMS 5 11]\n+@[category research formally solved using formal_conjectures at\n+\"https://www.erdosproblems.com/10\", AMS 5 11]\n theorem erdos_10.variants.two_pows :\n     Set.Infinite <| {n : \u2115 | Even n} \\ sumPrimeAndTwoPows 2 := by\n   sorry"
+  }
+]

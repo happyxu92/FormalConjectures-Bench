@@ -1,0 +1,61 @@
+{
+  "checked_at": "2026-11-01",
+  "statement": {
+    "status": "consistent",
+    "lean_locations": [
+      "environment/data/FormalConjecturesBench/Target.lean:34-37",
+      "environment/data/FormalConjecturesBench/Target.lean:60-62"
+    ],
+    "sources": [
+      "https://www.erdosproblems.com/10",
+      "https://raw.githubusercontent.com/google-deepmind/formal-conjectures/233a10e857ef78e79fd9fe661d37db724089170a/FormalConjectures/ErdosProblems/10.lean",
+      "https://raw.githubusercontent.com/google-deepmind/formal-conjectures/main/FormalConjectures/ErdosProblems/10.lean"
+    ],
+    "finding": "Reviewed complete prefix: p is a natural prime, a multiset allows repeated nonnegative exponents, card at most k; theorem quantifies every positive real epsilon with a k depending on epsilon, ordinary natural-number lower density. This is precisely the Gallagher density variant quoted by the source, not the main open covering problem. No evident false-statement defect found. The original preceding erdos_10 placeholder is unrelated to the target type and remains unchanged."
+  },
+  "public_lean4_proof": {
+    "status": "searched",
+    "found": false,
+    "local_collection_exact_match": false,
+    "queries": [
+      "Gallagher primes powers 2 Lean4 proof Erdos 10",
+      "\"erdos_10\" \"gallagher\" Lean proof",
+      "\"Gallagher\" \"Lean\" \"Primes and powers of 2\"",
+      "\"erdos_10.variants.gallagher\" proof formal",
+      "site:github.com \"gallagher\" \"sumPrimeAndTwoPows\"",
+      "site:github.com Lean \"Gallagher\" \"lowerDensity\"",
+      "site:github.com/leanprover-community/mathlib4 \"Gallagher\"",
+      "\"Erdos10PrimePlusPowers.lean\"",
+      "GitHub issues API repo:google-deepmind/formal-conjectures gallagher",
+      "GitHub issues API repo:google-deepmind/formal-conjectures \"erdos_10.variants.gallagher\"",
+      "GitHub issues API repo:google-deepmind/formal-conjectures \"sumPrimeAndTwoPows\""
+    ],
+    "sources_and_exclusions": [
+      {
+        "url": "https://raw.githubusercontent.com/google-deepmind/formal-conjectures/main/FormalConjectures/ErdosProblems/10.lean",
+        "finding": "Actual current Lean source read: exact Gallagher declaration still by sorry, lines 68-70. Formal-proof links cover grechuk_example, two_pows and grechuk, which are different statements."
+      },
+      {
+        "url": "https://github.com/google-deepmind/formal-conjectures/pull/3302",
+        "finding": "Read API complete changed-file patch and PR description. Only category changed to research formally solved; Gallagher still by sorry. Explicitly described as loophole with sorryAx. Excluded."
+      },
+      {
+        "url": "https://github.com/google-deepmind/formal-conjectures/pull/2786",
+        "finding": "Same metadata-only change as #3302, Gallagher still by sorry; excluded."
+      },
+      {
+        "url": "https://api.github.com/repos/anatoliiohorodnyk/lean-fc-proofs/git/trees/main?recursive=1",
+        "finding": "Read complete repository file tree. Only Erdos10 variant is T_Erdos10_erdos_10_variants_two_pows.lean, not the density target."
+      },
+      {
+        "url": "https://leangenius.org/proof/erdos-10",
+        "finding": "Search index describes Gallagher only in source comments, no theorem or Lean proof, and companion covers insufficient k=1/k=2 and axiomatized deeper results. Not a full-proof candidate. Direct page fetch returned HTTP 403; indexed content used only as a lead, not as proof evidence."
+      },
+      {
+        "url": "https://github.com/leanprover-community/mathlib4/blob/a3a10db0e9d66acbebf76c5e6a135066525ac900/Mathlib/NumberTheory/WellApproximable.lean",
+        "finding": "Pinned local Mathlib full-source search for Gallagher|gallagher|sumPrimeAndTwoPows only finds Gallagher ergodic theorem about Diophantine approximation; not primes-plus-powers lower density."
+      }
+    ],
+    "conclusion": "After multiple searches and following the exact PR leads, no known public complete Lean4 proof of this exact task was found. This is a search result, not proof of nonexistence. No outstanding specific complete-proof lead remains."
+  }
+}

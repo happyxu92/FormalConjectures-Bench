@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-10-gallagher",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令补上显式 /opt/formal-conjectures/.lake/packages。最终 Harbor 容器以 ubuntu 执行三路径 rg，成功命中 Mathlib Finset.card_powerset；退出0及输出见 repair-evidence/delivery.json。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 仅导入 ProblemImports 和本地 Submission，无额外上游 import。Dockerfile 原缺末尾普通用户构建验证，已补 RUN lake build +FormalConjecturesBench.Target；最终 Harbor 当前任务构建成功，USER ubuntu，未放宽依赖权限。命令、镜像和版本见 repair-evidence/validation-summary.json。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按 skill 执行 check_unicode_header.py，case=no_issue，原始头、冻结前缀和 := 边界验证通过，两份 checker 同步；见 repair-evidence/unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重解析 GoldenCheck，存在实例遮蔽风险。由可信 golden 移除候选 import 后，用 Lean parser/elaborator 提取完整类型并在匹配 Lean4.27.0 x86_64 容器预编译及独立审计；保留 ε 和 hε 全参数，universe=[]，ExpectedType 及 sumPrimeAndTwoPows 传递公理仅标准三项。已交付两份相同可信包和固定manifest哈希，checker仅加载固定产物，先导入Spec再以ubuntu编译隔离候选及检查完整类型。最终当前task Harbor构建、/tests上传hash与/opt包hash核对、正式与本地入口及两套实际函数验证通过；原始sorry预期退出1/reward0。冻结/越界、普通helper、缓存/同名模块/环境覆盖、完整类型、sorryAx审计/canary、冻结文字不变的LE ℝ语义偷换、缺失/坏hash/坏manifest负例全部覆盖且结果符合预期。命令/哈希/版本/镜像/日志见 repair-evidence/validation-summary.json、delivery.json、validation-{official,local}.log；未提供原题完整证明，未验证其成功分支。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata statement_status=consistent。核查完整前缀：自然数素数加至多k个2的非负整数次幂（允许重复），每个ε>0存在k使下密度≥1−ε，符合 https://www.erdosproblems.com/10 的Gallagher已知密度变体及锁定上游10.lean；没有把主开放覆盖问题当成本目标。未发现导致目标无法成立的明显问题；原始数学陈述、golden、冻结hash未修改。位置/来源见 repair-evidence/research.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "marked",
+      "note": "本地公开证明CSV按完整ID未命中。按数学名称、完整Lean名、别名检索上游/Mathlib/GitHub及issues/PR API，核查当前上游和精确PR #3302/#2786源码diff：Gallagher均仍by sorry，两PR只改category且声明使用loophole；two_pows/grechuk证明不覆盖此目标。多组充分检索未找到已知公开完整Lean4证明，不表示证明绝对不存在。metadata public_lean4_proof=false、status=searched；检索词、来源、排除原因及Leangenius直接访问403限制见 repair-evidence/research.json。"
+    }
+  }
+}
