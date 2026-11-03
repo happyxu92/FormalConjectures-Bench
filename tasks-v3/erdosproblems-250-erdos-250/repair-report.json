@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-250-erdos-250",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已为 instruction.md 搜索命令显式加入 /opt/formal-conjectures/.lake/packages；在独立环境和本题 Harbor ubuntu 下实际 rg，命中 Mathlib/Order/Monotone/Defs.lean 的 StrictMono，退出码 0。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-250-erdos-250/instruction-search.log"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "实际 Target 仅导入 ProblemImports 和本地 Submission，无额外上游 import；保留 lake build FormalConjectures.Util.ProblemImports。已在 Dockerfile 最末 USER ubuntu、HOME=/home/ubuntu 下追加 lake build +FormalConjecturesBench.Target；当前本地 Harbor 镜像构建成功，同一子容器 ubuntu 实际重跑退出码 0。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-250-erdos-250/image-history.log、ubuntu-target-build.log。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已运行 skill 的 check_unicode_header.py，case=no_issue，退出码 0；原始头、两份 golden、冻结哈希及 := 边界校验通过。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-250-erdos-250/unicode.json"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选加载后重新解析 GoldenCheck 中的命题，存在语义遮蔽。现从本题原始 golden 删除 Submission import 后，由 Lean parser/elaborator 提取完整目标类型并恢复临时定理环境，导出、预编译 FCBTrustedSpec.ExpectedType；独立审计仅依赖 propext/Classical.choice/Quot.sound，不导出临时目标或其子声明。完整命题包含 ∀ x : ℝ；外层 binder 数为 0，universe 参数 []。两份包及 checker 内容/AST 一致；清单、golden 输入、工具链、依赖 manifest 与产物哈希校验，绝对锁定 Spec/依赖路径并忽略候选 Lake/cache/env，不增加通用外部模块白名单；只转换临时 Target，保留原冻结/源码/公理/canary 规则。正式入口实际使用 /tests/trusted_spec，本地 ubuntu check.sh 使用 /opt/formal-conjectures-bench-checker/trusted_spec，已核对两份容器文件、golden 与宿主哈希。当前本地 task Harbor 构建和入口完成，镜像 sha256:d0bd07e939ddb830d54dc461fdd8f8f307ce3a7adba6e2110383cd8861249cc7；原始 sorry 导致两入口退出码 1、reward=0（预期证明失败）。同一 Harbor 子容器对两份 checker 各补测 29 项，含固定 Spec 审计、实际 uid 1000 候选编译、完整类型比较、sorryAx 拒绝、canary、越界/冻结负例、冻结文字不变的 HasSum/Irrational 名称遮蔽候选编译后类型拒绝、同名模块/cache/env 无法遮蔽 Spec、缺失/篡改包拒绝且不生成产物。Spec manifest SHA256=46a7c020bad39845911ca8c8c8051bf472c3a5ed588adbafb2b27ed171119716；Lean Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)，平台 x86_64。证据目录 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-250-erdos-250（generation.log、package.log、manifest、harbor、delivery.json、coverage-official.json、coverage-local.json、static-validation.json）。未构造原题完整证明，原题证明成功分支未验收；占位证明成功编译与类型比较后明确被公理审计拒绝。Docker 已清理并逐项 inspect 确认不存在：容器 6cce9ae9dd98, 38b0089ac847；镜像 sha256:d0bd07e939ddb830d54dc461fdd8f8f307ce3a7adba6e2110383cd8861249cc7；网络 erdosproblems-250-erdos-250-pi250-429da7e2__env_default。保留基线共享 base image 和构建缓存，未清理其他 agent 资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata.statement_status=consistent。完整命题与锁定上游 FormalConjectures/ErdosProblems/250.lean 一致：σ 1 是正因子和，ArithmeticFunction 在 0 取 0，因此 n=0 项不改变文献从 n=1 起的级数；实数幂和 HasSum/无理性方向未见明显错误。读取 Nesterenko 1996 原始期刊页面 https://www.mathnet.ru/eng/sm158 及出版社摘要 https://doi.org/10.1070/SM1996v187n09ABEH000158；题目网站及完整 PDF 403，已如实记录限制。数学定义、Target、golden、GoldenCheck 和冻结基线均未改。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-250-erdos-250/mathematical-review.json"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID erdosproblems-250-erdos-250 精确命中 skill references/public-lean4-proofs.csv 的 task 列，按 skill 判定 public_lean4_proof=true，并同步 metadata。公开证明来源：https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos250.lean#L97 及 main 同路径。CSV 命中无需联网复核；未将公开答案放入镜像，也未在当前锁定环境编译该公开证明。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-250-erdos-250/public-proof-csv.json"
+    }
+  }
+}

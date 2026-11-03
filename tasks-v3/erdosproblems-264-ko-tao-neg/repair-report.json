@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-264-ko-tao-neg",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages path. Actual three-path rg found Mathlib def Irrational (exit 0); evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-264-ko-tao-neg/attempt-002/instruction-search.log"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports beyond ProblemImports and local Submission. Retained ProblemImports prebuild; appended final WORKDIR /app, HOME=/home/ubuntu, USER ubuntu RUN lake build +FormalConjecturesBench.Target. Current local Harbor image sha256:7dbe40cb49d45d49751ff38c2aa62d209c3b28e453245e2ce064eb60f7e1a5ec built successfully; same ubuntu command completed all 7992 jobs. Evidence: image-history.txt, ubuntu-target-build.log under /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-264-ko-tao-neg/attempt-002"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran skill check_unicode_header.py: no_issue, exit 0; original header accepted and mutation/missing assignment rejected; no surrogate issue. /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-264-ko-tao-neg/attempt-002/unicode.json"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated ExpectedType from immutable golden without Submission in pinned Lean 4.27.0 x86_64 container; retains implicit a and all four hypotheses, no universes. Kernel-compiled Spec and independent transitive audit of ExpectedType/predicate allow only propext, Classical.choice, Quot.sound; temporary target absent. Manifest pins golden/producer/artifact hashes and revisions. Two checker contents/AST and Spec packages identical. Fixed toolchain, Spec and dependency paths precede fresh candidate directory, ignoring candidate Lake/cache/environment. Preserved original source/frozen/axiom/canary checks and ordinary helpers/import rules. Current local Harbor task build sha256:7dbe40cb49d45d49751ff38c2aa62d209c3b28e453245e2ce064eb60f7e1a5ec; uploaded /tests hashes and /opt checker/packages/golden match host. Official /tests/test.sh and ubuntu /app/check.sh each exit 1/reward 0 as expected for unchanged sorry. Same Harbor container actual functions tested on both package paths: fixed artifact load/audit, ubuntu compilation, complete type match, sorryAx rejection/canary; frozen/shape/source negatives; same-name Spec/cache/environment poisoning; missing/corrupt artifacts fail without generation; frozen-text OfNat Real 1 semantic attack compiles but complete type check rejects. Initial ineffective power fixtures retained separately and excluded from success evidence. All required paths covered; no original theorem proof claimed. Commands, hashes, logs and 27-case coverage JSON: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-264-ko-tao-neg/attempt-002. Cleanup verified: stopped/removed erdosproblems-264-ko-tao-neg-spec-a002-7b36d2, erdosproblems-264-ko-tao-neg-a002-7b36d2__env-main-1; removed task image sha256:7dbe40cb49d45d49751ff38c2aa62d209c3b28e453245e2ce064eb60f7e1a5ec and its tag erdosproblems-264-ko-tao-neg-a002-7b36d2__env-main; removed this trial Compose network if present. Shared preexisting generation base/cache untouched. Evidence /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-264-ko-tao-neg/attempt-002/cleanup.json"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked consistent. Read full prefix/target and arXiv:2406.17593v3 section 2.1.3 Theorem 5 (2.10), footnote 3 and proof. Positive natural perturbations are explicitly allowed and constructed; strict monotonicity, positivity, reciprocal summability, real square tail k>n, and direction match. Real liminf is restrictive versus eventual lower bound (upstream PR 5482), but no false implication found for retained variant. Mathematics untouched. /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-264-ko-tao-neg/attempt-002/math-public-review.json"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Exact ID absent from skill CSV. Multiple Exa searches plus upstream current/pinned, Mathlib, author repository/blueprint, plby versions/latest, claim pages and PRs investigated. Public proofs found only powers-of-two/example variants. PRs 2488/2865 retain sorry despite category claims; general upstream theorem remains sorry. No complete general-target proof confirmed. Marked unknown/blocked conservatively: global GitHub code API requires authentication (401), author WordPress search 403; search backend limitations documented. No unresolved promising returned proof link. Full sources/exclusions/access logs: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-264-ko-tao-neg/attempt-002/math-public-review.json"
+    }
+  }
+}

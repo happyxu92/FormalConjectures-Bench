@@ -1,0 +1,11 @@
+audited ExpectedType and transitive dependencies: [Classical.choice, propext, Quot.sound]
+complete RHS binder count: 4
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+True ↔
+  ∀ (a : ℕ → ℤ),
+    (∀ (n : ℕ), a n ≠ 0) →
+      Monotone a →
+        Filter.Tendsto a Filter.atTop Filter.atTop →
+          Irrational (∑' (n : ℕ), ↑(n + 1).divisors.card / ↑(∏ i ∈ Finset.Icc 1 n, a i))
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

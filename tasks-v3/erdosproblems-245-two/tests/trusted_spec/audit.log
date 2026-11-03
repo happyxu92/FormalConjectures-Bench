@@ -1,0 +1,9 @@
+audited FCBTrustedSpec.ExpectedType: [Quot.sound, propext, Classical.choice]
+complete binder count: 3
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (A : Set ℕ),
+  A.Infinite →
+    Filter.Tendsto (fun N => ↑(A ∩ Set.Icc 1 ⌊N⌋₊).ncard / N) Filter.atTop (nhds 0) →
+      2 ≤ Filter.limsup (fun N => ↑((A + A) ∩ Set.Icc 1 ⌊N⌋₊).ncard / ↑(A ∩ Set.Icc 1 ⌊N⌋₊).ncard) Filter.atTop
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

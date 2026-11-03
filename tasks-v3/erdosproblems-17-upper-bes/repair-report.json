@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-17-upper-bes",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to instruction search. Actual ubuntu rg command in the current Harbor container found mathlib Filter.Tendsto; exit 0, no path errors. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-17-upper-bes/delivery.json. attempt-002 rechecked explicit paths and bound this successful actual search to unchanged current task files; see attempt-002/ordered-checks-1-4.json."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target has only ProblemImports and local Submission imports; no additional upstream precompile modules needed. Preserved lake build FormalConjectures.Util.ProblemImports and appended Dockerfile final RUN lake build +FormalConjecturesBench.Target after HOME/USER ubuntu. Same-task Harbor image sha256:7afbf0dd26fa526a8ebc670be37d16b9136bbd6205056b952c0beb077b300824 built successfully; actual ubuntu target build exit 0. attempt-002 reviewed raw build/history records and unchanged Dockerfile/imports; already-verified build was not repeated. See docker-history.txt, delivery.json and attempt-002/ordered-checks-1-4.json in evidence directory."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran skill check_unicode_header.py before semantic changes and again after completion: case no_issue, original header accepted, modified header and missing := rejected, checkers agree. No Unicode repair required. attempt-002 ran the skill script again with case no_issue. Latest evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-17-upper-bes/attempt-002/unicode.json"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated and precompiled FCBTrustedSpec from immutable golden input in matching x86_64 Lean 4.27.0 dependency image, without Submission. ExpectedType stores complete forall {A : Real}, 0 < A -> upper bound, universes []; temporary target and unrelated open theorem omitted. Independent transitive audit of ExpectedType/IsClusterPrime/clusterPrimeCount allows only standard axioms. Same source/artifact/manifest package synchronized and manifest hash pinned in both checkers. Fixed Spec and dependency paths precede candidate modules; sanitized Lean launch runs compiler as ubuntu and never regenerates Spec or loads candidate Lake configuration/cache. Original source/frozen guards, target axiom audit and canary retained. Same-task local Harbor build, Harbor-uploaded /tests and installed /opt hashes, both entries, reward 0 from original sorry, and 28 actual function cases for each entry all verified. attempt-002 read raw generation/build/function logs, reproduced generated source in an isolated host directory, and confirmed every runtime package file still matches actual Harbor hashes plus identical tracked implementation diff; no repeated Docker build or Lean execution was needed under the continuation instruction. Resume evidence: attempt-002/ordered-checks-1-4.json. Coverage includes complete type match, sorryAx rejection, canary, ordinary Mathlib import/def/lemma/instance, frozen-text-preserving HDiv instance type mismatch, module/cache/env poison, missing/tampered package rejection without regeneration. No original proof success is claimed. All required semantic paths tested; general external module/initializer hardening is outside scope. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-17-upper-bes/validation-coverage.json. Docker cleanup verified: removed own Spec container 6eb2d189cde1 and Harbor container 5ae1000f19f1, task image sha256:7afbf0dd26fa526a8ebc670be37d16b9136bbd6205056b952c0beb077b300824/tag erdosproblems-17-upper-bes-pi17-c7e42__env-main:latest, and network 0848275a00dbcf7b4467c19a23950413778ad8ee5577763aa77b4658664e9540. Shared pre-existing generation/cache image 0824de0f1647 retained; no other resources or shared build cache removed. Final docker ps/image/network inspect confirm own resources absent; cleanup.json contains commands and exit codes. attempt-002 created no resources and independently rechecked prior containers/image/tag/network absence with read-only inspect; see attempt-002/cleanup-verification.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Checked pinned upstream complete prefix and target, and read author-hosted Elsholtz 2003 paper (p.281 explicitly states BES bound for every positive exponent). Natural-index counting, integer prime differences, real exponent and A-dependent Big-O constant agree. Zero difference and optional p=2 affect no asymptotic issue. No mathematical input changed. Full analysis re-read and confirmed in attempt-002: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-17-upper-bes/attempt-002/statement-review.json"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "marked",
+      "note": "Marked metadata public_lean4_proof=unknown, status=blocked. Exact full task ID absent from skill CSV on repeat check. Prior multi-query GitHub/upstream/Mathlib/forum/author/Lean-candidate searches were reviewed; attempt-002 added actual Sourcegraph global alias searches including forks/archives, repeated current upstream and issue searches, and followed the sieve roadmap PR177 to its complete Lean source (headline declarations contain sorry and do not prove BES). No covering complete proof verified. GitHub code-search authentication/rate limits, grep.app/Brave HTTP429, Sourcegraph result-limit warnings and web-tool model errors leave existence unknown. Sources, candidate exclusions, URLs and limits: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-17-upper-bes/attempt-002/public-proof-review.json"
+    }
+  }
+}

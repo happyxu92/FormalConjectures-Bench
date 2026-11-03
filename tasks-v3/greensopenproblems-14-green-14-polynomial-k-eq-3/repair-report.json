@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-14-green-14-polynomial-k-eq-3",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 的搜索命令原先遗漏显式 .lake/packages；已补上 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages 三路径。在匹配依赖容器和本题实际 Harbor 子容器以 ubuntu 运行 rg，退出0，搜到 Mathlib/Data/Finset/Powerset.lean 的 card_powerset。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-14-green-14-polynomial-k-eq-3/attempt-002/search-path-check.log、delivery.json。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "实际 Target 仅导入 ProblemImports 和本地 Submission，无需追加其他上游模块；保留源码清理前 lake build FormalConjectures.Util.ProblemImports。原 Dockerfile 缺少末尾普通用户构建验证，现以 WORKDIR /app、HOME=/home/ubuntu、USER ubuntu、RUN lake build +FormalConjecturesBench.Target 结尾。当前本地 task Harbor --force-build 成功（退出0），新镜像 sha256:86d73178c84624ee9ddf2daf993e31f477e5c671250d51d87537181eeb4545ef；镜像历史确认最后一层执行该 RUN、用户ubuntu。容器内相同 ubuntu lake build 亦输出 Build completed successfully (7992 jobs)，只有原始 sorry 警告。没有放宽依赖权限。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-14-green-14-polynomial-k-eq-3/attempt-002/{harbor.log,harbor-image-history.log,ubuntu-build-check.log,owned-resources.json}。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "严格在第3项运行 skill/scripts/check_unicode_header.py 当前 task，退出0、case=no_issue；原始头通过，修改头和移除 := 拒绝，两份常量一致，无代理码点，无需Unicode修复。第4项同步checker时保留相同头值和冻结哈希。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-14-green-14-polynomial-k-eq-3/attempt-002/unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选加载后重新解析 GoldenCheck，可被实例/名称语义遮蔽。现提前从原始 golden（移除 Submission 导入）经 Lean parser/elaborator 提取完整类型，回滚临时目标环境后导出 FCBTrustedSpec.ExpectedType 定义值；临时目标及子声明未导出。全部前缀定义保留原名；原始无关开放问题占位仍在前缀中，但 ExpectedType、mixedMonoAPGuaranteeSet、W 的传递审计仅含 propext/Classical.choice/Quot.sound，不依赖 sorryAx 或该占位。universe_params=[]，完整 ¬∃d:ℕ、W 3 r、实数转换、Big-O atTop、r^d 保留。修复时在无网络容器 greensopenproblems-14-green-14-polynomial-k-eq-3-spec-a002-d7c41、既有匹配镜像 sha256:0824de0f16475f1f619701869e59de4e4ce3229bfce229a5fd16f88072c37e8f 执行 trusted_spec/reproduce.sh，独立 import AuditSpec.lean 成功；Lean4.27.0、x86_64 Linux、FC233a10e857ef78e79fd9fe661d37db724089170a、Mathlib a3a10db0e9d66acbebf76c5e6a135066525ac900。生成器初次遇到目标doc注释附着命令的语法错误，修复生成器后重新生成和审计成功，失败及成功日志均保留。\n两份 checker 内容/AST 和 Spec 包逐文件一致；manifest 固定哈希 8669acfab76ae3ae577ba3c6fa4fe976035ba2041ae3b9923c92332f53f5e98e，golden Target 9f1247bc39a2f68d83aabf33ebc5db297c7942ab6a091889711754a15adc3c4d，olean 5a1ff6813316e33645bc62db8aef83e1f1a8d0b019ce5b928a115afa9e9dabba。运行时校验清单、原始输入、工具链版本、平台、依赖修订及产物哈希，只加载预编译模块；固定 Spec 和依赖在候选路径之前，清除候选编译环境影响，不加载候选 Lake 配置/缓存，不生成或重编 Spec。临时 Target 先 Spec 再 Submission，使用同一前缀定义并保留 Filter/Set/Topology/Green14 上下文。完整类型检查引用根限定 ExpectedType 和目标；冻结、源码限制、公理审计和 canary 保留。普通 def/lemma/instance/import 规则保留，没有新增通用外部模块白名单或执行沙箱。\n验收通过 run-harbor.sh 使用本地 task、修改后的 Dockerfile/checker/包，独立子网10.247.143.0/24，Harbor nop 无模型调用、退出0、exception_info=null、reward0。实际子容器2c51fe937a5f 的 /tests 由 Harbor verifier 上传；/tests 与 /opt 安装的 checker、Spec、golden 和公开 Target 哈希全部对应本地。本地和正式入口各自使用 TESTS_DIR/trusted_spec；root bash /tests/test.sh 与 ubuntu /app/check.sh 退出1，只因原始目标 sorry，reward.txt=0。\n在同一 Harbor 子容器内以独立隔离 fixture 调用正式 /tests checker(root)和本地 /opt checker(ubuntu)，各27项、退出0。实际覆盖固定包加载/可信类型传递公理审计、ubuntu候选编译、完整类型比较、目标公理审计检测拒绝sorryAx、sorry canary；冻结前缀/头/赋值、越界源码、非Lean、symlink、冻结配置和helper axiom负例拒绝；普通def/lemma/instance允许。OfNat Nat 3实例偷换保持冻结文字不变，源码合法、编译成功，完整类型比较实际拒绝。候选同名源码/olean/cache及LEAN_PATH等环境变量不能替换Spec，--deps实际解析到当前入口的可信包。缺失/损坏产物和清单哈希错误明确失败，不触发重新生成。未构造原题无sorry完整证明，真实无sorry目标的成功公理审计分支未覆盖；占位fixture只用于检查机制，未修改生产Target/golden/检查逻辑。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-14-green-14-polynomial-k-eq-3/attempt-002/{spec-build-fixed.log,package.log,static-audit.json,delivery.json,validation-official.json,validation-local.json,validate.py,harbor-image-history.log}。Docker 清理完成：Spec 容器 f535521845ca、Harbor 容器 2c51fe937a5f 已 stop/rm；本次唯一任务镜像 sha256:86d73178c84624ee9ddf2daf993e31f477e5c671250d51d87537181eeb4545ef（greensopenproblems-14-green-14-polynomial-k-eq-3-a002-d7c41__env-main:latest）已删除；独立网络9c20ab052d2c（10.247.143.0/24）已移除。逐个 inspect 均确认资源不存在，docker ps -a/image ls/network ls已记录。既有共享 cache-smoke 镜像0824de0f1647保留且ID未变；未清理其他任务资源或共享构建缓存，未使用prune。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-14-green-14-polynomial-k-eq-3/attempt-002/cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已读 task.toml 指定锁定上游 GreensOpenProblems/14.lean、完整前缀及 AP 定义，核对 Green《100 open problems》Problem14 和《New lower bounds for van der Waerden numbers》arXiv:2102.01543 §1/Theorem1.1、§2.2/Theorem2.1。混合2色、区间Icc1N、AP长度基数约束、sInf最小值、自然数d、实数Big-O和atTop方向符合目标。下界 k^{c(log k/log log k)^{1/3}} 排除任意固定多项式；van der Waerden保证集合非空，r=0/1不影响渐近。未发现本题k=3变体的明显错误，metadata statement_status=consistent。公开Target、数学定义、golden和GoldenCheck均未改。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-14-green-14-polynomial-k-eq-3/attempt-002/mathematical-review.json；原论文成功访问，旧Cambridge链接404已由arXiv正文替代。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "先按完整task ID精确匹配 skill/references/public-lean4-proofs.csv（211行），未命中。随后多组检索题号/目标名/别名/Green与Hunter论文、GitHub/FormalConjectures/Mathlib/作者网页；实际读取锁定及当前上游、PR5445及两个formal_proof链接fork、Lean Genius Erdos721、OpenAI QuantitativeVanDerWaerden、相关refinement与Erdos190/984线索。上游及两fork目标仍sorry；Lean Genius依赖新增公理；其余是不同的多色同长度、canonical或起点约束命题，不能当作本目标完整证明。plby/lean-proofs源码仓库亦实际搜索，无匹配声明。未验证到覆盖当前完整命题且只依赖允许公理的公开完整证明。GitHub代码搜索需登录，REST代码/历史/tree请求403限流，无法完成全面代码/分支/fork发现；因此 metadata public_lean4_proof=unknown、status=blocked，而非断言不存在。未复制公开答案进task或镜像。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-14-green-14-polynomial-k-eq-3/attempt-002/{public-csv-match.json,public-proof-search.json,sources/retrieval-index.json,sources/followup-index.json}；成功网页检索的response ID和候选排除原因已记录。"
+    }
+  }
+}

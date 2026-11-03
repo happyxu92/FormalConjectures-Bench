@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Firoozbakht.firoozbakhtSeq: [propext, Quot.sound, Classical.choice]
+complete binder count: 3
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ),
+  3 < n →
+    (∀ (n : ℕ), Firoozbakht.firoozbakhtSeq (n + 1) < Firoozbakht.firoozbakhtSeq n) →
+      ↑(Nat.nth Prime (n + 1)) - ↑(Nat.nth Prime n) < Real.log ↑(Nat.nth Prime n) ^ 2 - Real.log ↑(Nat.nth Prime n)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

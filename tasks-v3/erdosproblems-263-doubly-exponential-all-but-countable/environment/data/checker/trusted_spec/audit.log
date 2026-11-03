@@ -1,0 +1,6 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos263.IsIrrationalitySequence: [Quot.sound, propext, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ᶠ (α : ℝ) in Filter.cocountable, α > 1 → Erdos263.IsIrrationalitySequence fun n => ⌊α ^ 2 ^ n⌋₊
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

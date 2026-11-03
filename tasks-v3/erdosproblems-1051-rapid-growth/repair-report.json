@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1051-rapid-growth",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages search path while preserving other instructions. Shell syntax and actual rg searches verified against package StrictMono/card_powerset definitions; instruction-search.log and delivery.json in /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1051-rapid-growth"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target imports only ProblemImports and local Submission, so no additional upstream precompile needed. Added final USER ubuntu / HOME / WORKDIR / RUN lake build +FormalConjecturesBench.Target; current local Harbor image build and separate ubuntu build passed (7992 jobs). Evidence: image-history.txt, ubuntu-lake-build.log, both exit 0."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Skill Unicode script run before semantic edits and again after completion: case=no_issue, original header accepted, changed header and missing := rejected; unicode.json and unicode-final.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Replaced candidate-environment re-elaboration via GoldenCheck with repair-time parser/elaborator extraction of complete ExpectedType from unchanged golden, excluding Submission. Compiled in matching Lean v4.27.0 x86_64 container with pinned dependency manifest; audited ExpectedType/GrowthCondition/ErdosSeries transitive axioms (only propext, Classical.choice, Quot.sound), complete parameters and empty universes, and absence of temporary target/subdeclarations. Both checker contents/AST and Spec packages match; immutable-before.json files unchanged. Fixed toolchain and trusted Spec/dependency paths precede candidate sources and ignore candidate Lake/cache/env; ordinary imports remain permitted without external-module whitelist. Current local Harbor image sha256:e34402b4b4a8bda29608974297c6f716233d12f23c591e7a268a2d96adb436f8 built from this task (nop only). Harbor supplied /tests; delivered checker, golden and package hashes match. Formal /tests/test.sh and ubuntu /app/check.sh both exit 1/reward 0 on original sorry as expected. Same-container actual-function supplements pass 27 cases on each entry: fixed Spec loading/audit, ubuntu candidate compilation, complete type match, sorryAx audit rejection/canary, unchanged-header LE-real instance semantic mismatch rejection, frozen/source-boundary negatives, candidate module/cache/env poisoning, absent/tampered artifact/manifest rejection without regeneration. --deps probes confirm /tests/trusted_spec and /opt/formal-conjectures-bench-checker/trusted_spec separately. No complete target proof or positive reward claimed. Initial AuditSpec Name syntax error was fixed and regenerated/audited; Harbor-kept stopped container restarted for supplements. Evidence: manifest.json, audit.log, spec-generation-final.log, delivery.json, validation-{official,local}.json, load-probe-*.log under /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1051-rapid-growth. Docker cleanup verified: removed own Spec container 20bf2d3f403d and Harbor container 01d506256780, task image sha256:e34402b4b4a8bda29608974297c6f716233d12f23c591e7a268a2d96adb436f8 and own compose network erdosproblems-1051-rapid-growth-pi-c842a1__env_default. Baseline shared precompile image and shared build cache retained untouched; no prune. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1051-rapid-growth/cleanup.json"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent; checked pinned upstream exact rapid_growth variant and paper arXiv:2601.21442 Introduction/Question 1/Theorem 2. StrictMono integers gives an eventually positive unbounded tail; quadratic recurrence gives double exponential lower bound. Finite rational initial terms, including Lean zero-division terms, preserve irrationality. No evident false statement found. GrowthCondition real-liminf limitation is absent from this target assumptions and does not invalidate it. No mathematics, public Target, GoldenCheck or frozen baseline changed. Details: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1051-rapid-growth/statement-review.json"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Exact task ID not in skill CSV. public_lean4_proof=false, status=searched after multiple successful default source_check query groups and fresh source retrieval. Inspected author/forum decoded proof, Seed-Prover, ErdosGraham, Jayyhk, PLBY, upstream, Mathlib, relevant PRs/fork heads and cited links. Related positive-natural liminf/general-weight proofs lack a full formal bridge to current integer quadratic-growth target. PRs #2727/#3249 retain sorry and only alter metadata; #6498 fixes a different GrowthCondition definition and retains sorry. No known complete proof found, not an assertion of nonexistence. Direct forum 403 recovered via public proxy; GitHub global code search 401, raw Google/Bing and explicit-model failures disclosed; accessible default searches and primary sources followed. No public proof compiled or bundled. Details: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1051-rapid-growth/public-proof-review.json"
+    }
+  }
+}

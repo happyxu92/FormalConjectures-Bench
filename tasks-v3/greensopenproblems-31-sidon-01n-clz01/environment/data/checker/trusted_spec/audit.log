@@ -1,0 +1,7 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited IsSidon: []
+audited Green31.F: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ C, ∀ (n : ℕ) (S : Finset (Fin n → ZMod 2)), IsSidon ↑S → ↑S.card ≤ C * (2 ^ n) ^ 0.5753
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

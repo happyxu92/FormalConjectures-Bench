@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-248-erdos-248",
+  "target_name": "Erdos248.erdos_248",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "72c079fbd912c2d4f436c813ed5b3be87112c7b69f15226a0151a7098a73b8ce",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "984f25bb17b7947da981d599077fc0f4e119bfbf5ab93362b7586ddd7196891d",
+    "FCBTrustedSpec.ilean": "36184ff58e254c77d7bef74591e54708b566b27d87f250696d05841e7fbc192a",
+    "FCBTrustedSpec.lean": "c38569a6c420141d88bb49d0e38c2fcab8548739e58e75e6635c0eecc411e516",
+    "FCBTrustedSpec.olean": "6c35b22976e00c812a8c70628011cb05afd7223018427f4757ed961219c2b79f",
+    "audit.log": "ac5693ce70ce36255602bafc5a8b8434e11f59146fe2b0d4c0f34011b644659c",
+    "generate.py": "3596f091dbd6c13986dd8245e719076d30d08780398a3429f42879fda049d6ee",
+    "reproduce.sh": "ede6a2a9636394e9b93ab45c02647e96820f334d723375ff378758ff00312c70"
+  },
+  "generation_image": "sha256:61cb28261d561ead59b610c79381197bacd75ba24cd659248ef63617bed05069",
+  "generation_command": "docker run -d --network none --name erdosproblems-248-erdos-248-pi248-62161ca1-spec --entrypoint sleep erdosproblems-247-strong-condition-pi247-8feadb83__env-main:latest infinity; docker cp generation-input erdosproblems-248-erdos-248-pi248-62161ca1-spec:/tmp/repair-bundle; docker exec -u root erdosproblems-248-erdos-248-pi248-62161ca1-spec bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Independent import of fixed artifacts. ExpectedType is a Prop-valued definition containing the entire closed proposition, with zero outer forall binders and no universe parameters; its value were transitively audited against standard allowed axioms. Temporary target and children absent."
+}

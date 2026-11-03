@@ -1,0 +1,7 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green14.mixedMonoAPGuaranteeSet: [propext, Quot.sound, Classical.choice]
+audited Green14.W: [Classical.choice, propext, Quot.sound]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∃ d, (fun r => ↑(Green14.W 3 r)) =O[Filter.atTop] fun r => ↑r ^ d
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

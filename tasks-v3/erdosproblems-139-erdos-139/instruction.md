@@ -13,7 +13,9 @@ target is `/app/FormalConjecturesBench/Target.lean`; helper lemmas may go in
 Verifier rules:
 
 - The frozen prefix, target marker, theorem name, binders, and theorem
-  proposition must remain unchanged.
+  proposition must remain unchanged. The verifier compares the full theorem type
+  against a precompiled trusted specification prepared from the original task;
+  helper names and instances must preserve that type and its prefix definitions.
 - Editable sources must stay within `/app/FormalConjecturesBench`; do not add
   Lean files elsewhere, symlinks, or non-Lean files in the editable subtree.
 - Ordinary helper `def`, `lemma`, `theorem`, `instance`, and attributes such as
@@ -43,7 +45,10 @@ without modifying the checker itself, the official verifier is intended to pass.
 For source search, prefer commands such as:
 
 ```bash
-rg --glob '*.lean' 'search term' /app /opt/formal-conjectures
+rg --glob '*.lean' 'search term' \
+  /app \
+  /opt/formal-conjectures \
+  /opt/formal-conjectures/.lake/packages
 ```
 
 Internet access is enabled for this task. You may use external literature and web resources, but the final Lean proof must pass the local verifier.

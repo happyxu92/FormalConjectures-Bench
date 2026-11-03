@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1063-cambie-upper-bound",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages alongside /app and /opt/formal-conjectures. Actual package searches succeeded in the precompile container and final Harbor child; search-check.log and delivery.json."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Actual Target imports are only ProblemImports and local Submission; no extra upstream precompile modules needed. Retained upstream lake build; added final RUN lake build +FormalConjecturesBench.Target after HOME/USER ubuntu. Current local Harbor build succeeded; image-history.txt records successful final layer and delivery image ID. No dependency permissions relaxed."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran the skill Unicode script on this task: case=no_issue, no modifications, both checkers and both golden inputs matched; unicode.json. Final checkers retain the exact original constants and policy AST."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated trusted ExpectedType from unchanged golden without Submission, using pinned Lean 4.27.0 x86_64 and dependency revisions; independent transitive audit of ExpectedType and Erdos1063.n passed with only allowed axioms and no exported temporary target. Full type ∀ {k : ℕ}, 3 ≤ k → n k ≤ k * (Finset.Icc 1 (k - 1)).lcm id; universes []. Manifest SHA256 1b215f6918f49be99092bfd5d50ffffd583e4a08225f2fab6c15c3f6842b450f. Both checker contents/AST and Spec packages identical. Fixed paths load only precompiled Spec, never regenerate it; normal imports retained without a generic external-module whitelist. Current local Harbor image sha256:bdebedf93178188e4920b2dec0cc13f3280a310843188402b614ae21638f6c44 built from this task; official /tests upload and /opt local package hashes match. Formal bash /tests/test.sh and ubuntu /app/check.sh each exit 1 on the original sorry, reward=0 (expected incomplete proof). Both actual-function suites completed 29 cases: trusted audit, ubuntu compilation, complete type comparison, sorryAx rejection, canary, frozen/source rejection, legal def/lemma/instance, unchanged-text LE Nat attack rejected by type mismatch and main(), candidate same-name cache/env shadowing, missing/corrupt artifact/manifest rejection with no regeneration. No required repair path remains untested; no complete proof acceptance claimed. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1063-cambie-upper-bound/{commands.txt,generation-fixed.log,package.log,static.json,delivery.json,validation-summary.json,validation-official.log,validation-local.log,harbor.log}. Initial reusable AuditSpec syntax error fixed and recompiled successfully. Cleanup verified: removed Spec container 643a37f99c3d, Harbor container 6a39a56ea9a9, task image sha256:bdebedf93178188e4920b2dec0cc13f3280a310843188402b614ae21638f6c44 (tag erdosproblems-1063-cambie-upper-bound-pi-f63a92__env-main:latest), and own network 46bb23b0ea4f. Shared baseline image 0824de0f1647 and build cache retained; no prune or unrelated resource removal. See cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Full definition and target match pinned upstream FormalConjectures/ErdosProblems/1063.lean. Natural m≥2k, exactly one failed divisor, hk:3≤k, upper-bound direction and inclusive lcm(1,...,k-1) agree with Cambie bound from https://www.erdosproblems.com/1063 (lcm including 1 is equivalent). Direct site HTTP 403; fresh jina.ai source retrieval succeeded. Pinned raw upstream retrieved. Supplementary exact-arithmetic witness sanity checks k=3..30 passed, not a general proof. No mathematical input changed; see mathematical-review.json and saved sources."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact complete task ID matched skills/lean-task-repair/references/public-lean4-proofs.csv; metadata public_lean4_proof=true. Sources: https://github.com/lfsong-google/formal-conjectures/blob/ff33e501bb78a90ae4703e22e052f8bb38e10146/FormalConjectures/ErdosProblems/1063.lean#L5541 and https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos1063_erdos_1063_variants_cambie_upper_bound.lean#L281 . By the skill, collection hit suffices; no further proof network search or compilation claimed. No public answer included in task/image. Evidence: public-proof-collection-match.json."
+    }
+  }
+}

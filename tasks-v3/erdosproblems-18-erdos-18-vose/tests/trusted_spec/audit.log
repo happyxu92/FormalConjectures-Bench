@@ -1,0 +1,6 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos18.practicalH: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ C, 0 < C ∧ ∃ᶠ (m : ℕ) in Filter.atTop, m.IsPractical ∧ ↑(Erdos18.practicalH m) < C * Real.log ↑m ^ (1 / 2)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

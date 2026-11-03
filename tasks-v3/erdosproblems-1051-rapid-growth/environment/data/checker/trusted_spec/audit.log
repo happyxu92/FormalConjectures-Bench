@@ -1,0 +1,7 @@
+audited FCBTrustedSpec.ExpectedType: [Classical.choice, propext, Quot.sound]
+audited Erdos1051.GrowthCondition: [propext, Quot.sound, Classical.choice]
+audited Erdos1051.ErdosSeries: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (a : ℕ → ℤ), StrictMono a → (∃ C > 0, ∀ (n : ℕ), ↑(a (n + 1)) ≥ C * ↑(a n) ^ 2) → Irrational (Erdos1051.ErdosSeries a)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

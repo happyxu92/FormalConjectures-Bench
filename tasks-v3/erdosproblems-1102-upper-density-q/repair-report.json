@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1102-upper-density-q",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式覆盖 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages；最终 Harbor 容器 ubuntu 实际 rg 找到 packages/mathlib 中的 StrictMono 定义，退出 0。证据 delivery-accept.json。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "实际 Target 仅导入 ProblemImports 与本地 Submission；上游预编译含 ProblemImports，无额外上游 import。已补 Dockerfile 末尾 HOME=/home/ubuntu、USER ubuntu 下的 lake build +FormalConjecturesBench.Target；当前本地 task Harbor 构建通过，见 image-history-accept.txt、harbor-accept.log。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已运行 skill check_unicode_header.py；case=no_issue，原始头、修改头和删除 := 的检查通过；未发现代理码点。见 unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重新解析 GoldenCheck，已替换为提前生成的可信完整 ExpectedType 比较；保持公开 Target、GoldenCheck、golden 及冻结基线不变。以匹配 Lean 4.27.0/x86_64、固定上游与 Mathlib 修订的干净 Docker 环境，从完整 golden 前缀和目标 parser/elaborator 提取全部 3 个 binder、universes=[]，临时目标未导出；ExpectedType、P/Q 的传递公理审计仅含允许的标准公理。两份 checker 字节/AST 和 Spec 包一致；固定 /tests/trusted_spec 或本地 /opt 包，清单 SHA256=3367e4284ade8028db117933868cafe04a14f38ee33c798fbf29077ad5738dfe；olean SHA256=1d148ea8354a08656e462c41b5d44cf61898d97f1d2d292075cf0e6bd2a0ef45。最终当前 task Harbor 镜像 sha256:0b686a1c966633cea4b84c25666166f5ceda12362c0f9f93469eb6d0e5a28883；正式 /tests/test.sh 与 ubuntu /app/check.sh 均因原始 sorry 返回 1，reward=0（预期证明失败）。同一 accept 子容器两种实际 checker 路径各 29 项函数补测通过：固定 Spec 加载与审计、ubuntu UID1000 编译、完整类型比较、sorryAx 拒绝及 canary、冻结/越界拒绝、冻结文字不变的 limsup 同名语义攻击能编译但类型比较拒绝、候选同名模块/cache/env 无法覆盖 Spec、缺失/损坏产物与清单明确拒绝且无重新生成。没有未覆盖的要求路径；未提供原题完整证明。一次重验遇 Docker 地址池耗尽，清理本 agent 第一轮已完成资源后重验成功。证据根目录 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1102-upper-density-q，命令与生成输入见 prepare.py、generation-input/trusted_spec/reproduce.sh、manifest.json，执行/覆盖见 harbor-accept-config.json、coverage.json、delivery-accept.json、static.json。本次 spec 容器 09e3538ac55a、第一轮 d5cbaa35fb9b 和最终 accept 容器均已移除；114da8ff、114da8ff-final、114da8ff-accept 三个镜像 tag/ID 及本次网络均已不存在，保留共享基镜像和构建缓存；见 cleanup.json、r1-cleanup.log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "仅检查并标记 statement_status=consistent。上游固定源码与本题定义/上密度上界匹配；Q 的无限见证可选共同有限平方模数同余类，排除每个素数平方的一个剩余类，由 CRT 与 Euler 乘积支持 6/π² 上界，未发现明显反例或定义错误。原题网页本次 HTTP403，已记录访问限制；读取了固定上游完整源码及当前公开 problems.yaml 的 1102 记录。未修改数学输入。见 math-review.txt、math-fetch.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true；先按完整 task ID 精确命中 skill references/public-lean4-proofs.csv，来源 https://github.com/Woett/Lean-files/blob/1e075c4f6e8a907b924647fa88238f978e941742/ErdosProblem1102PropertyQDensity.lean 。按 skill 命中即确认，无需再次联网检索；已标记 task.toml，未替换目标、未将答案放入镜像，未声称在本题环境编译该公开证明。见 public-csv-match.json。"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-247-strong-condition",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Explicit /app, /opt/formal-conjectures and /opt/formal-conjectures/.lake/packages paths retained. Attempt-002 verified current command syntax and prior same-task ubuntu rg exit 0 with actual package def IsCoprime match. Evidence: attempt-002/step1.json in the run task evidence directory."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Actual Target imports only ProblemImports and local Submission; no additional upstream modules required. Dockerfile retains final USER ubuntu RUN lake build +FormalConjecturesBench.Target. Attempt-002 checked actual prior local Harbor image history and ubuntu build exit 0; no repeated build for unchanged artifacts. Evidence: attempt-002/step2.json."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Required skill Unicode script executed again in attempt-002: case=no_issue, verification=passed, no changes. Both original heads and negative header/assignment boundaries passed. Evidence: attempt-002/unicode.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Attempt-002 audited current checker, generator, manifest and package hashes against the actual same-task Harbor delivery and raw runtime logs; identical artifacts, both checker content/AST and packages match. Prior locked Lean 4.27.0 x86_64 precompilation/audit retained: complete n, hn, h type, no universes, standard allowed axioms only. Current local-task Harbor image sha256:61cb28261d56 built; /tests upload and /opt package identities verified. Official/local entries exit 1 and reward 0 on original sorry; both actual-function supplements exit 0, covering fixed Spec load/audit, observed ubuntu uid 1000 compile, complete type comparison, sorryAx rejection, canary, frozen/tree negatives, name/cache/environment shielding and missing/tampered package rejection without regeneration. Frozen-text Transcendental:=True attack compiled then failed full type comparison and actual main. Normal import rules retained; no general external-module whitelist added. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-247-strong-condition/attempt-002/step4-evidence-recheck.json. Original 15 immutable files unchanged. Prior own containers 621584e399ab and 5cf176393a43, task image 61cb28261d56 and network were removed; attempt-002 reconfirmed absent, created no Docker resources, and left shared resources/cache untouched. Resource evidence: attempt-002/resource-verification.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Re-read full Target, original problem LaTeX and Erdős–Graham 1980 printed p.61 image; known strong-condition variant matches pinned source. Checked quantifiers, StrictMono, geometric convergence, rpow/toEReal and finite index/initial-zero shifts. statement_status=consistent retained; mathematical inputs unchanged. Evidence: attempt-002/step5.json and prior statement-review.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Full task ID again absent from skill CSV. Prior multi-source proof searches and candidate exclusions reviewed; supplementary searches followed new TauCeti lacunary-series leads, whose actual Lean source covers only c^k with c>=3, not this arbitrary-sequence target. Upstream/PRs 2540/3065 retain sorry; lean-genius general theorem uses a new axiom, ratio-growth/factorial proofs are narrower. Claimed complete proof in prize PR 3080 still points to HTTP 404 source; pinned/current tree, comments and global code APIs remain 403/rate-limited. No complete target proof verified or compiled; metadata remains unknown/blocked, not a claim of nonexistence. Evidence: attempt-002/public-proof-review.json and prior public-proof-review.json."
+    }
+  }
+}

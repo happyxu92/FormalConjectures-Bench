@@ -1,0 +1,35 @@
+"""Repair-time extraction with Lean's declaration parser/elaborator; never run by verifier."""
+from pathlib import Path
+import json
+pkg = Path(__file__).resolve().parent
+golden = (pkg.parent/'golden_env/FormalConjecturesBench/Target.lean').read_text()
+prefix, rest = golden.split('-- FORMAL_CONJECTURES_BENCH_TARGET_BEGIN', 1)
+prefix = prefix.replace('import FormalConjecturesBench.Submission\n', '')
+# The final doc comment belongs to the target declaration, not the extraction command.
+prefix = prefix[:prefix.rindex('/--')]
+target = rest[:rest.rindex('end Erdos1051')].strip()
+source = prefix + '''
+-- Elaborate the complete trusted declaration, save its type and universes,
+-- discard the temporary declaration and its placeholder proof, export a definition.
+open Lean Elab Command in
+run_cmd do
+  let original ← getEnv
+  let stx ← ofExcept <| Parser.runParserCategory (← getEnv) `command ''' + json.dumps(target, ensure_ascii=False) + '''
+  elabCommand stx
+  let some info := (← getEnv).find? `Erdos1051.erdos_1051.variants.rapid_growth
+    | throwError "missing temporary target"
+  let expected := info.type
+  let levels := info.levelParams
+  setEnv original
+  liftTermElabM do
+    addAndCompile <| .defnDecl {
+      name := `FCBTrustedSpec.ExpectedType
+      levelParams := levels
+      type := ← Meta.inferType expected
+      value := expected
+      hints := .abbrev
+      safety := .safe
+    }
+end Erdos1051
+'''
+(pkg/'FCBTrustedSpec.lean').write_text(source)

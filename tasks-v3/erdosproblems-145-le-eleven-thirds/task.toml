@@ -20,6 +20,12 @@ oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
 verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
+statement_status = "consistent"
+statement_note = "Acceptable le_eleven_thirds variant of Erdős 145, not the full open problem. Chan 2023 (arXiv:2310.08448), Theorem 1 and equation (3), prove the wider range 0 <= alpha < 15/4; this includes the retained endpoint 11/3. The older Huxley citation alone only proves alpha < 11/3. Mathematical inputs are unchanged."
+public_lean4_proof = false
+public_proof_search_status = "searched"
+public_proof_search_note = "Exact task ID absent from skill CSV. Multi-query public search and actual Lean source review found no known complete proof. Upstream and PRs 2515/2836/3352 retain sorry; Nexus output archive has no 145 proof. Pandey short-interval formalizations and Lean 3 squarefree-density result do not prove gap-moment convergence. GitHub code/history/branch API rate limits and erdosproblems main/forum HTTP 403 restricted indexing; raw PR refs, source archives, arXiv and /latex/145 were accessible. This is not a claim of nonexistence."
+public_proof_urls = []
 
 [verifier]
 timeout_sec = 7200.0

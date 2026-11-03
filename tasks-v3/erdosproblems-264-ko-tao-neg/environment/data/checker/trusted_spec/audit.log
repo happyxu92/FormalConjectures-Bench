@@ -1,0 +1,11 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos264.IsIrrationalitySequence: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {a : ℕ → ℕ},
+  StrictMono a →
+    0 ∉ Set.range a →
+      (Summable fun x => 1 / ↑(a x)) →
+        0 < Filter.liminf (fun n => ↑(a n) ^ 2 * ∑' (k : ↑(Set.Ioi n)), 1 / ↑(a ↑k) ^ 2) Filter.atTop →
+          ¬Erdos264.IsIrrationalitySequence a
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

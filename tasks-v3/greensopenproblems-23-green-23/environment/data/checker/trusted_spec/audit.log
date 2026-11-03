@@ -1,0 +1,5 @@
+audited FCBTrustedSpec.ExpectedType: [propext]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+True ↔ ∀ (k : ℕ) (c : ℕ → Fin k), ∃ x y, 0 < x ∧ 0 < y ∧ c x = c y ∧ IsSquare (x ^ 2 + y ^ 2)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]

@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = true
+public_lean4_proof_status = "found"
+public_lean4_proof_urls = ["https://github.com/danielpuri1901/erdos-lean-formalization/blob/69d53449a4fb7566edc668c65bb0f756dd245ae2/Solution.lean#L131"]
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/Wikipedia/GaussCircleProblem.lean"

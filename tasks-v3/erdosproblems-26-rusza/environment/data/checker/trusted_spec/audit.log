@@ -1,0 +1,9 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos26.IsThick: [propext, Quot.sound, Classical.choice]
+audited Erdos26.MultiplesOf: []
+audited Erdos26.IsBehrend: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ A, StrictMono A ∧ ¬Erdos26.IsThick A ∧ ∀ (k : ℕ), ¬Erdos26.IsBehrend fun x => A x + k
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

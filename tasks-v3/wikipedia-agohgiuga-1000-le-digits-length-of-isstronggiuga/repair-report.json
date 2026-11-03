@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-agohgiuga-1000-le-digits-length-of-isstronggiuga",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to instruction.md rg command. Actual ubuntu rg finds mathlib card_powerset with all three paths in the current Harbor container; see /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-agohgiuga-1000-le-digits-length-of-isstronggiuga/attempt-002/delivery.json."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target imports only ProblemImports and local Submission; no extra upstream modules. Preserved upstream precompile command; added final USER ubuntu/HOME/WORKDIR lake build +FormalConjecturesBench.Target. Current local task Harbor build succeeds; final RUN and user recorded in image-history.txt; image sha256:335748b3cd310befe9b4905dcc01b3a2c97ae81d244409e1db8124b4fbc40582."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran skill check_unicode_header.py: case no_issue; original/header mutation/assignment checks pass. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-agohgiuga-1000-le-digits-length-of-isstronggiuga/attempt-002/unicode.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Original checker re-elaborated GoldenCheck after editable Submission. Generated/precompiled fixed complete Spec from immutable golden in locked Lean 4.27.0 Linux x86_64 environment, excluding Submission. ExpectedType has a and ha, no universe parameters; transitive audit permits only propext/Classical.choice/Quot.sound. Manifest ed2ffadea1e5a719b408de23278749eccd2b34df5752c5a412c17673358407d5; two checkers and Spec packages identical. Runtime imports fixed artifact before helpers; temporary prefix from Spec; full root-qualified type comparison; existing source/freeze/axiom/canary checks retained and normal imports supported. Current task Harbor uploads /tests; /tests/test.sh and ubuntu /app/check.sh exit 1 for original sorry (reward 0, expected). Both actual function suites exit 0: fixed import/identity, ubuntu compilation, full type match, sorryAx rejection, canary, freeze/source negatives, frozen-text LE Nat instance attack rejected by type mismatch, same-name cache/environment shadowing rejected, missing/tampered packages fail without regeneration. No original proof claimed. Evidence /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-agohgiuga-1000-le-digits-length-of-isstronggiuga/attempt-002/{delivery.json,validation-official.log,validation-local.log,package-summary.json,resources-created.json}. Cleaned own containers 7ae7fdb3e1c (Spec) and 1219037c7d8b (Harbor), task image sha256:335748b3cd310befe9b4905dcc01b3a2c97ae81d244409e1db8124b4fbc40582 and task network; confirmed absent. Earlier image sha256:521577d1787d62d86dc1bd48328cbf6c8b7c8f2f1c205d4cfe261a00907464aa was already absent. Shared pre-existing cache-smoke generation image and other agents/resources left untouched; no prune."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent. Inspected entire golden prefix and pinned upstream target. Composite plus sum i^(a-1) over 0<i<a matches strong Giuga counterexample; decimal digits >=1000 is a valid known lower-bound variant, not the open conjecture. MathWorld https://mathworld.wolfram.com/GiugasConjecture.html gives no exceptions below 10^1000 and stronger later bounds. No statement/definition/Target/golden/GoldenCheck/frozen hash changes. Details /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-agohgiuga-1000-le-digits-length-of-isstronggiuga/attempt-002/mathematical-audit.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "public_lean4_proof=unknown, status=blocked. Exact full task ID not in skill CSV. Searched multiple GitHub issue/repository/theorem-name queries, upstream and forks, local mathlib, general search engines. Read raw PRs 2482/2983/3019/7660 and mo271: exact 1000-digit target still sorry. Related Carmichael/criteria/nine-prime-factor proofs do not cover target; math_gkm Agoh exercise is unrelated polynomial mathematics. No accessed full target proof found, but GitHub code/API rate limits and Google/DDG/GitHub login/JS challenges prevent a conclusive public search. No public proof compiled or inserted. Detailed sources, exclusions and access limits: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-agohgiuga-1000-le-digits-length-of-isstronggiuga/attempt-002/public-proof-audit.json."
+    }
+  }
+}

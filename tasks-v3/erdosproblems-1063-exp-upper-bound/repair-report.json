@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1063-exp-upper-bound",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to instruction.md search command. Actual rg searches found known package definitions with exit 0 in the matching Docker environment and final Harbor container; search-path-validation.log and delivery.json."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target imports only ProblemImports and local Submission; no extra upstream precompile target needed. Retained ProblemImports precompile before cleanup/user switch; appended final USER ubuntu lake build +FormalConjecturesBench.Target. Current local Harbor image built; independent same-container ubuntu build passed with 7992 jobs, exit 0 (ubuntu-import-build.log)."
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Executed skill check_unicode_header.py; case unicode_repaired, exit 0. Repaired paired surrogate encoding of 𝓝 in both EXPECTED_HEADER constants; original trusted header accepted and changed header/missing assignment rejected. unicode.json preserves original discovery and script verification."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated full ExpectedType from immutable golden in clean matching Docker dependency environment, without Submission import or candidate Lake/cache; removed temporary target before export. Independent kernel import audited ExpectedType and n: only propext/Classical.choice/Quot.sound; universe parameters []. Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release); platform x86_64; dependency revisions and input/source/artifact hashes in both identical pinned manifests. Fixed SPEC_DIR uses /tests formally and /opt/formal-conjectures-bench-checker locally; fixed toolchain/import precedence protect Spec and dependencies while normal imports remain allowed. Complete checker bytes/AST and Spec packages match; all 15 immutable files unchanged. Actual current-local-task Harbor image sha256:84652a7e31bcc6418cb176598acd3d249af1eb5cb5697157f3a8f25391d0766e; command in commands.txt. /tests/test.sh and ubuntu /app/check.sh exit 1 on original sorry; reward 0, not a completed proof. Direct actual-function coverage passed 29 cases per location, including trusted audit/import, ubuntu build, complete type equality, sorryAx rejection, allowed-axiom audit, canary, frozen/source negatives, valid but semantically altered LE ℝ instance rejected for full type mismatch, candidate same-name/cache/env poison, and missing/tampered package failure without regeneration. Logs: validation-official/local.log, delivery.json, final-verification.json under /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1063-exp-upper-bound. Default Docker address pool exhaustion resolved with task-only subnet overlay; no extra privileges or mounts. Docker cleanup verified complete: removed Spec container 16df2fd29c9a and Harbor container ac0e913b1100, task image sha256:84652a7e31bcc6418cb176598acd3d249af1eb5cb5697157f3a8f25391d0766e, and dedicated erdosproblems-1063-exp-upper-bound-pi-exp-4d92b7__env_default. Failed-attempt image IDs sha256:468ee879483eb5a638fba2be65601d9413d1d9f3a4daff5437284921ce91b8f4, sha256:b5981bcb2d55fda71df9e5a5c394facfcd4081f495a72c4b9a449e100fff3ade verified absent. Precreated network was removed by Harbor before final creation. Shared pre-existing generation image and all other resources/caches untouched; no prune."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Full n definition and exact target agree with pinned upstream 1063.lean. Fresh primary source credits Cambie with n_k <= k*lcm(2,...,k-1) <= exp((1+o(1))*k); this is the known exponential variant, not the open better-upper-bound problem. Quantifiers, real-valued f, asymptotic limit, subtraction and finite k reviewed: n 0=n 1=0 by empty Nat.sInf, so endpoints do not contradict the bound. No mathematical inputs changed. Direct website HTTP 403/Cloudflare; primary content successfully retrieved through r.jina.ai; pinned raw upstream succeeded. mathematical-review.json and math-source-access.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact full task ID matched skill references/public-lean4-proofs.csv; public_lean4_proof=true and status known recorded in task.toml. Source: https://github.com/lfsong-google/formal-conjectures/blob/ff33e501bb78a90ae4703e22e052f8bb38e10146/FormalConjectures/ErdosProblems/1063.lean#L5545. Per skill no further network revalidation required for a collection hit; not compiled in this task and not copied into the image. Evidence: public-proof-collection-match.json."
+    }
+  }
+}

@@ -1,0 +1,7 @@
+audited FCBTrustedSpec.ExpectedType: [propext]
+audited Erdos1074.PillaiPrimes: [propext]
+audited Erdos1074.EHSNumbers: [propext]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Erdos1074.PillaiPrimes.Infinite
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]

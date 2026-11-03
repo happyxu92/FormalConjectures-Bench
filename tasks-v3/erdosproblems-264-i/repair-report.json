@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-264-i",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added the explicit /opt/formal-conjectures/.lake/packages search path. Executed the documented rg command as ubuntu in this task Harbor container; it found the known package definition Irrational. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-264-i/attempt-002/instruction-search.log"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Actual Target imports only ProblemImports and local Submission; no extra upstream imports were needed. Preserved upstream ProblemImports precompilation and added the final Dockerfile RUN lake build +FormalConjecturesBench.Target after USER ubuntu. Current local-task Harbor force_build succeeded, image sha256:ee462f56e1aafaf1bc681c099842a4c11916e8792ef27c055d06fdeb55323be9. Evidence: harbor-retry.log, image-history.txt and verification-evidence.json under /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-264-i/attempt-002"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran the skill Unicode script before semantic edits and again after all edits: case=no_issue, no surrogate issue, original header accepted and changed header/missing assignment rejected, both copies equal. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-264-i/attempt-002/unicode-final.json"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Original checker elaborated the expected statement after editable imports. Generated and precompiled the complete FCBTrustedSpec.ExpectedType from unmodified golden without Submission; independently audited ExpectedType and its prefix predicate (only propext, Classical.choice, Quot.sound), temporary target absent, universes=[]. Lean 4.27.0/linux-x86_64 and pinned dependency revisions are recorded in the identical packages and manifest. Pinned manifest hash bb025d61bedaa68089eed2a2d587bd13de79bf60497b429510052920a63334c8. Both checker contents/AST and packages match. Fixed Spec/dependency paths precede candidates; no runtime generation or candidate Lake is used. Current local task Harbor build and delivered hashes passed. Official /tests and ubuntu local /opt entries exited 1 with expected original sorry rejection, reward=0. Actual-function supplements for both packages exited 0 and exercised ubuntu compilation, trusted audit, complete type check, axiom rejection, canary, frozen/source negative cases, same-name cache/environment resistance, missing/tampered artifacts and no regeneration. A legal pow-instance substitution retained all frozen text and compiled with allowed axioms but was rejected by complete type comparison and full checker. Original theorem was not proved. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-264-i/attempt-002/verification-evidence.json. Docker cleanup complete: stopped and removed erdosproblems-264-i-spec-a002-c91e8a, erdosproblems-264-i-a002-c91e8a__env-main-1; removed task image sha256:ee462f56e1aafaf1bc681c099842a4c11916e8792ef27c055d06fdeb55323be9 and tag erdosproblems-264-i-a002-c91e8a__env-main:latest; removed dedicated network erdosproblems-264-i-a002-c91e8a__env_default. Inspect checks confirm all absent. Shared pre-existing generation base image erdos1062-import-20261102__env-main:latest retained; no shared cache, other-task resource or baseline was removed. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-264-i/attempt-002/cleanup.json"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked consistent, preserving all mathematics. Exact pinned upstream target is the negation for powers of two. Theorem 2 of https://arxiv.org/html/2406.17593v2#Thmtheorem2 gives a bounded positive-integer perturbation with rational reciprocal sum, with C=3 for powers of two. This meets the Lean natural domain and pointwise nonzero conditions; extending to n=0 adds a rational initial term. Reciprocals are dominated by a summable geometric series. No obvious invalidity found. The problem website and Tao blog returned 403; the primary paper and pinned upstream were readable. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-264-i/attempt-002/statement-and-public-proof-review.json"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true, status=found. Exact task-column match for erdosproblems-264-i in the skill references/public-lean4-proofs.csv: https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos264b.lean#L656 . No further search required by the skill. Linked source additionally retrieved and the not_erdos_264 declaration inspected; not compiled in this task environment and not included in the image. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-264-i/attempt-002/public-csv-match.json"
+    }
+  }
+}

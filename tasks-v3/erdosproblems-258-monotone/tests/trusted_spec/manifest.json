@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-258-monotone",
+  "target_name": "Erdos258.erdos_258.variants.Monotone",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "f6cc200c8859233d55bb533c7704be0193dd61bc8394de32747d552be4dedff9",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "d276f6f44630632ea79dc40f124376f81a48d4f739adae4d7107cd3b5f54f8be",
+    "FCBTrustedSpec.ilean": "3fa66aa3cc59537f5c391b47213280283195f96ac77b62f107da8ef5cb8515a8",
+    "FCBTrustedSpec.lean": "c27f8759ca356a83343881ac82b99f84e27444f824eb85617e663995063c31cb",
+    "FCBTrustedSpec.olean": "a5f16737fa3b663ba01312480c0adad252f0ecd2094c4886ca037e89123e7cee",
+    "audit.log": "16194d37759f7efcc6fec6c5cb6fa1b8f3a12bc9f54befd38385b9b48e5e7b17",
+    "generate.py": "b1a79bf15e59769bb8d9c57f6b88aa797c9e05abd74ebd3af9213b13a0612cfa",
+    "reproduce.sh": "ede6a2a9636394e9b93ab45c02647e96820f334d723375ff378758ff00312c70"
+  },
+  "generation_image": "sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a",
+  "generation_command": "docker run --network none --name erdosproblems-258-monotone-spec-a002-c9d47e --entrypoint sleep erdos1062-import-20261102__env-main:latest infinity; docker cp trusted golden_env and trusted_spec to /tmp/repair-bundle/; docker exec -u root erdosproblems-258-monotone-spec-a002-c9d47e bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Independent import; complete Iff type; RHS a : Nat → Int and all three hypotheses (4 binders); no universes; temporary target and child declarations absent; ExpectedType and its transitive dependencies use only propext/Classical.choice/Quot.sound. The unrelated original prefix theorem erdos_258 is retained exactly and is not a dependency of ExpectedType."
+}

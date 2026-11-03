@@ -1,0 +1,10 @@
+binder 0: A, Lean.BinderInfo.default, Set ℕ
+binder 1: hA₂, Lean.BinderInfo.default, Erdos41.NtupleCondition #0 2
+binder 2: hA, Lean.BinderInfo.default, Set.Infinite #1
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos41.NtupleCondition: [propext, Quot.sound]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (A : Set ℕ),
+  Erdos41.NtupleCondition A 2 → A.Infinite → Filter.liminf (fun N => ↑(A ∩ Set.Icc 1 N).ncard / √↑N) Filter.atTop = 0
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -20,6 +20,11 @@ oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
 verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
+statement_status = "consistent"
+statement_status_note = "Prime-square example variant; checked against Erdos-Sarkozy (1970), p. 98, and the pinned upstream statement. No mathematical inputs changed."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task-ID CSV miss. Reviewed upstream, mo271 linked revisions, Mathlib, lean-genius, and baobingzhang sources; no complete proof of this exact example was verified. Awards PR 3463 claims a plby/lean-proofs formalization, but pinned and main Erdos12.lean URLs return 404 and their directory listings omit the file. GitHub code search requires login; some APIs are rate-limited. See repair-report.json and this task's evidence directory."
 
 [verifier]
 timeout_sec = 7200.0

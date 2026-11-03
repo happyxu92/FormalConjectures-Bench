@@ -1,0 +1,7 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos200.longestPrimeArithmeticProgressions: [Classical.choice, propext, Quot.sound]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ o, ∃ (_ : o =o[Filter.atTop] 1), ∀ (n : ℕ), ↑(Erdos200.longestPrimeArithmeticProgressions n) ≤ (1 + o n) * Real.log ↑n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

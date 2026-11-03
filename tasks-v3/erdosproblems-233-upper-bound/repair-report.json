@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-233-upper-bound",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages path. Shell command successfully finds mathlib card_powerset as ubuntu in the current Harbor container; see instruction-search-initial.json and delivery.json."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Original Dockerfile omitted final ubuntu Target build. Actual imports are only ProblemImports and local Submission, so no additional upstream precompile is needed. Kept lake build FormalConjectures.Util.ProblemImports and appended RUN lake build +FormalConjecturesBench.Target after WORKDIR /app, HOME=/home/ubuntu, USER ubuntu. Current local task Harbor image built successfully; explicit ubuntu-target-build.exit=0; see harbor-image-history.txt and ubuntu-target-build.log."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran the specified check_unicode_header.py before semantic edits and again after delivery: case=no_issue, both copies and all golden heads match; original header accepted, modified header and removed assignment rejected. See unicode.json and unicode-final.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Original checker elaborated GoldenCheck after candidate imports. Extracted entire closed target type with Lean parser/elaborator from original golden without Submission, reset the temporary target environment, compiled and independently audited ExpectedType; one RH binder, no universe parameters, only propext/Classical.choice/Quot.sound in its transitive dependencies. Two synchronized packages and checkers, fixed toolchain/dependency/module paths, candidate compilation as observed uid 1000, full type comparison, original source/freeze/axiom/canary checks retained. Manifest SHA256=1eda680e351804ec10214330abbcd0b173f6edf7abc423c7aee3cf58d71e9eb9; Lean=Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release); generation image=sha256:0824de0f16475f1f619701869e59de4e4ce3229bfce229a5fd16f88072c37e8f; Harbor image=sha256:060db967e55a3281e92363ce6d437435a4429fab17ce599fe7d4d1e1ce8fe4f3. Harbor used current local task via harbor-config.json, uploaded /tests matches local, /opt copy also matches. Formal /tests/test.sh and ubuntu /app/check.sh each exit 1/reward 0 due original sorry as expected; 30 actual-function cases per entry pass, including placeholder complete-type acceptance and sorryAx rejection, canary, frozen/out-of-tree rejection, source-legal False-shadowed RH theorem with clean axioms rejected by full type comparison, Spec/cache/env shadowing and missing/hash-corrupt artifact rejection without regeneration. See generation.log, tests/trusted_spec/audit.log, delivery.json, validation-official-coverage.json, validation-local-coverage.json and static-verification.json. Initial exec on Harbor-stopped container failed, then same container restarted and all checks rerun successfully. Docker cleanup: stopped and removed both owned containers erdosproblems-233-upper-bound-spec-233ub-20261102-180825 (9bc6aa117e7d6d208bbe32b5ce40c602c67cceda5ae94b041148fdeec1a2ef94) and erdosproblems-233-upper-bound-233ub-20261102-180825__env-main-1 (0793e9d45f7c2d585244548533e03298883800d4df839580499eaa06b2e9569f); removed task image sha256:060db967e55a3281e92363ce6d437435a4429fab17ce599fe7d4d1e1ce8fe4f3 and its task tag, and dedicated network erdosproblems-233-upper-bound-233ub-20261102-180825__env_default. Verified absent by docker ps/inspect. Pre-existing generation image and all shared/other-agent resources/cache preserved. See cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Read pinned upstream, full prefix/target and actual primeGap/RiemannHypothesis definitions; read erdosproblems.com/233?ref=lean source explicitly describing this RH-conditional O(N(log N)^4) result of Cramer. Correct first-N consecutive prime gaps, Real sum, Big-O direction and atTop scope; finite N=0/1 do not matter. Legitimate known variant of the open log-squared problem. No obvious false definition/statement found. Mathematical inputs unchanged. Source/PDF access limitations and details in statement-review.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Exact full-ID CSV lookup missed. Substantial theorem/alias/prime-gap/RH/Cramer searches across upstream, GitHub, Mathlib and proof repositories found no known public complete proof covering this target. Read relevant PR/fork sources: 2534/3059 retain sorry; AlphaProof 3738 proves the lower bound only; award 2172 contains True examples. Resolved award 3413 claim by downloading complete plby/lean-proofs pinned archive: claimed Erdos233 file absent; all 43587 Lean files searched and matches concern other problems. Marked public_lean4_proof=false, status=searched; this is not proof of nonexistence. GitHub code/core API rate limits and other web restrictions documented, with successful source/archive alternatives. No public target proof compiled. See public-proof-csv.json, public-proof-review.json, proof-source-fetch.json and plby-source-scan.json."
+    }
+  }
+}

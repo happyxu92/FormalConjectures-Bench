@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-124-melfi-construction",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added the explicit /opt/formal-conjectures/.lake/packages path to instruction.md. The exact three-path rg command ran as ubuntu in the current Harbor container and found def StrictMono in Mathlib/Order/Monotone/Defs.lean, exit 0; evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-124-melfi-construction/instruction-search.log"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target imports only FormalConjectures.Util.ProblemImports and local Submission, so no extra upstream precompilation was needed. Added final RUN lake build +FormalConjecturesBench.Target after USER ubuntu/HOME/WORKDIR. Current local task Harbor build succeeded and independent ubuntu lake build succeeded (7992 jobs); original placeholder warnings are expected. Image sha256:8251e5b19d211f3fab53bea98781c361f241b24dcec18830b5ce552990a15c5c. Evidence: task-image-history.txt and dependency-build-ubuntu.log in /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-124-melfi-construction"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran the specified skill Unicode script before semantic changes and again after all edits: case=no_issue, verification=passed, no surrogate issue, no Unicode repair needed. Original headers pass; changed headers and missing := are rejected. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-124-melfi-construction/unicode.json and unicode-final.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Replaced candidate-time GoldenCheck re-elaboration with repair-time golden-derived precompiled Spec and complete type comparison. Kept the public Target/golden/GoldenCheck and frozen constants unchanged; preserved original source/tree/frozen/axiom/canary checks and ordinary helper declarations/imports. Trusted ExpectedType retains implicit ε and explicit hε, universes=[]; temporary target absent, transitive axioms limited to the three standard axioms. Both checker bytes/AST and Spec packages match; pinned manifest 4239d00e83d54cc2994737e59d226cd0029f74d81c338dfb6904b210807898e5, olean 6d7f12b0f86cb528d304efa2a00524019fc54b65c6cc5c7f6315f4f6943aff75. Lean 4.27.0 x86_64 and locked dependency revisions recorded in manifest. Current local Harbor trial erdosproblems-124-melfi-construction-pi124-170752-2970d9 built image sha256:8251e5b19d211f3fab53bea98781c361f241b24dcec18830b5ce552990a15c5c. Uploaded /tests and preinstalled /opt packages/golden hashes match local files. Formal /tests/test.sh and ubuntu /app/check.sh exit 1 on original sorry, reward=0 as expected. Actual checker-function supplements for both /tests and /opt exited 0 and covered fixed artifact loading/audit, ubuntu build, full type comparison, sorryAx rejection, positive axiom branch, canary, frozen/header/assignment and source-boundary negatives, same-name module/cache/environment shadowing, source-legal LE ℝ type substitution rejection, and missing/tampered artifact/manifest rejection without regeneration. All required semantic paths were exercised; no original-proof success is claimed. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-124-melfi-construction (spec-generation.log, harbor/, container-delivery-hashes.json, execution-results.json, functions-*.log, static-audit.json). Docker cleanup verified: Removed Spec container 735224a27b67 and Harbor container 3006e295552c, task image 8251e5b19d21 (all this-run tags), and network erdosproblems-124-melfi-construction-pi124-170752-2970d9__env_default. Their absence was checked with docker inspect/image inspect/network inspect. Retained pre-existing shared base fcb-local/erdosproblems-1-least-n-5:cache-smoke; no other resources or shared build cache were cleaned; no prune used."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked metadata consistent. Read Melfi, On certain positive integer sequences (2004), https://arxiv.org/pdf/math/0404555, §4 Proposition 1 (PDF p.4), pinned/current upstream source and issues #5536/#5626. The retained cutoff-zero claim is weaker than the positive-cutoff/summable/bases>=2 source theorem and is true; finite representations by n ones are automatic. No obvious impossibility was found; no mathematical input was modified. The printed paper ε>=0 endpoint typo does not affect this task ε>0. Full analysis and access limitations: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-124-melfi-construction/statement-review.json"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact complete task-ID CSV lookup had no hit. Followed upstream issues/PRs, public author repository and audit links; found a complete proof of this retained original type at https://tadamcz.com/fc-review-results/c90271f0fa/#/f/ErdosProblems/124 (source JSON: https://tadamcz.com/fc-review-results/c90271f0fa/files/ErdosProblems/124.json). Erdos124Review.original_statement_is_trivial uses type_of% @Erdos124.erdos124.melfi_construction. Public source was compiled unchanged against an isolated original golden module in this task Harbor container as ubuntu/Lean4.27.0; exit 0 and target axiom audit shows only propext/Classical.choice/Quot.sound. Public source SHA256 b81c850efa4d33fb89e3786eaeb0c005c6d68f4b4212ae12148fbbc807222a47. Metadata public_lean4_proof=true; no answer is bundled into the task or image. Issue #5536 prototype separately fails at a missing helper and is not the accepted proof. GitHub search API/login and search-engine bot restrictions are recorded, but the validated full source was accessible. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-124-melfi-construction/public-proof-review.json and public-audit-validation.log."
+    }
+  }
+}

@@ -1,0 +1,9 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green19.C: [propext, Quot.sound, Classical.choice]
+audited Green19.ValidExponent: [propext, Quot.sound, Classical.choice]
+audited Green19.S: [propext, Quot.sound, Classical.choice]
+audited Green19.IsCorner: [propext, Quot.sound]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Green19.C = 4
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

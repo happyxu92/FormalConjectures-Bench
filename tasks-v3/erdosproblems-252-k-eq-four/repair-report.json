@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-252-k-eq-four",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to instruction.md search command. In current Harbor container ubuntu found mathlib theorem sigma_apply with exit 0; instruction-search.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added actual extra import FormalConjectures.Wikipedia.Schinzel to upstream precompilation, before source cleanup. Dockerfile ends with ubuntu RUN lake build +FormalConjecturesBench.Target. Current local Harbor image sha256:64c24276ec4c9f80729e936987de742936d74f21c9dc1140978fa9bede48e34c built successfully; ubuntu-target-build.exit=0 (7993 jobs). Source search and dependency load tested in that same child."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Skill check_unicode_header.py executed; unicode.json case=no_issue. Original header accepted; changed header and removed assignment rejected. Both checker headers match the unchanged golden/Target inputs."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated this task Spec from original golden without Submission via Lean parser/elaborator, restoring the environment before exporting ExpectedType. Independent audit confirms complete Irrational (Erdos252.erdos_252_sum 4), no binders/universes, and only propext/Classical.choice/Quot.sound transitively for ExpectedType and sum. Two packages/checkers are identical; manifest SHA256 02255a8f9bf14f743b47048f9845018e007e7c264dc4c6974a00de5410c7cc20. Fixed toolchain/import paths load precompiled Spec at /tests/trusted_spec (Harbor upload) and /opt/formal-conjectures-bench-checker/trusted_spec (local). Current local task Harbor build, both entries and 29 actual-function cases per path passed; original sorry causes expected exit 1/reward 0. Supplement covers ubuntu uid 1000, complete type match, sorryAx rejection/canary, frozen/source negatives, legal helpers, frozen-text Irrational name-shadowing rejected specifically by complete type mismatch, cache/environment shadowing, missing/tampered packages with no regeneration. Harbor stopped its retained child after trial; same child restarted for supplementation. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-final-three/tasks/erdosproblems-252-k-eq-four/attempt-002. Cleanup verified: stopped/removed own Harbor container 1b28bb49ed3b and Spec container 395d8cc7d41e; removed own image sha256:64c24276ec4c and its tag plus trial network. Absence verified by Docker inspect/ps; cleanup.json. Pre-existing dependency base e21dc171550d retained as a shared cached base; shared build cache and other tasks untouched."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent. Reviewed complete prefix/definition/target against Kyle Pratt, arXiv:2209.11124v1, Section 1 Theorem 1 (unconditional k=4 irrationality). Mathlib sigma is sum of fourth powers of divisors and sigma 4 0=0; the n=0 summand is zero, and polynomial/factorial growth gives convergence. No obvious false statement found. Problem website HTTP 403; original arXiv abstract/full HTML HTTP 200 saved in math-review.json and source artifacts. Mathematics and golden inputs unchanged."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact task column match for erdosproblems-252-k-eq-four in skill/references/public-lean4-proofs.csv (collection SHA256 e7e3e27990387e6fd564dc3ab548e2a5b9cf71cc8de7b9265f8670ee234af825). public_lean4_proof=true, status=catalog_match. Source: https://github.com/tokengr1nder/Erdos252/blob/46b9fd26361faf669bcd7e4495e63678bfa6a735/Erdos252/Solution.lean#L1066. Existence accepted under skill; no additional online confirmation required. The public proof was not bundled or compiled in the pinned task environment; public-proof-review.json."
+    }
+  }
+}

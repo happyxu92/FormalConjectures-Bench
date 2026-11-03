@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID absent from skill CSV, rechecked in attempt-002. Upstream/PRs retain sorry; lean-genius uses an axiom or stronger hypotheses. TauCeti lacunary-series source covers only c^k, c>=3. Prize PR 3080 claimed full source still returns 404; directory/comments/code APIs remain access-limited. No complete proof verified. Evidence: attempt-002/public-proof-review.json and original public-proof-review.json in this run task evidence directory."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/247.lean"

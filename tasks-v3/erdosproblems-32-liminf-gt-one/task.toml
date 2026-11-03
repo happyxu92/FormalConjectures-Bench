@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID absent from skill CSV. Pinned/current upstream and PRs 2038, 2641, 3165 retain sorry; no complete proof verified. GitHub code/fork/tree APIs are rate-limited (403), so completeness of the public search remains unknown. See repair-report.json and attempt-002 evidence."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/32.lean"

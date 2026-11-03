@@ -1,0 +1,40 @@
+{
+  "task_id": "wikipedia-gausscircleproblem-error-le",
+  "target_name": "GaussCircleProblem.error_le",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "271ad138537d12ae70263c4dfc21ef1420c3049416c01fce7f8e2c7c0970f9ea",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "85d19616f25b9ba9d591d8612d6468761c5dec5fe006da538d5cee7a153eceed",
+    "FCBTrustedSpec.ilean": "2ceed799f41966ae57162ece7ba42071b2b577078da237ea5e5f086f280d1661",
+    "FCBTrustedSpec.lean": "caf049ca03ece45a5fba08449a68a9d973af52e43e70978384f271d8dc57d242",
+    "FCBTrustedSpec.olean": "1d90b7089d5e0f1e5b0c67e02b43646cdeee4973dff747538890928d0298097a",
+    "audit.log": "dacbcb1dcebe1102272e0ea3a6407ffeb61f3c89936a2690a29914ae82e752c1",
+    "generate.py": "7974a1218b27ee786a85de0c8da787317d88f20fd34ea817bf552402d0ed8943",
+    "reproduce.sh": "ede6a2a9636394e9b93ab45c02647e96820f334d723375ff378758ff00312c70"
+  },
+  "generation_image": "sha256:0824de0f16475f1f619701869e59de4e4ce3229bfce229a5fd16f88072c37e8f",
+  "generation_command": "docker run -d --network none --name wikipedia-gausscircleproblem-error-le-spec-a002-6d39c8 --entrypoint sleep fcb-local/erdosproblems-1-least-n-5:cache-smoke infinity; docker cp tests/trusted_spec and tests/golden_env to /tmp/repair-bundle/; docker exec -u root wikipedia-gausscircleproblem-error-le-spec-a002-6d39c8 bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Independent fixed module import; ExpectedType is definition of Prop, complete binder r:Real, no universe parameters. Temporary theorem and children absent. ExpectedType, N, E transitive axioms limited to propext, Classical.choice, Quot.sound."
+}

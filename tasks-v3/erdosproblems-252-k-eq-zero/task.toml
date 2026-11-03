@@ -15,6 +15,12 @@ formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"
 lean_toolchain = "leanprover/lean4:v4.27.0"
 mathlib_commit = "a3a10db0e9d66acbebf76c5e6a135066525ac900"
 theorem_name = "Erdos252.erdos_252.variants.k_eq_zero"
+statement_status = "consistent"
+statement_status_note = "The k=0 divisor-count factorial series is a known variant; Erdos-Straus (1971), Theorem 2.23. The n=0 term is zero and the series converges. Mathematical inputs unchanged."
+public_lean4_proof = true
+public_lean4_proof_status = "found"
+public_lean4_proof_urls = ["https://github.com/tokengr1nder/Erdos252/blob/46b9fd26361faf669bcd7e4495e63678bfa6a735/Erdos252/Solution.lean#L1066"]
+public_lean4_proof_note = "Exact full task ID match in skill references/public-lean4-proofs.csv; source accepted under skill lookup rule, not compiled or installed in this task."
 benchmark_bucket = "informal_proof"
 oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."

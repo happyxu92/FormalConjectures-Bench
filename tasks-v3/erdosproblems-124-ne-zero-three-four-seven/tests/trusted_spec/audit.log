@@ -1,0 +1,13 @@
+FCBTrustedSpec.lean:45:6: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:59:6: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:6: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound]
+audited Erdos124.sumsOfDistinctPowers: [propext, Quot.sound]
+complete binder count: 2
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {k : ℕ},
+  k ≠ 0 →
+    ∀ᶠ (n : ℕ) in Filter.atTop,
+      n ∈ Erdos124.sumsOfDistinctPowers 3 k + Erdos124.sumsOfDistinctPowers 4 k + Erdos124.sumsOfDistinctPowers 7 k
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Quot.sound]

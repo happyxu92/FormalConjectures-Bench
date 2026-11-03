@@ -1,0 +1,24 @@
+import FCBTrustedSpec
+open Lean Elab Command in
+run_cmd do
+  let env ← getEnv
+  if env.contains `CarmichaelTotient.carchimaelTotient_bound then
+    throwError "temporary theorem was exported"
+  for (name, _) in env.constants.toList do
+    if (`CarmichaelTotient.carchimaelTotient_bound).isPrefixOf name then
+      throwError "temporary target or child exported: {name}"
+  let some (.defnInfo info) := env.find? `FCBTrustedSpec.ExpectedType
+    | throwError "ExpectedType is not a definition"
+  unless info.levelParams.isEmpty do throwError "unexpected universes"
+  unless info.type == .sort .zero do throwError "ExpectedType does not define a proposition"
+  for name in #[`FCBTrustedSpec.ExpectedType, `CarmichaelTotient.CarmichaelTotientFor] do
+    let axioms ← collectAxioms name
+    for ax in axioms do
+      unless #[`propext, `Classical.choice, `Quot.sound].contains ax do
+        throwError "untrusted axiom {ax} in {name}"
+    logInfo m!"audited {name}: {axioms}"
+  logInfo m!"universe parameters: {info.levelParams}"
+#print FCBTrustedSpec.ExpectedType
+#print axioms FCBTrustedSpec.ExpectedType
+
+example : FCBTrustedSpec.ExpectedType = (∀ {n : ℕ}, 0 < n → n < 10 ^ (10 ^ 10) → CarmichaelTotient.CarmichaelTotientFor n) := rfl

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-239-erdos-239",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "显式补上 /opt/formal-conjectures/.lake/packages；Spec 容器与当前 Harbor 容器中均实际搜到 packages 内 IsCoprime Lean 定义。证据 instruction-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 实际只有 ProblemImports 和 Submission 两个 import，无额外上游模块；保留 ProblemImports 预编译，Dockerfile 末尾新增 USER ubuntu 下 lake build +FormalConjecturesBench.Target。当前本地 Harbor 镜像已构建，普通用户构建退出 0（7992 jobs）。"
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "运行 skill check_unicode_header.py；𝓝 的合法代理对导致原始头误判，已用 repr 形式同步修复并经脚本复验，见 unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从原始 golden（去除 Submission import）提前 elaboration 完整 Erdos239.erdos_239 类型，独立编译/传递公理审计及临时声明未导出检查通过。两个 Spec 包、checker 内容及 AST 一致，清单固定版本、输入、修订和文件哈希。当前本地 Harbor 镜像 sha256:b3bbeb1ff7382bba8107177cc442b48e0b01643ab11d7062193d68c935d9b110；正式 /tests 和本地 /opt 两条入口退出 1/reward 0 是原始 sorry 的预期拒绝。两份实际函数补测均退出 0，覆盖固定 Spec 审计、ubuntu uid 1000 候选编译、完整类型比较、目标 sorryAx 拒绝、canary、冻结/越界/合法 helper、冻结文字不变的 Tendsto 遮蔽候选编译后被完整类型比较及 main 拒绝、同名缓存/环境遮蔽与缺失/篡改产物拒绝且不重建。详见 validation-coverage.json、delivery.json、static-validation.json 和 generation.log。 Docker 清理已核实：移除 Spec 容器 55fe5f9ca21a、Harbor 子容器 60b9c742e31a、任务镜像 sha256:b3bbeb1ff7382bba8107177cc442b48e0b01643ab11d7062193d68c935d9b110 和专用网络 erdosproblems-239-erdos-239-pi239-da57bf50__env_default；无本次遗留资源，共享基础镜像/缓存及其他任务资源未清理。详见 cleanup.json。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-239-erdos-239。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。完整量词、正整数 ±1 取值、互素乘法性、f 1、Icc 1 N、Nat→Real 分母及 atTop 已核对；无明显错误。该命题是 Wirsing 1967 均值存在定理的 ±1 特例，与锁定上游 solved 目标一致；另读取 Granville–Harper–Soundararajan arXiv:1706.03749 摘要/导言作相关分析背景。未修改数学输入。来源和站点 403 等访问限制见 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true。按完整 task ID 精确命中 skill references/public-lean4-proofs.csv：https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos239.lean#L1617。依 skill 无需再次联网确认；未读取/移植/打包公开答案，也未在本题锁定环境编译该公开证明。证据 public-proof-csv.json。"
+    }
+  }
+}

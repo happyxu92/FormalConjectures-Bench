@@ -8,6 +8,12 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact full-ID CSV lookup had no match. Pinned/current upstream, GitHub PRs and repositories, Mathlib and equivalent formulations were searched. Public characteristic-two subsingleton lemmas were read, but they do not prove the complete retained 0.5753 bound. GitHub code/history/comments rate limits and unreliable web search prevent a definitive negative result. No proof was added."
+public_lean4_proof_search_sources = ["https://github.com/google-deepmind/formal-conjectures/pull/4605", "https://github.com/Kuberwastaken/formal-conjectures-counterexamples/blob/d2af9fe927ef93d6402f4f7dbb3943898a255047/lean/Green31F2SidonCheck.lean", "https://tadamcz.com/fc-review-results/aea251bb26/#/f/GreensOpenProblems/31"]
+statement_note = "The retained ZMod 2 variant uses strong IsSidon (including repeated summands); in exponent two it forces card at most one, so the upper bound is valid. This is a restrictive variant of the binary B2 setting, not a proof of Green 31's open problem. Mathematical inputs are unchanged."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/GreensOpenProblems/31.lean"

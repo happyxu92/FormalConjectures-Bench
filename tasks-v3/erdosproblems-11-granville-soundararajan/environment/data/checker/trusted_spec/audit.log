@@ -1,0 +1,5 @@
+audited FCBTrustedSpec.ExpectedType: [propext]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+(∀ (n : ℕ), Odd n → 1 < n → ∃ k l, Squarefree k ∧ n = k + 2 ^ l) → {p | Nat.Prime p ∧ 2 ^ p ≡ 2 [MOD p ^ 2]}.Infinite
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]

@@ -8,6 +8,9 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = true
+public_lean4_proof_urls = ["https://github.com/linrock/math-proofs/blob/b246a4165f55ada0614aa2b85c8bc6381522e808/erdos-18/Solution.lean#L31", "https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos18_erdos_18_upper_bound.lean#L318"]
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/18.lean"

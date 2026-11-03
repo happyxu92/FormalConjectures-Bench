@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1102-exists-sequence-with-p",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；匹配 mathlib 中 HasDerivAt/HasDerivAtFilter，rg 退出码 0，见证据目录 search-path.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 只有 ProblemImports 和本地 Submission，无额外上游 import；保留 ProblemImports 预编译，Dockerfile 末尾新增 ubuntu 的 RUN lake build +FormalConjecturesBench.Target。当前本地 task Harbor 构建成功，末尾构建位于 USER ubuntu 后；同一子容器再次 ubuntu lake build 退出码 0（ubuntu-build.log），未放宽可信依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按 skill 执行 Unicode 脚本，修改前和最终复验均 case=no_issue；原始头通过，改头与移除 := 被拒绝，两份 checker 一致。见 unicode.json、unicode-final.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选加载后重解析 GoldenCheck，已同步为固定预编译 Spec 和完整类型比较。原始 golden-only 输入在 Lean 4.27.0/Linux x86_64 环境提取 f/h_inf/h_pos 三个完整参数，无 universe 参数；ExpectedType 及引用前缀定义传递依赖审计仅标准公理，无 sorryAx；临时目标及其子声明不导出。两份包与清单哈希固定且相同，运行时不生成或重编译 Spec，可信搜索路径优先于候选模块/缓存且忽略候选环境变量，正常外部 import 规则保留。当前 task 的 Harbor 本地 force_build 镜像 sha256:220152efb6723df3a74ec576a3c8e0d186c46ed059b423ec56e35d2071e1b688；正式 /tests/test.sh 和 ubuntu /app/check.sh 均退出 1，原始 sorry 按预期被源码规则拒绝，reward=0。两份 checker、包和 golden 容器内外逐文件哈希一致。为补足提前退出，在同一 Harbor 子容器分别对 /tests（root 调用、ubuntu 编译）和 /opt 包（ubuntu）运行实际 checker 函数：Spec 加载/审计、UID=1000 编译、完整类型检查、sorryAx 拒绝、canary、冻结/越界拒绝、保持冻结文字不变的 StrictMono/range 名称遮蔽候选可编译但被实际完整类型比较与 main 拒绝、同名模块/缓存/环境遮蔽、缺失/损坏产物和损坏清单拒绝且不重新生成均已覆盖。两份 checker 内容/AST 及 Spec 包一致，immutable-before.json 的 19 个文件均未变。非原题证明通过，无未验收的必要语义路径。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1102-exists-sequence-with-p；生成命令见 manifest.json、prepare.py/package.py，构建命令 harbor trials start -c harbor-config.json，运行/补测命令见 verify-delivery.py、validate.py 与 coverage.json。Docker 清理已完成：关闭并移除本次 Spec 容器 900208b39012 和 Harbor 容器 51ec271fcfea，删除本次镜像 220152efb672（tag erdosproblems-1102-exists-sequence-with-p-pi-b713f2__env-main:latest）及本次专用网络 erdosproblems-1102-exists-sequence-with-p-pi-b713f2__env_default；逐项 inspect 和 docker ps -a 核实均不存在。共享预编译基础镜像 fcb-local/erdosproblems-1-least-n-5:cache-smoke 属于运行前资源，保留；未清理其他资源或共享构建缓存，未运行 prune。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已核对锁定上游 FormalConjectures/ErdosProblems/1102.lean、本题完整前缀和作者公开源码。当前为 P 性质逆向的 exists_sequence_with_P 命题；正整数平移、实数商、f 趋于无穷及逐点非零、全 j 上界均一致，j=0 的实数除零为 0，无矛盾；非单调 f 的情况由逐渐增加 CRT 模数的构造覆盖。HasPropertyQ 未用于目标。未发现明显数学错误，metadata 标 consistent；未修改命题或定义。题目网站 403；作者文件及锁定/当前上游成功获取。详见 statement-review.json 和 source-fetch.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确命中技能 public-lean4-proofs.csv；metadata public_lean4_proof=true。公开来源：https://github.com/Woett/Lean-files/blob/1e075c4f6e8a907b924647fa88238f978e941742/ErdosProblem1102PropertyP.lean 。依 skill 集合命中即可确认，无需补搜；此外已成功读取作者源码，末尾 erdos_1102.exists_sequence_with_P 完整陈述与本题一致，文件没有 sorry/admit/新 axiom。文件标注 Lean 4.24.0/mathlib f897ebcf，不代表已在本题 4.27.0 环境编译；未打包公开答案或替换目标。见 public-proof-csv.json、author-property-p.lean。"
+    }
+  }
+}

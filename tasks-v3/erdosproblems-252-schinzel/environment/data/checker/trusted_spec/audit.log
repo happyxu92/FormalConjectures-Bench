@@ -1,0 +1,9 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+complete binder count: 2
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+(∀ (fs : Finset (Polynomial ℤ)),
+    (∀ f ∈ fs, BunyakovskyCondition f) →
+      SchinzelCondition fs → Infinite ↑{n | ∀ f ∈ fs, Prime (Polynomial.eval n f).natAbs}) →
+  ∀ (k : ℕ), Irrational (Erdos252.erdos_252_sum k)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

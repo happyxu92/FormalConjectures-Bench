@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1148-weaker",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages alongside /app and /opt/formal-conjectures. Actual rg command found package theorem sqrt_nonneg; final Harbor package source search also passed. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1148-weaker/instruction-search.log and delivery.json."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Actual Target imports only ProblemImports and local Submission; no extra upstream module needed. Preserved precompile command and added final RUN lake build +FormalConjecturesBench.Target after USER ubuntu. Current local Harbor image built successfully (cached exact layers); separate ubuntu build also returned 0, with original sorry warnings. Evidence: harbor.log, harbor-net.log, ubuntu-target-build.log under /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1148-weaker."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran skill check_unicode_header.py on current task before semantic edits: case=no_issue, exit 0; headers, frozen prefix, := boundary and negative cases checked. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1148-weaker/unicode.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Replaced candidate-environment GoldenCheck parsing with fixed precompiled FCBTrustedSpec.ExpectedType and complete type comparison. Clean locked Docker generation/audit retained entire Nat binder, universe_params=[]; only allowed axioms in ExpectedType and weaker_prop transitive dependencies; temporary target absent. Both checker AST/content and Spec package hashes identical. Formal /tests and local /opt bundles verified against host; candidate compilation observed uid=1000. Current task Harbor build/entries verified; original sorry causes expected exit 1 and reward 0. Both actual-function suites passed 29 cases each: load/type audit, compile, full comparison, sorryAx rejection/canary, frozen/source negatives, frozen-text semantic name attack rejected by type mismatch, cache/env shadowing, missing/corrupt artifacts without regeneration. No unexpected runtime failures or required uncovered branches. First Harbor startup hit exhausted default address pools; retry used a unique non-overlapping subnet. Spec manifest SHA256 a633ff41c9c33f1574867d54d884664c74d7e2c5d312b4c5b794d8204a68a849. Lean Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release). Current built image ID 0e12bdd7d510d70601f86f61ccc1bc1a2e47b6cdb9feadbbe8ca38ff4c8893e2. Evidence/commands/hashes: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1148-weaker (generation.log, delivery.json, validation-coverage.json, static-verification.json, created-images.json). Docker cleanup verified: removed own containers 65f93c10e43e and f05869205288, image IDs e76e19d357a5 and 0e12bdd7d510 (both task-specific tags), and network 45c62c485db3. Baseline cache image and all shared resources retained."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Read complete prefix/definitions and pinned upstream 1148.lean plus Chojecki paper Theorem 1.1. Current target is the documented all-n weaker variant with bounds n+2*sqrt(n), not the original eventual n-bound problem. Nat subtraction at n>0 agrees with integer equality; n=0 has zero witnesses. No obvious impossibility found; math/Target/golden/frozen inputs unchanged. Problem website returned 403 and guessed booklet URL 404; pinned upstream and author PDF were available. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1148-weaker/statement-review.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact task-column match in skill references/public-lean4-proofs.csv: public_lean4_proof=true, status=listed. Source https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos1148_erdos_1148_variants_weaker.lean#L106 . Per skill, match establishes the public proof flag without further web confirmation. Proof was not compiled in this task or included in its image. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1148-weaker/public-proof-csv.json."
+    }
+  }
+}

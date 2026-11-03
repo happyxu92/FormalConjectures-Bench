@@ -1,0 +1,8 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos219.primeArithmeticProgressions: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+RHS binder count: 1
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+True ↔ ∀ (N : ℕ), ∃ l ∈ Erdos219.primeArithmeticProgressions, ↑N ≤ ENat.card ↑l
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

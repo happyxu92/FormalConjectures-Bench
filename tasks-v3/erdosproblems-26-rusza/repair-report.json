@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-26-rusza",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages path; actual three-path rg found mathlib summable_geometric_of_lt_one (exit 0). Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-26-rusza/attempt-002/instruction-search.log"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports beyond ProblemImports and local Submission. Added final WORKDIR /app, HOME=/home/ubuntu, USER ubuntu, RUN lake build +FormalConjecturesBench.Target. Current local-task Harbor build succeeded; image history records the final ordinary-user build. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-26-rusza/attempt-002/image-history.txt"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran skill check_unicode_header.py: no_issue; original header accepted, changed header and missing assignment rejected, two checkers identical. No Unicode edit needed. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-26-rusza/attempt-002/unicode.json"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated and independently compiled/audited complete Spec from unchanged pinned golden, without Submission import. Closed existential type; no universes; ExpectedType and transitive prefix dependencies only use allowed axioms. Synced both packages; pinned manifest SHA256 4ffbfc69f57a61a5db32834fb1a94f0de023f935dc2af8d82158ce14bc8f26db. Fixed toolchain and trusted-first paths; no runtime Spec generation or candidate Lake/cache use. Current local task Harbor trial erdosproblems-26-rusza-a002-26f71c built image sha256:fc09fb6bc038dbdb0588f298c840683cd7870e173884412e6885596f65d121e9. Both /tests uploaded package and /opt local package match host hashes. Actual formal and ubuntu local entries returned 1 on original sorry, reward 0 (expected; not a completed theorem proof). Both actual function suites passed 27 cases: artifact/version validation, Spec type/transitive axiom audit, ubuntu candidate compile, complete-type comparison, sorryAx rejection, canary, frozen/source negatives, same-name/cache/environment shadowing resistance, frozen-text StrictMono name attack rejected by complete type mismatch, missing/corrupt artifacts fail without regeneration. No required semantic paths untested; no full original proof required or supplied. Original 15 immutable hashes preserved. Logs and commands: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-26-rusza/attempt-002. Docker cleanup verified: stopped/removed this agent's Spec container faa535e09cca and Harbor container 86822eca446b; removed task image sha256:fc09fb6bc038dbdb0588f298c840683cd7870e173884412e6885596f65d121e9 and tag erdosproblems-26-rusza-a002-26f71c__env-main:latest; removed own network erdosproblems-26-rusza-a002-26f71c__env_default. Inspect confirms containers/image/network absent. Pre-existing shared generation image and all other task resources/build caches retained. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-26-rusza/attempt-002/cleanup.json"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Exact pinned upstream sparse-sequence Rusza variant; checked full definitions, Nat shifts including 0, strict monotonicity and density convention. No obvious false statement: e.g. A(n)=4^(n+1) has reciprocal sum 1/3 and all shifted multiples have upper density at most 1/3. Sources: erdosproblems.com/26 and Tenenbaum arXiv:1908.00488 PDF. Initial web-tool 403 / arXiv HTML 404 resolved via successful direct page/PDF retrieval. Review and source evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-26-rusza/attempt-002/statement-review.txt"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true: exact full-ID CSV hit. https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos26.lean#L752 and main counterpart. Accepted per skill collection rule; no further network proof search required. Public proof not compiled in this pinned task or installed in image. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-26-rusza/attempt-002/public-proof-match.json"
+    }
+  }
+}

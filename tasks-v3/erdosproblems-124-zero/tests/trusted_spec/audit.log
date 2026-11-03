@@ -1,0 +1,12 @@
+FCBTrustedSpec.lean:1:6: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos124.sumsOfDistinctPowers: [propext, Quot.sound]
+complete binder count: 0
+RHS full binder count: 3
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+True ↔
+  ∀ (D : Finset ℕ),
+    (∀ d ∈ D, 3 ≤ d) →
+      1 ≤ ∑ d ∈ D, (↑d - 1)⁻¹ → ∀ᶠ (n : ℕ) in Filter.atTop, n ∈ ∑ d ∈ D, Erdos124.sumsOfDistinctPowers d 0
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

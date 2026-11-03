@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1-least-n-9",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "源码搜索命令原遗漏隐藏的 .lake/packages，已显式加入 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages。实际在本题Harbor容器以ubuntu执行rg，退出0并找到Mathlib/Order/Bounds/Defs.lean的IsLeast定义；命令与输出见/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1-least-n-9/repair-20261102-n9-7d42/delivery.json。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "完整读取Target，实际imports只有ProblemImports和本地Submission，无额外上游模块需追加；保留原有切换用户前 lake build FormalConjectures.Util.ProblemImports 预编译。原Dockerfile缺少普通用户最终验证，现以WORKDIR /app、HOME=/home/ubuntu、USER ubuntu之后的RUN lake build +FormalConjecturesBench.Target结尾。当前本地task Harbor构建成功；同一子容器另以ubuntu实际运行同一lake build，退出0、7992jobs成功，没有放宽依赖权限。镜像sha256:4988a1ab3d1964aec6c7d73296da5205e4fda8be11fe7894448d7fca7873fe9b；证据 image-history.txt、ubuntu-lake-build-final.log、supplementary-exits.json。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按步骤3实际执行skill脚本并在最终checker上复验，均case=no_issue、退出0；原头匹配，改变头与移除:=被拒绝，两份checker及三份可信Target匹配，无代理码点问题。详见/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1-least-n-9/repair-20261102-n9-7d42/unicode.json和unicode-final.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原checker加载候选后重新解析GoldenCheck，存在语义遮蔽。修复阶段从原golden去除Submission import，用Lean parser/elaborator提取完整目标type并存为FCBTrustedSpec.ExpectedType定义值，回滚临时目标环境；完整IsLeast命题、存在A、card9和常数161保留，universe_params=[]。以无网络生成容器和匹配的既有镜像sha256:0824de0f16475f1f619701869e59de4e4ce3229bfce229a5fd16f88072c37e8f执行tests/trusted_spec/reproduce.sh；独立导入审计ExpectedType及IsSumDistinctSet传递依赖仅propext/Classical.choice/Quot.sound，不含临时目标或sorryAx。前缀其他原始sorry不被ExpectedType依赖。Lean4.27.0/x86_64 Linux、FC 233a10e857ef78e79fd9fe661d37db724089170a、Mathlib a3a10db0e9d66acbebf76c5e6a135066525ac900。golden Target SHA256=64a942164130277fe4c44274fe3fc8545c5e986a80ad0fd820daaba5ae05d745；olean SHA256=dbb4d461f784c4a536e7dfb0c259eb5e76a5fd7d88f3a0b8c79b559188fedd55；manifest SHA256=23e2f12e847438f6c11165b97ad84d875a5537857af9c82d7c736f634cb2b229。源码、生成器、命令、审计、olean/ilean和清单同次生成并同步两包。运行时仅校验并加载TESTS_DIR/trusted_spec固定预编译模块，不生成/重编Spec；固定工具链及依赖搜索顺序，忽略候选Lake配置/缓存/环境覆盖。临时Target先import Spec再Submission，复用同一可信前缀，完整类型比较只引用ExpectedType值；原冻结/源码规则/目标公理审计/canary函数AST保留。保留正常import和外部依赖规则，没有通用外部模块白名单、全依赖权限扫描或额外沙箱。验收命令：harbor trials start --path /root/FormalConjectures-Bench/tasks-v3/erdosproblems-1-least-n-9 --agent nop --env docker --no-delete --force-build --environment-kwarg keep_containers=true --trial-name erdosproblems-1-least-n-9-7d42-keep --trials-dir /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1-least-n-9/repair-20261102-n9-7d42/harbor。Harbor结果exception_info=null；本地构建镜像sha256:4988a1ab3d1964aec6c7d73296da5205e4fda8be11fe7894448d7fca7873fe9b，子容器4c7878ab1000；/tests由Harbor verifier上传，/tests和/opt两份checker/Spec/golden与宿主逐文件哈希一致。正式bash /tests/test.sh实际设FCB_TASK_DIR=/app、FCB_TESTS_DIR=/tests；ubuntu /app/check.sh使用/opt包；两入口均退出1，仅因原始sorry源码限制，reward0。相同容器root-/tests和ubuntu-/opt各28项实际函数补测通过：固定包加载/独立可信类型审计、ubuntu编译并核实olean属主、完整类型通过、目标sorryAx拒绝、canary；冻结文字/头/赋值/配置、越界Lean/非Lean/symlink/axiom拒绝，普通def/lemma/instance允许。无sorry的IsLeast:=True名称遮蔽候选保持冻结文字不变、可编译，实际完整类型比较和production main均以Type mismatch拒绝。同名候选模块、poison缓存和环境变量不能覆盖Spec，--deps实际显示/tests或/opt固定Spec路径；缺失/损坏产物及manifest哈希错误明确失败且包不变、未重生成。AST、两包、immutable-before15文件复核通过。原题真实无sorry证明最终成功公理审计分支未覆盖，未提供或声称完成数学证明；隔离fixture仅补测机制。初次Harbor --no-delete仍自动删除容器，已按本机实现增加keep_containers并完整重验，未留故障。全部命令/版本/哈希/退出码/日志见/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1-least-n-9/repair-20261102-n9-7d42下manifest、generation.log、harbor、delivery.json、validate.py、validation-official-final.log、validation-local.log、static-final.json。Docker 清理已核实完成：生成容器 e0324af3ee6e、验收容器4c7878ab1000已停止并移除；首轮容器4b6b68667ebb由Harbor自动移除。删除本次任务镜像553163bc053c、4988a1ab3d19及其两个专用tag，删除仅本次创建的空网络bf318a7b36be；逐ID inspect及docker ps -a复核均不存在。保留基线共享镜像0824de0f1647、其他agent资源和共享构建缓存；未执行prune。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "task.toml已仅标记statement_status=consistent。完整检查Nat域、Icc1N正整数范围、powerset所有子集求和的Injective、card=9及IsLeast的存在/下界两部分。本题为Erdős1已知有限变体，并非要求一般渐近猜想。题目来源https://www.erdosproblems.com/1链接OEIS；https://oeis.org/A276661及b276661.txt给出a(9)=161，将结果归于J.P.Grossman。来源见证{77,117,137,148,154,157,159,160,161}经本地512子集和枚举确实互异；该枚举不声称证明下界。锁定上游Target、定义和常数一致，未发现导致本目标明显无解的问题。没有修改数学命题/定义/Target/golden/GoldenCheck/冻结基线或以此重建Spec。完整来源及核查见/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1-least-n-9/repair-20261102-n9-7d42/mathematical-check.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "先以完整task ID精确匹配skill public-lean4-proofs.csv，未命中。随后按定理名、Erdos1/161、nine distinct subset sums、Grossman/Lean4等多组关键词检索，读取上游main和历史/相关PR、15个fork、Mathlib、plby、tadamcz、MyTH Harper、Nexus及source_check新发现的lyfar/BrettKnox等实际Lean源码。各明确线索均已核查：九元素目标仍sorry；Nexus只有sorry上界；其他证明为渐近结果、别的基数、有限Moser弱界或16元素见证，未覆盖完整目标。经本次充分检索未找到已知公开完整Lean4证明，metadata public_lean4_proof=false/status=searched；这不是证明绝对不存在，未在当前task编译公开答案。访问限制：GitHub全局代码搜索401；GoogleHTML需JS、Bing结果偏题；web_search模型参数失败，但source_check默认provider可用并产生新线索，相关仓库/树/原始源码/PR/history均可访问且已跟进，无待核实有效线索。详细URL、候选排除原因、检索词和限制见/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1-least-n-9/repair-20261102-n9-7d42/public-proof-result.json及public-search-sources.json/public-follow-sources.json/public-forks-prs.json/source-check-follow.json。"
+    }
+  }
+}

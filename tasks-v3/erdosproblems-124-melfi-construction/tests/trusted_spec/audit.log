@@ -1,0 +1,33 @@
+COMMAND ['docker', 'image', 'inspect', 'fcb-local/erdosproblems-1-least-n-5:cache-smoke']
+COMMAND ['docker', 'run', '-d', '--network', 'none', '--name', 'erdosproblems-124-melfi-construction-spec-pi124-170752-2970d9', '--entrypoint', 'sleep', 'fcb-local/erdosproblems-1-least-n-5:cache-smoke', 'infinity']
+COMMAND ['docker', 'exec', '-u', 'root', 'erdosproblems-124-melfi-construction-spec-pi124-170752-2970d9', 'mkdir', '-p', '/tmp/repair-bundle']
+
+COMMAND ['docker', 'cp', '/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-124-melfi-construction/generation-input/.', 'erdosproblems-124-melfi-construction-spec-pi124-170752-2970d9:/tmp/repair-bundle/']
+
+COMMAND ['docker', 'exec', '-u', 'root', 'erdosproblems-124-melfi-construction-spec-pi124-170752-2970d9', 'bash', '/tmp/repair-bundle/trusted_spec/reproduce.sh']
+FCBTrustedSpec.lean:45:6: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:59:6: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:71:6: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:85:6: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:6: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos124.sumsOfDistinctPowers: [propext, Quot.sound]
+complete binder count: 2
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {ε : ℝ},
+  0 < ε →
+    ∃ d,
+      StrictMono d ∧
+        ∑' (i : ℕ), (↑(d i) - 1)⁻¹ ≤ ε ∧
+          ∀ᶠ (n : ℕ) in Filter.atTop, ∃ I a, (∀ i ∈ I, a i ∈ Erdos124.sumsOfDistinctPowers (d i) 0) ∧ ∑ i ∈ I, a i = n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+COMMAND ['docker', 'cp', 'erdosproblems-124-melfi-construction-spec-pi124-170752-2970d9:/tmp/repair-bundle/trusted_spec', '/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-124-melfi-construction/generated-spec']
+
+COMMAND ['docker', 'exec', 'erdosproblems-124-melfi-construction-spec-pi124-170752-2970d9', 'bash', '-c', "rg --glob '*.lean' '^def StrictMono|^theorem strictMono_id|^lemma strictMono_id' /app /opt/formal-conjectures /opt/formal-conjectures/.lake/packages"]
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/AlgebraicGeometry/IdealSheaf/Basic.lean:lemma strictMono_ideal : StrictMono (ideal (X := X)) := IdealSheafData.gci.strictMono_l
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Order/Monotone/Defs.lean:def StrictMono (f : α → β) : Prop :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Order/Monotone/Defs.lean:def StrictMonoOn (f : α → β) (s : Set α) : Prop :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Order/Monotone/Defs.lean:theorem strictMono_id [Preorder α] : StrictMono (id : α → α) := fun _ _ ↦ id
+

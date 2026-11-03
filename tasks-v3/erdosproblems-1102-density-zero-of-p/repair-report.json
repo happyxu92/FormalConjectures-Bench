@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1102-density-zero-of-p",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages alongside /app and /opt/formal-conjectures. Actual rg from the task Harbor container as ubuntu found StrictMono in mathlib/Mathlib/Order/Monotone/Defs.lean; exit 0. Local and formal Spec package locations documented."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Actual Target imports only ProblemImports and local Submission; no extra upstream modules to add. Existing upstream lake build ProblemImports retained before source deletion. Added final WORKDIR /app, HOME=/home/ubuntu, USER ubuntu, RUN lake build +FormalConjecturesBench.Target. Current-local-task Harbor image built successfully; explicit ubuntu lake build in same Harbor container exit 0 (7992 jobs). Original sorry warning is expected. See ubuntu-lake-build.log, harbor-net.log and delivery.json."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran skill check_unicode_header.py against current task before semantic changes: case=no_issue, original UTF-8 header accepted, modified header and missing := rejected, both checker copies matched. No Unicode repair necessary; unicode.json records exact result."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Original candidate-imported GoldenCheck could reinterpret expected statement. Generated ExpectedType early from immutable golden with Submission removed, using Lean parser/elaborator and matching network-disabled Docker dependency environment; restored environment before exporting definition so temporary theorem/children and sorry proof are absent. Independent audit preserved all 3 binders (A,h_inc,hP), universe params [], and confirmed only propext/Classical.choice/Quot.sound through prefix definitions. Lean Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release); x86_64; FormalConjectures 233a10e857ef78e79fd9fe661d37db724089170a; mathlib a3a10db0e9d66acbebf76c5e6a135066525ac900. Both identical packages include source, generator, reproduction command, olean/ilean, audit and pinned manifest. Golden SHA256 340015a31b55343b7dcc4ea4c6420b7d9b18053697e31a50ebd936eeacd723c0; olean SHA256 5ef30ded2f0be8e5a7bfcaa93f8b4d934513134a797f70e924b32c571ba649ab. Runtime validates hashes/version/revisions then imports fixed package before candidate; no regeneration or candidate Lake/cache/environment override. Normal imports retained without generic module whitelist. Current task local Harbor image sha256:935cad347438c043d0e11a6f8674ded856c0ac115218bc3d7aa5d0fa5875ffe2 built from modified Dockerfile/task; /tests uploaded by Harbor, /opt installed copy both hash-match local checker/Spec/golden. Official /tests/test.sh and ubuntu /app/check.sh both exit 1 on original sorry, reward 0; no complete original proof claimed. Supplement in same Harbor child invokes actual checker functions at both package locations: 29 cases each passed, including trusted audit, observed ubuntu uid1000, candidate compilation, full type equality, target sorryAx rejection, canary, frozen/header/config/source negatives, legal helpers, same-name/cache/environment poison, and missing/tampered packages fail without regeneration. Frozen-text-preserving Tendsto-name attack compiles but full type comparison rejects it, including actual main(). Bytes/AST, packages, preserved policy ASTs and all 19 immutable files checked. Initial Docker default network exhaustion resolved using task-only subnet 10.248.102.0/24; no foreign resources removed. Evidence/commands/scripts under /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1102-density-zero-of-p. Cleanup verified: removed both task-only containers (e646202d6d60, d38866c89692), both task-only Harbor image tags and image IDs sha256:b652dbf36f5192a0131a10e11e0c4b9e69b0d1154e99460b8c391cfa6d8b61eb, sha256:935cad347438c043d0e11a6f8674ded856c0ac115218bc3d7aa5d0fa5875ffe2, and task-only network. docker ps -a and image/container/network inspect confirm absence. Shared base image and build cache retained; no prune or foreign-resource cleanup. Details: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1102-density-zero-of-p/docker-cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked task metadata statement_status=consistent. Pinned upstream target and complete P/Q definitions match task. van Doorn–Tao arxiv:2512.01087v1 Definition 1, Theorem 1(i), Section 3 establish property P implies natural density zero, equivalently A(j)/j→∞. Zero-based indexing/possible 0 and j=0 are finite initial differences; ratio elaborates as real division. No obvious mathematical error found; original statements/definitions, Target, golden and GoldenCheck unchanged. Primary article saved as paper.html; task-site 403 and failed search-provider access recorded in mathematics-and-public-proof.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact full ID match in skill references/public-lean4-proofs.csv: https://github.com/Woett/Lean-files/blob/1e075c4f6e8a907b924647fa88238f978e941742/ErdosProblem1102PropertyP.lean . Metadata public_lean4_proof=true and URL saved. Additionally fetched/read source: matching final theorem and property P, no sorry/admit/axiom tokens. Source declares Lean4 v4.24.0, mathlib f897ebcf72cd16f89ab4577d0c826cd14afaafc7; not compiled in current v4.27.0 environment and not bundled as answer. Per skill exact CSV match needs no further search. See public-csv-match.json and mathematics-and-public-proof.json."
+    }
+  }
+}

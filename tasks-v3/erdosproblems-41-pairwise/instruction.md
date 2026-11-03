@@ -39,11 +39,14 @@ cd /app && ./check.sh
 
 This runs the same substantive checks as the official verifier. If it passes
 without modifying the checker itself, the official verifier is intended to pass.
+The checker compares the complete theorem type against a trusted Spec compiled
+from the original task before candidate code is loaded; the same fixed Spec is
+used by this local command and the official verifier.
 
 For source search, prefer commands such as:
 
 ```bash
-rg --glob '*.lean' 'search term' /app /opt/formal-conjectures
+rg --glob '*.lean' 'search term' /app /opt/formal-conjectures /opt/formal-conjectures/.lake/packages
 ```
 
 Internet access is enabled for this task. You may use external literature and web resources, but the final Lean proof must pass the local verifier.

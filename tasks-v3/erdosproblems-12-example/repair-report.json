@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-12-example",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to the instruction rg command, preserving other rules. Ran the command as ubuntu against known Mathlib theorem card_powerset in the generation environment and actual Harbor child: exit 0 and package hit, no path/permission errors. See instruction-search.json and delivery.json."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target imports only ProblemImports and the local Submission; no extra upstream precompilation needed. Added Dockerfile final RUN lake build +FormalConjecturesBench.Target after WORKDIR /app, HOME=/home/ubuntu, USER ubuntu. Current local-task Harbor force-build succeeded; image sha256:05bd87db8648937fb29d8bbd883802ed0dc7a24ff591c4dc56e349be83127028 has that build as its final layer and Config.User=ubuntu. Repeated actual ubuntu lake build in the same child, exit 0 (7992 jobs; expected original sorry warnings). Evidence: dependency-static.json, image-history.txt, ubuntu-lake-build.log."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran the supplied skill check_unicode_header.py on this absolute task path before semantic changes; case=no_issue, exit 0. Original golden/public header, prefix hash, changed-header and missing-assignment checks passed. No surrogate repair was necessary. See unicode.json and unicode-final.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Original checker elaborated GoldenCheck after candidate imports. Generated FCBTrustedSpec from original golden with Submission import removed, using locked Lean v4.27.0, x86_64 and upstream 233a10e857ef78e79fd9fe661d37db724089170a in network-disabled erdosproblems-12-example-spec-pi-170213-afa729. Lean parser/elaborator retained the full type (A, hA; no universes), restored the pre-target environment, and exported a Prop-valued ExpectedType definition. Independent fixed-module audit found only propext/Classical.choice/Quot.sound; IsGood has no axioms; temporary target/children absent. Two source/olean/ilean/audit/manifest packages and checker content/AST are identical; manifest SHA256=5315d7fd24b4dcd66689aa868574a472be90e69c5750c0460c942416a85f989d. Runtime hashes golden, package, versions and dependency manifest, then loads precompiled Spec first from TESTS_DIR/trusted_spec with pinned toolchain/dependency paths; no runtime generation or fallback. Candidate compilation runs as ubuntu; temporary Target shares Spec prefix and original open/namespace context; original source/frozen/axiom/canary checks preserved. Actual current local Harbor command: harbor trial start -c /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-12-example/harbor-config.json; exit 0, image sha256:05bd87db8648937fb29d8bbd883802ed0dc7a24ff591c4dc56e349be83127028. Harbor uploaded /tests; /tests/test.sh and ubuntu /app/check.sh both exit 1 for original sorry, official reward=0 (expected proof rejection, not original proof success). After Harbor stopped its retained child, restarted the same child. Both real-function supplements exit 0 and cover fixed import sources, Spec audit, observed ubuntu uid=1000, candidate compile, full type equality, placeholder sorryAx rejection, canary, frozen/header/config and unconfined-source negatives, legal ordinary helpers, semantic LT Real instance attack with unchanged frozen text (candidate compiles; full checker rejects type mismatch), candidate same-name Spec/dependency/cache/environment shadow attempts, and missing/tampered artifact/manifest rejection without regeneration. Current source/Spec/golden delivery hashes all match. Evidence and commands: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-12-example (generation.log, package.log, delivery.json, coverage.json, validation-*.log, static-audit.json). Cleanup completed (cleanup.exit=0): stopped/removed Spec container 6b7c416014b6 and Harbor child a6aef1473c95, removed task tag erdosproblems-12-example-pi-170213-afa729__env-main:latest and image 05bd87db8648 (image inspect confirms absent), and removed this task's network 873cd200749f. Docker ps -a and image/network inspections verify removal. Retained the baseline shared generation image and all other agents' resources/build caches; no prune or force deletion. See cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked metadata consistent. Read pinned/current upstream definitions and original Erdos-Sarkozy, On the divisibility properties of sequences of integers, Proc. LMS 21 (1970), pp.97-101, https://www.renyi.hu/~p_erdos/1970-13.pdf; visually checked p.98 prime-square example and A(x)>c sqrt(x)/log(x). The fixed set is infinite; -1 is a nonsquare mod primes 3 mod 4, giving IsGood. PNT in AP gives normalized count limit 1, compatible with the positive liminf. Checked quantifiers, strict inequalities, finite interval ncard, natural index, positivity/zero and logarithm normalization. This is the example variant, not a claim to solve the other parts. No Target/definitions/golden/GoldenCheck/frozen baselines changed. See mathematical-check.json, original PDF/text and paper-page-98.png."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Exact full task ID is absent from skill references/public-lean4-proofs.csv. Searched full name, aliases, prime-square density statement and related authors/results across FormalConjectures PRs/forks, Mathlib, GitHub issue/repository searches, mo271, lean-genius and awards links; actual promising Lean sources read. Exact example remains sorry in upstream/mo271 and purported solved PRs 2545/3070; goodness-only proofs and separate parts.i/ii or erdos_sarkozy variants do not cover it. Awards PR 3463 claims a plby/lean-proofs formalization at 8822f7ddef30fadbd92e1c6ab4ed897af356af5e; the pinned and main Erdos12.lean URLs return 404 and independently read directory listings omit the file. Coverage cannot be verified. Marked metadata public_lean4_proof=unknown, status=blocked. Some APIs are rate-limited, code search requires login, general web searches were unavailable/unhelpful; no absence claim or complete-proof compilation claim is made. See public-csv-match.json, research.json, *fetch.json and downloaded candidate sources in /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-12-example."
+    }
+  }
+}

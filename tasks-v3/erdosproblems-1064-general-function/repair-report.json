@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1064-general-function",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages. Current Harbor container ubuntu rg found Mathlib/Data/Nat/Totient.lean:def totient; delivery.json records exit 0."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Actual Target imports only ProblemImports and local Submission; upstream precompile already covers all actual upstream imports. Added final USER ubuntu / HOME / lake build +FormalConjecturesBench.Target; current local-task Harbor image build and separate ubuntu build succeeded (7992 jobs). See image-history.txt and actual-imports-ubuntu.log."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Skill Unicode script executed before and after repair: no_issue; both checker headers and golden boundaries pass; unicode.json and unicode-final.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Golden-only repair-time extraction and independent audit under locked Lean 4.27.0 x86_64; complete f/hf type, no universe parameters, ExpectedType transitive axioms only propext/Classical.choice/Quot.sound, temporary target absent. Original prefix placeholder theorems are unchanged and are not ExpectedType dependencies. Synchronized pinned packages and checker AST/content; fixed /tests or local /opt Spec before trusted dependencies/candidate paths; no runtime generation or external-module whitelist. Current local task Harbor build image d905b7801249574353e65a3d089670e6d44467aacb5bc38e02db320c0b282b85. Official /tests/test.sh and ubuntu /app/check.sh exit 1/reward 0 for original sorry; both real function paths separately pass all 29 fixtures, including ubuntu compilation, full type comparison, sorryAx rejection/canary, frozen/source restrictions, legal frozen-text LT instance attack rejected by type mismatch, cache/environment shadowing resistance, missing/corrupt Spec rejection without regeneration. This validates checker repair, not an original theorem proof. Evidence directory: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1064-general-function. Docker cleanup verified: removed containers 724f10035f5c and d7beaa936c06, task image d905b7801249/tag erdosproblems-1064-general-function-79530797__env-main:latest, and network 46bbbd15f33a50e330ecdf880bb13847531b8cfda06129634698f23f154c4097. Preexisting/shared generation base 0824de0f1647 and shared build cache retained; no other resources touched. cleanup.json records deletion and absence checks."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked consistent; pinned upstream and author-hosted Luca-Pomerance (2002) p.113 Theorem 3(i), equation (8), support this natural-valued f=o(n) strengthening, using positive epsilon(n)=(f(n)+1)/n. Totient, little-o, natural subtraction and ordinary natural density definitions checked; finite n=0,1 harmless. Direct problem website 403/mirror omits formulas; original paper successfully read. Mathematical inputs unchanged. See statement-check.json and source-fetch.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact complete task ID match in skill references/public-lean4-proofs.csv; public_lean4_proof=true. https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos1064.lean#L947 . Per skill no further network confirmation needed. Public proof not compiled in this environment or added to task/image; public-proof-csv.json."
+    }
+  }
+}

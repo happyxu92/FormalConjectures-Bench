@@ -1,0 +1,7 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ᶠ (x : ℝ) in Filter.atTop,
+  ↑{x_1 | (fun motive x h_1 => h_1 x) (fun x => Prop) x_1 fun n => ↑n ≤ x ∧ n.totient = (n + 1).totient}.ncard ≤
+    x / Real.exp (Real.log x ^ (1 / 3))
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

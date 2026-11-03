@@ -1,0 +1,5 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ), Odd n → n.Perfect → n > 10 ^ 1500 ∧ n.primeFactorsList.length ≥ 101
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

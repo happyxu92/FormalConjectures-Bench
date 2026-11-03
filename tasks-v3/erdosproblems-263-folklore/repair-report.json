@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-263-folklore",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to instruction.md search command. Actual rg found def Irrational in the package Mathlib/NumberTheory/Real/Irrational.lean; no path errors. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-263-folklore/attempt-002/evidence/search-path.log"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target imports only ProblemImports and the local Submission, so no additional upstream modules were required. Added Dockerfile final RUN lake build +FormalConjecturesBench.Target after HOME and USER ubuntu. Current local Harbor image sha256:c8f6cd1f74e38727a787b7ffe9af9c4ce50c39e72b9dc68a3fac12496fe58867 built successfully; image history records that final build. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-263-folklore/attempt-002/image-history.txt"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran the skill check_unicode_header.py in step 3: no_issue, original header and assignment-boundary checks passed; no Unicode repair was needed. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-263-folklore/attempt-002/evidence/unicode.json"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Replaced candidate-environment GoldenCheck reparsing with a fixed precompiled FCBTrustedSpec.ExpectedType. Generated from the original golden prefix/target without Submission in locked Lean 4.27.0 x86_64; complete a and Tendsto binders, zero universes; independent transitive audit found only propext/Classical.choice/Quot.sound and no temporary target or sorryAx dependencies. Both checker contents/AST and Spec packages match, manifest pinned; paths fix Spec/dependency identity without a general external-import whitelist. Current local Harbor build succeeded (harbor.exit=0), actual /tests/test.sh and ubuntu /app/check.sh reject original sorry with exit 1 and reward 0. Actual checker-function supplements in the same Harbor container passed at /tests and /opt: Spec loading/audit, ubuntu compile, full type equality, sorryAx rejection/canary, unchanged frozen-text Irrational-name attack compiled then rejected by complete-type comparison, frozen/source boundaries, candidate same-name cache/environment resistance, missing/corrupt artifacts failing without regeneration. Logs, commands, input/artifact hashes, image/container IDs and 15 frozen-file checks are in /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-263-folklore/attempt-002. Initial retained Harbor container was stopped normally by Harbor and restarted for supplement; first attempt log retained. Cleanup completed: stopped and removed only own Spec container erdosproblems-263-folklore-spec-a002-f93c8b and Harbor container erdosproblems-263-folklore-a002-f93c8b__env-main-1 (43624036d368bb4ec36ad8de1adf004909b747159e9837c3be3d4d93414b3db4); removed own Harbor image sha256:c8f6cd1f74e38727a787b7ffe9af9c4ce50c39e72b9dc68a3fac12496fe58867 / erdosproblems-263-folklore-a002-f93c8b__env-main:latest; removed own inactive Harbor network(s) [('erdosproblems-263-folklore-a002-f93c8b__env_default', '8b57a7bf29c295ba2ac56df586663b2c23879467b47fe7dfe70c7b01442fcdcc')]. Re-inspect confirmed own containers and image absent. Shared generation base sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a retained because it predated this run. No prune or shared cache cleanup. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-263-folklore/attempt-002/cleanup.json"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked consistent. Checked complete pinned FormalConjectures/ErdosProblems/263.lean and public Target, including prefix definitions. This task is the folklore criterion, not all of Problem 263: lim a_n^(1/2^n)=infinity implies irrational reciprocal sum. arXiv:2406.17593v2 Introduction explicitly states this criterion. Eventual growth excludes all but finitely many zeros (Lean 1/0=0), implies summability; sorting removes any need for monotonicity, with finite rational offsets preserving irrationality. IsIrrationalitySequence and earlier open/solved prefix lemmas are not target dependencies. No mathematical input changed. erdosproblems.com/263 returned Cloudflare/HTTP403; the pinned upstream and primary paper were accessible. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-263-folklore/attempt-002/sources"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true. Exact complete ID erdosproblems-263-folklore matched the skill public-lean4-proofs.csv, hence no further public-proof search was required. URLs: https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/5da9642575b26c2c816a49bcb56b33fed5456619/Proofs/T_Erdos263_erdos_263_variants_folklore.lean#L399 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos263_erdos_263_variants_folklore.lean#L399. Both fixed sources retrieved; inspected target exact e263_folklore a ha and its full helper chain through sorting, growth and rational-tail contradiction, with no proof placeholders in that chain. Other theorems in that file have sorry but are not dependencies. Not compiled in this task environment; source module/import layout differs. Sources saved only in host evidence, not in task or image."
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-31-sidon-01n-clz01",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to instruction.md source-search command. Executed the three-path rg command as ubuntu in the current Harbor container and found Mathlib Finset.card_powerset. Evidence: attempt-002/search-path-package.json."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Actual Target imports only ProblemImports and local Submission; no additional upstream precompilation needed. Added the missing final Dockerfile RUN lake build +FormalConjecturesBench.Target after WORKDIR /app, HOME=/home/ubuntu, USER ubuntu. Current local task Harbor build succeeded; image sha256:b17dbcabedc3e9e6e92a18234fd2d2b5d5b451ac7bee37a72864fde1b1fccdf9 history confirms this executed final layer. See attempt-002/harbor-image-history.txt and harbor-container-inspect.json."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran the skill check_unicode_header.py on this task: case=no_issue, verification=passed, neither checker modified. Original header accepted; mutated header/missing assignment rejected. Evidence: attempt-002/unicode.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Replaced candidate-environment GoldenCheck re-elaboration with fixed repair-time FCBTrustedSpec.ExpectedType and complete type comparison. Generated from immutable golden without Submission in matching Lean4 v4.27.0 x86_64 container, discarded temporary theorem, independently imported/audited ExpectedType and referenced definitions; no sorryAx or nonstandard axioms in their dependencies, universe_params=[]. Synchronized both checker files and Spec packages; pinned manifest SHA256 77c888b9d24bbc8f978d570c3ba8a68d149941064351475981de5772f503e571 includes golden/artifact/source hashes, toolchain and dependency revisions. Current task Harbor build and delivery hashes passed. Actual formal /tests/test.sh and ubuntu /app/check.sh both exit 1 for the original sorry; reward=0 is expected proof failure. Supplementary calls to the actual checker functions passed 27 cases per entry: fixed Spec audit/load, ubuntu compilation, full type comparison, sorryAx rejection, canary, frozen/source restrictions, ordinary helpers, unchanged-frozen-text LE-instance semantic attack rejected by actual type mismatch, same-name module/cache/environment substitution blocked, missing/tampered artifacts fail without regeneration. Formal load resolves /tests/trusted_spec; local load resolves /opt/formal-conjectures-bench-checker/trusted_spec. Evidence directory: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-31-sidon-01n-clz01/attempt-002 (generation-result.json, delivery.json, validation-official.json, validation-local.json, static-final.json). All original immutable-before.json files unchanged. No target proof supplied or claimed. Docker cleanup verified complete (attempt-002/cleanup.json): removed Spec container 4ade5739dd8c, Harbor container e47ab89c475d, task image b17dbcabedc3 and its task tag, and this task's isolated compose network. Baseline shared generation image and shared build cache retained; other tasks untouched."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent for the retained upper-bound variant. Checked pinned upstream, full Target/prefix and strong IsSidon definition, Green author PDF Problem31, CLZ DOI10.1006/jcta.2000.3127, upstream PR4605 and public subsingleton lemmas. Repeated sums in exponent two force card S<=1, so uniform C=1 satisfies the actual bound, including n=0 and empty S. Upstream now uses IsBinarySidon (ordinary coordinatewise Nat sums) to match the nontrivial literature; this task retains the stronger old restriction. The difference does not make this upper-bound target false; no mathematical statement, definition, golden, GoldenCheck or frozen hash changed. Evidence: attempt-002/mathematical-check.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Exact complete task ID did not match public-lean4-proofs.csv. Searched pinned/current FormalConjectures, Mathlib, GitHub exact-name/equivalent/binary-B2/author queries, related PRs, repositories and the linked public audit; read promising Lean sources and diffs. Accessible code supplies characteristic-two cardinality-one helpers or proves different statements, not the complete retained 0.5753 target. Current upstream target still has sorry and a changed predicate. No complete public proof verified; metadata public_lean4_proof=unknown, search status=blocked. GitHub code/history/comments rate limits, unavailable configured search backends and unreliable engine results prevent a definitive negative. Sources, exclusions, queries and HTTP limitations: attempt-002/public-proof-search-summary.json and public-search*.json. No proof copied into image."
+    }
+  }
+}

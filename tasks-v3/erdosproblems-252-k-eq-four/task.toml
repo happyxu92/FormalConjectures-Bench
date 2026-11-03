@@ -20,6 +20,12 @@ oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
 verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
+statement_status = "consistent"
+statement_note = "Known k=4 variant: Pratt, arXiv:2209.11124, Theorem 1. The Lean n=0 summand is zero, so its tsum agrees with the paper's sum over n>=1."
+public_lean4_proof = true
+public_lean4_proof_status = "catalog_match"
+public_lean4_proof_urls = ["https://github.com/tokengr1nder/Erdos252/blob/46b9fd26361faf669bcd7e4495e63678bfa6a735/Erdos252/Solution.lean#L1066"]
+public_lean4_proof_note = "Exact full task ID matched lean-task-repair/references/public-lean4-proofs.csv; existence accepted per skill. Public proof was not bundled or compiled in this pinned task environment."
 
 [verifier]
 timeout_sec = 7200.0

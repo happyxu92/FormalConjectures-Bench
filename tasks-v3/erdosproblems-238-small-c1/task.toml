@@ -8,6 +8,11 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+statement_note = "Checked the small_c1 variant against the pinned upstream, Erdos 1949 Theorem 3 (pp.58,63), and the source forum's quantifier discussion. No obvious invalidity found; c1 may depend on c2."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Full task ID absent from public-lean4-proofs.csv. Continuation rechecked current upstream and third-party source; no inspected candidate covers the full target. GitHub code search and analytic-library source follow-up remain blocked (HTTP403), so public proof status is unknown. Earlier evidence preserved; new review: jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-238-small-c1/attempt-002/public-proof-review.json."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/238.lean"

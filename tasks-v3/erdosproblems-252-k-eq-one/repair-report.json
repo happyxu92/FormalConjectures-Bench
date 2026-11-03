@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-252-k-eq-one",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages. Three-path rg command actually found Mathlib StrictMono under ubuntu in the current Harbor child (exit 0); instruction-search.log and delivery.json."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "FormalConjectures.Wikipedia.Schinzel added to upstream lake build before cleanup/user switch. Dockerfile ends with USER ubuntu / RUN lake build +FormalConjecturesBench.Target. Current local-task Harbor force-build succeeded, and actual ubuntu Target lake build exited 0; pinned Lean v4.27.0 and Mathlib a3a10db0e9d66acbebf76c5e6a135066525ac900. No dependency permissions relaxed."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Skill check_unicode_header.py rerun: case=no_issue; original/golden prefix, unchanged header and assignment boundary verified, with altered-header/missing-assignment rejections; unicode.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Repair-time parser/elaborator extracted and precompiled the complete trusted type Irrational (Erdos252.erdos_252_sum 1), with no binders/universes. Recovered this task’s generation artifacts, verified exact delivered hashes, and independently reaudited ExpectedType and transitive prefix dependencies (standard axioms only; temporary theorem/children absent). Both checkers/Spec packages match. Fixed manifest bb68f9da918bf1984ec313945966809384ef2b4b8a5df05e870d7c988eead01d; final locally built Harbor image sha256:dba89c5b71099d7643832e3e6849776adb87bfd815c8c8fc5332da94ce829ac4. Both entries reject original sorry (exit 1, official reward 0), as expected, before later stages. In that same Harbor child, each actual /tests and /opt checker passed 29 fixture cases: fixed loading/audit, observed ubuntu uid 1000 compilation, full-type match, sorryAx rejection, sorry canary, frozen/source boundary rejections, name shadowing rejected by complete-type comparison, poisoned same-name Spec/dependency caches ignored, and missing/corrupt package fails without regeneration. No original proof supplied; no required semantic path remains untested. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-final-three/tasks/erdosproblems-252-k-eq-one/attempt-002 (validation-coverage.json, delivery.json, provenance.json). Docker cleanup verified: current Harbor child 53574c5f5070 and inherited Spec container 1313574abd7c removed; task-owned images dba89c5b7109, 430f05e264ea and 083b8990701f removed and absent by inspect; current task network 57385beb3398 removed. Shared base image and build cache preserved. An initial cleanup inspection hit an unrelated stale Docker entry; the resumed cleanup succeeded without modifying it. Details in cleanup.json and cleanup*.log."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent. Checked locked upstream definition and target, Mathlib sigma/zero definitions, Erdős–Straus (1974), Theorem 3.7 pp.88–89 (DOI 10.2140/pjm.1974.55.85), and Friedlander–Luca–Stoiciu (2007), Introduction pp.1–2. Unconditional known k=1 variant; sigma(1,0)=0 and factorial convergence make the natural-indexed tsum agree with the positive-indexed series. All mathematics unchanged. erdosproblems.com returned 403, but original papers were accessible; math-review.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true, exact full-ID match in skill references/public-lean4-proofs.csv. Source: https://github.com/tokengr1nder/Erdos252/blob/46b9fd26361faf669bcd7e4495e63678bfa6a735/Erdos252/Solution.lean#L1066 . Per skill no network reconfirmation required; not compiled in this task and no answer bundled. Metadata marked; public-proof-review.json."
+    }
+  }
+}

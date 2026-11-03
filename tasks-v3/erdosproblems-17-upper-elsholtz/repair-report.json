@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-17-upper-elsholtz",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "源码搜索命令补入显式 /opt/formal-conjectures/.lake/packages。当前 Harbor 子容器中以 ubuntu 实际运行该命令，在 Mathlib 包中找到 def Tendsto；退出码 0。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-17-upper-elsholtz/instruction-search.log"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "实际 Target 仅导入 ProblemImports 和本地 Submission，无额外上游 import。补齐 Dockerfile 最后的 ubuntu RUN lake build +FormalConjecturesBench.Target；当前本地 task Harbor 镜像构建成功，同一子容器再次以 ubuntu 构建退出 0（原始 sorry 仅产生警告）。证据 delivery.json/image_history 和 ubuntu_target_build。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已运行 skill 的 check_unicode_header.py；case=no_issue，原始头、变更头与缺失 := 检查通过，两份 checker 相同。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-17-upper-elsholtz/unicode.json"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 GoldenCheck 在候选加载后重新解析预期命题，存在名称遮蔽风险。已从可信 golden 去除 Submission 与两个无关占位定理，保留原名原定义，锁定 Lean 4.27.0/x86_64 和依赖修订生成预编译 Spec。ExpectedType 保存完整存在量词、forall c 与 IsBigOWith，universe 参数 []；独立导入及传递公理审计通过，无 sorryAx，临时目标未导出。两包及两份 checker AST/内容一致；manifest a4f6338feb1f5c7903643511d896000b35bb1258204d7f43e596c13b0748cbbc，产物及 golden 哈希在 manifest.json。verifier 只加载固定产物，保留正常 imports 和原源码/冻结/公理/canary 规则。当前本地 task Harbor 镜像 sha256:305e4f1205da77fec5e1c3f762c81a51e13946f08b9210a506bd1d98399cee67；正式 /tests 与本地 /opt 入口均实测，原始 sorry 预期拒绝，reward=0。两条路径各 28 项真实函数补测通过：Spec 加载/审计、ubuntu 编译、完整类型比较、sorryAx 拒绝/canary、冻结及越界负例、exp 名称偷换类型不符、候选缓存/环境遮蔽无效、缺失/损坏产物明确失败且不重生成。原始除法实例 fixture 未改变本题类型，已改用实际改变类型的 exp 名称负例并重新完整验收。未构造无占位的原题完整证明，未验收其成功分支。日志 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-17-upper-elsholtz/{generation.log,harbor.log,delivery.json,validation-official.json,validation-local.json,static-validation.json}。本次 Spec 容器 44a6c7fd38bf、Harbor 容器 c935aad0cdd2、task 镜像 sha256:305e4f1205da77fec5e1c3f762c81a51e13946f08b9210a506bd1d98399cee67 及其专属网络均已删除并复查；共享缓存镜像 0824de0f1647 保留，未执行 prune。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核对锁定上游及 Elsholtz 2003 全文 pp281–284，pp283–284 给出 1/8−ε 改进。Nat/Int 域、有限计数、零差及 p=2 边界合理；每个 c 可选 c<cprime<1/8 后用指数余量吸收常数，故共用 C 而阈值依 c 的量词顺序没有明显错误。原题为已知上界变体，不是开放的无穷性命题。数学输入、公开 Target/golden/GoldenCheck 及冻结哈希均未改。证据 statement-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 task ID 精确匹配 skill CSV 未命中。多组关键词及 GitHub issues/PR、当前上游、Mathlib、相关证明库已检索；实际读取并排除 PR3018（目标仍 sorry）、PR4194/4299（有限97案例）、奖项5/7示例、Lean Genius 历史 axiom elsholtz_bound 与当前说明。未核实到覆盖本目标的完整公开 Lean4 证明。全局代码搜索401、Google脚本跳转、DuckDuckGo验证及不可用通用检索限制了发现范围，故 metadata 标 unknown/blocked，不能认定不存在证明。详见 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-17-upper-elsholtz/public-proof-review.json"
+    }
+  }
+}

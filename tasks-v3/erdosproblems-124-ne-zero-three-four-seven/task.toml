@@ -8,6 +8,11 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+statement_status_note = "The retained statement quantifies over every k != 0. BEGL96 p.137 establishes only k=1; k>=2 remains a stronger conjectural variant. No concrete contradiction or definition error was found; the mathematical input is unchanged."
+public_lean4_proof = false
+public_lean4_proof_status = "searched"
+public_lean4_proof_note = "Exact task ID absent from the local proof CSV. Searches and source inspection found only cutoff-zero proofs, the converse, and placeholder PRs; no complete proof of the full retained positive-cutoff statement was found. Some website requests returned 403 and repository tree APIs were rate-limited; the relevant candidate Lean sources were read via raw URLs."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/124.lean"

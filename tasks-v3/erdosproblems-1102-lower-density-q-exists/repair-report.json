@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1102-lower-density-q-exists",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to the existing rg search command. The exact three-path command found ^def StrictMono in package Mathlib in this task Harbor container; exit 0. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1102-lower-density-q-exists/delivery.json"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target imports only ProblemImports and local Submission; no extra upstream precompile target is needed. Preserved upstream lake build ProblemImports. Added final RUN lake build +FormalConjecturesBench.Target after USER ubuntu, HOME and copy/cleanup/permissions. Current local Harbor Docker image built successfully; ubuntu build exit 0 (7992 jobs). Evidence: image-history.txt, ubuntu-lake-build.log and Harbor result under /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1102-lower-density-q-exists"
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Skill script repaired paired-surrogate U+1D4DD (𝓝) in both EXPECTED_HEADER constants using repr. Original header accepted, mutated header and missing assignment rejected; final script case no_issue. Public Target/golden/frozen prefix unchanged. Logs: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1102-lower-density-q-exists/unicode.json and unicode-final.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated complete Prop-valued ExpectedType from original golden without Submission in pinned Lean 4.27.0 x86_64 Docker; no outer binders or universes. Independent audit rejects nonstandard axioms and confirms temporary target/children absent; ExpectedType and HasPropertyP/Q dependencies audited. Golden Target SHA256 aec65134a56fbfa8017c93fb4e25f323c3e643801acd2655cb226a13fc012ea9; pinned Spec manifest SHA256 6114f1c1cba69c71966a5202283e1df91bcb44dae8109fb817f5e50a58fec35d. Both checker AST/content and Spec packages identical. Fixed /tests/trusted_spec official and /opt/formal-conjectures-bench-checker/trusted_spec local loading, locked compiler/dependencies before temporary candidates; no runtime Spec generation, candidate Lake/config/cache override, or generic external-module whitelist. Actual local task Harbor command: harbor trials start --config /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1102-lower-density-q-exists/harbor-config.json; image sha256:afe8661d494afe5e8c9af517890a70e75fbecb4f98d839a19f2ebba337de8308. Harbor nop is a no-op fixture, not a subagent. Official /tests/test.sh and ubuntu /app/check.sh exit 1 on original sorry; reward 0 expected, no original proof claimed. In same Harbor child both actual-function suites exit 0: fixed Spec load/type audit, observed uid 1000 compilation, complete type comparison, placeholder sorryAx rejection, canary, frozen/header/tree/source bans, legal def/lemma/instance, frozen-text semantic attack compiling then rejected by complete type mismatch including full main(), candidate same-name module/cache/env shadowing, missing/corrupt artifacts and manifest rejection without regeneration. All required paths reached; no unvalidated required branches. Container hashes match both local checkers/packages/golden; immutable-before.json hashes all unchanged. Logs, manifests, source/commands and build identities: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1102-lower-density-q-exists. Docker cleanup verified: stopped/removed own Spec and Harbor containers (erdosproblems-1102-lower-density-q-exists-spec-1102163804, erdosproblems-1102-lower-density-q-exists-1102163804__env-main-1), removed own image erdosproblems-1102-lower-density-q-exists-1102163804__env-main:latest (sha256:afe8661d494afe5e8c9af517890a70e75fbecb4f98d839a19f2ebba337de8308) and network erdosproblems-1102-lower-density-q-exists-1102163804__env_default; container listing and image inspect confirm absence. Existing base image and shared build cache retained; no prune or other-agent resource cleanup. Details: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1102-lower-density-q-exists/docker-cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Pinned upstream 1102.lean and van Doorn–Tao arXiv:2512.01087v1 Definition 1, Theorem 3 and §4.1 match squarefree strictly increasing sequence, property Q and natural density 6/pi². Real quotient j/A(j), index-zero convention and positive reciprocal limit checked; no obvious contradictory definition or quantifier found. Only marked metadata; mathematics unchanged. Primary erdosproblems.com page returned 403; paper/upstream fetched HTTP 200. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1102-lower-density-q-exists/statement-review.json"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact full task ID match in skill references/public-lean4-proofs.csv; public_lean4_proof=true and proof URL added to metadata. Source: https://github.com/Woett/Lean-files/blob/1e075c4f6e8a907b924647fa88238f978e941742/ErdosProblem1102PropertyQDensity.lean. As required for a collection hit, no additional proof search or compilation is necessary; this session did not compile or bundle the public answer. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1102-lower-density-q-exists/public-csv-match.json"
+    }
+  }
+}

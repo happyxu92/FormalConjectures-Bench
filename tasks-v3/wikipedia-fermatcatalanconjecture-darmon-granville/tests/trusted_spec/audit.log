@@ -1,0 +1,16 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited FermatCatalanConjecture.FermatCatalanSet': [propext, Quot.sound, Classical.choice]
+audited FermatCatalanConjecture.FermatCatalanSet: [propext, Quot.sound, Classical.choice]
+audited FermatCatalanConjecture.fermatCatalanConjecture: [propext, Quot.sound, Classical.choice]
+complete binder order: [m, n, k, hm, hn, hk, H]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (m n k : ℕ),
+  0 < m →
+    0 < n →
+      0 < k →
+        1 / ↑m + 1 / ↑n + 1 / ↑k < 1 →
+          {x |
+              FermatCatalanConjecture.FCBExtractionTarget.match_1 (fun x => Prop) x fun a b c =>
+                0 < a ∧ 0 < b ∧ 0 < c ∧ a ^ m + b ^ n = c ^ k ∧ {a, b, c}.Pairwise Nat.Coprime}.Finite
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

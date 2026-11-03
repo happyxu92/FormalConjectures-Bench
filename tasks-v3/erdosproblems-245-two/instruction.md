@@ -39,11 +39,18 @@ cd /app && ./check.sh
 
 This runs the same substantive checks as the official verifier. If it passes
 without modifying the checker itself, the official verifier is intended to pass.
+The checker loads a fixed, precompiled trusted statement and compares the full
+type of your theorem against it. The trusted package and prefix definitions are
+not editable. Official verification loads `/tests/trusted_spec`; `./check.sh`
+loads `/opt/formal-conjectures-bench-checker/trusted_spec`.
 
 For source search, prefer commands such as:
 
 ```bash
-rg --glob '*.lean' 'search term' /app /opt/formal-conjectures
+rg --glob '*.lean' 'search term' \
+  /app \
+  /opt/formal-conjectures \
+  /opt/formal-conjectures/.lake/packages
 ```
 
 Internet access is enabled for this task. You may use external literature and web resources, but the final Lean proof must pass the local verifier.

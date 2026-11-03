@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-252-schinzel",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to instruction search; actual ubuntu rg in current Harbor container found Mathlib Irrational definition. Evidence: attempt-002/instruction-search-current-harbor.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Precompiles actual extra import FormalConjectures.Wikipedia.Schinzel and retains Dockerfile final ubuntu lake build +FormalConjecturesBench.Target. Current local task Harbor build succeeded using matching dependency cache; image sha256:91629658fd5d00c5e308753e1df3b78620a737a0cbbbc4bddd6503b1ec3617dd. Generation-image upstream Lake failed after git cleanup (extra-import-build.log); locked Lean directly compiled Schinzel and Spec successfully (generation-fixed.log), and final image build independently passed."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran skill Unicode script: no_issue; unchanged original header accepted, modified header and missing := rejected, both checker copies consistent. Evidence: attempt-002/unicode.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Replaced candidate-environment GoldenCheck type elaboration with precompiled complete ExpectedType from original golden, including hs and k, empty universes; independent transitive audit allows only propext/Classical.choice/Quot.sound. Fixed Spec/dependency paths and manifest 03a9f97a778dfa7f63633e6b667cb6fed207aa7fa275af7910ed7ae99b245a90; two checker AST/content and packages equal. Current local Harbor Docker build erdosproblems-252-schinzel-pi252sch-7d8ecb8d__env-main succeeded; delivered /tests and /opt packages/golden hashes match host. Formal /tests/test.sh and ubuntu /app/check.sh both exited 1 for original sorry; reward 0 expected, not a proof pass. Both actual checker function paths passed 29 cases each: fixed Spec loading/audit; uid1000 candidate compile; complete type match; sorryAx rejection/canary; legal declarations; frozen/out-of-tree negatives; unchanged-header Irrational:=True semantic attack compiles but complete comparison rejects; same-name Spec/dependency cache and hostile env cannot replace trusted package; missing/corrupt artifacts fail with no regeneration. Initial semantic fixture introduced one binder too many; corrected fixture v2 passes; failed logs retained. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-252-schinzel/attempt-002/final-acceptance.json, validation-{formal,local}-v2.log and delivery/build records. Docker cleanup verified: removed spec container erdosproblems-252-schinzel-spec-pi252sch-7d8ecb8d, Harbor container erdosproblems-252-schinzel-pi252sch-7d8ecb8d__env-main-1, task image sha256:91629658fd5d00c5e308753e1df3b78620a737a0cbbbc4bddd6503b1ec3617dd (only task tag), and task network 9bf52a670170e393a75bd08385a51f18de8d76ba8e89b07bdc376d7b60994533. Initial failed-generation container already absent. Pre-existing shared dependency image and shared build cache retained; unrelated resources untouched. See attempt-002/docker-cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Read full frozen prefix, sigma and both polynomial conditions; Nat n=0 contributes zero, k=0 is the known divisor-count case; no obvious false definition/quantifier change found. This is the conditional Schinzel variant, supported by original author arXiv abstract and Pratt arXiv:2209.11124 introduction, not an unconditional solution. Erdős site returned 403 and publisher identity redirect blocked full-text fetch; accessible primary-paper introduction and original abstract suffice for this check. Mathematics unchanged. Evidence: attempt-002/statement-review.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact complete task ID matched skill public-lean4-proofs.csv (SHA256 e7e3e27990387e6fd564dc3ab548e2a5b9cf71cc8de7b9265f8670ee234af825): https://github.com/tokengr1nder/Erdos252/blob/46b9fd26361faf669bcd7e4495e63678bfa6a735/Erdos252/Solution.lean#L1066 . Set metadata public_lean4_proof=true. Per skill no further network proof search is required after exact hit; proof not copied into image and not compiled in this task. Evidence: attempt-002/public-proof-csv.json."
+    }
+  }
+}

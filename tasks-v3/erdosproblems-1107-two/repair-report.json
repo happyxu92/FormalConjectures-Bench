@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1107-two",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to rg command alongside /app and /opt/formal-conjectures. Actual corrected search in this Harbor child found mathlib StrictMono (exit 0); delivery.json records result without path/permission errors."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Actual Target imports only ProblemImports and local Submission; no extra upstream imports needed. Retained upstream precompilation and added final USER ubuntu /app lake build +FormalConjecturesBench.Target. Current local Harbor image built successfully, final build layer recorded in image-history.txt; repeated ubuntu lake build exited 0 (ubuntu-lake-build.log)."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran skill Unicode script before semantic changes and again at final verification: case=no_issue, both copies and all trusted Target headers/prefix boundaries passed; unicode.json and unicode-final.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Golden-only complete type extracted/elaborated and precompiled in locked Lean 4.27.0 x86_64 environment from pre-existing matching dependency image; no candidate input loaded. Spec contains original SumOfRPowerful under same name; unrelated frozen open-conjecture placeholder omitted, temporary target/children not exported. Independent complete proposition equality and transitive audits passed with only propext/Classical.choice/Quot.sound. Two packages and checker content/AST identical, manifest SHA256 a582871c9fd640fb47bb5cb73ddb3f90f655a02e1a05eae0a0525482c58105d8, olean SHA256 3272dfc252c9b8c013c037acfb165e41e8d693d2cf45e94d8bd59461cafdb11a. Fixed tools/dependencies/Spec precede candidate paths; no runtime generation or fallback. Actual local task Harbor build used image sha256:1112185b65531aaf0504cc6a990f12d2ba417923dde0c81fce82c3da29be158f. Harbor supplied /tests and /logs/verifier; official /tests/test.sh and ubuntu /app/check.sh exit 1 on original sorry, reward=0 (expected unproved target). Direct actual functions in same child passed 29 cases for /tests as root with candidate uid=1000 and 29 cases for /opt as ubuntu: Spec load/audit, candidate compile, complete type equality, sorryAx rejection, canary, frozen/header/tree/source negatives, unchanged-text atTop-to-bottom semantic attack rejected for full type mismatch, missing/tampered package fails without regeneration. Exact --deps identity tests rejected candidate same-name source/olean/cache/env overrides for Spec and ProblemImports. Normal import/helper rules retained, no generic external module whitelist. Public Target, golden, GoldenCheck and immutable-before.json files unchanged. Evidence and commands: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1107-two; untested: genuine completed original proof/reward=1, not required by this repair. Docker cleanup verified: removed both created containers d3c4cb9bf342 and d3108e6f3f87, task image sha256:1112185b65531aaf0504cc6a990f12d2ba417923dde0c81fce82c3da29be158f and network c3928c2925e3. Shared pre-existing base image and build cache retained; no prune."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked task.toml statement_status=consistent. This is the known r=2 variant, not the open general-r problem. Nat.Full actual locked definition, list bound <=3, summands and equality, and eventually-atTop over Nat match source. Zero summands may be omitted. Sources: erdosproblems.com/1107 (identified direct fetch 200), Moroz Astérisque 209 (1992), pp.276 Corollary and 277 Remark 3, https://www.numdam.org/item/AST_1992__209__275_0.pdf. Original mathematics unchanged; statement-review.json and lean-definition-audit.txt."
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Exact complete ID had no CSV match. Marked public_lean4_proof=false, status=searched: sufficient bounded public search found no known complete Lean4 proof, not a nonexistence claim. Multi-query exact name/aliases/mathematical search, upstream pinned/main and all matching PRs, Lean Genius full tree/sources/PRs, Mathlib and Nexus reviewed. Upstream PRs 2503/2817/3333 only relabel status and retain sorry; Lean Genius squareful result uses general conjecture axiom, threshold uses squareful_sum_threshold, r=3 file is other variant with axiom. Anonymous global GitHub code search requires authentication (401), all specific material leads were accessible and excluded; initial source 403 recovered via identified request. No qualifying source compiled or copied as answer. Details/queries/source hashes/access limits: public-proof-review.json, research-index.json, followup-index.json, pr-source-index.json in evidence directory."
+    }
+  }
+}

@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID absent from skill CSV. Inspected upstream source/history and candidate PRs 2466, 2845, 3364, 3385, 5557: target still sorry or only dependent bounds. No complete proof verified; global code search requires login and search-engine coverage was unreliable. See repair-report.json and attempt-002/public-proof-review.json."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/GreensOpenProblems/19.lean"

@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-perfectnumbers-lower-bound",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to the rg command while retaining /app and /opt/formal-conjectures. Actual package definitions found; search-path.log and delivery.json record successful container searches."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Only ProblemImports and local Submission imports; no extra upstream precompile required. Added final USER ubuntu RUN lake build +FormalConjecturesBench.Target. Current local Harbor image sha256:a5116e2623291ce3f523f1ce9c4f230bcc534c6d09df5fbdc7c441c93f785cd6 built successfully; image-history.txt and harbor.log record the validation."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran skill check_unicode_header.py before semantic changes and again at completion; both no_issue, original/mutated header and missing := boundary checked. See unicode.json and unicode-final.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Pre-extracted complete ExpectedType from original golden without candidate imports on pinned Lean 4.27.0 x86_64; definition/universe/transitive axiom audits passed (no sorryAx, temporary target absent). Synced and hash-pinned both checker/Spec packages; fixed Spec and dependency search precedence. Current local task Harbor build sha256:a5116e2623291ce3f523f1ce9c4f230bcc534c6d09df5fbdc7c441c93f785cd6 passed. Uploaded /tests and installed /opt checker/Spec/golden hashes match local. Actual official/local entries exit 1 on original sorry, reward 0 (expected, not a solved proof). Both actual checker function paths pass 29 cases each: trusted loading/audit, ubuntu compilation, complete type comparison, sorryAx rejection, canary, frozen/source restrictions, same-name module/cache/env precedence, corrupt/missing artifact rejection without regeneration. A source-legal frozen-text Odd-name shadow compiles but full checker rejects its changed type. AST/content/packages and original 15 immutable hashes pass. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-perfectnumbers-lower-bound/attempt-002/{generation.log,package.log,delivery.json,coverage.json,static-validation.json,immutable-final.json}. Initial function probe raced Harbor stopping its preserved container; restarted that same child and complete retry passed. Docker cleanup: removed both task-owned containers 752ced5d4f71, ee7eac1bf122, task image sha256:a5116e2623291ce3f523f1ce9c4f230bcc534c6d09df5fbdc7c441c93f785cd6 and unique network wikipedia-perfectnumbers-lower-bound-a002-8f27c1__env_default. Shared baseline Spec generation image retained; no other resources or build cache touched. See cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked metadata statement_status=consistent. Checked full prefix and Nat.Perfect positivity, Odd and primeFactorsList multiplicities; pinned upstream and Ochem-Rao primary paper Theorems 1 and 2 match strict >10^1500 and >=101 factors. No obvious false statement found; no mathematical input changed. See statement-review.json and ochem-rao-paper.md."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Exact full task ID absent from skill CSV. Multiple theorem/statement/author/repository searches and Lean source leads inspected: upstream/fork and PRs 2623/3147 still sorry; SublimeGap assumes the bound; other candidates prove different/weaker statements. No full proof verified. Key GitHub code/history/fork/tree APIs restricted, search API unavailable and Bing results unrelated: metadata public_lean4_proof=unknown, status=blocked. This is not evidence of nonexistence. Details and URLs: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-perfectnumbers-lower-bound/attempt-002/public-proof-review.json"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+audited FCBTrustedSpec.ExpectedType: [Quot.sound, propext, Classical.choice]
+audited Erdos12.IsGood: []
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (f : ℕ → ℕ),
+  Filter.Tendsto f Filter.atTop Filter.atTop →
+    ∃ A, Erdos12.IsGood A ∧ {N | ↑N / ↑(f N) < ↑(A ∩ Set.Icc 1 N).ncard}.Infinite
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

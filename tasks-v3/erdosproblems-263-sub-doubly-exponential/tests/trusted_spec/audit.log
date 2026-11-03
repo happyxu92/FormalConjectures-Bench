@@ -1,0 +1,10 @@
+complete binder count: 4
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos263.IsIrrationalitySequence: [Quot.sound, propext, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (a : ℕ → ℕ),
+  StrictMono a →
+    (Summable fun n => 1 / ↑(a n)) →
+      Filter.Tendsto (fun n => ↑(a (n + 1)) / ↑(a n) ^ 2) Filter.atTop (nhds 0) → ¬Erdos263.IsIrrationalitySequence a
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

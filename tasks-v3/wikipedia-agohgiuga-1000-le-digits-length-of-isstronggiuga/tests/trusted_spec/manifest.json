@@ -1,0 +1,40 @@
+{
+  "task_id": "wikipedia-agohgiuga-1000-le-digits-length-of-isstronggiuga",
+  "target_name": "AgohGiuga.agoh_giuga.variants._1000_le_digits_length_of_isStrongGiuga",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "34aa1862565d21f9ea9ac4d0edd9e98ad25aba3f9e9ad5545f1401f8a04f43ce",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "0d89fa1309fd00d17378087c9be952580c1841cb4d73993dcf21d067e77fd1b2",
+    "FCBTrustedSpec.ilean": "4f9e20fe289d96af5805eb229f0c33f2a1ec7ff659b74f28fbe1bc9e34f4e335",
+    "FCBTrustedSpec.lean": "717a2f859a67e9f9c8474f07d0e7e9e53f5c994f52423da4564d43e7a1e82a52",
+    "FCBTrustedSpec.olean": "6ca8db68beb4824883f9427c0ff1101a01d2b8ae7170fadd682550f0d3e484fb",
+    "audit.log": "7a8f81705644a9f538c78630f954d86a82941b1fff35e90682570aa444d16265",
+    "generate.py": "327e79a7c296fe8c3e137fa3b7792b166bb3fe2a018373be49f8de57579c0021",
+    "reproduce.sh": "ede6a2a9636394e9b93ab45c02647e96820f334d723375ff378758ff00312c70"
+  },
+  "generation_image": "sha256:0824de0f16475f1f619701869e59de4e4ce3229bfce229a5fd16f88072c37e8f",
+  "generation_command": "docker run -d --network none --name wikipedia-agohgiuga-1000-le-digits-length-of-isstronggiuga-spec-a002-9e72bc --entrypoint sleep fcb-local/erdosproblems-1-least-n-5:cache-smoke infinity; docker cp tests/trusted_spec and tests/golden_env to /tmp/repair-bundle/; docker exec wikipedia-agohgiuga-1000-le-digits-length-of-isstronggiuga-spec-a002-9e72bc bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Complete elaborated target type with a and ha; universes empty; temporary target and children absent. ExpectedType and referenced IsStrongGiuga transitive axioms limited to propext, Classical.choice, Quot.sound. Earlier original prefix theorems with sorry remain unchanged but are not dependencies of ExpectedType."
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-258-monotone",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to the rg source-search command. Executed the three-path command and found mathlib Irrational/Tendsto definitions; no path/permission error. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-258-monotone/attempt-002/evidence/instruction-search.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target imports only ProblemImports and Submission; no extra upstream imports needed. Added Dockerfile final RUN lake build +FormalConjecturesBench.Target after WORKDIR /app, HOME=/home/ubuntu and USER ubuntu. Current local Harbor task image built successfully, and ubuntu lake build was exercised in its container. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-258-monotone/attempt-002/evidence/docker-build.log, final-image-history.txt, ubuntu-lake-build.log."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Executed skill check_unicode_header.py: no_issue, original header accepted, changed header and missing := rejected; no surrogate encoding issue and no header repair. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-258-monotone/attempt-002/evidence/unicode.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated and independently audited FCBTrustedSpec from pinned golden without Submission, using Lean 4.27.0/x86_64 and pinned dependencies. ExpectedType is the full Iff with four RHS binders and no universe parameters; transitive axioms are propext/Classical.choice/Quot.sound. The independent prefix theorem uses sorry but is not an ExpectedType dependency; temporary target is absent. Synced both packages/checkers and pinned manifest SHA256 81afa8f282710b965835b32215f0da27cd3c6f6d9d2ba56d7df64eb34c9b333c. Fixed artifact/dependency paths, compiled candidate as ubuntu and compared its full type to the precompiled value; preserved original restrictions, audits, canary and normal imports. Current local Harbor trial erdosproblems-258-monotone-a002-c9d47e built image sha256:96d61ac65f6dda2c89a21dd76ff3a0fdeb508fed5c737d5804e7a634803f34ed. Runtime hashes matched /tests and /opt packages/golden. Both actual entries rejected original sorry (exit 1, reward 0); both sets of actual function tests passed, including trusted import/audit, build, full comparison, sorryAx rejection/canary, frozen and source negative cases, legal Irrational name shadowing rejected by actual type mismatch, candidate cache/env shadowing, and missing/corrupt packages failing without regeneration. No proof success is claimed. Evidence/commands: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-258-monotone/attempt-002/evidence/generation-final.log, packaging.json, harbor-config.json, harbor.log, delivery.json, coverage.json, functions-*.log. Cleaned both owned containers (4248c7287008, 046b96de1a59), both owned images/tags (96d61ac65f6d, 7736ce4a5824) and owned network 489f66a27e83; all inspect checks confirm absence. Shared pre-existing Spec base, other agents resources and build caches retained; no prune. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-258-monotone/attempt-002/evidence/cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Checked the exact pinned monotone integer variant, real division, all hypotheses, convergence, finite negative prefix, and shifted indexing against the cited Chojecki note and Erdős–Straus result. Finite-prefix replacement gives a nonzero rational scale plus rational correction; no obvious false statement found. No mathematical input was modified. Problem site returned 403, cited paper and pinned source readable. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-258-monotone/attempt-002/evidence/statement-review.txt and statement-sources.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Marked public_lean4_proof=unknown, status=blocked. Exact full task ID absent from skill CSV. Read upstream/current/history, both ster-oc gist revisions (new axiom tao_teravainen), Monotone PRs 2560/3084 (only metadata; sorry retained), wcook04 constant-only adapter and other issue/Mathlib/author leads. No accessible candidate establishes this full target under allowed axioms. Problem page 403, GitHub global code search 401, Google JS retry and irrelevant Bing responses prevent a conclusive negative search claim. No external proof compiled or installed. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-258-monotone/attempt-002/evidence/public-proof-review.txt, public-csv.json, public-research-index.json, followup-index.json."
+    }
+  }
+}

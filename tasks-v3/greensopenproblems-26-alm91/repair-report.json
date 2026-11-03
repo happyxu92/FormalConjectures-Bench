@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-26-alm91",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to instruction.md search command; validated in this task Harbor container as ubuntu, finding Mathlib theorem card_powerset. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-26-alm91/attempt-002/instruction-search.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Only ProblemImports and Submission are imported; no extra upstream imports needed. Retained upstream precompile and appended final USER ubuntu lake build +FormalConjecturesBench.Target after copies and permissions. Current local Harbor build succeeded (harbor.exit=0); explicit ubuntu build also completed successfully. Evidence: dependency-static.json, harbor-image-history.txt, ubuntu-lake-build.log in /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-26-alm91/attempt-002."
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Skill Unicode script found surrogate-pair encoding of 𝔽 in both EXPECTED_HEADER constants and repaired them with repr; original header, changed header and missing := tests passed. Frozen inputs unchanged. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-26-alm91/attempt-002/unicode.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated complete ExpectedType from original golden without Submission, using pinned Lean 4.27.0 x86_64 and dependency revisions; p and Fact p.Prime retained, universe parameters []. Temporary target not exported; transitive ExpectedType and referenced prefix axiom audits allow only standard axioms. Synced hashed precompiled packages and fixed manifest pin; trusted Spec loads before candidate imports, comparison uses its compiled value, with no runtime generation or general external-module whitelist. Current local Harbor trial greensopenproblems-26-alm91-a002-4ad726 built this task and provided /tests; delivery hashes and both checker AST/content and packages match. Official /tests/test.sh and ubuntu /app/check.sh exit 1/reward 0 on original sorry, as expected. Same-container actual functions passed 27 cases under each /tests and /opt package: Spec load/audit, ubuntu build, complete-type match, sorryAx rejection, canary, frozen/source negatives, same-name/cache/env Spec shadow resistance, artifact/manifest corruption and missing artifact fail without regeneration. Frozen-text-preserving Green26.Real.log shadow candidate compiled but full type comparison rejected it. All 15 original immutable hashes unchanged. Logs, commands, image IDs, manifest hashes and coverage are in /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-26-alm91/attempt-002. Cleanup verified: removed own Spec container 12c07f389bc0 and Harbor container a2c19a715912, task image sha256:28bd3204e18f72f45ff776d6ef711e2f9669bbeed36ee34d0ecc88ca25405d7c and own Harbor network greensopenproblems-26-alm91-a002-4ad726__env_default. Shared pre-existing generation image fcb-local/erdosproblems-1-least-n-5:cache-smoke and all other resources/caches retained."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. This is the ALM91 logarithmic variant for every prime p, with k and the O constant allowed to depend on p. Cubes are subset-sum sets of linear bases; pointwise Set sum equals multiset-union subset sums. Eventual n avoids log/rounding small-dimension issues; p=2 is harmless. Green Problem 26, the original ALM91 author PDF (Theorem 1.1/Proposition 3.1), and Yu arXiv:2510.01300 introduction confirm the logarithmic result. No mathematical input changed. Sources and review: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-26-alm91/attempt-002/statement-review.txt."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "public_lean4_proof=unknown, status=blocked. Exact task ID absent from skill CSV. Searched theorem names, aliases, problem, authors/paper, GitHub issues/PRs/repositories, current upstream and pinned Mathlib. Read PR #2467 and #2999 raw Lean sources/patches: only category changes, alm91 still sorry; initial PR #2368 and current upstream also sorry. No acceptable full proof established. GitHub code search sign-in shell, API rate limits, author access limits and unreliable Google/Bing responses prevent a sufficiently complete negative conclusion. No claim of proof nonexistence or successful proof compilation. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-26-alm91/attempt-002/public-proof-review.json and research/followup indexes."
+    }
+  }
+}

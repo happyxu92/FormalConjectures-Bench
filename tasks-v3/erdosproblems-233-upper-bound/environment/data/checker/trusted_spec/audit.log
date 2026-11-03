@@ -1,0 +1,6 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+complete binder count: 1
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+RiemannHypothesis → (fun N => ∑ n ∈ Finset.range N, ↑(primeGap n) ^ 2) =O[Filter.atTop] fun N => ↑N * Real.log ↑N ^ 4
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

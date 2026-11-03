@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-25-lower-ess89",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /app, /opt/formal-conjectures, /opt/formal-conjectures/.lake/packages paths to instruction.md. Actual ubuntu rg search found Mathlib card_powerset declarations in package sources; exit 0. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-25-lower-ess89/attempt-002/instruction-search.log"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Actual Target imports are only ProblemImports and local Submission, so no additional upstream precompile is needed. Retained upstream lake build ProblemImports and appended final USER ubuntu RUN lake build +FormalConjecturesBench.Target. Current local Harbor Dockerfile built successfully; independent ubuntu lake build succeeded (7992 jobs). Image sha256:2a038e0f781e9736ac443fd82c199fe1c9392e325f94618b8498dd7b7b21ab50. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-25-lower-ess89/attempt-002/harbor-image-history.txt and ubuntu-lake-build.log."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Executed skill check_unicode_header.py on this task; case no_issue, exit 0. Original headers and negative mutation/assignment cases passed. /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-25-lower-ess89/attempt-002/unicode.json"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated complete ExpectedType by Lean parser/elaborator from original golden without Submission, in network-none locked Lean 4.27.0 x86_64 environment. Temporary target erased before export; full forall telescope k + conjunction hypothesis, no universes. Independently audited ExpectedType, Property25, bestLower/bestUpper transitive axioms: only propext/Classical.choice/Quot.sound. Same source/olean/ilean/audit/manifest package delivered twice; pinned manifest b8d08702da8a3a057efe55e13be905e9f3a093974b2102881d75352b3e7cf082, olean 5e0a7e636d519179d64115ec539290684892ba903c3a79529dce9f7d679b2f8c. Checker fixes Spec-first toolchain/dependency paths and compares the full target type without candidate reparsing of ExpectedType or runtime generation. Existing source/frozen/axiom/canary rules preserved; no generic external import whitelist. Current local task Harbor trial greensopenproblems-25-lower-ess89-a002-b7f25c built image 2a038e0f781e and supplied /tests. Official /tests/test.sh and ubuntu /app/check.sh both exit 1, reward 0, because original proof contains sorry (expected). Actual checker function coverage: 27 cases each through /tests as ubuntu, /opt as ubuntu, and /tests with root driver/ubuntu compiler; type-positive placeholder fixture, sorryAx rejection, canary, frozen/source negatives, semantic LE Nat mismatch despite unchanged frozen text, Spec source/cache/env shadowing and missing/tampered package rejection all verified. Both checkers AST/bytes and packages identical, container hashes match, all 15 original immutable files unchanged. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-25-lower-ess89/attempt-002/acceptance-summary.json, generation.log, spec-generation-summary.json, functions-*-results.json, static-check.json, delivery-final.json. Original theorem remains unproved. Docker cleanup verified: stopped/removed this task's Spec container 5e18b537679f and Harbor container d59d69b6639b; removed unique task image/tag sha256:2a038e0f781e and network 14bcf1ed81fb (10.248.225.0/24). All are absent by inspect. Retained pre-existing shared generation/cache image sha256:0824de0f1647; no other task resources or shared build caches touched; no prune."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Checked entire frozen prefix, Finpartition(Icc 1 N), nonempty colour classes, distinct-summand offDiag restrictedSumset, Nat arithmetic 10*card>=N, eventual valid k and real double-log little-o. Matches pinned source and acceptable weaker lower-bound variant of Green Problem 25, page 15. Also read ESS89 printed pp.47–51 from https://users.renyi.hu/~p_erdos/1989-14.pdf. No obvious impossible-statement error found; mathematics, golden, Target and frozen baseline unchanged. Details: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-25-lower-ess89/attempt-002/statement-review.txt"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "marked",
+      "note": "Exact complete task ID absent from skill public-lean4-proofs.csv. Searched nine name/statement/author aliases, inspected pinned/current FC source/history, relevant PRs/comments, branch names, sampled forks, Mathlib, KitaKen1 Green25 upper-bound Lean proof and entire plby Erdos484 Lean proof. Upper proof has opposite direction; Erdos484 proves fixed k with existential N0(k), not this growing-k log-log target. No complete matching proof verified. public_lean4_proof=unknown, status=blocked: GitHub global code search requires login (401), erdosproblems.com/484 403, Google unreadable redirects, Bing unrelated results and configured search-model errors. Do not infer absence. /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-25-lower-ess89/attempt-002/public-proof-review.json"
+    }
+  }
+}

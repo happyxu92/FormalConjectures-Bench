@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task-ID CSV lookup had no match. Inspected upstream, PRs 2468/2848/3386 and Erdos787: Sanders proofs remain sorry; other candidate Lean sources concern different statements. Global GitHub code search requires authentication, grep.app returned 429, and Oxford author/archive pages returned 403. See repair-report.json and attempt-002 public-review.json evidence."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/GreensOpenProblems/2.lean"

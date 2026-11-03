@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-18-erdos-18-upper-bound",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to instruction.md source-search command. Executed the command in the preparation and final Harbor containers; both found Nat.dvd_factorial in mathlib/Data/Nat/Factorial/Basic.lean:80, exit 0. Evidence: instruction-search.log and instruction-search-final.log in the task evidence directory."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Actual Target imports only ProblemImports and local Submission; no additional upstream import needs precompilation. Retained cached pinned upstream lake build FormalConjectures.Util.ProblemImports and added the required final RUN lake build +FormalConjecturesBench.Target after WORKDIR /app, HOME and USER ubuntu. Current local task Harbor build succeeded, and an additional ubuntu build exited 0 (7992 jobs). Evidence: environment/Dockerfile, final-image-history.log, ubuntu-build.log and ubuntu-build.exit."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran the skill Unicode script before semantic changes and again after delivery. Both returned no_issue, exit 0; original header accepted, altered header and missing assignment rejected. No header or frozen baseline was changed. Evidence: unicode.json and unicode-final.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Replaced candidate-environment GoldenCheck elaboration with independently generated and compiled FCBTrustedSpec.ExpectedType and complete type comparison. Trusted golden input is unchanged; practicalH retains its original definition, unrelated examples/conjectures are omitted from the derived module, the temporary theorem is absent, universes=[], and transitive audit permits only propext/Classical.choice/Quot.sound. Both pinned packages and checker AST/content match. Lean 4.27.0 x86_64, upstream 233a10e857ef78e79fd9fe661d37db724089170a, dependency revisions and all input/artifact hashes are in tests/trusted_spec/manifest.json (SHA256 f0d48482a32a813fe33af1eb304702448f8fa470ebdc94c48db0f6fdd66fbf95). Reproduction commands are in reproduce.sh and the manifest. Current local Harbor config uses agent=nop, force_build=true; trial exit 0, image sha256:f2f4d52c6d116ee669608113f0418b477ae84b6c3027f426996950d28002013f. Harbor supplied /tests and /logs/verifier. Official /tests/test.sh and ubuntu /app/check.sh exited 1 on the original sorry as expected, reward=0; this is not a proof acceptance. In the same Harbor child, each entry's actual checker functions passed 27 supplementary cases: fixed Spec load/audit, ubuntu candidate compile, full type comparison, sorryAx rejection, canary, source/frozen negatives, same-name Spec/cache/environment shadowing, missing/corrupt artifact and manifest rejection without regeneration. A source-legal LT Nat instance attack preserved frozen text and compiled a sorry-free altered theorem, then failed full type comparison. 34 container paths matched local hashes; all 20 immutable snapshot files remain unchanged. Logs and commands: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-18-erdos-18-upper-bound (generation*, independent-audit.log, harbor-config.json, harbor/, entries.log, validation-{official,local}.{log,json}, delivery.json, static-validation.json). Cleanup complete: stopped/removed this agent's Spec container 53d992f28abe and Harbor child 69d5cec7ccfc; removed task image sha256:f2f4d52c6d116ee669608113f0418b477ae84b6c3027f426996950d28002013f and tag erdosproblems-18-erdos-18-upper-bound-pi18-a6d91__env-main:latest, plus the matching __env_default network. docker inspect/image inspect/network inspect confirm absence; docker ps -a recorded. The pre-existing shared cache image 0824de0f1647 was retained. No other agent's resources or shared build cache were cleaned; no prune was used. Evidence: cleanup.json and cleanup.log. No original complete proof was constructed or claimed."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Read the pinned upstream 18.lean and original problem source https://www.erdosproblems.com/latex/18 via Jina; it explicitly attributes h(n!)<n to Erdos. Checked the full practicalH definition, finite maximum, natural sInf nonemptiness for factorials, distinct-divisor interpretation, and eventual quantifier. The elementary base h(2!)=1 and quotient/remainder representation give h(n!)<=n-1 for n>=2. The prose comment's n>=1 wording has an n=1 exception, but the actual eventual target is valid. No mathematics was edited. Direct problem/Waterloo access returned HTTP 403; the full LaTeX problem source and pinned Lean source were obtained. Evidence: statement-review.json, problem18-latex-proxy.txt, upstream-pinned.txt, math-fetch.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact full task ID matched skill references/public-lean4-proofs.csv; by the skill this establishes public_lean4_proof=true without further web confirmation. Sources: https://github.com/linrock/math-proofs/blob/b246a4165f55ada0614aa2b85c8bc6381522e808/erdos-18/Solution.lean#L31 and https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos18_erdos_18_upper_bound.lean#L318 . Updated task.toml metadata; evidence: public-proof-local-match.json. These proofs were not compiled in this task environment or installed into the task/image."
+    }
+  }
+}

@@ -1,0 +1,6 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos1095.g: [Classical.choice, propext, Quot.sound]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ c > 0, (fun k => Real.exp (c * Real.log ↑k ^ 2)) =O[Filter.atTop] fun k => ↑(Erdos1095.g k)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

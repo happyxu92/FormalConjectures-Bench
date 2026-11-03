@@ -1,0 +1,11 @@
+complete forall telescope: 2 parameters
+audited FCBTrustedSpec.ExpectedType: [Quot.sound, propext, Classical.choice]
+audited Green25.Property25: [propext, Quot.sound, Classical.choice]
+audited Green25.bestLower: [propext, Quot.sound, Classical.choice]
+audited Green25.bestUpper: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (k : ℕ → ℕ),
+  (∀ᶠ (N : ℕ) in Filter.atTop, 1 ≤ k N ∧ k N ≤ N) ∧ (fun N => ↑(k N)) =o[Filter.atTop] Green25.bestLower →
+    ∀ᶠ (N : ℕ) in Filter.atTop, Green25.Property25 (k N) N
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

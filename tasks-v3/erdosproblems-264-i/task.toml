@@ -8,6 +8,12 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+statement_status_note = "The target negates the fixed irrationality predicate for powers of two. Theorem 2 of arXiv:2406.17593v2 supplies a bounded positive-integer perturbation with rational sum (C=3 for powers of two); positivity meets the stronger pointwise nonzero condition and the natural-valued domain. Extending from n>=1 to n>=0 adds a rational initial term. No obvious statement or definition error was found."
+public_lean4_proof = true
+public_lean4_proof_status = "found"
+public_lean4_proof_urls = ["https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos264b.lean#L656"]
+public_lean4_proof_note = "Exact full task ID match in lean-task-repair/references/public-lean4-proofs.csv. Public proof is not compiled in this task environment and is not bundled in the image."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/264.lean"

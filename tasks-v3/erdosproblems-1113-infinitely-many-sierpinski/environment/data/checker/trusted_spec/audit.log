@@ -1,0 +1,8 @@
+audited FCBTrustedSpec.ExpectedType: [propext]
+audited Erdos1113.HasFinitePrimeCoveringSet: [propext, Quot.sound]
+audited Nat.IsSierpinskiNumber: [propext]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+{k | k.IsSierpinskiNumber}.Infinite
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]

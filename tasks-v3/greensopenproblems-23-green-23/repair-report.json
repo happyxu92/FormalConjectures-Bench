@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-23-green-23",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式覆盖 /app、/opt/formal-conjectures 和 .lake/packages；在当前 Harbor 子容器以 ubuntu 实际搜到 mathlib/Mathlib/Algebra/Group/Even.lean 的 def IsSquare。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-23-green-23/attempt-002/instruction-search.log"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "实际 Target 仅导入 ProblemImports 和本地 Submission，无额外上游 import；原有 ProblemImports 预编译保留，Dockerfile 末尾已补 USER ubuntu / RUN lake build +FormalConjecturesBench.Target。当前本地 task Harbor 构建成功，同一容器 ubuntu lake build 成功（7992 jobs，原始 sorry warning 预期）。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-23-green-23/attempt-002/ubuntu-lake-build.log"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按 skill 运行 Unicode 脚本，修复前后均 no_issue；两份原始头、前缀、:= 边界和负例通过，无 Unicode 修改。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-23-green-23/attempt-002/unicode.json 和 unicode-final.json"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从原始 golden 经 Lean parser/elaborator 提前提取完整类型，无候选输入；Lean v4.27.0 x86_64 预编译，ExpectedType 全量词保留、universe=[]、传递公理仅 propext，临时目标不导出。两份 checker 字节/AST 与可信包一致。固定工具链和依赖，Spec 路径优先，运行时不生成/回退编译；保留正常 import 与原有源码/冻结/公理/canary 规则，无外部模块通用白名单。当前本地 Harbor 镜像 sha256:adad241af2b22b89a3989527a5b62bbaa6c18a2228a738b1b584927174d242be；正式 /tests 上传来源及 /opt 本地来源均核对全部哈希，入口 exit=1/reward=0 为原始 sorry 被源码规则拒绝。两入口实际函数各27项通过：Spec加载与审计、ubuntu候选编译、完整类型比较、sorryAx拒绝、canary、冻结/越界负例、OfNat Nat 2实例偷换后实际类型不匹配、同名模块/缓存/env遮蔽、缺失/损坏产物且无运行时生成。首次补测 exit137 是 Harbor 收尾 stop 竞态，CLI完全结束后同容器重启并完整重测通过。原题完整证明未提供/未验收。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-23-green-23/attempt-002/coverage.json；生成/构建/入口日志在同目录。Docker 清理已核实：容器61112a12f9f9（Spec）、9bbf01dc496e（Harbor）已停止并移除；本次镜像adad241af2b2及专用网络3ee822c8b0c7已删除并inspect确认不存在。预存生成基础镜像、共享缓存和其他任务资源未清理。记录 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-23-green-23/attempt-002/docker-cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已阅读锁定上游、完整前缀/目标、Green 100 open problems 第23题（p15）和 Frantzikinakis–Klurman–Moreira arXiv:2309.10636v5 Theorem1.1(i)（p2）。a=b=c=1即正整数同色Pythagorean pair；Lean全有限着色、x,y>0和IsSquare匹配；k=0无着色故真空成立。不要求根同色，未发现明显错误，metadata statement_status=consistent。数学输入未改。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-23-green-23/attempt-002/statement-audit.json"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整ID精确匹配 skill CSV 未命中。已检索题号/完整Lean名/论文名/作者/等价表述，核查上游当前源码、历史、PR1728原题提交及候选PR2460/2989/3387（后三者只改分类且完整目标仍sorry；所引2404.06063是无关NLP论文），Mathlib及Pythagorean候选仓库；无完整目标证明已核实。Google仅JS挑战页、Bing结果无关、GitHub代码搜索401、Moreira网页403及搜索API认证/模型限制，故public_lean4_proof=unknown/blocked，不能确认不存在。所有已发现有效线索均已追踪；IPSets ZIP仅一般IP集结构分类，其他候选为几何Pythagorean、具体三元组或受限着色，均非本目标。详见 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-23-green-23/attempt-002/public-proof-review.json。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-23-green-23/attempt-002/proof-search-queries.json、各fetch-index和proof-candidates/。"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-253-erdos-253",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式覆盖 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages；本题 Harbor 子容器 ubuntu 实测找到 mathlib 的 card_powerset。证据：attempt-002/delivery.json。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 实际仅导入 ProblemImports 与本地 Submission，无额外上游 imports；保留 ProblemImports 预编译命令，Dockerfile 末尾新增 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的 Harbor force_build 成功，镜像 sha256:32321705fabb93b3e1cfc66f0b8f8e6139438c17be3267071fad7e8c4eb4fd6c；image-history.txt 记录末尾实际构建层。"
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "按 skill 运行 check_unicode_header.py：unicode_repaired，修复两份 EXPECTED_HEADER 中 𝓝 的代理对编码；原始头、修改头和缺失 := 的正负测试通过。最终复检 no_issue，两份 checker 内容与 AST 一致。证据：attempt-002/unicode.json、unicode-final.json、static.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从未修改的 golden 提取完整命题并移除 Submission import，在匹配 Lean 4.27.0/x86_64、锁定依赖的独立容器中预编译 ExpectedType；无 universe 参数，临时定理未导出，ExpectedType/RepresentsAPs 传递公理审计仅含允许公理。两份 trusted_spec 包一致，manifest 记录 golden/产物/依赖哈希；checker 固定工具链及 Spec/依赖优先加载来源，不在运行时生成 Spec，不扩大普通外部 import 限制。当前本地 task Harbor 子容器正式 /tests/test.sh 与 ubuntu /app/check.sh 均实际执行并分别使用 /tests、/opt 包；原始 sorry 被预期拒绝，reward=0。两套实际函数补测全部通过：包校验/独立类型审计、ubuntu 候选编译、完整类型比较、sorryAx 拒绝、sorry canary、冻结/越界负例、冻结文字不变的 subsetSums 名称偷换被完整类型比较拒绝、同名缓存/环境遮蔽不生效、缺失/损坏产物明确失败且不生成。未提供原题无占位证明，不宣称证明通过。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-253-erdos-253/attempt-002（generation.log、package.log、delivery.json、validation-official.log、validation-local.log、Harbor result.json、static.json）。Docker 已清理本次两容器 afa22ad95d7a（Spec）、1b24890fe9d0（Harbor）及本题镜像 sha256:32321705fabb93b3e1cfc66f0b8f8e6139438c17be3267071fad7e8c4eb4fd6c；inspect 确认不存在。独立 Harbor 网络已由 Harbor 回收或在无连接时删除。共享生成依赖镜像 6b765e0c2f25 保留；未修改其他资源或共享缓存。清理时读取一个其他已有 dead 对象失败，改用 ancestor 过滤后完成，无资源遗留。证据 cleanup.json、final-integrity.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已核对 task.toml 锁定上游、完整前缀及 subsetSums/IsAPOfLength 定义：严格递增正整数序列、相邻项比趋于 1、每个无限等差数列内无限多互异项子集和、子集和余有限，且目标为整体否定；与 Cassels 反例的公开作者来源一致，未发现明显错误。metadata 标 consistent；未改数学输入。原题网页/论坛 HTTP 403，已保存限制；上游与公开作者源码可访问。证据：attempt-002/mathematics-and-public-proof.json、source-access.json、upstream-source.lean、APBasic.lean、AdditivelyComplete.lean。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确命中 skill references/public-lean4-proofs.csv，metadata public_lean4_proof=true。来源：https://github.com/plby/lean-proofs/blob/1268917deaaaa0d674f651287027baa26cea9920/src/latest/ErdosProblems/Erdos253.lean#L699。另已下载源码并核对定义、最终 not_erdos_253 及 erdos_253 alias 与本目标；来源声明 Lean/Mathlib 4.33.0，未在本题 4.27.0 编译，未加入镜像或替换答案。证据：attempt-002/public-csv-match.json、public-source.lean、mathematics-and-public-proof.json。"
+    }
+  }
+}

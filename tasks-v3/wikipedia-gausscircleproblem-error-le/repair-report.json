@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-gausscircleproblem-error-le",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to instruction rg paths. Actual ubuntu rg found Mathlib Set.ncard. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-gausscircleproblem-error-le/attempt-002/gauss-a002-6d39c8/delivery.json"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream import; retained precompile ProblemImports. Added Dockerfile final ubuntu RUN lake build +FormalConjecturesBench.Target; current local Harbor image build succeeded. Image sha256:7d4b693b56198f90052ab4f7c34df05b9b1bd2931c6296b72e842930302b9ddb; commands/config/logs in /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-gausscircleproblem-error-le/attempt-002/gauss-a002-6d39c8. Original Target still contains sorry."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran skill check_unicode_header.py: no_issue, exit 0; original header accepted, modified header and missing := rejected. /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-gausscircleproblem-error-le/attempt-002/gauss-a002-6d39c8/unicode.json"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Pre-generated Spec from unchanged golden, compiled/audited on locked Lean 4.27.0 x86_64 and pinned dependencies; complete ExpectedType, N/E dependencies use only allowed axioms, temporary theorem absent, universes []. Identical pinned packages/checker AST and content; fixed /tests or /opt loading before candidate. Current local Harbor build and both actual entries tested (exit 1/reward 0 for original sorry); 29 function cases passed on EACH /tests and /opt copy as ubuntu, including complete type check, sorryAx rejection, canary, frozen/source negatives, LE Real semantic attack rejected by type mismatch, same-name/cache/env shadowing, missing/tampered artifact failure without regeneration. /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-gausscircleproblem-error-le/attempt-002/gauss-a002-6d39c8/final-validation.json. Cleanup complete: removed task containers fe625e906481 and e38519181b65, local image sha256:7d4b693b56198f90052ab4f7c34df05b9b1bd2931c6296b72e842930302b9ddb and task network wikipedia-gausscircleproblem-error-le-a002-6d39c8__env_default. Shared baseline generation image retained; no prune. /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-gausscircleproblem-error-le/attempt-002/gauss-a002-6d39c8/cleanup.json"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "consistent. Pinned upstream and full pp.all N/E inspection confirm closed Euclidean disk and real subtraction; MathWorld equations 6-7 gives the exact bound for r >= 1, implying eventual atTop. Wikipedia HTTP403; alternate source retrieved. Mathematical inputs unchanged. /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-gausscircleproblem-error-le/attempt-002/gauss-a002-6d39c8/statement-review.txt"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true. Exact full-ID CSV miss, then GitHub precise search found PR7660 and fixed complete proof https://github.com/danielpuri1901/erdos-lean-formalization/blob/69d53449a4fb7566edc668c65bb0f756dd245ae2/Solution.lean#L131 . Full source and pinned upstream read; same N/E and complete goal, no placeholders or extra hypotheses. Publisher uses Lean4.33.1; not compiled/ported in this task 4.27.0. Search queries, exclusions, access limitations and hashes: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-gausscircleproblem-error-le/attempt-002/gauss-a002-6d39c8/public-proof-review.txt"
+    }
+  }
+}

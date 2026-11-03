@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-254-cassels",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to rg source search. Actual ubuntu command found Set.ncard_empty in mathlib without path/permission errors; evidence attempt-002/final-instruction-search.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target imports only ProblemImports and local Submission; no extra upstream imports. Retained precompilation of ProblemImports before cleanup. Added final USER ubuntu RUN lake build +FormalConjecturesBench.Target; current local task Harbor image built successfully, and explicit ubuntu Target build exited 0 (final-target-build.log)."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Skill Unicode script returned no_issue: original header accepted, altered header and missing := rejected, both golden inputs matched. Rerun after checker updates also passed; unicode.json and unicode-final.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Original checker re-elaborated expected type after editable Submission. Generated fixed ExpectedType with Lean parser/elaborator from original golden, without Submission; full A and conjunction binders, no universes. Independent transitive audits of ExpectedType/IsSumOfDistinct allow only propext, Classical.choice, Quot.sound; temporary target absent. Synced pinned manifest, source and artifacts in both trusted_spec packages; checker bytes/AST and packages match. Current local Harbor image sha256:d0a4bc0dca03bee0b733f5fe4ec11cdcc646fc38db5aed9620dcf81679bd1c43. Actual /tests and /opt entries exit 1/reward 0 because untouched Target contains sorry. Both package locations passed 29 supplemental function cases each: fixed artifact loading/audit, ubuntu compilation (uid 1000), full-type match, sorryAx rejection, canary, frozen/source negatives, legal Summable shadow attack compiled then rejected by full-type comparison, cache/module/env shadows and missing/tampered packages. Trusted paths precede candidate paths; no runtime Spec generation or general external import whitelist. Harbor stopped its retained container after completion; restarted that same container for supplement tests. No complete proof success claimed. All original immutable hashes unchanged. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-254-cassels/attempt-002. Docker cleanup complete: stopped/removed own Spec container 4e76c20b3de6 and Harbor container 84aebb4b271a; removed own task image d0a4bc0dca03 (unique tag) and network d2846eba2a4f. Inspect/ps checks confirm absence. Shared pre-existing base image and all other agents' resources/caches retained; no prune."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent. Checked locked upstream definition and Cassels (1960), p.111 Theorem I (original PDF/image): (A(2n)-A(n))/log log n tends to infinity, squared-distance series diverges for all 0<theta<1, and every sufficiently large integer is a finite distinct sum. Allowing 0 in A is harmless; small-log arguments affect only finitely many n. No mathematical input changed. Source https://acta.bibl.u-szeged.hu/13906/1/math_021_fasc_003_004_111-124.pdf; statement-audit.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact task-column match for erdosproblems-254-cassels in skill references/public-lean4-proofs.csv; marked public_lean4_proof=true per collection rule. Source https://github.com/williamjblair/lean-proofs/blob/4f915a323443bfb1709a6805a013812016dca88a/starfleet/erdos-254/Research/Basic.lean . No further search required; proof not compiled in pinned environment, not bundled. Evidence: public-csv-match.json."
+    }
+  }
+}

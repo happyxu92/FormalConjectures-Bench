@@ -1,0 +1,8 @@
+audited FCBTrustedSpec.ExpectedType: [Quot.sound, propext, Classical.choice]
+audited Erdos264.IsIrrationalitySequence: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {F : ℕ → ℕ},
+  Filter.Tendsto (fun n => ↑(F (n + 1)) / ↑(F n)) Filter.atTop Filter.atTop →
+    ∃ a, Erdos264.IsIrrationalitySequence a ∧ Asymptotics.IsEquivalent Filter.atTop (fun n => ↑(a n)) fun n => ↑(F n)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

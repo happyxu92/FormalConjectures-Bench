@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-139-erdos-139",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原搜索命令遗漏隐藏 .lake/packages。instruction.md 已显式列出 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages；实际容器以 ubuntu 运行命令，找到 mathlib/Mathlib/Order/Filter/Defs.lean 的 Tendsto 定义且退出0，见 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-139-erdos-139/search-package.log 与 delivery.json。说明同步了固定Spec完整类型检查；可编辑范围和check.sh入口保留。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "实际Target仅import FormalConjectures.Util.ProblemImports和本地Submission，无额外上游import需要追加；原 lake build FormalConjectures.Util.ProblemImports 预编译命令保留。修复缺失的Dockerfile末尾 USER ubuntu / HOME=/home/ubuntu / RUN lake build +FormalConjecturesBench.Target。当前本地task经Harbor构建成功，最终镜像 sha256:ff21ff8284187a5492e16562752bda92a6086478fdc45dc3ea1ba72336182b20，image history确认该RUN存在；同一Harbor子容器以ubuntu再次执行目标lake build退出0并正常加载全部实际imports，见 delivery.json。未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "按skill实际运行check_unicode_header.py，case=unicode_repaired、repair_success=true：两份EXPECTED_HEADER的𝓝代理对改为repr生成的单Unicode字符。原始头通过，修改头与移除:=均拒绝；Target/golden/冻结哈希未改。初次脚本证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-139-erdos-139/unicode.json；语义修复后两份checker内容/AST一致并再次复验。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原checker在候选环境中重新解析GoldenCheck，存在名称/实例语义遮蔽。现从原golden移除Submission import，在匹配Docker环境用Lean parser/elaborator提取完整类型，回滚临时声明环境后导出FCBTrustedSpec.ExpectedType定义值。完整保留k/hk，universe=[]；独立导入审计ExpectedType及Erdos139.r的传递公理仅propext/Classical.choice/Quot.sound，临时目标未导出、无sorryAx。生成源码/命令/审计/olean/ilean/清单已同次同步两包。golden Target SHA256=ebc79ea4277ac0ac1ff0e32914557be323d5dd256491f20952cb7616af07b1c1；olean SHA256=594be3ea32fe32aeb2948aed7c69e9b1984d269864b6512d85f531a2243bcfd2；manifest SHA256=f2c2dfb82f5c941ffedb7c542cda86ee532354e7cfa404ac093fd248a63b355d。Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)；FormalConjectures 233a10e857ef78e79fd9fe661d37db724089170a；Mathlib a3a10db0e9d66acbebf76c5e6a135066525ac900。固定工具链和Spec/依赖搜索来源，验证时不生成/重建Spec；正式SPEC_DIR=/tests/trusted_spec，本地=/opt/formal-conjectures-bench-checker/trusted_spec。冻结、源码限制、公理审计和canary原函数AST保持一致；允许正常import/def/lemma/instance，不增加通用外部模块白名单。生成命令见manifest；验收命令为harbor trial start -p /root/FormalConjectures-Bench/tasks-v3/erdosproblems-139-erdos-139 -a nop --env docker --force-build --no-delete --environment-kwarg keep_containers=true --trial-name erdosproblems-139-erdos-139-pi139-c7a94e --trials-dir /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-139-erdos-139/harbor，退出0、无基础设施异常。当前本地task镜像 sha256:ff21ff8284187a5492e16562752bda92a6086478fdc45dc3ea1ba72336182b20，Harbor上传/tests后容器内两checker/Spec/golden逐文件哈希均与本地一致。实际bash /tests/test.sh和ubuntu /app/check.sh均因原始sorry预期退出1、reward0；补测直接调用同一容器内实际checker函数，正式root入口及ubuntu本地入口各33项全通过（退出0），实际compiler uid=1000；覆盖Spec加载/可信类型审计、候选编译、完整类型、公理拒绝sorryAx和sorry canary。冻结、头、:=、越界源码、符号链接、非Lean文件、冻结配置、helper axiom均拒绝；普通Mathlib import及def/lemma/instance通过。冻结文字不变、无sorry且仅允许公理的Erdos139.Filter.Tendsto名称遮蔽编译成功后被完整类型拒绝；高优先级HDiv ℝ ℝ ℝ实例偷换也被完整类型拒绝。同名候选模块/缓存/环境污染不能替换固定Spec；缺失、损坏、清单不符明确失败且不触发重生成。证据目录 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-139-erdos-139，重点 generation.log/package.log、delivery.json、validation-{official,local}.log、validation-summary.json、static-validation.json。未提供原题完整证明；原题无sorry最终成功分支未演示，所有skill要求关键路径已由隔离fixture实际覆盖。已停止并移除本次两个容器（732a7d8ce2cc、aad47e5bdf86），删除本次任务镜像 sha256:ff21ff8284187a5492e16562752bda92a6086478fdc45dc3ea1ba72336182b20 及其唯一 tag，并移除专用网络；inspect/ps确认不存在。基线共享镜像和其他agent资源未动，未prune；详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已按锁定上游139.lean核对完整前缀与AP/Basic定义：maxCard是Icc 1 N中k-AP-free子集的最大基数，card=k排除k>1的零公差退化；取值集非空且有界。目标为每个自然k>1的实数比值趋零，对应Szemerédi定理；k=2也成立，N=0不影响极限。MathWorld明确关联Erdős139并给出有限密度推论；原题网站/EUDML/候选原文PDF返回403，访问限制已记录，未使用检索失败输出或错误的猜测PDF作依据。metadata statement_status=consistent；数学陈述和定义未改。来源 https://mathworld.wolfram.com/SzemeredisTheorem.html；完整核对见 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-139-erdos-139/statement-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "首先按完整ID在skill references/public-lean4-proofs.csv精确命中，按skill直接标public_lean4_proof=true、status=listed。来源 https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos139.lean#L36 及同仓库main路径。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-139-erdos-139/public-proof-csv.json。按该命中规则无需再次联网确认；本次未独立审核/编译公开证明，未把答案放入task或镜像。"
+    }
+  }
+}

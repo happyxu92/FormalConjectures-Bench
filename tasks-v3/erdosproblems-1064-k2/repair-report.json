@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1064-k2",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to the documented three-path rg command. Executed it in the matching generation container and as ubuntu in the current Harbor container: found mathlib theorem card_powerset, exit 0. Evidence: instruction-search.log and delivery.json. All evidence paths are under /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1064-k2."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Actual Target imports are only ProblemImports and local Submission, so no additional upstream precompile target is needed. Added final USER ubuntu RUN lake build +FormalConjecturesBench.Target after copying/cleanup/permissions. Current local task Harbor build succeeded; image sha256:2acdcd222d1059c55645fde8fc4b133f880eb751cf3f251d8432e0103ed95253. Evidence: harbor.log, image-history.txt, delivery.json and final-audit.json."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran skill check_unicode_header.py before semantic changes and again after all checker changes. Both runs report no_issue, unchanged legitimate Unicode header, matching golden inputs, frozen prefix and assignment-boundary checks. Evidence: unicode.json and unicode-final.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Replaced candidate-time GoldenCheck elaboration with an independently generated/precompiled FCBTrustedSpec.ExpectedType and complete type comparison. Generation used original golden without Submission, matching offline Docker image sha256:0824de0f1647, Lean 4.27.0 x86_64 and pinned dependency revisions. Parser/elaborator extracts the full target type and universes; temporary target and generated children are absent from exported Spec. Independent import audited ExpectedType value and transitive axioms (only propext, Classical.choice, Quot.sound), zero universes, and the full Nat.totient/strict inequality/Nat subtraction/Set.Infinite expression. The unrelated original prefix density theorem retains its original sorry but is not a dependency of ExpectedType. Identical trusted packages contain reproducible tools, compiled artifacts, audit and pinned manifest; fixed toolchain and dependency paths preserve Spec identity without a general external-import whitelist. Public Target, golden, GoldenCheck and frozen constants remain unchanged. Current local task Harbor build used the modified Dockerfile and checker; uploaded /tests and installed /opt package/golden hashes match host. Actual formal and ubuntu local entries exit 1 on original sorry, reward 0. In that same Harbor child container, actual checker functions for both package paths passed fixed-artifact loading/audit, ubuntu compilation, complete type comparison, sorryAx rejection, sorry canary, frozen/header/config/out-of-tree/source-policy negatives, ordinary def/lemma/instance acceptance, and same-name module/cache/environment collision checks. A source-legal LT Nat=True instance attack preserves frozen text and compiles, but complete type comparison and main reject it. Missing artifact, corrupt artifact and manifest are rejected without regeneration. AST/content/package equality and all immutable-before.json files verified. Commands, IDs, hashes, exits and logs: session.json, generation-summary.json, generation-image-history.txt, trusted_spec/manifest.json, harbor/, delivery.json, validation-official.log, validation-local.log and final-audit.json. No original theorem proof is claimed; no required semantic validation remains uncovered. Docker cleanup complete: own Spec container b9928a9c1429 and Harbor child abdc6b97f573 stopped/removed; own Harbor image 2acdcd222d10 and empty project network erdosproblems-1064-k2-161553-e7c2__env_default removed and absence verified. Existing shared image 0824de0f1647 and shared build cache retained; no own resources remain. See cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent after checking full prefix, task.toml source/target and pinned upstream 1064.lean. This k2 target is infinitude of natural n satisfying φ(n)<φ(n−φ(n)), matching the second conclusion at https://www.erdosproblems.com/1064. Its explicit family n=15·2^k, k≥1, has φ(n)=4·2^k and φ(n−φ(n))=5·2^k; these n are distinct and unbounded. Nat subtraction agrees since φ(n)≤n, and zero/small n do not affect infinitude. No task-local definition or false premise enters ExpectedType. Direct website access returned HTTP 403; current Jina HTML preserves the mathematical data-latex and was inspected, and pinned raw upstream was retrieved. Evidence: source.html, source-math.txt, upstream-pinned.lean and source-fetch.log. Mathematical inputs were not modified."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact full-ID match in skills/lean-task-repair/references/public-lean4-proofs.csv: erdosproblems-1064-k2. Per skill this suffices for public_lean4_proof=true; metadata records both URLs: https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/1064.lean#L50 and https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos1064.lean#L920 . Evidence: public-proof-match.json (including CSV hash). No public answer was copied, bundled or compiled in this repair; no additional search was required for a CSV hit."
+    }
+  }
+}

@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [Quot.sound, propext, Classical.choice]
+audited Erdos1102.HasPropertyP: [propext]
+audited Erdos1102.HasPropertyQ: [propext]
+complete binder count: 3
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (f : ℕ → ℕ),
+  Filter.Tendsto f Filter.atTop Filter.atTop →
+    (∀ (n : ℕ), f n ≠ 0) → ∃ A, StrictMono A ∧ Erdos1102.HasPropertyP (Set.range A) ∧ ∀ (j : ℕ), ↑(A j) / ↑j ≤ ↑(f j)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

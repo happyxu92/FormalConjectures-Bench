@@ -1,0 +1,7 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos1062.ForkFree: []
+audited Erdos1062.f: [Quot.sound, propext, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ᶠ (n : ℕ) in Filter.atTop, 0.6725 * ↑n ≤ ↑(Erdos1062.f n) ∧ ↑(Erdos1062.f n) ≤ 0.6736 * ↑n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-11-granville-soundararajan",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已补 instruction.md 的显式 /opt/formal-conjectures/.lake/packages 路径；匹配 Docker 和最终 Harbor 子容器中以 ubuntu 执行三个路径的 rg，命中 Mathlib 的 def Squarefree，退出0且无路径/权限错误。见 instruction-search.log、delivery.json。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "实际 Target 仅 import FormalConjectures.Util.ProblemImports 与本地 Submission，无额外上游 import；原 ProblemImports 预编译保留。已补 Dockerfile 最末 HOME=/home/ubuntu、USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target；当前本地 Harbor 镜像构建成功，另于最终容器以 ubuntu 实际 lake build 退出0；未放宽依赖权限。证据 harbor-r2.log、ubuntu-lake-build.log/exit。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行 skill check_unicode_header.py，退出0、case=no_issue；原始头/冻结基线通过，改头和删除 := 拒绝，两份 checker一致。无 Unicode 代理对问题；未修改公开头或冻结哈希。见 unicode.json、unicode-final.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在加载候选后重解析 GoldenCheck，存在实例/名称改变命题含义的风险。现从固定 TESTS_DIR/trusted_spec 校验并加载预编译 Spec，检查 manifest、golden 输入、产物哈希、目标、Lean 版本及依赖 revision manifest；固定工具链与 LEAN_PATH 将 Spec 和可信依赖置于候选之前，不用候选 Lake 配置，不运行时重编译/生成 Spec，保留正常 import、helper def/lemma/instance、原源码限制、冻结检查、公理审计和 canary。修复阶段在匹配 Docker 环境中从原 golden 去掉 Submission 导入，经 Lean parser/elaborator 提取完整目标 type 和 levelParams；回退临时环境后仅导出 ExpectedType 定义，临时目标及其子声明不在产物中。独立审计完整 H 类型及结论，universe_params=[]，ExpectedType 传递公理仅 propext，无 sorryAx；无关前缀 sorry 定理保留但不在该依赖闭包中。两份源码/生成器/命令/olean/ilean/审计日志/清单包完全一致。Lean=Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)；生成镜像=sha256:0824de0f16475f1f619701869e59de4e4ce3229bfce229a5fd16f88072c37e8f；golden Target SHA256=1c5370e4e544b285314b20a8ec2c3783aea4c533c1c241abacb66af4811e2152；Spec olean SHA256=fe956b39cdb778d002b2026858f27331e2ebdba0e2fbd4af746c0e303c9bd34a；manifest SHA256=014ced8e980a22069cd8849d54cb741bd8bf11f83c56dac796fd013d66925c37。实际当前本地 task Harbor 构建：harbor trials start --config /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-11-granville-soundararajan/harbor-config-r2.json，退出0，镜像=sha256:78148cc784fe75e94383a9ee9d015bb1a098241ec55b1501b1dd605450f1eba9。首次默认 Docker 地址池耗尽，仅为本题添加10.231.118.0/24的网络覆盖后成功重试；未清理其他网络或放宽权限。最终子容器 erdosproblems-11-granville-soundararajan-pi-11gs-c926e4-r2__env-main-1 的 /tests 由 Harbor 上传；两套 checker/Spec/golden 与本地逐文件哈希相同。正式 bash /tests/test.sh 与 ubuntu /app/check.sh 均退出1，reward=0，原因仅为原始 sorry 源码；不声称原题证明通过。同一 Harbor 子容器直接调用实际 checker 函数：正式 /tests/root 启动及本地 /opt/ubuntu 启动各30项，均退出0/ALL CHECKS PASSED。实际覆盖固定产物加载及可信类型审计、uid1000候选编译、完整类型匹配、占位 theorem 的 sorryAx 公理拒绝、sorry canary；冻结前缀/头/配置、缺失赋值、越界源、symlink/非Lean/helper axiom 负例均拒绝。高优先级 HPow Nat Nat Nat := fun a _ => a 的无 sorry 攻击保留冻结文字且源码合法、候选能编译，但完整类型比较及实际 main 均以 type mismatch 拒绝。同名候选模块/缓存及环境变量不遮蔽 Spec 或可信依赖，--deps 实际解析到对应 /tests 或 /opt 的固定 olean；缺失/损坏产物和清单哈希错误均明确拒绝且包字节不被重建。静态两份 checker 内容/AST、包哈希及 immutable-before.json 全部15项不变核对通过。所有命令、版本、退出码、镜像/容器 inspect、日志及函数验证 JSON 保存于 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-11-granville-soundararajan。无完整无 sorry 数学证明成功验收分支；该项通过仅表示语义隔离和必需路径验收完成。 Docker清理：已停止并移除本次 Spec 容器 cde4508a2b51 和 Harbor 容器 c07345862742；已删除本次两个 task 镜像 0a009148df57、78148cc784fe 的唯一 tags，并以 image inspect 确认镜像ID不存在；本题 r2 网络已移除且 inspect 确认不存在。共享预编译基础镜像 0824de0f1647 和所有既有/其他任务资源保留；未执行 prune。"
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "仅标 metadata.statement_status=suspect。核对 task.toml 锁定上游、完整前缀、H 的所有 n/Odd n/1<n/自然数见证及目标同余方向。作者原文 https://dms.umontreal.ca/~andrew/PDF/wieferich.pdf 第1页 Theorem1（由 https://dms.umontreal.ca/~andrew/1998.html 链出，已下载并渲染阅读）推出无限多个非Wieferich素数，即 p² 不整除 2^(p-1)-1；当前任务却要求正同余 2^p≡2 mod p²，对奇素数恰为相反谓词。上游 PR5817 及当前 main 也修正该漏否定。此为具体陈述/来源错误线索；论文并不排除无限多个Wieferich素数，未建立本题命题为假的反例或矛盾，故标suspect而非断言无解。依要求数学、Target、golden、GoldenCheck、冻结基线和 Spec 目标均未改。详见 math-assessment.txt、paper-page1.png、pr5817.lean。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整任务ID精确匹配 public-lean4-proofs.csv 未命中。已标 public_lean4_proof=false、public_lean4_proof_status=searched，仅表示经多来源检索未找到当前保留正同余目标的已知公开完整Lean4证明，不断言不存在。覆盖完整定理名/别名、Granville/Soundararajan、Wieferich、squarefree/power/Lean，多组GitHub仓库/issues搜索（64/64与39/39结果）、锁定及当前上游、实际Mathlib树与作者原文。已读并排除上游PR2523/2811/3327目标sorry、5817反谓词仍sorry；thiago-monteiro/erdos11两份Lean仅有条件框架或无限多个可表示奇数；lean-genius五份Lean仅有限<100、计数或可表示集合无限；贡献PR140实际Lean diff只给有限cover和带额外计数/base假设结果；Wikipedia Wieferich PR5311无限性仍sorry。全部有效源码线索已跟进。erdosproblems 403、匿名代码/部分GitHub API限流、配置web provider模型/认证错误、Google挑战及Bing无关结果均如实记录；关键PR源码通过raw或.diff成功读取，未以搜索错误作为不存在证据。未编译外部证明或将答案放入镜像。完整检索词、URL、访问状态及候选排除依据见 public-assessment.txt、public-*-fetch.json、public-fetch.json。"
+    }
+  }
+}

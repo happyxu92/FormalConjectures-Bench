@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1004-le-of-isdistincttotientrun",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to the three-path rg command. In this task Harbor container the exact command found Mathlib def totient with exit 0; evidence /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1004-le-of-isdistincttotientrun/instruction-search.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target imports only ProblemImports and local Submission, so no extra upstream precompile module was needed. Added final WORKDIR /app, HOME=/home/ubuntu, USER ubuntu RUN lake build +FormalConjecturesBench.Target after copying/permissions. Current local Harbor image built successfully (sha256:966ed0662e0a6b42a3fc3efb8703bfe02b26c6c905e7d4cadcbe7c52b7c6a412). Actual ubuntu build exit 0, 7992 jobs; original sorry warnings expected. Evidence /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1004-le-of-isdistincttotientrun/ubuntu-build.log and harbor-image-history.txt."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Skill check_unicode_header.py executed: case no_issue; original header, frozen prefixes and := boundary verified against three Targets, mutations rejected, checker copies consistent. No Unicode repair needed. Evidence /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1004-le-of-isdistincttotientrun/unicode.json. Final script rerun also passed (unicode-final.json)."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Original checker re-elaborated GoldenCheck after candidate imports. Generated complete ExpectedType from original golden without Submission in matching Lean 4.27.0 x86_64 container; extracted info.type and all universe params (empty), reset temporary target environment before export. Separate import audit of ExpectedType and IsDistinctTotientRun accepts only propext/Classical.choice/Quot.sound; no temporary target/sorryAx dependencies. Same compiled Spec/source/manifest synchronized to tests/trusted_spec and environment/data/checker/trusted_spec; pinned manifest 91c02e2edc4e06d388e1226adbd8f4fa7fe9132945639472ada98d54db04f21e. Fixed compiler/dependency paths prioritize verified package over candidate modules/caches/environment; normal import and source policy preserved without a general external-module whitelist. Current local task Harbor build and uploaded /tests and image /opt hashes verified. Official /tests/test.sh and ubuntu /app/check.sh exit 1 on original sorry, reward 0 (expected proof failure). Actual checker function tests on BOTH paths exit 0: Spec identity/import/type audit, ubuntu build, full type comparison, sorryAx rejection, canary, frozen/header/boundary/source negatives, instance LE Real attack with unchanged frozen text compiled but rejected by full type comparison, same-name module/cache shadow rejection, missing/tampered artifacts/manifest fail without regeneration. Two checker contents/AST and packages match; original policy functions and all immutable-before files remain unchanged. Evidence /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1004-le-of-isdistincttotientrun/commands.txt, package.log, entry-results.json, functions-official.log, functions-local.log, delivery-hashes.json, static-validation.json. Original theorem is not proved. Docker cleanup verified: removed Spec container erdosproblems-1004-le-of-isdistincttotientrun-spec-pi-a71c9e and Harbor container erdosproblems-1004-le-of-isdistincttotientrun-pi-a71c9e__env-main-1; removed newly built task image sha256:966ed0662e0a6b42a3fc3efb8703bfe02b26c6c905e7d4cadcbe7c52b7c6a412/tag and task Harbor network. docker inspect confirms absence. Pre-existing shared generation image and all shared caches/other tasks resources preserved. See cleanup-verification.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked task.toml statement_status=consistent; no mathematical changes. Pinned source and full prefix reviewed: InjOn totient on Nat Icc(n+1,n+K), fixed positive real c, eventual Nat n and universal K, casts, real exponent 1/3 and non-strict bound are consistent. Author primary PDF https://users.renyi.hu/~p_erdos/1985-32.pdf printed p.67 announces even stronger strict c=1 bound. This is the known upper-bound variant, not the open existence question. Direct problem/forum HTTP403; author PDF accessible. Evidence /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1004-le-of-isdistincttotientrun/statement-review.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "public_lean4_proof=unknown, status=blocked. Exact full ID absent from 211-row public-lean4-proofs.csv. Multiple identifier/mathematics/author/repository queries attempted; accessible GitHub issue/PR/tree/history/raw sources reviewed. Current upstream and fork heads of PR2543/3068 still sorry; Conjectures package has only collision/conditional results; full Lean Genius source axiomatizes eps87_theorem, and OQ03 proves only K<=n-1; Mathlib basic totient API has no target proof. No complete proof identified in reviewed sources. Global GitHub code search HTTP401; configured web API model/auth failures, Google JS pages, DDG challenge and unreliable Bing results prevent exhaustive source coverage. Thus not recorded false or confirmed absence; no public solution installed or claimed compiled. Evidence /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1004-le-of-isdistincttotientrun/public-proof-review.json and search/source indexes."
+    }
+  }
+}

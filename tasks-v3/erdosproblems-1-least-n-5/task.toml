@@ -8,6 +8,12 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = true
+public_lean4_proof_status = "local_collection_exact_match"
+public_lean4_proof_urls = ["https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/1.lean#L280"]
+public_lean4_proof_note = "Exact full task ID hit in lean-task-repair/references/public-lean4-proofs.csv; marked per skill without requiring another online verification. Public proof has not been installed or compiled in this task."
+statement_status_note = "Finite n=5 variant: 13 is the least bound for a five-element subset of positive naturals with injective subset sums; agrees with pinned upstream and OEIS A276661 b-file. Independent exhaustive finite check confirms no example below 13. Mathematical input preserved."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/1.lean"

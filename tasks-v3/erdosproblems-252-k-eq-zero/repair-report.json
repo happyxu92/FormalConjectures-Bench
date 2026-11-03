@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-252-k-eq-zero",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to the instruction search command. Actual ubuntu rg search found Mathlib NumberTheory/Real/Irrational.lean:def Irrational with exit 0. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-252-k-eq-zero/attempt-002/instruction-package-search.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Precompiled the actual extra upstream import FormalConjectures.Wikipedia.Schinzel alongside ProblemImports. Dockerfile ends with USER ubuntu and RUN lake build +FormalConjecturesBench.Target after copy/cleanup/permissions. Current local Harbor image build succeeded; an explicit ubuntu lake build also exited 0. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-252-k-eq-zero/attempt-002/docker-image-history.log, ubuntu-target-build.log and harbor/."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Skill check_unicode_header.py returned case=no_issue, exit 0, both original headers and frozen baselines pass; changed-header and missing-assignment negatives pass. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-252-k-eq-zero/unicode.json. Final header/prefix constants still equal originals."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated full ExpectedType via Lean parser/elaborator from original golden without Submission; temporary target discarded. Independently audited ExpectedType and erdos_252_sum: only propext, Classical.choice, Quot.sound; no outer forall or universe parameters. Source/artifact/input/dependency hashes and version in two identical pinned trusted_spec manifests. Original generation logs: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-252-k-eq-zero/spec-generation.log and independent-audit.log. Current local Harbor image fcb-repair/erdosproblems-252-k-eq-zero:pi252zero-a2-16d099e1, sha256:0414d591b879b2d56ba6f5e85133b3f6ef35699146af058aea6164ec8c9f5ecc, built current task/Dockerfile and no-op agent (no subagent). Harbor uploaded /tests; every checker/Spec/golden file matched host hashes. Formal /tests/test.sh and ubuntu /app/check.sh exited 1 for original sorry, reward 0 as expected. Both actual checker function suites passed 29 cases using /tests and /opt packages: fixed artifact loading and dependency/version checks, trusted transitive axiom audit, ubuntu compile, complete type match, sorryAx rejection/canary, frozen/source-policy negatives, unchanged-header legal Erdos252.Irrational name attack compiled with allowed axioms but full type mismatch rejected, poisoned same-name sources/caches/env unable to shadow fixed Spec, missing/corrupt package fails without runtime regeneration. Ordinary helper def/lemma/instance rules preserved; no general external-module whitelist added. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-252-k-eq-zero/attempt-002/validation-complete.json, container-file-hashes.json, supplement-official-results.json, supplement-local-results.json, final-static-and-coverage.json. Harbor keep_containers stopped the retained task at trial end; same container was restarted to finish supplement tests. Original proof remains incomplete; no reward-1 proof acceptance claimed. Docker cleanup verified: removed old Spec container b6f4d9955dc0 and Harbor container 1d89ac3484fd, own network fe5a20b96c79, and image tag fcb-repair/erdosproblems-252-k-eq-zero:pi252zero-a2-16d099e1. Image ID absent=True. Preexisting shared base and shared build cache retained; no other task resources touched. Cleanup evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-252-k-eq-zero/attempt-002/cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent; this is the known k=0 variant. Mathlib sigma_zero_apply is divisor count; n=0 term is 0 and d(n)<=n gives convergence. Erdos-Straus, Some number theoretic results (1971), section 2, equation 2.1 and Theorem 2.23 (DOI 10.2140/pjm.1971.36.635) imply it by choosing a1=2, an=n for n>=2, giving half the task series. Primary paper https://msp.org/pjm/1971/36-3/pjm-v36-n3-p07-s.pdf and author copy retrieved; problem website 403 and search API restrictions recorded. Mathematical files unchanged. Details: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-252-k-eq-zero/attempt-002/mathematics-and-proof.json and research/erst71-msp.txt."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact full task ID hit in skill references/public-lean4-proofs.csv (211 rows), accepted under skill rule without renewed online confirmation. Marked public_lean4_proof=true. Public complete Lean4 proof URL: https://github.com/tokengr1nder/Erdos252/blob/46b9fd26361faf669bcd7e4495e63678bfa6a735/Erdos252/Solution.lean#L1066 . Not compiled in this task and not copied into task/image. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-252-k-eq-zero/attempt-002/public-proof-csv.json."
+    }
+  }
+}

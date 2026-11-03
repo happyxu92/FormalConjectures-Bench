@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [Quot.sound, propext, Classical.choice]
+audited Erdos253.RepresentsAPs: [Quot.sound, propext, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ (a : ℕ → ℕ),
+    0 < a 0 →
+      Erdos253.RepresentsAPs a →
+        Filter.Tendsto (fun n => ↑(a (n + 1)) / ↑(a n)) Filter.atTop (nhds 1) →
+          subsetSums (Set.range a) ∈ Filter.cofinite
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-200-upper",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to instruction.md source-search command. bash -n passed; actual ubuntu rg in this task Harbor container returned 0 and found Mathlib definitions. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-200-upper/instruction-search.log, delivery.json."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Actual Target imports only ProblemImports and local Submission; no extra upstream precompile required. Retained ProblemImports precompilation and added Dockerfile final RUN lake build +FormalConjecturesBench.Target after USER ubuntu. Current local-task Harbor build and explicit ubuntu Target build both passed (exit 0). Image sha256:b21253ccb049aef96f04e1d27439438d7cf1b7ae53113eb0008a80a80442d910; image history and ubuntu-target-build.log retained."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Skill Unicode script actually run before semantic changes and again after: case=no_issue, original header accepted, changed header and missing := rejected, two copies match. Evidence: unicode.json and unicode-final.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated complete ExpectedType from immutable golden without Submission in locked Linux x86_64 Lean 4.27.0 Docker; zero outer forall binders and no universes. Independent import and transitive audit of ExpectedType and longestPrimeArithmeticProgressions passed with only standard axioms; temporary target not exported. Synced source/artifacts/manifests to both trusted_spec packages. Checker pins manifest 89cfde8276083af1e6b22b9a0bf707c772e71e108aea00a689c7525ec99f349d and fixed toolchain/dependency paths; no runtime generation/fallback or generic external-module whitelist. Original frozen/source/axiom/canary checks preserved. Current task local Harbor image built; actual /tests/test.sh and ubuntu /app/check.sh reject original sorry (exit 1, reward 0 expected). Both paths supplemented through actual functions: fixed artifact load/audit, observed uid 1000 candidate compilation, full type match, sorryAx rejection, canary; source confinement/frozen mutations and frozen-text semantic name attack rejected. Candidate same-name sources/cache/environment cannot replace Spec; missing/corrupt package fails without modification. Both checker AST/content, packages, container delivery hashes, and all 15 immutable-before files verified. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-200-upper/generation.log, delivery.json, validation-official-coverage.json, validation-local-coverage.json, load-path-probe.log, final-verification.json. Original theorem proof is not claimed complete. Docker cleanup completed: stopped/removed owned containers e5be6d2ecc6a, 919ebaefaa44; removed owned image sha256:b21253ccb049aef96f04e1d27439438d7cf1b7ae53113eb0008a80a80442d910 (tag erdosproblems-200-upper-pi200-51c428bb__env-main:latest); removed owned Harbor network erdosproblems-200-upper-pi200-51c428bb__env_default. Verified containers, image ID/tag, and network absent. Pre-existing shared generation base fcb-local/erdosproblems-1-least-n-5:cache-smoke and all shared caches/other agents resources retained; no prune."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. This is the known upper-bound variant with constant 1, not the open o(log n) conjecture. Checked full AP/sSup definitions, finiteness/cardinality, zero-difference degeneracy, n=0,1 log endpoints, all-n quantification and asymptotics; no obvious mathematical defect. Public Target, golden, GoldenCheck and frozen constants retained. Original problem page HTTP 403; pinned/current upstream and public proof read. Evidence: statement-review.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact full-ID CSV lookup missed; multi-source followup found Max Marquardt public complete unconditional proof: https://github.com/incrediblecrab/erdos-problems/blob/26818ce29240ccb31fe8fec8782aace271e91841/p200/lean-pnt/Erdos200/Unconditional.lean (ErdosProblem200.erdos_200_variants_upper_unconditional). Identical AP/cardinality/sSup definitions and all-n constant-1 goal checked, shared Structure/Bound/Asymptotic proofs read with no admissions/new axioms; pinned PrimeNumberTheoremAnd dependency reviewed (two unused Wiener admissions outside target dependency). Author supplies axiom/build audit. Marked public_lean4_proof=true; public proof uses Lean 4.32.2 and was not independently compiled/ported into current Lean 4.27.0. Upstream PRs 2531/3056 retain sorry and are excluded. Website 403, authenticated code-search 401/API rate limits and general-search failures documented; positive proof sources accessible. No public answer inserted into task or image. Evidence: public-proof-csv.json, public-proof-review.json, research-*.json."
+    }
+  }
+}

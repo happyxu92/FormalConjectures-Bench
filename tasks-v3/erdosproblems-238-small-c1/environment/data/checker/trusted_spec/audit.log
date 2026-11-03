@@ -1,0 +1,21 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited primeGap: [Classical.choice, propext, Quot.sound]
+binder c₂, info Lean.BinderInfo.default: ℕ
+binder a._@._internal._hyg.0, info Lean.BinderInfo.default: c₂ > 0
+complete binder count: 2
+remaining proposition: ∀ᶠ (c₁ : ℝ) in nhdsWithin 0 (Set.Ioi 0),
+  ∀ᶠ (x : ℝ) in Filter.atTop,
+    ∃ k,
+      c₁ * Real.log x < ↑k ∧
+        ∃ f m,
+          (∀ (i : Fin k), ↑(f i) ≤ x ∧ f i = Nat.nth Nat.Prime (m + ↑i)) ∧ ∀ (i : Fin (k - 1)), c₂ < primeGap (m + ↑i)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ c₂ > 0,
+  ∀ᶠ (c₁ : ℝ) in nhdsWithin 0 (Set.Ioi 0),
+    ∀ᶠ (x : ℝ) in Filter.atTop,
+      ∃ k,
+        c₁ * Real.log x < ↑k ∧
+          ∃ f m,
+            (∀ (i : Fin k), ↑(f i) ≤ x ∧ f i = Nat.nth Nat.Prime (m + ↑i)) ∧ ∀ (i : Fin (k - 1)), c₂ < primeGap (m + ↑i)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

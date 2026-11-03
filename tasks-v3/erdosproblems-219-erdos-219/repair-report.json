@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-219-erdos-219",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to instruction rg command; actual package definition search succeeded (instruction-search.log)."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Actual Target has only ProblemImports and Submission; no extra upstream imports required. Retained upstream precompilation; appended final USER ubuntu lake build +FormalConjecturesBench.Target. Current local Harbor Docker builds succeeded; same ubuntu build reports 7992 jobs successful (ubuntu-target-build.log, image-history.json)."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran skill check_unicode_header.py; case=no_issue, original/header-mutation/missing-assignment checks passed; no surrogate issue (unicode.json)."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated and precompiled FCBTrustedSpec from untouched golden with Submission import removed in pinned Linux Lean 4.27.0 Docker environment; ExpectedType value and primeArithmeticProgressions transitive axioms independently audited; no temporary theorem exported, outer iff/RHS Nat binder retained, universe_params=[]. Identical packages and manifest hashes in both checker locations; fixed toolchain and Spec/dependency loading, full expected-value/target-type comparison. Current local task Harbor CLI and persistent API builds used erdosproblems-219-erdos-219-pi219-852f5d18 images; actual uploaded /tests and installed /opt checker/Spec/golden hashes matched (container-hashes.json). Both entrypoints exit 1/reward 0 for original sorry as expected; both actual function suites exit 0 covering Spec audit/load, ubuntu compilation, type match, sorryAx rejection, canary, frozen/source violations, frozen-text-preserving ENat LE instance mismatch, same-name caches/env shadowing, missing/tampered artifacts and manifest rejection without regeneration. Static AST/content/packages and immutable files passed. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-219-erdos-219; commands/logs/manifests, image/container IDs preserved there. Original proof remains unfinished; no full proof pass claimed. Docker cleanup verified: both remaining own containers removed (c3896a274837, deaef285c5a9); first CLI container 7d2810fe94d8 already auto-removed. Own image IDs sha256:25a28885939aa49f72c5f25b1d1b34c2cb1d1ab1cfabc07216704875a592286a and sha256:bdcbd487aaf10827144ff0b210a95145d4e3e3f93e693e54ebd1767c9f5f371e, their task/suffix tags, and own network erdosproblems-219-erdos-219-pi219-852f5d18_default removed; inspect confirms absence. Shared base image/cache and other agents resources retained. Details: docker-cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Read whole golden prefix, pinned upstream 219.lean and AP cardinality definitions. Goal is arbitrary finite lower bounds on cardinalities of prime arithmetic progressions; aligns with Green-Tao, arXiv:math/0404188v6 Theorem 1.1. N=0 handled by a prime singleton; ENat and positive length cause no evident contradiction. Problem site HTTP 403, but primary paper and upstream accessible; no mathematical edits (statement-review.json, math-fetch.json)."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact full task ID hit in skill references/public-lean4-proofs.csv. Marked public_lean4_proof=true. Sources: https://github.com/plby/lean-proofs/blob/1268917deaaaa0d674f651287027baa26cea9920/src/latest/ErdosProblems/Erdos219.lean ; https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos219.lean#L37 . Per skill, CSV hit suffices; public proof was not inserted or compiled in this task. Evidence: public-proof-csv.json."
+    }
+  }
+}

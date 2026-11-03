@@ -1,0 +1,11 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+complete binder count: 3
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {k : ℕ},
+  4 ≤ k →
+    (∀ (a : Fin k → ℕ+) (b : Fin k → ℕ),
+        (∀ (p : ℕ), Nat.Prime p → ∃ n, ¬p ∣ ∏ i, (↑(a i) * n + b i)) →
+          {n | ∀ (i : Fin k), Nat.Prime (↑(a i) * n + b i)}.Infinite) →
+      Irrational (Erdos252.erdos_252_sum k)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

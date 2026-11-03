@@ -4,32 +4,32 @@
     "instruction_search": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "instruction.md 搜索命令补上显式 /opt/formal-conjectures/.lake/packages。最终 Harbor 容器以 ubuntu 执行三路径 rg，成功命中 Mathlib Finset.card_powerset；退出0及输出见 repair-evidence/delivery.json。"
+      "note": "保留已修复的三路径 rg 命令，显式包含 /app、/opt/formal-conjectures 和 /opt/formal-conjectures/.lake/packages。本轮静态核查及当前本地 task 的 Harbor 子容器内 ubuntu 实测均通过，成功命中 package 中 Finset.card_powerset，退出0。证据：attempt-002/steps-1-2-static.json、delivery.json。"
     },
     "lean_dependency": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Target 仅导入 ProblemImports 和本地 Submission，无额外上游 import。Dockerfile 原缺末尾普通用户构建验证，已补 RUN lake build +FormalConjecturesBench.Target；最终 Harbor 当前任务构建成功，USER ubuntu，未放宽依赖权限。命令、镜像和版本见 repair-evidence/validation-summary.json。"
+      "note": "实际 Target 仅导入 ProblemImports 和本地 Submission，无额外上游 import；Dockerfile 保留 ProblemImports 预编译，末尾为 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。本轮以当前本地 Dockerfile/task 构建 Harbor 成功，并在同一子容器重新执行 ubuntu lake build，退出0。未放宽依赖权限。证据：attempt-002/harbor-config.json、harbor.log、image-history.txt、delivery.json。"
     },
     "unicode_header": {
       "has_issue": false,
       "repair_status": "not_needed",
-      "note": "按 skill 执行 check_unicode_header.py，case=no_issue，原始头、冻结前缀和 := 边界验证通过，两份 checker 同步；见 repair-evidence/unicode.json。"
+      "note": "本轮实际执行 skill 的 check_unicode_header.py：case=no_issue，原始头、冻结前缀及 := 边界通过，变更头与移除赋值均拒绝，两份 checker 无需修改且一致。证据：attempt-002/unicode.json。"
     },
     "semantic_checker": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "原 checker 在候选环境重解析 GoldenCheck，存在实例遮蔽风险。由可信 golden 移除候选 import 后，用 Lean parser/elaborator 提取完整类型并在匹配 Lean4.27.0 x86_64 容器预编译及独立审计；保留 ε 和 hε 全参数，universe=[]，ExpectedType 及 sumPrimeAndTwoPows 传递公理仅标准三项。已交付两份相同可信包和固定manifest哈希，checker仅加载固定产物，先导入Spec再以ubuntu编译隔离候选及检查完整类型。最终当前task Harbor构建、/tests上传hash与/opt包hash核对、正式与本地入口及两套实际函数验证通过；原始sorry预期退出1/reward0。冻结/越界、普通helper、缓存/同名模块/环境覆盖、完整类型、sorryAx审计/canary、冻结文字不变的LE ℝ语义偷换、缺失/坏hash/坏manifest负例全部覆盖且结果符合预期。命令/哈希/版本/镜像/日志见 repair-evidence/validation-summary.json、delivery.json、validation-{official,local}.log；未提供原题完整证明，未验证其成功分支。"
+      "note": "保留并重新审计固定完整 Spec 方案；从可信 golden 移除候选 import 后以 Lean parser/elaborator 提取完整类型。本轮在匹配 Lean4.27.0/x86_64 与锁定依赖的独立容器重现生成、编译及传递公理审计，交付源码/olean/ilean 哈希均一致，保留 ε、hε，universe=[]，ExpectedType 仅依赖标准公理。两份 checker 字节/AST 及两份 Spec 包一致，固定 manifest 81e815c62ab02761119b72195607413aa49dba8a6cfa019035264ba152484003；候选路径不能替换 Spec/可信依赖，运行时无生成回退，正常 import 规则保留。当前本地 task Harbor 构建镜像 sha256:549b91cd4438ad4dc5ce632c9803ed16580876862159316cdce68e16d0f38415，核对上传 /tests 与预装 /opt checker/Spec/golden 哈希；正式入口及 ubuntu /app/check.sh 因原始 sorry 预期退出1/reward0。两入口各27项实际函数补测通过，覆盖 Spec 加载/审计、ubuntu 候选编译、完整类型比较、sorryAx 拒绝/canary、冻结/越界负例、合法 helper、缓存/同名模块/环境遮蔽、冻结文字不变的 LE ℝ 实例偷换实际类型不匹配、缺失/坏哈希/坏manifest明确拒绝且不生成。未提供原题证明，未验收完整证明成功分支。原 immutable-before.json 的15项全部原样。证据根目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-10-gallagher/attempt-002；关键文件 spec-reproduction.log/json、semantic-static.json、delivery.json、validation-{official,local}.log/json。清理已完成：本轮 spec 与 Harbor 两容器（suffix a002-gal-82f6d1）、上述任务镜像及独立网络均已删除并 inspect 核实不存在；共享基镜像、其他任务及基线历史网络保留，未 prune。见 cleanup.json/log。"
     },
     "statement_fidelity": {
       "has_issue": false,
       "repair_status": "not_needed",
-      "note": "metadata statement_status=consistent。核查完整前缀：自然数素数加至多k个2的非负整数次幂（允许重复），每个ε>0存在k使下密度≥1−ε，符合 https://www.erdosproblems.com/10 的Gallagher已知密度变体及锁定上游10.lean；没有把主开放覆盖问题当成本目标。未发现导致目标无法成立的明显问题；原始数学陈述、golden、冻结hash未修改。位置/来源见 repair-evidence/research.json。"
+      "note": "statement_status=consistent。实际核查完整前缀、自然数素数/Multiset 非负指数/至多k、ε>0及普通自然数下密度liminf定义，未发现导致目标不成立的明显问题。本题为 Gallagher 已知密度变体；1999 Liu–Liu–Wang 原始研究论文 p.134 引述奇数密度趋1，通过加1=2^0覆盖另一奇偶性即可对应自然数版本。锁定上游完整源码与本题一致；Gallagher 原文出版信息已查，全文付费，erdosproblems 页面403，如实记录。数学陈述、Target、golden、GoldenCheck、冻结哈希均不改。证据：attempt-002/mathematics-review.json、Density.lean、numdam-linnik.txt、upstream-pinned.source。"
     },
     "public_lean4_proof": {
-      "has_issue": false,
+      "has_issue": null,
       "repair_status": "marked",
-      "note": "本地公开证明CSV按完整ID未命中。按数学名称、完整Lean名、别名检索上游/Mathlib/GitHub及issues/PR API，核查当前上游和精确PR #3302/#2786源码diff：Gallagher均仍by sorry，两PR只改category且声明使用loophole；two_pows/grechuk证明不覆盖此目标。多组充分检索未找到已知公开完整Lean4证明，不表示证明绝对不存在。metadata public_lean4_proof=false、status=searched；检索词、来源、排除原因及Leangenius直接访问403限制见 repair-evidence/research.json。"
+      "note": "public_lean4_proof=unknown，status=blocked。先按完整ID精确匹配 skill CSV，未命中；本轮实际读取当前上游、PR3302/2786/6446/2479、另一证明仓库及 LeanGenius 完整 Lean 源码：Gallagher 仍 sorry 或只是 ∃ k, True 的显式 STUB，均非本目标完整证明；Mathlib Gallagher 结果属于不同逼近问题。已尝试多组完整名、别名、数学名称、GitHub/Mathlib过滤及作者仓库检索；广域 Google 查询返回JS验证页，搜索工具有模型/认证限制，部分API速率受限。已核查的具体线索均排除，但广域覆盖不足，因此撤回旧报告中无保留的 searched/false 判断，不声称不存在公开证明。未向镜像放入公开答案。查询、源码、排除原因和访问限制见 attempt-002/public-proof-review.json、research-fetch.json、research-followups.json、public-csv-match.json。"
     }
   }
 }

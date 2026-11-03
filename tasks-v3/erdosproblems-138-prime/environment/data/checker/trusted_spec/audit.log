@@ -1,0 +1,9 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Classical.choice, Quot.sound]
+audited Erdos138.W: [Classical.choice, propext, Quot.sound]
+audited Erdos138.monoAPNumber: [Classical.choice, propext, Quot.sound]
+audited Erdos138.monoAP_guarantee_set: [propext, Quot.sound, Classical.choice]
+complete binder count: 2
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (p : ℕ), Nat.Prime p → p * 2 ^ p ≤ Erdos138.W (p + 1)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-145-le-three",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md now explicitly searches /app, /opt/formal-conjectures and /opt/formal-conjectures/.lake/packages. Actual ubuntu search found Mathlib definitions in the final Harbor child; see evidence directory instruction-search.log and delivery.json."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Actual Target has only ProblemImports and local Submission imports; no additional upstream target required. Preserved ProblemImports precompile and appended the required final ubuntu RUN lake build +FormalConjecturesBench.Target. Current local task Harbor images built successfully, and the final child also passed an actual ubuntu Target build; delivery.json records build output and image history."
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Ran the specified skill Unicode script on this exact task. It repaired surrogate-pair encoding of 𝓝 in both EXPECTED_HEADER constants using repr and verified original header acceptance, altered header rejection and assignment boundary rejection. unicode.json records unicode_repaired; unicode-final.json verifies the delivered checkers. Target, golden and frozen baseline unchanged."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated and precompiled FCBTrustedSpec from this task's original golden without Submission or candidate Lake/cache. Lean extracted the complete type (implicit Real alpha and its Icc 0 3 assumption; universes []) and discarded the temporary theorem. Independent transitive audit of ExpectedType, Erdos145.s and A found only the three permitted standard axioms. Synchronized both manifest-pinned source/artifact packages and checker copies; fixed compiler/dependency/Spec resolution, ubuntu candidate build, and full type comparison replace runtime GoldenCheck parsing. Normal external imports and existing source/frozen/axiom/canary rules remain. Current local Harbor final child eaa8c3f69782, image sha256:681a56461e1ef27b18e12769491c5ac6e8a0b24f50092c409bdd90c13e5c8309, verified both uploaded /tests and installed /opt package hashes. Official bash /tests/test.sh and ubuntu /app/check.sh return 1/reward 0 for the original sorry, as expected. Same-child actual-function supplements passed 33 cases for each package: fixed Spec load/audit, ubuntu compile, complete type match, sorryAx rejection/canary, frozen/source negatives, name and instance semantic substitutions rejected by type comparison, candidate module/cache/env poisoning, missing/corrupt artifacts with no runtime regeneration. No required checker path remains untested; this is not a theorem-proof success. All 15 immutable files and both checker AST/content and Spec packages verified. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-145-le-three/evidence.md, delivery.json, validation-official-r2.json, validation-local.json, final-integrity.json. Docker cleanup completed and verified by docker ps -a and image/container/network inspect: removed this agent's Spec container 8094b0ffd7c8 and Harbor container eaa8c3f69782, the three pi145t-92b6 task images (21fc5de69775, 373f6e6e1dca, 681a56461e1e) and the final dedicated task network; earlier Harbor container/network were already auto-removed. No owned container/image/network remains. Shared baseline image and shared build cache retained; no prune. See docker-created-resources.json and docker-cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked metadata statement_status=consistent. Checked complete s/A definitions and actual le_three target against pinned upstream, original Hooley 1973 square-free paper (CJM 25, 1216-1223, DOI 10.4153/CJM-1973-129-0), Chan arXiv:2310.08448 Sections 1-2 and Filaseta. Inclusive alpha in [0,3] is a known reasonable variant. Nat.nth indexing, natural floor preimage and Real gap subtraction are appropriate. The s_n<=x versus s_(n+1)<=x difference is one crossing gap; the cited O(x^(1/5) log x) bound makes its normalized alpha-power o(1) for alpha<=3. No mathematical statement/definition was modified; the separate 11/3 endpoint issue does not affect this task. Sources and reasoning are saved in evidence.md and sources/."
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Full ID erdosproblems-145-le-three did not match public-lean4-proofs.csv (public-proof-local-match.json). Multiple searches covered exact Lean names, equivalent squarefree gap moment statements, Hooley/Chan, canonical upstream, Mathlib, author literature, GitHub PRs/forks, proof catalogues and AlphaProof Nexus. No known complete public Lean4 proof was found; metadata records public_lean4_proof=false and status=searched, not nonexistence. Actual sources of PR #2515/#2836/#3352 still use sorry and only relabel category attributes; current upstream also uses sorry. The current Nexus archive's 71 Lean files had no relevant match. GitHub code/history/tree APIs were rate-limited (403); concrete candidate source/patches and Nexus archive were successfully recovered through raw URLs/codeload. Initial website Cloudflare 403 recovered to 200; problems.science returned 500; default multi-query source_check search succeeded after explicit-model web_search configuration errors. All promising proof leads were checked; no proof was bundled or claimed compiled. Full queries, URLs, exclusions and access limits: evidence.md, sources/fetch-results.json, sources/followup-results.json, sources/nexus-scan.json."
+    }
+  }
+}

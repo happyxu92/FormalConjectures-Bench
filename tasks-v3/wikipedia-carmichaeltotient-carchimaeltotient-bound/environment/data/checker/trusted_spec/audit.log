@@ -1,0 +1,6 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited CarmichaelTotient.CarmichaelTotientFor: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {n : ℕ}, 0 < n → n < 10 ^ 10 ^ 10 → CarmichaelTotient.CarmichaelTotientFor n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

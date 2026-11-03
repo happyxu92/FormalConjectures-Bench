@@ -1,0 +1,7 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos17.IsClusterPrime: [propext]
+audited Erdos17.clusterPrimeCount: [Quot.sound, propext, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {A : ℝ}, 0 < A → (fun x => ↑(Erdos17.clusterPrimeCount x)) =O[Filter.atTop] fun x => ↑x / Real.log ↑x ^ A
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

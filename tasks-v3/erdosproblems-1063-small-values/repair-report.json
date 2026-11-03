@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1063-small-values",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原搜索命令遗漏隐藏 packages，已显式增加 /opt/formal-conjectures/.lake/packages。当前 Harbor 子容器 ubuntu 实际执行三个路径的 rg 命令，退出0且命中 mathlib 包内已知定义；无路径/权限错误。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1063-small-values/delivery.json。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "实际 Target 只有 ProblemImports 与本地 Submission，无额外上游 import；无需追加上游模块。原 Dockerfile 缺少末尾普通用户验证，现以 WORKDIR /app、HOME=/home/ubuntu、USER ubuntu 及 RUN lake build +FormalConjecturesBench.Target 结尾。当前本地 task Harbor 构建通过，镜像 sha256:0a1be23facaf8a1f8aa0a3403f6e04fc9422cdf1000b8038ba975f53c6b24779；同一子容器 ubuntu lake build 退出0。未放宽依赖权限。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1063-small-values/image-history.txt 和 ubuntu-lake-build.log。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按 skill 运行 check_unicode_header.py，初检及最终复检均 case=no_issue、退出0，无代理码点问题；原始头通过、修改头与移除赋值被拒绝，两份 checker 一致。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1063-small-values/unicode.json、unicode-final.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重新解释 GoldenCheck，存在名称/实例语义遮蔽风险。修复阶段从本题原始 golden 全前缀及完整目标生成 Spec，移除 Submission import；Lean parser/elaborator 提取完整类型，恢复临时目标声明前的环境后导出 ExpectedType 定义。以锁定 Lean 4.27.0、x86_64 和依赖修订在无网络 Docker 环境预编译并独立导入审计；universe_params=[]，ExpectedType 与 n 的传递公理仅 propext、Classical.choice、Quot.sound，临时目标未导出。前缀中其他原始未完成定理虽有 sorry 警告，但不在 ExpectedType/n 依赖中。生成镜像 sha256:0824de0f16475f1f619701869e59de4e4ce3229bfce229a5fd16f88072c37e8f；清单记录全部 golden、生成代码和产物哈希及依赖修订。 两份包/清单和 checker 内容及 AST 一致；固定清单 SHA256=d105f64242b69a5e4413d1cf49da809d4729d2e1dc221a1480fc9db2c84aab98。正式 SPEC_DIR=/tests/trusted_spec，本地 SPEC_DIR=/opt/formal-conjectures-bench-checker/trusted_spec；固定工具链和依赖路径优先于候选，运行时只加载校验过的固定产物、不生成或重编 Spec。临时 Target 先 import Spec，再 import Submission，前缀定义来自 Spec；完整比较 ExpectedType 的值与根限定目标类型。保留原冻结/源码限制、公理审计、sorry canary、正常 helper 和 import 规则；未扩展为通用外部模块白名单。 实际执行 harbor trial start --path /root/FormalConjectures-Bench/tasks-v3/erdosproblems-1063-small-values --trial-name erdosproblems-1063-small-values-pi-small-8c72f1 --trials-dir /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1063-small-values/harbor --agent nop --env docker --force-build --no-delete --environment-kwarg keep_containers=true，退出0，无 Harbor 异常。当前本地 Dockerfile/交付包实际构建；子容器 b236b043463e。核对 Harbor 上传 /tests 与预装 /opt 的 checker、Spec、golden 哈希一致，Target 不变；/tests/test.sh 实际使用 FCB_TASK_DIR=/app FCB_TESTS_DIR=/tests。正式入口与 ubuntu /app/check.sh 均退出1、reward=0，原因仅原始 sorry，未声称数学证明通过。 在同一子容器分别调用 /tests 与 /opt checker 的实际函数，各27条隔离 fixture 验证退出0：固定 Spec 加载和可信类型/公理审计、ubuntu 候选编译、完整类型比较、sorryAx 拒绝和 canary；冻结前缀/头/赋值、越界源码、非Lean文件、符号链接、冻结配置和 helper axiom 负例均拒绝。冻结文字不变且源码合法的高优先级 OfNat ℕ 2 := ⟨0⟩ 攻击实际编译成功，随后完整类型比较拒绝 type mismatch。同名候选 Spec 模块/缓存及 LEAN_PATH/LEAN_SYSROOT/ELAN_TOOLCHAIN 无法覆盖固定包；产物缺失、哈希损坏、清单损坏均明确拒绝且包未被重写。无原题完整证明，真实无 sorry 目标成功公理审计分支未验收；占位 fixture 的拒绝路径已覆盖，符合 skill 允许的验收范围。 证据目录 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1063-small-values：generation.log、package.log、harbor/、delivery.json、validation-{official,local}.{log,json}、compiler-processes.txt、final-verification.json；可复现生成代码及产物在 tests/trusted_spec/。immutable-before.json 所列15个文件全部原样。Docker 清理完成：本次容器 b236b043463e、7f29f6fc92ab 已 stop/rm；本次唯一镜像 sha256:0a1be23facaf8a1f8aa0a3403f6e04fc9422cdf1000b8038ba975f53c6b24779 及 tag 已删除；核对项目标签与 Containers={} 后删除本次空网络 db03e54f45dac9ebe678fd4d1e814fd44ae6843590aa9ab3c3f6800b9beb0d14。inspect 与 docker ps -a 已验证容器、镜像和网络不存在。共享生成镜像 0824de0f1647 保留；无其他本 agent 创建资源遗留，未触碰他人资源或共享构建缓存，未执行 prune。清理证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1063-small-values/cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核对 task.toml 锁定的上游 FormalConjectures/ErdosProblems/1063.lean、完整前缀 n 的 sInf 定义和 small_values 目标，并读取 https://www.erdosproblems.com/1063（直接访问 Cloudflare/403，经 r.jina.ai 镜像成功取得正文）。这是原估计问题的已知初值变体；网页明确列 4、6、9、12，定义域 k≥2、m≥2k、唯一不整除指标一致。精确整数枚举核实：k=2 的 m=4、k=3 的 m=6 已是下界并合格；k=4 的 m=8 有两个例外、m=9 唯一例外；k=5 的 m=10,11 分别有2,3个例外、m=12唯一例外，故最小值与目标一致。保留数学陈述和定义。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1063-small-values/erdos1063.txt、upstream-pinned.lean、mathematical-finite-check.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "按完整 task ID 精确匹配 skill references/public-lean4-proofs.csv 的 task 列，命中 erdosproblems-1063-small-values；依 skill 直接标 public_lean4_proof=true、status=listed，无需再次联网确认。来源：https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/1063.lean#L99 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos1063_erdos_1063_variants_exists_exception.lean#L182 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos1063_erdos_1063_variants_cambie_upper_bound.lean#L73 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos1063_erdos_1063_variants_monier_upper_bound.lean#L73。集合条目及 CSV 哈希保存在 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1063-small-values/public-proof-match.json；未在本题环境编译这些公开证明，未替换 Target 或向镜像加入答案。"
+    }
+  }
+}

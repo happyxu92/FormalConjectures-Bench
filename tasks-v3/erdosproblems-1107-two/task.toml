@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = false
+public_lean4_proof_status = "searched"
+public_lean4_proof_note = "Exact task ID absent from public-lean4-proofs.csv. Multi-query public search, upstream main and PRs 2503/2817/3333, Lean Genius sources and PRs, Mathlib and Nexus checked; candidate proofs retain sorry or extra axioms. No known complete proof found within accessible sources; anonymous GitHub code search requires authentication (401). Evidence is in the task repair job directory."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/1107.lean"

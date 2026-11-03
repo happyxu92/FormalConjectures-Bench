@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-50-erdos-50-schoenberg",
+  "target_name": "Erdos50.erdos_50_schoenberg",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "b221048c7ca7bf5f373bfe30676424a55e6c58efec8ef171a509166bd090ea6d",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "08d69faf5f780cc3063feb7fe8a1ea4f75da7f155ff104aa1cee7cb71f434855",
+    "FCBTrustedSpec.ilean": "e3e12f7066f7e4f0e5ddabeee0ce37a41e1c7d3ba12119022d9c7e95ec3cebba",
+    "FCBTrustedSpec.lean": "4d76f72380a87527284d11ec278f4aa80f651594515fd2437d23e55fef8e3da6",
+    "FCBTrustedSpec.olean": "1c9077b4e389ddd69f5a0a45f541d41a328621a352399705059fd96fcc1aebfe",
+    "audit.log": "e6d08eb50ab73bd5c8f3358960fc41b54ab2fde728010dcaa9202e990a6fbde5",
+    "generate.py": "9fab5856a3907b4f6ed5df99a12cf5a742fcddc563db94c6b470ab7e3024683a",
+    "reproduce.sh": "ede6a2a9636394e9b93ab45c02647e96820f334d723375ff378758ff00312c70"
+  },
+  "generation_image": "sha256:0824de0f16475f1f619701869e59de4e4ce3229bfce229a5fd16f88072c37e8f",
+  "generation_command": "docker run --network none --name erdosproblems-50-erdos-50-schoenberg-spec-a2-9f31 --entrypoint sleep fcb-local/erdosproblems-1-least-n-5:cache-smoke infinity; docker cp tests/trusted_spec erdosproblems-50-erdos-50-schoenberg-spec-a2-9f31:/tmp/trusted_spec; docker cp tests/golden_env erdosproblems-50-erdos-50-schoenberg-spec-a2-9f31:/tmp/golden_env; docker exec -u root erdosproblems-50-erdos-50-schoenberg-spec-a2-9f31 bash /tmp/trusted_spec/reproduce.sh",
+  "audit": "Independent import; ExpectedType definition value, full existential function binder, no universes; temporary theorem absent; transitive axioms of ExpectedType and both prefix definitions restricted to propext/Classical.choice/Quot.sound."
+}

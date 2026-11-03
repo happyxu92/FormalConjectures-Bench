@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-10-two-pows",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原命令未显式覆盖隐藏 packages；现包含 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages。在本次 Harbor 子容器以 ubuntu 执行该三路径 rg，搜索 ^theorem card_powerset 退出0并命中 mathlib 包内源码，无路径或权限错误。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-10-two-pows/delivery.json。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 实际 imports 仅 ProblemImports 与 Submission，无额外上游 import。保留 ProblemImports 预编译，并在 Dockerfile 完成复制和权限设置、HOME=/home/ubuntu、USER ubuntu 后，以 RUN lake build +FormalConjecturesBench.Target 结尾。本次当前本地 task Harbor 构建成功，且在最终 Harbor 子容器以 ubuntu 再次执行该构建退出0；未放宽依赖权限。镜像 sha256:2b2dce245497de45e0286a382ea389401f3df5a229c6896e7d6923e36d0f399c。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-10-two-pows/delivery.json、image-history.txt、harbor-net.log。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已运行 skill check_unicode_header.py，退出0，case=no_issue；原始头通过，修改头或移除 := 被拒绝，两份 checker 一致。头及冻结哈希不变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-10-two-pows/unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在导入候选后重新解析 GoldenCheck，存在语义遮蔽风险。现修复阶段从本题原始 golden 移除 Submission 导入，用锁定 Lean parser/elaborator 提取完整目标类型及 universe 参数，回滚临时目标环境，导出 FCBTrustedSpec.ExpectedType 定义值。独立导入审计确认临时目标未导出，完整预期类型无 binders、universes=[]，其与 sumPrimeAndTwoPows 的传递公理仅 propext、Quot.sound；冻结前缀其他旧 sorry 声明不在该类型依赖中。生成器、源文件、olean/ilean、审计及清单两份完全一致。生成基镜像 sha256:0824de0f16475f1f619701869e59de4e4ce3229bfce229a5fd16f88072c37e8f；版本 Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)；FC 233a10e857ef78e79fd9fe661d37db724089170a；Mathlib a3a10db0e9d66acbebf76c5e6a135066525ac900。golden Target SHA256=06fbcff9b0e5717834d7ff7882df1dd7165c846035178199ebdc239f31771a88；olean SHA256=58202ef0b4b201463e66a6c8bf4600beb5584af6ee7dfefc586bb76c80ce9611；manifest SHA256=997ada354d40a710fc47ea6f1cd0cbe71bda3e409dfa1279b14f9545a471c5b0。生成/审计命令见 trusted_spec/manifest.json、reproduce.sh 及证据脚本。 verifier 从 TESTS_DIR/trusted_spec 固定包核对清单、输入、版本、平台、依赖及产物哈希，仅加载预编译模块，不生成或回退编译 Spec。锁定工具链与优先加载路径，忽略候选环境/Lake/缓存对可信模块的覆盖；临时 Target 共享 Spec 前缀，保留 namespace Erdos10，先导入 Spec 再加载 Submission 与目标证明。完整类型检查引用 ExpectedType 定义值与根限定目标，不重新解析原命题。原冻结检查、源码限制、公理审计和 sorry canary 保留，正常 def/lemma/instance/import 规则保留，未增加通用外部模块白名单或权限扫描。 本次 Harbor 命令使用当前本地 task、--agent nop、--env docker、--force-build、--no-delete、keep_containers=true，具体命令见 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-10-two-pows/harbor/erdosproblems-10-two-pows-pi-20261102-1533-7c91-net/config.json。第一次构建成功但默认地址池耗尽；随后使用本题独立非重叠子网 10.233.91.0/24 完成 Harbor 构建启动，exception_info=null。镜像 sha256:2b2dce245497de45e0286a382ea389401f3df5a229c6896e7d6923e36d0f399c；子容器 erdosproblems-10-two-pows-pi-20261102-1533-7c91-net__env-main-1。Harbor 上传 /tests，两份容器内 checker/Spec/golden 与宿主逐文件哈希一致。正式 bash /tests/test.sh 和 ubuntu /app/check.sh 均退出1，reward=0，仅因原始 Target 的 sorry 源码限制；不表示原题证明通过。 同一 Harbor 子容器补测实际 checker 函数：正式 /tests 共27项、ubuntu /opt 共28项通过，覆盖固定包加载/可信类型审计、ubuntu 候选编译、完整类型匹配、目标 sorryAx 拒绝及 sorry canary。冻结前缀/头/配置变化、缺失赋值、越界文件、非Lean、符号链接及新增axiom均拒绝；普通 def/lemma/instance 允许。冻结文字不变的 OfNat Nat 2:=3 实例攻击可编译，并被完整类型检查实际拒绝。同名候选模块/缓存/环境不能覆盖 Spec；Lean --deps 分别确认实际来自 /tests 和 /opt 的固定 olean。产物缺失、损坏、清单损坏均明确失败，包前后未变且不触发再生成。 证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-10-two-pows/{generation.log,independent-audit.log,delivery.json,validation-official.json,validation-local.json,resolution.log,static-audit.json}；相关命令及退出码均留存。未构造原题完整证明，因此真实无 sorry 原题证明成功分支未验收；隔离占位 fixture 仅用于机制覆盖，正式 Target、golden、GoldenCheck 和冻结基线未改。Docker 清理已完成：容器 601387eae600、041005a78f64 已停止并移除；本次镜像 sha256:2b2dce245497de45e0286a382ea389401f3df5a229c6896e7d6923e36d0f399c 与 sha256:f0c7ff7a7ea46aec7d6f4f3174e94074fb6f2abc075af13b91fbf518536669fe 及其任务标签已删除；本题独立网络 60664a32ecdd 已删除，均经 inspect/ps 核实。保留预先存在的共享基镜像及构建缓存，未使用 prune、未清理其他任务资源。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-10-two-pows/cleanup.json、cleanup-command-log.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata.statement_status=consistent。核对锁定上游 FormalConjectures/ErdosProblems/10.lean 与本题 Target:33（Multiset 自然指数、允许0及重复、card≤k）、Target:84（偶数集合差 Infinite）。读取 Crocker 1971 原论文 https://msp.org/pjm/1971/36-1/pjm-v36-n1-p09-s.pdf pp105–106，构造无限多个合数 t≡15 mod16 且不为 p+2^a(a>0)。取 N=t+1；奇素数的至多两幂表示由奇偶性导出 t=p 或 t=p+2^a，均矛盾；p=2 时 N−2≡14 mod16 不是至多两幂之和，已枚举余数核对。本题为合理已知变体，未发现使目标无法成立的问题，数学输入不改。题目网站403；已直接读取出版社原论文和锁定上游源码，搜索服务的模型错误不妨碍本项核查。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-10-two-pows/mathematical-check.json、crocker-current.md、upstream-pinned.lean、math-access.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确命中 skill references/public-lean4-proofs.csv 第8行；依 skill 设置 metadata.public_lean4_proof=true，并保存两条 proof URLs。来源：https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/5da9642575b26c2c816a49bcb56b33fed5456619/Proofs/T_Erdos10_erdos_10_variants_two_pows.lean#L340 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos10_erdos_10_variants_two_pows.lean#L340。集合命中无需再次联网确认；未在本题环境编译公开证明，也未复制公开答案到镜像。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-10-two-pows/public-proof-check.json。"
+    }
+  }
+}

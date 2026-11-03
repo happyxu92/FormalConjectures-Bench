@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-266-all-rationals",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to the rg source-search command. Real Harbor container search across all three paths found mathlib theorem card_powerset with exit 0; evidence: attempt-002/delivery.json."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Actual Target imports only ProblemImports and local Submission; no extra upstream import needs adding. Retained upstream precompile and added final ubuntu RUN lake build +FormalConjecturesBench.Target after copying/permissions. Current local Harbor image build succeeded; independent ubuntu /app build and import dependency probe exited 0. See image-history.txt and delivery.json."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran skill check_unicode_header.py before semantic changes and again at completion: no_issue, original header accepted, changed header and missing := rejected, both checkers equal. Logs: unicode.json and unicode-final.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated complete ExpectedType from original golden without candidate imports using pinned Lean v4.27.0 / x86_64 and pinned dependency manifest; temporary target is removed before export, universes=[], transitive axioms audited as only propext/Classical.choice/Quot.sound. Synchronized and hash-pinned both precompiled Spec packages and both checkers; fixed Spec/dependency paths and compare complete candidate type to ExpectedType value. Current task Harbor image sha256:9389adc0643d17e4e11ef083f18e9f3ba4690b9e3761cb37199cca67cd9df743; generation and audit commands/hashes in trusted_spec/manifest.json. Official /tests/test.sh and ubuntu /app/check.sh use /tests and /opt packages respectively; both reject original sorry with exit 1/reward 0 as expected. Actual checker functions tested from both locations in the same Harbor container: fixed-artifact validation/provenance, trusted type audit, ubuntu candidate compilation, full-type match, sorryAx rejection, sorry canary, frozen/header/source confinement negatives, and a source-legal frozen-text name-shadowing candidate that compiles with allowed axioms but fails full-type comparison. Poisoned same-name cache/environment cannot replace Spec; missing/tampered artifacts and manifest fail without regeneration. No generic external-module whitelist added. Checker AST/bytes, Spec packages, uploaded golden and original immutable hashes all verified. Evidence directory: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-266-all-rationals/attempt-002. Docker cleanup verified: removed task-owned containers fe2778d964a4 and 620937ecb66f, task image sha256:9389adc0643d17e4e11ef083f18e9f3ba4690b9e3761cb37199cca67cd9df743 and independent network erdosproblems-266-all-rationals-a002-266-982a37__env_default. Re-inspection confirms absence. Pre-existing shared generation image retained; no other task resources or shared build cache cleaned. See cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Pinned upstream target and full prefix agree with Kovac–Tao, arXiv:2406.17593 Theorem 2.11: strictly increasing positive integers, every rational shift excluding poles, convergent rational sum. Checked casts, positivity, quantifiers and HasSum convergence; no obvious false-statement issue found. Primary paper and pinned source saved; erdosproblems.com returned 403. Mathematics, Target, golden and GoldenCheck unchanged; see mathematics-review.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact full task ID matched skill references/public-lean4-proofs.csv; marked public_lean4_proof=true. Source: https://github.com/benkeene/erdos266/blob/ef01b23804a60669f24b25733f1a2b688084609d/Solution.lean#L27 . Per skill, CSV hit needs no renewed web search. Public proof has not been compiled in this task environment and was not copied into the task or image. Evidence: public-csv-match.json and mathematics-review.json."
+    }
+  }
+}

@@ -1,0 +1,6 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound]
+audited Erdos10.sumPrimeAndTwoPows: [propext, Quot.sound]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+1117175146 ∉ Erdos10.sumPrimeAndTwoPows 3
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Quot.sound]

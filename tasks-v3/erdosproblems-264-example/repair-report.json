@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-264-example",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to instruction.md source-search command. Actual rg search over all three documented roots found def Irrational in mathlib, exit 0. Evidence: attempt-002/instruction-search.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target imports only ProblemImports and local Submission; no extra upstream precompile is needed. Added final RUN lake build +FormalConjecturesBench.Target after USER ubuntu and HOME setup. Current local task Harbor image built successfully; actual ubuntu lake build also succeeded (7992 jobs). Evidence under /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-264-example/attempt-002: harbor/, image-history.txt, ubuntu-target-build.log."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran the skill check_unicode_header.py on this task: case no_issue, exit 0. Original header, frozen prefix and assignment boundary validated; changed header/missing assignment rejected. No surrogate issue or mathematical edit. Evidence: attempt-002/unicode.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Replaced candidate-time GoldenCheck parsing with a fixed precompiled trusted ExpectedType extracted by Lean from immutable golden without Submission. Generated/audited in matching Lean 4.27.0 x86_64 container; no universe parameters; ExpectedType and IsIrrationalitySequence depend only on propext, Classical.choice, Quot.sound, and the temporary target is absent. Both checker files/ASTs and Spec packages are identical. Manifest SHA256 706c07f67004bb505fb4b01a586bc51735524c13d051e1965e121952e79c24bb; olean SHA256 3252f54481f8de27cf57e7c9ffaff208d32fd0996cd6a80c0115a6bce75687ff. Local Harbor trial erdosproblems-264-example-a002-c4b87e built image sha256:19373851cbd937315ce7c5be8196eb929111e1a9f61abb3d0d1419ade8cc145f from this task; all delivered checker/Spec/golden hashes match host. Formal /tests/test.sh and ubuntu /app/check.sh exit 1 on original sorry, reward 0, as expected. Each actual checker passed 27 supplementary cases covering fixed package load/audit, ubuntu candidate compilation, full type equality, sorryAx rejection, canary, frozen/source failures, legal helper declarations, same-name candidate module/cache/environment spoofing, missing/corrupt artifact and manifest rejection without regeneration. A valid Pow Nat Nat instance attack preserves frozen text, compiles in the isolated placeholder fixture and is rejected by complete type mismatch; an initial HPow attempt did not change the type and was discarded as an ineffective negative. Actual lean --deps confirms /tests/trusted_spec for formal entry and /opt/formal-conjectures-bench-checker/trusted_spec for local entry, with trusted dependencies taking precedence over same-name candidate caches. Original source restrictions, frozen checks, axiom audit and canary remain unchanged. All 15 immutable-before.json files match. No complete proof was required or supplied; the placeholder fixture is only for otherwise-unreached paths. Evidence: attempt-002/generation.log, independent-audit.log, delivery-hashes.json, runtime-exits.json, validation-{official,local}.log, resolution-{official,local}.log, final-verification.json. Docker cleanup completed: removed this attempt's spec container erdosproblems-264-example-spec-a002-c4b87e and Harbor container erdosproblems-264-example-a002-c4b87e__env-main-1, its unique image tag/ID sha256:19373851cbd937315ce7c5be8196eb929111e1a9f61abb3d0d1419ade8cc145f, and its dedicated network. Container/image/network absence verified. Shared preexisting generation image and all other tasks' resources/build caches were retained; no prune. Evidence: attempt-002/docker-cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Checked full predicate, casts, bounded/nonzero natural perturbations and n=0 indexing against pinned upstream 264.lean and Kovac–Tao arXiv:2406.17593 section 2.1.3. The paper explicitly gives 2^(2^n) as a Type 3 example and permits b_n>0; the natural perturbation version is an admissible restriction, and adding the n=0 rational term preserves irrationality. No obvious false statement or definition was found; Target, golden, GoldenCheck and frozen baseline are unchanged. erdosproblems.com/264 returned HTTP 403; author paper and pinned upstream were accessible. Evidence: attempt-002/mathematical-review.json, source-access.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true: exact full task ID matched skill references/public-lean4-proofs.csv. URL https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos264b.lean#L1204. No further web search is required for a CSV hit. Additionally fetched/read the public source: Erdos264b.erdos_264_example has the same natural perturbation predicate; its header specifies Lean/mathlib 4.33.0. Public proof not compiled in this pinned Lean 4.27.0 task and no answer copied into the task or image. Evidence: attempt-002/public-csv-match.json, public-proof-review.json."
+    }
+  }
+}

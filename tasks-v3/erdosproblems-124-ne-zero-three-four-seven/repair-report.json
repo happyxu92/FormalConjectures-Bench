@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-124-ne-zero-three-four-seven",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式覆盖 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages。当前本题 Harbor 容器以 ubuntu 执行包内已知定义搜索，退出码0，无路径或权限错误；证据见日志目录 instruction-rg.log 与 entry-and-delivery-checks.json。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "实际 Target 仅导入 ProblemImports 与本地 Submission，无额外上游模块需要追加预编译；保留 lake build FormalConjectures.Util.ProblemImports。补齐 Dockerfile 最末 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。当前本地 task Harbor 镜像构建成功，同一子容器中 ubuntu 实际 lake build 再验证退出码0，见 ubuntu-lake-build.log、image-history.log、image-inspect.json。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按指定 Unicode 脚本实际检查及最终复验，case=no_issue；原始定理头通过，修改头及移除 := 均被拒绝，两份 checker 一致。见 unicode.json、unicode-final.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题可信 golden 移除 Submission import，使用锁定 Lean 4.27.0/x86_64 与匹配依赖在独立 Docker 容器提前提取、编译、独立导入并审计 FCBTrustedSpec.ExpectedType；保留隐式 k、显式 hk，universe_params=[]，传递公理仅 propext/Quot.sound，临时目标及其子声明未导出。两份固定包和 checker 同步并以清单哈希固定。checker 按 TESTS_DIR/trusted_spec 加载，忽略候选 LEAN_PATH/LEAN_SYSROOT/ELAN_TOOLCHAIN，可信模块及依赖搜索顺序固定，仅临时候选共享 Spec 前缀，完整类型直接比较 @目标与 ExpectedType 的值。冻结检查、源码规则、公理审计及 canary 均保留，未实施普通外部 import 白名单。当前本地 task 的 Harbor Docker 镜像 sha256:2112c8972c132b602800ef5009b2dc51fffb9a279979e94c23f905ebcaaaa875 已成功构建；正式 /tests 和本地 /opt 两份 checker/Spec/golden 与宿主哈希一致。两入口因原始 sorry 退出1、reward=0，属于预期证明失败。独立 fixture 实际补测固定 Spec 加载/审计、ubuntu 编译、完整类型匹配、公理审计拒绝 sorryAx、canary、冻结及越界负例；普通合法 HAdd(Set Nat) 实例在冻结文字不变且无占位证明时可编译、公理合规，但被完整类型比较拒绝。同名候选模块/缓存、可信依赖同名产物及环境遮蔽不能替换固定 Spec；缺失/损坏产物和清单明确拒绝且不重新生成。正式/root 与本地/ubuntu 最终补测退出码均0，两个入口的后续关键路径均实际覆盖；原题完整证明成功分支未验收，按 skill 无需构造完整答案。静态核对确认两份 checker AST/内容、Spec 包一致，immutable-before.json 的全部文件未变。资源清理完成：仅停止并移除本 agent 的 Spec 容器348245b99193与Harbor容器5c8a6b4f4df8，删除本次任务镜像sha256:2112c8972c132b602800ef5009b2dc51fffb9a279979e94c23f905ebcaaaa875及专用网络452c6df38f2d；已以docker ps -a及按镜像ID inspect核实不存在。原有共享预编译镜像0824de0f1647和共享构建缓存保留，未使用prune，未删除他人资源。见docker-cleanup.json、cleanup-final-verification.json。全部证据目录 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-124-ne-zero-three-four-seven。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata.statement_status=consistent。核对锁定上游完整定义和命题，并阅读 BEGL96 原论文扫描件 pp.133、134、136–138。有限不同指数≥k、自然数域、集合加法和最终全覆盖语义未见导致命题必假的错误。重要范围差异：论文 p.137 明确已知的 {3,4,7} 结果仅为 k=1（最大不可表示数581），本题则要求所有 k≠0，k≥2 属于更强的猜想性变体；GitHub #4690/PR #4692 也指出该差异。开放或强于已知结果本身不按 skill 判错；没有给出反例，不修改公开 Target、Spec 数学输入、golden、GoldenCheck 或冻结基线。ICM/题目站403，论文采用本机既有原始扫描件并在本次独立渲染阅读，出版社身份页已核对；详见 research-notes.md、statement-access.json、statement-upstream-match.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确匹配 public-lean4-proofs.csv 未命中。多组检索覆盖完整定理名、等价数学陈述、Burr–Erdős–Graham–Li、Boris Alexeev/Aristotle、Mathlib、上游 issue/PR、plby/cameronfreer/arex1337 仓库及 MathOverflow。实际读 Lean 源码后排除：plby Erdos124b 与 cameronfreer 的 erdos_124 允许指数0；arex1337 固定提交只证明 converse 必要条件；上游 main/PR4692 仅 k=1 且含 sorry；PR3050/2526 本题实际仍为 sorry。没有留下尚待核查的有效完整证明线索，metadata.public_lean4_proof=false、public_lean4_proof_status=searched，仅表示本次充分检索未找到，不断言不存在。部分站点403、GitHub树API限速，相关候选源码/README/来源表通过raw URL读取，MathOverflow通过API取得正文及空答案列表。未将公开答案加入任务或镜像，未在本题工具链编译这些不匹配的证明。详见 research-notes.md、public-proof-local-match.json、proof-access.json、proof-followups-access.json 及实际候选源码。"
+    }
+  }
+}

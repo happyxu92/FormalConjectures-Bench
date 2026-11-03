@@ -1,0 +1,16 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ ρ > 0,
+  have g := fun c => 1 / Real.pi * ∫ (t : ℝ) in Set.Iic (ρ * c), 1 / (1 + t ^ 2);
+  ∀ (c : ℝ),
+    Filter.Tendsto
+      (fun n =>
+        (MeasureTheory.volume
+            {p |
+              (fun motive p h_1 => Prod.casesOn p fun fst snd => h_1 fst snd) (fun p => Prop) p fun α β =>
+                α ∈ Set.Icc 0 1 ∧
+                  β ∈ Set.Icc 0 1 ∧
+                    1 / Real.log ↑n * ∑ k ∈ Finset.Icc 1 n, (1 / 2 - Int.fract (β + α * ↑k)) ≤ c}).toReal)
+      Filter.atTop (nhds (g c))
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

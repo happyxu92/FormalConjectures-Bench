@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-258-constant",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-258-constant/attempt-002. Added explicit /opt/formal-conjectures/.lake/packages; actual rg across all three paths found package Lean definitions (instruction-search.log)."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-258-constant/attempt-002. Target imports only ProblemImports and local Submission; no extra upstream modules to add. Added final RUN lake build +FormalConjecturesBench.Target after USER ubuntu. Current local Harbor image built successfully; same container ubuntu lake build exit 0 (ubuntu-lake-build.log); dependency permissions retained."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-258-constant/attempt-002. Skill check_unicode_header.py returned case=no_issue, exit 0 (unicode.json); original header, frozen inputs, and both checker copies agree."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-258-constant/attempt-002. Generated and independently audited complete ExpectedType in pinned Lean 4.27.0 x86_64 environment from golden without Submission; empty universe list; no temporary target or sorryAx dependency. Same precompiled package and pinned manifest synchronized to both checker trees. Fixed Spec/dependency paths precede candidates; no general external module whitelist. Current local Harbor image sha256:8f437420e07b23a348e8ef9c4f60d5012b7c3cad4aee8b82afcbaaff1675ab01; final build succeeded. Uploaded /tests and baked /opt checker/Spec/golden hashes matched local. Formal /tests/test.sh and ubuntu /app/check.sh both exit 1 on original sorry, reward 0 (expected proof failure). Both actual-function supplements exit 0: Spec audit/loading, observed ubuntu compiler UID, complete type comparison, sorryAx rejection, canary, frozen/source negatives, frozen-text Irrational shadow rejected by type mismatch, candidate same-name/cache/env shadow resisted, missing/tampered artifacts fail without regeneration. Root supplement also completed all cases and observed ubuntu compiler UID. No required path left untested; not a proof of the theorem. All original immutable hashes preserved. Docker cleanup complete: removed own containers erdosproblems-258-constant-a2-91beeabb-spec, erdosproblems-258-constant-a2-91beeabb__env-main-1; task image erdosproblems-258-constant-a2-91beeabb__env-main (sha256:8f437420e07b23a348e8ef9c4f60d5012b7c3cad4aee8b82afcbaaff1675ab01); own Compose network erdosproblems-258-constant-a2-91beeabb__env_default (774c3f5039e9213b5e66383373bed883e1157eb6b61c0eeadedd30bbde416d17) removed and absence verified. Details cleanup.json. Shared generation base and all other-task resources retained; no prune or shared-cache deletion."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-258-constant/attempt-002. Marked statement_status=consistent. Inspected complete frozen prefix, elaborated type and pinned upstream Constant variant. Sum d(n+1)/t^n is t times classical Erdos 1948 Lambert series; t>=2 is nonzero and d(n)<=n gives convergence. Known constant variant, no obvious contradiction. Pinned upstream, linked 2026 research note and public adapter read; some source pages returned 403 (mathematics-evidence.json/source-access.json). Mathematical inputs unchanged."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-258-constant/attempt-002. Exact full task ID matched skills/lean-task-repair/references/public-lean4-proofs.csv; set public_lean4_proof=true and URL in task metadata. Source: https://github.com/wcook04/plectis-erdos-lean/blob/c4eab2571b4692ee9c08d3ec138176f7fbfa09a9/verification/FCMergedIntegerAdapters/research/adapters/FormalConjecturesAdapter.lean#L112-L117 . CSV match suffices under skill; no further proof search required. Also read adapter: its t^(n+1) convention differs by nonzero rational scaling from current t^n. Public proof not compiled in this task; no proof copied into the task/image."
+    }
+  }
+}

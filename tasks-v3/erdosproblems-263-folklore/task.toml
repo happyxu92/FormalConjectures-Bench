@@ -19,7 +19,16 @@ benchmark_bucket = "informal_proof"
 oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
-verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
+verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, compares the full theorem type with the fixed precompiled trusted Spec, audits theorem axioms, and checks the sorry-detection canary."
+statement_status = "consistent"
+statement_status_note = "The folklore variant matches the pinned upstream theorem and the irrational reciprocal-series criterion in arXiv:2406.17593v2, Introduction. The growth hypothesis allows only finitely many zeros; their real reciprocal terms are zero. No monotonicity assumption is needed after reindexing. The separate IsIrrationalitySequence predicate is not used by this target."
+public_lean4_proof = true
+public_lean4_proof_status = "found"
+public_lean4_proof_urls = [
+  "https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/5da9642575b26c2c816a49bcb56b33fed5456619/Proofs/T_Erdos263_erdos_263_variants_folklore.lean#L399",
+  "https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos263_erdos_263_variants_folklore.lean#L399",
+]
+public_lean4_proof_note = "Exact full-task-ID match in lean-task-repair/references/public-lean4-proofs.csv. Both pinned sources retrieved and the target plus its e263_folklore dependency chain inspected. Not compiled in this task's pinned environment; no public answer is bundled."
 
 [verifier]
 timeout_sec = 7200.0

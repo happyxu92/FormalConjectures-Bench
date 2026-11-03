@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-138-upper",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "源码搜索命令原先遗漏隐藏 .lake/packages，已显式补齐 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages；在本 agent 匹配 Docker 环境实际运行 rg 找到 mathlib package 中 theorem add_comm，退出 0。证据 instruction-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 实际仅导入 ProblemImports 和本地 Submission，无额外上游 import；原 Dockerfile 缺少末尾普通用户构建，已添加 HOME=/home/ubuntu、USER ubuntu 之后 RUN lake build +FormalConjecturesBench.Target。当前本地 task Harbor 镜像构建成功，镜像内再以 ubuntu 从 /app 实际运行 imports 预编译及 Target build 均退出 0（imports-precompile-final.log、ubuntu-target-build.log）。此前对借用缓存镜像清理后 /opt 工程的额外探测因 Lake 试图重新克隆 mathlib 而失败，仅影响独立临时容器；正式 /app 配置构建通过，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按 skill 运行 check_unicode_header.py，退出 0、case=no_issue；定理头无代理项，两份 checker 与原始 Target/golden 的头、冻结前缀及 := 边界一致，Unicode 修改头及移除赋值负例均按脚本验证。unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重新解析 GoldenCheck，可能被名称/实例偷换。已从原始 golden 去除 Submission import，在匹配 Lean4.27.0/x86_64 Docker 环境用 parser/elaborator 提取并预编译 ExpectedType 定义值；完整保留 k 参数、universe=[]，临时目标及子声明不导出。独立导入审计 ExpectedType/W/monoAPNumber/monoAP_guarantee_set 传递依赖仅三标准公理；冻结前缀中其他 sorry 定理未参与预期类型依赖。两份包和 checker 内容/AST 一致，清单固定黄金输入、版本、依赖和产物哈希；verifier 只加载 TESTS_DIR/trusted_spec，固定工具链及 Spec/依赖搜索顺序，不重建 Spec，保留普通 import、def/lemma/instance 和源码/冻结/公理/canary 检查。命令见 generation.sh、manifest.generation_command、Harbor config；本题当前本地 Harbor trials start -p /root/FormalConjectures-Bench/tasks-v3/erdosproblems-138-upper -a nop --env docker --force-build --no-delete --environment-kwarg keep_containers=true；首次网络池耗尽，建立本 agent 独立 10.247.138.0/24 网络后 r2 成功，未修改别人的网络。最终镜像 sha256:9d0efdca310fbdbc76e7ab631161beae66aa43e33887970f6dd7e8025c48824f，容器 erdosproblems-138-upper-pi138u-20261102-b84f-r2__env-main-1。Harbor 上传 /tests，/tests 与预装 /opt 的 checker/Spec/golden 均逐文件匹配本地哈希，actual-loading 日志证实分别加载 /tests/trusted_spec/FCBTrustedSpec.olean 和 /opt/formal-conjectures-bench-checker/trusted_spec/FCBTrustedSpec.olean。正式 /tests/test.sh 及 ubuntu /app/check.sh 均因原始 sorry 预期退出 1、reward 0；同一子容器实际函数补测两套各 28 项通过，覆盖 Spec 审计、ubuntu 编译、完整类型、sorryAx 拒绝、sorry canary、冻结/头/越界源码/符号链接/冻结配置/源码限制。冻结文字不变的 LE Nat 高优先级实例偷换可编译而完整类型失败；同名候选模块/假缓存/环境变量不能覆盖固定 Spec；产物缺失、损坏及清单错配明确失败且无重建。未提供原题完整证明，真实无 sorry 成功/reward1 分支未演示，不代表原题证明通过。golden Target SHA256=a73d2e973930916d59700f28b6449b481c1c9f3096ac858e87026721be54e3c2；olean SHA256=fa835201994838fe54c09a8d92217fac217e574d4105a817c4001795aca60628；manifest SHA256=b30d378d6308cb4673dfd150f6704040ea145db12c758bb8ea89bfb1dd4a030c。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-138-upper/{generation.log,package.log,harbor-r2.log,delivery-hashes.json,coverage-official.json,coverage-local.json}。Docker 清理：{\"status\":\"cleaned\",\"container_ids\":[\"837733809a82\",\"3a6b3b6d3f52\"],\"image_ids\":[\"sha256:541d49ab9b7c38490cb9362d0b552a1a2353a1c4c6d1b7e68f43dbbd6dec9055\",\"sha256:9d0efdca310fbdbc76e7ab631161beae66aa43e33887970f6dd7e8025c48824f\"],\"network\":\"erdosproblems-138-upper-pi138u-20261102-b84f-r2__env_default\",\"all_owned_resources_absent\":true,\"retained\":\"借用的基线镜像与共享缓存保留，未触碰其他 agent 资源；完整记录 cleanup.json/cleanup-commands.json。\"}"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata 已标 consistent。核对锁定上游 FormalConjectures/ErdosProblems/138.lean、全部前缀定义和当前容器打印的 ContainsMonoAPofLength/Set.IsAPOfLengthWith；Gowers 2001 GAFA 原文 p.585 Corollary 18.7 给出完全一致的两色五层指数上界（https://www.cs.umd.edu/~gasarch/TOPICS/vdw/sz-thm-gowers-proof.pdf）。论文 k>0；本题 k=0 可用空 AP 得 W(0)=0，k=1 可用单点，故自然数范围未产生反例。前缀 Berlekamp 注释 p^(2^p) 有排版错误，但不是 upper 的依赖，不影响本目标。数学定义、命题、Target/golden/GoldenCheck/冻结基线全部保持原样。证据 statement-review.json、gowers-final.txt:5949、monoAP-definition.log。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 task ID erdosproblems-138-upper 精确匹配 public-lean4-proofs.csv 未命中。已按定理全名、题号、Gowers/Szemeredi/van der Waerden 上界检索 GitHub issues/repos、上游当前源码、XC0R 和 mo271 fork、相关 PR 2831/3347/3618/1722/3711/7728/6943/6898 的实际 diff、OpenAI Main、Atlas、Lean Genius、奖项提交和 Mathlib；上游/fork 的 upper 仍 sorry，PR 2831 仅加 formally-solved 标签但未去掉 sorry，Lean Genius 使用 axiom gowers_upper_bound，其他已读公开证明只涉及存在性、小值、下界/极限/差分等变体。未验证本目标公开完整证明；GitHub 全局 code search 需登录/API 限流，部分目录树无法核实，搜索 provider 400、普通网页搜索结果不可靠，保守在 metadata 标 public_lean4_proof=unknown、status=blocked，不能断言不存在。详见 public-csv-match.json、public-proof-search-summary.json、各源码/diff 和 HTTP 日志；未将任何公开答案放进镜像。"
+    }
+  }
+}

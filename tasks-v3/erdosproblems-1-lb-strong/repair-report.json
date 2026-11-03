@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1-lb-strong",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已补齐显式三路径 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages。当前 Harbor 子容器以 ubuntu 执行 rg，退出0并命中 Mathlib/Data/Finset/Powerset.lean，无路径或权限错误；见 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1-lb-strong/delivery.json。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 只导入 ProblemImports 和本地 Submission，无额外上游 import。Dockerfile 原有上游预编译保留；末尾在复制/清理/权限设置后以 HOME=/home/ubuntu、USER ubuntu 执行 RUN lake build +FormalConjecturesBench.Target。当前本地任务 Harbor 镜像构建成功，镜像 sha256:1fc6554d6a29994369458f5dfa97c5af809dc9e293f35249ac4f437570c87022；见 image-history.txt 和 harbor-net.log，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行 skill Unicode 脚本；初检及最终复验均 case=no_issue、退出0。原头接受，修改头/移除 := 拒绝，两份 checker 一致；见 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1-lb-strong/unicode.json 与 unicode-final.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原路径在候选加载后解析 GoldenCheck，存在语义遮蔽。现两份 checker 只加载 TESTS_DIR/trusted_spec 的固定预编译包，核验固定 manifest、golden 输入、工具链版本、依赖修订与产物哈希；锁定 Lean 及可信依赖路径，不加载候选 Lake 配置/缓存/环境变量来生成或替换 Spec。普通 import、外部依赖及 def/lemma/instance 规则保留，未增加通用外部模块白名单。临时 Target 先导入 Spec，再导入 Submission，完整前缀定义来自同一 Spec，保留 Filter、Topology、Real、Erdos1 上下文；完整类型比较引用 ExpectedType 定义值与 @_root_.Erdos1.erdos_1.variants.lb_strong，保留原冻结、源码、公理和 sorry canary 检查。 本次从原始 golden 去除 Submission 导入，在匹配的无网络 Docker 容器 erdosproblems-1-lb-strong-pi-c7d34a3c-spec 独立生成，既有依赖镜像 sha256:0824de0f16475f1f619701869e59de4e4ce3229bfce229a5fd16f88072c37e8f。命令、生成器、源码、olean/ilean、独立导入审计和清单已交付；Lean parser/elaborator 提取全部量词及 universe_params=[]，回滚临时目标环境后导出定义。临时 lb_strong 未导出，ExpectedType/IsSumDistinctSet 传递公理仅 propext/Classical.choice/Quot.sound；原前缀其他 sorry 定理不在其依赖中。Lean 4.27.0、Linux x86_64，FC 233a10e857ef78e79fd9fe661d37db724089170a，Mathlib a3a10db0e9d66acbebf76c5e6a135066525ac900；golden Target SHA256=bcad0dd851fce9d5486f67dc75715ca5229d917b93d241b1c37f5f9b0a58021f，olean SHA256=ee77034af3fac6b0aef11deb4e0f63dc7100a83bc26ab16303b9be4ba5ead087，manifest SHA256=61ec134e36b7be287de1635baa52445282986414243ea362409e946f4e672169。 使用当前本地 task 执行 harbor trial start --path /root/FormalConjectures-Bench/tasks-v3/erdosproblems-1-lb-strong --agent nop --env docker --no-delete --environment-kwarg keep_containers=true --trial-name erdosproblems-1-lb-strong-pi-c7d34a3c-net --extra-docker-compose /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1-lb-strong/network.yaml --trials-dir /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1-lb-strong/harbor。最初 --no-delete 仍自动回收容器；第二次因默认地址池耗尽失败；最终使用本题独立未占用子网 10.249.217.0/24 成功，无额外宿主挂载/权限。最终 Harbor exception_info=null、reward=0，子容器 e947a7b7e83c。/tests 由 Harbor verifier 上传，两处 checker/Spec/golden 逐文件哈希与宿主匹配。正式 bash /tests/test.sh 使用 FCB_TASK_DIR=/app、FCB_TESTS_DIR=/tests；ubuntu /app/check.sh 使用 /opt 包，两入口均退出1，仅因原始 sorry 源码限制。 同一保留子容器内以 root /tests 和 ubuntu /opt 调用实际 checker，各27条补测均退出0：Spec 校验及可信类型审计、ubuntu 候选编译（含 root 降权）、完整类型比较、目标 sorryAx 拒绝、sorry canary；冻结前缀/头/赋值、越界 Lean、非Lean、symlink、helper axiom、冻结配置负例均拒绝。冻结文字不变且源码合法的 LE ℝ 实例语义偷换可编译，但完整类型比较实际拒绝。同名候选模块/缓存/环境变量不能替换 Spec；产物缺失/损坏和清单哈希不符明确失败且未运行时重生成。AST/包同步/不可变文件复核通过。未构造原题无sorry完整证明，未验收真实完成证明的成功公理审计分支；此项通过仅指 checker 机制。证据目录 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1-lb-strong，详见 generation.log、package.log、spec-generation.json、delivery.json、validation-{official,local}.{json,log}、static-checks.json、immutable-after.json。Docker 清理完成：本次生成容器 4a29c0e75006、Harbor 补测容器 e947a7b7e83c 已 stop/rm；首轮 Harbor 容器已自动回收、失败轮无容器。三份本题镜像标签及对应镜像 ID 均已删除，独立网络 erdosproblems-1-lb-strong-pi-c7d34a3c-net 已删除；逐一 inspect 确认均不存在。共享 cache-smoke 镜像保留且 ID 不变，未清理其他任务资源或共享构建缓存。详情 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1-lb-strong/cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "仅标记 metadata.statement_status=consistent，数学输入均保留。核对锁定上游 FormalConjectures/ErdosProblems/1.lean:35–36,93–96 与本题 Target:37–38,96–99：自然数有限集 A⊆[1,N]、powerset 子集和单射、统一 o(n)=o(1)、常数 sqrt(2/π)、2^n/sqrt(n)、方向≤正确。Dubroff–Fox–Xu《A note on the Erdős distinct subset sums problem》https://arxiv.org/html/2006.12988v2 Theorem 1 给出同一下界；第二证明有 a_n≥choose(n,floor(n/2))。max A≤N 可转为本题；有限小 n 可调整误差，n=0 时 Lean 除0为0，N=0 强迫 A为空。该已知 lb_strong 变体未发现明显错误，不等于解决开放的 Erdős 1 原题。原题网站403，锁定上游及原论文实际读取成功；见 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1-lb-strong/source-fetches.json、upstream.lean、paper.html。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整任务 ID 精确命中 skill references/public-lean4-proofs.csv 的 task 列第4行，依 skill 标 metadata.public_lean4_proof=true；来源 https://github.com/MyTH-zyxeon/formal-conjectures/blob/362eed1a8864d142ae65f51af7981a7c7530956e/FormalConjectures/Scratch/HarperCompression.lean#L2174。CSV 命中后无需额外联网确认。本次未编译公开答案，也未放入镜像；见 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1-lb-strong/public-proof-match.json。"
+    }
+  }
+}

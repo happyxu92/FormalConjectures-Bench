@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-145-le-two",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added the explicit /opt/formal-conjectures/.lake/packages search root. Executed the three-root rg command in this task's Spec container (package Ordnode.nth found) and the delivered Harbor container (Mathlib Tendsto found); see instruction-search.log and delivery.json in the task evidence directory."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target has only ProblemImports and local Submission imports; no additional upstream precompile target is needed. Added final Dockerfile RUN lake build +FormalConjecturesBench.Target after USER ubuntu. Current local Harbor image sha256:51ff5bfb1e5785147cc12058f4c81e17c9858d393ae93c14fdcbfd51182abb94 built successfully, and the same ubuntu build was executed again with exit 0. See delivery.json for image history and build output."
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Ran the skill Unicode script in step 3: unicode_repaired, both EXPECTED_HEADER surrogate pairs fixed using repr; original trusted header accepted, changed header/missing := rejected, copies equal. Original Target and both golden trees unchanged. Evidence: unicode.json; final AST/header and runtime negative tests also pass."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated and independently audited FCBTrustedSpec from this task's golden in pinned Lean 4.27.0 x86_64 Docker environment, without candidate/helper imports. ExpectedType preserves alpha/h_alpha binders and universe order []; temporary target absent, ExpectedType/s/A transitive axioms allowed. Identical precompiled packages and pinned manifest 23ff792f242da78b5a7abedd1c2c23e8426a0b9538346f85531585f22422dcc5; fixed Spec and dependency import paths, no runtime regeneration or candidate Lake configuration. Current local task Harbor image built; uploaded /tests and installed /opt packages, checkers and golden hashes match. Formal /tests/test.sh and ubuntu /app/check.sh both exit 1 due original sorry, reward 0 (expected). Actual checker functions pass all supplemental paths at both package locations: ubuntu compiler UID, ordinary import/def/lemma/instance, independent Spec audit, complete type match, sorryAx rejection, canary, frozen/out-of-tree negatives, name/instance type substitutions rejected, same-name module/cache/environment poison ignored, missing/tampered artifacts fail without regeneration. Evidence directory: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-145-le-two; generation/package/delivery logs, validation-official-r2.log and validation-local-r2.log exit 0. Initial supplemental launch before fixture copy exited 2; corrected copy and both full reruns passed. Docker cleanup verified (cleanup.json, exit 0): stopped/removed containers c640416da0b4 and 316ee1a571ac, removed own image sha256:51ff5bfb1e5785147cc12058f4c81e17c9858d393ae93c14fdcbfd51182abb94 (erdosproblems-145-le-two-pi145two-c83f__env-main:latest) and task-specific network erdosproblems-145-le-two-pi145two-c83f__env_default; inspect confirmed all absent. Pre-existing generation base and all unrelated resources/shared build cache retained. This does not prove the original theorem."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Checked full squarefree enumeration, preimage/floor index set, real gap subtraction and rpow, alpha in [0,2], finite real limit at positive infinity against pinned upstream, erdosproblems.com/145 and Filaseta's author paper. This is the known le_two variant, not the unrestricted open problem. No obvious invalidity found; no mathematical input changed. Evidence: math-audit.json and sources/."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Full task ID exact CSV lookup has no match. Searched pinned/current upstream and history, multiple GitHub queries, Mathlib, AlphaProof Nexus, author/problem sources, proof repositories, branches/PRs and equivalent statements. Read exact head Lean sources of upstream PRs 2515/2836/3352: le_two still uses sorry. lean-genius uses new axioms; contribution112 proves only alpha=0 and 1. Award PR3266 advertises plby source absent from its pinned complete repository tree (404). No complete allowed-axiom proof confirmed. Marked metadata unknown/blocked because GitHub code search returns 401, grep.app 429 and general search services are unavailable/challenged; this is not a claim that no public proof exists. Evidence: public-proof-local-match.json, public-proof-audit.json, sources/*fetch*results.json and downloaded actual Lean sources. No public solution copied into the task or image."
+    }
+  }
+}

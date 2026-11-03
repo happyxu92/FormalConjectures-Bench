@@ -15,6 +15,12 @@ formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"
 lean_toolchain = "leanprover/lean4:v4.27.0"
 mathlib_commit = "a3a10db0e9d66acbebf76c5e6a135066525ac900"
 theorem_name = "Erdos141.erdos_141.variants.first_cases"
+statement_status = "consistent"
+statement_status_note = "Known finite-case variant for 3 <= k <= 10 consecutive primes in arithmetic progression; the definitions and range match the pinned upstream target. See repair-report.json for sources and access limitations."
+public_lean4_proof = true
+public_lean4_proof_status = "known"
+public_lean4_proof_urls = ["https://github.com/conjectures-io/conjectures-contribution/blob/main/contributions/erdos-141-variants-eleven/2448e529d4a2e6f8d716de45021d560bc38aabba4e526640deaf5ec4bfc67ed0/script.lean#L5149"]
+public_lean4_proof_note = "Exact full task ID matched the skill public-lean4-proofs.csv. The cited public proof was not compiled in this task environment and was not copied into the image."
 benchmark_bucket = "informal_proof"
 oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."

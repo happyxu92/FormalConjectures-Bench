@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-252-prime-tuples",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit .lake/packages search path; actual container rg found package definitions (exit 0). Evidence: attempt-002/instruction-search.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added actual extra import FormalConjectures.Wikipedia.Schinzel to upstream precompile command; Dockerfile ends with ubuntu lake build +FormalConjecturesBench.Target. Current local Docker build passed (7993 jobs), Harbor local-task build also passed. Evidence: attempt-002/prebuild.log and harbor/."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Skill check_unicode_header.py returned no_issue; original header, frozen prefix, assignment boundary and both checker copies verified. Evidence: attempt-002/unicode.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Pre-generated FCBTrustedSpec from original golden with candidate import removed; parser/elaborator retained complete type (implicit k, hk, hp; no universes), discarded temporary target, independently audited transitive dependencies: only propext/Classical.choice/Quot.sound. Identical precompiled packages and manifest pinned in both checkers; fixed Spec/dependency/toolchain resolution ignores candidate Lake/cache/environment and retains ordinary imports. Current local task Harbor build succeeded; /tests upload and /opt checker/package/golden hashes match host. Official and ubuntu local entries exit 1/reward 0 on original sorry (expected proof failure). Actual checker functions pass via both paths as ubuntu, plus root invocation: Spec import/audit, candidate build, full-type comparison, sorryAx rejection and canary; frozen/header/source violations and source-legal Irrational-name shadow are rejected, missing/tampered artifact/manifest fail without regeneration. No theorem proof claimed. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-252-prime-tuples/attempt-002. Cleanup completed: removed own containers b7f0b5853553, 48f8cb2a5581; removed own image tags fcb-repair/erdosproblems-252-prime-tuples:a2-df1101aa-prebuild, erdosproblems-252-prime-tuples-a2-df1101aa__env-main:latest; image IDs sha256:d45e7528e91a16deebe99c0b6cd90bc151b1a4f11cc6e326df9ed0e6d2f2de49, sha256:e2d338b00f060050cd50fc0039adff18b66d33bebed6f70d8c0ecaaee15784cb are absent. Removed own network erdosproblems-252-prime-tuples-a2-df1101aa__env_default. Baseline/shared resources and build cache untouched; no prune."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "consistent: pinned upstream target and FLC07 Theorem 2/Section 3 support the fixed-k>=4 conditional statement, using k positive admissible linear forms. Mathlib sigma is the divisor-power sum and sigma k 0=0, so Nat tsum matches paper n>=1. No obvious definition, domain, quantifier or direction error found; all math inputs unchanged. Primary PDF https://math.colgate.edu/~integers/h31/h31.pdf fetched; erdosproblems.com/252 HTTP 403. Evidence: attempt-002/mathematical-review.md and saved primary source."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true (known_public): exact full task ID matched skill references/public-lean4-proofs.csv. Source: https://github.com/tokengr1nder/Erdos252/blob/46b9fd26361faf669bcd7e4495e63678bfa6a735/Erdos252/Solution.lean#L1066 . CSV match suffices under skill; linked proof was not compiled here or added to task/image. Evidence: attempt-002/public-proof-csv.json."
+    }
+  }
+}

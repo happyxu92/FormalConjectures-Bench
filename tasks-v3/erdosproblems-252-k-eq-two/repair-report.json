@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-252-k-eq-two",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Explicitly includes /app, /opt/formal-conjectures and hidden .lake/packages. Actual ubuntu rg found Mathlib sigma_apply in current Harbor container; exit 0. /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-final-three/tasks/erdosproblems-252-k-eq-two/attempt-002/instruction-search-final.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added actual extra import FormalConjectures.Wikipedia.Schinzel to upstream precompile; Dockerfile ends with ubuntu RUN lake build +FormalConjecturesBench.Target. Current local Harbor Docker build succeeded (not registry replacement); repeated ubuntu build exit 0. Image sha256:c1458ab23f62fbc537bdde1201cc7f4e30f1ef1d3b2a4af0edba84242bc7d054. Evidence /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-final-three/tasks/erdosproblems-252-k-eq-two/attempt-002/harbor-image-history.txt and ubuntu-target-build.log."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Skill script executed, case no_issue, no header modification; baseline/header and negative mutations pass. /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-final-three/tasks/erdosproblems-252-k-eq-two/attempt-002/unicode.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Original checker parsed expected proposition after candidate imports. Generated this task Spec from unchanged golden without Submission, elaborated complete type using Lean parser/elaborator, discarded temporary theorem, independently compiled/audited on pinned Lean 4.27.0 x86_64. ExpectedType is Irrational (Erdos252.erdos_252_sum 2), zero binders/universes; transitive axioms only propext/Classical.choice/Quot.sound. Manifest pins golden, source, artifacts, version and dependency revisions; two packages and checker content/AST match. Fixed actual loading paths /tests/trusted_spec (Harbor upload) and /opt/formal-conjectures-bench-checker/trusted_spec (local). Candidate caches/module/env shadows and dependency shadow cannot replace Spec/dependencies; normal external imports retained. Current task Harbor official/local exits 1 and reward 0 solely for original sorry (expected). Both actual-function suites exit 0: trusted audit, ubuntu uid1000 compile, full type comparison, sorryAx rejection, canary, frozen/source restrictions, legal def/lemma/instance, frozen-text Irrational:=True semantic attack compiles then fails type comparison, missing/tampered artifacts/manifest fail without regeneration. All 15 immutable files unchanged. Evidence /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-final-three/tasks/erdosproblems-252-k-eq-two/attempt-002/delivery-verification.json, validation-coverage.json; generated manifest 14665c7b961339c3a6f38cdf9f54d3028676f9a814abb8f0299afdf8c6e90b32. Cleanup completed: removed containers erdosproblems-252-k-eq-two-spec-a2-b3bf540c, erdosproblems-252-k-eq-two-a2-b3bf540c__env-main-1; removed task image erdosproblems-252-k-eq-two-a2-b3bf540c__env-main:latest (sha256:c1458ab23f62fbc537bdde1201cc7f4e30f1ef1d3b2a4af0edba84242bc7d054); removed own network erdosproblems-252-k-eq-two-a2-b3bf540c__env_default. Docker ps/inspect confirm absent. Shared base image and shared build cache retained; no other task resources touched. /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-final-three/tasks/erdosproblems-252-k-eq-two/attempt-002/cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Reviewed full definition and k=2 unconditional variant: sigma_2 is divisor-square sum, n=0 term is 0, denominator and tsum are Real; factorial dominates sigma_2(n)<=n^3, so sum converges. Pratt arXiv:2209.11124 abstract states known unconditional irrationality k<=3. Source problem page returned HTTP403; accessible arXiv and pinned Mathlib definitions suffice. No mathematical input changed. /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-final-three/tasks/erdosproblems-252-k-eq-two/attempt-002/math-review.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact full task ID matched skill references/public-lean4-proofs.csv; metadata public_lean4_proof=true. Source https://github.com/tokengr1nder/Erdos252/blob/46b9fd26361faf669bcd7e4495e63678bfa6a735/Erdos252/Solution.lean#L1066. No network reconfirmation needed under skill. Proof not copied into task/image or compiled here. /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-final-three/tasks/erdosproblems-252-k-eq-two/attempt-002/public-csv-match.json and public-proof-review.json."
+    }
+  }
+}

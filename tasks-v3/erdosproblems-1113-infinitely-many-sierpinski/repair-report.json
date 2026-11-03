@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1113-infinitely-many-sierpinski",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to instruction.md search command; actual ubuntu rg across all three paths found package StrictMono definition (delivery.json). Documented fixed complete-type comparison; editable subtree and check.sh entry remain unchanged."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target has only ProblemImports and local Submission imports, so no extra upstream build target is needed. Added final Dockerfile RUN lake build +FormalConjecturesBench.Target after HOME=/home/ubuntu and USER ubuntu. Current local task Harbor image built successfully; same Harbor child ubuntu lake build exited 0. Evidence: image-history.txt, ubuntu-lake-build.log, harbor result."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Executed skill check_unicode_header.py before Spec changes: case=no_issue, both headers/original golden match, modified header and missing assignment rejected. unicode.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Replaced candidate-environment GoldenCheck reparsing with golden-only precompiled FCBTrustedSpec.ExpectedType. Golden prefix is shared in temporary Target; full type is checked against definition value. Matching Lean 4.27.0 x86_64 generation/audit recorded in manifest; complete closed proposition has zero binders and no universes. ExpectedType/HasFinitePrimeCoveringSet/Nat.IsSierpinskiNumber transitively use only allowed standard axioms; temporary theorem/children absent. Both checkers and packages identical; fixed manifest/hash/version/golden/dependency validation and pinned Spec/dependency search paths precede candidate sources, no candidate Lake/cache is used. Normal imports/definitions/instances remain supported; no external-module whitelist added. Local Harbor built this task (image sha256:eb887059c69ba00dec6eda093fb91ae5cd1a866c996f1b50d58ef8a88c1a39b5). Harbor supplied /tests and /logs/verifier; exact /tests and /opt package/checker/golden hashes checked. Official bash /tests/test.sh and ubuntu /app/check.sh both exit 1/reward 0 for original sorry, as expected, not proof success. Both actual-function supplements exit 0, covering trusted artifact load/audit, observed uid 1000 compile, full type success fixture, sorryAx rejection, canary, source/frozen failures, source-legal name-shadow attack that builds but fails full type (including main), same-name cache/env resistance, missing/tampered Spec/manifest failure without regeneration. Logs and commands: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1113-infinitely-many-sierpinski. Docker cleanup verified: removed Spec container 1438dfcbe1c2, Harbor child cf0c13863682, task image sha256:eb887059c69ba00dec6eda093fb91ae5cd1a866c996f1b50d58ef8a88c1a39b5, and own Harbor network 2bd6ff02b525. docker inspect/image inspect and ps confirm absence. Shared baseline image/cache retained; no prune. Evidence: docker-cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. This is the known infinitude variant, not open covering-set conjecture. Read pinned upstream plus author FFK08 Section 2 pp.3-4 and imported definitions. Checked parity, quantifiers, n=0 and proper compositeness with 36-residue certificate for k=78557+140100870*t. No mathematical changes. Sources/access limits: mathematics-and-public-proof.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact full task ID matched skill references/public-lean4-proofs.csv; marked public_lean4_proof=true. Source: https://github.com/HowieHwong/lean-erdos-proofs/blob/b8b641ba2d00dc4d1fe205a078a4159372672459/Erdos/P1113.lean#L22 . Per skill, CSV hit needs no further web confirmation. Not compiled in this task or bundled in image. public-csv-match.json."
+    }
+  }
+}

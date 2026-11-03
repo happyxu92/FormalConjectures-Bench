@@ -1,0 +1,11 @@
+audited FCBTrustedSpec.ExpectedType: [Quot.sound, propext, Classical.choice]
+audited Erdos254.IsSumOfDistinct: [propext, Quot.sound]
+complete binder count: 2
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (A : Set ℕ),
+  (Filter.Tendsto (fun x => (↑(A ∩ Set.Icc 1 (2 * x)).ncard - ↑(A ∩ Set.Icc 1 x).ncard) / Real.log (Real.log ↑x))
+        Filter.atTop Filter.atTop ∧
+      ∀ (θ : ℝ), 0 < θ → θ < 1 → ¬Summable fun n => distToNearestInt (θ * ↑↑n) ^ 2) →
+    ∀ᶠ (m : ℕ) in Filter.atTop, Erdos254.IsSumOfDistinct A m
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,6 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (f : ℕ → ℕ),
+  ((fun n => ↑(f n)) =o[Filter.atTop] fun n => ↑n) → {n | (n - n.totient).totient + f n < n.totient}.HasDensity 1
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

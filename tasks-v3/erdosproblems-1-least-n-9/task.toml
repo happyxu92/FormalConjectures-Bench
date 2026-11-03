@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = false
+public_lean4_proof_status = "searched"
+public_lean4_proof_note = "Exact task ID absent from the skill CSV. Searched upstream source/history/PRs, public forks, Mathlib and related public Lean developments; no complete proof of the nine-element optimum 161 found. Search access limitations are recorded in repair-report.json; this is not a claim of nonexistence."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/1.lean"

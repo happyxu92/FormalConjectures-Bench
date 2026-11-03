@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-123-powers-2-3",
+  "target_name": "Erdos123.erdos_123.variants.powers_2_3",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "6c82ec59fc81dd080b231b73f8e8f5c9bf6e81ffcd59892d9b08d90ecd81c5d1",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "a4f8427d69ffe5d2dc76c10fdd846d847f00ac185eba98bbd3e08088133653dc",
+    "FCBTrustedSpec.ilean": "cd24b8b0ea1ea3c9965015061e4527172f3bc45795dae7898d457b41bbed7715",
+    "FCBTrustedSpec.lean": "e335c3e4ee825c99bb74f8bf454100ca4a80d2bc85cf1fff747457a6237972be",
+    "FCBTrustedSpec.olean": "e66a28f9dbf7993357a0f504b1d0d104ab3ba89421adf7a8c7cacd5854484830",
+    "audit.log": "4ae8b89681418ef1e6b2e1600a3a209fc4e69272ab65c2e8edaf38a90ad73617",
+    "generate.py": "6567f1dfd9e1a595e1e5843d2dfdcb05f261c696c650ac6c9a4c7edf82a3448d",
+    "reproduce.sh": "ede6a2a9636394e9b93ab45c02647e96820f334d723375ff378758ff00312c70"
+  },
+  "generation_image": "sha256:0824de0f16475f1f619701869e59de4e4ce3229bfce229a5fd16f88072c37e8f",
+  "generation_command": "docker exec -u root erdosproblems-123-powers-2-3-spec-pi-090240-123 bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Independent import: ExpectedType value; zero universe parameters; temporary target and descendants absent; transitive axioms of ExpectedType and IsDComplete limited to propext, Classical.choice, Quot.sound. Earlier golden prefix theorems with placeholders are retained but are not dependencies of ExpectedType."
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-hall-danilov",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to the three-path rg command. Executed as ubuntu in this task Harbor container; found mathlib Real.rpow_def_of_pos without path/permission errors. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-hall-danilov/attempt-002/hall-a002-c83b21/search-final-harbor.log"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target imports only ProblemImports and local Submission; no extra upstream precompile is required. Preserved upstream lake build ProblemImports and appended final USER ubuntu RUN lake build +FormalConjecturesBench.Target. Current local Harbor image e73ee51600c09e152d2fc578de28bf21804d3ce8f11ac11b98fb841415c76a7c built successfully with this final layer; image history and Harbor result in /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-hall-danilov/attempt-002/hall-a002-c83b21"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran skill check_unicode_header.py before semantic changes and at final verification: case=no_issue, both copies match, original header accepted and changed header/missing := rejected. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-hall-danilov/attempt-002/hall-a002-c83b21/unicode.json"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Replaced candidate-environment GoldenCheck re-elaboration with precompiled FCBTrustedSpec.ExpectedType and complete rooted type comparison. Generated from original golden without Submission using matching Lean v4.27.0 x86_64; complete delta and h binders, universe list []; independently audited ExpectedType, HallIneq and HallConjectureExp: allowed standard axioms only. Original unrelated prefix hall_conjecture sorry is not in the type dependency closure. Identical checker AST/content and Spec packages; manifest SHA256 faab742d7bd17101042f8044f76b01e4f8b62d7cfb9e279786ac3ade59c3de13 pinned. Current local Harbor build used this task Dockerfile/task.toml; /tests uploaded by Harbor and /opt local packages match host hashes. Official /tests/test.sh and ubuntu /app/check.sh each exit 1 on original sorry, reward=0 (expected). Actual-function supplements passed 29 cases each via /tests/root and /opt/ubuntu: trusted audit, ubuntu compile, full type check, sorryAx rejection, canary, frozen/source negatives, source-legal frozen-text LT-instance attack rejected by complete type comparison, same-name cache/env shadow attempts, missing/tampered package rejection without regeneration. Ordinary helpers/imports retained; no general external-module whitelist. Harbor stopped its retained container after the trial; restarted that same container for recorded supplements. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-hall-danilov/attempt-002/hall-a002-c83b21/coverage.json and delivery-and-entries.json. Cleanup verified: removed owned containers c76f455015fd (Spec) and ebd92ada72bc (Harbor), owned image e73ee51600c0 / wikipedia-hall-danilov-a002-c83b21__env-main:latest, and owned network c3ae848ccdee. Inspect confirms resources absent. Pre-existing shared base image/cache retained; other task resources untouched. Cleanup evidence: cleanup-result.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked metadata statement_status=consistent. Checked full definitions and target against pinned upstream Hall.lean and Elkies author page https://people.math.harvard.edu/~elkies/hall.html (Danilov infinite family, sqrt(x)/abs(x^3-y^2) tends to positive constant). This implies failure for every exponent 1/2+delta, delta>0; integer domain and strict inequality are compatible. No obvious error found; mathematical inputs unchanged. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-hall-danilov/attempt-002/hall-a002-c83b21/statement-review.json"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact full task ID missed skill CSV. Multi-query search and PR/source followup found complete proof via upstream PR 7660: https://github.com/danielpuri1901/erdos-lean-formalization/blob/f58f69bace20b89f6c0fc3d47944089a2e8b63f5/Solution.lean#L27 . Pinned imported definitions/header match. Independently compiled unchanged proof bodies against this task fixed ExpectedType on v4.27.0 in throwaway diagnostic (only import/type-reference adaptation), exit 0 and axioms propext/Classical.choice/Quot.sound. Marked public_lean4_proof=true; answer not installed. PRs 2491/2991/3022/3031 excluded because actual source still uses sorry. API rate limits and search-engine limitations recorded but the complete source was accessible and verified. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-hall-danilov/attempt-002/hall-a002-c83b21/public-proof-review.json"
+    }
+  }
+}

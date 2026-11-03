@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1049-geq-2-integer",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added the explicit hidden packages path to the rg command. Actual ubuntu search in the Harbor container found Mathlib package definitions, exit 0; delivery.json records results. Evidence directory: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1049-geq-2-integer/repair-1049-pi-a72e"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports beyond ProblemImports and local Submission. Preserved upstream precompile command; appended RUN lake build +FormalConjecturesBench.Target after USER ubuntu. Current local task Harbor image sha256:fec72e1407f7124f57a9305d02a8fb2fdce16239bdd80cc7ad9012120a96a8be built successfully. Ubuntu Target build (7992 jobs) and explicit ProblemImports build (7989 jobs) also succeeded in the final container; see final-image-history.txt, ubuntu-target-build.log, imports-build-final.log. An extra root diagnostic rerun inside the already source/Git-cleaned auxiliary container failed when Lake attempted to reclone mathlib with network disabled; it was not the Dockerfile pre-cleanup build and was not used for delivery. The actual final-container import/build checks passed. Evidence directory: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1049-geq-2-integer/repair-1049-pi-a72e"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran the skill Unicode script before and after repair; both case=no_issue. Original header passes; changed header and removed assignment are rejected. No frozen constant changed. Evidence unicode.json and unicode-final.json. Evidence directory: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1049-geq-2-integer/repair-1049-pi-a72e"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated the full ExpectedType from this task golden declaration without Submission in a network-disabled matching Lean 4.27.0/x86_64 Docker container; restored the environment before exporting so the temporary target is absent. Independent audit prints all elaborated binders (t : Int and t>=2), zero universe parameters, and transitive axioms only propext/Classical.choice/Quot.sound. The unrelated sorry theorem in the frozen prefix is not a dependency. Golden Target SHA256=349b7915daa73a829967bd340db044d265060a289fb9e8ce7c717ff5378a26a9; olean SHA256=9cf372a30f4afaaa5f9c094e470b9b5cdaafca107930aea08e2f0c06e663dedf; manifest SHA256=a902c29931fd08acb2af15f259519da86ac1024ae054138e47ec497ed6403c33. Mirrored checkers and packages match byte-for-byte and by AST. Fixed toolchain and import order load validated compiled Spec before candidate modules; no runtime generator or source fallback. Current local task Harbor trial erdosproblems-1049-geq-2-integer-harbor-pi-a72e built image sha256:fec72e1407f7124f57a9305d02a8fb2fdce16239bdd80cc7ad9012120a96a8be using --agent nop --env docker --force-build --no-delete --environment-kwarg keep_containers=true. Harbor supplied /tests and /logs/verifier. Verified hashes of both container checkers, Spec packages and golden against host. /tests/test.sh and ubuntu /app/check.sh each exit 1 on original sorry, reward 0 as expected; no original proof success claimed. Same Harbor container actual functions tested separately for /tests and /opt packages: validated artifact/version/revisions; trusted type audit; ubuntu candidate compile; full type equality; rejection of sorryAx; sorry canary; frozen prefix/header/assignment/config mutations; source confinement/symlink/non-Lean/axiom rules; acceptance of normal def/lemma/instance; same-name module/cache/environment shadowing; missing/tampered olean and manifest fail without regeneration. A source-legal Erdos1049.Irrational := True attack retains frozen text, compiles with trivial proof, and is rejected by the complete type comparison. Both function suites end ALL CHECKS PASSED; all required paths covered. Commands, versions, images and artifact hashes are in manifest.json, harbor/erdosproblems-1049-geq-2-integer-harbor-pi-a72e/config.json, delivery.json, packaging.log and validation-*.log. Immutable baseline verification passed. Docker cleanup completed and verified: removed own Spec container 379b176beef6 and Harbor container 25d02b7fcff7, final image sha256:fec72e1407f7124f57a9305d02a8fb2fdce16239bdd80cc7ad9012120a96a8be (task tag removed), and own Harbor network erdosproblems-1049-geq-2-integer-harbor-pi-a72e__env_default. Shared baseline generation image sha256:0824de0f16475f1f619701869e59de4e4ce3229bfce229a5fd16f88072c37e8f retained; no other resources or shared build cache cleaned. Evidence cleanup.json and cleanup.log. Evidence directory: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1049-geq-2-integer/repair-1049-pi-a72e"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. The complete target matches the pinned upstream integer t>=2 variant. Erdos 1948 page 63 proves the stronger integer |t|>1 Lambert-series result, covering this positive-integer variant; PNat starts at 1 and the geometric bound gives convergence. No obvious false statement or definition error found. Original paper and upstream sources fetched; problem website HTTP 403. See research-evidence.json, upstream.lean and erdos-1948-04.pdf/.txt. Mathematics and all frozen inputs remain unchanged. Evidence directory: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1049-geq-2-integer/repair-1049-pi-a72e"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact full task ID matched skills/lean-task-repair/references/public-lean4-proofs.csv; public_lean4_proof=true and source URL added to metadata. URL: https://github.com/wcook04/plectis-erdos-lean/blob/c4eab2571b4692ee9c08d3ec138176f7fbfa09a9/verification/FCMergedIntegerAdapters/research/adapters/FormalConjecturesAdapter.lean#L96-L107 . Under skill step 6 no further network confirmation is required. The public proof was not compiled here or included in the image; public-proof-match.json records the exact lookup. Evidence directory: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1049-geq-2-integer/repair-1049-pi-a72e"
+    }
+  }
+}

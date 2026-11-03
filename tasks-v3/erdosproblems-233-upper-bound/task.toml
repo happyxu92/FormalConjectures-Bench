@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = false
+public_lean4_proof_status = "searched"
+public_lean4_proof_note = "Exact task ID absent from the skill CSV. Searched the theorem name and its older alias, prime-gap/RH/Cramer formulations, upstream, Mathlib and public repositories. Read related PRs 2534/3059/3738: upper bounds remain sorry; AlphaProof proves only the lower bound. Award sources give True examples or cite a nonexistent file: the full plby/lean-proofs archive at 8822f7ddef30fadbd92e1c6ab4ed897af356af5e was downloaded and all 43587 Lean files searched. No matching complete proof found; GitHub code API was rate-limited. This is a search result, not a proof of nonexistence."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/233.lean"

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-168-limit-exists",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md now explicitly searches /app, /opt/formal-conjectures and /opt/formal-conjectures/.lake/packages. The exact rg syntax found Mathlib package definitions as ubuntu in the matching environment and final Harbor container; instruction-search.log and delivery.json."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Actual Target imports only ProblemImports and local Submission; no extra upstream precompilation required. Added mandatory Dockerfile final RUN lake build +FormalConjecturesBench.Target after HOME/USER ubuntu and permissions. Current local Harbor image built successfully and the same ubuntu lake build returned 0 in its child container. Evidence: harbor/, docker-history.txt, delivery.json."
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Ran the skill check_unicode_header.py on this task: unicode_repaired, exit 0; legal surrogate pair for 𝓝 replaced with repr(header) in both checkers. Original header accepted, changed header and missing := rejected. unicode.json; final function tests independently cover the same checks."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Trusted complete ExpectedType generated with Lean parser/elaborator from original golden without Submission, using pinned Lean 4.27.0 x86_64 and dependencies. Original prefix definitions/API retained; unrelated open sorry theorems omitted from extraction, temporary target discarded. Independent transitive axiom audit passed, universe parameters []. Fixed precompiled packages identical in tests/trusted_spec and environment/data/checker/trusted_spec; manifest SHA256 659388a4f479ed7b39bfbbefaf8f60c1a9d0a1889df965853b967641b664d3e3. Verifier pins manifest/artifact/golden/version/dependency hashes and direct trusted import paths; never regenerates Spec or uses candidate Lake/cache for trusted modules. Existing frozen/source/axiom/canary rules retained, normal imports/defs/lemmas/instances exercised. Current local task built by Harbor nop (no model/subagent), image sha256:0f4d929fae86f95ae02fd22b322786870e93991af10f199e9f770a438924dc0d; official /tests/test.sh and ubuntu /app/check.sh exit 1, reward 0 solely for unchanged target sorry. Both actual checker function suites passed 33 cases: trusted loading/audit, ubuntu compilation, complete-type acceptance of isolated placeholder, sorryAx rejection, canary, frozen/source negatives, same-name module/cache/env poison, missing/tampered package refusal without regeneration. Name-shadowing and division-instance attacks preserved frozen text, compiled, and failed full type comparison. Formal Spec path /tests/trusted_spec, local /opt/formal-conjectures-bench-checker/trusted_spec; all uploaded/installed checker/package/golden hashes matched. Evidence directory /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-168-limit-exists; commands in prepare.py, package.py, harbor config/result, validate.py, verify-delivery.py; actual coverage in validation-official-r2.json and validation-local.json. No original full proof was tested or claimed. Docker cleanup: stopped/removed only this task's Harbor child c67a2d6f2980 and Spec container d2bbf8af2645. Removed new task image sha256:0f4d929fae86f95ae02fd22b322786870e93991af10f199e9f770a438924dc0d and tag erdosproblems-168-limit-exists-pi168-68ad9__env-main:latest (absence verified: True). Removed own network erdosproblems-168-limit-exists-pi168-68ad9__env_default (absence verified: True). Pre-existing generation base image retained; shared caches and other resources untouched. docker-cleanup.json records commands/results."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked metadata statement_status=consistent. Reviewed complete definitions and pinned upstream FormalConjectures/ErdosProblems/168.lean: finite subsets of Icc 1 N avoiding n,2n,3n, floor(N/3) boundary, nonempty finite maximum, real division and atTop quantification are consistent. This is existence-only known GSW variant, not value/irrationality in parts.i/ii. Public author README/source corroborate exact definitions and target, cite Graham–Spencer–Witsenhausen (1977). No mathematical text changed. Original problem site HTTP 403; Google/DDG challenged and search API access failed, recorded in statement-review.json and request logs."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact task-column match in skills/lean-task-repair/references/public-lean4-proofs.csv: public_lean4_proof=true; metadata marked listed. URL https://github.com/baobingzhang/jsp-000165-erdos168-lean/blob/main/Erdos168.lean . Additionally fetched and read complete Lean source and README: same target header and definitions, no sorry/admit/new axiom/native_decide tokens in code. README uses Lean 4.34.0; not compiled or ported to this task Lean 4.27.0, and public answer is stored only in external evidence, not image/task. Evidence public-proof-csv.json, public-proof-review.json and downloaded sources."
+    }
+  }
+}

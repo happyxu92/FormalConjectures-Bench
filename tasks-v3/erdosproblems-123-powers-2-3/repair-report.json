@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-123-powers-2-3",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索遗漏隐藏 packages，已显式补齐三个路径。当前 Harbor 子容器 ubuntu 执行 rg --glob *.lean ^def IsAntichain 三路径搜索，exit0，命中 mathlib/Mathlib/Order/Antichain.lean，无路径/权限错误。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-123-powers-2-3/delivery.json。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 实际 imports 只有 ProblemImports 和本地 Submission，无额外上游 import。Dockerfile 末尾新增 HOME=/home/ubuntu、USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target；当前本地任务 Harbor 构建通过（复用匹配依赖缓存），同一子容器 ubuntu 再次实际 lake build exit0；未放宽依赖权限。镜像 sha256:dc127da6982d834cb03352290b25da8c392c48c799fe8643c8e13e8d34cda9bc；证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-123-powers-2-3/delivery.json、harbor/。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按要求执行 skill Unicode 脚本，初次及最终均 exit0/case=no_issue。原头通过，改头和缺失 := 拒绝，两份 checker 一致；无需 Unicode 修复。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-123-powers-2-3/unicode.json、unicode-final.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 GoldenCheck 在候选环境重解析预期类型，可被语义遮蔽。已在无网络匹配工具链容器从本题 golden 移除 Submission import，用 Lean parser/elaborator 提取完整目标类型，恢复临时目标环境后导出 ExpectedType 定义值；独立导入审计 ExpectedType 与 IsDComplete 的传递依赖仅 propext/Classical.choice/Quot.sound，universe=[]，临时目标及子声明未导出；原前缀其他 sorry 定理不在预期类型依赖中。编译/审计首次因 quoted-name 括号语法失败，已修复并完整重编译/独立审计通过，原失败日志保留。两份源码/olean/ilean/生成脚本/审计/清单完全一致；golden Target SHA256=6c82ec59fc81dd080b231b73f8e8f5c9bf6e81ffcd59892d9b08d90ecd81c5d1，olean SHA256=e66a28f9dbf7993357a0f504b1d0d104ab3ba89421adf7a8c7cacd5854484830，manifest SHA256=4ab17287832042b380c2254d9de4b57ee7bc76dc9581900f60e4b21c612a729b。Lean4.27.0 x86_64，FC233a10e857ef78e79fd9fe661d37db724089170a，Mathlib a3a10db0e9d66acbebf76c5e6a135066525ac900。verifier 固定 SPEC_DIR=TESTS_DIR/trusted_spec，固定工具链和依赖优先路径；校验清单、输入、版本和产物哈希，只加载预编译产物，不运行生成器或 Lake 重建 Spec。临时候选先导入 Spec，共享原前缀定义及 Filter/Submonoid/Pointwise 上下文，以根限定目标对 ExpectedType 比较完整类型；保留普通 imports、def/lemma/instance、冻结/源码/公理/canary 检查，未加通用外部模块白名单。当前本地 Harbor 命令 harbor trials start --config /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-123-powers-2-3/harbor-config-net.json（nop，不启动其他证明 agent），真实子容器 erdosproblems-123-powers-2-3-pi-090240-123-net__env-main-1；首次默认网络池耗尽，显式专用10.247.123.0/24重试成功。Harbor 正式上传 /tests，/tests 与 /opt checker/Spec/golden 所有文件及公开 Target 哈希匹配本地。正式 bash /tests/test.sh 与 ubuntu /app/check.sh 均 exit1/reward0，仅因原始 sorry。隔离 fixture 实际调用两入口 checker 函数，各27项全部通过：Spec加载/独立类型审计、ubuntu候选编译、完整类型匹配、目标sorryAx拒绝、sorry canary；冻结头/前缀/赋值/配置、越界源码/非Lean/符号链接/helper axiom拒绝；冻结文本不变的 Erdos123.powers 名称遮蔽可编译而完整类型比较明确 type mismatch；同名模块/缓存/环境变量不能替换Spec；产物缺失/损坏/清单改动拒绝且无运行时生成。AST/内容、包一致性、immutable-before.json的15文件全部原样。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-123-powers-2-3/{package.log,delivery.json,validation-official.log,validation-local.log,final-audit.json}；生成/验收脚本同目录。未构造真实无sorry原题证明，成功目标公理审计/最终reward1分支未覆盖，不声称原题证明通过。Docker清理完成：已stop/rm容器 1b4e693df709 (erdosproblems-123-powers-2-3-spec-pi-090240-123), d1c6bf22f0c6 (erdosproblems-123-powers-2-3-pi-090240-123-net__env-main-1)；已删除本次两个任务镜像 sha256:5015c1151c65097910d057d6a504914b7f7f2d45c7eb4e5e1abe43fd9964332c, sha256:dc127da6982d834cb03352290b25da8c392c48c799fe8643c8e13e8d34cda9bc 及其tag；移除专用网络 erdosproblems-123-powers-2-3-pi-090240-123-net__env_default。docker ps -a/image inspect/network inspect确认均不存在。原有共享依赖镜像 fcb-local/erdosproblems-1-least-n-5:cache-smoke 保留且可inspect；未使用prune，未清理共享缓存或他人资源。清理证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-123-powers-2-3/cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata.statement_status=consistent。已读取 task.toml 锁定源、完整前缀和实际目标，核对 Erdős–Lewin 1996 d-Complete Sequences of Integers p837 定义及Proposition1（https://brand.site.co.il/riddles/201507a_files/2153618.pdf）。IsDComplete 的 eventually-atTop、自然数域、Finset互异求和、divisibility antichain 和非负幂乘积与已知2/3变体相符，未发现导致目标无法成立的明显问题；一般三底数命题不作为本题目标。只标记，不改数学命题。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-123-powers-2-3/pinned-source.lean、paper.pdf、paper.txt、research-summary.json。来源官网/AMS有403，论文公开镜像成功读取。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "先按完整task ID精确匹配 public-lean4-proofs.csv 未命中，随后多组检索上游/GitHub/Mathlib及公开来源，找到并完整读取 https://github.com/stokes/erdos-proofs/blob/2a9eb1a1bdd869f09f9fad2c654db8508c6ad7fc/ErdosProofs/Erdos123.lean（commit2a9eb1a1bdd869f09f9fad2c654db8508c6ad7fc）及上游PR7420的目标与AntichainPowers完整引理。stokes 的Rep/strong induction/最终powers_2_3及type_of%覆盖本目标，定义和方向一致，证明无sorry/admit/新公理且不依赖导入的placeholder证明。已标public_lean4_proof=true/status=found并记录URL。PR2522/2519/2485仍by sorry，排除；一般三底数与snug结果未冒充本目标。公开证明使用Lean4.33.1，本次仅源码核对，未在本题Lean4.27编译，未放入镜像。GitHub代码/后续PR REST限流403及web_search模型认证错误已记录，已通过raw固定提交访问有效证明，不影响已找到结果。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-123-powers-2-3/public-proof-csv.json、research-summary.json、research-*.json、stokes-123.lean、pr-7420-antichain.lean。"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-238-small-c1",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages. Search command rc=0 found Nat.Prime definition inside mathlib; evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-238-small-c1/instruction-search.log; attempt-002 rechecked the command and actual package match, recorded in retained-evidence-audit.json."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target imports only ProblemImports and local Submission; no extra upstream modules. Appended final RUN lake build +FormalConjecturesBench.Target after HOME and USER ubuntu; current local Harbor Dockerfile build succeeded (harbor.exit=0), image erdosproblems-238-small-c1-pi238-6c7e75bb-main. History/inspect and original Dockerfile saved in evidence directory. Attempt-002 verified the current Dockerfile, imports, prior local Harbor image identity and actual ubuntu build log; unchanged verified work was retained without rebuilding."
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Skill script case=unicode_repaired; repr(header) fixed the non-BMP 𝓝 surrogate pair in both checker constants. Original target accepted; changed header/missing assignment rejected; unicode.json. Attempt-002 reran the skill script: case=no_issue, modified=false; original issue and repaired status retained."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated and audited fixed ExpectedType from golden without Submission; both Spec packages synchronized, manifest pinned bb92d311da608a7856163f8da1eeaa71b9d922abb00b999bc66f0b8c631a8087. Current local Harbor task image built successfully; uploaded /tests and installed /opt hashes match. Official and ubuntu local entry rc=1, reward=0 due original sorry as expected. Actual functions passed via both paths: trusted Spec import/audit, actual ubuntu UID, candidate build, complete type check, sorryAx rejection/canary, frozen/source negatives, frozen-unchanged primeGap name shadow compiled then type-mismatch rejected, Spec/cache/env shadow resistance, missing/tampered artifact and manifest rejected without regeneration. Evidence /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-238-small-c1. Docker cleanup verified: stopped/removed containers erdosproblems-238-small-c1-pi238-6c7e75bb-main-1, erdosproblems-238-small-c1-spec-pi238-6c7e75bb; removed task image erdosproblems-238-small-c1-pi238-6c7e75bb-main (sha256:d71a8e6fd4790e1796f4f214d2aaa2dcd0cc5fe8c4e9bf336059e950033704c2) and own compose network a94991ae80cf. Shared baseline image and build cache retained; cleanup.json. Attempt-002 matched the current checker/Spec/golden hashes to the actual uploaded container files, reviewed both complete 28-case function logs and entry exits, and retained the verified same-task Harbor acceptance without rerunning it. Evidence: attempt-002/retained-evidence-audit.json. No new Docker resources created; prior containers and image confirmed absent in attempt-002/cleanup-verification.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. The source says Erdos [Er49c] proved the sufficiently-small-c1 variant (depending on c2). Checked full Target, quantified domains and both eventually filters, integral primeGap definition and k-1 adjacency indexing; no obvious invalidity. Natural c2 thresholds are a reasonable variant. Direct erdosproblems.com HTTP403; source read via Jina and pinned upstream. Details: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-238-small-c1/statement-review.json Original Erdos1949 Theorem3 (printed p58; proof p63) and source forum quantifier discussion also read. Attempt-002 rechecked the full unchanged Target, primeGap definition, paper Theorem3 and proof, and metadata; consistent status retained."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "public_lean4_proof=unknown, status=blocked. Attempt-002 again exact-matched the complete task ID in the skill CSV: 0 matches. Continued searches read current upstream and xccElephant master, additional aliases and Brun/Chebyshev sources. Upstream still contains sorry; xcc source still proves only c2<2 unconditionally and retains extra hBC for small_c1. No inspected candidate covers the complete task. General GitHub code search and the analytic-library source follow-up returned403; configured web search failed400. Important coverage remains unavailable, so no reliable negative existence claim is made. New evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-238-small-c1/attempt-002/public-proof-review.json; all earlier evidence preserved."
+    }
+  }
+}

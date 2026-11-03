@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-138-monoap-guarantee-set-nonempty",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式增加 /opt/formal-conjectures/.lake/packages；bash -n 通过，当前 Harbor 容器内以 ubuntu 实测 rg 命中 mathlib 的 theorem card_powerset。证据 delivery.json。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 实际仅导入 ProblemImports 与 Submission，无额外上游 import；保留 ProblemImports 预编译。Dockerfile 末尾已增加 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 task Harbor 构建成功，容器内同命令退出 0；未放宽依赖权限。证据 final-image-history.txt、ubuntu-build.log。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行指定 check_unicode_header.py，修复前后均 case=no_issue；原头通过，修改头和缺失 := 被拒绝，两份 checker 常量一致。证据 unicode.json、unicode-final.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境解析 GoldenCheck，存在语义重解释风险。现由原始 golden 移除 Submission 后，使用 Lean parser/elaborator 提取完整类型 forall r k : Nat，预编译 ExpectedType；保留原名前缀 monoAP_guarantee_set，无 universe 参数，独立审计仅 propext/Classical.choice/Quot.sound，临时占位定理未导出。两份 checker 内容/AST 与可信包均一致，manifest 固定哈希，运行时仅从 TESTS_DIR/trusted_spec 加载已校验产物，锁定工具链和依赖路径；保留普通 imports、def/lemma/instance 及原源码/冻结/公理/canary 规则，未加通用外部模块白名单。当前本地 Harbor task 构建镜像 sha256:294f078cf07a468ac209de39ff605976d9b0cc314200493fcd384b5090ef2cf6，实际 /tests/test.sh 与 ubuntu /app/check.sh 均退出 1，原始 sorry 被拒绝、reward=0。已在同一 Harbor 子容器分别针对 /tests 与 /opt 的实际函数补测固定 Spec 加载/审计、ubuntu 编译、完整类型比较、sorryAx 公理拒绝、canary；冻结/越界源码、名称遮蔽语义负例、同名模块/缓存/环境遮蔽、缺失/篡改包均已验收。名称遮蔽 fixture 通过 notation 将同一冻结头中的 monoAP_guarantee_set 重定向到不同定义；源码规则会拒绝该记号，独立调用真实构建/完整类型检查仍实际编译并因 Type mismatch 拒绝，未放宽正式 checker。未要求也未提供本题完整证明。生成镜像复用既有共享 0824de0f1647；生成/独立审计命令、版本/修订/输入及产物哈希见两份 manifest.json 和证据 generation-command.json；构建命令 harbor trial start -c /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-138-monoap-guarantee-set-nonempty/harbor-config.json。入口包、golden、checker 和 Target 与宿主哈希一致。证据目录 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-138-monoap-guarantee-set-nonempty，关键文件 delivery.json、validation-official.log、validation-local.log、final-audit.json。Docker 清理完成：本次 Spec 容器 080732f03b77、Harbor 容器 33a73ac29a6d、任务镜像 294f078cf07a 及其唯一 task/suffix tag、本次专属 env_default 网络均已移除并 inspect 复核不存在；复用的共享生成镜像 0824de0f1647 保留，未清理其他任务资源或共享构建缓存。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata statement_status=consistent。核对 task.toml 锁定的 138.lean、完整 golden 前缀及 AP/Basic.lean 的 ContainsMonoAPofLength/Set.IsAPOfLengthWith。目标是 van der Waerden 有限着色存在性结论，不是 Erdos 138 的开放渐近问题；r=0 取 N=1 无着色，r>0,k=0 可取空 AP，正参数对应标准定理。MathWorld van der Waerdens Theorem 第2种形式支持正参数，公开证明亦显式处理零边界。未发现导致命题不成立的明显错误；数学输入、Target、golden、GoldenCheck、冻结基线均未改。erdosproblems.com 遇到 Cloudflare/403，已保存访问限制，使用可访问的锁定上游及 MathWorld 核对。证据 math-and-proof-review.json、ap-basic-pinned.lean、upstream-pinned.lean。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "先按完整 task ID 精确命中技能 references/public-lean4-proofs.csv，按 skill 标记 metadata public_lean4_proof=true/status=found。来源 https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos138_monoAP_guarantee_set_nonempty.lean#L127 。另已实际读取该锁定源码，目标 exact e138_main r k，上游定义和完整参数一致，主证明使用 Hales-Jewett，相关目标证明片段无占位；其他独立目标的 sorry 不属于本目标证明片段。依技能精确命中无需再做网络充分检索；公开证明未在本题环境编译，未复制进 task 或镜像。证据 public-csv-match.json、public-proof.lean。"
+    }
+  }
+}

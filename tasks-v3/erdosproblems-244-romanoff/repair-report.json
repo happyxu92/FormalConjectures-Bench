@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-244-romanoff",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原搜索命令漏掉隐藏 packages；已显式列出 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages。在本题 Harbor 子容器以 ubuntu 实测，找到 Mathlib/RingTheory/Coprime/Basic.lean 的 def IsCoprime，exit=0。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-244-romanoff/instruction-search.log。 续跑 attempt-002 已对当前文件及本题原始执行证据复核，详见 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-244-romanoff/attempt-002/steps-1-2-review.json。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "实际 Target 仅导入 ProblemImports 和本地 Submission，无额外上游 import；保留 ProblemImports 预编译。在 Dockerfile 末尾添加 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。本题本地 Harbor force_build 成功，镜像 sha256:17e7327db4d6bda050ab44c35635fad971cfc21d212ea1a439eee8eed5c3fce1；同一子容器 ubuntu-target-build.exit=0。构建未忽略缺依赖错误、未放宽依赖权限。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-244-romanoff/harbor-image-history.txt、ubuntu-target-build.log。 续跑 attempt-002 已对当前文件及本题原始执行证据复核，详见 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-244-romanoff/attempt-002/steps-1-2-review.json。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行 skill check_unicode_header.py，修复前和最终复验均 case=no_issue：原始头通过、修改头和移除 := 被拒绝、两份 checker 一致；无代理码点问题。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-244-romanoff/unicode.json、unicode-final.json。 续跑 attempt-002 已对当前文件及本题原始执行证据复核，详见 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-244-romanoff/attempt-002/unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 GoldenCheck 在候选加载后重新解析预期命题，存在实例/名称遮蔽风险。已从原 golden、移除 Submission 导入后以匹配 Linux x86_64 Lean 4.27.0 和锁定依赖提前提取/编译 FCBTrustedSpec.ExpectedType，保留完整隐式 C、显式 hC，两参数、无 universe；独立导入及传递公理审计通过，仅标准三公理，临时目标/子声明未导出。两份可信包/清单相同且 manifest SHA256=82d4a657cbf89970cf4977924eeb106ec11288dcb7d22e7468b45bd5bed43659；两份 checker AST/内容相同。固定工具链、Spec 优先路径和可信依赖来源，临时候选共享 Spec 前缀，仅比较已编译 ExpectedType 值与候选完整类型，保留正常 imports、helper def/lemma/instance、原冻结/源码/公理/canary 规则。当前本地 task Harbor 构建并上传 /tests 成功，正式 /tests/test.sh 和 ubuntu /app/check.sh 均因原始 sorry 返回1/reward0（预期，未宣称原题证明通过）。同一子容器调用实际函数正式/本地各29项测试，exit0：Spec加载/审计、观测uid1000候选编译、完整类型比较、sorryAx拒绝、canary、冻结及越界负例、冻结文字不变 LT ℝ 实例偷换被类型比较拒绝、同名模块/缓存/环境不能覆盖 Spec，缺失/哈希/清单损坏明确拒绝且不重建；另测可信 density/ProblemImports 依赖同名缓存不可覆盖。证据目录 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-244-romanoff：generation.log、package.py、harbor-config.json、harbor.log、harbor-image-history.txt、validation-{official,local}.json/.log、dependency-identity-probe.log、delivery-verification.json。已清理本次 Spec 容器 e9b77ce7ee35、Harbor 容器 ec8941e58a6c、任务镜像 sha256:17e7327db4d6bda050ab44c35635fad971cfc21d212ea1a439eee8eed5c3fce1 及本任务专属网络；docker ps -a / image inspect / network inspect 核验不存在。仅复用的共享基线镜像0824de0f1647及共享构建缓存保留；未执行prune、未清理他人资源。详见 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-244-romanoff/cleanup.json。 续跑 attempt-002 已对当前文件及本题原始执行证据复核，详见 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-244-romanoff/attempt-002/step-4-evidence-audit.json。 两份checker和可信包逐文件匹配原Harbor上传/预装哈希；沿用本题已完成的真实验收，未重复构建。当前确认原资源均不存在，本次未创建Docker资源；未扩展为通用外部模块白名单。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整定义及 elaboration 核对未发现明显错误。目标是所有自然整数 C>1 的 Romanoff 变体，不是一般实数底数开放问题。p、k : Nat，Nat.floor 在 Nat 上为恒等，Set.lowerDensity 为标准下自然密度；k=0 扩大正指数集合。来源 erdosproblems.com/244（直接 HTTP 成功）、锁定上游244.lean、Radomskii arXiv:2211.10741v5 Theorem1.2 的 R(n)=n 情形给出 c*x 下界。task.toml 已标 statement_status=consistent，数学命题不变。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-244-romanoff/statement-review.json、math-elaboration.log。 续跑 attempt-002 已对当前文件及本题原始执行证据复核，详见 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-244-romanoff/attempt-002/step-5-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "经充分检索未找到已知公开完整Lean4证明，已标 public_lean4_proof=false/status=searched，仅表示检索结果，非绝对不存在。完整ID重新匹配CSV未命中；续跑成功检索GitHub issues/repos/commits及多组网页搜索，取回原API受限的上游历史和issue2051网页。实际读取PR2538/3063仍为sorry、lean-genius目标为新axiom、Tomar native/kernel终结论带ESP28/PNTAP/R0Bound假设且仅底数2；作者网页、aiXiv、8个release、leaftensor提交、#244工作报告、Plectis等线索均排除或不涉及本目标。结合上轮Mathlib9303文件检索，没有待核实的有效完整目标证明线索。GitHub全局代码/树API仍403，部分论坛和无关Palomar记录受限，已如实记录；关键上游源码/历史及所有有希望的目标证明源码已读取。详情 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-244-romanoff/attempt-002/public-proof-review.json、research/*fetch*.json、source_check response IDs mvz9m04fx7pk8o/mvz9ry58st8eqz/mvz9vkohy5sndx。未安装公开答案。"
+    }
+  }
+}

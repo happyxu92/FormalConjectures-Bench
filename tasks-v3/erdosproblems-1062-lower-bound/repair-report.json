@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1062-lower-bound",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages alongside /app and /opt/formal-conjectures. Actual ubuntu rg search finds package definition Tendsto; command exits 0. Evidence: delivery.json/search and search-path.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Actual additional import is Mathlib.Topology.Basic; added to upstream precompile chain. Dockerfile ends WORKDIR /app, HOME=/home/ubuntu, USER ubuntu, RUN lake build +FormalConjecturesBench.Target. Current local Harbor image build succeeded; ubuntu imports build exits 0 (7989 jobs) and Target build exits 0 (7992 jobs). Evidence: harbor-image-history.txt, import-precompile-ubuntu.log, ubuntu-lake-build.log."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Required skill script returned no_issue; original header/prefix and := boundary verified against both golden copies; modified header and missing assignment rejected. Evidence: unicode.json and unicode-final.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Replaced candidate-time reparsing of GoldenCheck with a repair-time elaborated, precompiled FCBTrustedSpec.ExpectedType. Golden-only generation in matching Lean 4.27.0/x86_64 Docker; complete type forall n : Nat, ceil(2*n/3) <= f n, universe_params=[]. Temporary theorem/children absent; ExpectedType and ForkFree/f transitive audits permit only propext, Classical.choice, Quot.sound. Both checker sources/AST and packages match. Runtime validates pinned manifest, golden inputs, artifacts, Lean version and dependency revision manifest; fixed toolchain and trusted paths precede fresh candidate files, no runtime Spec compilation. Normal imports/helper def/lemma/instance remain supported, without a general external module whitelist. Current local Harbor build image sha256:1ed30c7841593b337695b632d57f980f685ea25b010dd73acd32520ab87a25a4; formal /tests and local /opt paths, uploaded package/golden hashes and ubuntu compiler verified. Original entry exits 1/reward 0 because original Target has sorry. Each path passed 27 real-function cases: fixed Spec import/audit, ubuntu compile, complete type comparison, sorryAx rejection, canary, frozen/header/source negatives, Nat LE instance semantic attack rejected by actual type mismatch with frozen text unchanged, same-name/cache/env shadowing, missing/tampered artifacts and manifest rejection without regeneration. Both production main functions also pass in isolated fixtures using the exact public pinned proof; public Target untouched. Manifest SHA256=2a766616b501ba15556a90fdbaea4ad3ccd9949fb5c1eb71a560063b2025f36d, olean SHA256=88068dc2626035c83094024fa851ce3592306f55ad5b7d40b8043c9234ed7ea6. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1062-lower-bound/ (spec-generation.log, package.log, static-check.json, harbor-config.json, harbor-image-history.txt, delivery.json, validation-{official,local}.json, public-proof-*.log). An optional post-generation Lake probe in the disposable offline Spec container failed trying to reclone a stripped dependency; it ran after generation and audit and did not affect delivered artifacts. The corresponding ubuntu /app imports build and Target build both succeeded in the actual Harbor container. Docker cleanup: Removed owned containers erdosproblems-1062-lower-bound-spec-pi-d73b62 and erdosproblems-1062-lower-bound-pi-d73b62__env-main-1, image sha256:1ed30c7841593b337695b632d57f980f685ea25b010dd73acd32520ab87a25a4 (erdosproblems-1062-lower-bound-pi-d73b62__env-main:latest), and dedicated network erdosproblems-1062-lower-bound-pi-d73b62__env_default; inspect/ps confirm absence. Shared generation image fcb-local/erdosproblems-1-least-n-5:cache-smoke and all baseline/other-agent resources retained. No prune or shared cache cleanup."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked metadata statement_status=consistent. Exact all-n lower-bound variant is valid: A=Icc(n/3+1,n), card A=n-floor(n/3)=ceil(2n/3); for a in A, 3a>n and its only possible distinct multiple is 2a. Empty n=0 case is valid. Informal interval comment has an imprecise left endpoint (n=6 gives a counterexample to the comment only), but definitions and target are correct. Kept all mathematics/golden/frozen inputs unchanged. Fresh pinned upstream source read; erdosproblems page returned HTTP 403. Evidence: research.json and upstream-pinned.lean."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true, status=found. Exact full task ID matched skill references/public-lean4-proofs.csv. Source: https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/1062.lean#L55 ; pinned proof at commit 233a10e857ef78e79fd9fe661d37db724089170a. Fresh pinned/main raw sources returned HTTP 200 and were read; exact target proof has no sorry/admit. Both actual checker main functions pass with this proof in isolated fixtures, including complete type and axiom audits. No answer added to delivered Target/image. CSV hit makes broader proof search unnecessary; website 403 and optional search provider limitations do not block this confirmed result. Evidence: public-proof-csv.json, public-proof-verification.json, research.json."
+    }
+  }
+}

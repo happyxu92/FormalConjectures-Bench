@@ -1,0 +1,14 @@
+complete forall telescope: 2 parameters (p, Fact p.Prime)
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green26.𝔽: [propext]
+audited Green26.𝔽₃: [propext, Quot.sound, Classical.choice]
+audited Green26.StandardCube: [propext, Quot.sound, Classical.choice]
+audited Green26.IsCube: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (p : ℕ) [inst : Fact (Nat.Prime p)],
+  ∃ k,
+    ((fun n => ↑(k n)) =O[Filter.atTop] fun n => Real.log ↑n) ∧
+      ∀ᶠ (n : ℕ) in Filter.atTop,
+        ∀ (A : Fin (k n) → Set (Green26.𝔽 p n)), (∀ (i : Fin (k n)), Green26.IsCube (A i)) → ∑ i, A i = Set.univ
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

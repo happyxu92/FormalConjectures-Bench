@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-32-liminf-gt-one",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式加入 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages；在匹配 Docker 环境执行命令，成功检出 Mathlib 的已知 theorem le_refl。同步说明可信 Spec 与临时副本测试方式。证据 attempt-002/evidence/instruction-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "实际 Target 只有 ProblemImports 和 Submission，无额外上游 import，保留原预编译链。修复缺失的 Dockerfile 末尾 ubuntu RUN lake build +FormalConjecturesBench.Target；本题当前环境 Docker 构建成功（7992 jobs），Harbor 从当前本地 task 再构建/启动成功。详见 attempt-002/evidence/build.log 和 Harbor 日志。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际执行 skill 的 check_unicode_header.py，case=no_issue、verification=passed；原头、两份 checker、三份原始 Target、修改头和移除 := 的负例均通过脚本要求，未修改头部。证据 attempt-002/evidence/unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重新解析 GoldenCheck，存在语义遮蔽风险。已从原始 golden 去除 Submission 导入，提前 elaboration 完整类型并导出固定 FCBTrustedSpec.ExpectedType；独立编译/审计确认完整 forall/假设、零 universe、目标占位声明未导出、传递依赖只有标准公理。两份预编译包和 checker 字节/AST 一致，固定工具链和 Spec/可信依赖搜索来源，保留正常外部 imports 与原源码/冻结/公理/canary 规则。当前本地 Harbor 子容器正式 /tests 和 ubuntu 本地 /opt 入口均因原始 sorry 返回 1、reward=0；两套实际函数补测均退出 0，覆盖固定包加载审计、ubuntu 编译、完整类型、公理拒绝 sorryAx、canary、冻结/越界拒绝、冻结文字不变的 LT EReal 实例偷换被类型比较拒绝、候选同名模块/缓存/环境变量不能替换 Spec、缺失/损坏包明确拒绝且不重建。非原题证明通过。构建和运行命令、镜像 ID、输入/产物哈希和日志见 tests/trusted_spec/manifest.json 及 attempt-002/evidence 的 static.json、delivery.json、runtime-results.json、validation-*.log、container-inspect.json、image-inspect.json。已验证清理本次两个容器 283ce1d499cf、05859f237669，两个镜像 8dd37a346f34、2ff509d49a7c（含本次标签）及独立网络 221d82cbd4aa；cleanup.json/log 和最终 inspect/ps 确认不存在。保留运行前已有共享基镜像和构建缓存，未影响其他 task 资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整前缀/目标与锁定上游的已知严格下界变体一致；题目网站及 Ruzsa 原作者 DVI 的 Theorem 2 给出更强 liminf >= exp(gamma) > 1。已核查充分大 n、计数区间、自然数 0 的平移处理、EReal 和对数的有限初始段，未发现明显无解问题。metadata statement_status=consistent；不改变数学陈述、Target、golden 或冻结基线。来源和原文见 attempt-002/evidence/research.md、erdos32.txt、ruzsa-author.dvi/.txt。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "marked",
+      "note": "unknown/blocked：完整 ID 精确匹配 skill CSV 未命中。已多组检索定理名/定义/题号/等价下界/作者，覆盖上游、Mathlib、作者网页、GitHub 搜索与 PR/相关库；上游和 PR 2038/2641/3165 目标仍为 sorry，2641/3165 只是修改 category，不是完整证明。没有验证到覆盖本目标的公开完整 Lean4 证明。GitHub code/fork/tree API 被 403 rate limit 阻断，不能确认未索引分支/其他路径；metadata 标为 unknown/blocked，不断言不存在。详见 attempt-002/evidence/research.md、public-csv-match.json、research-fetches.json、research-followups.json 和 PR 原文。"
+    }
+  }
+}

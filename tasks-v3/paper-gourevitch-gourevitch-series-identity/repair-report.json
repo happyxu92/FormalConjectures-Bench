@@ -1,0 +1,35 @@
+{
+  "task_id": "paper-gourevitch-gourevitch-series-identity",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to rg command. Actual package definitions found as ubuntu in the current Harbor container (instruction-search.log)."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports beyond ProblemImports and local Submission. Added Dockerfile final RUN lake build +FormalConjecturesBench.Target after USER ubuntu; current local Harbor image built successfully. Separate ubuntu lake build exit 0, 7992 jobs (ubuntu-lake-build.log); no dependency permissions relaxed."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran the skill check_unicode_header.py on this task; case no_issue, both headers/baselines agree. Original accepted; changed header/missing assignment rejected (unicode.json)."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/paper-gourevitch-gourevitch-series-identity/attempt-002. Generated full ExpectedType from frozen golden without Submission using Lean parser/elaborator in matching Lean 4.27.0 Linux x86_64 Docker environment; temporary theorem removed before export, no universe parameters or omitted binders, transitive axiom audit excludes sorryAx. Two pinned packages/checkers identical. Fixed /tests/trusted_spec and /opt/formal-conjectures-bench-checker/trusted_spec paths and direct locked toolchain/dependencies precede candidate paths. Current task Harbor force_build image sha256:4535e70e0581ef091ac687627fe1ec2cdfcfe6eda32ca30b6b1964f5354e6d6f; current uploads/golden verified by hash. Formal /tests/test.sh and ubuntu /app/check.sh exit 1/reward 0 for original sorry (expected; not a proof). Both actual checker function paths tested: fixed Spec load/audit, ubuntu build, full type match, sorryAx rejection and canary; frozen/tree/source negatives, legal ordinary helpers, same-name cache/source/environment shadow resistance, missing/tampered artifacts and manifest fail without regeneration. Frozen text unchanged semantic Real.pi shadow compiled and full type comparison rejected it. No required semantic path remains untested. Docker cleanup complete: removed own Harbor container a498a7883c28 and Spec container 83e561bcebc2 (suffix a002-98e41c), task image sha256:4535e70e0581ef091ac687627fe1ec2cdfcfe6eda32ca30b6b1964f5354e6d6f and own compose network; verified absent. Retained pre-existing shared cache-smoke image, no other resources touched and no prune. See cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent. Pinned upstream target and Au arXiv:2312.14051 Example XI (4.1) match: (1/2)_n/(1)_n=centralBinom(n)/4^n, hence seventh power with 2^(-6n) yields denominator 2^(20n). Checked real casts/division, n>=0, coefficients, convergence, RHS 32/pi^3 and complete prefix; no obvious false statement. Mathematics unchanged (statement-analysis.json)."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "marked",
+      "note": "Exact full-ID CSV lookup missed. Marked public_lean4_proof=unknown/status=blocked. Checked current upstream, pinned Mathlib, GitHub repositories/issues and concrete PRs 3155/2631/1883/1875; read actual Lean/diffs, all retain sorry (first two only change classification). Au paper is informal. General search providers unavailable, Google gated, Bing irrelevant, GitHub code/history/forks rate limited; broad coverage cannot be confirmed. No complete public Lean4 proof verified; not a claim that none exists. See public-proof-analysis.json and search/followup indices."
+    }
+  }
+}

@@ -15,6 +15,12 @@ formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"
 lean_toolchain = "leanprover/lean4:v4.27.0"
 mathlib_commit = "a3a10db0e9d66acbebf76c5e6a135066525ac900"
 theorem_name = "Erdos200.erdos_200.variants.upper"
+statement_status = "consistent"
+statement_status_note = "Known upper-bound variant L(n) ≤ (1+o(1)) log n, rather than the open o(log n) question. AP length includes cardinality; n=0,1 have L(n)=0. No obvious mathematical defect found; statement retained. The problem website returned HTTP 403; pinned/current upstream and public proof sources were read."
+public_lean4_proof = true
+public_lean4_proof_status = "found"
+public_lean4_proof_urls = ["https://github.com/incrediblecrab/erdos-problems/blob/26818ce29240ccb31fe8fec8782aace271e91841/p200/lean-pnt/Erdos200/Unconditional.lean", "https://github.com/incrediblecrab/erdos-problems/blob/26818ce29240ccb31fe8fec8782aace271e91841/p200/lean-pnt/README.md"]
+public_lean4_proof_note = "Max Marquardt's unconditional constant-1 bound, with identical AP/sSup definitions and all-n quantification; shared proof files and pinned PrimeNumberTheoremAnd dependency reviewed. Public proof uses Lean 4.32.2 and was not independently compiled or ported to this task's 4.27.0. The two upstream category-only PRs retain sorry and do not count. Evidence: public-proof-review.json in this task's repair job directory."
 benchmark_bucket = "informal_proof"
 oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."

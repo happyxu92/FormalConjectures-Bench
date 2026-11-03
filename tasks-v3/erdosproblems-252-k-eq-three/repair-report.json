@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-252-k-eq-three",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to instruction search. Actual ubuntu rg over all three paths found Mathlib theorem sigma_apply; exit 0. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-252-k-eq-three/attempt-002/instruction-search.log"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Extra upstream import FormalConjectures.Wikipedia.Schinzel was missing from precompile command. Added it and final USER ubuntu RUN lake build +FormalConjecturesBench.Target. Current local Harbor build succeeded; repeated actual ubuntu Target build exit 0. Original missing-olean failure and fixed compilation retained in prior logs. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-252-k-eq-three/attempt-002/ubuntu-target-build.log"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Skill Unicode script run before Spec changes and repeated after; case no_issue. Original header accepted; changed header and missing := rejected. /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-252-k-eq-three/attempt-002/unicode.json"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Previously reparsed expected proposition after candidate imports. Now both checkers load pinned precompiled Spec from TESTS_DIR/trusted_spec, enforce hashes/version/dependency revisions, and compare complete target type to ExpectedType value. Spec generated in matching Docker Lean 4.27.0 x86_64 environment from unchanged golden without Submission; full type Irrational (Erdos252.erdos_252_sum 3), no binders/universe params; ExpectedType and erdos_252_sum transitively use only allowed axioms. Generation: prior compile-generation.py/log, package.py/log; manifest sha256 7939b952ed1c62a5ae183d5105ecf7588901dc4964edc0a35f4aaffe748c7a72. Current-task Harbor trial erdosproblems-252-k-eq-three-a2-ef7bbbb4; image sha256:4e7346ca95e2bc5f7dd9929646005c9f5005d308aa2abc9b62a7505d76c5271b. Harbor /tests upload and installed /opt checker/Spec/golden hashes match local. Both entries exit 1 and official reward 0 solely from original sorry ban. Both actual function suites exit 0: fixed Spec audit, ubuntu uid 1000 candidate build, full type comparison, placeholder sorryAx rejection, canary, frozen/outside-source negatives, frozen-text Irrational shadow compiles then type mismatch, same-name/cache/env shadow resistance, missing/tampered artifacts fail without generation. Checker content/AST and packages identical; 15 original immutable files unchanged. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-252-k-eq-three/attempt-002/validation-coverage.json and delivery.json/static-validation.json. Docker cleanup verified: removed Harbor container 7945ac0d9ec0 and Spec container c4c859916f6f; removed task images sha256:4e7346ca95e2 and sha256:7d59c402f852 and all their task tags; removed owned Harbor network. All absent by inspect; shared base images/build cache untouched. Cleanup evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-252-k-eq-three/attempt-002/cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. FLC (2007), https://math.colgate.edu/~integers/h31/h31.pdf, abstract p1 and Theorem 1 p2 prove exactly unconditional k=3 irrationality. Lean sigma is divisor power sum and sigma 3 0=0, so n=0 term does not change positive-indexed series. Checked full prefix and pinned upstream source; no obvious inconsistency. Mathematical definitions/statements unchanged. Problem website returned 403; original paper accessible. /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-252-k-eq-three/attempt-002/math-review.json"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact complete task ID hit in skill references/public-lean4-proofs.csv. Set metadata public_lean4_proof=true. Source: https://github.com/tokengr1nder/Erdos252/blob/46b9fd26361faf669bcd7e4495e63678bfa6a735/Erdos252/Solution.lean#L1066 . CSV hit is sufficient per skill; source downloaded and statement covers k=3. Not compiled in this task, and answer not included in image. /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-252-k-eq-three/attempt-002/public-proof-review.json"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos1102.HasPropertyP: [propext]
+audited Erdos1102.HasPropertyQ: [propext]
+complete binder count: 3
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (A : ℕ → ℕ),
+  StrictMono A →
+    Erdos1102.HasPropertyQ (Set.range A) → Filter.limsup (fun j => ↑j / ↑(A j)) Filter.atTop ≤ 6 / Real.pi ^ 2
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

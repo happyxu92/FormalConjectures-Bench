@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-245-erdos-245",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to instruction search. Actual ubuntu rg found mathlib/RingTheory/Coprime/Basic.lean:def IsCoprime; exit 0. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-245-erdos-245/instruction-search.log"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports: ProblemImports plus local Submission only. Preserved upstream ProblemImports prebuild. Added terminal USER ubuntu RUN lake build +FormalConjecturesBench.Target after copy/permissions; actual local Harbor image built successfully and ubuntu Target rebuild exit 0. image-history.txt and ubuntu-target-build.log in evidence directory."
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Ran skill check_unicode_header.py; case unicode_repaired, two EXPECTED_HEADER surrogate pairs for 𝓝 replaced with proper literal. Original header, mutations and := boundary reverified. Public Target, golden and frozen prefix unchanged. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-245-erdos-245/unicode.json"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated complete ExpectedType from golden with Submission removed in candidate-free pinned Lean 4.27.0 x86_64 Docker environment. Independent audit: outer binders=0, RHS binders=3, universes=[], only standard axioms; temporary theorem/children absent. Identical fixed-hash Spec packages and checkers; trusted Spec/dependency paths precede candidate sources/cache, no runtime Spec generation or external import whitelist. Current local task Harbor image sha256:c343a5392b143456d4c620dd919d16c2d95de9cc12f15ed126527ca615220ae9 built; uploaded /tests and installed /opt hashes matched. Official/local entries exit 1 and reward 0 as expected on original sorry. Both actual-function supplement runs exit 0: fixed artifact load/audit, ubuntu compile, complete type comparison, sorryAx rejection, canary, frozen/source negatives, candidate same-name/cache/env shadows, missing/tampered artifacts. Frozen-text name shadow Erdos245.atTop compiles and is rejected by full type mismatch. All immutable-before.json files unchanged. Details: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-245-erdos-245/final-verification.json. Docker cleanup verified: removed this agent containers 384f1af90c3d, f6dd58eb526a, image sha256:c343a5392b143456d4c620dd919d16c2d95de9cc12f15ed126527ca615220ae9 (erdosproblems-245-erdos-245-pi245-2e7496c8__env-main), and network erdosproblems-245-erdos-245-pi245-2e7496c8__env_default. Existing shared base image and shared build cache retained; no prune. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-245-erdos-245/cleanup.json"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Reviewed entire prefix/target against pinned source and Erdős 245 source via text mirror: infinite zero-density A subset Nat, real floor cutoffs, EReal limsup of restricted sumset/count >=3, affirmative Freiman 1973 theorem. No obvious invalidating definition or statement issue. Source direct HTTP 403; mirror loses equations, read them in pinned source. Mathematical input unchanged. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-245-erdos-245/statement-review.json"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact full task-ID match in skill references/public-lean4-proofs.csv; public_lean4_proof=true. Source https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos245.lean#L48 . Per skill, CSV match sufficient, no further public proof search required. Current wrapper read separately for mathematical context; declares Lean 4.33.0 and imports Core. Not compiled or dependency-audited in this task Lean 4.27.0 environment; not placed in task image. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-245-erdos-245/public-csv-match.json"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ a, StrictMono a ∧ a 0 ≥ 1 ∧ ∀ (t : ℚ), (¬∃ n, t = -↑(a n)) → ∃ q, HasSum (fun n => 1 / (↑(a n) + ↑t)) ↑q
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

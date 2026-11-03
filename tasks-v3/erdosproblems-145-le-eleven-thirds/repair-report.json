@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-145-le-eleven-thirds",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to the rg search command. Actual command in Harbor child found package definition StrictMono with exit 0; delivery.json records stdout and path."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target has only ProblemImports and local Submission imports, so no extra upstream module was needed. Added final WORKDIR /app, HOME, USER ubuntu lake build +FormalConjecturesBench.Target verification. Current local task Harbor force-build succeeded using shared dependency cache; docker-build-history.log records final ordinary-user build. No dependency permissions relaxed."
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Skill Unicode script found and repaired the non-BMP 𝓝 surrogate pair in both EXPECTED_HEADER constants using repr. unicode.json: unicode_repaired; final script: no_issue. Original header passes; mutated header and missing := are rejected."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated and independently audited fixed complete Spec from original golden with candidate imports removed, using matching Lean 4.27.0 x86_64 Docker dependencies. Retained original s/A definitions; discarded temporary target and unrelated placeholder conjectures. ExpectedType has implicit alpha and interval hypothesis, no universes, only allowed standard axioms. Manifest SHA256 3195a7a582b19f75f04ab4b0c9049bae2e3fe69d5fdde1e46afb534dce70ce4f; complete input/artifact hashes, toolchain and revisions in both identical packages. Checkers match in bytes/AST; normal def/lemma/instance/import rules and frozen/source/axiom/canary checks retained. Locked paths prevent candidate/cache/env replacement of Spec and trusted dependencies; no general external-module whitelist added. Harbor trials start --config /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-145-le-eleven-thirds/harbor-config.json force-built current local task image sha256:51da4fba2fe78f654353b6733dbfb29ad276e624c59cca2c316f9608eddb42b0. Harbor-uploaded /tests and installed /opt checker/Spec/golden hashes match local; image lacks /tests before verifier upload. Official /tests/test.sh and ubuntu /app/check.sh return 1 on original sorry, reward 0 (expected). Actual functions were tested under root->ubuntu and ubuntu for /tests, plus ubuntu /opt: fixed package import/audit, candidate uid 1000 compile, complete type check, rejection of sorryAx and canary. Legal Set.Icc empty-set name attack compiles with frozen text unchanged but full type comparison and full checker reject it; missing/tampered artifacts, module/cache/env shadowing, frozen and source-policy negatives also tested. No required semantic paths remain untested; no target proof claimed. Logs: generation.log, delivery.json, validation*.log, final-audit.json. Cleanup complete: removed containers e42a35391ca0 (Harbor child) and eef0a96b3ca2 (Spec), task image 51da4fba2fe7 and its unique tag, and task network erdosproblems-145-le-eleven-thirds-cae982d3__env_default. Ephemeral search/image-probe containers auto-removed and verified absent. Shared base erdos1062-import-20261102__env-main:latest and shared build caches retained; no prune used."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Acceptable known-result le_eleven_thirds variant, not full Erdős 145. Reviewed full s/A definitions, zero-based enumeration, floor cutoff, real subtraction/power, quantifiers and endpoint. Huxley 1997 alone is strict <11/3, but Chan arXiv:2310.08448 Theorem 1/equation (3) cover 0<=alpha<15/4, including 11/3. Crossing-gap error from changing the cutoff is o(x) using O(x^(1/5)log x) gaps. Full notes and fetched primary sources in math-review.md. Mathematical inputs unchanged."
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Exact full task ID did not match skill CSV. After multiple searches by ID/name/aliases, statement, authors and paper, and actual source review, no known public complete Lean4 proof was found. Current upstream and PRs 2515/2836/3352 retain sorry; PR5809 only changes endpoint; Nexus actual proof archive has no 145 proof. Reviewed Pandey short-interval Lean4 sources (different theorem) and khwilson density Lean3 source (not full gap-moment target). Metadata public_lean4_proof=false, status=searched. GitHub code/history/branch/tree APIs were rate-limited, main/forum pages HTTP403; raw PR refs, archives, repo/issue search, arXiv and latex page accessible. All discovered promising proof leads checked; no external proof compiled. This bounded search does not establish nonexistence. Queries, URLs, source hashes and exclusions: public-proof-review.json."
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-18-erdos-18-vose",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to instruction.md. Extracted the actual command, passed bash syntax checking, and ran it as ubuntu in the final Harbor container; found Mathlib Finset.mem_singleton under that package path. Evidence: instruction-search.sh and instruction-search.log in the task evidence directory."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target imports only ProblemImports and local Submission, so no extra upstream precompile target was needed. Added the missing final Dockerfile RUN lake build +FormalConjecturesBench.Target after HOME and USER ubuntu. Final local-task Harbor image built successfully; explicit ubuntu lake build returned 0. Evidence: harbor-full-prefix.log, final-image-history.log, ubuntu-build.log."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran the skill Unicode script before checker changes and again after delivery. Both returned case=no_issue; original header passes, changed header and missing := are rejected, and both checker constants match the unchanged golden inputs. Evidence: unicode.json and unicode-final.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Replaced candidate-time GoldenCheck re-elaboration with a fixed precompiled Spec generated from this task's complete golden prefix, without Submission. Lean 4.27.0/x86_64; no universes; ExpectedType and practicalH transitive axioms are standard only; temporary target is absent. Synchronized both packages and pinned manifest fc1aed91cf4440394da2ef03d999c4599edb62fcbd909babe02e5aaeacd93b63. Final local Harbor image and both entrypoints tested; original sorry causes expected exit 1/reward 0. Supplementary actual-function tests passed 28 cases each under /tests and /opt: fixed loading/audit, ubuntu compilation, full type comparison, sorryAx rejection/canary, unchanged-text semantic attack rejection, cache/name/env shadowing rejection, missing/corrupt artifacts, frozen/source rules and normal helpers. Both checker AST/content and all package/container hashes match; all 15 immutable-before files unchanged. Evidence directory: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-18-erdos-18-vose; see static-validation.json, delivery.json, validation-summary.json, validation-*.json, generation-full-prefix.log and independent-audit.log. Docker cleanup verified: removed this agent's final Harbor container 33872ed4de02, Spec container 43a617d375c7, final image sha256:5eb85689c914 and exclusive network a57e0fbc5477. Initial superseded task container/image were already removed (first-build-resource-cleanup.json). Preserved the baseline generation image and shared build cache. No agent-created resources remain; see docker-cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent; mathematics unchanged. Checked complete prefix, Nat.IsPractical, subsetSums, pointwise minimum versus universal-cover semantics, [1,n] endpoints, real exponent 1/2, positive coefficient and frequently-atTop quantifier. Bloom-Elsholtz survey arXiv:2210.04496 section 3 describes Vose's increasing short-divisor sequence with O(sqrt(log n)) bound, consistent with this task. Crossref confirms Vose 1985 BLMS 17(1), 21-24. Original problem/publisher pages returned 403; primary Vose proof not inspected. See research-review.json and egyptian-survey-raw.txt lines 709-771."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Marked public_lean4_proof/status=unknown. Exact full task ID is absent from the skill CSV. Searched upstream/current sources, GitHub issues/PRs/repositories, Mathlib and public proof corpora; inspected actual candidate Lean sources. Upstream/Alper Vose targets remain sorry; several other results only prove factorial linear bounds or elementary lemmas. Serious stronger public sources remain: Woett/ChatGPT-s-note-on-Erdos18 (SDS.infinitely_many_divisor_representable), Ghuffy1/erdos18-harmonic-shifts (parts a,b,c with definition equivalences), and a linked part-b result in plasma-ai/erdos PR 34. Their exact specialization to this frozen Vose type and independent transitive kernel audit were not validated here; source toolchains differ. GitHub code search/PR endpoints were partly rate-limited and general search/problem/publisher pages restricted. This is an unresolved positive-lead result, not a claim that no public proof exists. See public-proof-csv-match.json, public-search-sources.json, followup-sources.json, extra-sources.json and research-review.json. No public solution was added to the task/image."
+    }
+  }
+}

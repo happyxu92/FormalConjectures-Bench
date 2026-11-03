@@ -1,0 +1,5 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∑' (n : ℕ), (1 + 14 * ↑n + 76 * ↑n ^ 2 + 168 * ↑n ^ 3) / 2 ^ (20 * n) * ↑n.centralBinom ^ 7 = 32 / Real.pi ^ 3
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

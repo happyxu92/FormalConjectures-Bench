@@ -40,10 +40,14 @@ cd /app && ./check.sh
 This runs the same substantive checks as the official verifier. If it passes
 without modifying the checker itself, the official verifier is intended to pass.
 
+This loads the fixed, precompiled trusted theorem type and compiles a temporary
+verification copy as `ubuntu`, then compares the complete theorem type and audits
+its axioms. The public Target and frozen baseline remain unchanged.
+
 For source search, prefer commands such as:
 
 ```bash
-rg --glob '*.lean' 'search term' /app /opt/formal-conjectures
+rg --glob '*.lean' 'search term' /app /opt/formal-conjectures /opt/formal-conjectures/.lake/packages
 ```
 
 Internet access is enabled for this task. You may use external literature and web resources, but the final Lean proof must pass the local verifier.

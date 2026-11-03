@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1003-eps87",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to the existing rg command. In current Harbor child, ubuntu search using all three paths found theorem card_powerset in mathlib (exit 0); delivery.json records matches."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Actual Target imports only ProblemImports and local Submission; no extra upstream precompile needed. Added final USER ubuntu lake build Target validation. Current local Harbor image built successfully; ubuntu lake build succeeded (7992 jobs), and --deps resolved actual imports. Evidence ubuntu-import-build.log, image-history.txt."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Skill Unicode script executed: case=no_issue; both checker headers agree with original/golden and the frozen prefix and := boundary tests pass. No Unicode edit made; unicode.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated fixed Spec from original golden without Submission in locked Lean 4.27.0 x86_64 Docker environment; complete parser-elaborated type, generated matchers inlined, universes [], temporary theorem absent, transitive axioms standard only. Same audited package delivered in tests and installed checker; manifest bb4df15ece75dd6fb3d1f31ce4d67ed12c74a7935c36f78026161d7263f1aa1d. Both checkers pin /tests or FCB_TESTS_DIR/trusted_spec, fixed toolchain/dependencies precede candidate paths, complete type comparison replaces runtime GoldenCheck elaboration. Current local task Harbor build image sha256:cdc6ddc5adc63547e43b9f659664ab891bb1d522fda775529f4e09dfad503f21; real official/local entries exit 1 on original sorry (reward 0), expected. In same child both actual function suites (root /tests and ubuntu /opt) pass: Spec audit, ubuntu build, full comparison, sorryAx rejection/canary, frozen/source restrictions, legal helpers, frozen-text-preserving LE-instance attack compiles then type comparison rejects, poisoned same-name module/cache/env cannot shadow, missing/corrupt artifact/manifest reject without regeneration. Checkers/Spec/golden hashes verified; all 15 immutable baseline files unchanged. Logs and commands: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1003-eps87. Cleaned own containers bab0a6e76a2d and a919047d3560, own task image cdc6ddc5adc6 and empty network ebce8a7cfd24; verified absent (cleanup.json). Shared baseline image and build cache untouched. This verifies checker behavior, not a proof of the target."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked consistent. EPS87 II Theorem 2 p.253 (author PDF https://math.dartmouth.edu/~carlp/PDF/58.pdf) states the identical eventual upper bound. Checked complete prefix, real x/coercions, bounded natural set ncard, Nat.totient and real exponent 1/3; no obvious mathematical error. Existing citation mixes II title with III journal/pages; mathematics, public Target, golden, GoldenCheck and frozen baseline retained. statement-review.json includes sources and locations."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Marked public_lean4_proof=unknown, status=blocked. Exact full ID misses skill CSV. Multiple searches and actual sources reviewed: upstream main, 25 recent forks, Mathlib, 12 public proof repository trees, relevant issues/PRs. Claimed solved PRs #2542/#3067 still contain sorry and only change category metadata, so are not complete Lean4 proofs. GitHub code search 401, problem site 403, Google/DDG challenges and irrelevant Bing results limit coverage. No complete proof verified; cannot assert nonexistence or sufficient unrestricted search. public-review.json records queries, sources, excluded candidates and access limits."
+    }
+  }
+}

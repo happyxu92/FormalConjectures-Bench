@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-12-erdos-sarkozy-density-0",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式添加 /opt/formal-conjectures/.lake/packages；容器中按三个路径执行 rg，命中 Mathlib 定义，退出0。见 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-12-erdos-sarkozy-density-0/instruction-search.log 和 delivery.json。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "实际 Target 只有 ProblemImports 和本地 Submission，无额外上游 import；原 Dockerfile 缺少最终 ubuntu 构建验收，已在复制/清理/权限设置及 USER ubuntu 后添加 RUN lake build +FormalConjecturesBench.Target。当前本地 Harbor Docker 构建成功；同一子容器追加执行 ubuntu lake build，退出0，7992 jobs。见 image-history.log、ubuntu-lake-build.log；镜像 sha256:d5db810fd6fb88ba54d89cf319ac59f71c2cdb3e41e865274b1b190524a039b1。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按 skill 运行 check_unicode_header.py，退出0、case=no_issue，原始/修改头及 := 边界负例均通过，无代理码点修复。日志 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-12-erdos-sarkozy-density-0/unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选加载后重新解析 GoldenCheck，现提前从可信 golden 移除 Submission 导入，经 Lean parser/elaborator 提取完整类型并编译 Spec。ExpectedType = ∀ (A : Set ℕ), IsGood A → A.HasDensity 0，完整2参数、universe_params=[]；独立导入审计 ExpectedType/IsGood 传递依赖仅允许标准公理，临时目标未导出。保留原前缀中其他占位声明，但 ExpectedType 不依赖它们的 sorryAx。生成命令/固定环境见 tests/trusted_spec/{generate.py,reproduce.sh,manifest.json,audit.log} 和证据目录 generation.log、package.log。Lean 4.27.0 / x86_64；FormalConjectures 233a10e857ef78e79fd9fe661d37db724089170a；Mathlib a3a10db0e9d66acbebf76c5e6a135066525ac900。golden Target SHA256=a8ff2fc493ad6a44b11383f929db9702a6c2764d283fe58797cf8c8527032afa；olean SHA256=1956a222b2f6a4e2ff0a4e623c5142f60127a5e89bf8bedab1abf135a70693be；manifest SHA256=09ad90ee5be0b4e2436aaa8e8e5eeb2e693b7ab099b2dee935ef64b9b16a54a0。两份 checker 内容/AST、可信包逐文件一致。正式从 /tests/trusted_spec、本地从 /opt/formal-conjectures-bench-checker/trusted_spec 加载固定产物，核对清单及产物/golden/版本/平台/依赖清单；无运行时生成或源码回退。固定工具链/依赖搜索路径优先于候选，临时 Target 导入同一 Spec 前缀后再导入 Submission，并在同一环境比较完整类型；冻结检查、源码限制、公理审计及 canary 保留，未增加通用外部模块白名单。实际验收 harbor trials start -c /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-12-erdos-sarkozy-density-0/harbor-config.json，退出0、exception_info=null，当前本地 task 镜像构建成功，trial=erdosproblems-12-erdos-sarkozy-density-0-pi-165953-c20eee。同一 Harbor 子容器两份 checker/包/golden 与本地哈希一致；/tests 由 Harbor verifier 上传。bash /tests/test.sh 与 ubuntu /app/check.sh 均因原始 sorry 退出1、reward=0。分别调用实际函数的两套补测各27项、退出0：可信加载/审计、ubuntu候选编译、完整类型通过、占位目标 sorryAx 拒绝、canary、冻结/越界负例、普通 def/lemma/instance 允许；冻结文字不变的 OfNat ℝ 0 实例偷换可编译但完整类型拒绝；同名候选模块/缓存/环境不能替换 Spec；缺失/损坏/清单哈希错误明确失败且不重新生成。覆盖证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-12-erdos-sarkozy-density-0/{delivery.json,validation-official-results.json,validation-local-results.json,static-audit.json}。未提供原题无sorry完整证明，真实证明成功结束路径未验收；这不是原题证明通过。Docker 清理已完成：移除本次容器 deaffbe37f4a757fec4adf983d93922c794ea496ff75718e4a84e92c3cad2e09, 327d70db5b578208167a9f231a69b3ceea76e1d4054717010b9191fbaf807c8f；移除镜像 sha256:d5db810fd6fb88ba54d89cf319ac59f71c2cdb3e41e865274b1b190524a039b1 (erdosproblems-12-erdos-sarkozy-density-0-pi-165953-c20eee__env-main:latest)；专属网络 erdosproblems-12-erdos-sarkozy-density-0-pi-165953-c20eee__env_default 已移除/确认不存在。逐项 inspect 与 docker ps 复核，保留所有基线/其他agent资源及共享镜像和缓存，无 prune。见 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-12-erdos-sarkozy-density-0/cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已核对 task.toml 上游锁定文件、完整 IsGood 定义及 HasDensity/partialDensity。原论文 https://www.renyi.hu/~p_erdos/1970-13.pdf 第97页定义P、第98页定理、第100–101页证明与本题一致；自然数0及 Iio/Icc 端点的有限差不影响密度。未发现明显错误，metadata.statement_status=consistent；数学陈述、定义、Target/golden/GoldenCheck/冻结基线未改。见 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-12-erdos-sarkozy-density-0/statement-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 task ID 精确匹配 skill CSV 未命中。已按定理名/题号/数学陈述/别名覆盖上游锁定及main、GitHub PR/分支/fork、Mathlib、AlphaProof Nexus、lean-genius、baobingzhang及plby仓库。PR3070/2545目标仍sorry；Nexus及相关公开证明仅覆盖其他变体；plby目录宣称的文件404，经完整锁定归档扫描43587个Lean文件无对应源，排除该线索。经充分检索未找到当前完整目标的已知公开完整Lean4证明；不声称绝对不存在。部分API403/429、搜索工具鉴权失败，已通过raw源码和归档完成候选核对，没有尚待跟进的具体证明线索；metadata.public_lean4_proof=false、status=searched。未将公开答案放入镜像。查询、候选排除理由和访问限制见 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-12-erdos-sarkozy-density-0/public-proof-review.json。"
+    }
+  }
+}

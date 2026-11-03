@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID absent from skill CSV. Read current/pinned upstream, history, and PRs 1728, 2460, 2989, 3387: target remains sorry; alleged solution PRs only change category. Mathlib and other Pythagorean/partition-regularity candidates do not cover arbitrary finite colourings in this target. GitHub global code search requires authentication; search engines and author-site access are restricted. No complete proof verified; see repair-report.json and attempt-002/public-proof-review.json."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/GreensOpenProblems/23.lean"

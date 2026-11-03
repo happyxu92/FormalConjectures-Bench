@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-12-schoen",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to the rg command. Executed it as ubuntu in the current Harbor child; found mathlib StrictMono. The existing /app and /opt/formal-conjectures paths remain. See delivery.json and instruction-search.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Actual Target imports only FormalConjectures.Util.ProblemImports and FormalConjecturesBench.Submission; no extra upstream modules required. Kept upstream precompile and added final RUN lake build +FormalConjecturesBench.Target after WORKDIR /app, HOME=/home/ubuntu and USER ubuntu. Current local Harbor force-build succeeded (harbor.exit=0, result exception_info=null); final image history records the successful ubuntu build. See docker-history.log, harbor-config.json and harbor/."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran skill check_unicode_header.py against this task; case=no_issue, exit 0. Original header, mutated-header and missing-assignment checks passed; no header/frozen-hash change. Evidence: unicode.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Replaced candidate-time GoldenCheck elaboration with fixed precompiled FCBTrustedSpec.ExpectedType generated from this task original golden without Submission/helper imports. Independent audit retains A,hA,hA' (3 binders), universe parameters [], standard axioms only; temporary target absent. Same-run packages and checker bytes/AST match; manifest sha256=91d16e0a25816c1650f778a0ae636be45fe0952ffe0c79a732ddba9ae811f82d pins golden inputs/artifacts, Lean 4.27.0 x86_64 and locked dependency revisions. Fixed executable and import ordering ignore candidate caches/env for Spec identity and dependencies; normal source rules/imports retained, with no general external-module whitelist. Current local task Harbor build image sha256:4d9da7f64cab3c2c25095f19c5a635b0eef33d4e8749479a0e189ff246b76669 used task.toml/Dockerfile/checker/package; host-to-/tests and installed /opt checker/Spec/golden hashes verified. Official /tests/test.sh and ubuntu /app/check.sh exit 1 for original sorry, reward 0, expected proof failure. In same child actual functions passed 27 cases per entry (54 total): loaded/audited fixed Spec, ubuntu candidate compilation, complete-type positive comparison, sorryAx rejection, canary, frozen/source negatives, unchanged-text HPow instance attack rejection by type mismatch, candidate same-name cache/env isolation, missing/tampered artifacts and manifest fail closed without regeneration. No claim of a proof of the original theorem. Generation/build/entry commands, versions, hashes and coverage: generation.log, package.log, trusted_spec/manifest.json, docker-history.log, delivery.json, validation-commands.json and validation-{official,local}.{json,log}; all in /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-12-schoen. Cleaned and verified absent: own Spec container f7a57d7a333c, Harbor child 763d489f720f, image sha256:4d9da7f64cab3c2c25095f19c5a635b0eef33d4e8749479a0e189ff246b76669 and task network 4f5cfce21e03. Existing base image sha256:0824de0f1647 and shared build cache retained; no prune; no other task resources touched. See cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "statement_status=mismatch. The retained target asserts an eventual O(N^(2/3)) bound; https://www.erdosproblems.com/12 and current upstream/PR #5813 state only infinitely many N. Beyond that quantifier discrepancy, statement-review.md gives a counterexample: narrow blocks of primes, each later block congruent to 1 modulo all older primes, satisfy original IsGood and pairwise coprimality; the PNT in fixed arithmetic progressions allows A(N_k)/N_k^(2/3)>k. Thus the retained eventual bound is false. Only metadata marked; mathematical input, public Target, golden, GoldenCheck, theorem header and frozen baseline remain unchanged. Counterexample is an informal mathematical argument, not a Lean proof."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Exact complete task ID missed skill public-lean4-proofs.csv (public-csv-match.json). Substantial current search covered full name, aliases, coprime/divisibility wording, author, current/pinned upstream, mo271 proof commits/fork, PRs #2545/#3070/#3704/#5813, AlphaProof Nexus raw outputs, lean-genius actual files and Mathlib. Accessible candidates contain sorry for Schoen, only documentation, or prove different part-i/ii/example statements. No verified complete proof for this retained target was found. Marked public_lean4_proof=unknown, status=blocked: GitHub authenticated code search/history/tree/PR APIs rate limited or unavailable, forum/bibliography 403, author page timed out; general web tool provider failed and direct search results were unreliable. Do not infer proof absence or public proof existence. Sources, queries, candidate exclusions and access limits are in public-proof-review.md, public-fetch.json and followup/final-public-urls results."
+    }
+  }
+}

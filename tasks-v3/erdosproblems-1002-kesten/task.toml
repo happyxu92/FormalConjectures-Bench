@@ -19,6 +19,11 @@ benchmark_bucket = "informal_proof"
 oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID absent from skill CSV. Fresh upstream, ronut01/erdos1002-lean, lean-genius PR/source and Mathlib review found no complete proof of this precise two-parameter target. GitHub code search requires authentication, repository search rate-limited, Google/DDG challenge pages and unreliable Bing results prevent a conclusive search. See repair-report.json and task evidence research.json."
+statement_status = "consistent"
+statement_status_note = "Kesten two-parameter variant: Borda arXiv:2303.07796v1, Introduction Eq. (1). Cauchy symmetry accounts for the sign; rho=1/sigma>0. Unit-square volume and CDF agree. No obvious mathematical error found; original statement retained."
 verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
 
 [verifier]

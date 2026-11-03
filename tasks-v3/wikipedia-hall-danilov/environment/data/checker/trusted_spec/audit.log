@@ -1,0 +1,7 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Hall.HallIneq: [propext, Quot.sound, Classical.choice]
+audited Hall.HallConjectureExp: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ δ > 0, ¬Hall.HallConjectureExp (2⁻¹ + δ)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

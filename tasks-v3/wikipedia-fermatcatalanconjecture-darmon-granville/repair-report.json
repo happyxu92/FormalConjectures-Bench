@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-fermatcatalanconjecture-darmon-granville",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to instruction rg command; actual ubuntu search for theorem card_powerset across all three paths succeeded in current Harbor container. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-fermatcatalanconjecture-darmon-granville/attempt-002/instruction-search.log"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream Target imports; existing ProblemImports precompilation retained. Added final Dockerfile RUN lake build +FormalConjecturesBench.Target after HOME/USER ubuntu. Current local task Harbor image sha256:509a9dffcb6a60f349b812649f4f534ec36e64a0b1d3967f2318ac82269dd5e5 built successfully; ubuntu repeat build exit 0. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-fermatcatalanconjecture-darmon-granville/attempt-002/harbor-image-history.txt and ubuntu-lake-build.log."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Skill Unicode script case=no_issue; original header passed, changed header and missing assignment rejected; both copies consistent. /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-fermatcatalanconjecture-darmon-granville/attempt-002/unicode.json"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Replaced candidate-environment GoldenCheck elaboration with fixed precompiled Spec identity validation and complete ExpectedType value comparison. Golden-derived extraction retains the type-only tuple matcher and discards temporary theorem/proof; seven binders m n k hm hn hk H and zero universe parameters audited. Only allowed standard axioms transitively referenced. Two checker AST/bytes and Spec packages identical; manifest pins inputs, generation code/artifacts, Lean 4.27.0/x86_64 and dependency revisions. Current local Harbor trial wikipedia-fermatcatalanconjecture-darmon-granville-a002-6f43d2: actual /tests and ubuntu /app/check.sh exit 1, reward 0, expected original sorry rejection. Both actual function suites pass 27 cases each, covering Spec loading/audit, ubuntu compile, full type match, sorryAx rejection/canary, frozen/source restrictions, legal helper def/lemma/instance, frozen-text-preserving Nat.Coprime shadow attack rejected by type mismatch, same-name source/cache/env shadow resistance, missing/tampered artifacts with no regeneration. Root branch compiler UID 1000 tested. No theorem proof claimed. All original immutable hashes preserved. Logs/commands/hashes: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-fermatcatalanconjecture-darmon-granville/attempt-002. Docker cleanup complete: own containers 6c3b174558b4 and 77f378a62509 stopped/removed; own image sha256:509a9dffcb6a60f349b812649f4f534ec36e64a0b1d3967f2318ac82269dd5e5 and own network 124b01dafc7b removed and verified absent. Pre-existing shared cache-smoke image retained; no prune or foreign-resource cleanup. Details: cleanup-result.json and cleanup.log in the evidence directory."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent. Author-hosted Darmon–Granville paper Theorem 2 (page 4) gives fixed hyperbolic-exponent proper-solution finiteness; positive naturals are a reasonable restriction. Set.Pairwise compares distinct values: nonproper repeated-coordinate exception can only be (2,2,2), still finite. All prefix definitions reviewed. Mathematical Target, golden, GoldenCheck and frozen baseline unchanged. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-fermatcatalanconjecture-darmon-granville/attempt-002/statement-analysis.json"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "public_lean4_proof=unknown, status=blocked. Full-ID CSV miss followed by eight varied web queries, upstream/Mathlib/GitHub/repository/issue searches and candidate source inspection. PRs 2610/3134 still sorry; polynomial-domain theorem and incomplete roadmaps excluded. Award PR 2795 links zjukop3/erdos031-fermat-catalan@v1.0, but release/archive/main/README all return 404. GitHub code/history/forks rate limited; search engines challenged or returned unrelated content. Cannot assert absence of public proof. No public answer installed. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-fermatcatalanconjecture-darmon-granville/attempt-002/public-proof-analysis.json"
+    }
+  }
+}

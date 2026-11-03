@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1063-exists-exception",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to the rg command. In current Harbor container, ubuntu search over all three paths found mathlib theorem card_powerset (exit 0); see delivery.json."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target imports only ProblemImports and local Submission; no extra upstream imports to precompile. Retained lake build FormalConjectures.Util.ProblemImports and added final RUN lake build +FormalConjecturesBench.Target after WORKDIR /app, HOME=/home/ubuntu and USER ubuntu. Current local-task Harbor force-build succeeded; final build layer is recorded in image-history.txt."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Executed the skill Unicode script before semantic changes and at final validation: no_issue, exit 0, no surrogate problem. Original/header-mutated/missing-assignment cases checked; see unicode.json and unicode-final.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Replaced late GoldenCheck type elaboration with repair-time Lean parser/elaborator extraction and a fixed precompiled FCBTrustedSpec.ExpectedType. Generated in isolated matching Lean 4.27.0 x86_64 Docker environment without candidate imports/config/cache; retained full prefix definitions, discarded temporary target, audited ExpectedType and n transitive axioms (no sorryAx). Full type includes implicit n,k, hk,h; universe_params=[]. Identical packages and AST/content-identical checkers pin manifest SHA256 205448af25dade8e248a79f1f3eac2f177c1898b82020cbc28aed37b89929fb4. Runtime checks hashes/golden/version/dependency revision, uses fixed /tests/trusted_spec (official) or /opt/formal-conjectures-bench-checker/trusted_spec (local), locked compiler and fixed dependency paths ahead of candidate modules, with no Spec source compilation fallback. Current local task Harbor image sha256:b431c841cbb7bce822f1fc5e05852a32a53ef71689b618a94665d3d26d47cc47 built successfully; /tests uploaded by Harbor, both checker/Spec/golden copies hash-matched. Official /tests/test.sh and ubuntu /app/check.sh exit 1 due to original sorry, reward 0 (expected proof failure). Actual functions tested under official root and local ubuntu: fixed Spec load/type audit, ubuntu candidate compilation, complete type comparison, rejection of sorryAx, canary, frozen/header/config/source-boundary bans, legal helper def/lemma/instance, Spec cache/module/environment shadowing, missing/tampered artifact and manifest (no runtime regeneration), and source-legal Dvd-instance semantic substitution with unchanged frozen text rejected by complete type comparison and by full main(). Both function runs ended ALL CHECKS PASSED. Earlier generation failed on trailing doc-comment attachment, fixed only the generated comment kind; Harbor stops retained containers after trial, interrupting an early probe, so restarted the same container and reran all affected checks successfully. No unvalidated required branch remains; no original theorem proof claimed. Commands/artifact hashes/version/revisions/inputs and entry evidence: generation.log, package.log, trusted_spec/manifest.json, harbor/, delivery.json, validation-official-final.log, validation-local.log, static.json under /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1063-exists-exception. Docker cleanup verified: removed this run containers 10b5de2ca93a (Harbor) and 60d9f81d8bd4 (Spec), task image sha256:b431c841cbb7bce822f1fc5e05852a32a53ef71689b618a94665d3d26d47cc47 / erdosproblems-1063-exists-exception-pi-a64e39__env-main:latest, and dedicated network erdosproblems-1063-exists-exception-pi-a64e39__env_default. Pre-existing shared dependency image and build cache retained; no other resources touched. See cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Exact pinned upstream exists_exception for naturals k>=2,n>=2k agrees with current target. Checked complete prefix and natural subtraction; n-i>0, and goal is independent of prefix n/better_upper. If all n-i divide D=choose(n,k), the partial-fraction identity makes an integer alternating sum equal (-1)^(k-1)/k, impossible for k>=2. Retrieved public author source corroborates this argument and exact target. No mathematical input changed. Pinned upstream and author source HTTP 200; erdosproblems.com variants HTTP 403, original paper not accessed; web search provider attempts had authentication/model errors. See mathematics-and-public-proof.json and saved source logs."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true by exact full task-ID match in skill references/public-lean4-proofs.csv. Sources: https://github.com/lfsong-google/formal-conjectures/blob/ff33e501bb78a90ae4703e22e052f8bb38e10146/FormalConjectures/ErdosProblems/1063.lean#L5533 and https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos1063_erdos_1063_variants_exists_exception.lean#L122 . Per skill this match suffices without web search. Additionally read second raw source (HTTP 200), checked exact theorem and its alt_choose_inv dependency have no sorry/admit. Not compiled in this pinned task environment; not bundled in image. See public-proof-match.json and public-proof.lean in evidence directory."
+    }
+  }
+}

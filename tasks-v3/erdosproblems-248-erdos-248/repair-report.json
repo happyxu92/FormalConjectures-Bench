@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-248-erdos-248",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to the search command. Shell syntax checked; same three-path rg command under ubuntu found Mathlib IsCoprime. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-248-erdos-248/instruction-search.log (exit 0)."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target imports only ProblemImports and local Submission; no additional upstream precompile required. Retained upstream ProblemImports precompile and added final USER ubuntu RUN lake build +FormalConjecturesBench.Target. Current local Harbor image built successfully; in-container ubuntu build also exit 0. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-248-erdos-248/final-image-history.txt and ubuntu-target-build.log."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Required skill Unicode script executed on this task; case=no_issue, both original headers and frozen baselines matched, mutation and missing-assignment negatives rejected. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-248-erdos-248/unicode.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Originally GoldenCheck re-elaborated the expected proposition after importing candidate Submission. Generated a closed Prop-valued ExpectedType from locked golden with Submission removed, using Lean elaboration and restoring the environment to discard the temporary target; no universes/outer forall binders. Independent audit found only propext/Classical.choice/Quot.sound. Synced pinned source/artifacts/manifests in both trusted_spec packages; checker uses fixed toolchain/dependency paths and complete type comparison, preserves original frozen/source/axiom/canary checks. Current task Harbor force-build image sha256:660655ad8a78c7c078b1688cf40208c3c250e557b17f8ca89d06357f03b3ed1f; official/local entries exit 1 on original sorry, reward 0 (expected, not a solved proof). Both /tests and /opt actual-function supplements passed 29 cases each, covering fixed Spec audit, uid 1000 compilation, complete type comparison, sorryAx rejection, canary, frozen/source negatives, high-priority LE Real semantic attack compilation and actual type mismatch/full-checker rejection, same-name module/cache/env shadowing, missing/tampered artifacts without regeneration. Additional dependency-shadow probe exit 0. Both checker AST/content and package hashes match; all immutable-before files unchanged. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-248-erdos-248/validation-results.json, static-and-container-verification.json, generation.log, dependency-shadow.log. Docker cleanup completed: removed containers erdosproblems-248-erdos-248-pi248-62161ca1-spec, erdosproblems-248-erdos-248-pi248-62161ca1__env-main-1; removed task image sha256:660655ad8a78c7c078b1688cf40208c3c250e557b17f8ca89d06357f03b3ed1f and tag erdosproblems-248-erdos-248-pi248-62161ca1__env-main:latest; removed network erdosproblems-248-erdos-248-pi248-62161ca1__env_default. Inspects verify all absent. Borrowed historical image and shared build cache untouched; no outstanding created resources. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-248-erdos-248/docker-cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Locked upstream theorem and omega definition checked; Tao-Teravainen arXiv:2512.01739v1 Theorem 1.1 establishes the uniform C>0, infinitely many n, every positive k bound (even for Omega), implying this target. No statement/definition changes. erdosproblems.com returned HTTP 403; cited paper and locked upstream read successfully. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-248-erdos-248/mathematics-and-public-proof.json and paper-theorem1.1-excerpt.txt."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true: exact full task ID matched skill references/public-lean4-proofs.csv. Sources: https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos248.lean#L47 | https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos248.lean#L47. Per skill no online reconfirmation required for a CSV match; public proof not compiled or inserted. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-248-erdos-248/public-csv-match.json."
+    }
+  }
+}

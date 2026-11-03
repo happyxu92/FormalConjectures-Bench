@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos168.NonTernary: [propext, Quot.sound]
+audited Erdos168.IntervalNonTernarySets: [propext, Quot.sound, Classical.choice]
+audited Erdos168.F: [propext, Quot.sound, Classical.choice]
+audited Erdos168.mem_IntervalNonTernarySets_iff: [propext, Quot.sound, Classical.choice]
+audited Erdos168.F_eq_card: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ x, Filter.Tendsto (fun N => ↑(Erdos168.F N) / ↑N) Filter.atTop (nhds x)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-124-zero",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to the rg command. In current Harbor child, exact documented three-path command found mathlib theorem card_powerset as ubuntu (exit 0). Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-124-zero/repair-20261102-zero-a91c/delivery.json"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Actual Target imports only ProblemImports and local Submission; no extra upstream precompile required. Kept upstream lake build ProblemImports, added final USER ubuntu RUN lake build +FormalConjecturesBench.Target after copying/cleanup/permissions. Current local task Harbor Docker builds succeeded; image-history.txt records final build layer and ubuntu-lake-build.log confirms exit 0 / 7992 jobs."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Required Unicode script ran before semantic changes and again after them: both case=no_issue, verification=passed, copies_match=true; unchanged original headers accepted; header mutation and missing := rejected. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-124-zero/repair-20261102-zero-a91c/unicode-final.json"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Original checker elaborated GoldenCheck only after candidate imports. Generated complete ExpectedType from this task golden without Submission in isolated matching Lean4.27.0 Docker input; independent audit preserves True iff full RHS (D + two hypotheses), universes=[], prefix sumsOfDistinctPowers; transitive axioms only propext/Classical.choice/Quot.sound and no temporary target/sorryAx. Synchronized/pinned both source+olean+ilean+audit manifests; checker loads fixed Spec first using locked toolchain/dependency paths, compares complete theorem type, preserves original source/frozen/axiom/canary policies and ordinary imports. Current local Harbor builds: erdosproblems-124-zero__vzykzwu__env-main sha256:3426d004d628067d840a2c2e368fc1d4c0e5bb0b108af3696d543c3a58f16e0b and erdosproblems-124-zero__7jwyquu__env-main sha256:8d9fcd003a1efb424be177f4ed6373de8b51ad846bb109d5d7858c22eff59d97. Official /tests and local /opt entries both exit 1 solely on original sorry; reward=0 (expected, not a solved proof). Same Harbor child function supplements each pass 27 cases at /tests and /opt as root/ubuntu runners, actual candidate compilation as ubuntu, Spec import/dependency audit, full type match, sorryAx rejection/canary, frozen/header/outside-tree bans, source-legal LE-Rat instance type mismatch with frozen text unchanged, module/cache/env shadow resistance, missing/tampered artifacts fail without regeneration. Both checkers AST/bytes and packages match; all 15 immutable hashes unchanged. Evidence commands/hashes/versions/exits: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-124-zero/repair-20261102-zero-a91c. Docker cleanup complete: removed Spec container bc4edbce8d3d and kept Harbor child 80e5e00c33f7; first Harbor child erdosproblems-124-zero__vzykzwu__env-main-1 was automatically reclaimed (verified absent). Removed both created task images sha256:3426d004d628067d840a2c2e368fc1d4c0e5bb0b108af3696d543c3a58f16e0b and sha256:8d9fcd003a1efb424be177f4ed6373de8b51ad846bb109d5d7858c22eff59d97 and own network 89a51199a53a. docker ps/image inspect confirm absence; preexisting shared generation image sha256:0824de0f16475f1f619701869e59de4e4ce3229bfce229a5fd16f88072c37e8f retained; no shared resources or caches pruned. See cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked task metadata statement_status=consistent. Reviewed full definition, natural/exponent domain k=0, finite distinct bases >=3, rational cast-before-subtraction, >=1 boundary, eventually atTop and pointwise set sums; matches pinned upstream zero variant. Read archived BEGL96 primary-source p133 image independently and freshly accessed publisher DOI 10.4064/aa-77-2-133-138 and pinned upstream. No obvious false statement found; k=0 is a reasonable variant distinct from positive-k/gcd version. Site/PDF fresh access 403 documented. Mathematical inputs unchanged. Details: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-124-zero/repair-20261102-zero-a91c/statement-review.txt"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Exact task ID absent from skill CSV. Metadata public_lean4_proof=unknown, status=blocked. Multiple mathematical/symbol/author searches, upstream current+PRs, author repository/branches/forks and Lean sources checked; author Converse.lean proves reverse direction and cannot establish this target; current upstream zero still sorry. Problem-site Cloudflare403, GitHub code-search login/API limits and search-provider/challenge/irrelevant-result failures leave Alexeev/Aristotle full-zero-proof lead unverified. No public proof compiled or copied to task/image. Do not infer proof absence. Full searches, exclusions and limits: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-124-zero/repair-20261102-zero-a91c/public-proof-review.txt"
+    }
+  }
+}

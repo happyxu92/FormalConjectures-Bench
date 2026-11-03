@@ -1,0 +1,11 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos17.IsClusterPrime: [propext]
+audited Erdos17.clusterPrimeCount: [Quot.sound, propext, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ C,
+  0 < C ∧
+    ∀ c ∈ Set.Ioo 0 (1 / 8),
+      Asymptotics.IsBigOWith C Filter.atTop (fun x => ↑(Erdos17.clusterPrimeCount x)) fun x =>
+        ↑x * Real.exp (-c * Real.log (Real.log ↑x) ^ 2)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1064-erdos-1064",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to three-path rg command. Exact command found the pinned package definition Tendsto with exit 0 and no path/permission errors in current final Harbor container; /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1064-erdos-1064/delivery-final.json."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No imports beyond ProblemImports and local Submission. Existing upstream lake build precompiles ProblemImports before cleanup. Added final RUN lake build +FormalConjecturesBench.Target after permissions, HOME and USER ubuntu; current local Harbor image built successfully. Repeated actual ubuntu lake build and direct imports both exit 0; logs image-history-final.txt, ubuntu-final-build.log, actual-imports-ubuntu.log in /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1064-erdos-1064. An unnecessary root lake rebuild in the first disposable verification container attempted to re-clone stripped dependencies; stopped it and reran full final acceptance in a fresh Harbor container. No dependency permissions relaxed."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Skill script returned no_issue, original header accepted and header/assignment mutations rejected; both copies equal. /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1064-erdos-1064/unicode.json and unicode-final.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Replaced candidate-context GoldenCheck re-elaboration with fixed precompiled ExpectedType value. Golden Target SHA256 f6530a30de8c4fdd3b40d1788a434713a2f7b60b17c458d32934143231126839; manifest 4e54186002f1e2e848cddc7a2db15b912c83fadc010e18e9b8c1e3a2b113a20b; olean 9be6c4452fa13380b90266763f0b7ece76b20309cd2b79932f8e1e6ee655dd98. Golden-only no-network Docker generation used pinned Lean 4.27.0 x86_64 and recorded dependency revisions; independent import audit confirms all binders/universes (none), absence of temporary theorem/children and only standard allowed transitive axioms. Identical source/artifact/manifest packages in tests and installed checker. Runtime validates fixed hashes/versions/golden/dependency manifest, never generates or recompiles Spec, and uses trusted Spec/dependency paths before candidates; normal imports remain legal. Current local task Harbor final image sha256:06a1ce0d7d222f1e129a7b9ffa96acce6aa6915351b7d428dcade18a23f7e2e0, command harbor trials start -c /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1064-erdos-1064/harbor-config-final.json. Uploaded /tests and installed /opt checker/Spec/golden/Target hashes match host (delivery-final.json). Official test.sh and ubuntu check.sh exit 1/reward 0 solely for original sorry; this is not a proof of the target. Both actual-function supplementation suites pass: fixed Spec/dependency audit despite same-name/cache/environment poison; ubuntu compile; full type match; sorryAx audit rejection; canary; frozen/header/assignment/config/tree/source negatives; ordinary def/lemma/instance and external imports; source-legal LT Nat=True attack with unchanged frozen text and complete univ-density proof compiles but full type comparison and actual main reject it; missing/tampered packages fail without regeneration. AST/content/package/immutable checks pass. Coverage, commands, hashes, exits and logs: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1064-erdos-1064/coverage-final.json, final-audit.json, generation-input, package.py, spec-generation.log and validation-final-*.log. Docker cleanup completed: owned three containers (golden Spec generator and two Harbor trials), both task image tags/images and both dedicated networks removed and inspected absent. Shared pre-existing generation image and other agents resources/build caches retained; no prune. Resource IDs and command results: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1064-erdos-1064/cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent. Read full unchanged Target, pinned upstream target and actual totient/HasDensity definitions. This task proves the known density-one part of Erdos 1064. Luca–Pomerance 2002 author PDF https://math.dartmouth.edu/~carlp/PDF/paper127.pdf pp.112–113, equation (6) and Theorem 3(i), has exactly phi(n-phi(n))<phi(n) almost everywhere. Default HasDensity is natural density on Nat; phi(n)<=n makes truncated subtraction agree; including zero only introduces a finite exception. No obvious invalidity found; no mathematical edit. Direct erdosproblems.com/1064 fetch returned 403; Jina fallback succeeds but strips formulas, so paper is primary evidence. /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1064-erdos-1064/paper.txt, upstream-pinned.lean, Density.lean, Totient.lean, source-fetch.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact full task-ID match in skills/lean-task-repair/references/public-lean4-proofs.csv: https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos1064.lean#L913. Marked public_lean4_proof=true and URL in task.toml. Per skill no online revalidation required on match; proof not imported or compiled in this task. /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1064-erdos-1064/public-proof-csv.json."
+    }
+  }
+}

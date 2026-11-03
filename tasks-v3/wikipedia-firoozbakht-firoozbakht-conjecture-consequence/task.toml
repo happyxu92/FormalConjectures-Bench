@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact public-proof CSV miss. Pinned/main upstream and PRs 2611/3135 retain sorry; noogram repositories contain finite checks/equivalences, not this complete consequence. GitHub code search is rate/auth limited and general search access is restricted; see repair-report.json and attempt-002 research evidence."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/Wikipedia/Firoozbakht.lean"

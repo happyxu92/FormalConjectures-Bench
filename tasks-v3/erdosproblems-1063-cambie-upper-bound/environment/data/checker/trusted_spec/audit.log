@@ -1,0 +1,6 @@
+audited FCBTrustedSpec.ExpectedType: [Classical.choice, propext, Quot.sound]
+audited Erdos1063.n: [Classical.choice, propext, Quot.sound]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {k : ℕ}, 3 ≤ k → Erdos1063.n k ≤ k * (Finset.Icc 1 (k - 1)).lcm id
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,8 @@
+audited FCBTrustedSpec.ExpectedType: [Quot.sound, propext, Classical.choice]
+audited Erdos141.Set.IsPrimeProgressionOfLength: [Quot.sound, propext, Classical.choice]
+audited Erdos141.Set.IsAPAndPrimeProgressionOfLength: [Quot.sound, propext, Classical.choice]
+complete binder count: 3
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ k ≥ 3, k ≤ 10 → ∃ s, Erdos141.Set.IsAPAndPrimeProgressionOfLength s k
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

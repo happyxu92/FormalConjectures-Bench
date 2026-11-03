@@ -1,0 +1,7 @@
+audited FCBTrustedSpec.ExpectedType: [propext]
+audited Erdos1142.Erdos1142Prop: [propext]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+{n | n ≤ 2 ^ 44 ∧ Erdos1142.Erdos1142Prop n} = {4, 7, 15, 21, 45, 75, 105}
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]

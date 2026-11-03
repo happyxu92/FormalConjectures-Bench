@@ -15,6 +15,12 @@ formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"
 lean_toolchain = "leanprover/lean4:v4.27.0"
 mathlib_commit = "a3a10db0e9d66acbebf76c5e6a135066525ac900"
 theorem_name = "Erdos1062.erdos_1062.variants.lower_bound"
+statement_status = "consistent"
+statement_status_note = "No obvious error in ForkFree, f, or the all-n ceiling lower bound. The set Icc (n / 3 + 1) n has n - n / 3 = ceil(2n/3) elements and is fork-free. The informal interval comment has an imprecise left endpoint; the mathematical definitions and target are unchanged. Sources: pinned FormalConjectures/ErdosProblems/1062.lean and repair evidence."
+public_lean4_proof = true
+public_lean4_proof_status = "found"
+public_lean4_proof_urls = ["https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/1062.lean#L55", "https://github.com/google-deepmind/formal-conjectures/blob/233a10e857ef78e79fd9fe661d37db724089170a/FormalConjectures/ErdosProblems/1062.lean#L55"]
+public_lean4_proof_note = "Exact full task ID matched skill public-lean4-proofs.csv. Freshly fetched upstream pinned and main sources contain the complete lower_bound proof. No answer is installed in the task image; isolated compilation/audit evidence is recorded in repair-report.json."
 benchmark_bucket = "informal_proof"
 oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."

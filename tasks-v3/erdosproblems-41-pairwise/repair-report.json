@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-41-pairwise",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已补全 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages 三个显式路径，并同步可信 Spec 测试说明。当前 Harbor 子容器以 ubuntu 实际 rg 命中 Mathlib/Data/Set/Card.lean 的 ncard 定义，退出 0。证据见 attempt-002/evidence/instruction-package-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "实际 Target 仅 import ProblemImports 和本地 Submission，无额外上游 import；保留原 ProblemImports 预编译链。原 Dockerfile 缺最终普通用户验证，已在复制、清理及权限设置后以 WORKDIR /app、HOME=/home/ubuntu、USER ubuntu 结尾执行 RUN lake build +FormalConjecturesBench.Target。当前本地 task Harbor 构建成功；同容器 ubuntu lake build 再验退出 0，原始 sorry 警告如实保留。见 harbor-image-history.txt、ubuntu-lake-build.log。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按 skill 运行 Unicode 脚本，初检及最终复验均 case=no_issue、退出 0；原头通过，修改头及缺失 := 被拒绝；两份 checker 一致。未修改公开 Target、golden 或冻结基线。见 unicode.json、unicode-final.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境解析 GoldenCheck，存在语义遮蔽风险。已从原始 golden 移除 Submission import，在锁定 Lean 4.27.0/linux x86_64、可信依赖环境中提前提取并编译完整 ExpectedType；保留 A/hA₂/hA 三参数和空 universe 顺序，独立审计 ExpectedType 与 NtupleCondition 传递依赖仅含标准公理，临时目标未导出。两份 checker 及可信包内容/AST/清单哈希一致。正式加载 /tests/trusted_spec，本地加载 /opt/formal-conjectures-bench-checker/trusted_spec，固定工具链与优先可信模块路径，不运行时重建 Spec。当前本地 task Harbor 镜像 sha256:1fe24c3ca2b040d5e443583419c33d0f6a7349330331cd0f855b925da6b516a7；两份容器交付文件均逐项对比哈希。正式与 ubuntu 本地入口退出 1/reward 0，原因均为原始 sorry；后续实际函数已在同一子容器以 ubuntu 和 root 入口补测：Spec 加载/类型审计、ubuntu 候选编译、完整类型比较、sorryAx 审计与 canary；冻结/越界/同名模块与缓存遮蔽/产物缺失或损坏负例均实际验证。冻结文字不变的合法除法实例偷换可编译，但完整类型比较及 main 均实际拒绝。保留正常 helper 声明及 import 规则，无普通外部模块白名单。修复验收不等于原题证明通过。证据根目录 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-41-pairwise/attempt-002/evidence，含生成命令、输入及产物哈希、版本、退出码和首次失败及修正日志。已按基线与身份核实后停止并删除本次 Spec 容器 e8da1aa4e410、Harbor 子容器 f2077f158057，删除本次任务镜像 1fe24c3ca2b0/tag fcb-repair/erdosproblems-41-pairwise:pi41-a2-6c92 及独立网络 erdosproblems-41-pairwise-pi41-a2-6c92__env_default；逐项 inspect 已确认不存在，cleanup.exit=0。预先存在的共享基础镜像、其他容器/网络和构建缓存保留，未 prune。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已读取 task.toml 指定的原始源码、完整前缀定义及题目来源 https://www.erdosproblems.com/41。实际任务是无限弱/受限 Sidon 集的 pairwise sqrt 归一化 liminf=0 变体；锁定版本使用 Finset，上游现版 Multiset 允许重复求和，差异已记录，不据此判错。核对自然数量词、区间有限性、实数强制转换、sqrt 分母及 atTop liminf，未发现导致目标明显不成立的问题；非零差的表示次数至多二也支持弱版本的标准计数思路。metadata 标 consistent，数学陈述和定义完全未改。详见 evidence/source-review.md。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "unknown/blocked。完整 ID 精确匹配 public-lean4-proofs.csv 无命中。已多组检索完整定理名、Erdős 41、弱 Sidon、Sidon liminf、158/1191，读取上游源码和 #615/#219、相关 PR/仓库及三份完整候选 Lean 文件。158/1191 的公开证明使用更强的重复求和 IsSidon，未提供本题 Finset 假设的完整桥接；CreizyLabs 候选仅有带前提的有限数值界；其余线索为不同有限问题或三元和部分进展。GitHub 代码搜索及部分历史 API 限流，模型搜索服务失败，部分链接 404；不能断言不存在公开完整证明。metadata 标 unknown/blocked，未将公开答案加入镜像，也未声称候选已在本题环境编译。查询、来源、排除理由及访问限制见 evidence/research/results*.json 和 evidence/source-review.md。"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-257-tsum-top",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages search path. The exact three-path rg command, run as ubuntu in this task Harbor child, found Mathlib def Irrational with exit 0 and no stderr; evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-257-tsum-top/attempt-002/instruction-search-test.json"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target has only ProblemImports and local Submission; no extra upstream imports. Added final USER ubuntu RUN lake build +FormalConjecturesBench.Target. Current local task Harbor build succeeded (exit 0), image sha256:0064d1d8c4df4d5e53d8c1e1f1ac2aac97c7add26038612d8608b73233eea3b8. Dockerfile/user verified in image-history.txt; build/run records: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-257-tsum-top/attempt-002/harbor"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran skill Unicode script before semantic changes and again at final verification: case=no_issue, original header accepted, changed header/missing assignment rejected; no Unicode repair needed. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-257-tsum-top/attempt-002/unicode-final.json"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Replaced candidate-time GoldenCheck parsing with precompiled FCBTrustedSpec.ExpectedType generated from unchanged golden without Submission. Parser/elaborator captures full type and zero universes, removes temporary target, independent audit allows only standard axioms; prior placeholder lemmas are not dependencies of ExpectedType. Synced/pinned manifest and both packages, fixed Lean/toolchain/dependency loading, temporary prefix from Spec, ubuntu compilation, normal import rules retained. Current local Harbor build, uploaded /tests and /opt delivery hashes, official test.sh and ubuntu check.sh verified. Both production entries exit 1/reward 0 only for original sorry. Actual functions covered all later paths on both packages: Spec audit, candidate build, full type check, sorryAx rejection and canary; legal frozen-text Irrational name-shadow candidate compiles then is rejected by full-type comparison. Same-name candidate caches/env cannot replace Spec; missing/tampered artifacts and manifest fail without regeneration. Both supplementary runs exit 0, 28 cases each; no task proof claimed. Sources/commands, hashes/version/platform, generation/build/runtime logs and coverage: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-257-tsum-top/attempt-002. Docker cleanup verified: removed this agent containers eefa1ba1bbc4 / 7decce734467, task image 0064d1d8c4df and its sole tag, and own Compose network f0f7bee7dbfc. Shared baseline Spec-generation image preserved; no other resources or shared caches touched. Details: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-257-tsum-top/attempt-002/cleanup.json"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Pinned upstream and MathWorld Erdős-Borwein constant Eq.(4) match divisor-series irrationality; n=0 contributes zero and d(n)≤n gives convergence. General infinite-subset question is a separate open statement. No mathematical edits. erdosproblems.com returned 403, original-paper URL timed out; limitations and full prefix review: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-257-tsum-top/attempt-002/mathematical-review.json"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact full-ID match in skill references/public-lean4-proofs.csv; public_lean4_proof=true and URL marked in task.toml. Source: https://github.com/wcook04/plectis-erdos-lean/blob/c4eab2571b4692ee9c08d3ec138176f7fbfa09a9/verification/FCMergedIntegerAdapters/research/adapters/FormalConjecturesAdapter.lean#L121-L134 . Per skill no further network confirmation required; proof not compiled in this task and no public answer copied. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-257-tsum-top/attempt-002/public-proof-evidence.json"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-141-first-cases",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 /opt/formal-conjectures/.lake/packages，并保留 /app、/opt/formal-conjectures。在匹配工具链 Docker 环境实际执行，命中 mathlib 中 theorem add_comm；退出码 0。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-141-first-cases/instruction-search.log"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "实际 Target 只有 ProblemImports 与本地 Submission，无额外上游 import，原 ProblemImports 预编译保留。原 Dockerfile 缺少末尾普通用户构建，已补入 USER ubuntu 后的 RUN lake build +FormalConjecturesBench.Target。最终当前本地 Harbor task 构建成功；在同一最终子容器再次以 ubuntu 实际 lake build，退出码 0。详见 Harbor delivery trial 与 ubuntu-target-build.log。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按要求执行 skill Unicode 脚本，初检与最终复检均为 no_issue；原始头、冻结前缀及 := 边界均通过，改头和移除赋值被拒绝。unicode.json、unicode-final.json 位于本题证据目录。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已由原始 golden（移除 Submission import）提前 elaboration 并预编译可信完整 Spec。ExpectedType 保留 k/下界/上界三个 binders、无 universe 参数；独立审计其与两个前缀谓词的传递依赖仅有 propext/Classical.choice/Quot.sound，临时目标及子声明未导出。原前缀中无关开放题的 sorry 不在目标类型依赖图中。两份 checker 内容与 AST 相同，两份 Spec 包及 manifest/产物哈希一致；固定工具链与可信路径优先加载，保留正常 imports、源码限制、冻结检查、公理审计及 sorry canary。最终当前本地 Harbor trial: erdosproblems-141-first-cases-pi141-7ad91-delivery；container 680c8c99e89693086748f281be2738ece42f0dd0630645405171567f29b7aace；image sha256:79290523bf7f89fed0cb56024d839d1853b0dea87dd33af3b3356319b2b22849。正式入口使用 Harbor 上传 /tests，本地入口使用 /opt；34 项交付文件哈希与宿主一致。两个真实入口均按预期拒绝原始 sorry（退出 1，reward 0）；随后在同一子容器分别以 root/ubuntu 调用实际 checker 函数，覆盖 Spec 审计、ubuntu 编译、完整类型比较、目标 sorryAx 拒绝和 canary。冻结修改/越界/同名模块与缓存及环境遮蔽、缺失/篡改产物和 manifest 均按预期处理；冻结文字不变的 LE 实例偷换可编译但被完整类型比较拒绝。两组补测各 27 项全部通过，退出 0；不表示原题证明完成。首次地址池耗尽及后续子网重叠已通过本题独立空闲子网解决，失败日志保留。生成命令见 generation.sh、包 manifest；完整证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-141-first-cases。Docker 已清理本次创建的 3 个保留容器、5 个任务镜像 tag 和 2 个网络；早先 Harbor 自动回收的容器/网络已确认不存在。docker image inspect 已确认各创建镜像 ID 均不存在。共享生成镜像与构建缓存未动。详见 docker-created-resources.json、docker-own-events.json、docker-cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata 标记 consistent。本题为 3≤k≤10 的已知有限变体，不是开放的任意 k/无限多个版本。核对了完整前缀、nth-prime 连续段定义、ENat.card 与 IsAPOfLength；十项连续素数等差数列截取前 k 项即可覆盖所需范围。锁定上游 141.lean、MathWorld、PrimePages 及 Zimmermann 作者公告支持此定位，未发现明显错误。数学陈述、Target、golden、GoldenCheck 和冻结基线均未修改。ErdosProblems/Wikipedia/AMS PDF 返回 403，具体状态和可访问证据见 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-141-first-cases/math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确命中 skill references/public-lean4-proofs.csv；按规则标记 public_lean4_proof=true，无需再次联网确认。来源：https://github.com/conjectures-io/conjectures-contribution/blob/main/contributions/erdos-141-variants-eleven/2448e529d4a2e6f8d716de45021d560bc38aabba4e526640deaf5ec4bfc67ed0/script.lean#L5149 。未将公开答案放入镜像，亦未声称已在本环境编译；匹配证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-141-first-cases/public-csv-match.json"
+    }
+  }
+}
