@@ -1,0 +1,210 @@
+Gauss Circle Problem · Issue #2215 · google-deepmind/formal-conjectures · GitHub
+Skip to content
+Navigation Menu
+Sign in
+Products
+Platform
+GitHub
+Repository hosting, code review, and collaboration
+Copilot
+AI coding agent for tasks, projects and automated work
+Build & Ship
+Actions
+CI/CD and automation
+Code Quality
+Quality analysis, fixes, and enforcement
+Codespaces
+Cloud development environments
+Secure
+Code Security
+Vulnerability detection and remediation
+Secret Protection
+Secret scanning and leak prevention
+All Features
+Developers
+Learn
+Documentation
+Training
+Certifications
+Build
+Build with Copilot
+Customize Copilot
+Integrations
+Explore
+Trending repos
+GitHub Sponsors
+Developer articles
+Changelog
+Changelog
+Your source for the latest features, improvements, and fixes across GitHub products, all in one place.
+Businesses
+By Stage
+Enterprises
+Team
+Startups
+Nonprofits
+By Industry
+Healthcare
+Financial services
+Manufacturing
+Government
+See all industries
+Evaluate GitHub
+Why GitHub
+Customer Stories
+Business insights
+Trust Center
+Add-ons
+GitHub Advanced Security
+Enterprise-grade code security
+Copilot for business
+Enterprise-grade AI features
+Premium Support
+Enterprise-grade 24/7 support
+Resources
+Learn & Connect
+Documentation
+Resource center
+Blog
+Events & webinars
+Community Forum
+Customer Stories
+Integrations
+Support
+Customer support
+Training
+GitHub Status
+Company
+About
+Partners
+Changelog
+GitHub Universe
+GitHub Universe
+The event for developers, by developers — talks, workshops, and what’s next for GitHub.
+Pricing
+Search
+/
+Sign in
+Sign up
+Appearance settings
+You signed in with another tab or window.
+Reload
+to refresh your session.
+You signed out in another tab or window.
+Reload
+to refresh your session.
+You switched accounts on another tab or window.
+Reload
+to refresh your session.
+Dismiss alert
+{{ message }}
+google-deepmind
+formal-conjectures
+Repository navigation
+Code
+Issues
+786
+(
+786
+)
+Pull requests
+728
+(
+728
+)
+Discussions
+Actions
+Projects
+Security and quality
+Insights
+More
+items
+Gauss Circle Problem
+#2215
+New issue
+Copy link
+New issue
+Copy link
+Closed
+Closed
+Gauss Circle Problem
+#2215
+Copy link
+Labels
+new conjecture
+Issues about open conjectures/unsolved problems problem. Category `research open`
+Issues about open conjectures/unsolved problems problem. Category `research open`
+Milestone
+Wikipedia, Number Theory, General
+Description
+franzhusch
+opened
+on Feb 8, 2026
+Issue body actions
+https://en.wikipedia.org/wiki/Gauss_circle_problem
+Activity
+franzhusch
+added this to the
+Wikipedia, Number Theory, General
+milestone
+on Feb 8, 2026
+franzhusch
+added
+new conjecture
+Issues about open conjectures/unsolved problems problem. Category `research open`
+Issues about open conjectures/unsolved problems problem. Category `research open`
+on Feb 8, 2026
+franzhusch
+commented
+on
+Feb 8, 2026
+franzhusch
+on Feb 8, 2026
+Collaborator
+Author
+More actions
+Was already added
+https://github.com/google-deepmind/formal-conjectures/blob/96c5d25c0d4783b5325ba73e7f1614fd483a33d4/FormalConjectures/Wikipedia/GaussCircleProblem.lean
+franzhusch
+closed this
+as
+completed
+on Feb 8, 2026
+Sign up for free
+to join this conversation on GitHub.
+Already have an account?
+Sign in to comment
+Metadata
+Metadata
+Assignees
+No one assigned
+Labels
+new conjecture
+Issues about open conjectures/unsolved problems problem. Category `research open`
+Issues about open conjectures/unsolved problems problem. Category `research open`
+Type
+No type
+Projects
+No projects
+Milestone
+Wikipedia, Number Theory, General
+No due date
+Relationships
+None yet
+Development
+No branches or pull requests
+Issue actions
+Open in GitHub Copilot app
+Footer
+© 2026 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Community
+Docs
+Contact
+Manage cookies
+Do not share my personal information
+You can’t perform that action at this time.

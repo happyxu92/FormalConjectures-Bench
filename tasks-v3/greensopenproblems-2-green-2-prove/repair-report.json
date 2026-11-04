@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-2-green-2-prove",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式增加 .lake/packages；在最终 Harbor 容器以三路径 rg 搜索 package 内 Finset.card 成功，退出 0，无路径或权限错误。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "没有额外上游 import；补充 Dockerfile 最末 USER ubuntu 下 lake build +FormalConjecturesBench.Target。当前本地 task 的 Docker/Harbor 构建成功，仅原始 sorry 警告。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "技能脚本初检、终检均退出 0，case=no_issue；原头通过，修改头和缺少 := 被拒，两份 checker 同步。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从未改动 golden 提前 elaboration/预编译并审计 Spec，两份包一致；清单固定哈希 06ad60b8ab45ad57a0dd856a36db7025451013acd177e1ef844466585ae01efd，universes=[]。固定工具链及导入路径、校验来源/产物、临时 Target 复用可信前缀并比较完整类型；保留冻结/源码限制、公理审计和 canary，不改 GoldenCheck。当前本地 Harbor 镜像 sha256:23f327517fd531e6befbe816eceb9a9a2236e6831a2b959f98bc4473ec9ad08a；正式 /tests 与本地 /opt 入口均退出 1/reward 0，原因仅原始 sorry。相同 Harbor 容器补测以 ubuntu 编译，完整类型检查、可信审计、sorryAx 拒绝和 canary 均实际覆盖；无占位证明的 Real.log 语义遮蔽负例、公理审计通过但完整类型比较拒绝；冻结修改、越界源、同名缓存和缺失/损坏 Spec 负例通过。日志/命令/输入和产物哈希见 repair-evidence/README.md、trusted_spec/manifest.json 及补测日志。报告落盘后已 stop/rm 本题 7290bdf9a389、e1c36b9fca0f 两容器，并删除 owned-images.txt 三个镜像（4ab1f0a1947e、23f327517fd5、f6ca8140dc4d）；docker ps/inspect 核验均不存在。首轮 Harbor 容器已自动回收；无本题遗留资源，未清理共享镜像、缓存或他人容器，见 cleanup.log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已读锁定上游 GreensOpenProblems/2.lean、完整前缀及 restrictedSumset 定义，并核对 Green 原文 Problem 2（pp.3–4）。本题是 log^100 最终下界的正方向；powerset/finite sup、整数域、不同加数、实数对数及 eventual n 均合理。未发现明显错误，metadata 标 consistent；未修改数学陈述。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 task ID 精确查 CSV 未命中，随后多组联网检索定理名、定义名、Erdős–Moser sum-avoiding、作者、GitHub/Mathlib/上游来源。当前上游和 Conjectures.io 目标仍 sorry；贡献仓库 green-2 索引为 0。实际读取 PR #3386/#2468/#2848 patch，仅修改辅助上下界的 category 且保留 sorry，不覆盖本题；其他线索方向或问题不符。API files 403 后已改用 patch-diff 成功核查。经充分检索未找到本正向目标的已知公开完整 Lean4 证明，标 public_lean4_proof=false/status=searched，不代表绝对不存在。关键词、链接、排除依据见 repair-evidence/README.md。"
+    }
+  }
+}

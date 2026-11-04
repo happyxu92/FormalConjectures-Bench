@@ -1,0 +1,1 @@
+PASS: report JSON fixed schema; two checker ASTs; synchronized checker and Spec packages; pinned manifest, source, artifact and golden hashes; metadata TOML; unchanged Target; Dockerfile final ubuntu build retained. Docker cleanup verified in erdos41-refute-cleanup.log.

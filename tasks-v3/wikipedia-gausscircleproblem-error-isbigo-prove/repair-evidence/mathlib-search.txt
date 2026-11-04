@@ -1,0 +1,4 @@
+/opt/formal-conjectures/FormalConjectures/Wikipedia/GaussCircleProblem.lean:20:# Gauss circle problem
+/opt/formal-conjectures/FormalConjectures/Wikipedia/GaussCircleProblem.lean:40:namespace GaussCircleProblem
+/opt/formal-conjectures/FormalConjectures/Wikipedia/GaussCircleProblem.lean:89:theorem error_isBigO : ∃ (o : ℝ → ℝ) (_ : Tendsto o atTop (𝓝 0)),
+/opt/formal-conjectures/FormalConjectures/Wikipedia/GaussCircleProblem.lean:105:end GaussCircleProblem

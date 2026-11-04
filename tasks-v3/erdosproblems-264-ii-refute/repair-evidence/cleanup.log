@@ -1,0 +1,29 @@
+8edb7461c833
+cdf1a13fb487
+20c608e7c9a1
+8edb7461c833
+cdf1a13fb487
+20c608e7c9a1
+Untagged: fcb-264ii-refute:spec-20261104
+Deleted: sha256:cc71018c2f9f6f96779d9ee6e5ab9246217f565755122ccb01c86734419819a8
+Untagged: erdosproblems-264-ii-refute__bxtmhaw__env-main:latest
+Deleted: sha256:4165e8b59cc2c80962e820047f8a8c3790b6b52cac33d41744633fdcdaf3b7bd
+Untagged: erdosproblems-264-ii-refute__6mqn43g__env-main:latest
+Deleted: sha256:7546d1112ae49b7cdc34438f6fd7c006f97a614ba6e7901fbc6a51597b607218
+Untagged: erdosproblems-264-ii-refute__cb7xmhe__env-main:latest
+Deleted: sha256:d139d88c772d4ba72d1bb516a63fa777abb3292aa45f8c91b85af74a53206f84
+container inspect 8edb7461c833: exit=1; absent=True
+container inspect cdf1a13fb487: exit=1; absent=True
+container inspect 20c608e7c9a1: exit=1; absent=True
+image inspect sha256:cc71018c2f9f6f96779d9ee6e5ab9246217f565755122ccb01c86734419819a8: exit=1; absent=True
+image inspect sha256:4165e8b59cc2c80962e820047f8a8c3790b6b52cac33d41744633fdcdaf3b7bd: exit=1; absent=True
+image inspect sha256:7546d1112ae49b7cdc34438f6fd7c006f97a614ba6e7901fbc6a51597b607218: exit=1; absent=True
+image inspect sha256:d139d88c772d4ba72d1bb516a63fa777abb3292aa45f8c91b85af74a53206f84: exit=1; absent=True
+First Harbor project: no remaining containers (Harbor removed it automatically).
+erdosproblems-264-ii-refute__6mqn43g__env_default
+erdosproblems-264-ii-refute__cb7xmhe__env_default
+[]
+Error response from daemon: network erdosproblems-264-ii-refute__bxtmhaw__env_default not found
+Error response from daemon: network erdosproblems-264-ii-refute__6mqn43g__env_default not found
+Error response from daemon: network erdosproblems-264-ii-refute__cb7xmhe__env_default not found
+network_absence_inspect_exit=1

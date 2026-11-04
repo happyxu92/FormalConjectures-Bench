@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/greensopenproblems-26-open-refute",
+  "mode": "auto_repair",
+  "status": "repaired",
+  "case": "unicode_repaired",
+  "has_problem": true,
+  "has_unicode_issue": true,
+  "repair_attempted": true,
+  "repair_success": true,
+  "modified": true,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "62255e16002fe5de176152d7c0cc1773b4118d61541068834971a3992e82e183",
+      "header_before": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (p : \u2115) [Fact p.Prime],\n            (\u2203 C, \u2200 n, \u2200 A : Fin C \u2192 Set (\ud835\udd3d p n), (\u2200 i, IsCube (A i)) \u2192\n            \u2211 i, A i = univ)\n    )",
+      "has_unicode_issue": true,
+      "modified": true,
+      "verification": "passed",
+      "unicode_case": "surrogate_pair",
+      "normalized_header": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (p : \u2115) [Fact p.Prime],\n            (\u2203 C, \u2200 n, \u2200 A : Fin C \u2192 Set (\ud835\udd3d p n), (\u2200 i, IsCube (A i)) \u2192\n            \u2211 i, A i = univ)\n    )",
+      "normalized_header_checks": "passed",
+      "original_header_passes": false,
+      "sha256_after": "ce9b1b522545fd9b18668e914bc41927107dfb2cf012ca3bef540144cad8f034",
+      "header_after": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (p : \u2115) [Fact p.Prime],\n            (\u2203 C, \u2200 n, \u2200 A : Fin C \u2192 Set (\ud835\udd3d p n), (\u2200 i, IsCube (A i)) \u2192\n            \u2211 i, A i = univ)\n    )"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "62255e16002fe5de176152d7c0cc1773b4118d61541068834971a3992e82e183",
+      "header_before": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (p : \u2115) [Fact p.Prime],\n            (\u2203 C, \u2200 n, \u2200 A : Fin C \u2192 Set (\ud835\udd3d p n), (\u2200 i, IsCube (A i)) \u2192\n            \u2211 i, A i = univ)\n    )",
+      "has_unicode_issue": true,
+      "modified": true,
+      "verification": "passed",
+      "unicode_case": "surrogate_pair",
+      "normalized_header": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (p : \u2115) [Fact p.Prime],\n            (\u2203 C, \u2200 n, \u2200 A : Fin C \u2192 Set (\ud835\udd3d p n), (\u2200 i, IsCube (A i)) \u2192\n            \u2211 i, A i = univ)\n    )",
+      "normalized_header_checks": "passed",
+      "original_header_passes": false,
+      "sha256_after": "ce9b1b522545fd9b18668e914bc41927107dfb2cf012ca3bef540144cad8f034",
+      "header_after": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (p : \u2115) [Fact p.Prime],\n            (\u2203 C, \u2200 n, \u2200 A : Fin C \u2192 Set (\ud835\udd3d p n), (\u2200 i, IsCube (A i)) \u2192\n            \u2211 i, A i = univ)\n    )"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "6f4ab977c9ed15acbb48663aa67a81c187976d708aa322c95402bdf9ad72e558"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "6f4ab977c9ed15acbb48663aa67a81c187976d708aa322c95402bdf9ad72e558"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "6f4ab977c9ed15acbb48663aa67a81c187976d708aa322c95402bdf9ad72e558"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 2
+}

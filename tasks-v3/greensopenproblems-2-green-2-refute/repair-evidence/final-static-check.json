@@ -1,0 +1,22 @@
+{
+  "unchanged_mathematical_and_golden_files": [
+    "tests/GoldenCheck.lean",
+    "environment/data/FormalConjecturesBench/Target.lean",
+    "environment/data/checker/GoldenCheck.lean",
+    "environment/data/checker/golden_env/FormalConjecturesBench.lean",
+    "environment/data/checker/golden_env/lean-toolchain",
+    "environment/data/checker/golden_env/lakefile.toml",
+    "environment/data/checker/golden_env/lake-manifest.json",
+    "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+    "environment/data/checker/golden_env/FormalConjecturesBench/Submission.lean",
+    "tests/golden_env/FormalConjecturesBench.lean",
+    "tests/golden_env/lean-toolchain",
+    "tests/golden_env/lakefile.toml",
+    "tests/golden_env/lake-manifest.json",
+    "tests/golden_env/FormalConjecturesBench/Target.lean",
+    "tests/golden_env/FormalConjecturesBench/Submission.lean"
+  ],
+  "checkers_ast": "passed",
+  "task_toml": "parsed",
+  "formal_test_script_matches": true
+}

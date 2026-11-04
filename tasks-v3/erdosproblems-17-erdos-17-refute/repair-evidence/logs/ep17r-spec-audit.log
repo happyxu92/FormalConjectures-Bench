@@ -1,0 +1,7 @@
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext]
+audited Erdos17.IsClusterPrime: [propext]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬{p | Erdos17.IsClusterPrime p}.Infinite
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]

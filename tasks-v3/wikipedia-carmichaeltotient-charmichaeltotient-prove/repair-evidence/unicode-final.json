@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-carmichaeltotient-charmichaeltotient-prove",
+  "mode": "auto_repair",
+  "status": "passed",
+  "case": "no_issue",
+  "has_problem": false,
+  "has_unicode_issue": false,
+  "repair_attempted": false,
+  "repair_success": null,
+  "modified": false,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "7ea240d55cdccd3344c1ff97176ef1ddfd7c4911b2464f0712ff1fdb3b5ac05e",
+      "header_before": "theorem charmichaelTotient :\n    \u2200 \u2983n : \u2115\u2984, 0 < n \u2192 CarmichaelTotientFor n",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem charmichaelTotient :\n    \u2200 \u2983n : \u2115\u2984, 0 < n \u2192 CarmichaelTotientFor n",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "7ea240d55cdccd3344c1ff97176ef1ddfd7c4911b2464f0712ff1fdb3b5ac05e",
+      "header_after": "theorem charmichaelTotient :\n    \u2200 \u2983n : \u2115\u2984, 0 < n \u2192 CarmichaelTotientFor n"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "7ea240d55cdccd3344c1ff97176ef1ddfd7c4911b2464f0712ff1fdb3b5ac05e",
+      "header_before": "theorem charmichaelTotient :\n    \u2200 \u2983n : \u2115\u2984, 0 < n \u2192 CarmichaelTotientFor n",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem charmichaelTotient :\n    \u2200 \u2983n : \u2115\u2984, 0 < n \u2192 CarmichaelTotientFor n",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "7ea240d55cdccd3344c1ff97176ef1ddfd7c4911b2464f0712ff1fdb3b5ac05e",
+      "header_after": "theorem charmichaelTotient :\n    \u2200 \u2983n : \u2115\u2984, 0 < n \u2192 CarmichaelTotientFor n"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "34d076cea0fc7cd3fc1720c11164370f61b6bfbdf4a89b65dd722881474a7fd8"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "34d076cea0fc7cd3fc1720c11164370f61b6bfbdf4a89b65dd722881474a7fd8"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "34d076cea0fc7cd3fc1720c11164370f61b6bfbdf4a89b65dd722881474a7fd8"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 0
+}

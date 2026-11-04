@@ -1,0 +1,60 @@
+SPEC_DIR: /tests/trusted_spec
+Loaded fixed precompiled trusted Spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Equidistribution.IsEquidistributed: [propext, Quot.sound, Classical.choice]
+audited Equidistribution.IsEquidistributedModuloOne: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬Equidistribution.IsEquidistributedModuloOne fun n ↦ (3 / 2) ^ n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for Equidistribution.formal_conjectures_bench_refutation: ['sorryAx']
+'Equidistribution.formal_conjectures_bench_refutation' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+
+EXPECTED REJECTION: target sorryAx audit
+SORRY CANARY PASSED
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Equidistribution.IsEquidistributed: [propext, Quot.sound, Classical.choice]
+audited Equidistribution.IsEquidistributedModuloOne: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬Equidistribution.IsEquidistributedModuloOne fun n ↦ (3 / 2) ^ n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+CANDIDATE SAME-NAME SOURCE/CACHE/ENV CANNOT SHADOW SPEC
+Candidate compiled as ubuntu with fixed import paths
+Lean audit command failed
+/tmp/formal_conjectures_bench_w31r2nxc/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Equidistribution.formal_conjectures_bench_refutation
+has type
+  ¬Equidistribution.IsEquidistributedModuloOne fun n ↦ (3 / 2) ^ n
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+EXPECTED REJECTION: unchanged-header semantic instance substitution at full type comparison
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Equidistribution.IsEquidistributed: [propext, Quot.sound, Classical.choice]
+audited Equidistribution.IsEquidistributedModuloOne: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬Equidistribution.IsEquidistributedModuloOne fun n ↦ (3 / 2) ^ n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Code above the benchmark target marker changed
+EXPECTED REJECTION: frozen prefix
+EXPECTED REJECTION: changed header
+Target theorem no longer has a proof assignment
+Unexpected added Lean source outside editable subtree: Outside.lean
+EXPECTED REJECTION: out of subtree Lean source
+Trusted benchmark file was modified: lakefile.toml
+EXPECTED REJECTION: frozen project file
+EXPECTED REJECTION: missing Spec artifact (no runtime generation)
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+EXPECTED REJECTION: corrupt Spec artifact (no runtime generation)
+ALL SUPPLEMENTAL PATHS PASSED

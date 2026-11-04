@@ -1,0 +1,21 @@
+/opt/formal-conjectures/FormalConjectures/Wikipedia/Dickson.lean:87:- First Hardy–Littlewood conjecture
+/opt/formal-conjectures/FormalConjectures/Wikipedia/HardyLittlewood.lean:20:# First Hardy–Littlewood conjecture
+/opt/formal-conjectures/FormalConjectures/Wikipedia/HardyLittlewood.lean:22:*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/First_Hardy%E2%80%93Littlewood_conjecture)
+/opt/formal-conjectures/FormalConjectures/Wikipedia/HardyLittlewood.lean:29:/-  ## First Hardy-Littlewood Conjecture -/
+/opt/formal-conjectures/FormalConjectures/Wikipedia/HardyLittlewood.lean:60:def FirstHardyLittlewoodConjectureFor {k : ℕ} (m : Fin k.succ → ℕ) : Prop :=
+/opt/formal-conjectures/FormalConjectures/Wikipedia/HardyLittlewood.lean:82:theorem first_hardy_littlewood_conjecture {k : ℕ} (m : Fin k.succ → ℕ) :
+/opt/formal-conjectures/FormalConjectures/Wikipedia/HardyLittlewood.lean:83:    FirstHardyLittlewoodConjectureFor m := by
+/opt/formal-conjectures/FormalConjectures/Wikipedia/HardyLittlewood.lean:86:-- Wikipedia URL: https://en.wikipedia.org/wiki/Second_Hardy%E2%80%93Littlewood_conjecture
+/opt/formal-conjectures/FormalConjectures/Wikipedia/HardyLittlewood.lean:87:/-  ## Second Hardy-Littlewood Conjecture -/
+/opt/formal-conjectures/FormalConjectures/Wikipedia/HardyLittlewood.lean:88:def SecondHardyLittlewoodConjectureFor (x y : ℕ) : Prop :=
+/opt/formal-conjectures/FormalConjectures/Wikipedia/HardyLittlewood.lean:100:theorem second_hardy_littlewood_conjecture {x y : ℕ} (hx : 2 ≤ x) (hy : 2 ≤ y) :
+/opt/formal-conjectures/FormalConjectures/Wikipedia/HardyLittlewood.lean:101:    SecondHardyLittlewoodConjectureFor x y := by
+/opt/formal-conjectures/FormalConjectures/Wikipedia/HardyLittlewood.lean:104:/-- Richards [Ri74] showed that only one of the two Hardy-Littlewood conjectures can be true.
+/opt/formal-conjectures/FormalConjectures/Wikipedia/HardyLittlewood.lean:109:theorem not_first_and_secondHardyLittlewoodConjecture :
+/opt/formal-conjectures/FormalConjectures/Wikipedia/HardyLittlewood.lean:110:    (∀ {k : ℕ} (m : Fin k.succ → ℕ), FirstHardyLittlewoodConjectureFor m) →
+/opt/formal-conjectures/FormalConjectures/Wikipedia/HardyLittlewood.lean:111:      ¬(∀ {x y : ℕ} (hx : 2 ≤ x) (hy : 2 ≤ y), SecondHardyLittlewoodConjectureFor x y) := by
+/opt/formal-conjectures/FormalConjectures/Wikipedia/GaussCircleProblem.lean:20:# Gauss circle problem
+/opt/formal-conjectures/FormalConjectures/Wikipedia/GaussCircleProblem.lean:29:/-  # Gauss Circle Problem
+/opt/formal-conjectures/FormalConjectures/Wikipedia/GaussCircleProblem.lean:40:namespace GaussCircleProblem
+/opt/formal-conjectures/FormalConjectures/Wikipedia/GaussCircleProblem.lean:89:theorem error_isBigO : ∃ (o : ℝ → ℝ) (_ : Tendsto o atTop (𝓝 0)),
+/opt/formal-conjectures/FormalConjectures/Wikipedia/GaussCircleProblem.lean:105:end GaussCircleProblem

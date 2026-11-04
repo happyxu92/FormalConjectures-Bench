@@ -1,0 +1,1 @@
+sha256:9d2d435c8354be87d18a7298731ddb24e8ccf22e24ccb5b0893a2b6836e39021 ["wikipedia-perfectnumbers-odd-per__rhsrbnr__env-main:latest"]

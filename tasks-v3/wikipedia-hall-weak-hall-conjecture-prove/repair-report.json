@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-hall-weak-hall-conjecture-prove",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令补齐显式 .lake/packages；在最终 Harbor 容器以 ubuntu 执行三路径 rg，找到 Mathlib sqrt 定义，退出 0，无路径/权限错误。同步说明固定 Spec 与两个测试入口。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；原 Dockerfile 缺少最终普通用户依赖验证，现以 USER ubuntu / RUN lake build +FormalConjecturesBench.Target 结尾。本地 Spec 镜像与本题 Harbor 构建均成功；未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 check_unicode_header.py：no_issue；两份 checker 一致，原始头通过，改头及移除 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从原始 golden 去除 Submission 导入后提取完整类型，预编译并独立审计 ExpectedType 与引用前缀的传递公理（仅三项标准公理；universes=[]）；两份可信包和清单同步。固定 Spec/工具链/依赖路径与哈希验证，临时候选复用可信前缀，完整类型比较替代 GoldenCheck 执行路径，保留原源码/冻结/公理/canary 限制。清单哈希 faa551851c0df81996c5df1d3e1845507f896308cc37b55cc4605e2a3289b893。当前本地 task Harbor 构建镜像 216c9df3fe8e、容器 451b3444077d；默认子网池耗尽经独立子网重试解决。正式/本地入口 exit=1、reward=0 为原始 sorry 预期拒绝；同一 Harbor 容器两入口补测均 exit=0，覆盖 Spec 加载审计、ubuntu 编译、完整类型匹配、sorryAx 拒绝、canary、冻结/越界负例、冻结文本不变的 HSub 实例语义偷换拒绝、缓存/环境不能替换 Spec、缺失/损坏产物明确失败且不重生成。原 Target、golden、冻结哈希及 GoldenCheck 均未修改。命令、哈希、版本和逐分支日志见 repair-evidence/validation.md。报告落盘后已 stop/rm Spec 容器 fcb-hall-prove-spec-nt40 与 Harbor 容器 451b3444077d，删除本题四个镜像 6c08268fca51/d81f8b464666/eb301dd4f59c/216c9df3fe8e 和独立网络；docker ps/inspect 确认均不存在，无本题资源遗留，未清理共享镜像/缓存或其他用户资源。详见 repair-evidence/cleanup.log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已读锁定及当前上游 Hall.lean、完整前缀定义、来源论文 A repulsion motif in Diophantine equations §§3–4（eprints.whiterose.ac.uk/109022/1/siegelhallAMMformatfinalversion.pdf）与 arXiv:2609.35252；本题是所有 ε>0 的正向弱 Hall（指数 1/2−ε），不是 Danilov 的 1/2+δ 否定。核对量词、正 C、非零整数差、严格不等式、负 x/零点及非正指数边界，未发现明显错误。metadata 标 consistent；仅标记，不改数学输入。详见 repair-evidence/research.md。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 task ID 精确查技能 CSV 未命中；随后 11 组关键词查询覆盖定理名、等价名称、Mathlib、GitHub/upstream/PR/fork 和论文。已实际读当前上游与镜像（目标仍 sorry）、PR 7660/3022/2991 patch，追读 7660 链接的完整 Lean 源码，确认仅证明不同方向的 Danilov；排除 Hall 婚配定理、Erdős–Hall 394、条件 abc/366、原强 Hall 条目。GitHub API 限流由网页检索、raw 与 patch 路径补足，Wikipedia 403 由来源论文补足，具体有效线索均已核对。经充分检索未找到本正向目标公开完整 Lean4 证明，metadata public_lean4_proof=false/status=searched；非绝对不存在的断言，未放入公开答案。检索词、URL、排除原因见 repair-evidence/research.md。"
+    }
+  }
+}

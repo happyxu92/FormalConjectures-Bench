@@ -1,0 +1,8 @@
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Probability/ProbabilityMassFunction/Constructions.lean:def bernoulli (p : ℝ≥0) (h : p ≤ 1) : PMF Bool :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/NumberTheory/Bernoulli.lean:def bernoulli' (n : ℕ) : ℚ :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/NumberTheory/Bernoulli.lean:def bernoulli'PowerSeries :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/NumberTheory/Bernoulli.lean:def bernoulli (n : ℕ) : ℚ :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/NumberTheory/Bernoulli.lean:def bernoulliPowerSeries :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/NumberTheory/ZetaValues.lean:def bernoulliFun (k : ℕ) (x : ℝ) : ℝ :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/NumberTheory/ZetaValues.lean:def bernoulliFourierCoeff (k : ℕ) (n : ℤ) : ℂ :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/NumberTheory/BernoulliPolynomials.lean:def bernoulli (n : ℕ) : ℚ[X] :=

@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-gausscircleproblem-error-isbigo-refute",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to instruction.md. Actual final Harbor-container search as ubuntu found Mathlib's IsBigOWith definition, exit 0; see repair-evidence/gauss-refute-final-search-path.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports in Target. Added missing Dockerfile final USER ubuntu lake build +FormalConjecturesBench.Target validation after copy/cleanup/permissions. Current local Harbor image built, and final container ubuntu build returned 0; trusted dependency permissions were not relaxed."
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Skill script detected the non-BMP 𝓝 surrogate-pair bug and repaired EXPECTED_HEADER in both checkers. Original header, frozen prefix and := boundary pass; changed header and removed assignment reject. Final script recheck and AST parse passed; see repair-evidence/gauss-refute-unicode*.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Delivered two identical independently generated/precompiled/audited trusted_spec packages; manifest 8af4fe0d1573c46dccf5932a8068d9075a3905b151aaeea391b41ea01dd5a5e8. Fixed Spec/toolchain/dependency resolution and complete type comparison replace candidate-environment GoldenCheck parsing; normal helper and external precompiled imports remain allowed. Final local Harbor image sha256:9ad86192a99fdccfb58d59293c76fac626da03917f75ed491abe7ef7049d724a, container 98a967efec96. Host-/tests-/opt hashes match. Both real entries reject original sorry (exit 1, reward 0); formal/local independent supplements return 0 and cover trusted loading/audit, ubuntu compilation, full type comparison, rejecting sorryAx audit, canary, unchanged-header Tendsto-shadow rejection, frozen/out-of-scope negatives and missing/corrupt/shadow Spec negatives. No original proof supplied or claimed. Initial Docker pool exhaustion resolved with a task-only subnet. Commands, hashes, versions and coverage in repair-evidence/verification.json and logs. After report persistence, stopped/removed own containers b9b21d646ecb, 37a74df1a9bb and 98a967efec96; removed four task-only Harbor image tags/IDs (9b42f2182517, 35b06f5ee045, c14576554d9c, 9ad86192a99f) and task-only network. Inspect/ps verification confirms absence; early automatically removed transient containers have no remaining resources. Preexisting base images, user/other-task containers and shared build cache retained. See repair-evidence/gauss-refute-cleanup-verification.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Read pinned upstream GaussCircleProblem.lean and cited Lester-Wigman paper abstract/introduction (arxiv.org/abs/2305.03549, HTML v2). This task intentionally negates the full Hardy-bound existential; no concrete definition/quantifier/domain/sign error found. The conjecture being open or expected true does not establish this refutation impossible. Mathematical input, public Target, golden, frozen hashes and GoldenCheck unchanged. Wikipedia 403 was bypassed by reading the cited primary paper; see repair-evidence/research.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Exact full task ID absent from skill CSV. After 13 varied direction-specific online queries, upstream/current Lean source, Mathlib, GitHub issue/PR/fork leads, conjectures.io contributions and actual counterexample Challenge.lean review, no known public complete Lean4 proof of this negated existential was found. Counterexample bundle still has sorry; logarithmic lower bounds and O(sqrt r) refutations do not cover this subpower-slack target. Marked public_lean4_proof=false/status=searched, not absolute nonexistence. Sources, excluded candidates and access workarounds recorded in repair-evidence/research.json; no public answer included."
+    }
+  }
+}

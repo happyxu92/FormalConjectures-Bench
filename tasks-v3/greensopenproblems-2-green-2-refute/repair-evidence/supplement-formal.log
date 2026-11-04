@@ -1,0 +1,68 @@
+Checker: /tests/test_target.py Spec: /tests/trusted_spec uid: 1000
+PASS expected rejection: frozen prefix 
+Code above the benchmark target marker changed
+
+PASS expected rejection: header 
+Target theorem header changed
+
+PASS expected rejection: assignment 
+Target theorem no longer has a proof assignment
+
+PASS expected rejection: source sorry 
+Banned Lean feature found in proof region at line 2: \bsorry\b
+
+PASS expected rejection: out-of-tree source 
+Unexpected added Lean source outside editable subtree: Outside.lean
+
+Loaded fixed precompiled trusted Spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green2.maxRestrictedSumAvoidingSubsetSize: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0; eventual, finite-set and cardinality binders retained in value
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ᶠ (n : ℕ) in Filter.atTop,
+    ∀ (A : Finset ℤ), A.card = n → ↑(Green2.maxRestrictedSumAvoidingSubsetSize A) ≥ Real.log ↑n ^ 100
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+PASS expected rejection: target sorryAx 
+Unexpected axioms for Green2.formal_conjectures_bench_refutation: ['sorryAx']
+'Green2.formal_conjectures_bench_refutation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+
+PASS sorry canary
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green2.maxRestrictedSumAvoidingSubsetSize: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0; eventual, finite-set and cardinality binders retained in value
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ᶠ (n : ℕ) in Filter.atTop,
+    ∀ (A : Finset ℤ), A.card = n → ↑(Green2.maxRestrictedSumAvoidingSubsetSize A) ≥ Real.log ↑n ^ 100
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS fixed Spec/dependency origin despite same-name candidate module/cache and environment
+Candidate compiled as ubuntu with fixed import paths
+PASS expected rejection: name shadowing: unchanged frozen text/header 
+Lean audit command failed
+/tmp/formal_conjectures_bench_ii6dylh0/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Green2.formal_conjectures_bench_refutation
+has type
+  ¬∀ᶠ (n : ℕ) in Filter.atTop,
+      ∀ (A : Finset ℤ), A.card = n → ↑(Green2.maxRestrictedSumAvoidingSubsetSize A) ≥ Green2.Real.log ↑n ^ 100
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+
+PASS semantic negative compiled and reached full type comparison
+PASS expected rejection: missing artifact 
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+
+PASS expected rejection: corrupt artifact 
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+
+PASS expected rejection: corrupt manifest 
+Trusted Spec manifest hash mismatch
+
+Loaded fixed precompiled trusted Spec
+ALL SUPPLEMENTARY CHECKS PASSED; original theorem remains unproved.

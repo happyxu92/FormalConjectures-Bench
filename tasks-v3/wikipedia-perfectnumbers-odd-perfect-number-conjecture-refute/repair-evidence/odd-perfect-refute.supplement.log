@@ -1,0 +1,85 @@
+Loaded fixed precompiled trusted Spec
+PASS fixed manifest, inputs, toolchain and artifact verification
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Nat.Perfect: [propext, Quot.sound, Classical.choice]
+quantified arguments: [n, hn]
+universe parameters: []; all quantified arguments retained
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ (n : ℕ), n.Perfect → Even n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS precompiled ExpectedType complete value and transitive axiom audit
+Candidate compiled as ubuntu with fixed import paths
+PASS ubuntu candidate compilation (isolated original sorry fixture)
+Complete theorem type matches trusted Spec
+PASS original complete theorem type comparison
+Unexpected axioms for PerfectNumbers.formal_conjectures_bench_refutation: ['sorryAx']
+'PerfectNumbers.formal_conjectures_bench_refutation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+REJECTED target axiom audit detects sorryAx
+PASS sorry canary
+Complete theorem type matches trusted Spec
+PASS Spec and dependency homonyms/cache/environment do not shadow fixed modules
+FIXED IMPORT RESOLUTION
+/opt/elan/toolchains/leanprover--lean4---v4.27.0/lib/lean/Init.olean
+/tests/trusted_spec/FCBTrustedSpec.olean
+/tmp/formal_conjectures_bench_kebh_iav/FormalConjecturesBench/Submission.olean
+
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Nat.Perfect: [propext, Quot.sound, Classical.choice]
+quantified arguments: [n, hn]
+universe parameters: []; all quantified arguments retained
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ (n : ℕ), n.Perfect → Even n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS trusted type audit still identical after counterfeit modules
+Code above the benchmark target marker changed
+REJECTED frozen prefix mutation
+REJECTED changed theorem header
+REJECTED missing proof assignment
+Target theorem header changed
+Target theorem no longer has a proof assignment
+Banned Lean feature found in proof region at line 2: \bsorry\b
+REJECTED original placeholder syntax
+PASS semantic attack preserves original frozen prefix/header
+PASS semantic attack obeys source restrictions
+Candidate compiled as ubuntu with fixed import paths
+PASS semantic attack compiles as ubuntu without placeholders
+PASS semantic attack itself passes axiom audit
+Lean audit command failed
+/tmp/formal_conjectures_bench_i16js9s3/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  PerfectNumbers.formal_conjectures_bench_refutation
+has type
+  ¬∀ (n : ℕ), PerfectNumbers.Perfect n → PerfectNumbers.Even n
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+REJECTED semantic attack rejected by complete trusted type comparison
+Loaded fixed precompiled trusted Spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Nat.Perfect: [propext, Quot.sound, Classical.choice]
+quantified arguments: [n, hn]
+universe parameters: []; all quantified arguments retained
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ (n : ℕ), n.Perfect → Even n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Lean audit command failed
+/tmp/formal_conjectures_bench_r_5pautc/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  PerfectNumbers.formal_conjectures_bench_refutation
+has type
+  ¬∀ (n : ℕ), PerfectNumbers.Perfect n → PerfectNumbers.Even n
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+REJECTED actual checker main rejects unchanged-text semantic attack
+Unexpected added Lean source outside editable subtree: Forbidden.lean
+REJECTED out-of-bounds Lean source
+Unexpected non-Lean file in editable source tree: FormalConjecturesBench/bad.txt
+REJECTED non-Lean editable source
+REJECTED missing Spec precompiled artifact fails closed
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+NO RUNTIME REGENERATION missing
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+REJECTED corrupt Spec precompiled artifact fails closed
+NO RUNTIME REGENERATION corrupt
+ALL CHECKER/GOLDEN/SPEC COPIES IDENTICAL

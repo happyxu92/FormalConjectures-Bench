@@ -1,0 +1,1 @@
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Set/Card.lean:noncomputable def ncard (s : Set α) : ℕ := ENat.toNat s.encard

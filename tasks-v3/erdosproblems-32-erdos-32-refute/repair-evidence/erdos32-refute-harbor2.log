@@ -1,0 +1,12 @@
+Starting trial: fcb32-refute-accept2-20261104
+Task: erdosproblems-32-erdos-32-refute
+Agent: nop
+Environment: docker
+Trials directory: /tmp/erdos32-refute-harbor
+
+Trial completed!
+Trial name: fcb32-refute-accept2-20261104
+Task: formal-conjectures-bench/erdosproblems-32-erdos-32-refute
+Started: 2026-11-04 07:42:12.437406+00:00
+Finished: 2026-11-04 07:42:25.060617+00:00
+Rewards: {'reward': 0.0}

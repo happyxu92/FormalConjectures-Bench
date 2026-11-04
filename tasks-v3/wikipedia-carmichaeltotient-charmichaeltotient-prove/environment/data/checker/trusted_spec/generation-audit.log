@@ -1,0 +1,9 @@
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited CarmichaelTotient.CarmichaelTotientFor: [propext, Quot.sound, Classical.choice]
+audited CarmichaelTotient.carchimichealTotientFor_zero: [propext, Quot.sound, Classical.choice]
+audited CarmichaelTotient.carmichealTotientFor_odd: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ ⦃n : ℕ⦄, 0 < n → CarmichaelTotient.CarmichaelTotientFor n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

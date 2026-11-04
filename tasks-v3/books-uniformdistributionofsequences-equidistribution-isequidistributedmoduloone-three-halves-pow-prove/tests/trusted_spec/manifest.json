@@ -1,0 +1,30 @@
+{
+  "task_id": "books-uniformdistributionofsequences-equidistribution-isequidistributedmoduloone-three-halves-pow-prove",
+  "target_name": "Equidistribution.isEquidistributedModuloOne_three_halves_pow",
+  "universe_params": [],
+  "binder_count": 0,
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "ad404c2c6883380dbd8c3e7918ec96ba87242db5baca280ab95accb3caa6c3c0",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "4f61c8432a18a9ea882cf9b28868b90408da92424b7e389ba7a05876cf63b1da",
+    "FCBTrustedSpec.ilean": "889ed306a2e66c74018f30e91c455098b1b04390904f482043af7d39733f4102",
+    "FCBTrustedSpec.lean": "3acc798adf9c44dab5bd7b2142fa84bb55a99a779442f54f31c76aa14eca5226",
+    "FCBTrustedSpec.olean": "1b300bdfe2f6e1cdcd249973088a2866be6045eb91c04315cf1b1ca3b5ce7441",
+    "audit.log": "8dc79abeb73f820201bd7bd3df0189c1bb08b1a6f54d4255524454f47a51cd41",
+    "generate.py": "55af55d9a4b3b0ce410ed8b05cacca640beccf71070ff39fc0e10b96c54c2eef",
+    "reproduce.sh": "35a829130974b6cc43a9d713c45a8c23bba8c38ebd16322ac944a6e9a63ceeea"
+  },
+  "generation_command": "docker exec fcb-three-halves-prove-spec-20261104 bash /tmp/fcb-spec/trusted_spec/reproduce.sh",
+  "audit_note": "ExpectedType value and both referenced prefix definitions transitively use only allowed standard axioms. Unreferenced original prefix accumulation lemma contains its original sorry but is not an ExpectedType dependency. Temporary target environment discarded; audit rejects exported target/children."
+}

@@ -1,0 +1,46 @@
+{
+  "containers": [
+    {
+      "name": "green2-refute-spec-20261104",
+      "id": "5985de64fdf3ce54f52cd89247684e449332d636e9591cc6d5046ff28f92eecb",
+      "present_before_cleanup": true
+    },
+    {
+      "name": "greensopenproblems-2-green-2-ref__kl5ufqt__env-main-1",
+      "id": null,
+      "present_before_cleanup": false
+    },
+    {
+      "name": "greensopenproblems-2-green-2-ref__rzfuzbv__env-main-1",
+      "id": "447501fc0cd210550e2ec0eddeb08dc4a53dc9f3db74887bf3c15f7abaffe81d",
+      "present_before_cleanup": true
+    }
+  ],
+  "images": [
+    {
+      "tag": "greensopenproblems-2-green-2-ref__i34emti__env-main:latest",
+      "id": "sha256:8fdcfc4b82c5b268e04d04e7e5e9ea6a9a10f05b1c05a756cdb9fe3db49b6c6c",
+      "repo_tags": [
+        "greensopenproblems-2-green-2-ref__i34emti__env-main:latest"
+      ]
+    },
+    {
+      "tag": "greensopenproblems-2-green-2-ref__kl5ufqt__env-main:latest",
+      "id": "sha256:f34b785b3acc06d1c135e96a2eabb298b0ece0bd7ca5f80b6c107412752d9f0d",
+      "repo_tags": [
+        "greensopenproblems-2-green-2-ref__kl5ufqt__env-main:latest"
+      ]
+    },
+    {
+      "tag": "greensopenproblems-2-green-2-ref__rzfuzbv__env-main:latest",
+      "id": "sha256:cd5b77953fce1a1c753822781632ea8a50ea3bd66830b35fadc580d19af10cf9",
+      "repo_tags": [
+        "greensopenproblems-2-green-2-ref__rzfuzbv__env-main:latest"
+      ]
+    }
+  ],
+  "networks": [
+    "greensopenproblems-2-green-2-ref__rzfuzbv__env_default"
+  ],
+  "shared_generation_base": "sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a"
+}

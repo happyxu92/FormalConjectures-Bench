@@ -1,0 +1,31 @@
+{
+  "task_id": "erdosproblems-17-erdos-17-prove",
+  "target_name": "Erdos17.erdos_17",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "11ef8eea20c17edaedc03e851ea3a79e49ea64f42dea78fc96ebced070d44be5",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "e8c168f68098da73871bb5797a3c35a559303b862246f8acd072304cba204208",
+    "FCBTrustedSpec.ilean": "3de957b362a91133f7bbb53ee416119fb8be9d3f3d31604d94201235f4e8f9e2",
+    "FCBTrustedSpec.lean": "055ce0e6a45efaa6adec105bbda1ea7303b36bbf0eb1ea2625ec587fd63fc4bc",
+    "FCBTrustedSpec.olean": "68ea5b17caf6d6a9cc91e7ac9b1f1a515d01419503ef26d3160a0de6aae65c0b",
+    "audit.log": "4311a24c99da2389a99282fd8139b1b8795bcdecfe8a4707c346194b006c0184",
+    "generate.py": "9405bdc2c95884848602942bd690b62394f9eedbb3d166ab7cc07ef7405a5bab",
+    "reproduce.sh": "117c7011a069c9c37f8b5b602557aef183064898cd76c3ae2758dac848ca1790"
+  },
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "universe_params": [],
+  "generation_command": "bash trusted_spec/reproduce.sh (in clean task Docker environment)",
+  "audit": "AuditSpec.lean independently imports precompiled Spec; no temporary theorem; ExpectedType and IsClusterPrime transitive axioms: [propext].",
+  "precompile_image": "fcb-erdos17-prove:spec-20261104",
+  "precompile_image_id": "sha256:4301b739c41740d7c18b32e1a7e7617516816f41c70dfc61e01562b7cb3fb1a5"
+}

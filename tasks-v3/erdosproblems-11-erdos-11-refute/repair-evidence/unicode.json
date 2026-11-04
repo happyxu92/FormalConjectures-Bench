@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute",
+  "mode": "auto_repair",
+  "status": "passed",
+  "case": "no_issue",
+  "has_problem": false,
+  "has_unicode_issue": false,
+  "repair_attempted": false,
+  "repair_success": null,
+  "modified": false,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "db0079b828189d397c588615decce419b019e8c5dcb2c0f872e670aaa7ee3609",
+      "header_before": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (n : \u2115) (hn : Odd n) (hn' : 1 < n),\n        \u2203 k l : \u2115, Squarefree k \u2227 n = k + 2 ^ l\n    )",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (n : \u2115) (hn : Odd n) (hn' : 1 < n),\n        \u2203 k l : \u2115, Squarefree k \u2227 n = k + 2 ^ l\n    )",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "db0079b828189d397c588615decce419b019e8c5dcb2c0f872e670aaa7ee3609",
+      "header_after": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (n : \u2115) (hn : Odd n) (hn' : 1 < n),\n        \u2203 k l : \u2115, Squarefree k \u2227 n = k + 2 ^ l\n    )"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "db0079b828189d397c588615decce419b019e8c5dcb2c0f872e670aaa7ee3609",
+      "header_before": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (n : \u2115) (hn : Odd n) (hn' : 1 < n),\n        \u2203 k l : \u2115, Squarefree k \u2227 n = k + 2 ^ l\n    )",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (n : \u2115) (hn : Odd n) (hn' : 1 < n),\n        \u2203 k l : \u2115, Squarefree k \u2227 n = k + 2 ^ l\n    )",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "db0079b828189d397c588615decce419b019e8c5dcb2c0f872e670aaa7ee3609",
+      "header_after": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (n : \u2115) (hn : Odd n) (hn' : 1 < n),\n        \u2203 k l : \u2115, Squarefree k \u2227 n = k + 2 ^ l\n    )"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "762ca43998cb83c0af28c483a010a1c146a39480c7a88e07fb6f86cde48a6b0c"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "762ca43998cb83c0af28c483a010a1c146a39480c7a88e07fb6f86cde48a6b0c"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "762ca43998cb83c0af28c483a010a1c146a39480c7a88e07fb6f86cde48a6b0c"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 0
+}

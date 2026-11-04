@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-17-erdos-17-refute",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式补上 .lake/packages 搜索路径；匹配 Docker 中实际 rg 返回 0，命中 Mathlib/Topology/Defs/Filter.lean 的 IsCompact。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；原 Dockerfile 缺普通用户最终构建验收，现末尾保留 USER ubuntu 与 RUN lake build +FormalConjecturesBench.Target。本题镜像实际构建成功，仅原始 sorry 警告；依赖权限未放宽。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "技能脚本修复前后均为 no_issue；两份 checker 原头通过，变更头和缺失 := 均拒绝，未修改头或冻结哈希。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已由本题原始 golden 独立提前提取完整否定命题并预编译、审计 Spec（仅 propext，无 universe/临时目标导出），同步两份包；清单 SHA256=521212f438cc82e5f4665052b1ccd6c0495f7081a428fbd8d66485e8a431eb87。固定来源/工具链加载并完整类型比较，原限制、公理审计与 canary 保留。当前本地 Harbor finalnet 构建及子容器 896afda880d4 验收成功；正式/本地入口 rc=1、reward=0，均因原始 sorry 预期拒绝。同一容器两位置实际函数补测均 rc=0，覆盖可信审计、ubuntu 编译、类型检查、sorryAx 拒绝/canary、冻结/越界/语义偷换拒绝、缓存遮蔽与缺失/损坏 Spec 拒绝；无原题完整证明或 reward=1 声称。默认地址池耗尽已用不重叠任务专属子网重试解决。详见 repair-evidence/validation.md、logs 与 resources.json。报告落盘后已清理并核验本题 3 个容器（3a035497ad5c、24f1f8f06a35、896afda880d4）、5 个镜像 tag/ID（spec、eviuqh6、cpnydst、a3ultxk、3rrmbqb）及 2 个专属网络；全部已不存在，无遗留。本题早先自动回收/失败 Harbor 容器亦确认不存在；未删共享镜像、缓存或用户/其他任务资源。详见 logs/cleanup.log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已读 pinned 上游 17.lean 与 Elsholtz 2003 原文定义，当前任务确实要求否定 cluster primes 无限性，符合有意设置的反向任务；n=0 和 p=2 的边界不影响无限性。未发现明显定义错误；开放性不视为陈述错误。metadata 标 consistent，数学输入未改。原题网站 403，作者论文可读；来源详见 repair-evidence/research.md。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 task ID 精确查技能 CSV 未命中后，已多组联网检索上游 pinned/main Lean、Mathlib/GitHub/PR、作者论文、Conjectures.io 反向目标与公开贡献索引、相关尝试及证明库。上游主目标仍 sorry，97 有限结果不覆盖本目标；公开贡献数为 0，链接尝试均未解决。经充分检索未找到本题否定方向的已知公开完整 Lean4 证明，metadata 为 false/searched；非绝对不存在断言，未放入答案。查询、排除依据及访问限制见 repair-evidence/research.md。"
+    }
+  }
+}

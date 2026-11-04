@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-11-erdos-11-refute",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式加入 .lake/packages；在最终 Harbor 容器以 ubuntu 实际搜索三个路径，找到 Mathlib squarefree 定理，退出 0。见 repair-evidence/search-path.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；原 Dockerfile 缺少末尾普通用户构建验证，已追加 USER ubuntu 下 lake build +FormalConjecturesBench.Target。本地 task 的 Harbor 镜像构建成功；未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "严格运行技能 Unicode 脚本并最终复验：退出 0、case=no_issue，两份原头及负例检查通过；未改头、冻结哈希或 golden。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "修复候选加载后重解析预期命题的语义遮蔽。提前在匹配 Lean 4.27.0/x86_64 和锁定依赖的无候选 Docker 环境生成完整 ExpectedType 定义值，独立审计仅依赖 propext、临时定理未导出、universes=[]；两份包同步，清单 SHA256=69a26ec84e2347c26cf4d471691b400551dd97ad69a1beee209f31d34c1e390d。固定 /tests 或 FCB_TESTS_DIR 下预编译来源、校验输入/产物/版本、固定可信依赖路径，保留正常 helper import、原限制和公理/canary。最终当前 task Harbor 镜像 sha256:161102ca1b9b84888b9fa5af60c432d6ff3208f48b768b25fc5f3d249bbd5884 构建及上传哈希通过；网络地址池耗尽经复用本题自建网络解决。正式/本地入口各退出 1、reward=0，仅因原 sorry；同一 Harbor 容器补测两处包及 root/ubuntu 路径均退出 0，实际覆盖类型审计、ubuntu 编译、完整类型匹配、sorryAx 拒绝/canary、冻结与越界拒绝、无 sorry 的 Squarefree 名称偷换被完整类型比较拒绝、候选同名源码/缓存不能替代 Spec、缺失/损坏产物失败且不重建。不声称证明通过。详情、命令、哈希及日志见 repair-evidence/validation.md。报告先落盘后已清理本题容器 c20340b00364、4f5182684536、79ff81b23454，以及三个任务镜像 df3c22899883、39209788a462、161102ca1b9b 和本题网络；原试跑容器及被替代镜像 a62b543b0ec9 已不存在。docker ps/image inspect 复核无残留；已有可信基础镜像、共享缓存及用户/其他任务资源未动。清理记录见 repair-evidence/cleanup.log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已读 pinned upstream 11.lean、完整前缀及 Hercher 2411.01964 Conjecture 1；本题恰为每个奇自然数 n>1 可写作平方自由数加 2 的自然数幂之全称命题的否定。未发现明显定义/量词错误，metadata=consistent。现代上游改名 all_odd、主问题仅充分大，属版本/变体差异；不能因此判错，亦未照抄正向结论。原站直接访问 403，论文和上游可读。见 repair-evidence/research.md。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 task ID 精确 CSV 未命中后，多组联网检索题号、定理名、新别名 all_odd、反向目标、数学表达式及作者；核查上游历史/PR、Mathlib、Conjectures.io 反向任务和贡献 Lean 源码、AlphaProof 输出、公开 erdos-lean 仓库与 Tao wiki。PR2811/3327 实际仍 sorry；贡献只含条件化归约及有限验证；错误 AI claim 被原 wiki 标 incorrect；无覆盖本反向命题的完整公开 Lean4 证明。标 public_lean4_proof=false/status=searched，仅表示充分检索未找到，不证明不存在；未放入公开答案。具体检索词、来源和限制见 repair-evidence/research.md。"
+    }
+  }
+}

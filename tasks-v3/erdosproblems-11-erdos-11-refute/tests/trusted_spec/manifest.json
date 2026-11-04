@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-11-erdos-11-refute",
+  "target_name": "Erdos11.formal_conjectures_bench_refutation",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "762ca43998cb83c0af28c483a010a1c146a39480c7a88e07fb6f86cde48a6b0c",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "19ba487da22d01a3c29cbe9b92c6a46beca67b186b54600ed6326799d84155b9",
+    "FCBTrustedSpec.ilean": "90cd85e126bd259471e672aff3c526eb22c7a53109311445d3abf5c300883c66",
+    "FCBTrustedSpec.lean": "26e01ee4b61f60c2a1ae1184cea1a02c702edff6fa47ccfa0d4920756a5312f5",
+    "FCBTrustedSpec.olean": "b3224e33d04f6ededd9a57542c6f2cf0624597adea6549d8160fa7f034d3edb0",
+    "audit.log": "90c25118acb76ca6ad496c731abc5fcfae5c6d46898ce238efe866096995cf83",
+    "generate.py": "85ead5aa0899926300e68df319940c2a71d03e87ed9433852220e7ce92eac1b6",
+    "reproduce.sh": "ede6a2a9636394e9b93ab45c02647e96820f334d723375ff378758ff00312c70"
+  },
+  "generation_image": "sha256:0824de0f16475f1f619701869e59de4e4ce3229bfce229a5fd16f88072c37e8f",
+  "generation_command": "docker run -d --network none --name fcb-erdos11-refute-spec-20261104 --entrypoint sleep fcb-local/erdosproblems-1-least-n-5:cache-smoke infinity; docker cp tests/golden_env and tests/trusted_spec to /tmp/erdos11-refute-bundle; docker exec -u root fcb-erdos11-refute-spec-20261104 bash /tmp/erdos11-refute-bundle/trusted_spec/reproduce.sh",
+  "audit": "Independent import of ExpectedType definition value: negation of forall n : Nat, Odd n -> 1 < n -> exists k l : Nat, Squarefree k and n = k + 2^l. No universes or prefix definitions; temporary target absent; transitive axioms [propext], no sorryAx."
+}

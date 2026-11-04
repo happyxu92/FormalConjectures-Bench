@@ -1,0 +1,77 @@
+
+STAGE fixed package validation ignoring candidate env
+Loaded fixed precompiled trusted Spec
+
+STAGE independent expected type and prefix transitive axiom audit
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos41.NtupleCondition: [propext, Quot.sound]
+binder A: Set ℕ (Lean.BinderInfo.default)
+binder h_triple: Erdos41.NtupleCondition A 3 (Lean.BinderInfo.default)
+binder h_infinite: A.Infinite (Lean.BinderInfo.default)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (A : Set ℕ),
+  Erdos41.NtupleCondition A 3 →
+    A.Infinite → Filter.liminf (fun N ↦ ↑(A ∩ Set.Icc 1 N).ncard / ↑N ^ (1 / 3)) Filter.atTop = 0
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+STAGE original placeholder isolated fixture compiles as ubuntu
+Candidate compiled as ubuntu with fixed import paths
+
+STAGE complete original theorem type comparison
+Complete theorem type matches trusted Spec
+
+NEGATIVE placeholder target sorryAx audit
+Unexpected axioms for Erdos41.erdos_41: ['sorryAx']
+'Erdos41.erdos_41' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+
+STAGE sorry canary
+/opt/elan/toolchains/leanprover--lean4---v4.27.0/lib/lean/Init.olean
+/tests/trusted_spec/FCBTrustedSpec.olean
+/tmp/formal_conjectures_bench_zfj9aond/FormalConjecturesBench/Submission.olean
+
+
+STAGE candidate same-name module/cache cannot replace Spec
+Complete theorem type matches trusted Spec
+
+NEGATIVE frozen prefix modification
+Code above the benchmark target marker changed
+
+NEGATIVE out of bounds source
+Unexpected added Lean source outside editable subtree: OutOfBounds.lean
+
+STAGE semantic shadow frozen/header unchanged
+
+STAGE semantic shadow allowed source syntax
+
+STAGE semantic shadow tree shape
+
+STAGE semantic shadow source confinement
+
+STAGE semantic shadow frozen files
+
+STAGE semantic shadow candidate actually compiles as ubuntu
+Candidate compiled as ubuntu with fixed import paths
+
+STAGE semantic shadow has only allowed axioms
+
+NEGATIVE semantic shadow complete type mismatch
+Lean audit command failed
+/tmp/formal_conjectures_bench_1fyjnlwn/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Erdos41.erdos_41
+has type
+  ∀ (A : Set ℕ),
+    Erdos41.NtupleCondition A 3 →
+      A.Infinite → (Erdos41.Filter.atTop.liminf fun N ↦ ↑(A ∩ Set.Icc 1 N).ncard / ↑N ^ (1 / 3)) = 0
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+
+NEGATIVE missing precompiled artifact
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+
+NEGATIVE corrupt precompiled artifact
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+
+RESULTS_JSON=[{"stage": "fixed package validation ignoring candidate env", "result": "passed"}, {"stage": "independent expected type and prefix transitive axiom audit", "result": "passed"}, {"stage": "original placeholder isolated fixture compiles as ubuntu", "result": "passed"}, {"stage": "complete original theorem type comparison", "result": "passed"}, {"stage": "placeholder target sorryAx audit", "result": "rejected"}, {"stage": "sorry canary", "result": "passed"}, {"stage": "candidate same-name module/cache cannot replace Spec", "result": "passed"}, {"stage": "frozen prefix modification", "result": "rejected"}, {"stage": "out of bounds source", "result": "rejected"}, {"stage": "semantic shadow frozen/header unchanged", "result": "passed"}, {"stage": "semantic shadow allowed source syntax", "result": "passed"}, {"stage": "semantic shadow tree shape", "result": "passed"}, {"stage": "semantic shadow source confinement", "result": "passed"}, {"stage": "semantic shadow frozen files", "result": "passed"}, {"stage": "semantic shadow candidate actually compiles as ubuntu", "result": "passed"}, {"stage": "semantic shadow has only allowed axioms", "result": "passed"}, {"stage": "semantic shadow complete type mismatch", "result": "rejected"}, {"stage": "missing precompiled artifact", "result": "rejected"}, {"stage": "corrupt precompiled artifact", "result": "rejected"}]

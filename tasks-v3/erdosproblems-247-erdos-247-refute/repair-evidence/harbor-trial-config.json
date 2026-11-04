@@ -1,0 +1,22 @@
+{
+    "task": {
+        "path": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-247-erdos-247-refute"
+    },
+    "trial_name": "erdosproblems-247-erdos-247-refu__6hDmByQ",
+    "trials_dir": "/tmp/247refute-harbor-jobs/fcb-247-refute-harbor-accept-20261104",
+    "agent": {
+        "name": "nop"
+    },
+    "environment": {
+        "type": "docker",
+        "force_build": true,
+        "delete": false,
+        "extra_docker_compose": [
+            "/tmp/247refute-network-final.yaml"
+        ],
+        "kwargs": {
+            "keep_containers": true
+        }
+    },
+    "job_id": "65d2cd50-9d26-4604-8fc4-60161d09e5df"
+}

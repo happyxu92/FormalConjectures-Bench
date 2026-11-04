@@ -1,0 +1,21 @@
+{
+    "task": {
+        "path": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-41-erdos-41-prove"
+    },
+    "trial_name": "fcb41-prove-final2-20261104",
+    "trials_dir": "/tmp/erdos41-harbor-final2",
+    "agent": {
+        "name": "nop"
+    },
+    "environment": {
+        "type": "docker",
+        "force_build": true,
+        "delete": false,
+        "extra_docker_compose": [
+            "/tmp/erdos41-own-network.yaml"
+        ],
+        "kwargs": {
+            "keep_containers": true
+        }
+    }
+}

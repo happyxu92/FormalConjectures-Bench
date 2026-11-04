@@ -1,0 +1,5 @@
+# Reuse only this task's already-created network; no shared resource changes.
+networks:
+  default:
+    name: fcb-erdos11-prove-20261104__env_default
+    external: true

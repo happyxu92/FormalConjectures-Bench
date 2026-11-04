@@ -1,0 +1,31 @@
+{
+  "task_id": "erdosproblems-244-erdos-244-prove",
+  "target_name": "Erdos244.erdos_244",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "1a2cf2aa395b59abf263bc31219d97aa291b80536b10f8834f7b75c582babdfc",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "da188c652586ae725f62542f6009910b9f73d3ae270c3cb1df9c8d1979e83fec",
+    "FCBTrustedSpec.ilean": "6e78bb3b828201ca3b65ab6ce1caf7e0043e9cc0be7ef68afd1e7830e7924e0c",
+    "FCBTrustedSpec.lean": "93ed5ef8c8645a83abe193e4c68c1e220dff1e756eff80e78924fef65ca4bdcd",
+    "FCBTrustedSpec.olean": "b3568511a996ff19c7522752daca6a5ce01ab089ebe61e191cef00300a739e96",
+    "audit.log": "c87ff8eaa05645ddfede751b221c21a8f683ae3738401c48559873a773f0be57",
+    "generate.py": "c4efb6f1bc2aae598741024b4d6173e8cd5369c7894945d2e071e33a24c91a6e",
+    "reproduce.sh": "a9c378a6878a0c42707a486388a30f7490e3998e843213755ce4fa14b876a7d3"
+  },
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "universe_params": [],
+  "generation_command": "bash trusted_spec/reproduce.sh in clean fcb244-spec-20261104 container; original golden_env only",
+  "audit": "AuditSpec.lean independent import: ExpectedType is Prop, no universes, no temporary theorem or sorry; transitive axioms propext, Quot.sound, Classical.choice",
+  "precompile_image": "fcb-erdos244-prove:spec-20261104",
+  "precompile_image_id": "sha256:898c17a5da2471626349647799a41a29f5ce2c981a66c9d30703535fc2e204d5"
+}

@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-137-erdos-137-prove",
+  "mode": "auto_repair",
+  "status": "passed",
+  "case": "no_issue",
+  "has_problem": false,
+  "has_unicode_issue": false,
+  "repair_attempted": false,
+  "repair_success": null,
+  "modified": false,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "010465fd3f7030523224641640919e8ca47180df8416217f43a1e94a5c4d5b4d",
+      "header_before": "theorem erdos_137 : \u2200 k \u2265 3, \u2200 n, \u00ac (\u220f x \u2208 Finset.Ioc n (n + k), x).Powerful",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem erdos_137 : \u2200 k \u2265 3, \u2200 n, \u00ac (\u220f x \u2208 Finset.Ioc n (n + k), x).Powerful",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "010465fd3f7030523224641640919e8ca47180df8416217f43a1e94a5c4d5b4d",
+      "header_after": "theorem erdos_137 : \u2200 k \u2265 3, \u2200 n, \u00ac (\u220f x \u2208 Finset.Ioc n (n + k), x).Powerful"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "010465fd3f7030523224641640919e8ca47180df8416217f43a1e94a5c4d5b4d",
+      "header_before": "theorem erdos_137 : \u2200 k \u2265 3, \u2200 n, \u00ac (\u220f x \u2208 Finset.Ioc n (n + k), x).Powerful",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem erdos_137 : \u2200 k \u2265 3, \u2200 n, \u00ac (\u220f x \u2208 Finset.Ioc n (n + k), x).Powerful",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "010465fd3f7030523224641640919e8ca47180df8416217f43a1e94a5c4d5b4d",
+      "header_after": "theorem erdos_137 : \u2200 k \u2265 3, \u2200 n, \u00ac (\u220f x \u2208 Finset.Ioc n (n + k), x).Powerful"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "3620d30ae191cb351d2044f3a0a78089a633de3d073358e450f49c276fd1ba99"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "3620d30ae191cb351d2044f3a0a78089a633de3d073358e450f49c276fd1ba99"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "3620d30ae191cb351d2044f3a0a78089a633de3d073358e450f49c276fd1ba99"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 0
+}

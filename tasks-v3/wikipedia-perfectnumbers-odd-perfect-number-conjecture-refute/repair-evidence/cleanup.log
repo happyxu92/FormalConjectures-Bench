@@ -1,0 +1,144 @@
++ docker stop c6f584eb2a153501210df3b19f33d0a5d545a391f6aafd81113100b8dec1b674
+c6f584eb2a153501210df3b19f33d0a5d545a391f6aafd81113100b8dec1b674
+
+exit 0
++ docker rm c6f584eb2a153501210df3b19f33d0a5d545a391f6aafd81113100b8dec1b674
+c6f584eb2a153501210df3b19f33d0a5d545a391f6aafd81113100b8dec1b674
+
+exit 0
++ docker stop 067e1e375d8c915c1e9afaa0b73d19526d099cdc4ebb758e2a415389388af6ca
+067e1e375d8c915c1e9afaa0b73d19526d099cdc4ebb758e2a415389388af6ca
+
+exit 0
++ docker rm 067e1e375d8c915c1e9afaa0b73d19526d099cdc4ebb758e2a415389388af6ca
+067e1e375d8c915c1e9afaa0b73d19526d099cdc4ebb758e2a415389388af6ca
+
+exit 0
++ docker image rm wikipedia-perfectnumbers-odd-per__3fdwagz__env-main:latest
+Untagged: wikipedia-perfectnumbers-odd-per__3fdwagz__env-main:latest
+Deleted: sha256:4b8a0135cad55b3bb0cee9e94f8970618b7cdae226495e6748b9582cca89297d
+
+exit 0
++ docker image rm wikipedia-perfectnumbers-odd-per__gezbthb__env-main:latest
+Untagged: wikipedia-perfectnumbers-odd-per__gezbthb__env-main:latest
+Deleted: sha256:c8af6a90d4f293dbb262e1fa110f3bef267a957e5001ce28efcaade22ea9418d
+
+exit 0
++ docker image rm wikipedia-perfectnumbers-odd-per__txlzrbo__env-main:latest
+Untagged: wikipedia-perfectnumbers-odd-per__txlzrbo__env-main:latest
+Deleted: sha256:a0f74514c8598764c90af327529f28f2c91334f8d451a9ddff8b6fd550d08aa2
+
+exit 0
++ docker container inspect c6f584eb2a153501210df3b19f33d0a5d545a391f6aafd81113100b8dec1b674
+[]
+Error response from daemon: No such container: c6f584eb2a153501210df3b19f33d0a5d545a391f6aafd81113100b8dec1b674
+
+exit 1
++ docker container inspect 067e1e375d8c915c1e9afaa0b73d19526d099cdc4ebb758e2a415389388af6ca
+[]
+Error response from daemon: No such container: 067e1e375d8c915c1e9afaa0b73d19526d099cdc4ebb758e2a415389388af6ca
+
+exit 1
++ docker image inspect wikipedia-perfectnumbers-odd-per__3fdwagz__env-main:latest
+[]
+Error response from daemon: No such image: wikipedia-perfectnumbers-odd-per__3fdwagz__env-main:latest
+
+exit 1
++ docker image inspect wikipedia-perfectnumbers-odd-per__gezbthb__env-main:latest
+[]
+Error response from daemon: No such image: wikipedia-perfectnumbers-odd-per__gezbthb__env-main:latest
+
+exit 1
++ docker image inspect wikipedia-perfectnumbers-odd-per__txlzrbo__env-main:latest
+[]
+Error response from daemon: No such image: wikipedia-perfectnumbers-odd-per__txlzrbo__env-main:latest
+
+exit 1
++ docker image inspect sha256:4b8a0135cad55b3bb0cee9e94f8970618b7cdae226495e6748b9582cca89297d
+[]
+Error response from daemon: No such image: sha256:4b8a0135cad55b3bb0cee9e94f8970618b7cdae226495e6748b9582cca89297d
+
+exit 1
++ docker image inspect sha256:c8af6a90d4f293dbb262e1fa110f3bef267a957e5001ce28efcaade22ea9418d
+[]
+Error response from daemon: No such image: sha256:c8af6a90d4f293dbb262e1fa110f3bef267a957e5001ce28efcaade22ea9418d
+
+exit 1
++ docker image inspect sha256:a0f74514c8598764c90af327529f28f2c91334f8d451a9ddff8b6fd550d08aa2
+[]
+Error response from daemon: No such image: sha256:a0f74514c8598764c90af327529f28f2c91334f8d451a9ddff8b6fd550d08aa2
+
+exit 1
++ docker network inspect wikipedia-perfectnumbers-odd-per__txlzrbo__env_default
+[
+    {
+        "Name": "wikipedia-perfectnumbers-odd-per__txlzrbo__env_default",
+        "Id": "8edd209296c36fbed3c80c59e5a7c9758059f996b9eb42118621da7248c99f14",
+        "Created": "2026-11-04T17:03:42.555664163+08:00",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "10.253.246.0/28",
+                    "IPRange": "",
+                    "Gateway": "10.253.246.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {},
+        "Labels": {
+            "com.docker.compose.config-hash": "5a4ab0060171e78283d501b8868baa2cde40aa2e9f7a4fa30dc79e386e08b421",
+            "com.docker.compose.network": "default",
+            "com.docker.compose.project": "wikipedia-perfectnumbers-odd-per__txlzrbo__env",
+            "com.docker.compose.version": "2.40.3"
+        },
+        "Containers": {},
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "10.253.246.0/28": {
+                        "IPsInUse": 3,
+                        "DynamicIPsAvailable": 13
+                    }
+                }
+            }
+        }
+    }
+]
+
+exit 0
++ docker network rm wikipedia-perfectnumbers-odd-per__txlzrbo__env_default
+wikipedia-perfectnumbers-odd-per__txlzrbo__env_default
+
+exit 0
++ docker network inspect wikipedia-perfectnumbers-odd-per__txlzrbo__env_default
+[]
+Error response from daemon: network wikipedia-perfectnumbers-odd-per__txlzrbo__env_default not found
+
+exit 1
++ docker ps -a --filter label=com.docker.compose.project=wikipedia-perfectnumbers-odd-per__3fdwagz__env --format {{.ID}}
+
+exit 0
++ docker ps -a --filter label=com.docker.compose.project=wikipedia-perfectnumbers-odd-per__gezbthb__env --format {{.ID}}
+
+exit 0
++ docker ps -a --filter label=com.docker.compose.project=wikipedia-perfectnumbers-odd-per__txlzrbo__env --format {{.ID}}
+
+exit 0
++ docker image inspect sha256:c528d69a700cd44b3f9f2f1b590d3308b3e6507fc9ab3c8ce25c6f621bb3dca7 --format {{.Id}}
+sha256:c528d69a700cd44b3f9f2f1b590d3308b3e6507fc9ab3c8ce25c6f621bb3dca7
+
+exit 0
+CLEANUP VERIFIED: owned containers/images/network absent; shared base retained.

@@ -1,0 +1,9 @@
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType and all transitive dependencies: [propext, Quot.sound, Classical.choice]
+audited Firoozbakht.firoozbakhtSeq and all transitive dependencies: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ), Firoozbakht.firoozbakhtSeq (n + 1) < Firoozbakht.firoozbakhtSeq n
+def Firoozbakht.firoozbakhtSeq : ℕ → ℝ :=
+fun n => ↑(Nat.nth Prime n) ^ (1 / (↑n + 1))
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

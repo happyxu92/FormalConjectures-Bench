@@ -1,0 +1,27 @@
+{
+  "task_id": "wikipedia-perfectnumbers-odd-perfect-number-conjecture-refute",
+  "target_name": "PerfectNumbers.formal_conjectures_bench_refutation",
+  "universe_params": [],
+  "platform": "x86_64",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "files": {
+    "AuditSpec.lean": "ddcd8298f7b3cf8687506cafc06e4de2e7001795b0cb8742c70949ec6a564582",
+    "FCBTrustedSpec.ilean": "cb33e2e97a66cd61d611b29a73897356451b40b31dadb10f251763c7837ddb04",
+    "FCBTrustedSpec.lean": "49affec3254e14b78768ba0c7e06ece789e06ecca727b19abdcc6217205df630",
+    "FCBTrustedSpec.olean": "76b89423eaf5f99c9d9dd257e30aad61d49b916686933b393e45c47b1d434144",
+    "audit.log": "49a45b21e2c39382e799cb9d7147fde8d2c26df7b91d9f6af1b52d6441a2e2fa",
+    "generate.py": "ec0c318fbe3127c805951fc81bc4af16ca032a8653357bbf952d39a08ecb42af",
+    "reproduce.sh": "ede6a2a9636394e9b93ab45c02647e96820f334d723375ff378758ff00312c70"
+  },
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "bf64c2b450cd48b749b8b63476b355a92546d1d7d9b0c727df25bf6a3662fa53",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  }
+}

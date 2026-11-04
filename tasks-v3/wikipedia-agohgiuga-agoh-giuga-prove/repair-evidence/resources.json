@@ -1,0 +1,46 @@
+{
+  "containers": [
+    {
+      "id": "8deefb24c7a92c80defc6eb7d6f179229c3a02ca6596669aa25da72cc97ffa98",
+      "name": "/fcb-agohgiuga-prove-spec-20261104",
+      "image": "sha256:e21dc171550d4c49aceba963047d00d1a350ce711019cbd9cb32c4770c7a39df"
+    },
+    {
+      "id": "037d959658a38a337ecfed70fc75a02db335022c58607485a992587631dc6c34",
+      "name": "/fcb-agohgiuga-prove-accept-20261104__env-main-1",
+      "image": "sha256:4da6b3e6a74092e558d69fe6a25044a1636926f6aa775977a70d878e437b7f07"
+    },
+    {
+      "id": "c66b39292a53ac48d719f24ab7aa213e4407cc3b96969eca2d62f8a4be10d980",
+      "name": "/fcb-agohgiuga-prove-final2-20261104__env-main-1",
+      "image": "sha256:6dcde57323d2e4005193dcd91b3e53b51e2b44aefc21ae30fa9d1cb48d2de939"
+    }
+  ],
+  "images": [
+    {
+      "id": "sha256:4da6b3e6a74092e558d69fe6a25044a1636926f6aa775977a70d878e437b7f07",
+      "tags": [
+        "fcb-agohgiuga-prove-accept-20261104__env-main:latest"
+      ]
+    },
+    {
+      "id": "sha256:05fb88038a5b9aaf36537bd13a16712dd6acb547ecff599e181e9d96ebd2fb40",
+      "tags": [
+        "fcb-agohgiuga-prove-final-20261104__env-main:latest"
+      ]
+    },
+    {
+      "id": "sha256:6dcde57323d2e4005193dcd91b3e53b51e2b44aefc21ae30fa9d1cb48d2de939",
+      "tags": [
+        "fcb-agohgiuga-prove-final2-20261104__env-main:latest"
+      ]
+    }
+  ],
+  "network": [
+    {
+      "id": "434a84aecd0157821bec352f0ce961c00384ffe1c4f5d89d6c91ed5b2b0cdaa5",
+      "name": "fcb-agohgiuga-prove-accept-20261104__env_default"
+    }
+  ],
+  "preexisting_shared_base": "sha256:e21dc171550d4c49aceba963047d00d1a350ce711019cbd9cb32c4770c7a39df"
+}

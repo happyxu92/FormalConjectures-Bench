@@ -1,0 +1,47 @@
+{
+    "schema_version": 2,
+    "task": {
+        "name": "erdosproblems-137-erdos-137-refute",
+        "type": "local",
+        "digest": "sha256:730df43941b1174edc4d78206289c3f6dc117f06e8099db86a0432d741301061",
+        "path": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-137-erdos-137-refute"
+    },
+    "install_only": false,
+    "timeout_multiplier": 1.0,
+    "agent": {
+        "name": "nop",
+        "skip_model_parsing": false,
+        "skills": [],
+        "resume_trajectory": false,
+        "extra_allowed_hosts": [],
+        "kwargs": {},
+        "mcp_servers": []
+    },
+    "bridge_inputs": {},
+    "skills": [],
+    "environment": {
+        "type": "docker",
+        "force_build": true,
+        "delete": false,
+        "stream": false,
+        "cpu_enforcement_policy": "auto",
+        "memory_enforcement_policy": "auto",
+        "extra_docker_compose": [
+            "/tmp/fcb137ref-compose.yaml"
+        ],
+        "kwargs": {
+            "keep_containers": true
+        },
+        "extra_allowed_hosts": []
+    },
+    "extra_docker_compose": [
+        {
+            "path": "/tmp/fcb137ref-compose.yaml",
+            "digest": "sha256:93c7b35719ee3f5cf2d5ff70e5a4d78a45dc865b6dea185b0aecd7c3e9ed2075"
+        }
+    ],
+    "verifier": {
+        "disable": false,
+        "environment_mode": "shared"
+    }
+}

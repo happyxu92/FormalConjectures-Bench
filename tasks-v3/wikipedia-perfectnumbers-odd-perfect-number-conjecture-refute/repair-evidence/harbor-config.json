@@ -1,0 +1,24 @@
+{
+    "job_name": "odd-perfect-refute-nt40-keep",
+    "jobs_dir": "/tmp/odd-perfect-refute-harbor-jobs",
+    "environment": {
+        "type": "docker",
+        "delete": false,
+        "extra_docker_compose": [
+            "/tmp/odd-perfect-refute.compose.yaml"
+        ],
+        "kwargs": {
+            "keep_containers": true
+        }
+    },
+    "agents": [
+        {
+            "name": "nop"
+        }
+    ],
+    "tasks": [
+        {
+            "path": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-perfectnumbers-odd-perfect-number-conjecture-refute"
+        }
+    ]
+}

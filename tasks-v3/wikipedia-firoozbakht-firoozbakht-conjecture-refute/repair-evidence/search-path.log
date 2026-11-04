@@ -1,0 +1,4 @@
+/opt/formal-conjectures/.lake/packages/mathlib/MathlibTest/Find.lean:theorem add_comm_zero {n} : 0 + n = n + 0 := Nat.add_comm _ _
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/CategoryTheory/Abelian/NonPreadditive.lean:theorem add_comm {X Y : C} (a b : X ⟶ Y) : a + b = b + a := by
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/SetTheory/PGame/Algebra.lean:theorem add_comm_le {x y : PGame} : x + y ≤ y + x :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/SetTheory/PGame/Algebra.lean:theorem add_comm_equiv {x y : PGame} : x + y ≈ y + x :=

@@ -1,0 +1,16 @@
+7290bdf9a389
+e1c36b9fca0f
+7290bdf9a389
+e1c36b9fca0f
+Untagged: greensopenproblems-2-green-2-pro__vffxigm__env-main:latest
+Deleted: sha256:4ab1f0a1947e1f55a8a2a46514c3e54535b627ef955f53c1a2ddfc85a4e5bea4
+Untagged: greensopenproblems-2-green-2-pro__3jzgcqs__env-main:latest
+Deleted: sha256:23f327517fd531e6befbe816eceb9a9a2236e6831a2b959f98bc4473ec9ad08a
+Untagged: fcb-green2prove-specbase:nt40
+Deleted: sha256:f6ca8140dc4db389317bdcdab94fbb1038fa9126a9001f1a4df9a0190d6bd56b
+Verification:
+container 7290bdf9a389 inspect exit=1 (expected 1)
+container e1c36b9fca0f inspect exit=1 (expected 1)
+image sha256:4ab1f0a1947e1f55a8a2a46514c3e54535b627ef955f53c1a2ddfc85a4e5bea4 inspect exit=1 (expected 1)
+image sha256:23f327517fd531e6befbe816eceb9a9a2236e6831a2b959f98bc4473ec9ad08a inspect exit=1 (expected 1)
+image sha256:f6ca8140dc4db389317bdcdab94fbb1038fa9126a9001f1a4df9a0190d6bd56b inspect exit=1 (expected 1)

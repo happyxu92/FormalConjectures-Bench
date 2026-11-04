@@ -1,0 +1,36 @@
+{
+  "task_id": "wikipedia-gausscircleproblem-error-isbigo-refute",
+  "trusted_input_target_sha256": "9dc5ee7460346a3b8d8eb8041fcc7495c2fdb35b76a57500d8bd2e27af1df97e",
+  "trusted_manifest_sha256": "8af4fe0d1573c46dccf5932a8068d9075a3905b151aaeea391b41ea01dd5a5e8",
+  "generation": "See both trusted_spec/manifest.json and reproduce.sh. Generated in network-disabled matching Linux x86_64 / Lean 4.27.0 container b9b21d646ecb from only original golden prefix/declaration with Submission import removed. Temporary target removed before exporting ExpectedType; independent transitive audit passed.",
+  "harbor_command": "harbor run --path /root/FormalConjectures-Bench/tasks-v3/wikipedia-gausscircleproblem-error-isbigo-refute --agent nop --env docker --job-name fcb-gauss-refute-final-nt40-20261104 --jobs-dir /tmp/gauss-refute-harbor --no-delete --force-build --n-concurrent 1 --ek keep_containers=true --extra-docker-compose /tmp/gauss-refute-harbor-network.yaml",
+  "harbor_initial_obstacle": "Initial current-task local build succeeded but default Docker address pools were exhausted. Used only this task's explicitly named network with unused 10.253.245.0/28 subnet; no preexisting networks were deleted. --no-delete alone removes containers, so keep_containers=true was added after reading installed Harbor implementation.",
+  "harbor_final_container": "98a967efec96756ad3c2e7f31778a64d2c97b6993efc6b0c3953cd144f3e51d8",
+  "harbor_final_image": "wikipedia-gausscircleproblem-err__tfqjmmb__env-main:latest / sha256:9ad86192a99fdccfb58d59293c76fac626da03917f75ed491abe7ef7049d724a",
+  "harbor_final_result": "one nop trial, zero exceptions, reward 0.0; see harbor-final-result.json. Final build uses this local Dockerfile/data, not registry task images. Compatible trusted base layers were reused.",
+  "entry_commands": [
+    "docker start 98a967efec96",
+    "docker exec -u root 98a967efec96 bash /tests/test.sh",
+    "docker exec -u ubuntu 98a967efec96 bash -lc 'cd /app && ./check.sh'",
+    "docker exec -u root 98a967efec96 python3 /tmp/gauss-refute-supplement.py",
+    "docker exec -u ubuntu 98a967efec96 python3 /tmp/gauss-refute-local-supplement.py",
+    "docker exec -u ubuntu 98a967efec96 bash -lc 'cd /app && lake build +FormalConjecturesBench.Target'"
+  ],
+  "exit_codes": {"formal_entry": 1, "local_entry": 1, "formal_supplement": 0, "local_supplement": 0, "ubuntu_dependency_build": 0, "source_search": 0},
+  "entry_result": "Both unchanged public-target entry runs intentionally reject original sorry in the proof region. Formal reward file is 0. This is not a mathematical proof pass. The real test.sh sets FCB_TASK_DIR=/app and FCB_TESTS_DIR=/tests; local check.sh selects /opt/formal-conjectures-bench-checker. Harbor uploaded /tests. Final hash parity verifies both installed packages, golden and checkers against the host.",
+  "supplemental_paths": [
+    "Actual load_trusted_spec: pinned manifest, input/compiled artifact hashes, architecture, Lean version and dependency revision manifest",
+    "Independent import and complete trusted type audit with full negated existential and no universe parameters; ExpectedType/N/E transitive axioms allowed only",
+    "Actual candidate source compilation as ubuntu using fixed Spec and trusted dependency paths",
+    "Actual complete type comparison accepts isolated original placeholder fixture, then actual axiom audit rejects sorryAx",
+    "Actual sorry canary sees sorryAx",
+    "Same-name candidate module/cache and inherited Lean environment cannot replace Spec; trusted search paths precede all candidate paths",
+    "Ordinary unrelated external precompiled import is still accepted; no generic import directory whitelist added",
+    "Unchanged frozen prefix/header with normal helper def shadowing Tendsto compiles but actual complete type comparison rejects the changed proposition",
+    "Frozen prefix/header mutations, missing assignment, added source outside editable subtree and banned helper axiom rejected",
+    "Missing/corrupt precompiled Spec fails explicitly without artifact recreation or source compilation fallback",
+    "Local /opt package supplement as ubuntu independently covers loading, type audit, candidate compilation, complete type comparison, rejecting sorryAx audit and canary"
+  ],
+  "limitations": "No full theorem proof constructed or included; a genuine sorry-free target success branch is intentionally not exercised. Placeholder fixtures exist only in temporary isolated projects, not public Target or golden. This audit is limited to trusted Spec identity/loading and complete type comparison, not a general compiler/plugin execution sandbox.",
+  "static_checks": "Two checker ASTs parse and are byte-identical; packages byte-identical; manifest file hashes verified; final host-/tests-/opt exact file hash parity passed; original frozen/source checks, axiom checks and canary remain in main. Dockerfile ends with ubuntu lake build validation. Target, both goldens, frozen hash and GoldenCheck remain unmodified."
+}

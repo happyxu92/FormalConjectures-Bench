@@ -1,0 +1,12 @@
+Starting trial: fcb-erdos11-prove-final-20261104
+Task: erdosproblems-11-erdos-11-prove
+Agent: nop
+Environment: docker
+Trials directory: /tmp/erdos11-prove-harbor-final-retry
+
+Trial completed!
+Trial name: fcb-erdos11-prove-final-20261104
+Task: formal-conjectures-bench/erdosproblems-11-erdos-11-prove
+Started: 2026-11-04 06:44:23.404896+00:00
+Finished: 2026-11-04 06:44:35.907888+00:00
+Rewards: {'reward': 0.0}

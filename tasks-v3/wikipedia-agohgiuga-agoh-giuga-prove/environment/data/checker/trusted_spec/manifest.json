@@ -1,0 +1,27 @@
+{
+  "task_id": "wikipedia-agohgiuga-agoh-giuga-prove",
+  "target_name": "AgohGiuga.agoh_giuga",
+  "universe_params": [],
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "6fc3cd24297d1e9a92114cde1b591229b59738654798f12b73cae2c003e3c39c",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "4066bb528ec804f0b64ebe2f60e2cca9af0d12a8ed306bee4d35709e5bd5eca1",
+    "FCBTrustedSpec.ilean": "915f2bd9ce983b642efc07d3d1cb78e57964953c8e35609ef91b28413fcdf3d3",
+    "FCBTrustedSpec.lean": "8cf3aaed4ade6625d96bb131c198f1450696e1d78ad8ab5f2e68a1c11da0946c",
+    "FCBTrustedSpec.olean": "a2ec0c0c9110ea94bfe792cd53046921dd455bc3bd2b6ae881539b81e8e6f11f",
+    "audit.log": "09ff72bfcdc7bbab375e486e20560c4440c37c4ed0972cfefd8abbbaa0ba29f1",
+    "generate.py": "b0d320cceb0d390dfeefeae6b452f466e42ce2eaeeabf403b267c16676266570",
+    "reproduce.sh": "5caaa45b1a68ddede574be14e70dd4b1732486d6540e41ff91e3683a25d6afff"
+  }
+}

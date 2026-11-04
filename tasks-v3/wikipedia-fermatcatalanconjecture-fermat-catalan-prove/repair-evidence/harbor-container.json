@@ -1,0 +1,217 @@
+[
+    {
+        "Id": "06d7d99367f662c62e64e6585bbe7703d7a4a9befef88340f3caed997b5ebccf",
+        "Created": "2026-11-04T08:42:48.444141791Z",
+        "Path": "sh",
+        "Args": [
+            "-c",
+            "sleep infinity"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 2063157,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-04T08:43:28.546108748Z",
+            "FinishedAt": "2026-11-04T08:43:00.611414255Z"
+        },
+        "Image": "sha256:7a604efb0e6d8ba4ca94e77942eee2387bf40a4489d3473347d3b0ca37e807b9",
+        "ResolvConfPath": "/var/lib/docker/containers/06d7d99367f662c62e64e6585bbe7703d7a4a9befef88340f3caed997b5ebccf/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/06d7d99367f662c62e64e6585bbe7703d7a4a9befef88340f3caed997b5ebccf/hostname",
+        "HostsPath": "/var/lib/docker/containers/06d7d99367f662c62e64e6585bbe7703d7a4a9befef88340f3caed997b5ebccf/hosts",
+        "LogPath": "/var/lib/docker/containers/06d7d99367f662c62e64e6585bbe7703d7a4a9befef88340f3caed997b5ebccf/06d7d99367f662c62e64e6585bbe7703d7a4a9befef88340f3caed997b5ebccf-json.log",
+        "Name": "/wikipedia-fermatcatalanconjectur__qnl3u4m__env-main-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "wikipedia-fermatcatalanconjectur__qnl3u4m__env_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 8589934592,
+            "NanoCpus": 4000000000,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 17179869184,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "06d7d99367f6",
+            "Domainname": "",
+            "User": "ubuntu",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "sh",
+                "-c",
+                "sleep infinity"
+            ],
+            "Image": "wikipedia-fermatcatalanconjectur__qnl3u4m__env-main",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "51aad5c89590a1a6e9c1ad96ea2ce4fda2faa9a91d5566e8faca5dd271f86973",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:7a604efb0e6d8ba4ca94e77942eee2387bf40a4489d3473347d3b0ca37e807b9",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "wikipedia-fermatcatalanconjectur__qnl3u4m__env",
+                "com.docker.compose.project.config_files": "/tmp/tmpjkmr2taa/wikipedia-fermatcatalanconjectur__QNL3U4m__env-docker-compose-resources.json,/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml,/tmp/fcb-fermatcatalan-compose-final.yaml,/tmp/tmppe4g9bz_/docker-compose-environment.json,/tmp/tmpx758gagf/docker-compose-mounts.json",
+                "com.docker.compose.project.working_dir": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-fermatcatalanconjecture-fermat-catalan-prove/environment",
+                "com.docker.compose.service": "main",
+                "com.docker.compose.version": "2.40.3",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "e4b25b866fd72e3663ff9752a3646a12036b9c0e0e9cf9a0d68507afd24264e7",
+            "SandboxKey": "/var/run/docker/netns/e4b25b866fd7",
+            "Ports": {},
+            "Networks": {
+                "wikipedia-fermatcatalanconjectur__qnl3u4m__env_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "wikipedia-fermatcatalanconjectur__qnl3u4m__env-main-1",
+                        "main"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "08985f12f704fb24edd2453b3cae7c81f0162084719d42bba7680732498d5b96",
+                    "EndpointID": "f9c476ab0b7e388079ce65a9fd03fbd7249f383675868b83d61082311289ebd9",
+                    "Gateway": "10.248.174.1",
+                    "IPAddress": "10.248.174.2",
+                    "MacAddress": "86:29:84:b1:ee:8e",
+                    "IPPrefixLen": 24,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "wikipedia-fermatcatalanconjectur__qnl3u4m__env-main-1",
+                        "main",
+                        "06d7d99367f6"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:60b6b6fdebe70ac0ac048bea8b6d5b5766c288f8de285c62c8dc0832a56f538b",
+            "size": 3518,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]

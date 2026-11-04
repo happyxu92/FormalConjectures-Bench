@@ -1,0 +1,21 @@
+{
+  "task": {
+    "path": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-agohgiuga-agoh-giuga-prove"
+  },
+  "trial_name": "fcb-agohgiuga-prove-final2-20261104",
+  "trials_dir": "/tmp/agohgiuga-prove-harbor",
+  "agent": {
+    "name": "nop"
+  },
+  "environment": {
+    "type": "docker",
+    "force_build": true,
+    "delete": false,
+    "kwargs": {
+      "keep_containers": true
+    },
+    "extra_docker_compose": [
+      "/tmp/agohgiuga-prove-own-network.yaml"
+    ]
+  }
+}

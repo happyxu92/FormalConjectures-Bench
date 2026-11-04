@@ -1,0 +1,13 @@
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green2.maxRestrictedSumAvoidingSubsetSize: [propext, Quot.sound, Classical.choice]
+complete universe parameters: []
+complete elaborated type: ∀ᶠ (n : ℕ) in Filter.atTop,
+  ∀ (A : Finset ℤ), A.card = n → ↑(Green2.maxRestrictedSumAvoidingSubsetSize A) ≥ Real.log ↑n ^ 100
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ᶠ (n : ℕ) in Filter.atTop,
+  ∀ (A : Finset ℤ), A.card = n → ↑(Green2.maxRestrictedSumAvoidingSubsetSize A) ≥ Real.log ↑n ^ 100
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)
+x86_64
+5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26  /opt/formal-conjectures/lake-manifest.json

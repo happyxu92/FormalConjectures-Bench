@@ -1,0 +1,81 @@
+=== fixed_spec_manifest_and_artifacts ===
+ Loaded fixed precompiled trusted Spec from /opt/formal-conjectures-bench-checker/trusted_spec
+
+=== original_frozen_header ===
+ 
+=== frozen_edit ===
+ Code above the benchmark target marker changed
+
+=== header_edit ===
+ Target theorem header changed
+
+=== sorry_source ===
+ Banned Lean feature found in proof region at line 2: \bsorry\b
+
+=== original_frozen_files ===
+ 
+=== original_tree ===
+ 
+=== original_source_confinement ===
+ 
+=== trusted_type_transitive_audit ===
+ audited FCBTrustedSpec.ExpectedType and all transitive dependencies: [propext, Quot.sound, Classical.choice]
+audited Hall.HallIneq and all transitive dependencies: [propext, Quot.sound, Classical.choice]
+audited Hall.HallConjectureExp and all transitive dependencies: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ ε > 0, Hall.HallConjectureExp (2⁻¹ - ε)
+def Hall.HallIneq : ℝ → ℝ → Prop :=
+fun C e ↦ ∀ (x y : ℤ), y ^ 2 ≠ x ^ 3 → ↑|y ^ 2 - x ^ 3| > C * |↑x| ^ e
+def Hall.HallConjectureExp : ℝ → Prop :=
+fun e ↦ ∃ C > 0, Hall.HallIneq C e
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+=== ubuntu_candidate_compile ===
+ Candidate compiled as ubuntu with fixed trusted import paths
+
+=== full_type_match ===
+ Complete theorem type matches trusted Spec
+
+=== target_sorry_axiom_rejected ===
+ Unexpected axioms for Hall.weak_hall_conjecture: ['sorryAx']
+'Hall.weak_hall_conjecture' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+
+=== sorry_canary ===
+ 
+fixed_spec_resolution:
+/opt/elan/toolchains/leanprover--lean4---v4.27.0/lib/lean/Init.olean
+/opt/formal-conjectures-bench-checker/trusted_spec/FCBTrustedSpec.olean
+/tmp/formal_conjectures_bench_1vi85caf/FormalConjecturesBench/Submission.olean
+
+=== same_name_module_cache_environment_cannot_shadow ===
+ Complete theorem type matches trusted Spec
+
+=== semantic_attack_original_header_unchanged ===
+ 
+=== semantic_attack_allowed_source_syntax ===
+ 
+=== semantic_attack_compiles ===
+ Candidate compiled as ubuntu with fixed trusted import paths
+
+=== semantic_instance_full_type_rejected ===
+ Lean audit command failed
+/tmp/formal_conjectures_bench_2rsv8gfm/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Hall.weak_hall_conjecture
+has type
+  ∀ ε > 0, Hall.HallConjectureExp (2⁻¹ - ε)
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+
+=== out_of_tree_lean_rejected ===
+ Unexpected added Lean source outside editable subtree: Escape.lean
+
+=== spec_missing_fails_without_regeneration ===
+ Missing trusted Spec artifact: FCBTrustedSpec.olean
+
+=== spec_corrupt_fails_without_regeneration ===
+ Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+
+ALL SUPPLEMENTAL ASSERTIONS PASSED

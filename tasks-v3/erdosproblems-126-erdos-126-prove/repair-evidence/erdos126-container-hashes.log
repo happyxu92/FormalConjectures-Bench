@@ -1,0 +1,168 @@
+[
+  {
+    "local": "tests/GoldenCheck.lean",
+    "container": "/tests/GoldenCheck.lean",
+    "sha256": "abf738d6d930d16965c125c928d00d0c610d0bd80d9cc0242a566a2021aa3927"
+  },
+  {
+    "local": "tests/golden_env/FormalConjecturesBench/Submission.lean",
+    "container": "/tests/golden_env/FormalConjecturesBench/Submission.lean",
+    "sha256": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93"
+  },
+  {
+    "local": "tests/golden_env/FormalConjecturesBench/Target.lean",
+    "container": "/tests/golden_env/FormalConjecturesBench/Target.lean",
+    "sha256": "dc811b12220e1a3f0d473228a071f19357f69aa94e7f846c62236a0a145979b8"
+  },
+  {
+    "local": "tests/golden_env/FormalConjecturesBench.lean",
+    "container": "/tests/golden_env/FormalConjecturesBench.lean",
+    "sha256": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90"
+  },
+  {
+    "local": "tests/golden_env/lake-manifest.json",
+    "container": "/tests/golden_env/lake-manifest.json",
+    "sha256": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71"
+  },
+  {
+    "local": "tests/golden_env/lakefile.toml",
+    "container": "/tests/golden_env/lakefile.toml",
+    "sha256": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db"
+  },
+  {
+    "local": "tests/golden_env/lean-toolchain",
+    "container": "/tests/golden_env/lean-toolchain",
+    "sha256": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  {
+    "local": "tests/test.sh",
+    "container": "/tests/test.sh",
+    "sha256": "a25ffe113bd44f4334d7fd0a269a248fc0698cb650ab6e102707340593b5b61c"
+  },
+  {
+    "local": "tests/test_target.py",
+    "container": "/tests/test_target.py",
+    "sha256": "1877739cd88186c09f73582dfac2d75c901c6703fc8877f141249b15a227ba35"
+  },
+  {
+    "local": "tests/trusted_spec/AuditSpec.lean",
+    "container": "/tests/trusted_spec/AuditSpec.lean",
+    "sha256": "4054c2bfd675267fbd3326910e8a05bbe4bad20aeaae83721337c3331c497a00"
+  },
+  {
+    "local": "tests/trusted_spec/FCBTrustedSpec.ilean",
+    "container": "/tests/trusted_spec/FCBTrustedSpec.ilean",
+    "sha256": "b14b937a64eb7f60fce0b57d002e978c7898f0d77d22a1d83fde49f95132d1de"
+  },
+  {
+    "local": "tests/trusted_spec/FCBTrustedSpec.lean",
+    "container": "/tests/trusted_spec/FCBTrustedSpec.lean",
+    "sha256": "beb5922b2fa6fbb9df9792530268d0330c0a6201e0d090199f9afa4c63a98f0d"
+  },
+  {
+    "local": "tests/trusted_spec/FCBTrustedSpec.olean",
+    "container": "/tests/trusted_spec/FCBTrustedSpec.olean",
+    "sha256": "36ce91440224bcd0cfe1c065995b066fe1b12cbf9a7d2325ed98c9904860d51c"
+  },
+  {
+    "local": "tests/trusted_spec/audit.log",
+    "container": "/tests/trusted_spec/audit.log",
+    "sha256": "389fc239f2239c779d059246038e216bdfeb3d4b0cbbc278ca8a66c1f30fe486"
+  },
+  {
+    "local": "tests/trusted_spec/generate.py",
+    "container": "/tests/trusted_spec/generate.py",
+    "sha256": "e36cd63ca8b6be93fd471ea5c36afd0fd1e09e3d4d829efaa2099a7ae1bb7331"
+  },
+  {
+    "local": "tests/trusted_spec/manifest.json",
+    "container": "/tests/trusted_spec/manifest.json",
+    "sha256": "dbb12505cae410aa6d3d896baaeb7465b64384008f3b08a433487835e8a2579c"
+  },
+  {
+    "local": "tests/trusted_spec/reproduce.sh",
+    "container": "/tests/trusted_spec/reproduce.sh",
+    "sha256": "9a0d6384f12f1bc161b99f91068a210238d440a4ecc17ec63d15f0b55acc9bce"
+  },
+  {
+    "local": "environment/data/checker/GoldenCheck.lean",
+    "container": "/opt/formal-conjectures-bench-checker/GoldenCheck.lean",
+    "sha256": "abf738d6d930d16965c125c928d00d0c610d0bd80d9cc0242a566a2021aa3927"
+  },
+  {
+    "local": "environment/data/checker/golden_env/FormalConjecturesBench/Submission.lean",
+    "container": "/opt/formal-conjectures-bench-checker/golden_env/FormalConjecturesBench/Submission.lean",
+    "sha256": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93"
+  },
+  {
+    "local": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+    "container": "/opt/formal-conjectures-bench-checker/golden_env/FormalConjecturesBench/Target.lean",
+    "sha256": "dc811b12220e1a3f0d473228a071f19357f69aa94e7f846c62236a0a145979b8"
+  },
+  {
+    "local": "environment/data/checker/golden_env/FormalConjecturesBench.lean",
+    "container": "/opt/formal-conjectures-bench-checker/golden_env/FormalConjecturesBench.lean",
+    "sha256": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90"
+  },
+  {
+    "local": "environment/data/checker/golden_env/lake-manifest.json",
+    "container": "/opt/formal-conjectures-bench-checker/golden_env/lake-manifest.json",
+    "sha256": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71"
+  },
+  {
+    "local": "environment/data/checker/golden_env/lakefile.toml",
+    "container": "/opt/formal-conjectures-bench-checker/golden_env/lakefile.toml",
+    "sha256": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db"
+  },
+  {
+    "local": "environment/data/checker/golden_env/lean-toolchain",
+    "container": "/opt/formal-conjectures-bench-checker/golden_env/lean-toolchain",
+    "sha256": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  {
+    "local": "environment/data/checker/test_target.py",
+    "container": "/opt/formal-conjectures-bench-checker/test_target.py",
+    "sha256": "1877739cd88186c09f73582dfac2d75c901c6703fc8877f141249b15a227ba35"
+  },
+  {
+    "local": "environment/data/checker/trusted_spec/AuditSpec.lean",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/AuditSpec.lean",
+    "sha256": "4054c2bfd675267fbd3326910e8a05bbe4bad20aeaae83721337c3331c497a00"
+  },
+  {
+    "local": "environment/data/checker/trusted_spec/FCBTrustedSpec.ilean",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/FCBTrustedSpec.ilean",
+    "sha256": "b14b937a64eb7f60fce0b57d002e978c7898f0d77d22a1d83fde49f95132d1de"
+  },
+  {
+    "local": "environment/data/checker/trusted_spec/FCBTrustedSpec.lean",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/FCBTrustedSpec.lean",
+    "sha256": "beb5922b2fa6fbb9df9792530268d0330c0a6201e0d090199f9afa4c63a98f0d"
+  },
+  {
+    "local": "environment/data/checker/trusted_spec/FCBTrustedSpec.olean",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/FCBTrustedSpec.olean",
+    "sha256": "36ce91440224bcd0cfe1c065995b066fe1b12cbf9a7d2325ed98c9904860d51c"
+  },
+  {
+    "local": "environment/data/checker/trusted_spec/audit.log",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/audit.log",
+    "sha256": "389fc239f2239c779d059246038e216bdfeb3d4b0cbbc278ca8a66c1f30fe486"
+  },
+  {
+    "local": "environment/data/checker/trusted_spec/generate.py",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/generate.py",
+    "sha256": "e36cd63ca8b6be93fd471ea5c36afd0fd1e09e3d4d829efaa2099a7ae1bb7331"
+  },
+  {
+    "local": "environment/data/checker/trusted_spec/manifest.json",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/manifest.json",
+    "sha256": "dbb12505cae410aa6d3d896baaeb7465b64384008f3b08a433487835e8a2579c"
+  },
+  {
+    "local": "environment/data/checker/trusted_spec/reproduce.sh",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/reproduce.sh",
+    "sha256": "9a0d6384f12f1bc161b99f91068a210238d440a4ecc17ec63d15f0b55acc9bce"
+  }
+]
+All checker, golden, Spec and entry hashes match; both packages byte-identical.

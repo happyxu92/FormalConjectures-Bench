@@ -1,0 +1,22 @@
+  1/1 Mean: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:00:12 0:00:00
+adhoc • nop
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 0.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 12s
+Results written to 
+/tmp/247refute-harbor-jobs/fcb-247-refute-harbor-accept-20261104/result.json
+Inspect results by running `harbor view /tmp/247refute-harbor-jobs`
+Share results by running `harbor upload 
+/tmp/247refute-harbor-jobs/fcb-247-refute-harbor-accept-20261104`
+

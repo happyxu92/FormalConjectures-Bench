@@ -1,0 +1,728 @@
+$ docker inspect 8deefb24c7a92c80defc6eb7d6f179229c3a02ca6596669aa25da72cc97ffa98
+[
+    {
+        "Id": "8deefb24c7a92c80defc6eb7d6f179229c3a02ca6596669aa25da72cc97ffa98",
+        "Created": "2026-11-04T08:09:40.545485505Z",
+        "Path": "sleep",
+        "Args": [
+            "infinity"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1992754,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-04T08:09:40.594222936Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:e21dc171550d4c49aceba963047d00d1a350ce711019cbd9cb32c4770c7a39df",
+        "ResolvConfPath": "/var/lib/docker/containers/8deefb24c7a92c80defc6eb7d6f179229c3a02ca6596669aa25da72cc97ffa98/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/8deefb24c7a92c80defc6eb7d6f179229c3a02ca6596669aa25da72cc97ffa98/hostname",
+        "HostsPath": "/var/lib/docker/containers/8deefb24c7a92c80defc6eb7d6f179229c3a02ca6596669aa25da72cc97ffa98/hosts",
+        "LogPath": "/var/lib/docker/containers/8deefb24c7a92c80defc6eb7d6f179229c3a02ca6596669aa25da72cc97ffa98/8deefb24c7a92c80defc6eb7d6f179229c3a02ca6596669aa25da72cc97ffa98-json.log",
+        "Name": "/fcb-agohgiuga-prove-spec-20261104",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "bridge",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "8deefb24c7a9",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan"
+            ],
+            "Cmd": [
+                "sleep",
+                "infinity"
+            ],
+            "Image": "fcb-repair/erdosproblems-252-k-eq-four:252four-20261102-183405",
+            "Volumes": null,
+            "WorkingDir": "/opt",
+            "Entrypoint": null,
+            "Labels": {
+                "fcb.task": "wikipedia-agohgiuga-agoh-giuga-prove",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "39d7cd1cfa9774dc9a52365b6fb5784a4e085f708c840d84426eff2b718c7cc8",
+            "SandboxKey": "/var/run/docker/netns/39d7cd1cfa97",
+            "Ports": {},
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "3e4bd1e8469087291b108ac64e3bbe1eec606c2b3805c235ac79fe5d92a4f5dc",
+                    "EndpointID": "a97693f4d451720e7fcc82db49350af18e96efad205ca759ee3cfeebb45c2877",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.3",
+                    "MacAddress": "16:37:59:b8:73:cf",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:1b02d023d87071ecc69fe8839396e5773d857e69b3208accec0bbd34f6ccda75",
+            "size": 2573,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
+exit=0
+
+$ docker stop 8deefb24c7a92c80defc6eb7d6f179229c3a02ca6596669aa25da72cc97ffa98
+8deefb24c7a92c80defc6eb7d6f179229c3a02ca6596669aa25da72cc97ffa98
+exit=0
+
+$ docker rm 8deefb24c7a92c80defc6eb7d6f179229c3a02ca6596669aa25da72cc97ffa98
+8deefb24c7a92c80defc6eb7d6f179229c3a02ca6596669aa25da72cc97ffa98
+exit=0
+
+$ docker inspect 8deefb24c7a92c80defc6eb7d6f179229c3a02ca6596669aa25da72cc97ffa98
+[]
+error: no such object: 8deefb24c7a92c80defc6eb7d6f179229c3a02ca6596669aa25da72cc97ffa98
+exit=1
+
+$ docker inspect 037d959658a38a337ecfed70fc75a02db335022c58607485a992587631dc6c34
+[
+    {
+        "Id": "037d959658a38a337ecfed70fc75a02db335022c58607485a992587631dc6c34",
+        "Created": "2026-11-04T08:11:33.547904751Z",
+        "Path": "sh",
+        "Args": [
+            "-c",
+            "sleep infinity"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 2001515,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-04T08:12:53.962893221Z",
+            "FinishedAt": "2026-11-04T08:11:45.053209505Z"
+        },
+        "Image": "sha256:4da6b3e6a74092e558d69fe6a25044a1636926f6aa775977a70d878e437b7f07",
+        "ResolvConfPath": "/var/lib/docker/containers/037d959658a38a337ecfed70fc75a02db335022c58607485a992587631dc6c34/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/037d959658a38a337ecfed70fc75a02db335022c58607485a992587631dc6c34/hostname",
+        "HostsPath": "/var/lib/docker/containers/037d959658a38a337ecfed70fc75a02db335022c58607485a992587631dc6c34/hosts",
+        "LogPath": "/var/lib/docker/containers/037d959658a38a337ecfed70fc75a02db335022c58607485a992587631dc6c34/037d959658a38a337ecfed70fc75a02db335022c58607485a992587631dc6c34-json.log",
+        "Name": "/fcb-agohgiuga-prove-accept-20261104__env-main-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "fcb-agohgiuga-prove-accept-20261104__env_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 8589934592,
+            "NanoCpus": 4000000000,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 17179869184,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "037d959658a3",
+            "Domainname": "",
+            "User": "ubuntu",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "sh",
+                "-c",
+                "sleep infinity"
+            ],
+            "Image": "fcb-agohgiuga-prove-accept-20261104__env-main",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "51aad5c89590a1a6e9c1ad96ea2ce4fda2faa9a91d5566e8faca5dd271f86973",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:4da6b3e6a74092e558d69fe6a25044a1636926f6aa775977a70d878e437b7f07",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "fcb-agohgiuga-prove-accept-20261104__env",
+                "com.docker.compose.project.config_files": "/tmp/tmpsinr1thr/fcb-agohgiuga-prove-accept-20261104__env-docker-compose-resources.json,/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml,/tmp/tmpkfiot0e6/docker-compose-environment.json,/tmp/tmpebtui4mp/docker-compose-mounts.json",
+                "com.docker.compose.project.working_dir": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-agohgiuga-agoh-giuga-prove/environment",
+                "com.docker.compose.service": "main",
+                "com.docker.compose.version": "2.40.3",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "3d2e826dba6bc5a1ba40a5d1b8b60760d331be4041622dc34d17161b54380a4e",
+            "SandboxKey": "/var/run/docker/netns/3d2e826dba6b",
+            "Ports": {},
+            "Networks": {
+                "fcb-agohgiuga-prove-accept-20261104__env_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "fcb-agohgiuga-prove-accept-20261104__env-main-1",
+                        "main"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "434a84aecd0157821bec352f0ce961c00384ffe1c4f5d89d6c91ed5b2b0cdaa5",
+                    "EndpointID": "947f87e5a48ec1dcb4b09f8059d0389c930138b2198e3dc5290087331e13667c",
+                    "Gateway": "192.168.128.1",
+                    "IPAddress": "192.168.128.2",
+                    "MacAddress": "66:de:ed:c0:77:32",
+                    "IPPrefixLen": 20,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "fcb-agohgiuga-prove-accept-20261104__env-main-1",
+                        "main",
+                        "037d959658a3"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:7834699c44d57b38b4aa1ffa877a61bb6b4bb7c3d8590705f01d1d1a3492facc",
+            "size": 3518,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
+exit=0
+
+$ docker stop 037d959658a38a337ecfed70fc75a02db335022c58607485a992587631dc6c34
+037d959658a38a337ecfed70fc75a02db335022c58607485a992587631dc6c34
+exit=0
+
+$ docker rm 037d959658a38a337ecfed70fc75a02db335022c58607485a992587631dc6c34
+037d959658a38a337ecfed70fc75a02db335022c58607485a992587631dc6c34
+exit=0
+
+$ docker inspect 037d959658a38a337ecfed70fc75a02db335022c58607485a992587631dc6c34
+[]
+error: no such object: 037d959658a38a337ecfed70fc75a02db335022c58607485a992587631dc6c34
+exit=1
+
+$ docker inspect c66b39292a53ac48d719f24ab7aa213e4407cc3b96969eca2d62f8a4be10d980
+[
+    {
+        "Id": "c66b39292a53ac48d719f24ab7aa213e4407cc3b96969eca2d62f8a4be10d980",
+        "Created": "2026-11-04T08:28:00.245317675Z",
+        "Path": "sh",
+        "Args": [
+            "-c",
+            "sleep infinity"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 2033941,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-04T08:29:14.746733525Z",
+            "FinishedAt": "2026-11-04T08:28:11.709495129Z"
+        },
+        "Image": "sha256:6dcde57323d2e4005193dcd91b3e53b51e2b44aefc21ae30fa9d1cb48d2de939",
+        "ResolvConfPath": "/var/lib/docker/containers/c66b39292a53ac48d719f24ab7aa213e4407cc3b96969eca2d62f8a4be10d980/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/c66b39292a53ac48d719f24ab7aa213e4407cc3b96969eca2d62f8a4be10d980/hostname",
+        "HostsPath": "/var/lib/docker/containers/c66b39292a53ac48d719f24ab7aa213e4407cc3b96969eca2d62f8a4be10d980/hosts",
+        "LogPath": "/var/lib/docker/containers/c66b39292a53ac48d719f24ab7aa213e4407cc3b96969eca2d62f8a4be10d980/c66b39292a53ac48d719f24ab7aa213e4407cc3b96969eca2d62f8a4be10d980-json.log",
+        "Name": "/fcb-agohgiuga-prove-final2-20261104__env-main-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "fcb-agohgiuga-prove-accept-20261104__env_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 8589934592,
+            "NanoCpus": 4000000000,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 17179869184,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "c66b39292a53",
+            "Domainname": "",
+            "User": "ubuntu",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "sh",
+                "-c",
+                "sleep infinity"
+            ],
+            "Image": "fcb-agohgiuga-prove-final2-20261104__env-main",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "51aad5c89590a1a6e9c1ad96ea2ce4fda2faa9a91d5566e8faca5dd271f86973",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:6dcde57323d2e4005193dcd91b3e53b51e2b44aefc21ae30fa9d1cb48d2de939",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "fcb-agohgiuga-prove-final2-20261104__env",
+                "com.docker.compose.project.config_files": "/tmp/tmp5sjyn0ko/fcb-agohgiuga-prove-final2-20261104__env-docker-compose-resources.json,/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml,/tmp/agohgiuga-prove-own-network.yaml,/tmp/tmpn4jb9nq7/docker-compose-environment.json,/tmp/tmpsqt1xzq_/docker-compose-mounts.json",
+                "com.docker.compose.project.working_dir": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-agohgiuga-agoh-giuga-prove/environment",
+                "com.docker.compose.service": "main",
+                "com.docker.compose.version": "2.40.3",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "1a1ae3ca868c11b5d49849a3eb67ce2a75df34c1d08c3ca2108b0bbb7f16dec8",
+            "SandboxKey": "/var/run/docker/netns/1a1ae3ca868c",
+            "Ports": {},
+            "Networks": {
+                "fcb-agohgiuga-prove-accept-20261104__env_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "fcb-agohgiuga-prove-final2-20261104__env-main-1",
+                        "main"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "434a84aecd0157821bec352f0ce961c00384ffe1c4f5d89d6c91ed5b2b0cdaa5",
+                    "EndpointID": "07628d48f2b5062c7caf28a71d0dd5ce9969e5fd4b9f054c50757a66ad0c64a3",
+                    "Gateway": "192.168.128.1",
+                    "IPAddress": "192.168.128.3",
+                    "MacAddress": "b6:f8:45:17:45:9d",
+                    "IPPrefixLen": 20,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "fcb-agohgiuga-prove-final2-20261104__env-main-1",
+                        "main",
+                        "c66b39292a53"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:ad4bb78c96f9db60dd37e4c750d7ddf864629cba9ada29d01aa0ba1ea2719175",
+            "size": 3518,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
+exit=0
+
+$ docker stop c66b39292a53ac48d719f24ab7aa213e4407cc3b96969eca2d62f8a4be10d980
+c66b39292a53ac48d719f24ab7aa213e4407cc3b96969eca2d62f8a4be10d980
+exit=0
+
+$ docker rm c66b39292a53ac48d719f24ab7aa213e4407cc3b96969eca2d62f8a4be10d980
+c66b39292a53ac48d719f24ab7aa213e4407cc3b96969eca2d62f8a4be10d980
+exit=0
+
+$ docker inspect c66b39292a53ac48d719f24ab7aa213e4407cc3b96969eca2d62f8a4be10d980
+[]
+error: no such object: c66b39292a53ac48d719f24ab7aa213e4407cc3b96969eca2d62f8a4be10d980
+exit=1
+
+$ docker image rm fcb-agohgiuga-prove-accept-20261104__env-main:latest
+Untagged: fcb-agohgiuga-prove-accept-20261104__env-main:latest
+Deleted: sha256:4da6b3e6a74092e558d69fe6a25044a1636926f6aa775977a70d878e437b7f07
+exit=0
+
+$ docker image rm fcb-agohgiuga-prove-final-20261104__env-main:latest
+Untagged: fcb-agohgiuga-prove-final-20261104__env-main:latest
+Deleted: sha256:05fb88038a5b9aaf36537bd13a16712dd6acb547ecff599e181e9d96ebd2fb40
+exit=0
+
+$ docker image rm fcb-agohgiuga-prove-final2-20261104__env-main:latest
+Untagged: fcb-agohgiuga-prove-final2-20261104__env-main:latest
+Deleted: sha256:6dcde57323d2e4005193dcd91b3e53b51e2b44aefc21ae30fa9d1cb48d2de939
+exit=0
+
+$ docker image inspect sha256:4da6b3e6a74092e558d69fe6a25044a1636926f6aa775977a70d878e437b7f07
+[]
+Error response from daemon: No such image: sha256:4da6b3e6a74092e558d69fe6a25044a1636926f6aa775977a70d878e437b7f07
+exit=1
+
+$ docker image inspect sha256:05fb88038a5b9aaf36537bd13a16712dd6acb547ecff599e181e9d96ebd2fb40
+[]
+Error response from daemon: No such image: sha256:05fb88038a5b9aaf36537bd13a16712dd6acb547ecff599e181e9d96ebd2fb40
+exit=1
+
+$ docker image inspect sha256:6dcde57323d2e4005193dcd91b3e53b51e2b44aefc21ae30fa9d1cb48d2de939
+[]
+Error response from daemon: No such image: sha256:6dcde57323d2e4005193dcd91b3e53b51e2b44aefc21ae30fa9d1cb48d2de939
+exit=1
+
+$ docker network rm 434a84aecd0157821bec352f0ce961c00384ffe1c4f5d89d6c91ed5b2b0cdaa5
+434a84aecd0157821bec352f0ce961c00384ffe1c4f5d89d6c91ed5b2b0cdaa5
+exit=0
+
+$ docker network inspect 434a84aecd0157821bec352f0ce961c00384ffe1c4f5d89d6c91ed5b2b0cdaa5
+[]
+Error response from daemon: network 434a84aecd0157821bec352f0ce961c00384ffe1c4f5d89d6c91ed5b2b0cdaa5 not found
+exit=1
+
+$ docker ps -a --filter name=fcb-agohgiuga-prove --no-trunc
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+exit=0
+
+$ docker image inspect sha256:e21dc171550d4c49aceba963047d00d1a350ce711019cbd9cb32c4770c7a39df --format {{.Id}}
+sha256:e21dc171550d4c49aceba963047d00d1a350ce711019cbd9cb32c4770c7a39df
+exit=0
+
+FAILURES=[]

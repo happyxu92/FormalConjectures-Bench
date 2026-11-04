@@ -1,0 +1,7 @@
+c23958866142b4d54f935108937ca1fa13298605a6e0bb7ee9220c2d8441d236  /tests/test_target.py
+c23958866142b4d54f935108937ca1fa13298605a6e0bb7ee9220c2d8441d236  /opt/formal-conjectures-bench-checker/test_target.py
+035bc1ef21be75cd802f4a253922d4510d7d3ba4bef3c010c05c485338a2bef6  /tests/trusted_spec/manifest.json
+035bc1ef21be75cd802f4a253922d4510d7d3ba4bef3c010c05c485338a2bef6  /opt/formal-conjectures-bench-checker/trusted_spec/manifest.json
+bf64c2b450cd48b749b8b63476b355a92546d1d7d9b0c727df25bf6a3662fa53  /tests/golden_env/FormalConjecturesBench/Target.lean
+bf64c2b450cd48b749b8b63476b355a92546d1d7d9b0c727df25bf6a3662fa53  /opt/formal-conjectures-bench-checker/golden_env/FormalConjecturesBench/Target.lean
+0

@@ -8,6 +8,12 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+statement_status_note = "This refute task is the exact negation of pinned upstream Erdos1.erdos_1. Positive naturals, powerset-sum injectivity, uniform real C > 0, N != 0 and the strict bound agree with the source formulation (strict versus weak bound is immaterial after shrinking C). No evident definition or quantifier error; mathematical inputs unchanged. erdosproblems.com direct fetch was Cloudflare-blocked; read pinned upstream and source-linked erdosproblems.ai/wiki/problems/additive_combinatorics/E0001."
+public_lean4_proof = true
+public_lean4_proof_status = "local_collection_exact_match"
+public_lean4_proof_urls = ["https://github.com/tadamcz/erdos1/blob/0e395153306f34b3829d118b85bdd704136f2843/Erdos1/Resolutions/Erdos1_219usd_38h.lean#L2419"]
+public_lean4_proof_note = "Exact complete task ID matched skill references/public-lean4-proofs.csv. Also read the linked pinned source: Erdos1.erdos_1.disproof has the same negated uniform bound and IsSumDistinctSet definition. Not compiled in this task; no public proof installed or bundled."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/1.lean"

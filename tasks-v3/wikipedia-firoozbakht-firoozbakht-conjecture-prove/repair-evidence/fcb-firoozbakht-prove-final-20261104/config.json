@@ -1,0 +1,22 @@
+{
+    "job_name": "fcb-firoozbakht-prove-final-20261104",
+    "jobs_dir": "/tmp/fcb-firoozbakht-prove-harbor",
+    "n_concurrent_trials": 1,
+    "environment": {
+        "type": "docker",
+        "delete": false,
+        "extra_docker_compose": [
+            "/tmp/fcb-firoozbakht-prove-compose.json"
+        ]
+    },
+    "agents": [
+        {
+            "name": "nop"
+        }
+    ],
+    "tasks": [
+        {
+            "path": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-firoozbakht-firoozbakht-conjecture-prove"
+        }
+    ]
+}

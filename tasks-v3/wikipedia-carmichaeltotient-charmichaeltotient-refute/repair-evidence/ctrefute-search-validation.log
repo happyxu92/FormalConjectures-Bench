@@ -1,0 +1,1 @@
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Nat/Totient.lean:def totient (n : ℕ) : ℕ := #{a ∈ range n | n.Coprime a}

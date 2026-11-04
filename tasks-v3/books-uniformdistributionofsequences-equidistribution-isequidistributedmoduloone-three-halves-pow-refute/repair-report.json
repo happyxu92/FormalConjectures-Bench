@@ -1,0 +1,35 @@
+{
+  "task_id": "books-uniformdistributionofsequences-equidistribution-isequidistributedmoduloone-three-halves-pow-refute",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令补齐隐藏 .lake/packages；在本题 Harbor 容器以 ubuntu 搜到 Mathlib 的 def fract，退出码 0。见 repair-evidence/three-halves-refute-instruction-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；原 Dockerfile 缺末尾普通用户构建验证，已追加 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。当前本地 Harbor 构建成功，容器内 ubuntu 实际 Lake 构建退出 0；未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能执行 check_unicode_header.py：case=no_issue，原头通过、改头/移除 := 被拒，两份 checker 一致，无代理码点问题。见 repair-evidence/three-halves-refute-unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重解析 GoldenCheck，存在语义遮蔽。现从未改 golden 提前提取完整类型，Lean 4.27.0/x86_64 预编译并独立审计 ExpectedType 及引用定义；无额外公理、无 universe/外层参数。两份可信包同步，清单 SHA256 442df4804252367413f86b941b6afe4d6f9984b711217f8cd854d8cf5ab62c8b。固定 /tests 或本地 /opt 来源、工具链和依赖路径，ubuntu 临时编译与完整类型比较；原限制、公理审计及 canary 保留。当前本地 Harbor 最终镜像 47eccb4a04fc87aa4725469fa8a203b87b677418079e16d089cfaf3434574e14，正式/本地入口均因原始 sorry 退出 1、reward=0（预期，非证明成功）；同一最终 Harbor 容器补测 Spec 加载/审计、ubuntu 编译、完整类型比较、公理拒绝和 canary 均完成。冻结头不变的 HDiv 实例偷换在类型比较处被拒；同名源码/缓存/环境遮蔽、缺失/损坏产物、冻结及越界负例均验证。额外一次启动遇默认 Docker 地址池耗尽，已用本题专属 IPAM 重跑成功。完整命令、输入/产物哈希及覆盖见 repair-evidence/validation.md 与日志。报告落盘后已清理并 inspect 核验：容器 ad1816648a88、e6851aa70d69、c553fe101d69 已停止/删除，343c778a34f2 已由 Harbor 回收；本次 sjudfhe/3d6qypa/veopkxd/dttt9np 四个镜像 tag 及对应 ID 均已删除，两条本题网络已删除；预存依赖镜像、用户及其他任务资源未删除，无遗留本题资源。详见 repair-evidence/cleanup.log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已读锁定上游、完整前缀定义及 Kuipers–Niederreiter 原书定义、Exercise 1.4、p.36。当前任务有意要求固定序列 (3/2)^n 不等分布，非正向或全体超越数乘子命题；未发现具体定义错误或矛盾，开放本身不判错。metadata.statement_status=consistent；数学输入未修改。来源与量词/端点核对见 repair-evidence/research.md。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 task ID 精确查技能 CSV 未命中；随后多组联网检索本反向命题、全名/别名、作者、GitHub、上游和 Mathlib，实际读取当前上游 Lean、issue 5003、PR 5838、Mahler32 及相关线索。乘子反例、聚点证明、FLP 界、圆词 three-halves 界和其他形式化均不覆盖本目标；上游本题仍 sorry。充分检索未找到已知公开完整 Lean4 反向证明，metadata.public_lean4_proof=false、status=searched；不表示绝对不存在。检索词、来源、排除理由及已解决访问限制见 repair-evidence/research.md。未放入公开答案。"
+    }
+  }
+}

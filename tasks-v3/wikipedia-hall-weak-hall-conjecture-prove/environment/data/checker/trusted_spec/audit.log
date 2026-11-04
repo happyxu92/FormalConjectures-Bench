@@ -1,0 +1,11 @@
+audited FCBTrustedSpec.ExpectedType and all transitive dependencies: [propext, Quot.sound, Classical.choice]
+audited Hall.HallIneq and all transitive dependencies: [propext, Quot.sound, Classical.choice]
+audited Hall.HallConjectureExp and all transitive dependencies: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ ε > 0, Hall.HallConjectureExp (2⁻¹ - ε)
+def Hall.HallIneq : ℝ → ℝ → Prop :=
+fun C e => ∀ (x y : ℤ), y ^ 2 ≠ x ^ 3 → ↑|y ^ 2 - x ^ 3| > C * |↑x| ^ e
+def Hall.HallConjectureExp : ℝ → Prop :=
+fun e => ∃ C > 0, Hall.HallIneq C e
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

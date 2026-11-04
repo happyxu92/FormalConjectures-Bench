@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-247-erdos-247-prove",
+  "target": "Erdos247.erdos_247",
+  "direction": "positive universal claim, not its negation and not the strong-condition variant",
+  "status": "consistent",
+  "has_issue": false,
+  "upstream_url": "https://raw.githubusercontent.com/google-deepmind/formal-conjectures/233a10e857ef78e79fd9fe661d37db724089170a/FormalConjectures/ErdosProblems/247.lean",
+  "upstream_sha256": "586b83bcec7741e94e32bc6aa7c6640420d43b40c159171086207ff9856b2f79",
+  "source_reviews": [
+    {
+      "url": "https://mathweb.ucsd.edu/~ronspubs/80_11_number_theory.pdf",
+      "location": "printed p.61 = PDF p.57",
+      "sha256": "0cbf0c32f0ab1e1c71db5121a88bac905bf976c4a6ab6bb6d7d9cf9ddd184ed3",
+      "review": "Downloaded primary book PDF (certificate verification failed initially; retried curl -k), rendered and read p.61. It explicitly discusses the binary reciprocal series with increasing exponents, known stronger condition for every power, and weaker limsup n_k/k = infinity. Target selects the positive claim for the latter."
+    },
+    {
+      "url": "https://static.renyi.hu/~p_erdos/1988-22.pdf",
+      "location": "printed p.106 = PDF p.5",
+      "sha256": "b2bfc375d04b65332d6b8817633ff3968283a3f33c1f1ace366b03ac9fab8c88",
+      "review": "Rendered and read primary scan: transcendence under superpolynomial growth; asks whether n_k/k tending to infinity suffices. This is a related version, while 1980 book and pinned upstream give limsup."
+    },
+    {
+      "url": "https://www.erdosproblems.com/247",
+      "review": "Direct page/LaTeX retrieval hit Cloudflare HTTP403; several fresh web searches return the explicit limsup formulation consistent with pinned upstream. Primary book separately read."
+    }
+  ],
+  "complete_prefix_review": [
+    "Only imports, open Filter, namespace and documentation; no hidden task-local mathematical definitions.",
+    "Quantifies over all n : Nat -> Nat, StrictMono n, with limsup quotient computed in EReal (not natural-number division); k.succ positive, no denominator zero.",
+    "StrictMono implies n(k)>=k, hence geometric domination ensures tsum represents a convergent real series rather than nonsummable default zero.",
+    "Natural indices starting at zero encode a one-based sequence using denominator k+1. Allowing n(0)=0 changes only a rational finite term; does not affect transcendence.",
+    "Limsup=top in EReal expresses subsequential unboundedness, not eventual growth. No contradiction, boundary counterexample or obvious definition error identified. Open status is not evidence of invalidity."
+  ],
+  "modification": "metadata only; all mathematical input, frozen baselines and GoldenCheck files unchanged"
+}

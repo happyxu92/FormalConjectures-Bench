@@ -1,0 +1,5 @@
+reward=0
+150d9e1c9832fe3b08102a97a635aa7efe516965dc85513b7af282e12f7b1b70  /tests/test_target.py
+150d9e1c9832fe3b08102a97a635aa7efe516965dc85513b7af282e12f7b1b70  /opt/formal-conjectures-bench-checker/test_target.py
+2c72f975cd7f0da2fd41d279e67e35771b06e1f1ecc6055c01844e6ab0f7c28c  /tests/trusted_spec/manifest.json
+2c72f975cd7f0da2fd41d279e67e35771b06e1f1ecc6055c01844e6ab0f7c28c  /opt/formal-conjectures-bench-checker/trusted_spec/manifest.json

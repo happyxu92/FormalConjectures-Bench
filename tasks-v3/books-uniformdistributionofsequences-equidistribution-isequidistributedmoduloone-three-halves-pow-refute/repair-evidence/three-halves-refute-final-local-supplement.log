@@ -1,0 +1,20 @@
+Loaded fixed precompiled trusted Spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Equidistribution.IsEquidistributed: [propext, Quot.sound, Classical.choice]
+audited Equidistribution.IsEquidistributedModuloOne: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬Equidistribution.IsEquidistributedModuloOne fun n ↦ (3 / 2) ^ n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for Equidistribution.formal_conjectures_bench_refutation: ['sorryAx']
+'Equidistribution.formal_conjectures_bench_refutation' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+LOCAL FIXED SPEC AND NORMAL IMPORT PATHS PASSED

@@ -1,0 +1,7 @@
+{
+  "task": {"path": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-41-erdos-41-refute"},
+  "trial_name": "erdos41-refute-accept2-20261104",
+  "trials_dir": "/tmp/erdos41-refute-harbor-trials",
+  "agent": {"name": "nop"},
+  "environment": {"type": "docker", "force_build": true, "delete": false, "kwargs": {"keep_containers": true}}
+}

@@ -1,0 +1,3 @@
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Finset/Card.lean:theorem card_union_le (s t : Finset α) : #(s ∪ t) ≤ #s + #t := by grind
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Finite/Card.lean:theorem card_union_le (s t : Set α) : Nat.card (↥(s ∪ t)) ≤ Nat.card s + Nat.card t := by
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/SetTheory/ZFC/Cardinal.lean:theorem card_union_le : card (x ∪ y) ≤ card x + card y := by

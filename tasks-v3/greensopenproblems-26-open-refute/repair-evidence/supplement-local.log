@@ -1,0 +1,65 @@
+TESTS_DIR /opt/formal-conjectures-bench-checker SPEC_DIR /opt/formal-conjectures-bench-checker/trusted_spec
+Loaded fixed precompiled trusted Spec
+Banned Lean feature found in proof region at line 2: \bsorry\b
+PASS rejection: original sorry syntax
+Code above the benchmark target marker changed
+PASS rejection: frozen text
+Target theorem header changed
+PASS rejection: changed header
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green26.𝔽: [propext]
+audited Green26.𝔽₃: [propext, Quot.sound, Classical.choice]
+audited Green26.StandardCube: [propext, Quot.sound, Classical.choice]
+audited Green26.IsCube: [propext, Quot.sound, Classical.choice]
+binder: p, Lean.BinderInfo.default, type ℕ
+binder: inst._@.FCBTrustedSpec.3833245901._hygCtx._hyg.12, Lean.BinderInfo.instImplicit, type Fact (Nat.Prime p)
+negated binder count: 2; existential C and all nested binders retained
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ (p : ℕ) [inst : Fact (Nat.Prime p)],
+    ∃ C, ∀ (n : ℕ) (A : Fin C → Set (Green26.𝔽 p n)), (∀ (i : Fin C), Green26.IsCube (A i)) → ∑ i, A i = Set.univ
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+PASS rejection: target axiom sorryAx
+Unexpected axioms for Green26.formal_conjectures_bench_refutation: ['sorryAx']
+'Green26.formal_conjectures_bench_refutation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+PASS sorry canary
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green26.𝔽: [propext]
+audited Green26.𝔽₃: [propext, Quot.sound, Classical.choice]
+audited Green26.StandardCube: [propext, Quot.sound, Classical.choice]
+audited Green26.IsCube: [propext, Quot.sound, Classical.choice]
+binder: p, Lean.BinderInfo.default, type ℕ
+binder: inst._@.FCBTrustedSpec.3833245901._hygCtx._hyg.12, Lean.BinderInfo.instImplicit, type Fact (Nat.Prime p)
+negated binder count: 2; existential C and all nested binders retained
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ (p : ℕ) [inst : Fact (Nat.Prime p)],
+    ∃ C, ∀ (n : ℕ) (A : Fin C → Set (Green26.𝔽 p n)), (∀ (i : Fin C), Green26.IsCube (A i)) → ∑ i, A i = Set.univ
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Complete theorem type matches trusted Spec
+PASS candidate same-name source/cache and environment cannot replace trusted module
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+PASS rejection: missing artifact (no regeneration)
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+PASS rejection: corrupt artifact (no regeneration)
+Loaded fixed precompiled trusted Spec
+Unexpected added Lean source outside editable subtree: Outside.lean
+PASS rejection: out-of-subtree Lean source
+Candidate compiled as ubuntu with fixed import paths
+Lean audit command failed
+/tmp/formal_conjectures_bench_7yp9q7ll/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Green26.formal_conjectures_bench_refutation
+has type
+  ¬∀ (p : ℕ) [inst : Fact (Nat.Prime p)],
+      ∃ C,
+        ∀ (n : ℕ) (A : Green26.Fin C → Set (Green26.𝔽 p n)),
+          (∀ (i : Green26.Fin C), Green26.IsCube (A i)) → ∑ i, A i = Set.univ
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+PASS rejection: unchanged frozen header but shadowed Fin changes complete type
+PASS semantic shadowing reached and failed complete type comparison
+ALL SUPPLEMENTAL PATHS PASSED

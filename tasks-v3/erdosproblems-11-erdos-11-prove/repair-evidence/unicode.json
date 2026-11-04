@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-prove",
+  "mode": "auto_repair",
+  "status": "passed",
+  "case": "no_issue",
+  "has_problem": false,
+  "has_unicode_issue": false,
+  "repair_attempted": false,
+  "repair_success": null,
+  "modified": false,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "91ed5674a91e76e3437e42cb4683fff116a955a8f594993f353960adbbfa0a63",
+      "header_before": "theorem erdos_11 (n : \u2115) (hn : Odd n) (hn' : 1 < n) :\n    \u2203 k l : \u2115, Squarefree k \u2227 n = k + 2 ^ l",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem erdos_11 (n : \u2115) (hn : Odd n) (hn' : 1 < n) :\n    \u2203 k l : \u2115, Squarefree k \u2227 n = k + 2 ^ l",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "91ed5674a91e76e3437e42cb4683fff116a955a8f594993f353960adbbfa0a63",
+      "header_after": "theorem erdos_11 (n : \u2115) (hn : Odd n) (hn' : 1 < n) :\n    \u2203 k l : \u2115, Squarefree k \u2227 n = k + 2 ^ l"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "91ed5674a91e76e3437e42cb4683fff116a955a8f594993f353960adbbfa0a63",
+      "header_before": "theorem erdos_11 (n : \u2115) (hn : Odd n) (hn' : 1 < n) :\n    \u2203 k l : \u2115, Squarefree k \u2227 n = k + 2 ^ l",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem erdos_11 (n : \u2115) (hn : Odd n) (hn' : 1 < n) :\n    \u2203 k l : \u2115, Squarefree k \u2227 n = k + 2 ^ l",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "91ed5674a91e76e3437e42cb4683fff116a955a8f594993f353960adbbfa0a63",
+      "header_after": "theorem erdos_11 (n : \u2115) (hn : Odd n) (hn' : 1 < n) :\n    \u2203 k l : \u2115, Squarefree k \u2227 n = k + 2 ^ l"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "d5075820fd0d6d2016384da11d3f80ceb676978f4c545623c8d499a7e04f5c2c"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "d5075820fd0d6d2016384da11d3f80ceb676978f4c545623c8d499a7e04f5c2c"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "d5075820fd0d6d2016384da11d3f80ceb676978f4c545623c8d499a7e04f5c2c"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 0
+}

@@ -1,0 +1,217 @@
+[
+    {
+        "Id": "25241b3328e2528aebe51df5f242a6605fc416ed25f8185b5636e28e37a776f7",
+        "Created": "2026-11-04T06:54:29.599415431Z",
+        "Path": "sh",
+        "Args": [
+            "-c",
+            "sleep infinity"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1847203,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-04T06:54:58.921027925Z",
+            "FinishedAt": "2026-11-04T06:54:41.096695475Z"
+        },
+        "Image": "sha256:a97d90bc74a460ed87e9f9e104344df1801480160814debe8393553cbe3a8cbf",
+        "ResolvConfPath": "/var/lib/docker/containers/25241b3328e2528aebe51df5f242a6605fc416ed25f8185b5636e28e37a776f7/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/25241b3328e2528aebe51df5f242a6605fc416ed25f8185b5636e28e37a776f7/hostname",
+        "HostsPath": "/var/lib/docker/containers/25241b3328e2528aebe51df5f242a6605fc416ed25f8185b5636e28e37a776f7/hosts",
+        "LogPath": "/var/lib/docker/containers/25241b3328e2528aebe51df5f242a6605fc416ed25f8185b5636e28e37a776f7/25241b3328e2528aebe51df5f242a6605fc416ed25f8185b5636e28e37a776f7-json.log",
+        "Name": "/erdosproblems-126-erdos-126-prov__qvgpman__env-main-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "erdosproblems-126-erdos-126-prov__qvgpman__env_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 8589934592,
+            "NanoCpus": 4000000000,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 17179869184,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "25241b3328e2",
+            "Domainname": "",
+            "User": "ubuntu",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "sh",
+                "-c",
+                "sleep infinity"
+            ],
+            "Image": "erdosproblems-126-erdos-126-prov__qvgpman__env-main",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "51aad5c89590a1a6e9c1ad96ea2ce4fda2faa9a91d5566e8faca5dd271f86973",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:a97d90bc74a460ed87e9f9e104344df1801480160814debe8393553cbe3a8cbf",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "erdosproblems-126-erdos-126-prov__qvgpman__env",
+                "com.docker.compose.project.config_files": "/tmp/tmpkwoj_uxs/erdosproblems-126-erdos-126-prov__QVGpMan__env-docker-compose-resources.json,/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml,/tmp/tmppanwrpbi/docker-compose-environment.json,/tmp/tmpzo9j_gco/docker-compose-mounts.json",
+                "com.docker.compose.project.working_dir": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-126-erdos-126-prove/environment",
+                "com.docker.compose.service": "main",
+                "com.docker.compose.version": "2.40.3",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "57b47540bf9c1f55e49c8e9ac96ff5bf0711b9838339326c80afc5c4abb9b426",
+            "SandboxKey": "/var/run/docker/netns/57b47540bf9c",
+            "Ports": {},
+            "Networks": {
+                "erdosproblems-126-erdos-126-prov__qvgpman__env_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "erdosproblems-126-erdos-126-prov__qvgpman__env-main-1",
+                        "main"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "01ad62ce27bfea88c3d7d764aca45772bf6b52150cc040275a63ef231f24895e",
+                    "EndpointID": "b459bf9624c64faeddf7eb90d400616cbb13d98251ef7e38799ef7a2592d5193",
+                    "Gateway": "192.168.208.1",
+                    "IPAddress": "192.168.208.2",
+                    "MacAddress": "fa:70:84:d0:db:d2",
+                    "IPPrefixLen": 20,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "erdosproblems-126-erdos-126-prov__qvgpman__env-main-1",
+                        "main",
+                        "25241b3328e2"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:40ed929a9a2ef7ce681eb70064f7a09d433ef6ba8814728b310827ce06188d1a",
+            "size": 3518,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-247-erdos-247-prove",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages alongside /app and /opt/formal-conjectures. Actual ubuntu rg found mathlib's def IsCoprime, exit 0. Evidence: repair-evidence/instruction-search.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target has only ProblemImports and local Submission, so no extra upstream imports. Added required final USER ubuntu RUN lake build +FormalConjecturesBench.Target. Current local-task Harbor builds succeeded; actual ubuntu lake build exit 0. Trusted dependency permissions unchanged. Evidence: repair-evidence/verification.json."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Required skill script: case=no_issue, verification=passed; both checker copies and original/frozen-header negative tests passed without Unicode modifications. Evidence: repair-evidence/unicode.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated Spec from original golden without Submission in locked Lean 4.27.0 x86_64 Docker; extracted complete elaborated type, three forall binders, no universes, removed temporary theorem, independently audited transitive axioms. Two identical precompiled packages and pinned manifest SHA256 5c4e40e05b671f02e8ff40a51d87e219039ac1453e8ab3dd7cc7fdccc5bb3e29. Checker uses fixed compiler/import paths and compares candidate type against compiled ExpectedType value; original restrictions, axiom audit and canary retained. Final current-local Harbor image sha256:02faf5ef21fcdd5e910395774cc1272526f6e86713e2b39cd3cb804e483642a9; /tests upload and /opt delivery hashes matched local. Both actual entries exit 1 (original sorry), reward 0. Both actual-function supplements exit 0: trusted load/audit, ubuntu build, normal imports, full-type comparison, sorryAx rejection/canary, frozen/tree negatives, unchanged-header name-shadow attack rejection, candidate cache/environment shielding, missing/corrupt Spec fail-closed without regeneration. Mathematical inputs and GoldenCheck unchanged; no original-problem proof claimed. Evidence/commands: repair-evidence/verification.json and supplement logs. Docker cleanup complete and verified absent: own containers b04a75ade471, b3a32fde192a, 7cbd2644241b and images 4778158e15d4, 89ecff53a54a, 02faf5ef21fc removed with their task-only tags/networks; first Harbor container already auto-recycled. Pre-existing base, user resources, other tasks and shared build cache untouched. Evidence: repair-evidence/docker-cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Reviewed full pinned upstream and original Erdős–Graham 1980 printed p.61 / Erdős 1988 p.106 scans. This is the positive weak-limsup claim, not the stronger known variant or negation. EReal quotient, positive k.succ, StrictMono, geometric convergence, indexing and initial-zero boundary reveal no obvious error. Only metadata marked; mathematical statement unchanged. Evidence: repair-evidence/statement-review.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Exact full task ID absent from skill CSV. Multiple fresh web-query groups and actual upstream/PR, LeanGenius, Mathlib, TauCeti, AlphaProof and other repository sources examined. No verified full positive weak-growth proof: upstream sorry; stronger theorem axiomatized; factorial/ratio/exponential examples narrower; prize 2176 proves True only. Prize PR3080 claims a complete proof, but exact/main source 404 and complete pinned tree has no Erdos247 file; global GitHub code search HTTP401. Conservatively marked public_lean4_proof=unknown, status=blocked, not false/nonexistence. No public answers added. Evidence: repair-evidence/public-proof-review.json."
+    }
+  }
+}

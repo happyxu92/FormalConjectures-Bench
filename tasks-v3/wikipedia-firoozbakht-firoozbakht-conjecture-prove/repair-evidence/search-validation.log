@@ -1,0 +1,8 @@
+/opt/formal-conjectures/FormalConjecturesForMathlib/Analysis/SpecialFunctions/NthRoot.lean:noncomputable def nthRoot (n : ℕ) (r : ℝ) : ℝ :=
+/opt/formal-conjectures/.lake/packages/aesop/AesopTest/List.lean:def nth_le : ∀ (l : List α) (n), n < l.length → α
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/NumberTheory/Padics/RingHoms.lean:def nthHom (r : R) : ℕ → ℤ := fun n => (f n r : ZMod (p ^ n)).val
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/NumberTheory/Padics/RingHoms.lean:def nthHomSeq (r : R) : PadicSeq p :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Nat/Nth.lean:noncomputable def nth (p : ℕ → Prop) (n : ℕ) : ℕ := by
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Ordmap/Ordnode.lean:def nth : Ordnode α → ℕ → Option α
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/RingTheory/WittVector/MulCoeff.lean:def nthRemainder (n : ℕ) : (Fin (n + 1) → k) → (Fin (n + 1) → k) → k :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Algebra/Polynomial/Roots.lean:def nthRoots (n : ℕ) (a : R) : Multiset R :=

@@ -8,6 +8,11 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+statement_status_note = "This refute task is the negation of the universal closure of upstream odd_perfect_number_conjecture, equivalently existence of an odd positive perfect natural number. Nat.Perfect includes positivity. No obvious statement/definition error found; the direction remains open, not known impossible. Mathematical input unchanged. See repair-evidence/research.md."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact full task-ID CSV miss. Multiple direction-specific web/GitHub/Mathlib searches found no verified complete proof of existence. Read upstream and linked AlphaProof fork, Euler/Touchard Lean sources and OPN claimed nonexistence sources: conditional results or opposite direction, not this target. Prove2Me full source unavailable from fetched mission shell and an additional Euclids-path lead returns 404; do not assert absence. See repair-evidence/research.md."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/Wikipedia/PerfectNumbers.lean"

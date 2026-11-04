@@ -1,0 +1,62 @@
+[
+    {
+        "Name": "fcb-gauss-refute-nt40-20261104",
+        "Id": "02ddaa3527ed5179c21331000366fbbb90c53ebe60b8f6b09314c439182ec01e",
+        "Created": "2026-11-04T16:55:14.566145467+08:00",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "10.253.245.0/28",
+                    "IPRange": "",
+                    "Gateway": "10.253.245.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {},
+        "Labels": {
+            "com.docker.compose.config-hash": "9e5cfc45688851beff949f4014d1d75201d684b86c8bc480296626cfba18e3b7",
+            "com.docker.compose.network": "default",
+            "com.docker.compose.project": "wikipedia-gausscircleproblem-err__rb86owt__env",
+            "com.docker.compose.version": "2.40.3"
+        },
+        "Containers": {
+            "37a74df1a9bb00d6655c7ea0e9e7a3c0a09ed148b6fe934d6c15e0dbc248892e": {
+                "Name": "wikipedia-gausscircleproblem-err__rb86owt__env-main-1",
+                "EndpointID": "2b466c2336077c51f597f90d492012012b6514a8a8bdbcd5e568c528245c5dcf",
+                "MacAddress": "c6:89:e9:b8:33:84",
+                "IPv4Address": "10.253.245.2/28",
+                "IPv6Address": ""
+            },
+            "98a967efec96756ad3c2e7f31778a64d2c97b6993efc6b0c3953cd144f3e51d8": {
+                "Name": "wikipedia-gausscircleproblem-err__tfqjmmb__env-main-1",
+                "EndpointID": "ff2eafa2deeca04649438301099e76b86dfa0b6546e94990e4495a0b033f00e1",
+                "MacAddress": "3e:b6:c5:5f:79:3c",
+                "IPv4Address": "10.253.245.3/28",
+                "IPv6Address": ""
+            }
+        },
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "10.253.245.0/28": {
+                        "IPsInUse": 5,
+                        "DynamicIPsAvailable": 11
+                    }
+                }
+            }
+        }
+    }
+]

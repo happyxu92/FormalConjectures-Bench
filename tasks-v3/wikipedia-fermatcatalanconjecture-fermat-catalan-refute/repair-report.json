@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-fermatcatalanconjecture-fermat-catalan-refute",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit .lake/packages search path, preserving other instructions. Final Harbor container rg found mathlib/Mathlib/Data/PNat/Prime.lean:def Coprime, exit 0; no path/permission errors. See repair-evidence/fcb-fermat-refute-delivery-search-path.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports; original Dockerfile lacked final ordinary-user dependency validation. Added terminal USER ubuntu RUN lake build +FormalConjecturesBench.Target. Actual local image build passed (7992 jobs, original sorry warning expected), and final current-task Harbor build succeeded without relaxing dependency permissions."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran the complete skill script: case=no_issue, both original headers accepted, changed headers and missing := rejected, copies consistent. No Unicode repair or frozen-baseline change. Evidence: repair-evidence/unicode.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated and independently audited complete negated target type from original golden with Submission excluded, using locked Lean 4.27.0/x86_64 and dependency revisions. Two identical precompiled Spec packages and pinned manifest d4c21b4e1d9aa57c7e1d22f27945bd534516f1e8e67dd29b4bc6120e99154348; input/artifact hashes and generation commands in their manifests. Fixed-source loading and full-type comparison replace GoldenCheck execution; public Target/golden/GoldenCheck/frozen hashes unchanged. Final local-task Harbor delivery3 build succeeded; official and ubuntu local entries exit 1/reward 0 solely for original sorry. Both /tests and /opt supplemental runs exit 0: trusted-type audit, ubuntu compilation, complete type match, target sorryAx rejection, canary, normal imports/external precompiled module, semantic Not-False hijack rejection, frozen/header/out-of-tree negatives, counterfeit cache and missing/corrupt artifact rejection. All container package hashes match host. See repair-evidence/validation.md and logs; this is infrastructure acceptance, not a proof of the target. After saving and JSON-validating this report, stopped/removed owned containers 3c1a600408b8, d5a7b879ddad and 2b0be845ce56; removed all seven task-unique image tags/IDs (spec, nt40, accept, final, delivery, delivery2, delivery3) and two owned networks. Container/image/network inspect confirms none remain. Shared images/build caches and pre-existing resources untouched; exact IDs and command results: repair-evidence/docker-resources.json and docker-cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent after reading full prefix, pinned/current upstream and MathWorld source. The actual task intentionally negates finiteness of distinct power-value triples with positive pairwise-coprime bases and reciprocal exponent sum <1; sextuple representations are not counted. No obvious erroneous definition or contradiction found. Openness/paired negation is not itself mismatch. Wikipedia 403 was worked around with MathWorld; no mathematics changed. Details and URLs: repair-evidence/research.md."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Exact full task ID absent from skill CSV. Twelve varied online queries covered the negated statement, aliases, upstream, GitHub, Mathlib, author/project sources and related variants. Retrieved source excludes upstream sorry statements, polynomial-only proofs, FLT and ProveTogether's accepted Prop formalization. No complete proof of this direction verified. An indexed Euclids-path tuple-refutation lead could not be retrieved (GitHub/raw/prose 404; git private/unavailable), so metadata honestly records public_lean4_proof=unknown and status=blocked rather than false. Query/source/exclusion/access details: repair-evidence/research.md."
+    }
+  }
+}

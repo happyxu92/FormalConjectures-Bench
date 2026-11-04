@@ -1,0 +1,18 @@
+102:theorem bernoulli'_one : bernoulli' 1 = 1 / 2 := by
+139:/-- The exponential generating function for the Bernoulli numbers `bernoulli' n`. -/
+143:theorem bernoulli'PowerSeries_mul_exp_sub_one :
+172:    simpa [bernoulli'PowerSeries] using bernoulli'PowerSeries_mul_exp_sub_one ℚ
+192:theorem bernoulli_one : bernoulli 1 = -1 / 2 := by norm_num [bernoulli]
+202:theorem bernoulli_eq_bernoulli'_of_ne_one {n : ℕ} (hn : n ≠ 1) : bernoulli n = bernoulli' n := by
+207:    | inl heven => rw [bernoulli, heven.neg_one_pow, one_mul]
+218:    simp only [this, sum_range_succ', cast_succ, bernoulli_one, bernoulli_zero, choose_one_right,
+226:    rw [bernoulli_eq_bernoulli'_of_ne_one (succ_ne_zero x ∘ succ.inj)]
+227:  · simp only [one_div, mul_one, bernoulli'_zero, choose_zero_right,
+228:      zero_add, choose_one_right, cast_succ, bernoulli'_one, one_div]
+248:    simp [bernoulli_eq_bernoulli'_of_ne_one ((not_congr (antidiagonal_congr h' h₁)).mp h'')]
+252:/-- The exponential generating function for the Bernoulli numbers `bernoulli n`. -/
+256:theorem bernoulliPowerSeries_mul_exp_sub_one : bernoulliPowerSeries A * (exp A - 1) = X := by
+260:  simp only [bernoulliPowerSeries, coeff_mul, coeff_X, sum_antidiagonal_succ', one_div, coeff_mk,
+329:    rw [← exp_pow_sum, geom_sum_mul, h_r, ← bernoulliPowerSeries_mul_exp_sub_one,
+360:    simp_rw [f, bernoulli_one, choose_one_right, succ_sub_succ_eq_sub, cast_succ, tsub_zero, h1]
+365:    sum_congr rfl fun i _ => by rw [bernoulli_eq_bernoulli'_of_ne_one (succ_succ_ne_one i)]

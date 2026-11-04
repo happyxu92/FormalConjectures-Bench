@@ -1,0 +1,38 @@
+Code above the benchmark target marker changed
+PASS rejection: frozen modification
+Unexpected added Lean source outside editable subtree: Outside.lean
+PASS rejection: out-of-tree source
+Loaded fixed precompiled trusted Spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green2.maxRestrictedSumAvoidingSubsetSize: [propext, Quot.sound, Classical.choice]
+complete universe parameters: []
+complete elaborated type: ∀ᶠ (n : ℕ) in Filter.atTop,
+  ∀ (A : Finset ℤ), A.card = n → ↑(Green2.maxRestrictedSumAvoidingSubsetSize A) ≥ Real.log ↑n ^ 100
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ᶠ (n : ℕ) in Filter.atTop,
+  ∀ (A : Finset ℤ), A.card = n → ↑(Green2.maxRestrictedSumAvoidingSubsetSize A) ≥ Real.log ↑n ^ 100
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS fixed Spec source despite candidate names/cache/env
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for Green2.green_2: ['sorryAx']
+'Green2.green_2' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+PASS rejection: placeholder sorryAx axiom audit
+PASS sorry canary
+Candidate compiled as ubuntu with fixed import paths
+Lean audit command failed
+/tmp/formal_conjectures_bench_7hnauimr/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Green2.green_2
+has type
+  ∀ᶠ (n : ℕ) in Filter.atTop,
+    ∀ (A : Finset ℤ), A.card = n → ↑(Green2.maxRestrictedSumAvoidingSubsetSize A) ≥ Green2.Real.log ↑n ^ 100
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+PASS rejection: same frozen header but shadowed Green2.Real.log full type mismatch
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+PASS rejection: missing artifact without regeneration
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+PASS rejection: corrupt artifact without regeneration
+SUPPLEMENT ALL PASS

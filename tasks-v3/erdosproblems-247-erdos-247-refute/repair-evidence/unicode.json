@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-247-erdos-247-refute",
+  "mode": "auto_repair",
+  "status": "passed",
+  "case": "no_issue",
+  "has_problem": false,
+  "has_unicode_issue": false,
+  "repair_attempted": false,
+  "repair_success": null,
+  "modified": false,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "e5662ed840d5e4ca085b0fd316748a8cb3474e5b82b55fe2e6f2a49292529862",
+      "header_before": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (n : \u2115 \u2192 \u2115), (StrictMono n) \u2192\n          atTop.limsup (fun k => (n k / k.succ : EReal)) = \u22a4 \u2192\n          Transcendental \u211a (\u2211' k, (1 : \u211d) / 2 ^ n k)\n    )",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (n : \u2115 \u2192 \u2115), (StrictMono n) \u2192\n          atTop.limsup (fun k => (n k / k.succ : EReal)) = \u22a4 \u2192\n          Transcendental \u211a (\u2211' k, (1 : \u211d) / 2 ^ n k)\n    )",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "e5662ed840d5e4ca085b0fd316748a8cb3474e5b82b55fe2e6f2a49292529862",
+      "header_after": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (n : \u2115 \u2192 \u2115), (StrictMono n) \u2192\n          atTop.limsup (fun k => (n k / k.succ : EReal)) = \u22a4 \u2192\n          Transcendental \u211a (\u2211' k, (1 : \u211d) / 2 ^ n k)\n    )"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "e5662ed840d5e4ca085b0fd316748a8cb3474e5b82b55fe2e6f2a49292529862",
+      "header_before": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (n : \u2115 \u2192 \u2115), (StrictMono n) \u2192\n          atTop.limsup (fun k => (n k / k.succ : EReal)) = \u22a4 \u2192\n          Transcendental \u211a (\u2211' k, (1 : \u211d) / 2 ^ n k)\n    )",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (n : \u2115 \u2192 \u2115), (StrictMono n) \u2192\n          atTop.limsup (fun k => (n k / k.succ : EReal)) = \u22a4 \u2192\n          Transcendental \u211a (\u2211' k, (1 : \u211d) / 2 ^ n k)\n    )",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "e5662ed840d5e4ca085b0fd316748a8cb3474e5b82b55fe2e6f2a49292529862",
+      "header_after": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (n : \u2115 \u2192 \u2115), (StrictMono n) \u2192\n          atTop.limsup (fun k => (n k / k.succ : EReal)) = \u22a4 \u2192\n          Transcendental \u211a (\u2211' k, (1 : \u211d) / 2 ^ n k)\n    )"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "33ad08a2c9b474b2ccfc5b93098ab1c7b7ade4b5230364cbb185b8f4a6513e5f"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "33ad08a2c9b474b2ccfc5b93098ab1c7b7ade4b5230364cbb185b8f4a6513e5f"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "33ad08a2c9b474b2ccfc5b93098ab1c7b7ade4b5230364cbb185b8f4a6513e5f"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 0
+}

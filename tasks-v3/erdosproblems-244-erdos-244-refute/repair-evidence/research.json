@@ -1,0 +1,60 @@
+{
+  "task_id": "erdosproblems-244-erdos-244-refute",
+  "statement_status": "consistent",
+  "actual_direction": "Negation of: every real C > 1 has positive lower density for the natural-number set p + natFloor(C^k), with p prime and k natural (including zero). This is the refutation side, not Romanoff's integer-base positive result.",
+  "definition_review": "Target has no task-local prefix definitions. Set.lowerDensity in the pinned FormalConjecturesForMathlib/Data/Set/Density.lean:65-67 is the liminf of partialDensity; partialDensity counts below b relative to univ. Natural floor agrees with integer floor since C > 1 makes C^k positive. Domain of p and k is Nat. No obvious quantifier, sign, domain or definition defect found. The truth of this open refutation is not asserted.",
+  "statement_sources": [
+    "https://raw.githubusercontent.com/google-deepmind/formal-conjectures/233a10e857ef78e79fd9fe661d37db724089170a/FormalConjectures/ErdosProblems/244.lean",
+    "https://arxiv.org/abs/2503.22700",
+    "https://erdosproblems.ai/wiki/problems/primes/E0244",
+    "https://api.github.com/repos/google-deepmind/formal-conjectures/issues/59",
+    "https://api.github.com/repos/google-deepmind/formal-conjectures/pulls/179"
+  ],
+  "source_interpretation": "Ding's paper explicitly states the every-real-base question as positive lower asymptotic density, and proves almost-everywhere positivity. The source wiki explains k>=0 versus k>=1 adds only p+1, a zero-density set. Upstream issue 59 and merged PR 179 fixed the earlier ambiguity between existing natural density and positive lower density. Current task already uses lowerDensity, so that historical defect is absent. These positive partial results neither prove nor disprove the present existential counterexample/refutation task.",
+  "public_lean4_proof": false,
+  "public_lean4_proof_status": "searched",
+  "csv_exact_lookup": "No exact task-column match for erdosproblems-244-erdos-244-refute in /root/FormalConjectures-Bench/skills/lean-task-repair/references/public-lean4-proofs.csv (checked before web searches).",
+  "queries": [
+    "Erdos problem 244 primes floor C k positive density",
+    "\"Erdos244\" \"Lean\" proof",
+    "\"erdos_244\" refutation Lean",
+    "\"Erdos\" \"244\" \"Lean4\" proof counterexample",
+    "\"Romanoff\" \"Lean\" theorem github",
+    "\"Erdos244\" github -site:github.com/google-deepmind/formal-conjectures",
+    "site:github.com \"244\" \"Romanoff\" \"proof\" Lean",
+    "site:github.com/google-deepmind/formal-conjectures/pull \"244\"",
+    "site:github.com \"formal_conjectures_bench_refutation\" \"Erdos244\"",
+    "\"Yuchen Ding\" \"Lean\" \"Kalmar\"",
+    "site:github.com/leanprover-community/mathlib4 \"Romanoff\"",
+    "\"Kalmar\" \"Lean4\" density prime",
+    "\"Erdos 244\" counterexample formal proof",
+    "\"p +\" \"lowerDensity\" \"C ^ k\" Lean proof"
+  ],
+  "sources_and_candidate_exclusions": [
+    {
+      "url": "https://raw.githubusercontent.com/google-deepmind/formal-conjectures/main/FormalConjectures/ErdosProblems/244.lean",
+      "result": "Read current Lean source: both main theorem and Romanoff variant still use sorry; no proof of the negation. Pinned source also read in full."
+    },
+    {
+      "url": "https://api.github.com/search/issues?q=repo%3Agoogle-deepmind%2Fformal-conjectures%20%22244%22",
+      "result": "Read all 9 issue/PR search results. PR 244 concerns quadratic class numbers, not this problem; issue 2051 is statement formalization; issues 59 and PRs 68/179 concern density definitions. The only proof-claim leads were PRs 2538 and 3063, followed below."
+    },
+    {
+      "url": "https://github.com/google-deepmind/formal-conjectures/pull/3063",
+      "result": "Read files API and actual Lean source at 168049a32e659f895f3986684e57b6144b147199. Only changes the category attribute for the positive integer-base Romanoff variant; proof remains sorry. Closed, unmerged. Not a full proof and wrong direction."
+    },
+    {
+      "url": "https://github.com/google-deepmind/formal-conjectures/pull/2538",
+      "result": "Read files API and fetched actual Lean source at ee3aaebfdda804707da1251ef6aad1946b8d1f8d. Same category-only edit with sorry remaining; closed, unmerged. Does not cover refutation."
+    },
+    {
+      "url": "https://www.mefyi.com/papers/romanoff-constant/",
+      "result": "Followed author proof links to https://github.com/tejasvi/romanoff-constant/tree/v11; read README, kernel-only README, and Lean GK/FinalK.lean, Romanoff/Defs.lean. Theorems romanoff_U3g_K and romanoff_V4g_K bound the positive density of primes plus powers of TWO, under analytic hypotheses ESP28/PNTAP/R0Bound (and JTProp2). This is a partial positive base-2 result, not an existential real-base zero-lower-density counterexample. No proof copied into task; not compiled here."
+    },
+    {
+      "url": "https://arxiv.org/abs/2503.22700",
+      "result": "Read original author abstract: almost-everywhere and golden-ratio positivity, not a refutation, and not a complete Lean4 proof."
+    }
+  ],
+  "limitations": "Direct erdosproblems.com/244 fetch returned Cloudflare/403; search-index content, the source wiki, original paper and upstream Lean/issues were accessible and cross-checked. Search is not a proof of absolute nonexistence. After following the relevant code/PR/author leads, no known public complete Lean4 proof of THIS NEGATION was found; no remaining relevant unverified proof lead."
+}

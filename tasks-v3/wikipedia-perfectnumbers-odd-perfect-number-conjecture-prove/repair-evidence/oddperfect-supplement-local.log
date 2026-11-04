@@ -1,0 +1,56 @@
+uid 1000 SPEC_DIR /opt/formal-conjectures-bench-checker/trusted_spec
+Loaded fixed precompiled trusted Spec: /opt/formal-conjectures-bench-checker/trusted_spec
+Banned Lean feature found in proof region at line 2: \bsorry\b
+PASS expected rejection: original sorry syntax
+PASS expected rejection: frozen prefix modification
+Code above the benchmark target marker changed
+Unexpected added Lean source outside editable subtree: Outside.lean
+PASS expected rejection: source outside editable tree
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Nat.Perfect: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ), n.Perfect → Even n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed trusted import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for PerfectNumbers.odd_perfect_number_conjecture: ['sorryAx']
+'PerfectNumbers.odd_perfect_number_conjecture' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+PASS expected rejection: target sorryAx audit
+PASS canary and matching complete forall type
+PASS trusted import path: /opt/elan/toolchains/leanprover--lean4---v4.27.0/lib/lean/Init.olean
+/opt/formal-conjectures-bench-checker/trusted_spec/FCBTrustedSpec.olean
+/tmp/formal_conjectures_bench_inq3rw5e/FormalConjecturesBench/Submission.olean
+
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Nat.Perfect: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ), n.Perfect → Even n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed trusted import paths
+Lean audit command failed
+/tmp/formal_conjectures_bench_o9s5ozf0/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  PerfectNumbers.odd_perfect_number_conjecture
+has type
+  ∀ (n : ℕ), n.Perfect → PerfectNumbers.Even n
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+PASS expected rejection: semantic Even shadow with unchanged frozen text
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Nat.Perfect: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ), n.Perfect → Even n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS same-name candidate module, cache and LEAN_PATH cannot replace Spec
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+PASS expected rejection: missing precompiled artifact
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+PASS expected rejection: precompiled artifact hash mismatch
+Trusted Spec manifest hash mismatch
+PASS expected rejection: manifest hash mismatch
+Loaded fixed precompiled trusted Spec: /opt/formal-conjectures-bench-checker/trusted_spec
+ALL SUPPLEMENTARY CHECKS PASSED

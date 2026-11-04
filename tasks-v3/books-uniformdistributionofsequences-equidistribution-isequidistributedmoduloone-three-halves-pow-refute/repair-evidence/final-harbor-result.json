@@ -1,0 +1,124 @@
+{
+    "id": "d69064fc-c628-4c6a-ab29-61b75003c575",
+    "task_name": "formal-conjectures-bench/books-uniformdistributionofsequences-equidistribution-isequidistributedmoduloone-three-halves-pow-refute",
+    "trial_name": "books-uniformdistributionofseque__DTTT9Np",
+    "trial_uri": "file:///tmp/three-halves-refute-harbor-jobs/three-halves-refute-nt40-final-net/books-uniformdistributionofseque__DTTT9Np",
+    "task_id": {
+        "path": "/root/FormalConjectures-Bench/tasks-v3/books-uniformdistributionofsequences-equidistribution-isequidistributedmoduloone-three-halves-pow-refute"
+    },
+    "source": null,
+    "task_checksum": "a110b558851afce945449e7651d37ff3fa67f06b3443c631975ade8e00124bb6",
+    "config": {
+        "task": {
+            "path": "/root/FormalConjectures-Bench/tasks-v3/books-uniformdistributionofsequences-equidistribution-isequidistributedmoduloone-three-halves-pow-refute",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "books-uniformdistributionofseque__DTTT9Np",
+        "trials_dir": "/tmp/three-halves-refute-harbor-jobs/three-halves-refute-nt40-final-net",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "nop",
+            "import_path": null,
+            "model_name": null,
+            "base_url": null,
+            "model_api_key_name": null,
+            "model_api_format": null,
+            "skip_model_parsing": false,
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": false,
+            "stream": false,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [
+                "/tmp/three-halves-refute-network-compose.yaml"
+            ],
+            "kwargs": {
+                "keep_containers": true
+            },
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "2cb987a0-408e-48db-ba50-94f5001970ba",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "nop",
+        "version": "1.0.0",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "model_usage": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "verifier_environment_mode": "shared",
+    "exception_info": null,
+    "started_at": "2026-11-04T06:43:36.775523Z",
+    "finished_at": "2026-11-04T06:43:49.342272Z",
+    "environment_setup": {
+        "started_at": "2026-11-04T06:43:36.801758Z",
+        "finished_at": "2026-11-04T06:43:38.444818Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-11-04T06:43:38.444879Z",
+        "finished_at": "2026-11-04T06:43:38.444942Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-11-04T06:43:38.445040Z",
+        "finished_at": "2026-11-04T06:43:38.445717Z"
+    },
+    "verifier": {
+        "started_at": "2026-11-04T06:43:38.698007Z",
+        "finished_at": "2026-11-04T06:43:39.128561Z"
+    },
+    "step_results": null
+}

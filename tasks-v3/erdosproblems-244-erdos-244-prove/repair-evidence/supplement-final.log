@@ -1,0 +1,112 @@
+Loaded fixed precompiled trusted Spec from /tests/trusted_spec
+audited ExpectedType transitive axioms: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ C > 1, 0 < {x | ∃ p k, ∃ (_ : Nat.Prime p), p + ⌊C ^ k⌋₊ = x}.lowerDensity
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+RESULT ('independent trusted type audit', 'passed')
+Candidate compiled as ubuntu with fixed import paths
+RESULT ('ubuntu original candidate build (isolated sorry fixture)', 'passed')
+Complete theorem type matches trusted Spec
+RESULT ('full original type matches Spec', 'passed')
+Unexpected axioms for Erdos244.erdos_244: ['sorryAx']
+'Erdos244.erdos_244' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+RESULT ('target sorryAx audit', 'expected rejection', 1)
+RESULT ('sorry canary', 'passed')
+audited ExpectedType transitive axioms: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ C > 1, 0 < {x | ∃ p k, ∃ (_ : Nat.Prime p), p + ⌊C ^ k⌋₊ = x}.lowerDensity
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+RESULT ('same-name candidate source and caches cannot replace fixed Spec', 'passed')
+Code above the benchmark target marker changed
+RESULT ('frozen prefix change', 'expected rejection', 1)
+Unexpected added Lean source outside editable subtree: Outside.lean
+RESULT ('out-of-scope Lean source', 'expected rejection', 1)
+RESULT ('semantic shadow retains frozen prefix and header', 'passed')
+RESULT ('semantic proof obeys source bans', 'passed')
+Candidate compiled as ubuntu with fixed import paths
+RESULT ('semantic shadow candidate builds without placeholder', 'passed')
+RESULT ('semantic shadow has only allowed axioms', 'passed')
+Lean audit command failed
+/tmp/formal_conjectures_bench_meo_d7z7/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Erdos244.erdos_244
+has type
+  ∀ C > 1, 0 < {x | ∃ p k, ∃ (_ : Nat.Prime p), p + ⌊C ^ k⌋₊ = x}.lowerDensity
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+RESULT ('semantic shadow rejected by full type comparison', 'expected rejection', 1)
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+RESULT ('missing precompiled Spec', 'expected rejection', 1)
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+RESULT ('corrupt precompiled Spec', 'expected rejection', 1)
+[
+  [
+    "independent trusted type audit",
+    "passed"
+  ],
+  [
+    "ubuntu original candidate build (isolated sorry fixture)",
+    "passed"
+  ],
+  [
+    "full original type matches Spec",
+    "passed"
+  ],
+  [
+    "target sorryAx audit",
+    "expected rejection",
+    1
+  ],
+  [
+    "sorry canary",
+    "passed"
+  ],
+  [
+    "same-name candidate source and caches cannot replace fixed Spec",
+    "passed"
+  ],
+  [
+    "frozen prefix change",
+    "expected rejection",
+    1
+  ],
+  [
+    "out-of-scope Lean source",
+    "expected rejection",
+    1
+  ],
+  [
+    "semantic shadow retains frozen prefix and header",
+    "passed"
+  ],
+  [
+    "semantic proof obeys source bans",
+    "passed"
+  ],
+  [
+    "semantic shadow candidate builds without placeholder",
+    "passed"
+  ],
+  [
+    "semantic shadow has only allowed axioms",
+    "passed"
+  ],
+  [
+    "semantic shadow rejected by full type comparison",
+    "expected rejection",
+    1
+  ],
+  [
+    "missing precompiled Spec",
+    "expected rejection",
+    1
+  ],
+  [
+    "corrupt precompiled Spec",
+    "expected rejection",
+    1
+  ]
+]

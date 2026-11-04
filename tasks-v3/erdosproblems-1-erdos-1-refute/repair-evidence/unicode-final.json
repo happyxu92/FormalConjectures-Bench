@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-1-erdos-1-refute",
+  "mode": "auto_repair",
+  "status": "passed",
+  "case": "no_issue",
+  "has_problem": false,
+  "has_unicode_issue": false,
+  "repair_attempted": false,
+  "repair_success": null,
+  "modified": false,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "f99202c568d6bc23e462fda72b2bc81fdeef1b4b88c78cf72a27c021890187c8",
+      "header_before": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2203 C > (0 : \u211d), \u2200 (N : \u2115) (A : Finset \u2115) (_ : IsSumDistinctSet A N),\n          N \u2260 0 \u2192 C * 2 ^ A.card < N\n    )",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2203 C > (0 : \u211d), \u2200 (N : \u2115) (A : Finset \u2115) (_ : IsSumDistinctSet A N),\n          N \u2260 0 \u2192 C * 2 ^ A.card < N\n    )",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "f99202c568d6bc23e462fda72b2bc81fdeef1b4b88c78cf72a27c021890187c8",
+      "header_after": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2203 C > (0 : \u211d), \u2200 (N : \u2115) (A : Finset \u2115) (_ : IsSumDistinctSet A N),\n          N \u2260 0 \u2192 C * 2 ^ A.card < N\n    )"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "f99202c568d6bc23e462fda72b2bc81fdeef1b4b88c78cf72a27c021890187c8",
+      "header_before": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2203 C > (0 : \u211d), \u2200 (N : \u2115) (A : Finset \u2115) (_ : IsSumDistinctSet A N),\n          N \u2260 0 \u2192 C * 2 ^ A.card < N\n    )",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2203 C > (0 : \u211d), \u2200 (N : \u2115) (A : Finset \u2115) (_ : IsSumDistinctSet A N),\n          N \u2260 0 \u2192 C * 2 ^ A.card < N\n    )",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "f99202c568d6bc23e462fda72b2bc81fdeef1b4b88c78cf72a27c021890187c8",
+      "header_after": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2203 C > (0 : \u211d), \u2200 (N : \u2115) (A : Finset \u2115) (_ : IsSumDistinctSet A N),\n          N \u2260 0 \u2192 C * 2 ^ A.card < N\n    )"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "217475c0381df033e188f2e080eb683d43a26a341d9ab79e8fa7f3f3deae6a2a"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "217475c0381df033e188f2e080eb683d43a26a341d9ab79e8fa7f3f3deae6a2a"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "217475c0381df033e188f2e080eb683d43a26a341d9ab79e8fa7f3f3deae6a2a"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 0
+}

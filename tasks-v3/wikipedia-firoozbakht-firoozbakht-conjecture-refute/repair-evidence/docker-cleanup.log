@@ -1,0 +1,128 @@
+$ docker container inspect d74a5c032a22d3dfa5a40dd8db4ee4f812cfa4218ad01ef2482ffcd26112e9b5 --format {{.State.Running}}
+true
+exit=0
+$ docker stop d74a5c032a22d3dfa5a40dd8db4ee4f812cfa4218ad01ef2482ffcd26112e9b5
+d74a5c032a22d3dfa5a40dd8db4ee4f812cfa4218ad01ef2482ffcd26112e9b5
+exit=0
+$ docker rm d74a5c032a22d3dfa5a40dd8db4ee4f812cfa4218ad01ef2482ffcd26112e9b5
+d74a5c032a22d3dfa5a40dd8db4ee4f812cfa4218ad01ef2482ffcd26112e9b5
+exit=0
+$ docker container inspect d74a5c032a22d3dfa5a40dd8db4ee4f812cfa4218ad01ef2482ffcd26112e9b5 --format {{.Id}}
+
+Error response from daemon: No such container: d74a5c032a22d3dfa5a40dd8db4ee4f812cfa4218ad01ef2482ffcd26112e9b5
+exit=1
+$ docker container inspect 6c4a3fb8b2363faa0f11912d7ebd90bd33df8ac7cfa71149fa8fa94fb93de493 --format {{.State.Running}}
+true
+exit=0
+$ docker stop 6c4a3fb8b2363faa0f11912d7ebd90bd33df8ac7cfa71149fa8fa94fb93de493
+6c4a3fb8b2363faa0f11912d7ebd90bd33df8ac7cfa71149fa8fa94fb93de493
+exit=0
+$ docker rm 6c4a3fb8b2363faa0f11912d7ebd90bd33df8ac7cfa71149fa8fa94fb93de493
+6c4a3fb8b2363faa0f11912d7ebd90bd33df8ac7cfa71149fa8fa94fb93de493
+exit=0
+$ docker container inspect 6c4a3fb8b2363faa0f11912d7ebd90bd33df8ac7cfa71149fa8fa94fb93de493 --format {{.Id}}
+
+Error response from daemon: No such container: 6c4a3fb8b2363faa0f11912d7ebd90bd33df8ac7cfa71149fa8fa94fb93de493
+exit=1
+$ docker container inspect wikipedia-firoozbakht-firoozbakh__e4rgxik__env-main-1 --format {{.State.Running}}
+
+Error response from daemon: No such container: wikipedia-firoozbakht-firoozbakh__e4rgxik__env-main-1
+exit=1
+$ docker container inspect wikipedia-firoozbakht-firoozbakh__e4rgxik__env-main-1 --format {{.Id}}
+
+Error response from daemon: No such container: wikipedia-firoozbakht-firoozbakh__e4rgxik__env-main-1
+exit=1
+$ docker image rm fcb-firooz-refute-spec:nt40-20261104
+Untagged: fcb-firooz-refute-spec:nt40-20261104
+Deleted: sha256:91d45e5a355023ce73339416ac86a78751cfa2b744dbcb6309cad03018f4f4c8
+exit=0
+$ docker image inspect sha256:91d45e5a355023ce73339416ac86a78751cfa2b744dbcb6309cad03018f4f4c8 --format {{.Id}}
+
+Error response from daemon: No such image: sha256:91d45e5a355023ce73339416ac86a78751cfa2b744dbcb6309cad03018f4f4c8
+exit=1
+$ docker image rm wikipedia-firoozbakht-firoozbakh__e4rgxik__env-main:latest
+Untagged: wikipedia-firoozbakht-firoozbakh__e4rgxik__env-main:latest
+Deleted: sha256:41ea8625a189bae0c1c6da5ce39edbc88351fccef285a5ce014b8e9ce6e9ba3f
+exit=0
+$ docker image inspect sha256:41ea8625a189bae0c1c6da5ce39edbc88351fccef285a5ce014b8e9ce6e9ba3f --format {{.Id}}
+
+Error response from daemon: No such image: sha256:41ea8625a189bae0c1c6da5ce39edbc88351fccef285a5ce014b8e9ce6e9ba3f
+exit=1
+$ docker image rm wikipedia-firoozbakht-firoozbakh__opjhcps__env-main:latest
+Untagged: wikipedia-firoozbakht-firoozbakh__opjhcps__env-main:latest
+Deleted: sha256:48003e433b526d71428a53ffa7121d194179af19efe85ddca85fc3abb3f3db47
+exit=0
+$ docker image inspect sha256:48003e433b526d71428a53ffa7121d194179af19efe85ddca85fc3abb3f3db47 --format {{.Id}}
+
+Error response from daemon: No such image: sha256:48003e433b526d71428a53ffa7121d194179af19efe85ddca85fc3abb3f3db47
+exit=1
+$ docker network inspect 3efee0170e0a8f8f5a71ebc761c8e892f6c71d506ebca1c27a75210a28abc199
+[
+    {
+        "Name": "wikipedia-firoozbakht-firoozbakh__opjhcps__env_default",
+        "Id": "3efee0170e0a8f8f5a71ebc761c8e892f6c71d506ebca1c27a75210a28abc199",
+        "Created": "2026-11-04T16:41:22.080317204+08:00",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "192.168.128.0/20",
+                    "IPRange": "",
+                    "Gateway": "192.168.128.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {},
+        "Labels": {
+            "com.docker.compose.config-hash": "cdea343ee7664fb4b3e9a38d889228ca822f70303cfe2e415cb3069d9027f629",
+            "com.docker.compose.network": "default",
+            "com.docker.compose.project": "wikipedia-firoozbakht-firoozbakh__opjhcps__env",
+            "com.docker.compose.version": "2.40.3"
+        },
+        "Containers": {},
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "192.168.128.0/20": {
+                        "IPsInUse": 3,
+                        "DynamicIPsAvailable": 4093
+                    }
+                }
+            }
+        }
+    }
+]
+exit=0
+$ docker network rm 3efee0170e0a8f8f5a71ebc761c8e892f6c71d506ebca1c27a75210a28abc199
+3efee0170e0a8f8f5a71ebc761c8e892f6c71d506ebca1c27a75210a28abc199
+exit=0
+$ docker network inspect 3efee0170e0a8f8f5a71ebc761c8e892f6c71d506ebca1c27a75210a28abc199
+[]
+Error response from daemon: network 3efee0170e0a8f8f5a71ebc761c8e892f6c71d506ebca1c27a75210a28abc199 not found
+exit=1
+$ docker ps -a --no-trunc
+CONTAINER ID                                                       IMAGE                                                                     COMMAND                                                                                                                        CREATED          STATUS                    PORTS                    NAMES
+b9b21d646ecbea473fcb53c629c2fdb7512eb7e65cae1b19f574b559d46604bc   erdos1062-import-20261102__env-main:latest                                "sleep infinity"                                                                                                               4 minutes ago    Up 4 minutes                                       fcb-gauss-refute-spec-nt40-20261104
+38b6f13dd03164c49bfe1cf86169ea538c3d10d921dbca7380be0a6a82d79d54   wikipedia-gausscircleproblem-err__dazhtwr__env-main                       "sh -c 'sleep infinity'"                                                                                                       9 minutes ago    Up 8 minutes                                       wikipedia-gausscircleproblem-err__dazhtwr__env-main-1
+63b897c00fa9acf795de0c20588c82faa4327ea053f88cbabdd84dcf87d490b0   erdos1062-import-20261102__env-main:latest                                "sleep infinity"                                                                                                               13 minutes ago   Up 13 minutes                                      fcb-gauss-error-spec-20261104
+418e01ddfc0350357b6366d0053d11f109696c1fa17318a6e5e0fe4262857a51   weishaw/sub2api:0.2.15                                                    "/app/docker-entrypoint.sh /app/sub2api"                                                                                       46 hours ago     Up 6 hours (healthy)      0.0.0.0:8080->8080/tcp   sub2api
+f87663ee43dc6988a89ad187b16dab3013b41ac26a1f92d78138099d083f7c1e   erdos1062-lower-import-current-20261102__env-main                         "sh -c 'sleep infinity'"                                                                                                       2 days ago       Exited (137) 2 days ago                            erdos1062-lower-import-current-20261102__env-main-1
+e3e0088b94c6bddc783b1c63d7e6c8da3708e230e998cbf6db1146abd0c92f8c   erdos1062-import-20261102__env-main                                       "sh -c 'sleep infinity'"                                                                                                       2 days ago       Exited (137) 2 days ago                            erdos1062-import-20261102__env-main-1
+9d88b1e34a20193355bd977f203b9b26d4ae86fd120281afad36f83425c0aa05   erdos1051-import-20261102__env-main                                       "sh -c 'sleep infinity'"                                                                                                       2 days ago       Exited (137) 2 days ago                            erdos1051-import-20261102__env-main-1
+969a5a561de9e07c912576ff9cd1edfd1950668280e678277bfc7d9569f86659   postgres:18-alpine                                                        "docker-entrypoint.sh postgres"                                                                                                6 weeks ago      Up 6 hours (healthy)      5432/tcp                 sub2api-postgres
+038757ae87f97d3ecccc7e8bff6b3fd52732187cd470dbff58273a590649bed4   redis:8-alpine                                                            "docker-entrypoint.sh sh -c '\n  redis-server \\\n  --save 60 1 \\\n  --appendonly yes \\\n  --appendfsync everysec \\\n  '"   6 weeks ago      Up 6 hours (healthy)      6379/tcp                 sub2api-redis
+2c28f9c67fbab8d813769633221539e3dc3e05a445c2a8e336bbdc241cd20be9   sha256:4e1081d31f83482cef2acf20d8de31d71ed5d8247711028f3494393e782d18df   "/bin/bash -lc 'trap 'exit 0' TERM INT; while true; do sleep 3600; done'"                                                      2 months ago     Dead                                               
+exit=0
+CLEANUP: complete []

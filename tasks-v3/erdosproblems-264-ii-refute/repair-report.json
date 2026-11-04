@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-264-ii-refute",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；匹配 Mathlib add_comm 定理并确认路径及权限正常，见 repair-evidence/search-validation.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；原 Dockerfile 缺少末尾普通用户验证，已添加 USER ubuntu 后的 RUN lake build +FormalConjecturesBench.Target，实际 Spec/Harbor 构建均成功，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能脚本检测及最终复验均为 no_issue；原头接受、修改头及缺失 := 拒绝，两份 checker 一致。见 repair-evidence/unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境解析 GoldenCheck，现从原始 golden 提前生成/编译/审计完整 ExpectedType，双包同步、固定来源/版本/哈希加载并完整类型比较。manifest SHA256=5e2b65129d8758507b2b6be2951d1b5097658f7af23275fa19821cb99d0fdad4；Lean4.27.0，x86_64，无 universe 参数。当前本地 task Harbor 构建及正式/ubuntu 本地入口已验收：原始 sorry 预期 exit=1/reward=0；两入口补测均 exit=0，实际覆盖可信审计、ubuntu 编译、类型比较、sorryAx 拒绝、canary、冻结/越界/名称遮蔽/同名缓存/缺失损坏产物负例。未证明开放题。命令、输入/产物哈希、镜像和日志见 repair-evidence/verification.md、manifest.json、container-parity.json、supplement*.log。报告落盘后已清理自建容器 8edb7461c833、cdf1a13fb487、20c608e7c9a1；首轮 Harbor 容器已由 Harbor 移除。四个本次镜像 ID cc71018c2f9f、4165e8b59cc2、7546d1112ae4、d139d88c772d 及两个保留的任务网络均已移除并 inspect 核验不存在。未删除用户/其他任务容器、共享镜像或构建缓存；见 repair-evidence/cleanup.log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已读锁定上游 264.lean 与 Kovač–Tao arXiv:2406.17593 §2.1.3。本题实际为 factorial 的否定方向，保留自然数有界正扰动的合理变体；未发现使目标不可能成立的具体错误。不能用 2^n 的否定或渐近于 n! 的存在性替代本目标。metadata 标 consistent；数学陈述、公开 Target、golden、冻结哈希及 GoldenCheck 均未改。详见 repair-evidence/research.md。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 task ID 精确查 CSV 未命中；已进行 11 组联网搜索，读取上游当前/锁定源码、PR 2488/2865、lean-genius 实际 Lean、反向 challenge 与贡献目录及相关报告。发现的 2^n/问题263/条件性结果不覆盖本题否定方向。未核实到完整证明，但原始论坛及作者网页反复 HTTP 403，无法完成全部链接审计，故 metadata 标 unknown/blocked，不写 false。检索词、来源及排除理由见 repair-evidence/research.md；未引入公开答案。"
+    }
+  }
+}

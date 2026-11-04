@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = false
+public_lean4_proof_status = "searched"
+public_lean4_proof_note = "Exact local task-ID lookup and multi-query public search found no complete proof of the weak 1/2-epsilon direction. Upstream remains sorry; PR 7660 links only the distinct Danilov 1/2+delta theorem. See repair-evidence/research.md."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/Wikipedia/Hall.lean"

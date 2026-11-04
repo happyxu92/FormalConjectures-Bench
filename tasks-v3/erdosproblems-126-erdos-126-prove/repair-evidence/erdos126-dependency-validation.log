@@ -1,0 +1,4 @@
+⚠ [7992/7992] Replayed FormalConjecturesBench.Target
+warning: FormalConjecturesBench/Target.lean:44:8: declaration uses 'sorry'
+Build completed successfully (7992 jobs).
+build ubuntu exit=0

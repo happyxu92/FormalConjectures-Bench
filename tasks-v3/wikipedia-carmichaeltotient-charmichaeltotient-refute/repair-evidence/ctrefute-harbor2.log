@@ -1,0 +1,13 @@
+Starting trial: fcb-ctrefute-accept2-20261104
+Task: wikipedia-carmichaeltotient-charmichaeltotient-refute
+Agent: nop
+Environment: docker
+Trials directory: /tmp/ctrefute-harbor
+
+Trial completed!
+Trial name: fcb-ctrefute-accept2-20261104
+Task: 
+formal-conjectures-bench/wikipedia-carmichaeltotient-charmichaeltotient-refute
+Started: 2026-11-04 08:23:15.854482+00:00
+Finished: 2026-11-04 08:23:28.490505+00:00
+Rewards: {'reward': 0.0}

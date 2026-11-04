@@ -1,0 +1,111 @@
+$ docker image inspect erdosproblems-17-erdos-17-prove__ablsgsv__env-main:latest --format {{.Id}}
+sha256:22d54762bfc7712e137e3b9eb90c4e098ed74f7db6365bb2089763b2e93f08eb
+exit=0
+$ docker image inspect erdosproblems-17-erdos-17-prove__6ayun6c__env-main:latest --format {{.Id}}
+sha256:cf22a679a8c0e2b284e19ad37f40d87618b500be9e04fa12f2d2c4becd1b0d3e
+exit=0
+$ docker image inspect erdosproblems-17-erdos-17-prove__c3fj6qp__env-main:latest --format {{.Id}}
+sha256:09357defd7bd9851ffeb98ca01ab5a0cea6b4c50251692b8deb6fdd8a2a2084d
+exit=0
+$ docker image inspect fcb-erdos17-prove:spec-20261104 --format {{.Id}}
+sha256:4301b739c41740d7c18b32e1a7e7617516816f41c70dfc61e01562b7cb3fb1a5
+exit=0
+$ docker inspect a9818543cb80 --format {{.Name}} {{.State.Running}}
+/erdosproblems-17-erdos-17-prove__c3fj6qp__env-main-1 true
+exit=0
+$ docker stop a9818543cb80
+a9818543cb80
+exit=0
+$ docker rm a9818543cb80
+a9818543cb80
+exit=0
+$ docker inspect 0a9673985473 --format {{.Name}} {{.State.Running}}
+/fcb-erdos17-prove-spec-20261104 true
+exit=0
+$ docker stop 0a9673985473
+0a9673985473
+exit=0
+$ docker rm 0a9673985473
+0a9673985473
+exit=0
+$ docker image rm erdosproblems-17-erdos-17-prove__ablsgsv__env-main:latest
+Untagged: erdosproblems-17-erdos-17-prove__ablsgsv__env-main:latest
+Deleted: sha256:22d54762bfc7712e137e3b9eb90c4e098ed74f7db6365bb2089763b2e93f08eb
+exit=0
+$ docker image rm erdosproblems-17-erdos-17-prove__6ayun6c__env-main:latest
+Untagged: erdosproblems-17-erdos-17-prove__6ayun6c__env-main:latest
+Deleted: sha256:cf22a679a8c0e2b284e19ad37f40d87618b500be9e04fa12f2d2c4becd1b0d3e
+exit=0
+$ docker image rm erdosproblems-17-erdos-17-prove__c3fj6qp__env-main:latest
+Untagged: erdosproblems-17-erdos-17-prove__c3fj6qp__env-main:latest
+Deleted: sha256:09357defd7bd9851ffeb98ca01ab5a0cea6b4c50251692b8deb6fdd8a2a2084d
+exit=0
+$ docker image rm fcb-erdos17-prove:spec-20261104
+Untagged: fcb-erdos17-prove:spec-20261104
+Deleted: sha256:4301b739c41740d7c18b32e1a7e7617516816f41c70dfc61e01562b7cb3fb1a5
+exit=0
+$ docker network rm erdosproblems-17-erdos-17-prove__c3fj6qp__env_default
+erdosproblems-17-erdos-17-prove__c3fj6qp__env_default
+exit=0
+$ docker inspect a9818543cb80
+[]
+error: no such object: a9818543cb80
+exit=1
+$ docker inspect 0a9673985473
+[]
+error: no such object: 0a9673985473
+exit=1
+$ docker image inspect sha256:22d54762bfc7712e137e3b9eb90c4e098ed74f7db6365bb2089763b2e93f08eb
+[]
+Error response from daemon: No such image: sha256:22d54762bfc7712e137e3b9eb90c4e098ed74f7db6365bb2089763b2e93f08eb
+exit=1
+$ docker image inspect sha256:cf22a679a8c0e2b284e19ad37f40d87618b500be9e04fa12f2d2c4becd1b0d3e
+[]
+Error response from daemon: No such image: sha256:cf22a679a8c0e2b284e19ad37f40d87618b500be9e04fa12f2d2c4becd1b0d3e
+exit=1
+$ docker image inspect sha256:09357defd7bd9851ffeb98ca01ab5a0cea6b4c50251692b8deb6fdd8a2a2084d
+[]
+Error response from daemon: No such image: sha256:09357defd7bd9851ffeb98ca01ab5a0cea6b4c50251692b8deb6fdd8a2a2084d
+exit=1
+$ docker image inspect sha256:4301b739c41740d7c18b32e1a7e7617516816f41c70dfc61e01562b7cb3fb1a5
+[]
+Error response from daemon: No such image: sha256:4301b739c41740d7c18b32e1a7e7617516816f41c70dfc61e01562b7cb3fb1a5
+exit=1
+$ docker image inspect erdosproblems-17-erdos-17-prove__ablsgsv__env-main:latest
+[]
+Error response from daemon: No such image: erdosproblems-17-erdos-17-prove__ablsgsv__env-main:latest
+exit=1
+$ docker image inspect erdosproblems-17-erdos-17-prove__6ayun6c__env-main:latest
+[]
+Error response from daemon: No such image: erdosproblems-17-erdos-17-prove__6ayun6c__env-main:latest
+exit=1
+$ docker image inspect erdosproblems-17-erdos-17-prove__c3fj6qp__env-main:latest
+[]
+Error response from daemon: No such image: erdosproblems-17-erdos-17-prove__c3fj6qp__env-main:latest
+exit=1
+$ docker image inspect fcb-erdos17-prove:spec-20261104
+[]
+Error response from daemon: No such image: fcb-erdos17-prove:spec-20261104
+exit=1
+$ docker network inspect erdosproblems-17-erdos-17-prove__c3fj6qp__env_default
+[]
+Error response from daemon: network erdosproblems-17-erdos-17-prove__c3fj6qp__env_default not found
+exit=1
+$ docker ps -a --no-trunc
+CONTAINER ID                                                       IMAGE                                                                     COMMAND                                                                                                                        CREATED          STATUS                    PORTS                    NAMES
+15e09eb1a14e9f15c58446d3ad1d9611c4233db58a1d1050bcbd07ea08efd307   fcb-247-refute:spec-20261104                                              "sleep infinity"                                                                                                               25 seconds ago   Up 25 seconds                                      fcb-247-refute-spec-20261104
+697c7c330f24cf6cdaa4e153e3c26f1e7bfe4e70128193fec8aec17fd011b9ba   6b765e0c2f25                                                              "/bin/sleep infinity"                                                                                                          27 seconds ago   Up 26 seconds                                      fcb-264ii-spec-20261104
+896afda880d43c4002e9a5308a492629c77f37c18bf4917f7b43116d2c42da4a   erdosproblems-17-erdos-17-refute__3rrmbqb__env-main                       "sh -c 'sleep infinity'"                                                                                                       3 minutes ago    Up 3 minutes                                       erdosproblems-17-erdos-17-refute__3rrmbqb__env-main-1
+b3a32fde192a1078b884b9ada803f5585245ca51390bad49cada0ca525277932   erdosproblems-247-erdos-247-prov__wowuw6g__env-main                       "sh -c 'sleep infinity'"                                                                                                       13 minutes ago   Up 12 minutes                                      erdosproblems-247-erdos-247-prov__wowuw6g__env-main-1
+24f1f8f06a351f6ee3ea2f3ea3cb2a91ccfc36f3f4239353f0a0d43f01c72e0a   erdosproblems-17-erdos-17-refute__cpnydst__env-main                       "sh -c 'sleep infinity'"                                                                                                       14 minutes ago   Up 13 minutes                                      erdosproblems-17-erdos-17-refute__cpnydst__env-main-1
+b04a75ade471526ae29256460b007a6f13396e28e05968b2e3c263dd5b7cdd16   fcb-local/erdosproblems-1-least-n-5:cache-smoke                           "sleep infinity"                                                                                                               16 minutes ago   Up 16 minutes                                      ep247-prove-spec-20261104
+3a035497ad5caf033083b8e442fc0af63e43c5ca1f8aef52faad095c1a79ea57   fcb-erdos17-refute:spec-20261104                                          "sleep infinity"                                                                                                               16 minutes ago   Up 16 minutes                                      fcb-erdos17-refute-spec-20261104
+418e01ddfc0350357b6366d0053d11f109696c1fa17318a6e5e0fe4262857a51   weishaw/sub2api:0.2.15                                                    "/app/docker-entrypoint.sh /app/sub2api"                                                                                       44 hours ago     Up 4 hours (healthy)      0.0.0.0:8080->8080/tcp   sub2api
+f87663ee43dc6988a89ad187b16dab3013b41ac26a1f92d78138099d083f7c1e   erdos1062-lower-import-current-20261102__env-main                         "sh -c 'sleep infinity'"                                                                                                       2 days ago       Exited (137) 2 days ago                            erdos1062-lower-import-current-20261102__env-main-1
+e3e0088b94c6bddc783b1c63d7e6c8da3708e230e998cbf6db1146abd0c92f8c   erdos1062-import-20261102__env-main                                       "sh -c 'sleep infinity'"                                                                                                       2 days ago       Exited (137) 2 days ago                            erdos1062-import-20261102__env-main-1
+9d88b1e34a20193355bd977f203b9b26d4ae86fd120281afad36f83425c0aa05   erdos1051-import-20261102__env-main                                       "sh -c 'sleep infinity'"                                                                                                       2 days ago       Exited (137) 2 days ago                            erdos1051-import-20261102__env-main-1
+969a5a561de9e07c912576ff9cd1edfd1950668280e678277bfc7d9569f86659   postgres:18-alpine                                                        "docker-entrypoint.sh postgres"                                                                                                6 weeks ago      Up 4 hours (healthy)      5432/tcp                 sub2api-postgres
+038757ae87f97d3ecccc7e8bff6b3fd52732187cd470dbff58273a590649bed4   redis:8-alpine                                                            "docker-entrypoint.sh sh -c '\n  redis-server \\\n  --save 60 1 \\\n  --appendonly yes \\\n  --appendfsync everysec \\\n  '"   6 weeks ago      Up 4 hours (healthy)      6379/tcp                 sub2api-redis
+2c28f9c67fbab8d813769633221539e3dc3e05a445c2a8e336bbdc241cd20be9   sha256:4e1081d31f83482cef2acf20d8de31d71ed5d8247711028f3494393e782d18df   "/bin/bash -lc 'trap 'exit 0' TERM INT; while true; do sleep 3600; done'"                                                      2 months ago     Dead                                               
+exit=0
+SUCCESS: both owned containers, all four owned image tags/IDs, and final project network absent; no shared image/cache/network deletion.

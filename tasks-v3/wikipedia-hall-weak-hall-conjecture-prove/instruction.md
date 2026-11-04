@@ -39,11 +39,19 @@ cd /app && ./check.sh
 
 This runs the same substantive checks as the official verifier. If it passes
 without modifying the checker itself, the official verifier is intended to pass.
+Both entries load a fixed, precompiled trusted Spec and check the complete theorem
+type in a temporary copy; the local entry uses
+`/opt/formal-conjectures-bench-checker/trusted_spec`, while the official entry
+uses `/tests/trusted_spec`. These are not editable submission files. Keep editing
+only the files under `/app/FormalConjecturesBench` as described above.
 
 For source search, prefer commands such as:
 
 ```bash
-rg --glob '*.lean' 'search term' /app /opt/formal-conjectures
+rg --glob '*.lean' 'search term' \
+  /app \
+  /opt/formal-conjectures \
+  /opt/formal-conjectures/.lake/packages
 ```
 
 Internet access is enabled for this task. You may use external literature and web resources, but the final Lean proof must pass the local verifier.

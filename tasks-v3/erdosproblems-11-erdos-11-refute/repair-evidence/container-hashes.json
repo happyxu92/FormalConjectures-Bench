@@ -1,0 +1,167 @@
+[
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/tests/GoldenCheck.lean",
+    "container": "/tests/GoldenCheck.lean",
+    "sha256": "d72731237f34888a168b2dedadf73e164c4e4a9d6d9ab91fb53626bb926857f2"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/tests/golden_env/FormalConjecturesBench/Submission.lean",
+    "container": "/tests/golden_env/FormalConjecturesBench/Submission.lean",
+    "sha256": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/tests/golden_env/FormalConjecturesBench/Target.lean",
+    "container": "/tests/golden_env/FormalConjecturesBench/Target.lean",
+    "sha256": "762ca43998cb83c0af28c483a010a1c146a39480c7a88e07fb6f86cde48a6b0c"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/tests/golden_env/FormalConjecturesBench.lean",
+    "container": "/tests/golden_env/FormalConjecturesBench.lean",
+    "sha256": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/tests/golden_env/lake-manifest.json",
+    "container": "/tests/golden_env/lake-manifest.json",
+    "sha256": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/tests/golden_env/lakefile.toml",
+    "container": "/tests/golden_env/lakefile.toml",
+    "sha256": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/tests/golden_env/lean-toolchain",
+    "container": "/tests/golden_env/lean-toolchain",
+    "sha256": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/tests/test.sh",
+    "container": "/tests/test.sh",
+    "sha256": "a25ffe113bd44f4334d7fd0a269a248fc0698cb650ab6e102707340593b5b61c"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/tests/test_target.py",
+    "container": "/tests/test_target.py",
+    "sha256": "db0079b828189d397c588615decce419b019e8c5dcb2c0f872e670aaa7ee3609"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/tests/trusted_spec/AuditSpec.lean",
+    "container": "/tests/trusted_spec/AuditSpec.lean",
+    "sha256": "19ba487da22d01a3c29cbe9b92c6a46beca67b186b54600ed6326799d84155b9"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/tests/trusted_spec/FCBTrustedSpec.ilean",
+    "container": "/tests/trusted_spec/FCBTrustedSpec.ilean",
+    "sha256": "90cd85e126bd259471e672aff3c526eb22c7a53109311445d3abf5c300883c66"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/tests/trusted_spec/FCBTrustedSpec.lean",
+    "container": "/tests/trusted_spec/FCBTrustedSpec.lean",
+    "sha256": "26e01ee4b61f60c2a1ae1184cea1a02c702edff6fa47ccfa0d4920756a5312f5"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/tests/trusted_spec/FCBTrustedSpec.olean",
+    "container": "/tests/trusted_spec/FCBTrustedSpec.olean",
+    "sha256": "b3224e33d04f6ededd9a57542c6f2cf0624597adea6549d8160fa7f034d3edb0"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/tests/trusted_spec/audit.log",
+    "container": "/tests/trusted_spec/audit.log",
+    "sha256": "90c25118acb76ca6ad496c731abc5fcfae5c6d46898ce238efe866096995cf83"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/tests/trusted_spec/generate.py",
+    "container": "/tests/trusted_spec/generate.py",
+    "sha256": "85ead5aa0899926300e68df319940c2a71d03e87ed9433852220e7ce92eac1b6"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/tests/trusted_spec/manifest.json",
+    "container": "/tests/trusted_spec/manifest.json",
+    "sha256": "69a26ec84e2347c26cf4d471691b400551dd97ad69a1beee209f31d34c1e390d"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/tests/trusted_spec/reproduce.sh",
+    "container": "/tests/trusted_spec/reproduce.sh",
+    "sha256": "ede6a2a9636394e9b93ab45c02647e96820f334d723375ff378758ff00312c70"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/environment/data/checker/GoldenCheck.lean",
+    "container": "/opt/formal-conjectures-bench-checker/GoldenCheck.lean",
+    "sha256": "d72731237f34888a168b2dedadf73e164c4e4a9d6d9ab91fb53626bb926857f2"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/environment/data/checker/golden_env/FormalConjecturesBench/Submission.lean",
+    "container": "/opt/formal-conjectures-bench-checker/golden_env/FormalConjecturesBench/Submission.lean",
+    "sha256": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+    "container": "/opt/formal-conjectures-bench-checker/golden_env/FormalConjecturesBench/Target.lean",
+    "sha256": "762ca43998cb83c0af28c483a010a1c146a39480c7a88e07fb6f86cde48a6b0c"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/environment/data/checker/golden_env/FormalConjecturesBench.lean",
+    "container": "/opt/formal-conjectures-bench-checker/golden_env/FormalConjecturesBench.lean",
+    "sha256": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/environment/data/checker/golden_env/lake-manifest.json",
+    "container": "/opt/formal-conjectures-bench-checker/golden_env/lake-manifest.json",
+    "sha256": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/environment/data/checker/golden_env/lakefile.toml",
+    "container": "/opt/formal-conjectures-bench-checker/golden_env/lakefile.toml",
+    "sha256": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/environment/data/checker/golden_env/lean-toolchain",
+    "container": "/opt/formal-conjectures-bench-checker/golden_env/lean-toolchain",
+    "sha256": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/environment/data/checker/test_target.py",
+    "container": "/opt/formal-conjectures-bench-checker/test_target.py",
+    "sha256": "db0079b828189d397c588615decce419b019e8c5dcb2c0f872e670aaa7ee3609"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/environment/data/checker/trusted_spec/AuditSpec.lean",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/AuditSpec.lean",
+    "sha256": "19ba487da22d01a3c29cbe9b92c6a46beca67b186b54600ed6326799d84155b9"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/environment/data/checker/trusted_spec/FCBTrustedSpec.ilean",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/FCBTrustedSpec.ilean",
+    "sha256": "90cd85e126bd259471e672aff3c526eb22c7a53109311445d3abf5c300883c66"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/environment/data/checker/trusted_spec/FCBTrustedSpec.lean",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/FCBTrustedSpec.lean",
+    "sha256": "26e01ee4b61f60c2a1ae1184cea1a02c702edff6fa47ccfa0d4920756a5312f5"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/environment/data/checker/trusted_spec/FCBTrustedSpec.olean",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/FCBTrustedSpec.olean",
+    "sha256": "b3224e33d04f6ededd9a57542c6f2cf0624597adea6549d8160fa7f034d3edb0"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/environment/data/checker/trusted_spec/audit.log",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/audit.log",
+    "sha256": "90c25118acb76ca6ad496c731abc5fcfae5c6d46898ce238efe866096995cf83"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/environment/data/checker/trusted_spec/generate.py",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/generate.py",
+    "sha256": "85ead5aa0899926300e68df319940c2a71d03e87ed9433852220e7ce92eac1b6"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/environment/data/checker/trusted_spec/manifest.json",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/manifest.json",
+    "sha256": "69a26ec84e2347c26cf4d471691b400551dd97ad69a1beee209f31d34c1e390d"
+  },
+  {
+    "local": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-11-erdos-11-refute/environment/data/checker/trusted_spec/reproduce.sh",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/reproduce.sh",
+    "sha256": "ede6a2a9636394e9b93ab45c02647e96820f334d723375ff378758ff00312c70"
+  }
+]

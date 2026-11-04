@@ -1,0 +1,20 @@
+{
+    "task": {
+        "path": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-264-ii-prove"
+    },
+    "trial_name": "fcb-264ii-final2-20261104",
+    "trials_dir": "/tmp/264ii-harbor-trials",
+    "agent": {
+        "name": "nop"
+    },
+    "environment": {
+        "type": "docker",
+        "delete": false,
+        "extra_docker_compose": [
+            "/tmp/264ii-compose-final-network.yaml"
+        ],
+        "kwargs": {
+            "keep_containers": true
+        }
+    }
+}

@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-17-erdos-17-refute",
+  "mode": "auto_repair",
+  "status": "passed",
+  "case": "no_issue",
+  "has_problem": false,
+  "has_unicode_issue": false,
+  "repair_attempted": false,
+  "repair_success": null,
+  "modified": false,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "ca9f9c0e0537534ece2a93f199630b361f6b7f7991e2c4d75238ded02556b918",
+      "header_before": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      {p : \u2115 | IsClusterPrime p}.Infinite\n    )",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      {p : \u2115 | IsClusterPrime p}.Infinite\n    )",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "ca9f9c0e0537534ece2a93f199630b361f6b7f7991e2c4d75238ded02556b918",
+      "header_after": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      {p : \u2115 | IsClusterPrime p}.Infinite\n    )"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "ca9f9c0e0537534ece2a93f199630b361f6b7f7991e2c4d75238ded02556b918",
+      "header_before": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      {p : \u2115 | IsClusterPrime p}.Infinite\n    )",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      {p : \u2115 | IsClusterPrime p}.Infinite\n    )",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "ca9f9c0e0537534ece2a93f199630b361f6b7f7991e2c4d75238ded02556b918",
+      "header_after": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      {p : \u2115 | IsClusterPrime p}.Infinite\n    )"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "31ade934c8d49607bba95e60b21fd1eb72a4120f917b66a7ba0459db797196dd"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "31ade934c8d49607bba95e60b21fd1eb72a4120f917b66a7ba0459db797196dd"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "31ade934c8d49607bba95e60b21fd1eb72a4120f917b66a7ba0459db797196dd"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 0
+}

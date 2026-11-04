@@ -1,0 +1,98 @@
+Loaded fixed precompiled trusted Spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited FermatCatalanConjecture.fermatCatalanConjecture: [propext, Quot.sound, Classical.choice]
+audited FermatCatalanConjecture.FermatCatalanSet: [propext, Quot.sound, Classical.choice]
+audited FermatCatalanConjecture.FermatCatalanSet': [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+FermatCatalanConjecture.fermatCatalanConjecture
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for FermatCatalanConjecture.fermat_catalan: ['sorryAx']
+'FermatCatalanConjecture.fermat_catalan' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+Complete theorem type matches trusted Spec
+Found banned Lean syntax:
+FormalConjecturesBench/Submission.lean:2: pattern '(?m)^\\s*(?:local\\s+|scoped\\s+)?notation\\b'
+Candidate compiled as ubuntu with fixed import paths
+Lean audit command failed
+/tmp/formal_conjectures_bench_1cay41j4/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  FermatCatalanConjecture.fermat_catalan
+has type
+  True
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+Code above the benchmark target marker changed
+Unexpected added Lean source outside editable subtree: Outside.lean
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+HIJACK TYPE: FermatCatalanConjecture.fermat_catalan : True
+
+[
+  {
+    "case": "independent trusted type and prefix transitive axiom audit",
+    "result": "passed"
+  },
+  {
+    "case": "ubuntu build original placeholder fixture",
+    "result": "passed"
+  },
+  {
+    "case": "full type agrees for original fixture",
+    "result": "passed"
+  },
+  {
+    "case": "placeholder target axiom audit",
+    "result": "rejected",
+    "expected_stage": "sorryAx"
+  },
+  {
+    "case": "sorry canary",
+    "result": "passed"
+  },
+  {
+    "case": "same-name module/cache/env cannot replace Spec",
+    "result": "passed"
+  },
+  {
+    "case": "semantic fixture frozen prefix/header unchanged",
+    "result": "passed"
+  },
+  {
+    "case": "semantic hijack also rejected by preserved source ban",
+    "result": "rejected",
+    "expected_stage": "banned syntax"
+  },
+  {
+    "case": "semantic hijack candidate compiles with unchanged theorem header",
+    "result": "passed"
+  },
+  {
+    "case": "full type comparator rejects semantic hijack",
+    "result": "rejected",
+    "expected_stage": "type mismatch"
+  },
+  {
+    "case": "frozen text modification",
+    "result": "rejected",
+    "expected_stage": "prefix hash"
+  },
+  {
+    "case": "out-of-tree source",
+    "result": "rejected",
+    "expected_stage": "outside editable subtree"
+  },
+  {
+    "case": "missing precompiled artifact: fail closed without regeneration",
+    "result": "rejected",
+    "expected_stage": "artifact validation"
+  },
+  {
+    "case": "corrupt precompiled artifact: fail closed without regeneration",
+    "result": "rejected",
+    "expected_stage": "artifact validation"
+  }
+]
+ALL SUPPLEMENTAL CASES PASSED

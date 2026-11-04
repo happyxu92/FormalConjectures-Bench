@@ -1,0 +1,10 @@
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos41.NtupleCondition: [propext, Quot.sound]
+negated universal binder count: 5 (implicit type, instance, set, two hypotheses)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ {α : Type} [AddCommMonoid α] (A : Set ℕ),
+    Erdos41.NtupleCondition A 3 →
+      A.Infinite → Filter.liminf (fun N => ↑(A ∩ Set.Icc 1 N).ncard / ↑N ^ (1 / 3)) Filter.atTop = 0
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

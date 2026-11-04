@@ -1,0 +1,83 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 3.34kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:24.04
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [ 1/17] FROM docker.io/library/ubuntu:24.04@sha256:fe81560990fae86dc4743202b2cb4d3df98d0bcf949173cecef15ce1127ef852
+#4 resolve docker.io/library/ubuntu:24.04@sha256:fe81560990fae86dc4743202b2cb4d3df98d0bcf949173cecef15ce1127ef852 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 26.05kB done
+#5 DONE 0.0s
+
+#6 [ 8/17] RUN find /opt/formal-conjectures/FormalConjectures -maxdepth 1 -type d -name '*Problems' -prune -exec rm -rf {} +
+#6 CACHED
+
+#7 [11/17] RUN find /opt/formal-conjectures/.lake/packages -path '*/.lake/config/*' -type d -exec chmod 1777 {} +
+#7 CACHED
+
+#8 [10/17] RUN mkdir -p /opt/formal-conjectures-bench-dependency-config   && cd /opt/formal-conjectures   && find .lake/packages -path '*/.lake/config/*/lakefile.olean*' -type f     -exec cp --parents {} /opt/formal-conjectures-bench-dependency-config/ ;   && chown -R root:root /opt/formal-conjectures-bench-dependency-config   && chmod -R go-w /opt/formal-conjectures-bench-dependency-config
+#8 CACHED
+
+#9 [ 5/17] RUN git clone https://github.com/google-deepmind/formal-conjectures.git /opt/formal-conjectures &&     git -C /opt/formal-conjectures checkout "233a10e857ef78e79fd9fe661d37db724089170a" &&     cd /opt/formal-conjectures &&     lake exe cache get &&     lake build FormalConjectures.Util.ProblemImports &&     find /opt/formal-conjectures -type d -name .git -prune -exec rm -rf {} + &&     rm -rf /root/.cache /tmp/*
+#9 CACHED
+
+#10 [ 6/17] RUN id -u ubuntu >/dev/null 2>&1 || useradd -ms /bin/bash ubuntu
+#10 CACHED
+
+#11 [ 2/17] RUN apt-get update && apt-get install -y     bash     ca-certificates     curl     git     python3     unzip     xz-utils   && rm -rf /var/lib/apt/lists/*
+#11 CACHED
+
+#12 [ 9/17] RUN chmod go-w     /opt/formal-conjectures     /opt/formal-conjectures/.lake     /opt/formal-conjectures/.lake/packages
+#12 CACHED
+
+#13 [12/17] RUN find /opt/formal-conjectures/.lake/packages -path '*/.lake/config/*/lakefile.olean*' -type f -exec chown ubuntu:ubuntu {} +   && find /opt/formal-conjectures/.lake/packages -path '*/.lake/config/*/lakefile.olean*' -type f -exec chmod 666 {} +
+#13 CACHED
+
+#14 [ 4/17] WORKDIR /opt
+#14 CACHED
+
+#15 [ 3/17] RUN curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh |     sh -s -- -y --default-toolchain none &&     chmod -R a+rX /opt/elan
+#15 CACHED
+
+#16 [ 7/17] RUN apt-get update && apt-get install -y     asciinema     ripgrep     tmux   && rm -rf /var/lib/apt/lists/*
+#16 CACHED
+
+#17 [13/17] WORKDIR /app
+#17 CACHED
+
+#18 [14/17] COPY data/ /app/
+#18 DONE 0.0s
+
+#19 [15/17] RUN mkdir -p /opt/formal-conjectures-bench-checker   && cp -a /app/checker/. /opt/formal-conjectures-bench-checker/   && rm -rf /app/checker   && find /opt/formal-conjectures-bench-checker -type d -name __pycache__ -prune -exec rm -rf {} +   && mkdir -p /app/.lake   && ln -s /opt/formal-conjectures/.lake/packages /app/.lake/packages   && chown -R root:root /app /opt/formal-conjectures-bench-checker   && chmod -R go-w /app /opt/formal-conjectures-bench-checker   && chmod 755 /app/check.sh   && chown ubuntu:ubuntu /app/.lake   && chown -R ubuntu:ubuntu /app/FormalConjecturesBench   && chown -h ubuntu:ubuntu /app/.lake/packages
+#19 DONE 0.1s
+
+#20 [16/17] WORKDIR /app
+#20 DONE 0.0s
+
+#21 [17/17] RUN lake build +FormalConjecturesBench.Target
+#21 7.487 ✔ [7991/7992] Built FormalConjecturesBench.Submission (3.6s)
+#21 11.49 ⚠ [7992/7992] Built FormalConjecturesBench.Target (3.9s)
+#21 11.49 warning: FormalConjecturesBench/Target.lean:65:8: declaration uses 'sorry'
+#21 11.51 Build completed successfully (7992 jobs).
+#21 DONE 11.7s
+
+#22 exporting to image
+#22 exporting layers
+#22 exporting layers 0.2s done
+#22 exporting manifest sha256:e6b0008cb35e591df79d9f4f12c3f205afb68d466d3c4a9eb8cadb1d3f9b2cd2 done
+#22 exporting config sha256:0eaef76f7de81198c5fb2d94dae4911d9da18e2b411845506eb87216f34b30a7 done
+#22 exporting attestation manifest sha256:bd7e3bf8d04fa84b73f60b55ee575e23f928f40b72e207750b519261abda987a 0.0s done
+#22 exporting manifest list sha256:874509f086a337b41b0ecfee2eb389ea64d651947739d23fcff4a7de5dc00d61 done
+#22 naming to docker.io/library/fcb-agoh-refute-spec:20261104 done
+#22 unpacking to docker.io/library/fcb-agoh-refute-spec:20261104 0.1s done
+#22 DONE 0.3s

@@ -1,0 +1,81 @@
+
+STAGE fixed package validation ignoring candidate env
+Loaded fixed precompiled trusted Spec
+
+STAGE independent expected type and prefix transitive axiom audit
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited AgohGiuga.AgohGiugaCongr: [propext, Quot.sound, Classical.choice]
+audited AgohGiuga.AgohGiugaSum: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+AgohGiuga.AgohGiugaCongr
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+STAGE original placeholder isolated fixture compiles as ubuntu
+Candidate compiled as ubuntu with fixed import paths
+
+STAGE complete original theorem type comparison
+Complete theorem type matches trusted Spec
+
+NEGATIVE placeholder target sorryAx audit
+Unexpected axioms for AgohGiuga.agoh_giuga: ['sorryAx']
+'AgohGiuga.agoh_giuga' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+
+STAGE sorry canary
+/opt/elan/toolchains/leanprover--lean4---v4.27.0/lib/lean/Init.olean
+/opt/formal-conjectures-bench-checker/trusted_spec/FCBTrustedSpec.olean
+/tmp/formal_conjectures_bench_m_ntrr9g/FormalConjecturesBench/Submission.olean
+
+
+STAGE candidate same-name module/cache cannot replace Spec
+Complete theorem type matches trusted Spec
+
+NEGATIVE frozen prefix modification
+Code above the benchmark target marker changed
+
+NEGATIVE out of bounds source
+Unexpected added Lean source outside editable subtree: OutOfBounds.lean
+
+STAGE prefix semantic shadow frozen/header unchanged
+
+STAGE prefix semantic shadow allowed helper source
+
+STAGE prefix semantic shadow compiles as ubuntu
+Candidate compiled as ubuntu with fixed import paths
+
+STAGE shared trusted prefix prevents helper bernoulli reinterpretation
+Complete theorem type matches trusted Spec
+
+STAGE scoped-name hijack unchanged complete frozen text/header
+
+STAGE scoped-name hijack passes original source restrictions
+
+STAGE scoped-name hijack passes tree shape
+
+STAGE scoped-name hijack passes source confinement
+
+STAGE scoped-name hijack passes frozen files
+
+STAGE scoped-name hijack actually compiles as ubuntu
+Candidate compiled as ubuntu with fixed import paths
+
+STAGE scoped-name hijack target has no extra axioms
+
+NEGATIVE scoped-name hijack complete type mismatch
+Lean audit command failed
+/tmp/formal_conjectures_bench_9z8esshx/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  AgohGiuga.agoh_giuga
+has type
+  True
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+
+NEGATIVE missing precompiled artifact
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+
+NEGATIVE corrupt precompiled artifact
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+
+RESULTS_JSON=[{"stage": "fixed package validation ignoring candidate env", "result": "passed"}, {"stage": "independent expected type and prefix transitive axiom audit", "result": "passed"}, {"stage": "original placeholder isolated fixture compiles as ubuntu", "result": "passed"}, {"stage": "complete original theorem type comparison", "result": "passed"}, {"stage": "placeholder target sorryAx audit", "result": "rejected"}, {"stage": "sorry canary", "result": "passed"}, {"stage": "candidate same-name module/cache cannot replace Spec", "result": "passed"}, {"stage": "frozen prefix modification", "result": "rejected"}, {"stage": "out of bounds source", "result": "rejected"}, {"stage": "prefix semantic shadow frozen/header unchanged", "result": "passed"}, {"stage": "prefix semantic shadow allowed helper source", "result": "passed"}, {"stage": "prefix semantic shadow compiles as ubuntu", "result": "passed"}, {"stage": "shared trusted prefix prevents helper bernoulli reinterpretation", "result": "passed"}, {"stage": "scoped-name hijack unchanged complete frozen text/header", "result": "passed"}, {"stage": "scoped-name hijack passes original source restrictions", "result": "passed"}, {"stage": "scoped-name hijack passes tree shape", "result": "passed"}, {"stage": "scoped-name hijack passes source confinement", "result": "passed"}, {"stage": "scoped-name hijack passes frozen files", "result": "passed"}, {"stage": "scoped-name hijack actually compiles as ubuntu", "result": "passed"}, {"stage": "scoped-name hijack target has no extra axioms", "result": "passed"}, {"stage": "scoped-name hijack complete type mismatch", "result": "rejected"}, {"stage": "missing precompiled artifact", "result": "rejected"}, {"stage": "corrupt precompiled artifact", "result": "rejected"}]

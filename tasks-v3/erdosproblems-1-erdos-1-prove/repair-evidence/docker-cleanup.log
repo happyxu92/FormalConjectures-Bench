@@ -1,0 +1,30 @@
+erdos1-prove-spec-20261104
+erdos1-prove-spec-20261104
+erdos1-prove-accept-20261104__env-main-1
+erdos1-prove-accept-20261104__env-main-1
+erdos1-prove-final-net-20261104__env-main-1
+erdos1-prove-final-net-20261104__env-main-1
+erdos1-prove-accept-20261104__env_default
+Untagged: erdos1-prove-repair-20261104__env-main:latest
+Deleted: sha256:ccd56fa04eb01c09d996aa7eebf8545c20d6818874c020192bc253cb87cccedc
+Untagged: erdos1-prove-accept-20261104__env-main:latest
+Deleted: sha256:868cd1d046f89c7e9ac70443ece3220c8a009dd6ba95da0b3546fbef81c21e90
+Untagged: erdos1-prove-final-20261104__env-main:latest
+Deleted: sha256:963dc74d24fcdc701ef891cd7a30eb7850609db853225620e6fc11839e1a8635
+Untagged: erdos1-prove-final-net-20261104__env-main:latest
+Deleted: sha256:28aef9acd14a2fd32509c6a590a83b996943fcfda982fe3a472587a5c50ef3e8
+
+=== Remaining task containers ===
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+=== Image absence checks ===
+ABSENT ccd56fa04eb01c09d996aa7eebf8545c20d6818874c020192bc253cb87cccedc
+ABSENT 868cd1d046f89c7e9ac70443ece3220c8a009dd6ba95da0b3546fbef81c21e90
+ABSENT 963dc74d24fcdc701ef891cd7a30eb7850609db853225620e6fc11839e1a8635
+ABSENT 28aef9acd14a2fd32509c6a590a83b996943fcfda982fe3a472587a5c50ef3e8
+
+=== Own network check ===
+NETWORK ID   NAME      DRIVER    SCOPE
+
+=== Reused baseline image preserved ===
+sha256:0824de0f16475f1f619701869e59de4e4ce3229bfce229a5fd16f88072c37e8f

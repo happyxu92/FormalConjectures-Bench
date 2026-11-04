@@ -1,0 +1,35 @@
+{
+  "syntax": "AST and TOML valid",
+  "synchronized": true,
+  "protected_files_unchanged": [
+    "environment/data/FormalConjecturesBench/Target.lean",
+    "tests/GoldenCheck.lean",
+    "environment/data/checker/GoldenCheck.lean",
+    "tests/golden_env/FormalConjecturesBench.lean",
+    "tests/golden_env/lean-toolchain",
+    "tests/golden_env/lakefile.toml",
+    "tests/golden_env/lake-manifest.json",
+    "tests/golden_env/FormalConjecturesBench/Target.lean",
+    "tests/golden_env/FormalConjecturesBench/Submission.lean",
+    "environment/data/checker/golden_env/FormalConjecturesBench.lean",
+    "environment/data/checker/golden_env/lean-toolchain",
+    "environment/data/checker/golden_env/lakefile.toml",
+    "environment/data/checker/golden_env/lake-manifest.json",
+    "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+    "environment/data/checker/golden_env/FormalConjecturesBench/Submission.lean"
+  ],
+  "hashes": {
+    "environment/Dockerfile": "54a0f8725b19922d908fcb1ae67380049f7f3a9a74764aa3a239a701d6683b8d",
+    "tests/test_target.py": "c4e447d856e7057a86291902fefa9d8c2a0ea3b63cc41f83d1c8a2b25afda624",
+    "tests/trusted_spec/manifest.json": "fba076a5db68120cda62ad100e282c9f6cd78c663bff1cefe044e9ec09bcfbed",
+    "tests/trusted_spec/FCBTrustedSpec.olean": "68ea5b17caf6d6a9cc91e7ac9b1f1a515d01419503ef26d3160a0de6aae65c0b",
+    "tests/trusted_spec/FCBTrustedSpec.ilean": "3de957b362a91133f7bbb53ee416119fb8be9d3f3d31604d94201235f4e8f9e2",
+    "environment/data/FormalConjecturesBench/Target.lean": "11ef8eea20c17edaedc03e851ea3a79e49ea64f42dea78fc96ebced070d44be5",
+    "task.toml": "ee4693a62c657e04f75e2ae64785feebdd201090fb22d4a917c868e94f6f9753"
+  },
+  "frozen_constants": {
+    "EXPECTED_PREFIX_SHA256": "e9d92ad8ba25d26fc9bc25955c34f8bbbe2631ac543f62c8bc46ee88bd4b146d",
+    "EXPECTED_HEADER": "theorem erdos_17 : {p : ℕ | IsClusterPrime p}.Infinite"
+  },
+  "uploaded_and_installed_packages": "every local tests and /opt checker file byte-compared against docker cp snapshots; identical"
+}

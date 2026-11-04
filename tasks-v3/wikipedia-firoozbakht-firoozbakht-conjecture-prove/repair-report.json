@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-firoozbakht-firoozbakht-conjecture-prove",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令补入显式 /opt/formal-conjectures/.lake/packages；容器内实际找到 Mathlib/Data/Nat/Nth.lean 的 Nat.nth，无路径或权限错误。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 只有两个标准 import，无额外上游依赖；补齐 Dockerfile 末尾 USER ubuntu 的 lake build +FormalConjecturesBench.Target，本地镜像及 Harbor 构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "技能脚本修复前后均 exit 0 / no_issue；两份 checker 一致，原始头通过，改头及移除 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "提前从原始 golden 提取完整类型及前缀，删除临时占位定理后预编译并审计；两份 Spec 包一致，manifest SHA256=9ed1030bd3d6e53f0d9aede14b2b5acf55a986209c2e1ef5f026337865ffb446，universes=[]。固定工具链/可信路径直接加载，比较 ExpectedType 值与完整候选类型，不再执行 GoldenCheck。当前本地 Harbor 构建验收成功：image ee2fb9477412，child 04fe2660756f；39 个容器文件哈希一致。正式和 ubuntu 本地入口均因原始 sorry 预期 exit 1/reward 0；同一 Harbor 子容器内实际函数补测 exit 0，覆盖可信审计、ubuntu 编译、完整类型比较、sorryAx 拒绝与 canary、冻结/越界拒绝、LT ℝ 实例语义偷换拒绝、同名模块/缓存不能覆盖、缺失/损坏产物不回退生成；/opt 本地包独立补测亦通过。初次网络地址池耗尽已用本题独立子网排除。未证明原开放命题；详见 repair-evidence/validation.md 及日志。报告落盘后已清理并复核：容器 04fe2660756f、7bca38a61a6b 已停止/删除；本题镜像 ee2fb9477412、9d7a4bca4c8b、463ace313189 及其 tag 已删除，先前 d34babdffdf8 已不存在；本题独立网络已删除，无遗留自建资源。未触及既有/其他 agent 资源或共享缓存，cleanup exit 0，见 repair-evidence/cleanup.log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整读取 pinned 上游、全部前缀及 Prime Puzzles 原始来源；Nat.nth Prime 零基索引由实数指数 1/(n+1) 正确补偿，目标是所有相邻素数根严格递减的正向猜想，并非条件推论。未发现明显错误，metadata statement_status=consistent；数学陈述保持不变。Wikipedia 403，已读取另一原始来源；详见 repair-evidence/research.md。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 task ID 精确查 CSV 未命中；多组联网检索完整定理名、别名、数学表述、作者、GitHub/Mathlib/分支线索。实际核对上游当前 Lean、PR234 全部补丁、issue170、lean-genius 源码及候选目录；均为 sorry、Prop 定义或无关结果。Kourbatov/Visser 为有限验证，Sabihi 为非 Lean 论文；Cairn 无已验证结果。GitHub API 限流已用直接 HTML/原始源码排除访问障碍。充分检索未找到覆盖本方向完整目标的公开 Lean4 证明（非不存在性断言）；metadata public_lean4_proof=false/status=searched，查询及排除理由见 repair-evidence/research.md。"
+    }
+  }
+}

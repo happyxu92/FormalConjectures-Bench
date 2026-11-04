@@ -1,0 +1,67 @@
+PASS /tests and /opt byte parity
+PASS original frozen header
+Code above the benchmark target marker changed
+REJECTED frozen prefix mutation
+Target theorem header changed
+REJECTED header mutation
+Target theorem no longer has a proof assignment
+REJECTED missing assignment
+Loaded fixed precompiled trusted Spec
+PASS manifest/artifact/version validation
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited GaussCircleProblem.N: [propext, Quot.sound, Classical.choice]
+audited GaussCircleProblem.E: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+complete expected expression: ∃ o,
+  ∃ (_ : Filter.Tendsto o Filter.atTop (nhds 0)), GaussCircleProblem.E =O[Filter.atTop] fun r ↦ r ^ (1 / 2 + o r)
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ o, ∃ (_ : Filter.Tendsto o Filter.atTop (nhds 0)), GaussCircleProblem.E =O[Filter.atTop] fun r ↦ r ^ (1 / 2 + o r)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS precompiled Spec independent import and transitive type audit
+Candidate compiled as ubuntu with fixed import paths
+PASS baseline ubuntu build (isolated original sorry fixture)
+Complete theorem type matches trusted Spec
+PASS baseline complete type comparison
+Unexpected axioms for GaussCircleProblem.error_isBigO: ['sorryAx']
+'GaussCircleProblem.error_isBigO' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+REJECTED baseline target sorryAx audit
+PASS sorry canary
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited GaussCircleProblem.N: [propext, Quot.sound, Classical.choice]
+audited GaussCircleProblem.E: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+complete expected expression: ∃ o,
+  ∃ (_ : Filter.Tendsto o Filter.atTop (nhds 0)), GaussCircleProblem.E =O[Filter.atTop] fun r ↦ r ^ (1 / 2 + o r)
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ o, ∃ (_ : Filter.Tendsto o Filter.atTop (nhds 0)), GaussCircleProblem.E =O[Filter.atTop] fun r ↦ r ^ (1 / 2 + o r)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS same-name candidate module/cache and environment cannot shadow trusted Spec
+Complete theorem type matches trusted Spec
+PASS same-name shadow cannot change full comparison
+Unexpected added Lean source outside editable subtree: Outside.lean
+REJECTED out-of-scope source
+Found banned Lean syntax:
+FormalConjecturesBench/Submission.lean:1: pattern '(?m)^\\s*(?:private\\s+|protected\\s+)?axiom\\b'
+FormalConjecturesBench/Target.lean:4: pattern '\\bsorry\\b'
+REJECTED banned helper declaration
+PASS semantic fixture helper passes original syntax rules
+PASS semantic fixture frozen header unchanged
+Candidate compiled as ubuntu with fixed import paths
+PASS semantic fixture ubuntu compile
+Lean audit command failed
+/tmp/formal_conjectures_bench_80tzd9mf/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  GaussCircleProblem.error_isBigO
+has type
+  ∃ o,
+    ∃ (_ : GaussCircleProblem.Tendsto o Filter.atTop (nhds 0)),
+      GaussCircleProblem.E =O[Filter.atTop] fun r ↦ r ^ (1 / 2 + o r)
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+REJECTED semantic Tendsto shadow full-type comparison
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+REJECTED missing precompiled artifact
+REJECTED corrupt precompiled artifact
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+ALL SUPPLEMENTAL PATHS COVERED

@@ -1,0 +1,44 @@
+CHECKER: /tests/test_target.py
+Loaded fixed precompiled trusted Spec: /tests/trusted_spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos1.IsSumDistinctSet: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∃ C > 0, ∀ (N : ℕ) (A : Finset ℕ), Erdos1.IsSumDistinctSet A N → N ≠ 0 → C * 2 ^ A.card < ↑N
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for Erdos1.formal_conjectures_bench_refutation: ['sorryAx']
+'Erdos1.formal_conjectures_bench_refutation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+EXPECTED REJECTION: placeholder target axiom audit
+PASS: fixed Spec audit, ubuntu build, full type equality, sorryAx rejection, canary
+Code above the benchmark target marker changed
+EXPECTED REJECTION: frozen text mutation
+Unexpected added Lean source outside editable subtree: Outside.lean
+EXPECTED REJECTION: out-of-bounds source
+Candidate compiled as ubuntu with fixed import paths
+Lean audit command failed
+/tmp/formal_conjectures_bench_oum1swv2/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Erdos1.formal_conjectures_bench_refutation
+has type
+  ¬∃ C > 0, ∀ (N : ℕ) (A : Finset ℕ), Erdos1.IsSumDistinctSet A N → N ≠ 0 → C * 2 ^ A.card < ↑N
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+EXPECTED REJECTION: instance semantic substitution with unchanged frozen header
+PASS: semantic substitution has no forbidden axioms, but complete type comparison rejects
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos1.IsSumDistinctSet: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∃ C > 0, ∀ (N : ℕ) (A : Finset ℕ), Erdos1.IsSumDistinctSet A N → N ≠ 0 → C * 2 ^ A.card < ↑N
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+PASS: candidate same-name source/olean/cache/environment cannot replace fixed Spec
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+EXPECTED REJECTION: missing precompiled artifact
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+EXPECTED REJECTION: corrupt artifact hash
+ALL SUPPLEMENTARY PATHS PASSED

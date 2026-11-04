@@ -1,0 +1,12 @@
+FCBTrustedSpec.lean:66:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:76:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited GaussCircleProblem.N: [propext, Quot.sound, Classical.choice]
+audited GaussCircleProblem.E: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+complete expected expression: ¬∃ o,
+    ∃ (_ : Filter.Tendsto o Filter.atTop (nhds 0)), GaussCircleProblem.E =O[Filter.atTop] fun r => r ^ (1 / 2 + o r)
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∃ o, ∃ (_ : Filter.Tendsto o Filter.atTop (nhds 0)), GaussCircleProblem.E =O[Filter.atTop] fun r => r ^ (1 / 2 + o r)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,114 @@
++ docker container inspect --format {{.State.Running}} 4167d1beb0e15aa9d2844dd2c666221e7e9798e686c41bbf83b7b10b39a228b6
+true
+exit=0
++ docker stop 4167d1beb0e15aa9d2844dd2c666221e7e9798e686c41bbf83b7b10b39a228b6
+4167d1beb0e15aa9d2844dd2c666221e7e9798e686c41bbf83b7b10b39a228b6
+exit=0
++ docker rm 4167d1beb0e15aa9d2844dd2c666221e7e9798e686c41bbf83b7b10b39a228b6
+4167d1beb0e15aa9d2844dd2c666221e7e9798e686c41bbf83b7b10b39a228b6
+exit=0
++ docker container inspect --format {{.State.Running}} bed61d11e90f8576e35bcd6462fe77e369ab5fc8b58298bceb267357f7be60cd
+
+Error response from daemon: No such container: bed61d11e90f8576e35bcd6462fe77e369ab5fc8b58298bceb267357f7be60cd
+exit=1
+Previously automatically removed; not present.
++ docker container inspect --format {{.State.Running}} dbb5efec74d408a756811d5ec389dc365d8d894362e1c891f1f68689a1de2c48
+true
+exit=0
++ docker stop dbb5efec74d408a756811d5ec389dc365d8d894362e1c891f1f68689a1de2c48
+dbb5efec74d408a756811d5ec389dc365d8d894362e1c891f1f68689a1de2c48
+exit=0
++ docker rm dbb5efec74d408a756811d5ec389dc365d8d894362e1c891f1f68689a1de2c48
+dbb5efec74d408a756811d5ec389dc365d8d894362e1c891f1f68689a1de2c48
+exit=0
++ docker container inspect --format {{.State.Running}} 3a49572e998e891187979796cbc5c1441093d7537fa60fa2457cdf9d987bb3e7
+true
+exit=0
++ docker stop 3a49572e998e891187979796cbc5c1441093d7537fa60fa2457cdf9d987bb3e7
+3a49572e998e891187979796cbc5c1441093d7537fa60fa2457cdf9d987bb3e7
+exit=0
++ docker rm 3a49572e998e891187979796cbc5c1441093d7537fa60fa2457cdf9d987bb3e7
+3a49572e998e891187979796cbc5c1441093d7537fa60fa2457cdf9d987bb3e7
+exit=0
++ docker image inspect --format {{.Id}} erdosproblems-41-erdos-41-prove__cx9zabk__env-main:latest
+sha256:d9104909b74a756326a772d3c7b1cda4d1dd4d9d6723c5dfaa0e0a0c050dd8cb
+exit=0
++ docker image rm erdosproblems-41-erdos-41-prove__cx9zabk__env-main:latest
+Untagged: erdosproblems-41-erdos-41-prove__cx9zabk__env-main:latest
+Deleted: sha256:d9104909b74a756326a772d3c7b1cda4d1dd4d9d6723c5dfaa0e0a0c050dd8cb
+exit=0
++ docker image inspect --format {{.Id}} fcb41-prove-accept2-20261104__env-main:latest
+sha256:8c693fdbf765375fb875ec5433367b038e2e21e60fcdfd69d6553554cfff3b8d
+exit=0
++ docker image rm fcb41-prove-accept2-20261104__env-main:latest
+Untagged: fcb41-prove-accept2-20261104__env-main:latest
+Deleted: sha256:8c693fdbf765375fb875ec5433367b038e2e21e60fcdfd69d6553554cfff3b8d
+exit=0
++ docker image inspect --format {{.Id}} fcb41-prove-final-20261104__env-main:latest
+sha256:a932aa8f0e8cabb768e1839765c799034fab60747b6837d9dd346dac06522153
+exit=0
++ docker image rm fcb41-prove-final-20261104__env-main:latest
+Untagged: fcb41-prove-final-20261104__env-main:latest
+Deleted: sha256:a932aa8f0e8cabb768e1839765c799034fab60747b6837d9dd346dac06522153
+exit=0
++ docker image inspect --format {{.Id}} fcb41-prove-final2-20261104__env-main:latest
+sha256:3ce9405070228591903d9c1d2abeaf1c970768e4acb2d92f72fd8b44b93f77d1
+exit=0
++ docker image rm fcb41-prove-final2-20261104__env-main:latest
+Untagged: fcb41-prove-final2-20261104__env-main:latest
+Deleted: sha256:3ce9405070228591903d9c1d2abeaf1c970768e4acb2d92f72fd8b44b93f77d1
+exit=0
++ docker network inspect --format {{json .Labels}} 0147055520aafcc531fc444c01e49a19f2eb485628fba6fc78e0ff3201b7ebd8
+{"com.docker.compose.config-hash":"3929bf26cc6074e0eff958a5759da3ede5f87da9c2070d9a14a5726ada76de76","com.docker.compose.network":"default","com.docker.compose.project":"fcb41-prove-accept2-20261104__env","com.docker.compose.version":"2.40.3"}
+exit=0
++ docker network rm 0147055520aafcc531fc444c01e49a19f2eb485628fba6fc78e0ff3201b7ebd8
+0147055520aafcc531fc444c01e49a19f2eb485628fba6fc78e0ff3201b7ebd8
+exit=0
++ docker ps -a --no-trunc --filter id=4167d1beb0e15aa9d2844dd2c666221e7e9798e686c41bbf83b7b10b39a228b6 --format {{.ID}}
+exit=0
++ docker ps -a --no-trunc --filter id=bed61d11e90f8576e35bcd6462fe77e369ab5fc8b58298bceb267357f7be60cd --format {{.ID}}
+exit=0
++ docker ps -a --no-trunc --filter id=dbb5efec74d408a756811d5ec389dc365d8d894362e1c891f1f68689a1de2c48 --format {{.ID}}
+exit=0
++ docker ps -a --no-trunc --filter id=3a49572e998e891187979796cbc5c1441093d7537fa60fa2457cdf9d987bb3e7 --format {{.ID}}
+exit=0
++ docker image inspect erdosproblems-41-erdos-41-prove__cx9zabk__env-main:latest
+[]
+Error response from daemon: No such image: erdosproblems-41-erdos-41-prove__cx9zabk__env-main:latest
+exit=1
++ docker image inspect sha256:d9104909b74a756326a772d3c7b1cda4d1dd4d9d6723c5dfaa0e0a0c050dd8cb
+[]
+Error response from daemon: No such image: sha256:d9104909b74a756326a772d3c7b1cda4d1dd4d9d6723c5dfaa0e0a0c050dd8cb
+exit=1
++ docker image inspect fcb41-prove-accept2-20261104__env-main:latest
+[]
+Error response from daemon: No such image: fcb41-prove-accept2-20261104__env-main:latest
+exit=1
++ docker image inspect sha256:8c693fdbf765375fb875ec5433367b038e2e21e60fcdfd69d6553554cfff3b8d
+[]
+Error response from daemon: No such image: sha256:8c693fdbf765375fb875ec5433367b038e2e21e60fcdfd69d6553554cfff3b8d
+exit=1
++ docker image inspect fcb41-prove-final-20261104__env-main:latest
+[]
+Error response from daemon: No such image: fcb41-prove-final-20261104__env-main:latest
+exit=1
++ docker image inspect sha256:a932aa8f0e8cabb768e1839765c799034fab60747b6837d9dd346dac06522153
+[]
+Error response from daemon: No such image: sha256:a932aa8f0e8cabb768e1839765c799034fab60747b6837d9dd346dac06522153
+exit=1
++ docker image inspect fcb41-prove-final2-20261104__env-main:latest
+[]
+Error response from daemon: No such image: fcb41-prove-final2-20261104__env-main:latest
+exit=1
++ docker image inspect sha256:3ce9405070228591903d9c1d2abeaf1c970768e4acb2d92f72fd8b44b93f77d1
+[]
+Error response from daemon: No such image: sha256:3ce9405070228591903d9c1d2abeaf1c970768e4acb2d92f72fd8b44b93f77d1
+exit=1
++ docker network inspect 0147055520aafcc531fc444c01e49a19f2eb485628fba6fc78e0ff3201b7ebd8
+[]
+Error response from daemon: network 0147055520aafcc531fc444c01e49a19f2eb485628fba6fc78e0ff3201b7ebd8 not found
+exit=1
++ docker image inspect --format {{.Id}} erdos1062-import-20261102__env-main:latest
+sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a
+exit=0
+CLEANUP VERIFIED: all four own containers absent (one auto-removed), four own image tags/IDs absent, own bridge absent; shared base retained; no pruning.

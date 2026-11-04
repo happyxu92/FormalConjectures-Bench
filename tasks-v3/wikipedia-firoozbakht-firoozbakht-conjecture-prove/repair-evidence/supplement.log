@@ -1,0 +1,73 @@
+Loaded fixed precompiled trusted Spec from /tests/trusted_spec
+PASS fixed package hash/version/golden validation
+PASS original header/frozen prefix
+Code above the benchmark target marker changed
+Target theorem header changed
+PASS frozen edit (rejected: frozen prefix)
+PASS header edit (rejected: header)
+PASS missing assignment (rejected: :=)
+Target theorem no longer has a proof assignment
+Banned Lean feature found in proof region at line 2: \bsorry\b
+PASS banned placeholder (rejected: sorry)
+PASS out-of-bounds source (rejected: outside editable subtree)
+Unexpected added Lean source outside editable subtree: Outside.lean
+audited FCBTrustedSpec.ExpectedType and all transitive dependencies: [propext, Quot.sound, Classical.choice]
+audited Firoozbakht.firoozbakhtSeq and all transitive dependencies: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ), Firoozbakht.firoozbakhtSeq (n + 1) < Firoozbakht.firoozbakhtSeq n
+def Firoozbakht.firoozbakhtSeq : ℕ → ℝ :=
+fun n ↦ ↑(Nat.nth Prime n) ^ (1 / (↑n + 1))
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS trusted expected value/prefix transitive axiom audit
+Candidate compiled as ubuntu with fixed trusted import paths
+PASS ubuntu candidate compilation; same-name module/cache cannot replace Spec
+Complete theorem type matches trusted Spec
+PASS complete baseline forall type comparison
+Unexpected axioms for Firoozbakht.firoozbakht_conjecture: ['sorryAx']
+'Firoozbakht.firoozbakht_conjecture' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+PASS baseline axiom audit (rejected: sorryAx)
+PASS sorry canary detects sorryAx
+Candidate compiled as ubuntu with fixed trusted import paths
+PASS semantic LT-instance swap compiles with unchanged frozen text
+Lean audit command failed
+/tmp/formal_conjectures_bench_aseq2c4m/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Firoozbakht.firoozbakht_conjecture
+has type
+  ∀ (n : ℕ), Firoozbakht.firoozbakhtSeq (n + 1) < Firoozbakht.firoozbakhtSeq n
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+PASS complete type comparison rejects semantic swap (rejected: type mismatch)
+PASS semantic negative has no forbidden axioms; rejection is type comparison
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+PASS artifact missing (rejected: trusted hash/artifact validation)
+PASS artifact corrupt (rejected: trusted hash/artifact validation)
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+PASS artifact manifest (rejected: trusted hash/artifact validation)
+Trusted Spec manifest hash mismatch
+Loaded fixed precompiled trusted Spec from /tests/trusted_spec
+{
+  "passed": [
+    "fixed package hash/version/golden validation",
+    "original header/frozen prefix",
+    "frozen edit (rejected: frozen prefix)",
+    "header edit (rejected: header)",
+    "missing assignment (rejected: :=)",
+    "banned placeholder (rejected: sorry)",
+    "out-of-bounds source (rejected: outside editable subtree)",
+    "trusted expected value/prefix transitive axiom audit",
+    "ubuntu candidate compilation; same-name module/cache cannot replace Spec",
+    "complete baseline forall type comparison",
+    "baseline axiom audit (rejected: sorryAx)",
+    "sorry canary detects sorryAx",
+    "semantic LT-instance swap compiles with unchanged frozen text",
+    "complete type comparison rejects semantic swap (rejected: type mismatch)",
+    "semantic negative has no forbidden axioms; rejection is type comparison",
+    "artifact missing (rejected: trusted hash/artifact validation)",
+    "artifact corrupt (rejected: trusted hash/artifact validation)",
+    "artifact manifest (rejected: trusted hash/artifact validation)"
+  ],
+  "count": 18
+}

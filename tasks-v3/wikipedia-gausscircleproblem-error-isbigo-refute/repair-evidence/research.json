@@ -1,0 +1,60 @@
+{
+  "task_id": "wikipedia-gausscircleproblem-error-isbigo-refute",
+  "direction": "Refute the entire existential: not exists o : Real -> Real tending to zero atTop such that E =O[atTop] r^(1/2+o(r)). Not merely refuting O(sqrt r), and not proving the positive conjecture.",
+  "statement_review": {
+    "status": "consistent",
+    "lean_locations": "Target.lean:50-58 defines the integer-pair count N in a Euclidean closed ball and real discrepancy E=N-pi*r^2; :93-100 negates the complete upstream error_isBigO existential.",
+    "sources_read": [
+      "https://raw.githubusercontent.com/google-deepmind/formal-conjectures/233a10e857ef78e79fd9fe661d37db724089170a/FormalConjectures/Wikipedia/GaussCircleProblem.lean",
+      "https://arxiv.org/abs/2305.03549",
+      "https://arxiv.org/html/2305.03549v2"
+    ],
+    "reason": "The pinned upstream has precisely the positive Hardy/Gauss-circle conjecture, tagged research open. Lester and Wigman's abstract and introduction (1.1) state the radius-R disk bound O(R^(1/2+o(1))). This task intentionally asks for its formal negation, as task.toml specifies. No evident definition, domain, sign, rounding, or quantifier error found: N counts a finite lattice set for each finite nonnegative radius, E subtracts in Real, the exponent division is real, Big-O bounds the norm of signed E, negative radii do not affect atTop, and the Tendsto witness is retained. The logarithmic lower bound and the weaker O(r) upper bound do not refute a subpower-slack conjecture. Its being conjectured true is not a concrete proof that this refutation task is impossible. No mathematical input was changed.",
+    "access_limits": "Wikipedia fetch returned HTTP 403; the cited primary paper's abstract and full HTML introduction were successfully read instead."
+  },
+  "public_proof_search": {
+    "csv": "/root/FormalConjectures-Bench/skills/lean-task-repair/references/public-lean4-proofs.csv",
+    "csv_exact_task_match": false,
+    "status": "searched",
+    "public_lean4_proof": false,
+    "queries": [
+      "\"GaussCircleProblem.formal_conjectures_bench_refutation\" Lean",
+      "\"Gauss circle problem\" \"Lean4\" refutation",
+      "\"GaussCircleProblem\" \"error_isBigO\" proof",
+      "\"Gauss circle\" \"Lean\" \"counterexample\"",
+      "\"Hardy conjecture\" \"circle\" Lean proof disproof GitHub",
+      "site:github.com \"GaussCircleProblem\" proof PR",
+      "site:github.com/google-deepmind/formal-conjectures \"Gauss\" \"circle\" proof",
+      "\"Gauss circle\" \"Lean 4\" disprove counterexample Hardy Lester Wigman",
+      "site:github.com/leanprover-community/mathlib4 \"circle\" \"lattice\" Gauss",
+      "\"GaussCircleProblem\" \"¬\" Lean",
+      "\"GaussCircleProblem\" \"formal_proof\"",
+      "\"Gauss circle\" formal proof Lean negation error bound",
+      "\"Gauss circle\" refutation Lean GitHub fork"
+    ],
+    "sources_checked": [
+      {"url": "https://raw.githubusercontent.com/google-deepmind/formal-conjectures/main/FormalConjectures/Wikipedia/GaussCircleProblem.lean", "result": "Read actual current Lean source: positive target and known-bound stubs still use sorry; no full refutation or external formal_proof link."},
+      {"url": "https://conjectures.io/problems/gausscircleproblem-error-isbigo", "result": "Read page: explicitly accepts a complete proof OR refutation, but reports nothing published. Positive target alone is not treated as evidence for this direction."},
+      {"url": "https://github.com/conjectures-io/conjectures-contribution/tree/main/contributions/wikipedia-gausscircleproblem-error-isbigo", "result": "Cloned and read index.md: Contributions (0), None yet. Followed the counterexample bundle link."},
+      {"url": "https://raw.githubusercontent.com/conjectures-io/conjectures-tasks/2a58149e6edb0f1dc15b32391f8c29fdd85e9db3/pool/tier-1/wikipedia-gausscircleproblem-error-isbigo-counterexample/Challenge.lean", "result": "Actual Lean source is a negated-type theorem with sorry, not a completed proof. SolutionHeader is a declaration template, not an answer."},
+      {"url": "https://github.com/google-deepmind/formal-conjectures/issues/2215", "result": "API rate-limited; direct HTML successfully read. Closed as already added, links a statement file, and lists no branches or pull requests; not a solved conjecture."},
+      {"url": "https://github.com/google-deepmind/formal-conjectures/issues/7524", "result": "API rate-limited; direct HTML successfully read. Optimization-constant tagging/refactor tracking issue, not a proof or disproof."},
+      {"url": "https://www.proofatlas.ai/collaboration/gauss-circle-problem/", "result": "Read research frontier and formalization sections. Retains all-order and endpoint gaps; explicitly no statement-aligned checked formal resource established. Not a complete Lean4 refutation."},
+      {"url": "https://github.com/charlesmsiegel/hardy", "result": "Fetched repository/README and searched actual Lean sources for GaussCircleProblem, error_isBigO, Gauss circle: no match. It is an LLM proof harness, not a Hardy circle disproof."},
+      {"url": "https://github.com/vltanh/lean4-squares-in-circles", "result": "Read README and actual Challenge.lean: optimal disk packing of 1 through 8 unit squares, not lattice discrepancy or its negation."},
+      {"url": "https://zenodo.org/records/23653239", "result": "Fetched: Malfatti circles and classical plane geometry certificate proofs, unrelated."},
+      {"url": "https://zenodo.org/records/23071822", "result": "Fetched: Casey and Fuss circle theorems, unrelated."},
+      {"url": "https://zenodo.org/records/23653309", "result": "Fetched: Clifford/Miquel/Lester/Sawayama-Thebault/Kosnita circle configurations, unrelated."},
+      {"url": "https://prove2.me/theorems/f23aef71-8bdc-41d7-80ce-3464f92d649f", "result": "Fetched: Yau nodal-set upper-bound counterexample, not this task."},
+      {"url": "https://raw.githubusercontent.com/openai/math/main/lean/docs/028.md", "result": "Fetched: Gaussian-prime graph components, not Gauss circle discrepancy."},
+      {"url": "https://raw.githubusercontent.com/openai/math/main/lean/docs/096.md", "result": "Fetched: Gaussian propeller conjecture, not this task."},
+      {"url": "https://arxiv.org/abs/2604.23468", "result": "Fetched: formalizing dimension-8 sphere packing, unrelated."},
+      {"url": "https://arxiv.org/abs/2609.31334", "result": "Fetched: formalizing Carleson's theorem, not a circle-discrepancy refutation."},
+      {"url": "https://arxiv.org/abs/2610.21730", "result": "Fetched new upper bound O_epsilon(X^(209/670+epsilon)) for squared radius X; weaker than conjectural X^(1/4+epsilon), not a refutation or full Lean4 proof."},
+      {"url": "https://raw.githubusercontent.com/teorth/optimizationproblems/main/constants/64a.md", "result": "Read exponent context: an optimization problem with known bounds and conjectural endpoint, not a Lean4 refutation."},
+      {"url": "local pinned Mathlib and FormalConjectures in final Harbor image", "result": "Actual rg search found only upstream GaussCircleProblem statement plus unrelated Hardy-Littlewood files; no matching Mathlib proof. Log: gauss-refute-mathlib-search.txt."}
+    ],
+    "conclusion": "After varied direction-specific searches and following relevant source, issue, repository and counterexample-bundle leads, no known public complete Lean4 proof of this negated existential was found. This bounded search does not prove nonexistence. No candidate full proof was compiled or included in the task.",
+    "search_result_ids": ["mw1vxro9pald1a", "mw1vy7vukfij3t", "mw1vz77aebqt1n", "mw1w0vuppwysxv"]
+  }
+}

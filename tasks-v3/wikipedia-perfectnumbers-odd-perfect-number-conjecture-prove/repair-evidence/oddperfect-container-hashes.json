@@ -1,0 +1,39 @@
+{
+  "/tests": {
+    "GoldenCheck.lean": "b81225f2c174c31df928cf2464ed4a889e3ce665b0813b4f92eca307c4e8a4c3",
+    "golden_env/FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "golden_env/FormalConjecturesBench/Target.lean": "11464783ef6a12908c00b310e0f113cee4ce85fc681d99163eef9d8425720025",
+    "golden_env/FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "golden_env/lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "golden_env/lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "golden_env/lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb",
+    "test.sh": "a25ffe113bd44f4334d7fd0a269a248fc0698cb650ab6e102707340593b5b61c",
+    "test_target.py": "771b8f41d1a8a67614347e591ddc224a268e34d238142dd753480f910010b9c9",
+    "trusted_spec/AuditSpec.lean": "ef67115507212375eac1786917bee7a8538fa8350efd514847c2a98dec6047ba",
+    "trusted_spec/FCBTrustedSpec.ilean": "137b1842e376876f29fb2e53039aa53b3a0644deeeee24573f2bd61e4f579aba",
+    "trusted_spec/FCBTrustedSpec.lean": "e21b94d29f221d2f74f48e80ceadb464edfd662c467b39121e3c281ed48e888a",
+    "trusted_spec/FCBTrustedSpec.olean": "ecac91e3ae7a0672ad5c1d4b182023c1fc9a3af9f6d9e3b27654eb060f0e65ac",
+    "trusted_spec/audit.log": "bb4d09886abd9660cd00c45d4c360e123da6e7b79ad434db7955faf11edc4a3a",
+    "trusted_spec/generate.py": "b136da586eb5c793239308fe7c3687a74f28a38b78e9494783b68ef0d5e24663",
+    "trusted_spec/manifest.json": "a240d84a70b9908dbd6da241fc64a8b76daf2bc8a2e6d6f8050f48c55b38947d",
+    "trusted_spec/reproduce.sh": "96c1ff4a2953ebae4dfaa25acdb3b420443f7eb17664fd1427b384106410cb42"
+  },
+  "/opt/formal-conjectures-bench-checker": {
+    "GoldenCheck.lean": "b81225f2c174c31df928cf2464ed4a889e3ce665b0813b4f92eca307c4e8a4c3",
+    "golden_env/FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "golden_env/FormalConjecturesBench/Target.lean": "11464783ef6a12908c00b310e0f113cee4ce85fc681d99163eef9d8425720025",
+    "golden_env/FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "golden_env/lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "golden_env/lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "golden_env/lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb",
+    "test_target.py": "771b8f41d1a8a67614347e591ddc224a268e34d238142dd753480f910010b9c9",
+    "trusted_spec/AuditSpec.lean": "ef67115507212375eac1786917bee7a8538fa8350efd514847c2a98dec6047ba",
+    "trusted_spec/FCBTrustedSpec.ilean": "137b1842e376876f29fb2e53039aa53b3a0644deeeee24573f2bd61e4f579aba",
+    "trusted_spec/FCBTrustedSpec.lean": "e21b94d29f221d2f74f48e80ceadb464edfd662c467b39121e3c281ed48e888a",
+    "trusted_spec/FCBTrustedSpec.olean": "ecac91e3ae7a0672ad5c1d4b182023c1fc9a3af9f6d9e3b27654eb060f0e65ac",
+    "trusted_spec/audit.log": "bb4d09886abd9660cd00c45d4c360e123da6e7b79ad434db7955faf11edc4a3a",
+    "trusted_spec/generate.py": "b136da586eb5c793239308fe7c3687a74f28a38b78e9494783b68ef0d5e24663",
+    "trusted_spec/manifest.json": "a240d84a70b9908dbd6da241fc64a8b76daf2bc8a2e6d6f8050f48c55b38947d",
+    "trusted_spec/reproduce.sh": "96c1ff4a2953ebae4dfaa25acdb3b420443f7eb17664fd1427b384106410cb42"
+  }
+}

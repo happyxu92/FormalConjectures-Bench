@@ -1,0 +1,8 @@
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited complete type: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ (n : ℕ → ℕ),
+    StrictMono n →
+      Filter.limsup (fun k => ↑(n k) / ↑k.succ) Filter.atTop = ⊤ → Transcendental ℚ (∑' (k : ℕ), 1 / 2 ^ n k)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

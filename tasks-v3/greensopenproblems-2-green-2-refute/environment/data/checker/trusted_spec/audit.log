@@ -1,0 +1,9 @@
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green2.maxRestrictedSumAvoidingSubsetSize: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0; eventual, finite-set and cardinality binders retained in value
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ᶠ (n : ℕ) in Filter.atTop,
+    ∀ (A : Finset ℤ), A.card = n → ↑(Green2.maxRestrictedSumAvoidingSubsetSize A) ≥ Real.log ↑n ^ 100
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

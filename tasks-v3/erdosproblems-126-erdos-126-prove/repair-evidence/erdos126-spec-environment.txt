@@ -1,0 +1,3 @@
+/opt/elan/toolchains/leanprover--lean4---v4.27.0/bin/lean
+Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)
+5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26  /opt/formal-conjectures/lake-manifest.json

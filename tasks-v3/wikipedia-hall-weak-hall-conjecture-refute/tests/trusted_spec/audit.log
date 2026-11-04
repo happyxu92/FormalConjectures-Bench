@@ -1,0 +1,15 @@
+FCBTrustedSpec.lean:45:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:75:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Hall.HallConjectureExp: [propext, Quot.sound, Classical.choice]
+audited Hall.HallIneq: [propext, Quot.sound, Classical.choice]
+outer binders: 0; negated universal epsilon and positivity premise retained
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ ε > 0, Hall.HallConjectureExp (2⁻¹ - ε)
+def Hall.HallConjectureExp : ℝ → Prop :=
+fun e => ∃ C > 0, Hall.HallIneq C e
+def Hall.HallIneq : ℝ → ℝ → Prop :=
+fun C e => ∀ (x y : ℤ), y ^ 2 ≠ x ^ 3 → ↑|y ^ 2 - x ^ 3| > C * |↑x| ^ e
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

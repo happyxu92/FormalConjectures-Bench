@@ -1,0 +1,2 @@
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Pow/NNReal.lean:theorem sqrt_eq_rpow (x : ℝ≥0) : sqrt x = x ^ (1 / (2 : ℝ)) := by
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Pow/Real.lean:theorem sqrt_eq_rpow (x : ℝ) : √x = x ^ (1 / (2 : ℝ)) := by

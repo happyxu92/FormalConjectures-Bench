@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-perfectnumbers-odd-perfect-number-conjecture-refute",
+  "mode": "auto_repair",
+  "status": "passed",
+  "case": "no_issue",
+  "has_problem": false,
+  "has_unicode_issue": false,
+  "repair_attempted": false,
+  "repair_success": null,
+  "modified": false,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "061f0cb86c9bfa2d4f17f23aeaba3c359c7d3a13df9bd3ff1046ed6a2a8af534",
+      "header_before": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (n : \u2115) (hn : Perfect n),\n        Even n\n    )",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (n : \u2115) (hn : Perfect n),\n        Even n\n    )",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "061f0cb86c9bfa2d4f17f23aeaba3c359c7d3a13df9bd3ff1046ed6a2a8af534",
+      "header_after": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (n : \u2115) (hn : Perfect n),\n        Even n\n    )"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "061f0cb86c9bfa2d4f17f23aeaba3c359c7d3a13df9bd3ff1046ed6a2a8af534",
+      "header_before": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (n : \u2115) (hn : Perfect n),\n        Even n\n    )",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (n : \u2115) (hn : Perfect n),\n        Even n\n    )",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "061f0cb86c9bfa2d4f17f23aeaba3c359c7d3a13df9bd3ff1046ed6a2a8af534",
+      "header_after": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 (n : \u2115) (hn : Perfect n),\n        Even n\n    )"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "bf64c2b450cd48b749b8b63476b355a92546d1d7d9b0c727df25bf6a3662fa53"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "bf64c2b450cd48b749b8b63476b355a92546d1d7d9b0c727df25bf6a3662fa53"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "bf64c2b450cd48b749b8b63476b355a92546d1d7d9b0c727df25bf6a3662fa53"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 0
+}

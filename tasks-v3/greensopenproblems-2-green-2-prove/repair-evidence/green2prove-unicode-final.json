@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/greensopenproblems-2-green-2-prove",
+  "mode": "auto_repair",
+  "status": "passed",
+  "case": "no_issue",
+  "has_problem": false,
+  "has_unicode_issue": false,
+  "repair_attempted": false,
+  "repair_success": null,
+  "modified": false,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "9571c1f436a4c790839aa13eae0150d5eaa461f62efd1c351bcff184df3dc828",
+      "header_before": "theorem green_2 : \u2200\u1da0 n : \u2115 in atTop, \u2200 A : Finset \u2124, A.card = n \u2192\n      (maxRestrictedSumAvoidingSubsetSize A : \u211d) \u2265 (Real.log n) ^ 100",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem green_2 : \u2200\u1da0 n : \u2115 in atTop, \u2200 A : Finset \u2124, A.card = n \u2192\n      (maxRestrictedSumAvoidingSubsetSize A : \u211d) \u2265 (Real.log n) ^ 100",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "9571c1f436a4c790839aa13eae0150d5eaa461f62efd1c351bcff184df3dc828",
+      "header_after": "theorem green_2 : \u2200\u1da0 n : \u2115 in atTop, \u2200 A : Finset \u2124, A.card = n \u2192\n      (maxRestrictedSumAvoidingSubsetSize A : \u211d) \u2265 (Real.log n) ^ 100"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "9571c1f436a4c790839aa13eae0150d5eaa461f62efd1c351bcff184df3dc828",
+      "header_before": "theorem green_2 : \u2200\u1da0 n : \u2115 in atTop, \u2200 A : Finset \u2124, A.card = n \u2192\n      (maxRestrictedSumAvoidingSubsetSize A : \u211d) \u2265 (Real.log n) ^ 100",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem green_2 : \u2200\u1da0 n : \u2115 in atTop, \u2200 A : Finset \u2124, A.card = n \u2192\n      (maxRestrictedSumAvoidingSubsetSize A : \u211d) \u2265 (Real.log n) ^ 100",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "9571c1f436a4c790839aa13eae0150d5eaa461f62efd1c351bcff184df3dc828",
+      "header_after": "theorem green_2 : \u2200\u1da0 n : \u2115 in atTop, \u2200 A : Finset \u2124, A.card = n \u2192\n      (maxRestrictedSumAvoidingSubsetSize A : \u211d) \u2265 (Real.log n) ^ 100"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "f44b16d4276c108421224e09ab68e1f6b7bebac1e4c3328c447046c45da99c25"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "f44b16d4276c108421224e09ab68e1f6b7bebac1e4c3328c447046c45da99c25"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "f44b16d4276c108421224e09ab68e1f6b7bebac1e4c3328c447046c45da99c25"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 0
+}

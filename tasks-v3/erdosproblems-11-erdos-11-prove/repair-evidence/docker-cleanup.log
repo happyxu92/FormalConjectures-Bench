@@ -1,0 +1,1823 @@
+The initial cleanup invocation removed the three explicitly recorded own containers, two own image tags, and own network, and verified their absence. It then stopped at an overbroad assertion that every pre-existing container must still exist: the unrelated pre-existing DEAD container 2c28f9c67fba was no longer present. No command in this script deletes that container or any other pre-existing resource. This idempotent rerun records final verification.
+
+$ docker inspect 6d7f2290c1df267ee9a221b3bfc4a286ac9a33ec62737d92e115d82565cb4fbc
+[]
+error: no such object: 6d7f2290c1df267ee9a221b3bfc4a286ac9a33ec62737d92e115d82565cb4fbc
+exit=1
+
+$ docker inspect 4ac4d469414a228f8bb670b8dc86dc1ac4e7e856f5bdd39e482a6ce2c4bb2403
+[]
+error: no such object: 4ac4d469414a228f8bb670b8dc86dc1ac4e7e856f5bdd39e482a6ce2c4bb2403
+exit=1
+
+$ docker inspect 668b6f47fc6479baf6d84e616f0716b038a08851ba8a0761a1dbec4a4cfe5a93
+[]
+error: no such object: 668b6f47fc6479baf6d84e616f0716b038a08851ba8a0761a1dbec4a4cfe5a93
+exit=1
+
+$ docker image inspect fcb-erdos11-prove-20261104__env-main:latest
+[]
+Error response from daemon: No such image: fcb-erdos11-prove-20261104__env-main:latest
+exit=1
+
+$ docker image inspect fcb-erdos11-prove-final-20261104__env-main:latest
+[]
+Error response from daemon: No such image: fcb-erdos11-prove-final-20261104__env-main:latest
+exit=1
+
+$ docker network inspect 47e120c4530d68e03e39286d60581cc67ff89917c2b11f3e44b8ad5b308c7c0a
+[]
+Error response from daemon: network 47e120c4530d68e03e39286d60581cc67ff89917c2b11f3e44b8ad5b308c7c0a not found
+exit=1
+
+$ docker container inspect 6d7f2290c1df267ee9a221b3bfc4a286ac9a33ec62737d92e115d82565cb4fbc
+[]
+Error response from daemon: No such container: 6d7f2290c1df267ee9a221b3bfc4a286ac9a33ec62737d92e115d82565cb4fbc
+exit=1
+
+$ docker container inspect 4ac4d469414a228f8bb670b8dc86dc1ac4e7e856f5bdd39e482a6ce2c4bb2403
+[]
+Error response from daemon: No such container: 4ac4d469414a228f8bb670b8dc86dc1ac4e7e856f5bdd39e482a6ce2c4bb2403
+exit=1
+
+$ docker container inspect 668b6f47fc6479baf6d84e616f0716b038a08851ba8a0761a1dbec4a4cfe5a93
+[]
+Error response from daemon: No such container: 668b6f47fc6479baf6d84e616f0716b038a08851ba8a0761a1dbec4a4cfe5a93
+exit=1
+
+$ docker container inspect e75b8fcd21aa
+[]
+Error response from daemon: No such container: e75b8fcd21aa
+exit=1
+
+$ docker image inspect sha256:7f1b5344ca60997e706294e8f5029207e07b14bb04f212c843b06636edce8015
+[]
+Error response from daemon: No such image: sha256:7f1b5344ca60997e706294e8f5029207e07b14bb04f212c843b06636edce8015
+exit=1
+
+$ docker image inspect sha256:5932b7f17527247b39218096f4e5050f5ac7aaa0a6b86b9bd6acd2ff7500e3e9
+[]
+Error response from daemon: No such image: sha256:5932b7f17527247b39218096f4e5050f5ac7aaa0a6b86b9bd6acd2ff7500e3e9
+exit=1
+
+$ docker image inspect sha256:7724fce9ac48904bc125658abca131f966f503da05950db12490731543607070
+[]
+Error response from daemon: No such image: sha256:7724fce9ac48904bc125658abca131f966f503da05950db12490731543607070
+exit=1
+
+$ docker image inspect sha256:b47d487da6c02607b7ff6eb1e46352616213e229c0a6011af14d5bde4358285a
+[]
+Error response from daemon: No such image: sha256:b47d487da6c02607b7ff6eb1e46352616213e229c0a6011af14d5bde4358285a
+exit=1
+
+$ docker network inspect 47e120c4530d68e03e39286d60581cc67ff89917c2b11f3e44b8ad5b308c7c0a
+[]
+Error response from daemon: network 47e120c4530d68e03e39286d60581cc67ff89917c2b11f3e44b8ad5b308c7c0a not found
+exit=1
+
+$ docker image inspect fcb-local/erdosproblems-1-least-n-5:cache-smoke
+[
+    {
+        "Id": "sha256:0824de0f16475f1f619701869e59de4e4ce3229bfce229a5fd16f88072c37e8f",
+        "RepoTags": [
+            "fcb-local/erdosproblems-1-least-n-5:cache-smoke"
+        ],
+        "RepoDigests": [
+            "fcb-local/erdosproblems-1-least-n-5@sha256:0824de0f16475f1f619701869e59de4e4ce3229bfce229a5fd16f88072c37e8f"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-10-31T15:26:46.777790178+08:00",
+        "Config": {
+            "User": "ubuntu",
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "/bin/bash"
+            ],
+            "WorkingDir": "/app",
+            "Labels": {
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 2709409778,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:bec87777bc2fb2edcdf9af11df1531469e7df911309c1413082b18fcb8610278",
+                "sha256:d57ecceaf810a84b4237264f1ed2ba5d2ae076d4f265aaf5f76e6df1b33e413d",
+                "sha256:2af5aa503676e7d8cb97fd264224b051b1b00f195ad61459869006aec2951d88",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:6162f9bbf1aebdfbb963f4c11aa343eb370feabefcef59034b218ae9a9db042d",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:4988fcd9a53dd6b7a1b029b87ba30b10bd80481173dd525a77bd83d94c439ce9",
+                "sha256:77381126e43e25ce0d0565ecf29bd075651f0b9bd4cf556c6f2316008296fb57",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:082a7c71dfe8eccb5b57843600bcb5743f3532aa07f010b667f2feb2f8ee237b",
+                "sha256:e7e104ba7ec61c0dd55dde9bd5f3bfcf0f110f00abff7be07557fa72652f84b8",
+                "sha256:600d9acdcf41aec74f1010154f3a4cd54fd9bd7cda0c578557053a8e0844b1f8",
+                "sha256:fb185bbd8c244b9beadee3ce1ddb63abd58c25c641ad8e869c1ec5b0184f9fef",
+                "sha256:96ba5d410f8343f4eb736cc2df78f22cbe16102718b913db450c622ec7471606",
+                "sha256:fc1d53d5a09cca770c1075943f6b7ccea247cc345219113464532fc88130797e",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-10-31T16:32:00.933604489Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:0824de0f16475f1f619701869e59de4e4ce3229bfce229a5fd16f88072c37e8f",
+            "size": 856
+        }
+    }
+]
+exit=0
+
+$ docker container inspect 418e01ddfc0350357b6366d0053d11f109696c1fa17318a6e5e0fe4262857a51
+[
+    {
+        "Id": "418e01ddfc0350357b6366d0053d11f109696c1fa17318a6e5e0fe4262857a51",
+        "Created": "2026-11-02T11:11:14.852487392Z",
+        "Path": "/app/docker-entrypoint.sh",
+        "Args": [
+            "/app/sub2api"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1735065,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-04T03:21:03.501422169Z",
+            "FinishedAt": "2026-11-04T03:20:44.089506964Z",
+            "Health": {
+                "Status": "healthy",
+                "FailingStreak": 0,
+                "Log": [
+                    {
+                        "Start": "2026-11-04T14:47:53.454165347+08:00",
+                        "End": "2026-11-04T14:47:53.48672028+08:00",
+                        "ExitCode": 0,
+                        "Output": ""
+                    },
+                    {
+                        "Start": "2026-11-04T14:48:23.487459273+08:00",
+                        "End": "2026-11-04T14:48:23.529699261+08:00",
+                        "ExitCode": 0,
+                        "Output": ""
+                    },
+                    {
+                        "Start": "2026-11-04T14:48:53.530460453+08:00",
+                        "End": "2026-11-04T14:48:53.568683232+08:00",
+                        "ExitCode": 0,
+                        "Output": ""
+                    },
+                    {
+                        "Start": "2026-11-04T14:49:23.569397242+08:00",
+                        "End": "2026-11-04T14:49:23.611425391+08:00",
+                        "ExitCode": 0,
+                        "Output": ""
+                    },
+                    {
+                        "Start": "2026-11-04T14:49:53.612405378+08:00",
+                        "End": "2026-11-04T14:49:53.645743238+08:00",
+                        "ExitCode": 0,
+                        "Output": ""
+                    }
+                ]
+            }
+        },
+        "Image": "sha256:da0fd94daebf890419e21e956821fd6c2008fc666f9617f2eb917f4492245da3",
+        "ResolvConfPath": "/var/lib/docker/containers/418e01ddfc0350357b6366d0053d11f109696c1fa17318a6e5e0fe4262857a51/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/418e01ddfc0350357b6366d0053d11f109696c1fa17318a6e5e0fe4262857a51/hostname",
+        "HostsPath": "/var/lib/docker/containers/418e01ddfc0350357b6366d0053d11f109696c1fa17318a6e5e0fe4262857a51/hosts",
+        "LogPath": "/var/lib/docker/containers/418e01ddfc0350357b6366d0053d11f109696c1fa17318a6e5e0fe4262857a51/418e01ddfc0350357b6366d0053d11f109696c1fa17318a6e5e0fe4262857a51-json.log",
+        "Name": "/sub2api",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/root/sub2api-deploy/data:/app/data:rw,Z"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "sub2api-deploy_sub2api-network",
+            "PortBindings": {
+                "8080/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "8080"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "unless-stopped",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": [
+                "no-new-privileges:true"
+            ],
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [
+                {
+                    "Name": "nofile",
+                    "Hard": 100000,
+                    "Soft": 100000
+                }
+            ],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/root/sub2api-deploy/data",
+                "Destination": "/app/data",
+                "Mode": "rw,Z",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "418e01ddfc03",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "8080/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "GEMINI_OAUTH_CLIENT_SECRET=",
+                "SECURITY_URL_ALLOWLIST_UPSTREAM_HOSTS=",
+                "REDIS_DB=0",
+                "DATABASE_HOST=postgres",
+                "DATABASE_DBNAME=sub2api",
+                "GATEWAY_OPENAI_HTTP2_ENABLED=true",
+                "GATEWAY_SCHEDULING_SLOT_CLEANUP_INTERVAL=30s",
+                "GEMINI_OAUTH_CLIENT_ID=",
+                "GATEWAY_IMAGE_CONCURRENCY_OVERFLOW_MODE=reject",
+                "DATABASE_CONN_MAX_IDLE_TIME_MINUTES=5",
+                "GATEWAY_OPENAI_WS_FORCE_HTTP=false",
+                "REDIS_HOST=redis",
+                "GATEWAY_OPENAI_PROXY_STREAM_CIRCUIT_WINDOW_SECONDS=60",
+                "GATEWAY_MAX_IDLE_CONNS=8192",
+                "SECURITY_URL_ALLOWLIST_ALLOW_PRIVATE_HOSTS=true",
+                "DATABASE_PORT=5432",
+                "GATEWAY_MAX_CONNS_PER_HOST=2048",
+                "DATABASE_CONN_MAX_LIFETIME_MINUTES=30",
+                "DATABASE_PASSWORD=75585f2b89afcc5b1ad84a594c0f8a9fd20f2ed3c2c374dd41b640879a7f2084",
+                "GATEWAY_OPENAI_HTTP2_FALLBACK_ERROR_THRESHOLD=2",
+                "GATEWAY_OPENAI_COMPACT_MODEL=gpt-5.5",
+                "GATEWAY_OPENAI_PROXY_STREAM_CIRCUIT_FAILURE_THRESHOLD=2",
+                "GATEWAY_IMAGE_STREAM_DATA_INTERVAL_TIMEOUT=900",
+                "ENABLE_SERVER_TIMING=false",
+                "GATEWAY_SCHEDULING_LOAD_BATCH_ENABLED=true",
+                "REDIS_POOL_SIZE=4096",
+                "ADMIN_EMAIL=admin@sub2api.local",
+                "JWT_EXPIRE_HOUR=24",
+                "GATEWAY_SCHEDULING_OUTBOX_LAG_REBUILD_FAILURES=3",
+                "REDIS_MIN_IDLE_CONNS=256",
+                "ANTIGRAVITY_USER_AGENT_VERSION=",
+                "UPDATE_PROXY_URL=",
+                "GEMINI_CLI_OAUTH_CLIENT_SECRET=",
+                "GATEWAY_IMAGE_CONCURRENCY_ENABLED=false",
+                "SERVER_MODE=release",
+                "GATEWAY_FORCE_CODEX_CLI=false",
+                "GATEWAY_OPENAI_PROXY_STREAM_CIRCUIT_TTL_SECONDS=600",
+                "REDIS_USERNAME=",
+                "GATEWAY_SCHEDULING_OUTBOX_POLL_INTERVAL_SECONDS=1",
+                "TOTP_ENCRYPTION_KEY=2f87d84d45273902bf5c68b72233321ec8bb77a3746604bc489e386722989a57",
+                "SETUP_MIGRATION_TIMEOUT_SECONDS=0",
+                "REDIS_ENABLE_TLS=false",
+                "SUB2API_IMAGES_MAIN_MODEL=gpt-5.6-luna",
+                "GATEWAY_SCHEDULING_FALLBACK_WAIT_TIMEOUT=30s",
+                "GATEWAY_OPENAI_HTTP2_ALLOW_PROXY_FALLBACK_TO_HTTP1=true",
+                "GATEWAY_SCHEDULING_OUTBOX_LAG_WARN_SECONDS=5",
+                "GATEWAY_IMAGE_CONCURRENCY_MAX_WAITING_REQUESTS=100",
+                "GEMINI_QUOTA_POLICY=",
+                "GATEWAY_SCHEDULING_DB_FALLBACK_ENABLED=true",
+                "GATEWAY_SCHEDULING_STICKY_SESSION_WAIT_TIMEOUT=120s",
+                "SERVER_PORT=8080",
+                "GATEWAY_SCHEDULING_DB_FALLBACK_TIMEOUT_SECONDS=0",
+                "GATEWAY_MAX_IDLE_CONNS_PER_HOST=4096",
+                "REDIS_PASSWORD=",
+                "DATABASE_USER=sub2api",
+                "RUN_MODE=standard",
+                "GATEWAY_IMAGE_CONCURRENCY_MAX_CONCURRENT_REQUESTS=0",
+                "ADMIN_PASSWORD=0r8FNzt41dcFELLr0yvsLZzk",
+                "SECURITY_URL_ALLOWLIST_ENABLED=false",
+                "DATABASE_MAX_IDLE_CONNS=128",
+                "GATEWAY_SCHEDULING_FALLBACK_MAX_WAITING=100",
+                "TZ=Asia/Shanghai",
+                "GATEWAY_OPENAI_HTTP2_FALLBACK_TTL_SECONDS=600",
+                "GATEWAY_SCHEDULING_STICKY_SESSION_MAX_WAITING=3",
+                "SERVER_HOST=0.0.0.0",
+                "AUTO_SETUP=true",
+                "ANTIGRAVITY_OAUTH_CLIENT_SECRET=",
+                "REDIS_PORT=6379",
+                "GATEWAY_SCHEDULING_OUTBOX_LAG_REBUILD_SECONDS=10",
+                "GATEWAY_SCHEDULING_OUTBOX_BACKLOG_REBUILD_ROWS=10000",
+                "GATEWAY_IMAGE_NONSTREAM_KEEPALIVE_INTERVAL=0",
+                "DATABASE_SSLMODE=disable",
+                "GATEWAY_MAX_BODY_SIZE=268435456",
+                "UPDATE_GITHUB_TOKEN=",
+                "SECURITY_URL_ALLOWLIST_ALLOW_INSECURE_HTTP=true",
+                "GATEWAY_SCHEDULING_DB_FALLBACK_MAX_QPS=0",
+                "GATEWAY_SCHEDULING_FULL_REBUILD_INTERVAL_SECONDS=300",
+                "GATEWAY_OPENAI_HTTP2_FALLBACK_WINDOW_SECONDS=60",
+                "GATEWAY_OPENAI_RESPONSE_HEADER_TIMEOUT=0",
+                "GATEWAY_IMAGE_CONCURRENCY_WAIT_TIMEOUT_SECONDS=30",
+                "GEMINI_OAUTH_SCOPES=",
+                "JWT_SECRET=7c6e01ef29c539529880ff42f811b9c284345dca145ebd7b87e2a59a627caedc",
+                "DATABASE_MAX_OPEN_CONNS=256",
+                "GATEWAY_IMAGE_STREAM_KEEPALIVE_INTERVAL=10",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/app/sub2api"
+            ],
+            "Healthcheck": {
+                "Test": [
+                    "CMD",
+                    "wget",
+                    "-q",
+                    "-T",
+                    "5",
+                    "-O",
+                    "/dev/null",
+                    "http://localhost:8080/health"
+                ],
+                "Interval": 30000000000,
+                "Timeout": 10000000000,
+                "StartPeriod": 30000000000,
+                "Retries": 3
+            },
+            "Image": "weishaw/sub2api:0.2.15",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": [
+                "/app/docker-entrypoint.sh"
+            ],
+            "Labels": {
+                "com.docker.compose.config-hash": "9d16e8df908ebf435a9b6b0cf4ad8c1309261f86231acae84f7bb427ea371a3a",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "postgres:service_healthy:false,redis:service_healthy:false",
+                "com.docker.compose.image": "sha256:da0fd94daebf890419e21e956821fd6c2008fc666f9617f2eb917f4492245da3",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "sub2api-deploy",
+                "com.docker.compose.project.config_files": "/root/sub2api-deploy/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/root/sub2api-deploy",
+                "com.docker.compose.replace": "sub2api",
+                "com.docker.compose.service": "sub2api",
+                "com.docker.compose.version": "2.40.3",
+                "description": "Sub2API - AI API Gateway Platform",
+                "maintainer": "Wei-Shaw <github.com/Wei-Shaw>",
+                "org.opencontainers.image.revision": "f2669c8cf62555cd92389b3f55920e9e6e7c6ff2",
+                "org.opencontainers.image.source": "https://github.com/Wei-Shaw/sub2api",
+                "org.opencontainers.image.version": "0.2.15"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "27d5b3b5b2b0a72dade4cabb266f9ee13e9e9cf2d8fa476b7b1f694168858f0b",
+            "SandboxKey": "/var/run/docker/netns/27d5b3b5b2b0",
+            "Ports": {
+                "8080/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "8080"
+                    }
+                ]
+            },
+            "Networks": {
+                "sub2api-deploy_sub2api-network": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "sub2api",
+                        "sub2api"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "ce65d827f45070587b6fb5e6fb8d7306da47861ef5911dd881899753f92eff57",
+                    "EndpointID": "ad8b57093eaf716e616ac922453702fe2fc8ec46fd4f27071b958f3d2bcb2b2f",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.4",
+                    "MacAddress": "76:a2:99:22:f7:14",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "sub2api",
+                        "418e01ddfc03"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:71d627c5f0d383be3f9098957ac20e0adc2c65ffbc758d7a7b1f7c0084bc5745",
+            "size": 2572,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
+exit=0
+
+$ docker container inspect f87663ee43dc6988a89ad187b16dab3013b41ac26a1f92d78138099d083f7c1e
+[
+    {
+        "Id": "f87663ee43dc6988a89ad187b16dab3013b41ac26a1f92d78138099d083f7c1e",
+        "Created": "2026-11-02T02:12:41.708990255Z",
+        "Path": "sh",
+        "Args": [
+            "-c",
+            "sleep infinity"
+        ],
+        "State": {
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 137,
+            "Error": "",
+            "StartedAt": "2026-11-02T02:13:16.043689222Z",
+            "FinishedAt": "2026-11-02T02:13:27.522395094Z"
+        },
+        "Image": "sha256:29696759f5cb9924093733cbc7c22e0983494ec59fbbaea2b22d09978190e5b6",
+        "ResolvConfPath": "/var/lib/docker/containers/f87663ee43dc6988a89ad187b16dab3013b41ac26a1f92d78138099d083f7c1e/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/f87663ee43dc6988a89ad187b16dab3013b41ac26a1f92d78138099d083f7c1e/hostname",
+        "HostsPath": "/var/lib/docker/containers/f87663ee43dc6988a89ad187b16dab3013b41ac26a1f92d78138099d083f7c1e/hosts",
+        "LogPath": "/var/lib/docker/containers/f87663ee43dc6988a89ad187b16dab3013b41ac26a1f92d78138099d083f7c1e/f87663ee43dc6988a89ad187b16dab3013b41ac26a1f92d78138099d083f7c1e-json.log",
+        "Name": "/erdos1062-lower-import-current-20261102__env-main-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "erdos1062-lower-import-current-20261102__env_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 8589934592,
+            "NanoCpus": 4000000000,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 17179869184,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "f87663ee43dc",
+            "Domainname": "",
+            "User": "ubuntu",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "sh",
+                "-c",
+                "sleep infinity"
+            ],
+            "Image": "erdos1062-lower-import-current-20261102__env-main",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "51aad5c89590a1a6e9c1ad96ea2ce4fda2faa9a91d5566e8faca5dd271f86973",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:29696759f5cb9924093733cbc7c22e0983494ec59fbbaea2b22d09978190e5b6",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "erdos1062-lower-import-current-20261102__env",
+                "com.docker.compose.project.config_files": "/tmp/tmp6rr0qlb5/erdos1062-lower-import-current-20261102__env-docker-compose-resources.json,/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml,/tmp/tmpz4zyc85o/docker-compose-environment.json,/tmp/tmpfepas9bd/docker-compose-mounts.json",
+                "com.docker.compose.project.working_dir": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-1062-lower-bound/environment",
+                "com.docker.compose.service": "main",
+                "com.docker.compose.version": "2.40.3",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "",
+            "SandboxKey": "",
+            "Ports": {},
+            "Networks": {
+                "erdos1062-lower-import-current-20261102__env_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "erdos1062-lower-import-current-20261102__env-main-1",
+                        "main"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "7630602b5850b22e7a60eeae678566a492b8d6145f079a89a655d445a5b0ae7d",
+                    "EndpointID": "",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "MacAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "erdos1062-lower-import-current-20261102__env-main-1",
+                        "main",
+                        "f87663ee43dc"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:4b8e8e1058e15b4232535fa94b0e93ce68f6c86c5d5644aa58f4c098d7677dee",
+            "size": 3518,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
+exit=0
+
+$ docker container inspect e3e0088b94c6bddc783b1c63d7e6c8da3708e230e998cbf6db1146abd0c92f8c
+[
+    {
+        "Id": "e3e0088b94c6bddc783b1c63d7e6c8da3708e230e998cbf6db1146abd0c92f8c",
+        "Created": "2026-11-02T02:12:41.691236182Z",
+        "Path": "sh",
+        "Args": [
+            "-c",
+            "sleep infinity"
+        ],
+        "State": {
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 137,
+            "Error": "",
+            "StartedAt": "2026-11-02T02:13:16.041678971Z",
+            "FinishedAt": "2026-11-02T02:13:27.522902195Z"
+        },
+        "Image": "sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a",
+        "ResolvConfPath": "/var/lib/docker/containers/e3e0088b94c6bddc783b1c63d7e6c8da3708e230e998cbf6db1146abd0c92f8c/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/e3e0088b94c6bddc783b1c63d7e6c8da3708e230e998cbf6db1146abd0c92f8c/hostname",
+        "HostsPath": "/var/lib/docker/containers/e3e0088b94c6bddc783b1c63d7e6c8da3708e230e998cbf6db1146abd0c92f8c/hosts",
+        "LogPath": "/var/lib/docker/containers/e3e0088b94c6bddc783b1c63d7e6c8da3708e230e998cbf6db1146abd0c92f8c/e3e0088b94c6bddc783b1c63d7e6c8da3708e230e998cbf6db1146abd0c92f8c-json.log",
+        "Name": "/erdos1062-import-20261102__env-main-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "erdos1062-import-20261102__env_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 8589934592,
+            "NanoCpus": 4000000000,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 17179869184,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "e3e0088b94c6",
+            "Domainname": "",
+            "User": "ubuntu",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "sh",
+                "-c",
+                "sleep infinity"
+            ],
+            "Image": "erdos1062-import-20261102__env-main",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "51aad5c89590a1a6e9c1ad96ea2ce4fda2faa9a91d5566e8faca5dd271f86973",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "erdos1062-import-20261102__env",
+                "com.docker.compose.project.config_files": "/tmp/tmp04wl3rj5/erdos1062-import-20261102__env-docker-compose-resources.json,/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml,/tmp/tmpl7eaq444/docker-compose-environment.json,/tmp/tmpjgxoo0mt/docker-compose-mounts.json",
+                "com.docker.compose.project.working_dir": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-1062-lebensold-bounds/environment",
+                "com.docker.compose.service": "main",
+                "com.docker.compose.version": "2.40.3",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "",
+            "SandboxKey": "",
+            "Ports": {},
+            "Networks": {
+                "erdos1062-import-20261102__env_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "erdos1062-import-20261102__env-main-1",
+                        "main"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "c0a354f8bc5426a196278d9240ba0a9ad86d4cd4bacfd453a894f717a42b2339",
+                    "EndpointID": "",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "MacAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "erdos1062-import-20261102__env-main-1",
+                        "main",
+                        "e3e0088b94c6"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:d3a53f3fb068f28d19d39a5c29db3a8eb80e6d555edf7d611ab032d280965b78",
+            "size": 3518,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
+exit=0
+
+$ docker container inspect 9d88b1e34a20193355bd977f203b9b26d4ae86fd120281afad36f83425c0aa05
+[
+    {
+        "Id": "9d88b1e34a20193355bd977f203b9b26d4ae86fd120281afad36f83425c0aa05",
+        "Created": "2026-11-02T02:11:55.127848262Z",
+        "Path": "sh",
+        "Args": [
+            "-c",
+            "sleep infinity"
+        ],
+        "State": {
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 137,
+            "Error": "",
+            "StartedAt": "2026-11-02T02:12:40.266896001Z",
+            "FinishedAt": "2026-11-02T02:14:42.644281443Z"
+        },
+        "Image": "sha256:62daa51124db5dc8b7d6a872289f3d8ff0f596285db35892c7f864decc0538a6",
+        "ResolvConfPath": "/var/lib/docker/containers/9d88b1e34a20193355bd977f203b9b26d4ae86fd120281afad36f83425c0aa05/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/9d88b1e34a20193355bd977f203b9b26d4ae86fd120281afad36f83425c0aa05/hostname",
+        "HostsPath": "/var/lib/docker/containers/9d88b1e34a20193355bd977f203b9b26d4ae86fd120281afad36f83425c0aa05/hosts",
+        "LogPath": "/var/lib/docker/containers/9d88b1e34a20193355bd977f203b9b26d4ae86fd120281afad36f83425c0aa05/9d88b1e34a20193355bd977f203b9b26d4ae86fd120281afad36f83425c0aa05-json.log",
+        "Name": "/erdos1051-import-20261102__env-main-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "erdos1051-import-20261102__env_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 8589934592,
+            "NanoCpus": 4000000000,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 17179869184,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "9d88b1e34a20",
+            "Domainname": "",
+            "User": "ubuntu",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "sh",
+                "-c",
+                "sleep infinity"
+            ],
+            "Image": "erdos1051-import-20261102__env-main",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "51aad5c89590a1a6e9c1ad96ea2ce4fda2faa9a91d5566e8faca5dd271f86973",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:62daa51124db5dc8b7d6a872289f3d8ff0f596285db35892c7f864decc0538a6",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "erdos1051-import-20261102__env",
+                "com.docker.compose.project.config_files": "/tmp/tmpnloc8qlc/erdos1051-import-20261102__env-docker-compose-resources.json,/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml,/tmp/tmp86f3s29n/docker-compose-environment.json,/tmp/tmp8pleb4oj/docker-compose-mounts.json",
+                "com.docker.compose.project.working_dir": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-1051-rapid-growth/environment",
+                "com.docker.compose.service": "main",
+                "com.docker.compose.version": "2.40.3",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "",
+            "SandboxKey": "",
+            "Ports": {},
+            "Networks": {
+                "erdos1051-import-20261102__env_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "erdos1051-import-20261102__env-main-1",
+                        "main"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "98f82f0394f026879e178a2cefb0678ec5c5e889bd2a2dc92f3b95083de53f75",
+                    "EndpointID": "",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "MacAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "erdos1051-import-20261102__env-main-1",
+                        "main",
+                        "9d88b1e34a20"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:6ee89d8bd1c29a4f638b727d32e4d23fb0a4bb5283351f7caea956cfbaeffb8a",
+            "size": 3518,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
+exit=0
+
+$ docker container inspect 969a5a561de9e07c912576ff9cd1edfd1950668280e678277bfc7d9569f86659
+[
+    {
+        "Id": "969a5a561de9e07c912576ff9cd1edfd1950668280e678277bfc7d9569f86659",
+        "Created": "2026-09-19T08:01:35.425565038Z",
+        "Path": "docker-entrypoint.sh",
+        "Args": [
+            "postgres"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1734847,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-04T03:20:57.875869697Z",
+            "FinishedAt": "2026-11-04T03:20:49.096081383Z",
+            "Health": {
+                "Status": "healthy",
+                "FailingStreak": 0,
+                "Log": [
+                    {
+                        "Start": "2026-11-04T14:49:30.910763259+08:00",
+                        "End": "2026-11-04T14:49:30.949960671+08:00",
+                        "ExitCode": 0,
+                        "Output": "/var/run/postgresql:5432 - accepting connections\n"
+                    },
+                    {
+                        "Start": "2026-11-04T14:49:40.951143238+08:00",
+                        "End": "2026-11-04T14:49:40.992857719+08:00",
+                        "ExitCode": 0,
+                        "Output": "/var/run/postgresql:5432 - accepting connections\n"
+                    },
+                    {
+                        "Start": "2026-11-04T14:49:50.994136224+08:00",
+                        "End": "2026-11-04T14:49:51.030830894+08:00",
+                        "ExitCode": 0,
+                        "Output": "/var/run/postgresql:5432 - accepting connections\n"
+                    },
+                    {
+                        "Start": "2026-11-04T14:50:01.031780543+08:00",
+                        "End": "2026-11-04T14:50:01.066787641+08:00",
+                        "ExitCode": 0,
+                        "Output": "/var/run/postgresql:5432 - accepting connections\n"
+                    },
+                    {
+                        "Start": "2026-11-04T14:50:11.06782264+08:00",
+                        "End": "2026-11-04T14:50:11.100757397+08:00",
+                        "ExitCode": 0,
+                        "Output": "/var/run/postgresql:5432 - accepting connections\n"
+                    }
+                ]
+            }
+        },
+        "Image": "sha256:6c538e7206ea40ff740ef27883529390a690b6ead6ba96b44c67a9f7c638e8fd",
+        "ResolvConfPath": "/var/lib/docker/containers/969a5a561de9e07c912576ff9cd1edfd1950668280e678277bfc7d9569f86659/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/969a5a561de9e07c912576ff9cd1edfd1950668280e678277bfc7d9569f86659/hostname",
+        "HostsPath": "/var/lib/docker/containers/969a5a561de9e07c912576ff9cd1edfd1950668280e678277bfc7d9569f86659/hosts",
+        "LogPath": "/var/lib/docker/containers/969a5a561de9e07c912576ff9cd1edfd1950668280e678277bfc7d9569f86659/969a5a561de9e07c912576ff9cd1edfd1950668280e678277bfc7d9569f86659-json.log",
+        "Name": "/sub2api-postgres",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/root/sub2api-deploy/postgres_data:/var/lib/postgresql/data:rw,Z"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "sub2api-deploy_sub2api-network",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "unless-stopped",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [
+                {
+                    "Name": "nofile",
+                    "Hard": 100000,
+                    "Soft": 100000
+                }
+            ],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "8c02839876925c5f66c5efacee32ca0a66175bbe6bcfe1660ab0bf5767689b42",
+                "Source": "/var/lib/docker/volumes/8c02839876925c5f66c5efacee32ca0a66175bbe6bcfe1660ab0bf5767689b42/_data",
+                "Destination": "/var/lib/postgresql",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            },
+            {
+                "Type": "bind",
+                "Source": "/root/sub2api-deploy/postgres_data",
+                "Destination": "/var/lib/postgresql/data",
+                "Mode": "rw,Z",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "969a5a561de9",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "5432/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "POSTGRES_USER=sub2api",
+                "POSTGRES_PASSWORD=75585f2b89afcc5b1ad84a594c0f8a9fd20f2ed3c2c374dd41b640879a7f2084",
+                "POSTGRES_DB=sub2api",
+                "PGDATA=/var/lib/postgresql/data",
+                "TZ=Asia/Shanghai",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "GOSU_VERSION=1.19",
+                "LANG=en_US.utf8",
+                "PG_MAJOR=18",
+                "PG_VERSION=18.6",
+                "PG_SHA256=555610c24d53e4316da5b7d3fc25c279d96856d5e0e23ee308c328c5fa881d9f",
+                "DOCKER_PG_LLVM_DEPS=llvm21-dev \t\tclang21"
+            ],
+            "Cmd": [
+                "postgres"
+            ],
+            "Healthcheck": {
+                "Test": [
+                    "CMD-SHELL",
+                    "pg_isready -U sub2api -d sub2api"
+                ],
+                "Interval": 10000000000,
+                "Timeout": 5000000000,
+                "StartPeriod": 10000000000,
+                "Retries": 5
+            },
+            "Image": "postgres:18-alpine",
+            "Volumes": {
+                "/var/lib/postgresql": {}
+            },
+            "WorkingDir": "/",
+            "Entrypoint": [
+                "docker-entrypoint.sh"
+            ],
+            "Labels": {
+                "com.docker.compose.config-hash": "8773169886c7bc2b8c1057ba4f16cda2b756c34837052113730773c6d46288ed",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:6c538e7206ea40ff740ef27883529390a690b6ead6ba96b44c67a9f7c638e8fd",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "sub2api-deploy",
+                "com.docker.compose.project.config_files": "/root/sub2api-deploy/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/root/sub2api-deploy",
+                "com.docker.compose.service": "postgres",
+                "com.docker.compose.version": "2.40.3"
+            },
+            "StopSignal": "SIGINT"
+        },
+        "NetworkSettings": {
+            "SandboxID": "a00dbd7c68afd6c0115a0baaaf34641040fa62ce908e227e81e9d5557acedcac",
+            "SandboxKey": "/var/run/docker/netns/a00dbd7c68af",
+            "Ports": {
+                "5432/tcp": null
+            },
+            "Networks": {
+                "sub2api-deploy_sub2api-network": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "sub2api-postgres",
+                        "postgres"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "ce65d827f45070587b6fb5e6fb8d7306da47861ef5911dd881899753f92eff57",
+                    "EndpointID": "5975a3d659f3f59c33749c331e18bb05773c3cb671740db97084c4c27943ca4d",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.3",
+                    "MacAddress": "62:f6:b6:5b:a5:67",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "sub2api-postgres",
+                        "postgres",
+                        "969a5a561de9"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:d8703cd7fba306b9fec9268ecedfa8a966846c053036a60e3635791957eb2f66",
+            "size": 2678,
+            "annotations": {
+                "com.docker.official-images.bashbrew.arch": "amd64",
+                "org.opencontainers.image.base.digest": "sha256:d56c381f961d307a21b3ca004cf1e3910f106644aefb1f43e654c8a56c4fd395",
+                "org.opencontainers.image.base.name": "alpine:3.24",
+                "org.opencontainers.image.created": "2026-09-17T21:27:08Z",
+                "org.opencontainers.image.revision": "e00e1bd34ec5c8a8e7ad89b273b3d42efaf6d5bc",
+                "org.opencontainers.image.source": "https://github.com/docker-library/postgres.git#e00e1bd34ec5c8a8e7ad89b273b3d42efaf6d5bc:18/alpine3.24",
+                "org.opencontainers.image.url": "https://hub.docker.com/_/postgres",
+                "org.opencontainers.image.version": "18.6-alpine3.24"
+            },
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
+exit=0
+
+$ docker container inspect 038757ae87f97d3ecccc7e8bff6b3fd52732187cd470dbff58273a590649bed4
+[
+    {
+        "Id": "038757ae87f97d3ecccc7e8bff6b3fd52732187cd470dbff58273a590649bed4",
+        "Created": "2026-09-19T08:01:35.422894831Z",
+        "Path": "docker-entrypoint.sh",
+        "Args": [
+            "sh",
+            "-c",
+            "\n  redis-server \\\n  --save 60 1 \\\n  --appendonly yes \\\n  --appendfsync everysec \\\n  "
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1734846,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-04T03:20:57.874934142Z",
+            "FinishedAt": "2026-11-04T03:20:49.146556825Z",
+            "Health": {
+                "Status": "healthy",
+                "FailingStreak": 0,
+                "Log": [
+                    {
+                        "Start": "2026-11-04T14:49:28.181941524+08:00",
+                        "End": "2026-11-04T14:49:28.21912932+08:00",
+                        "ExitCode": 0,
+                        "Output": "AUTH failed: ERR AUTH <password> called without any password configured for the default user. Are you sure your configuration is correct?\nPONG\n"
+                    },
+                    {
+                        "Start": "2026-11-04T14:49:38.219909116+08:00",
+                        "End": "2026-11-04T14:49:38.262050124+08:00",
+                        "ExitCode": 0,
+                        "Output": "AUTH failed: ERR AUTH <password> called without any password configured for the default user. Are you sure your configuration is correct?\nPONG\n"
+                    },
+                    {
+                        "Start": "2026-11-04T14:49:48.263050899+08:00",
+                        "End": "2026-11-04T14:49:48.299064087+08:00",
+                        "ExitCode": 0,
+                        "Output": "AUTH failed: ERR AUTH <password> called without any password configured for the default user. Are you sure your configuration is correct?\nPONG\n"
+                    },
+                    {
+                        "Start": "2026-11-04T14:49:58.300002759+08:00",
+                        "End": "2026-11-04T14:49:58.332127991+08:00",
+                        "ExitCode": 0,
+                        "Output": "AUTH failed: ERR AUTH <password> called without any password configured for the default user. Are you sure your configuration is correct?\nPONG\n"
+                    },
+                    {
+                        "Start": "2026-11-04T14:50:08.3333006+08:00",
+                        "End": "2026-11-04T14:50:08.365143886+08:00",
+                        "ExitCode": 0,
+                        "Output": "AUTH failed: ERR AUTH <password> called without any password configured for the default user. Are you sure your configuration is correct?\nPONG\n"
+                    }
+                ]
+            }
+        },
+        "Image": "sha256:bd999b5cfee25fb24b8320a31fddbd69f462df44c8138c66e369582937beebc0",
+        "ResolvConfPath": "/var/lib/docker/containers/038757ae87f97d3ecccc7e8bff6b3fd52732187cd470dbff58273a590649bed4/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/038757ae87f97d3ecccc7e8bff6b3fd52732187cd470dbff58273a590649bed4/hostname",
+        "HostsPath": "/var/lib/docker/containers/038757ae87f97d3ecccc7e8bff6b3fd52732187cd470dbff58273a590649bed4/hosts",
+        "LogPath": "/var/lib/docker/containers/038757ae87f97d3ecccc7e8bff6b3fd52732187cd470dbff58273a590649bed4/038757ae87f97d3ecccc7e8bff6b3fd52732187cd470dbff58273a590649bed4-json.log",
+        "Name": "/sub2api-redis",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/root/sub2api-deploy/redis_data:/data:rw,Z"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "sub2api-deploy_sub2api-network",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "unless-stopped",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [
+                {
+                    "Name": "nofile",
+                    "Hard": 100000,
+                    "Soft": 100000
+                }
+            ],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/root/sub2api-deploy/redis_data",
+                "Destination": "/data",
+                "Mode": "rw,Z",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "038757ae87f9",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "6379/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "REDISCLI_AUTH=",
+                "TZ=Asia/Shanghai",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "REDIS_VERSION=8.10.1"
+            ],
+            "Cmd": [
+                "sh",
+                "-c",
+                "\n  redis-server \\\n  --save 60 1 \\\n  --appendonly yes \\\n  --appendfsync everysec \\\n  "
+            ],
+            "Healthcheck": {
+                "Test": [
+                    "CMD",
+                    "redis-cli",
+                    "ping"
+                ],
+                "Interval": 10000000000,
+                "Timeout": 5000000000,
+                "StartPeriod": 5000000000,
+                "Retries": 5
+            },
+            "Image": "redis:8-alpine",
+            "Volumes": null,
+            "WorkingDir": "/data",
+            "Entrypoint": [
+                "docker-entrypoint.sh"
+            ],
+            "Labels": {
+                "com.docker.compose.config-hash": "54877cb429b7f62f981ab755c29a08e215ad2d2142067ca56a07d039b81b796a",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:bd999b5cfee25fb24b8320a31fddbd69f462df44c8138c66e369582937beebc0",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "sub2api-deploy",
+                "com.docker.compose.project.config_files": "/root/sub2api-deploy/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/root/sub2api-deploy",
+                "com.docker.compose.service": "redis",
+                "com.docker.compose.version": "2.40.3"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "98bd90972d717a46d3d4a7ede1eda02fbb62b8a6f6c730cc22af0dc5b34eb59d",
+            "SandboxKey": "/var/run/docker/netns/98bd90972d71",
+            "Ports": {
+                "6379/tcp": null
+            },
+            "Networks": {
+                "sub2api-deploy_sub2api-network": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "sub2api-redis",
+                        "redis"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "ce65d827f45070587b6fb5e6fb8d7306da47861ef5911dd881899753f92eff57",
+                    "EndpointID": "6901052ebfa580a887cce3b74a06ace98cce3216e19b211444b4d72fea936815",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.2",
+                    "MacAddress": "9a:5e:46:e5:1c:0d",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "sub2api-redis",
+                        "redis",
+                        "038757ae87f9"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:de4d18872bf67ad0bd62224a712263975ca1d53b9b1d0d5d076082e7fa887890",
+            "size": 2289,
+            "annotations": {
+                "com.docker.official-images.bashbrew.arch": "amd64",
+                "org.opencontainers.image.base.digest": "sha256:1f3591b8a02ea153f41c5bba878ad477f63ab3d19349762cb77504db02a23e15",
+                "org.opencontainers.image.base.name": "alpine:3.23",
+                "org.opencontainers.image.created": "2026-09-17T21:30:18Z",
+                "org.opencontainers.image.revision": "3b10654333bfc145b9eeed55c4bf495a81ac8ec0",
+                "org.opencontainers.image.source": "https://github.com/redis/docker-library-redis.git#3b10654333bfc145b9eeed55c4bf495a81ac8ec0:alpine",
+                "org.opencontainers.image.url": "https://hub.docker.com/_/redis",
+                "org.opencontainers.image.version": "8.10.1-alpine"
+            },
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
+exit=0
+
+$ docker container inspect 2c28f9c67fbab8d813769633221539e3dc3e05a445c2a8e336bbdc241cd20be9
+[]
+Error response from daemon: No such container: 2c28f9c67fbab8d813769633221539e3dc3e05a445c2a8e336bbdc241cd20be9
+exit=1
+
+Pre-existing DEAD resource is absent; this agent only inspected it and never stopped/removed it.
+
+$ docker ps -a --no-trunc --filter name=fcb-erdos11-prove
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+exit=0
+
+CLEANUP VERIFIED: only explicitly recorded task resources removed; all six originally running/exited containers and generation base retained; unrelated pre-existing DEAD container absent without any deletion by this agent. No prune or build-cache cleanup.

@@ -1,0 +1,10 @@
+FCBTrustedSpec.lean:67:4: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Equidistribution.IsEquidistributed: [propext, Quot.sound, Classical.choice]
+audited Equidistribution.IsEquidistributedModuloOne: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬Equidistribution.IsEquidistributedModuloOne fun n => (3 / 2) ^ n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

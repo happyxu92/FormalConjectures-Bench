@@ -1,0 +1,21 @@
+{
+    "task": {
+        "path": "/root/FormalConjectures-Bench/tasks-v3/books-uniformdistributionofsequences-equidistribution-isequidistributedmoduloone-three-halves-pow-prove"
+    },
+    "trial_name": "books-uniformdistributionofseque__LFJ2uzy",
+    "trials_dir": "/tmp/fcb-three-halves-prove/harbor/fcb-three-halves-prove-finalok-20261104",
+    "agent": {
+        "name": "nop"
+    },
+    "environment": {
+        "type": "docker",
+        "delete": false,
+        "extra_docker_compose": [
+            "/tmp/fcb-three-halves-prove/compose-final-subnet.yaml"
+        ],
+        "kwargs": {
+            "keep_containers": true
+        }
+    },
+    "job_id": "700c7f69-e318-4147-b409-82bfee779825"
+}

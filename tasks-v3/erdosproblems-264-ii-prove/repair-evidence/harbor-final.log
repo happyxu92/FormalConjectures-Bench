@@ -1,0 +1,12 @@
+Starting trial: fcb-264ii-final2-20261104
+Task: erdosproblems-264-ii-prove
+Agent: nop
+Environment: docker
+Trials directory: /tmp/264ii-harbor-trials
+
+Trial completed!
+Trial name: fcb-264ii-final2-20261104
+Task: formal-conjectures-bench/erdosproblems-264-ii-prove
+Started: 2026-11-04 07:40:20.007456+00:00
+Finished: 2026-11-04 07:40:32.562779+00:00
+Rewards: {'reward': 0.0}

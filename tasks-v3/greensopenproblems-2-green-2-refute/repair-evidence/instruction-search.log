@@ -1,0 +1,1 @@
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/RingTheory/Coprime/Basic.lean:def IsCoprime : Prop :=

@@ -1,0 +1,61 @@
+Loaded fixed precompiled trusted Spec
+frozen prefix: REJECTED: Code above the benchmark target marker changed
+
+outside source: REJECTED: Unexpected added Lean source outside editable subtree: Outside.lean
+
+original sorry source: REJECTED: Banned Lean feature found in proof region at line 2: \bsorry\b
+
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Firoozbakht.firoozbakhtSeq: [propext, Quot.sound, Classical.choice]
+universe parameters: []; one Nat binder within Not
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ (n : ℕ), Firoozbakht.firoozbakhtSeq (n + 1) < Firoozbakht.firoozbakhtSeq n
+def Firoozbakht.firoozbakhtSeq : ℕ → ℝ :=
+fun n ↦ ↑(Nat.nth Prime n) ^ (1 / (↑n + 1))
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+target sorryAx audit: REJECTED: Unexpected axioms for Firoozbakht.formal_conjectures_bench_refutation: ['sorryAx']
+'Firoozbakht.formal_conjectures_bench_refutation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+
+Candidate compiled as ubuntu with fixed import paths
+semantic instance type substitution: REJECTED: Lean audit command failed
+/tmp/formal_conjectures_bench_xq_7gde5/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Firoozbakht.formal_conjectures_bench_refutation
+has type
+  ¬∀ (n : ℕ), Firoozbakht.firoozbakhtSeq (n + 1) < Firoozbakht.firoozbakhtSeq n
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Firoozbakht.firoozbakhtSeq: [propext, Quot.sound, Classical.choice]
+universe parameters: []; one Nat binder within Not
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ (n : ℕ), Firoozbakht.firoozbakhtSeq (n + 1) < Firoozbakht.firoozbakhtSeq n
+def Firoozbakht.firoozbakhtSeq : ℕ → ℝ :=
+fun n ↦ ↑(Nat.nth Prime n) ^ (1 / (↑n + 1))
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+missing precompiled Spec: REJECTED: Missing trusted Spec artifact: FCBTrustedSpec.olean
+
+corrupt precompiled Spec: REJECTED: Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+
+Loaded fixed precompiled trusted Spec
+{
+  "frozen prefix": "rejected as expected",
+  "outside source": "rejected as expected",
+  "original sorry source": "rejected as expected",
+  "trusted type audit": "passed",
+  "ubuntu candidate build": "passed",
+  "complete original type": "passed",
+  "target sorryAx audit": "rejected as expected",
+  "sorry canary": "passed",
+  "compiler uid": "ubuntu",
+  "semantic negative source rules": "passed with frozen text unchanged",
+  "semantic negative axiom audit": "passed (no sorry or new axioms)",
+  "semantic instance type substitution": "rejected as expected",
+  "candidate module/cache/environment shadow": "fixed Spec selected and audited",
+  "missing precompiled Spec": "rejected as expected",
+  "corrupt precompiled Spec": "rejected as expected"
+}

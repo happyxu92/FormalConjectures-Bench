@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-32-erdos-32-prove",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式补齐 .lake/packages；在匹配及最终 Harbor 容器中执行三路径 rg，找到 mathlib 的 Real.log 定义，退出 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；补齐 Dockerfile 末尾 USER ubuntu 的 lake build +FormalConjecturesBench.Target，并由当前 task 的本地 Harbor 构建验证成功；未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "技能脚本修复前后均返回 no_issue / passed；两份头一致，原头通过、变更头及移除 := 被拒绝；没有修改头或冻结基线。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从可信 golden 提前 elaboration、预编译和独立审计 ExpectedType，两包同步；清单 SHA256 fa4a8d73425f772051d6801f38ff4dd9896ab3c73f76062b6f76b426fada1ee0，Lean 4.27.0/x86_64、无 universe 参数。固定工具链/依赖及 /tests 或 /opt 产物加载，完整类型比较替换动态 GoldenCheck 路径。最终当前 task Harbor 镜像 4b232a2053f2，容器 4e8f67347c23；33 个交付文件哈希一致。正式/ubuntu 本地入口均预期拒绝原始 sorry（退出 1，reward 0），两套实际函数补测均退出 0，覆盖 Spec 审计、ubuntu 编译、完整类型、公理审计、canary、冻结/越界/Real.log 遮蔽、缓存替换、缺失/损坏产物拒绝。初次默认网络池耗尽已用独立子网排查解决。日志、哈希和命令见 repair-evidence/validation.md。报告落盘后已 stop/rm 两个自建容器 fa6e01820cc8、4e8f67347c23，删除三个自建镜像 3a71217994f3/0eecf50d571f/4b232a2053f2 及本题网络 aa63bd2ff0cb；ps/inspect 确认不存在。共享基镜像 6b765e0c2f25 保留，无遗留本题资源，未动用户或其他 agent 资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata statement_status=consistent。核对锁定上游、完整前缀、Erdős 1954 原论文及题目来源转录：本方向是 full additive complement 且 o(log² N) 的存在命题；不是 big-O、almost-all 或 O(log N) 变体。未发现明显错误，未修改数学输入。来源和访问限制见 repair-evidence/research.md。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 task ID 精确查 CSV 未命中，随后多组联网搜索并读取上游当前 Lean、GitHub PR 3165/2641/2038 实际源码差异、Mathlib 线索及公开证明/问题库。经检索未找到覆盖本正向命题的公开完整 Lean4 证明，metadata public_lean4_proof=false/status=searched；不是断言绝对不存在。排除了仅标签修改、sorry 骨架、有限计算、其他题和反向/不同命题；原题站 403，已读替代来源，未遗留已识别的未核实证明线索。详见 repair-evidence/research.md。"
+    }
+  }
+}

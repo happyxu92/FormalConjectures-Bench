@@ -1,0 +1,22 @@
+{
+    "task": {
+        "path": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-gausscircleproblem-error-isbigo-refute"
+    },
+    "trial_name": "wikipedia-gausscircleproblem-err__TfQjMMB",
+    "trials_dir": "/tmp/gauss-refute-harbor/fcb-gauss-refute-final-nt40-20261104",
+    "agent": {
+        "name": "nop"
+    },
+    "environment": {
+        "type": "docker",
+        "force_build": true,
+        "delete": false,
+        "extra_docker_compose": [
+            "/tmp/gauss-refute-harbor-network.yaml"
+        ],
+        "kwargs": {
+            "keep_containers": true
+        }
+    },
+    "job_id": "0940f7b1-9176-4b61-81b0-b573a62d78ce"
+}

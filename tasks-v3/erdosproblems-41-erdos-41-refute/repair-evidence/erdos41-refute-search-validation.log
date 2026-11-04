@@ -1,0 +1,10 @@
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Complex/Log.lean:noncomputable def log (x : ℂ) : ℂ :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Log/ENNRealLog.lean:noncomputable def log (x : ℝ≥0∞) : EReal :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Log/Basic.lean:noncomputable def log (x : ℝ) : ℝ :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/ContinuousFunctionalCalculus/ExpLog/Basic.lean:noncomputable def log (a : A) : A := cfc Real.log a
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Algebra/Group/Submonoid/Membership.lean:def log [DecidableEq M] {n : M} (p : powers n) : ℕ :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/SetTheory/Ordinal/Exponential.lean:def log (b : Ordinal) (x : Ordinal) : Ordinal :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/NumberTheory/ArithmeticFunction/VonMangoldt.lean:noncomputable def log : ArithmeticFunction ℝ :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Algebra/GroupWithZero/WithZero.lean:def log (x : Mᵐ⁰) : M := x.recZeroCoe 0 Multiplicative.toAdd
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Nat/Log.lean:def log (b n : ℕ) : ℕ :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Int/Log.lean:def log (b : ℕ) (r : R) : ℤ :=

@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-fermatcatalanconjecture-fermat-catalan-refute",
+  "mode": "auto_repair",
+  "status": "passed",
+  "case": "no_issue",
+  "has_problem": false,
+  "has_unicode_issue": false,
+  "repair_attempted": false,
+  "repair_success": null,
+  "modified": false,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "4790dd7e2142f06cc4deb868efbbd935d7309262c6b79c08f83a530540b2d952",
+      "header_before": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      fermatCatalanConjecture\n    )",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      fermatCatalanConjecture\n    )",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "4790dd7e2142f06cc4deb868efbbd935d7309262c6b79c08f83a530540b2d952",
+      "header_after": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      fermatCatalanConjecture\n    )"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "4790dd7e2142f06cc4deb868efbbd935d7309262c6b79c08f83a530540b2d952",
+      "header_before": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      fermatCatalanConjecture\n    )",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      fermatCatalanConjecture\n    )",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "4790dd7e2142f06cc4deb868efbbd935d7309262c6b79c08f83a530540b2d952",
+      "header_after": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      fermatCatalanConjecture\n    )"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "edb3463fea95bf84b2d87a2025b3e89fb43cd3614e3f91abef3894a4dffd87b1"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "edb3463fea95bf84b2d87a2025b3e89fb43cd3614e3f91abef3894a4dffd87b1"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "edb3463fea95bf84b2d87a2025b3e89fb43cd3614e3f91abef3894a4dffd87b1"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 0
+}

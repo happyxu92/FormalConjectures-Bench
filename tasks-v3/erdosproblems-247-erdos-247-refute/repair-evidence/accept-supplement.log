@@ -1,0 +1,53 @@
+PASS unchanged frozen prefix/header
+PASS reject modified frozen prefix
+Code above the benchmark target marker changed
+PASS reject original sorry source restriction
+Banned Lean feature found in proof region at line 2: \bsorry\b
+PASS frozen files
+Loaded fixed precompiled trusted Spec
+PASS load official precompiled package
+audited complete type: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ (n : ℕ → ℕ),
+    StrictMono n →
+      Filter.limsup (fun k ↦ ↑(n k) / ↑k.succ) Filter.atTop = ⊤ → Transcendental ℚ (∑' (k : ℕ), 1 / 2 ^ n k)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS trusted type independent import and axiom audit
+Candidate compiled as ubuntu with fixed import paths
+PASS ubuntu candidate compilation with isolated sorry fixture
+Complete theorem type matches trusted Spec
+PASS complete type equality
+Unexpected axioms for Erdos247.formal_conjectures_bench_refutation: ['sorryAx']
+'Erdos247.formal_conjectures_bench_refutation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+PASS reject target axiom audit catches sorryAx
+PASS sorry canary
+Candidate compiled as ubuntu with fixed import paths
+PASS semantic shadow candidate compiled
+Lean audit command failed
+/tmp/formal_conjectures_bench_rtwoz7he/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Erdos247.formal_conjectures_bench_refutation
+has type
+  ¬∀ (n : ℕ → ℕ),
+      StrictMono n →
+        Filter.limsup (fun k ↦ ↑(n k) / ↑k.succ) Filter.atTop = ⊤ → Erdos247.Transcendental ℚ (∑' (k : ℕ), 1 / 2 ^ n k)
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+PASS reject unchanged header name-shadow full-type mismatch
+audited complete type: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ (n : ℕ → ℕ),
+    StrictMono n →
+      Filter.limsup (fun k ↦ ↑(n k) / ↑k.succ) Filter.atTop = ⊤ → Transcendental ℚ (∑' (k : ℕ), 1 / 2 ^ n k)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS candidate same-name module/cache cannot replace fixed Spec
+Unexpected added Lean source outside editable subtree: Outside.lean
+PASS reject out-of-bounds source
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+PASS reject missing precompiled artifact
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+PASS reject corrupt precompiled artifact
+ALL SUPPLEMENTARY CHECKS PASSED

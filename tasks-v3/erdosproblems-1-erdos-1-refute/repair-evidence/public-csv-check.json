@@ -1,0 +1,10 @@
+{
+  "task": "erdosproblems-1-erdos-1-refute",
+  "csv": "/root/FormalConjectures-Bench/skills/lean-task-repair/references/public-lean4-proofs.csv",
+  "matches": [
+    {
+      "task": "erdosproblems-1-erdos-1-refute",
+      "proof_urls": "https://github.com/tadamcz/erdos1/blob/0e395153306f34b3829d118b85bdd704136f2843/Erdos1/Resolutions/Erdos1_219usd_38h.lean#L2419"
+    }
+  ]
+}

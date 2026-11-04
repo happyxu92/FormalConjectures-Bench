@@ -1,0 +1,39 @@
+Loaded fixed precompiled trusted Spec from /opt/formal-conjectures-bench-checker/trusted_spec
+PASS expected rejection frozen prefix : Code above the benchmark target marker changed
+PASS expected rejection header : Target theorem no longer has a proof assignment
+PASS expected rejection source sorry : Banned Lean feature found in proof region at line 1: \bsorry\b
+audited FCBTrustedSpec.ExpectedType: [propext]
+audited Erdos17.IsClusterPrime: [propext]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬{p | Erdos17.IsClusterPrime p}.Infinite
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+PASS expected rejection target sorry axiom audit : Unexpected axioms for Erdos17.formal_conjectures_bench_refutation: ['sorryAx']
+'Erdos17.formal_conjectures_bench_refutation' depends on axioms: [propext, sorryAx]
+PASS sorry canary
+audited FCBTrustedSpec.ExpectedType: [propext]
+audited Erdos17.IsClusterPrime: [propext]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬{p | Erdos17.IsClusterPrime p}.Infinite
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]
+Complete theorem type matches trusted Spec
+PASS same-name candidate source/cache cannot shadow fixed Spec
+PASS expected rejection out-of-tree source : Unexpected added Lean source outside editable subtree: Outside.lean
+PASS expected rejection non-Lean editable file : Unexpected non-Lean file in editable source tree: FormalConjecturesBench/x.txt
+Candidate compiled as ubuntu with fixed import paths
+theorem Erdos17.formal_conjectures_bench_refutation : ¬Hacker.fakeSet.Infinite :=
+id (Set.Finite.not_infinite Set.finite_empty)
+
+PASS expected rejection semantic name substitution full type check : Lean audit command failed
+/tmp/formal_conjectures_bench_5pccu92j/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Erdos17.formal_conjectures_bench_refutation
+has type
+  ¬Hacker.fakeSet.Infinite
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+PASS expected rejection missing Spec : Missing trusted Spec artifact: FCBTrustedSpec.olean
+PASS expected rejection corrupt Spec : Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+ALL SUPPLEMENTARY CHECKS PASSED

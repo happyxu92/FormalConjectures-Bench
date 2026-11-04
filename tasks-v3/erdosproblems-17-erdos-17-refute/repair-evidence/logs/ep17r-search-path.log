@@ -1,0 +1,5 @@
+/opt/formal-conjectures/FormalConjectures/Paper/DegreeSequencesTriangleFree.lean:def IsCompactSequenceOn (d : ℕ → ℕ) (S : Set ℕ) : Prop :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Order/CompactlyGenerated/Basic.lean:def IsCompactElement {α : Type*} [PartialOrder α] (k : α) :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Topology/Defs/Filter.lean:def IsCompact (s : Set X) :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Topology/Sets/CompactOpenCovered.lean:def IsCompactOpenCovered {S ι : Type*} {X : ι → Type*} (f : ∀ i, X i → S)
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Analysis/Normed/Operator/Compact.lean:def IsCompactOperator {M₁ M₂ : Type*} [Zero M₁] [TopologicalSpace M₁] [TopologicalSpace M₂]

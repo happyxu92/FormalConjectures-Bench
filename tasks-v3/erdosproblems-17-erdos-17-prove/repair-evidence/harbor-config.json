@@ -1,0 +1,22 @@
+{
+    "task": {
+        "path": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-17-erdos-17-prove"
+    },
+    "trial_name": "erdosproblems-17-erdos-17-prove__c3fJ6QP",
+    "trials_dir": "/tmp/erdos17-harbor-jobs/fcb-erdos17-prove-final-20261104",
+    "agent": {
+        "name": "nop"
+    },
+    "environment": {
+        "type": "docker",
+        "force_build": true,
+        "delete": false,
+        "extra_docker_compose": [
+            "/tmp/erdos17-compose-subnet.yaml"
+        ],
+        "kwargs": {
+            "keep_containers": true
+        }
+    },
+    "job_id": "b91ca848-8efd-40c2-8a34-ffc60ac75897"
+}

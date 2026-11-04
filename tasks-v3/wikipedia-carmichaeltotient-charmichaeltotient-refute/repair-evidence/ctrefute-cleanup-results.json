@@ -1,0 +1,262 @@
+[
+  {
+    "command": [
+      "docker",
+      "stop",
+      "ea9852cfa8dab9b0d9c0bb2499e8f6767dbc6d66cabfd0c3c4e6c4a437cf6f46"
+    ],
+    "returncode": 0,
+    "stdout": "ea9852cfa8dab9b0d9c0bb2499e8f6767dbc6d66cabfd0c3c4e6c4a437cf6f46\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "ea9852cfa8dab9b0d9c0bb2499e8f6767dbc6d66cabfd0c3c4e6c4a437cf6f46"
+    ],
+    "returncode": 0,
+    "stdout": "ea9852cfa8dab9b0d9c0bb2499e8f6767dbc6d66cabfd0c3c4e6c4a437cf6f46\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "container",
+      "inspect",
+      "ea9852cfa8dab9b0d9c0bb2499e8f6767dbc6d66cabfd0c3c4e6c4a437cf6f46"
+    ],
+    "returncode": 1,
+    "stdout": "[]\n",
+    "stderr": "Error response from daemon: No such container: ea9852cfa8dab9b0d9c0bb2499e8f6767dbc6d66cabfd0c3c4e6c4a437cf6f46\n"
+  },
+  {
+    "command": [
+      "docker",
+      "stop",
+      "f1282915d133a5c3f57cd0c4c71cfc4a20bbef51be33ab18dcaac3d55279d6a0"
+    ],
+    "returncode": 0,
+    "stdout": "f1282915d133a5c3f57cd0c4c71cfc4a20bbef51be33ab18dcaac3d55279d6a0\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "f1282915d133a5c3f57cd0c4c71cfc4a20bbef51be33ab18dcaac3d55279d6a0"
+    ],
+    "returncode": 0,
+    "stdout": "f1282915d133a5c3f57cd0c4c71cfc4a20bbef51be33ab18dcaac3d55279d6a0\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "container",
+      "inspect",
+      "f1282915d133a5c3f57cd0c4c71cfc4a20bbef51be33ab18dcaac3d55279d6a0"
+    ],
+    "returncode": 1,
+    "stdout": "[]\n",
+    "stderr": "Error response from daemon: No such container: f1282915d133a5c3f57cd0c4c71cfc4a20bbef51be33ab18dcaac3d55279d6a0\n"
+  },
+  {
+    "command": [
+      "docker",
+      "stop",
+      "1f76837fdfbb05f7f4bfb5cc92edfb447d1f5afcaef5323efe91f3ba8d451aee"
+    ],
+    "returncode": 0,
+    "stdout": "1f76837fdfbb05f7f4bfb5cc92edfb447d1f5afcaef5323efe91f3ba8d451aee\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "1f76837fdfbb05f7f4bfb5cc92edfb447d1f5afcaef5323efe91f3ba8d451aee"
+    ],
+    "returncode": 0,
+    "stdout": "1f76837fdfbb05f7f4bfb5cc92edfb447d1f5afcaef5323efe91f3ba8d451aee\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "container",
+      "inspect",
+      "1f76837fdfbb05f7f4bfb5cc92edfb447d1f5afcaef5323efe91f3ba8d451aee"
+    ],
+    "returncode": 1,
+    "stdout": "[]\n",
+    "stderr": "Error response from daemon: No such container: 1f76837fdfbb05f7f4bfb5cc92edfb447d1f5afcaef5323efe91f3ba8d451aee\n"
+  },
+  {
+    "command": [
+      "docker",
+      "image",
+      "rm",
+      "fcb-ctrefute-spec:20261104"
+    ],
+    "returncode": 0,
+    "stdout": "Untagged: fcb-ctrefute-spec:20261104\nDeleted: sha256:8fbc99a480ceaec8763eac09f04703fd812cec18e15d0cb4379bc7a7cf3a4f02\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "image",
+      "inspect",
+      "sha256:8fbc99a480ceaec8763eac09f04703fd812cec18e15d0cb4379bc7a7cf3a4f02"
+    ],
+    "returncode": 1,
+    "stdout": "[]\n",
+    "stderr": "Error response from daemon: No such image: sha256:8fbc99a480ceaec8763eac09f04703fd812cec18e15d0cb4379bc7a7cf3a4f02\n"
+  },
+  {
+    "command": [
+      "docker",
+      "image",
+      "rm",
+      "fcb-ctrefute-accept-20261104__env-main:latest"
+    ],
+    "returncode": 0,
+    "stdout": "Untagged: fcb-ctrefute-accept-20261104__env-main:latest\nDeleted: sha256:733ec32f8fc64fab72ec452377fd4b100ae947a801c9e0685cede3258ad70502\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "image",
+      "inspect",
+      "sha256:733ec32f8fc64fab72ec452377fd4b100ae947a801c9e0685cede3258ad70502"
+    ],
+    "returncode": 1,
+    "stdout": "[]\n",
+    "stderr": "Error response from daemon: No such image: sha256:733ec32f8fc64fab72ec452377fd4b100ae947a801c9e0685cede3258ad70502\n"
+  },
+  {
+    "command": [
+      "docker",
+      "image",
+      "rm",
+      "fcb-ctrefute-accept2-20261104__env-main:latest"
+    ],
+    "returncode": 0,
+    "stdout": "Untagged: fcb-ctrefute-accept2-20261104__env-main:latest\nDeleted: sha256:ceccb8f0175c56f4440d910fdb6cac8cf2ef9ee2e50cbe3c4bfbc459d0c123e1\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "image",
+      "inspect",
+      "sha256:ceccb8f0175c56f4440d910fdb6cac8cf2ef9ee2e50cbe3c4bfbc459d0c123e1"
+    ],
+    "returncode": 1,
+    "stdout": "[]\n",
+    "stderr": "Error response from daemon: No such image: sha256:ceccb8f0175c56f4440d910fdb6cac8cf2ef9ee2e50cbe3c4bfbc459d0c123e1\n"
+  },
+  {
+    "command": [
+      "docker",
+      "image",
+      "rm",
+      "fcb-ctrefute-keep-20261104__env-main:latest"
+    ],
+    "returncode": 0,
+    "stdout": "Untagged: fcb-ctrefute-keep-20261104__env-main:latest\nDeleted: sha256:e9798d72d1c99806ddfb254506d230765c4779d578f67b67e956d566fa34ff8b\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "image",
+      "inspect",
+      "sha256:e9798d72d1c99806ddfb254506d230765c4779d578f67b67e956d566fa34ff8b"
+    ],
+    "returncode": 1,
+    "stdout": "[]\n",
+    "stderr": "Error response from daemon: No such image: sha256:e9798d72d1c99806ddfb254506d230765c4779d578f67b67e956d566fa34ff8b\n"
+  },
+  {
+    "command": [
+      "docker",
+      "image",
+      "rm",
+      "fcb-ctrefute-final-20261104__env-main:latest"
+    ],
+    "returncode": 0,
+    "stdout": "Untagged: fcb-ctrefute-final-20261104__env-main:latest\nDeleted: sha256:25c7ddd08bef61309de840efd37e0a4b1d8d035c26ea8db2e4cd56276bedb502\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "image",
+      "inspect",
+      "sha256:25c7ddd08bef61309de840efd37e0a4b1d8d035c26ea8db2e4cd56276bedb502"
+    ],
+    "returncode": 1,
+    "stdout": "[]\n",
+    "stderr": "Error response from daemon: No such image: sha256:25c7ddd08bef61309de840efd37e0a4b1d8d035c26ea8db2e4cd56276bedb502\n"
+  },
+  {
+    "command": [
+      "docker",
+      "network",
+      "rm",
+      "d83f64008ab6"
+    ],
+    "returncode": 0,
+    "stdout": "d83f64008ab6\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "network",
+      "inspect",
+      "d83f64008ab6"
+    ],
+    "returncode": 1,
+    "stdout": "[]\n",
+    "stderr": "Error response from daemon: network d83f64008ab6 not found\n"
+  },
+  {
+    "command": [
+      "docker",
+      "network",
+      "rm",
+      "edd30641a44a"
+    ],
+    "returncode": 0,
+    "stdout": "edd30641a44a\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "network",
+      "inspect",
+      "edd30641a44a"
+    ],
+    "returncode": 1,
+    "stdout": "[]\n",
+    "stderr": "Error response from daemon: network edd30641a44a not found\n"
+  },
+  {
+    "command": [
+      "docker",
+      "ps",
+      "-a",
+      "--filter",
+      "name=fcb-ctrefute",
+      "--no-trunc"
+    ],
+    "returncode": 0,
+    "stdout": "CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES\n",
+    "stderr": ""
+  }
+]

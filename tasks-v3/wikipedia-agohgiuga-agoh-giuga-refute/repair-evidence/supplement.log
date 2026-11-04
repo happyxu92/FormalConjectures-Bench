@@ -1,0 +1,50 @@
+actual supplemental user uid: 1000
+Banned Lean feature found in proof region at line 2: \bsorry\b
+EXPECTED REJECTION: original sorry source
+Code above the benchmark target marker changed
+EXPECTED REJECTION: changed frozen prefix
+Target theorem header changed
+EXPECTED REJECTION: changed target header
+Banned Lean feature found in proof region at line 2: (?m)^\s*(?:private\s+|protected\s+)?axiom\b
+EXPECTED REJECTION: axiom source restriction
+Loaded fixed precompiled trusted Spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited AgohGiuga.AgohGiugaCongr: [propext, Quot.sound, Classical.choice]
+audited AgohGiuga.AgohGiugaSum: [propext, Quot.sound, Classical.choice]
+complete outer parameter count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬AgohGiuga.AgohGiugaCongr
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for AgohGiuga.formal_conjectures_bench_refutation: ['sorryAx']
+'AgohGiuga.formal_conjectures_bench_refutation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+EXPECTED REJECTION: placeholder theorem sorryAx audit
+SORRY CANARY PASS
+Candidate compiled as ubuntu with fixed import paths
+Lean audit command failed
+/tmp/formal_conjectures_bench_29e836j6/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  AgohGiuga.formal_conjectures_bench_refutation
+has type
+  ∀ (AgohGiugaCongr : Prop), ¬AgohGiugaCongr
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+EXPECTED REJECTION: unchanged header, locally shadowed AgohGiugaCongr has an extra full-type parameter
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+SAME-NAME SOURCE/CACHE AND ENV OVERRIDE TEST PASS
+/opt/elan/toolchains/leanprover--lean4---v4.27.0/lib/lean/Init.olean
+/tests/trusted_spec/FCBTrustedSpec.olean
+/tmp/formal_conjectures_bench_29e836j6/FormalConjecturesBench/Submission.olean
+
+Unexpected added Lean source outside editable subtree: FCBTrustedSpec.lean
+EXPECTED REJECTION: extra source outside editable subtree
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+EXPECTED REJECTION: missing precompiled Spec fails closed
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+EXPECTED REJECTION: corrupt precompiled Spec hash fails closed
+Loaded fixed precompiled trusted Spec
+ALL SUPPLEMENTAL PATHS PASS

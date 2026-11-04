@@ -1,0 +1,14 @@
+/opt/formal-conjectures/.lake/packages/aesop/AesopTest/SeqCalcProver.lean:def sum : List Nat → Nat
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Geometry/Manifold/Bordism.lean:def sum (s t : SingularManifold X k I) : SingularManifold X k I where
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/SetTheory/Cardinal/Defs.lean:def sum {ι} (f : ι → Cardinal) : Cardinal :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Algebra/SkewMonoidAlgebra/Basic.lean:def sum {N : Type*} [AddCommMonoid N] (f : SkewMonoidAlgebra k G) (g : G → k → N) : N :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Algebra/Polynomial/Basic.lean:def sum {S : Type*} [AddCommMonoid S] (p : R[X]) (f : ℕ → R → S) : S :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/RingTheory/AdicCompletion/Functoriality.lean:def sum [DecidableEq ι] :
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/MeasureTheory/OuterMeasure/Operations.lean:def sum {ι} (f : ι → OuterMeasure α) : OuterMeasure α where
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/GroupTheory/FreeGroup/Basic.lean:def sum : α :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Fin/Tuple/Reflection.lean:def sum [Add α] [Zero α] : ∀ {m} (_ : Fin m → α), α
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/CategoryTheory/Sums/Basic.lean:def sum (F : A ⥤ B) (G : C ⥤ D) : A ⊕ C ⥤ B ⊕ D := (F ⋙ Sum.inl_ _ _).sum' (G ⋙ Sum.inr_ _ _)
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/CategoryTheory/Sums/Basic.lean:def sum {F G : A ⥤ B} {H I : C ⥤ D} (α : F ⟶ G) (β : H ⟶ I) : F.sum H ⟶ G.sum I where
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/CategoryTheory/Pi/Basic.lean:def sum : (∀ i, C i) ⥤ (∀ j, D j) ⥤ ∀ s : I ⊕ J, Sum.elim C D s where
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/CategoryTheory/Sites/Hypercover/Zero.lean:def sum {X : C} (E : PreZeroHypercover.{w} X) (F : PreZeroHypercover.{w'} X) :
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/CategoryTheory/Sites/Hypercover/Zero.lean:def sum [J.IsStableUnderSup] (E : ZeroHypercover.{w} J S) (F : ZeroHypercover.{w'} J S) :

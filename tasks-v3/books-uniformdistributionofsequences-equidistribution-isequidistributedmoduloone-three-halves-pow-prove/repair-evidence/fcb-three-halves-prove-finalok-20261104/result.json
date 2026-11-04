@@ -1,0 +1,124 @@
+{
+    "id": "4da6ba6d-f56e-46fc-8840-b98d885dfcf4",
+    "task_name": "formal-conjectures-bench/books-uniformdistributionofsequences-equidistribution-isequidistributedmoduloone-three-halves-pow-prove",
+    "trial_name": "books-uniformdistributionofseque__LFJ2uzy",
+    "trial_uri": "file:///tmp/fcb-three-halves-prove/harbor/fcb-three-halves-prove-finalok-20261104/books-uniformdistributionofseque__LFJ2uzy",
+    "task_id": {
+        "path": "/root/FormalConjectures-Bench/tasks-v3/books-uniformdistributionofsequences-equidistribution-isequidistributedmoduloone-three-halves-pow-prove"
+    },
+    "source": null,
+    "task_checksum": "e8a4cb7186cf56e22dce52474d29a051c3251bf6ce4804e00c5f4880055048e2",
+    "config": {
+        "task": {
+            "path": "/root/FormalConjectures-Bench/tasks-v3/books-uniformdistributionofsequences-equidistribution-isequidistributedmoduloone-three-halves-pow-prove",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "books-uniformdistributionofseque__LFJ2uzy",
+        "trials_dir": "/tmp/fcb-three-halves-prove/harbor/fcb-three-halves-prove-finalok-20261104",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "nop",
+            "import_path": null,
+            "model_name": null,
+            "base_url": null,
+            "model_api_key_name": null,
+            "model_api_format": null,
+            "skip_model_parsing": false,
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": false,
+            "stream": false,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [
+                "/tmp/fcb-three-halves-prove/compose-final-subnet.yaml"
+            ],
+            "kwargs": {
+                "keep_containers": true
+            },
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "700c7f69-e318-4147-b409-82bfee779825",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "nop",
+        "version": "1.0.0",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "model_usage": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "verifier_environment_mode": "shared",
+    "exception_info": null,
+    "started_at": "2026-11-04T06:47:10.360008Z",
+    "finished_at": "2026-11-04T06:47:22.809291Z",
+    "environment_setup": {
+        "started_at": "2026-11-04T06:47:10.386133Z",
+        "finished_at": "2026-11-04T06:47:11.968515Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-11-04T06:47:11.968555Z",
+        "finished_at": "2026-11-04T06:47:11.968602Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-11-04T06:47:11.968670Z",
+        "finished_at": "2026-11-04T06:47:11.969102Z"
+    },
+    "verifier": {
+        "started_at": "2026-11-04T06:47:12.218468Z",
+        "finished_at": "2026-11-04T06:47:12.608935Z"
+    },
+    "step_results": null
+}

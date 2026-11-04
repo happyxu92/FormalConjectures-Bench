@@ -1,0 +1,18 @@
+{
+    "task": {
+        "path": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-32-erdos-32-refute"
+    },
+    "trial_name": "fcb32-refute-accept2-20261104",
+    "trials_dir": "/tmp/erdos32-refute-harbor",
+    "agent": {
+        "name": "nop"
+    },
+    "environment": {
+        "type": "docker",
+        "force_build": true,
+        "delete": false,
+        "kwargs": {
+            "keep_containers": true
+        }
+    }
+}

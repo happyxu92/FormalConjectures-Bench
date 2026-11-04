@@ -1,0 +1,94 @@
+{
+  "task_id": "erdosproblems-247-erdos-247-prove",
+  "public_lean4_proof": null,
+  "status": "blocked",
+  "csv_exact_match": {
+    "task": "erdosproblems-247-erdos-247-prove",
+    "csv": "/root/FormalConjectures-Bench/skills/lean-task-repair/references/public-lean4-proofs.csv",
+    "exact_matches": [],
+    "row_count": 211
+  },
+  "web_query_groups": [
+    [
+      "Erdos247.erdos_247 Lean proof",
+      "Erdos 247 Lean proof",
+      "limsup Transcendental erdos_247"
+    ],
+    [
+      "247 Lean transcendental github",
+      "erdos_247 proof -site:firsching.ch -site:erdosproblems.com",
+      "Erdos 247 Lean4 proof github 3080"
+    ],
+    [
+      "Lean sparse binary transcendence Erdos Graham",
+      "Lean 247 transcendence proofs",
+      "Erdos247 lean-genius",
+      "site:github.com 247 formal-conjectures proof transcendental"
+    ],
+    [
+      "Lean4 Erdos Graham lacunary",
+      "Lean transcendental limsup binary",
+      "erdos_247 proof site:github.com -google-deepmind/formal-conjectures",
+      "JSP-000247 proof Lean"
+    ]
+  ],
+  "web_search_response_ids": [
+    "mw1sgya0cwpdu1",
+    "mw1shicyyxsaac",
+    "mw1sim0kzwn0kx",
+    "mw1skxs4ukejt3"
+  ],
+  "sources_and_exclusions": [
+    {
+      "urls": [
+        "https://raw.githubusercontent.com/google-deepmind/formal-conjectures/main/FormalConjectures/ErdosProblems/247.lean",
+        "https://github.com/google-deepmind/formal-conjectures/pull/2540",
+        "https://github.com/google-deepmind/formal-conjectures/pull/3065"
+      ],
+      "finding": "Read current full source and both diffs. Current main positive weak-growth theorem remains sorry. PRs only modify category for stronger variant, no proof and wrong scope."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/rjwalters/lean-genius/main/proofs/Proofs/Erdos247Problem.lean",
+      "finding": "Read complete source: weak-growth claim is only a Prop definition; general strong theorem is new axiom erdos_transcendence_strong; axiom-free factorial results are strictly narrower, not this target."
+    },
+    {
+      "url": "https://github.com/rjwalters/lean-genius/pull/30004",
+      "finding": "Read relevant added Lean source. lacunarySum_transcendental requires HasRatioGrowth, not implied by weak limsup condition; exponent n_k=2^k has unbounded n_k/(k+1) but fails unbounded ratio hypothesis. Not full target."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dcdreamy-code/awards/jsp-000247-formalization/submissions/JSP-000247/Erdos247.lean",
+      "finding": "Read complete source: four theorems of True, not transcendence."
+    },
+    {
+      "urls": [
+        "https://github.com/TauCetiProject/TauCeti/pull/19035",
+        "https://github.com/TauCetiProject/TauCeti/pull/26075"
+      ],
+      "finding": "Read complete added Lean modules: exponents r^(k+1), r>=3 for transcendence, no arbitrary n sequence. Narrower examples."
+    },
+    {
+      "url": "https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos247.lean",
+      "claim": "https://github.com/TheJustinSunPrize/awards/pull/3080",
+      "finding": "Fresh PR body and comments retrieved successfully, claiming full proof. Claimed exact file and main file are HTTP404. Full non-truncated pinned tree retrieved (46,486 entries), no Erdos247 path. Claimed proof cannot be inspected or verified; no replacement source in comments. Do not treat unsupported catalogue assertion as a verified proof."
+    },
+    {
+      "urls": [
+        "https://github.com/google-deepmind/alphaproof-nexus-results",
+        "https://github.com/Jayyhk/erdos-lean",
+        "https://github.com/linrock/math-proofs",
+        "https://github.com/carlok/diaz-modulus-lean"
+      ],
+      "finding": "Read result/repository listings; AlphaProof lists erdos_247 as attempted but complete 108-entry output tree has no 247 proof. No matching target in other indexes; diaz covers classical exponential/logarithmic transcendence, not arbitrary sparse binary series."
+    },
+    {
+      "url": "https://github.com/leanprover-community/mathlib4",
+      "finding": "Fetched current Mathlib import index and relevant Liouville source; searched pinned NumberTheory sources. Liouville approximability implies transcendence and factorial Liouville-number theorem are not the arbitrary weak-limsup sequence target."
+    }
+  ],
+  "access_limits": [
+    "Global GitHub code search returned HTTP401 Requires authentication. The specifically claimed complete-proof source at prize PR3080 is unavailable (404), with no matching file in pinned tree; its mathematical and Lean contents cannot be verified. Direct erdosproblems pages 403."
+  ],
+  "conclusion": "Substantial fresh multi-source searches found no verified public complete Lean4 proof for this exact positive weak-growth target. Conservatively unknown/blocked rather than false, because the explicit full-proof claim has no inspectable source and global code search is unavailable. No public candidate copied into task/image; no proof compiled as a solution.",
+  "fetch_evidence": "research-fetch-results.json",
+  "raw_sources_retained_only_in_tmp": "/tmp/ep247-research"
+}

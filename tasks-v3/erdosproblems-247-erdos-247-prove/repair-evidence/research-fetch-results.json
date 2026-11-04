@@ -1,0 +1,134 @@
+[
+  {
+    "name": "upstream-pinned",
+    "url": "https://raw.githubusercontent.com/google-deepmind/formal-conjectures/233a10e857ef78e79fd9fe661d37db724089170a/FormalConjectures/ErdosProblems/247.lean",
+    "status": 200,
+    "bytes": 1768
+  },
+  {
+    "name": "upstream-current",
+    "url": "https://raw.githubusercontent.com/google-deepmind/formal-conjectures/main/FormalConjectures/ErdosProblems/247.lean",
+    "status": 200,
+    "bytes": 1784
+  },
+  {
+    "name": "lean-genius247",
+    "url": "https://raw.githubusercontent.com/rjwalters/lean-genius/main/proofs/Proofs/Erdos247Problem.lean",
+    "status": 200,
+    "bytes": 21715
+  },
+  {
+    "name": "lean-genius-ratio",
+    "url": "https://github.com/rjwalters/lean-genius/pull/30004.diff",
+    "status": 200,
+    "bytes": 67174
+  },
+  {
+    "name": "upstream-pr2540",
+    "url": "https://github.com/google-deepmind/formal-conjectures/pull/2540.diff",
+    "status": 200,
+    "bytes": 690
+  },
+  {
+    "name": "upstream-pr3065",
+    "url": "https://github.com/google-deepmind/formal-conjectures/pull/3065.diff",
+    "status": 200,
+    "bytes": 690
+  },
+  {
+    "name": "prize3080",
+    "url": "https://api.github.com/repos/TheJustinSunPrize/awards/pulls/3080",
+    "status": 200,
+    "bytes": 23528
+  },
+  {
+    "name": "prize3080-comments",
+    "url": "https://api.github.com/repos/TheJustinSunPrize/awards/issues/3080/comments",
+    "status": 200,
+    "bytes": 2697
+  },
+  {
+    "name": "plby-pinned-source",
+    "url": "https://raw.githubusercontent.com/plby/lean-proofs/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos247.lean",
+    "status": 404,
+    "bytes": 14
+  },
+  {
+    "name": "plby-current-source",
+    "url": "https://raw.githubusercontent.com/plby/lean-proofs/main/src/latest/ErdosProblems/Erdos247.lean",
+    "status": 404,
+    "bytes": 14
+  },
+  {
+    "name": "plby-pinned-tree",
+    "url": "https://api.github.com/repos/plby/lean-proofs/git/trees/8822f7ddef30fadbd92e1c6ab4ed897af356af5e?recursive=1",
+    "status": 200,
+    "bytes": 12684543
+  },
+  {
+    "name": "github-code",
+    "url": "https://api.github.com/search/code?q=erdos_247+language%3ALean",
+    "status": 401,
+    "bytes": 120
+  },
+  {
+    "name": "github-issues",
+    "url": "https://api.github.com/search/issues?q=%22erdos_247%22&per_page=100",
+    "status": 200,
+    "bytes": 6984
+  },
+  {
+    "name": "mathlib-index",
+    "url": "https://raw.githubusercontent.com/leanprover-community/mathlib4/master/Mathlib.lean",
+    "status": 200,
+    "bytes": 475752
+  },
+  {
+    "name": "liouville",
+    "url": "https://raw.githubusercontent.com/leanprover-community/mathlib4/master/Mathlib/NumberTheory/Transcendental/Liouville/Basic.lean",
+    "status": 200,
+    "bytes": 11973
+  },
+  {
+    "name": "liouville-number",
+    "url": "https://raw.githubusercontent.com/leanprover-community/mathlib4/master/Mathlib/NumberTheory/Transcendental/Liouville/LiouvilleNumber.lean",
+    "status": 200,
+    "bytes": 7768
+  },
+  {
+    "name": "fake-prize2176",
+    "url": "https://raw.githubusercontent.com/dcdreamy-code/awards/jsp-000247-formalization/submissions/JSP-000247/Erdos247.lean",
+    "status": 200,
+    "bytes": 784
+  },
+  {
+    "name": "lacunary-tau19035",
+    "url": "https://github.com/TauCetiProject/TauCeti/pull/19035.diff",
+    "status": 200,
+    "bytes": 9800
+  },
+  {
+    "name": "lacunary-tau26075",
+    "url": "https://github.com/TauCetiProject/TauCeti/pull/26075.diff",
+    "status": 200,
+    "bytes": 7499
+  },
+  {
+    "name": "jayyhk-index",
+    "url": "https://raw.githubusercontent.com/Jayyhk/erdos-lean/main/README.md",
+    "status": 200,
+    "bytes": 28795
+  },
+  {
+    "name": "linrock-index",
+    "url": "https://raw.githubusercontent.com/linrock/math-proofs/main/README.md",
+    "status": 200,
+    "bytes": 995
+  },
+  {
+    "name": "diaz-index",
+    "url": "https://raw.githubusercontent.com/carlok/diaz-modulus-lean/master/README.md",
+    "status": 200,
+    "bytes": 118302
+  }
+]

@@ -1,0 +1,107 @@
+$ docker inspect 6f3a87ab2ada --format {{.State.Running}}
+true
+exit=0
+
+$ docker stop 6f3a87ab2ada
+6f3a87ab2ada
+exit=0
+
+$ docker rm 6f3a87ab2ada
+6f3a87ab2ada
+exit=0
+
+$ docker inspect 17a794a46908 --format {{.State.Running}}
+true
+exit=0
+
+$ docker stop 17a794a46908
+17a794a46908
+exit=0
+
+$ docker rm 17a794a46908
+17a794a46908
+exit=0
+
+$ docker inspect 15f5c18424c0 --format {{.State.Running}}
+true
+exit=0
+
+$ docker stop 15f5c18424c0
+15f5c18424c0
+exit=0
+
+$ docker rm 15f5c18424c0
+15f5c18424c0
+exit=0
+
+$ docker image rm erdosproblems-137-erdos-137-prov__wdwqh2d__env-main:latest
+Untagged: erdosproblems-137-erdos-137-prov__wdwqh2d__env-main:latest
+Deleted: sha256:8a99156c0e9702a8beefcdec8d8d1bed910ff7cb9e985c24fff38f2c27ad9980
+exit=0
+
+$ docker image rm erdosproblems-137-erdos-137-prov__du6xzed__env-main:latest
+Untagged: erdosproblems-137-erdos-137-prov__du6xzed__env-main:latest
+Deleted: sha256:408d0c52d9d611fb662fba2e70974e349d069a8a00161bb0a8f72687c838dde1
+exit=0
+
+$ docker image rm erdosproblems-137-erdos-137-prov__ezpnn5h__env-main:latest
+Untagged: erdosproblems-137-erdos-137-prov__ezpnn5h__env-main:latest
+Deleted: sha256:e2547c42bf4dee18b9926adad3f510ed616a4d5204330522e1acab3fac801b19
+exit=0
+
+$ docker ps -a --filter id=6f3a87ab2ada --format {{.ID}} {{.Names}}
+exit=0
+
+$ docker ps -a --filter id=17a794a46908 --format {{.ID}} {{.Names}}
+exit=0
+
+$ docker ps -a --filter id=15f5c18424c0 --format {{.ID}} {{.Names}}
+exit=0
+
+$ docker ps -a --filter id=e99bdb518f9a --format {{.ID}} {{.Names}}
+exit=0
+
+$ docker image inspect sha256:8a99156c0e9702a8beefcdec8d8d1bed910ff7cb9e985c24fff38f2c27ad9980
+[]
+Error response from daemon: No such image: sha256:8a99156c0e9702a8beefcdec8d8d1bed910ff7cb9e985c24fff38f2c27ad9980
+exit=1
+
+$ docker image inspect sha256:408d0c52d9d611fb662fba2e70974e349d069a8a00161bb0a8f72687c838dde1
+[]
+Error response from daemon: No such image: sha256:408d0c52d9d611fb662fba2e70974e349d069a8a00161bb0a8f72687c838dde1
+exit=1
+
+$ docker image inspect sha256:e2547c42bf4dee18b9926adad3f510ed616a4d5204330522e1acab3fac801b19
+[]
+Error response from daemon: No such image: sha256:e2547c42bf4dee18b9926adad3f510ed616a4d5204330522e1acab3fac801b19
+exit=1
+
+$ docker network ls --filter label=com.docker.compose.project=erdosproblems-137-erdos-137-prov__wdwqh2d__env --format {{.ID}}
+exit=0
+
+$ docker volume ls --filter label=com.docker.compose.project=erdosproblems-137-erdos-137-prov__wdwqh2d__env --format {{.Name}}
+exit=0
+
+$ docker network ls --filter label=com.docker.compose.project=erdosproblems-137-erdos-137-prov__du6xzed__env --format {{.ID}}
+8983ed7998ec
+exit=0
+
+$ docker network rm 8983ed7998ec
+8983ed7998ec
+exit=0
+
+$ docker volume ls --filter label=com.docker.compose.project=erdosproblems-137-erdos-137-prov__du6xzed__env --format {{.Name}}
+exit=0
+
+$ docker network ls --filter label=com.docker.compose.project=erdosproblems-137-erdos-137-prov__ezpnn5h__env --format {{.ID}}
+1e55ea6e6218
+exit=0
+
+$ docker network rm 1e55ea6e6218
+1e55ea6e6218
+exit=0
+
+$ docker volume ls --filter label=com.docker.compose.project=erdosproblems-137-erdos-137-prov__ezpnn5h__env --format {{.Name}}
+exit=0
+
+CLEANUP VERIFIED: all 4 task-created containers absent (first auto-removed); all 3 final image IDs absent. Shared base image, user/other-task resources and build cache not removed.

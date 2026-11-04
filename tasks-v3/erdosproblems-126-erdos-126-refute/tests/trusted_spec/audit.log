@@ -1,0 +1,21 @@
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos126.IsMaximalAddFactorsCard: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ (f : ℕ → ℕ),
+    Erdos126.IsMaximalAddFactorsCard f → Filter.Tendsto (fun n => ↑(f n) / Real.log ↑n) Filter.atTop Filter.atTop
+def Erdos126.IsMaximalAddFactorsCard : (ℕ → ℕ) → Prop :=
+fun f =>
+  ∀ (n : ℕ),
+    IsGreatest
+      {m |
+        ∀ (A : Finset ℕ),
+          A.card = n →
+            m ≤
+              (∏ x ∈ A.offDiag,
+                    match x with
+                    | (a, b) => a + b).primeFactors.card}
+      (f n)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

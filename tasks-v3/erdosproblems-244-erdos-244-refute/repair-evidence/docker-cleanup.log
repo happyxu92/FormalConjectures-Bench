@@ -1,0 +1,20 @@
+b749a299e47c3c80c9a42ff96da6a0c39c58124dbc34095302d4897f51038162 /fcb-244-refute-spec-20261104 sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a
+38b907a70f7bc84150ed88109f7c2f825670782d876e8ff90de5d2e5b4cd8f7c /erdosproblems-244-erdos-244-refu__zq2nbzk__env-main-1 sha256:f03f89685ed9a48e9a4dee7f2719539e10ba654bba95db52ed5fea501f3c28d1
+b749a299e47c
+38b907a70f7b
+b749a299e47c
+38b907a70f7b
+Untagged: erdosproblems-244-erdos-244-refu__uqadwt5__env-main:latest
+Deleted: sha256:09724b6fce6ada92af0fb44bdbd2ac0ca7c8d2702321fc7adca5aba48caafbb1
+Untagged: erdosproblems-244-erdos-244-refu__zq2nbzk__env-main:latest
+Deleted: sha256:f03f89685ed9a48e9a4dee7f2719539e10ba654bba95db52ed5fea501f3c28d1
+container b749a299e47c inspect_exit=1 (expected 1)
+container 38b907a70f7b inspect_exit=1 (expected 1)
+container erdosproblems-244-erdos-244-refu__uqadwt5__env-main-1 inspect_exit=1 (expected 1)
+image sha256:09724b6fce6ada92af0fb44bdbd2ac0ca7c8d2702321fc7adca5aba48caafbb1 inspect_exit=1 (expected 1)
+image sha256:f03f89685ed9a48e9a4dee7f2719539e10ba654bba95db52ed5fea501f3c28d1 inspect_exit=1 (expected 1)
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+25529b5aa263
+owned Harbor network inspect_exit=1 (expected 1)
+Reused shared base retained: sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-126-erdos-126-prove",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 .lake/packages；在最终 Harbor 容器以 ubuntu 搜索 def primeFactors，命中 Mathlib 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；补上 Dockerfile 最后 USER ubuntu 下的 Target 构建。当前本地 task 的两次 Harbor 构建成功，最终容器另行以 ubuntu lake build +FormalConjecturesBench.Target 退出 0；未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "规定脚本修复前后均返回 no_issue、verification=passed；两份 checker 头部无需修改。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "由原始 golden 在匹配的 Lean 4.27.0 Docker 环境提前生成并独立审计完整 ExpectedType，universes=[]，仅允许标准公理；同步两份预编译 Spec 包。清单哈希 dbb12505cae410aa6d3d896baaeb7465b64384008f3b08a433487835e8a2579c。固定路径加载并比较完整类型，保留原限制与审计。当前本地 Harbor 最终镜像 a97d90bc74a4 构建成功；容器内 checker/Spec/golden 哈希与本地一致。正式及本地入口退出 1/reward=0，系原始 sorry 的预期拒绝；独立程序在同一 Harbor 容器以 root/ubuntu 调用真实函数，覆盖两包加载及审计、ubuntu 编译、完整类型比较、sorryAx 拒绝和 canary，均通过。冻结/越界、冻结文字不变的 Tendsto 名称偷换、同名编译缓存、缺失/损坏产物负例均通过。未安装答案，未验证完整原题证明成功。命令、完整哈希、版本、退出码及日志见 repair-evidence/validation.md、trusted_spec/manifest.json 和 repair-evidence/。Docker 清理完成：预编译容器 4fd8037ad9ce、最终 Harbor 容器 25241b3328e2 已停止并移除；首次容器 3cfb5a999c60 已由 Harbor 回收。两次新建镜像 8e232d5d9b0d、a97d90bc74a4 及其独有 tag 已删除，image inspect 确认均不存在；独有网络已删除。共享基镜像、构建缓存及其他用户/任务资源未动，详见 repair-evidence/cleanup.log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已读取锁定上游 126.lean 及 Erdős–Turán 1934 原论文 pp.608–611 (https://static.renyi.hu/~p_erdos/1934-03.pdf)。本题为 f(n)/log n→∞ 的正向命题；核对完整最大下界定义、offDiag、素因子计数、实数转换和 atTop。有序对重复只增加重数，允许 0 至多影响一个元素，均不构成明显错误；标记 statement_status=consistent。题目网页直接访问 403，已用原论文、上游及索引交叉核对。数学输入和 golden 未改。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确命中技能 references/public-lean4-proofs.csv，按规则标记 public_lean4_proof=true；来源 https://github.com/tadamcz/erdos126/blob/2516785fe6bbc43e979cf6029c976d9f998a7fba/Erdos126/Resolutions/Erdos126_132usd_25h.lean#L3053。未复制、安装或在本题环境编译公开证明；未套用配对反向任务结论。"
+    }
+  }
+}

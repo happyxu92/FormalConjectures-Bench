@@ -1,0 +1,95 @@
+ENTRY PACKAGE official /tests/trusted_spec
+EXPECTED REJECTION: original sorry source gate
+EXPECTED REJECTION: frozen change
+EXPECTED REJECTION: header change
+Banned Lean feature found in proof region at line 2: \bsorry\b
+Code above the benchmark target marker changed
+Target theorem no longer has a proof assignment
+EXPECTED REJECTION: outside source
+Unexpected added Lean source outside editable subtree: Outside.lean
+Loaded fixed precompiled trusted Spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos264.IsIrrationalitySequence: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Erdos264.IsIrrationalitySequence Nat.factorial
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for Erdos264.erdos_264.parts.ii: ['sorryAx']
+'Erdos264.erdos_264.parts.ii' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+EXPECTED REJECTION: target sorryAx audit
+CANARY PASSED
+fixed Spec deps: /opt/elan/toolchains/leanprover--lean4---v4.27.0/lib/lean/Init.olean
+/tests/trusted_spec/FCBTrustedSpec.olean
+/tmp/formal_conjectures_bench_zehi_18z/FormalConjecturesBench/Submission.olean
+
+Complete theorem type matches trusted Spec
+SAME-NAME MODULE/CACHE/ENV SHADOW REJECTED
+NORMAL EXTERNAL PRECOMPILED IMPORT PASSED
+Candidate compiled as ubuntu with fixed import paths
+Erdos264.erdos_264.parts.ii : Erdos264.IsIrrationalitySequence Erdos264.Nat.factorial
+
+Lean audit command failed
+/tmp/formal_conjectures_bench_zehi_18z/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Erdos264.erdos_264.parts.ii
+has type
+  Erdos264.IsIrrationalitySequence Erdos264.Nat.factorial
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+EXPECTED REJECTION: same frozen header, helper name changes complete type
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+EXPECTED REJECTION: missing precompiled Spec (no regenerate)
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+EXPECTED REJECTION: corrupt precompiled Spec (no regenerate)
+ALL PATHS PASSED: official
+ENTRY PACKAGE local /opt/formal-conjectures-bench-checker/trusted_spec
+Banned Lean feature found in proof region at line 2: \bsorry\b
+EXPECTED REJECTION: original sorry source gate
+Code above the benchmark target marker changed
+EXPECTED REJECTION: frozen change
+EXPECTED REJECTION: header change
+Target theorem no longer has a proof assignment
+Unexpected added Lean source outside editable subtree: Outside.lean
+EXPECTED REJECTION: outside source
+Loaded fixed precompiled trusted Spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos264.IsIrrationalitySequence: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Erdos264.IsIrrationalitySequence Nat.factorial
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for Erdos264.erdos_264.parts.ii: ['sorryAx']
+'Erdos264.erdos_264.parts.ii' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+EXPECTED REJECTION: target sorryAx audit
+CANARY PASSED
+fixed Spec deps: /opt/elan/toolchains/leanprover--lean4---v4.27.0/lib/lean/Init.olean
+/opt/formal-conjectures-bench-checker/trusted_spec/FCBTrustedSpec.olean
+/tmp/formal_conjectures_bench_jcjaqhiu/FormalConjecturesBench/Submission.olean
+
+Complete theorem type matches trusted Spec
+SAME-NAME MODULE/CACHE/ENV SHADOW REJECTED
+NORMAL EXTERNAL PRECOMPILED IMPORT PASSED
+Candidate compiled as ubuntu with fixed import paths
+Erdos264.erdos_264.parts.ii : Erdos264.IsIrrationalitySequence Erdos264.Nat.factorial
+
+Lean audit command failed
+/tmp/formal_conjectures_bench_jcjaqhiu/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Erdos264.erdos_264.parts.ii
+has type
+  Erdos264.IsIrrationalitySequence Erdos264.Nat.factorial
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+EXPECTED REJECTION: same frozen header, helper name changes complete type
+EXPECTED REJECTION: missing precompiled Spec (no regenerate)
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+EXPECTED REJECTION: corrupt precompiled Spec (no regenerate)
+ALL PATHS PASSED: local
+SUPPLEMENT COMPLETE

@@ -1,0 +1,723 @@
+$ docker inspect 3a035497ad5caf033083b8e442fc0af63e43c5ca1f8aef52faad095c1a79ea57
+[
+    {
+        "Id": "3a035497ad5caf033083b8e442fc0af63e43c5ca1f8aef52faad095c1a79ea57",
+        "Created": "2026-11-04T07:11:46.228711396Z",
+        "Path": "sleep",
+        "Args": [
+            "infinity"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1882873,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-04T07:11:46.270734065Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:cdadbf7bb27d937115f7e471353fc7f74eaf260303a1e7f8d33c23615bbe083d",
+        "ResolvConfPath": "/var/lib/docker/containers/3a035497ad5caf033083b8e442fc0af63e43c5ca1f8aef52faad095c1a79ea57/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/3a035497ad5caf033083b8e442fc0af63e43c5ca1f8aef52faad095c1a79ea57/hostname",
+        "HostsPath": "/var/lib/docker/containers/3a035497ad5caf033083b8e442fc0af63e43c5ca1f8aef52faad095c1a79ea57/hosts",
+        "LogPath": "/var/lib/docker/containers/3a035497ad5caf033083b8e442fc0af63e43c5ca1f8aef52faad095c1a79ea57/3a035497ad5caf033083b8e442fc0af63e43c5ca1f8aef52faad095c1a79ea57-json.log",
+        "Name": "/fcb-erdos17-refute-spec-20261104",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "bridge",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "3a035497ad5c",
+            "Domainname": "",
+            "User": "root",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "sleep",
+                "infinity"
+            ],
+            "Image": "fcb-erdos17-refute:spec-20261104",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "164e0c31da336cbce74973d3c0420b2f4d837f3cb730279be38e9aa87df4fb3e",
+            "SandboxKey": "/var/run/docker/netns/164e0c31da33",
+            "Ports": {},
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "3e4bd1e8469087291b108ac64e3bbe1eec606c2b3805c235ac79fe5d92a4f5dc",
+                    "EndpointID": "d43d42e75b27202659a04829a74d15ce3c7072616b36cf9e01edceededbad881",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.3",
+                    "MacAddress": "9e:d3:9c:f9:df:79",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:96eb4a54f5356cb82f8d84aba094574f0ed434b66087ea2b0b291888ebcd2b28",
+            "size": 3516,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
+
+$ docker stop 3a035497ad5caf033083b8e442fc0af63e43c5ca1f8aef52faad095c1a79ea57
+3a035497ad5caf033083b8e442fc0af63e43c5ca1f8aef52faad095c1a79ea57
+
+$ docker rm 3a035497ad5caf033083b8e442fc0af63e43c5ca1f8aef52faad095c1a79ea57
+3a035497ad5caf033083b8e442fc0af63e43c5ca1f8aef52faad095c1a79ea57
+
+$ docker inspect 3a035497ad5caf033083b8e442fc0af63e43c5ca1f8aef52faad095c1a79ea57
+[]
+error: no such object: 3a035497ad5caf033083b8e442fc0af63e43c5ca1f8aef52faad095c1a79ea57
+
+$ docker inspect 24f1f8f06a351f6ee3ea2f3ea3cb2a91ccfc36f3f4239353f0a0d43f01c72e0a
+[
+    {
+        "Id": "24f1f8f06a351f6ee3ea2f3ea3cb2a91ccfc36f3f4239353f0a0d43f01c72e0a",
+        "Created": "2026-11-04T07:14:09.239726033Z",
+        "Path": "sh",
+        "Args": [
+            "-c",
+            "sleep infinity"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1895531,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-04T07:14:54.031560677Z",
+            "FinishedAt": "2026-11-04T07:14:20.675321399Z"
+        },
+        "Image": "sha256:b18a387f3a7885e95dbe9997412eec777cff6bc6894d839abf3a21c2be380c7e",
+        "ResolvConfPath": "/var/lib/docker/containers/24f1f8f06a351f6ee3ea2f3ea3cb2a91ccfc36f3f4239353f0a0d43f01c72e0a/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/24f1f8f06a351f6ee3ea2f3ea3cb2a91ccfc36f3f4239353f0a0d43f01c72e0a/hostname",
+        "HostsPath": "/var/lib/docker/containers/24f1f8f06a351f6ee3ea2f3ea3cb2a91ccfc36f3f4239353f0a0d43f01c72e0a/hosts",
+        "LogPath": "/var/lib/docker/containers/24f1f8f06a351f6ee3ea2f3ea3cb2a91ccfc36f3f4239353f0a0d43f01c72e0a/24f1f8f06a351f6ee3ea2f3ea3cb2a91ccfc36f3f4239353f0a0d43f01c72e0a-json.log",
+        "Name": "/erdosproblems-17-erdos-17-refute__cpnydst__env-main-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "erdosproblems-17-erdos-17-refute__cpnydst__env_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 8589934592,
+            "NanoCpus": 4000000000,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 17179869184,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "24f1f8f06a35",
+            "Domainname": "",
+            "User": "ubuntu",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "sh",
+                "-c",
+                "sleep infinity"
+            ],
+            "Image": "erdosproblems-17-erdos-17-refute__cpnydst__env-main",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "51aad5c89590a1a6e9c1ad96ea2ce4fda2faa9a91d5566e8faca5dd271f86973",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:b18a387f3a7885e95dbe9997412eec777cff6bc6894d839abf3a21c2be380c7e",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "erdosproblems-17-erdos-17-refute__cpnydst__env",
+                "com.docker.compose.project.config_files": "/tmp/tmpn_i30ca_/erdosproblems-17-erdos-17-refute__cPnYDSt__env-docker-compose-resources.json,/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml,/tmp/tmpp2e2ks1s/docker-compose-environment.json,/tmp/tmp03jynkr7/docker-compose-mounts.json",
+                "com.docker.compose.project.working_dir": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-17-erdos-17-refute/environment",
+                "com.docker.compose.service": "main",
+                "com.docker.compose.version": "2.40.3",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "f45c48ab7cb9010a69d014241b4924e3d0aaf394a48b8b84241e1ac4ce4259f4",
+            "SandboxKey": "/var/run/docker/netns/f45c48ab7cb9",
+            "Ports": {},
+            "Networks": {
+                "erdosproblems-17-erdos-17-refute__cpnydst__env_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "erdosproblems-17-erdos-17-refute__cpnydst__env-main-1",
+                        "main"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "8fc81a03b0996698da3057b404071aabc83390e03b5c83ef80ab83e5cbd7ffd9",
+                    "EndpointID": "c30eed0b9431bfefad6c870382bc59ffb15140c89657bfb5b4c6120e92ec27fe",
+                    "Gateway": "192.168.128.1",
+                    "IPAddress": "192.168.128.2",
+                    "MacAddress": "32:c9:d7:f6:38:ae",
+                    "IPPrefixLen": 20,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "erdosproblems-17-erdos-17-refute__cpnydst__env-main-1",
+                        "main",
+                        "24f1f8f06a35"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:ca3ecaf7b909ebf0f1e8ff5b5d14daeddd0d1330147cd35124c80e6e9205ff75",
+            "size": 3518,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
+
+$ docker stop 24f1f8f06a351f6ee3ea2f3ea3cb2a91ccfc36f3f4239353f0a0d43f01c72e0a
+24f1f8f06a351f6ee3ea2f3ea3cb2a91ccfc36f3f4239353f0a0d43f01c72e0a
+
+$ docker rm 24f1f8f06a351f6ee3ea2f3ea3cb2a91ccfc36f3f4239353f0a0d43f01c72e0a
+24f1f8f06a351f6ee3ea2f3ea3cb2a91ccfc36f3f4239353f0a0d43f01c72e0a
+
+$ docker inspect 24f1f8f06a351f6ee3ea2f3ea3cb2a91ccfc36f3f4239353f0a0d43f01c72e0a
+[]
+error: no such object: 24f1f8f06a351f6ee3ea2f3ea3cb2a91ccfc36f3f4239353f0a0d43f01c72e0a
+
+$ docker inspect 896afda880d43c4002e9a5308a492629c77f37c18bf4917f7b43116d2c42da4a
+[
+    {
+        "Id": "896afda880d43c4002e9a5308a492629c77f37c18bf4917f7b43116d2c42da4a",
+        "Created": "2026-11-04T07:25:13.813670347Z",
+        "Path": "sh",
+        "Args": [
+            "-c",
+            "sleep infinity"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1908208,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-04T07:25:37.293770659Z",
+            "FinishedAt": "2026-11-04T07:25:25.31733171Z"
+        },
+        "Image": "sha256:1fb3fbab9cc202d23498a0488a7aa2b294aad6a3535d4721a9f2898015f7464d",
+        "ResolvConfPath": "/var/lib/docker/containers/896afda880d43c4002e9a5308a492629c77f37c18bf4917f7b43116d2c42da4a/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/896afda880d43c4002e9a5308a492629c77f37c18bf4917f7b43116d2c42da4a/hostname",
+        "HostsPath": "/var/lib/docker/containers/896afda880d43c4002e9a5308a492629c77f37c18bf4917f7b43116d2c42da4a/hosts",
+        "LogPath": "/var/lib/docker/containers/896afda880d43c4002e9a5308a492629c77f37c18bf4917f7b43116d2c42da4a/896afda880d43c4002e9a5308a492629c77f37c18bf4917f7b43116d2c42da4a-json.log",
+        "Name": "/erdosproblems-17-erdos-17-refute__3rrmbqb__env-main-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "erdosproblems-17-erdos-17-refute__3rrmbqb__env_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 8589934592,
+            "NanoCpus": 4000000000,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 17179869184,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "896afda880d4",
+            "Domainname": "",
+            "User": "ubuntu",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "sh",
+                "-c",
+                "sleep infinity"
+            ],
+            "Image": "erdosproblems-17-erdos-17-refute__3rrmbqb__env-main",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "51aad5c89590a1a6e9c1ad96ea2ce4fda2faa9a91d5566e8faca5dd271f86973",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:1fb3fbab9cc202d23498a0488a7aa2b294aad6a3535d4721a9f2898015f7464d",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "erdosproblems-17-erdos-17-refute__3rrmbqb__env",
+                "com.docker.compose.project.config_files": "/tmp/tmpgtvywfy7/erdosproblems-17-erdos-17-refute__3RRMBqB__env-docker-compose-resources.json,/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml,/tmp/ep17r-network.yaml,/tmp/tmpuub4pvna/docker-compose-environment.json,/tmp/tmp9qt34vxi/docker-compose-mounts.json",
+                "com.docker.compose.project.working_dir": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-17-erdos-17-refute/environment",
+                "com.docker.compose.service": "main",
+                "com.docker.compose.version": "2.40.3",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "9d898fec04ba977112c5c638c510f002006d6a33696ab3e55899246bc8043edf",
+            "SandboxKey": "/var/run/docker/netns/9d898fec04ba",
+            "Ports": {},
+            "Networks": {
+                "erdosproblems-17-erdos-17-refute__3rrmbqb__env_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "erdosproblems-17-erdos-17-refute__3rrmbqb__env-main-1",
+                        "main"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "f06daca208cc02f65af5efe45c22f05fe7b9b960dc381b21d80ff704374bba94",
+                    "EndpointID": "13ce595b60470b46f5636e79838dd2b94bc806d208253489f81e73a0fb9aa1b1",
+                    "Gateway": "10.231.217.1",
+                    "IPAddress": "10.231.217.2",
+                    "MacAddress": "fe:53:bf:64:82:a5",
+                    "IPPrefixLen": 24,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "erdosproblems-17-erdos-17-refute__3rrmbqb__env-main-1",
+                        "main",
+                        "896afda880d4"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:53c977a000501e067a8f1367c5015e554ac450cedf87ff753788db629429d4ce",
+            "size": 3518,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
+
+$ docker stop 896afda880d43c4002e9a5308a492629c77f37c18bf4917f7b43116d2c42da4a
+896afda880d43c4002e9a5308a492629c77f37c18bf4917f7b43116d2c42da4a
+
+$ docker rm 896afda880d43c4002e9a5308a492629c77f37c18bf4917f7b43116d2c42da4a
+896afda880d43c4002e9a5308a492629c77f37c18bf4917f7b43116d2c42da4a
+
+$ docker inspect 896afda880d43c4002e9a5308a492629c77f37c18bf4917f7b43116d2c42da4a
+[]
+error: no such object: 896afda880d43c4002e9a5308a492629c77f37c18bf4917f7b43116d2c42da4a
+
+$ docker network rm f06daca208cc
+f06daca208cc
+
+$ docker network rm 8fc81a03b099
+8fc81a03b099
+
+$ docker image rm fcb-erdos17-refute:spec-20261104
+Untagged: fcb-erdos17-refute:spec-20261104
+Deleted: sha256:cdadbf7bb27d937115f7e471353fc7f74eaf260303a1e7f8d33c23615bbe083d
+
+$ docker image inspect sha256:cdadbf7bb27d937115f7e471353fc7f74eaf260303a1e7f8d33c23615bbe083d
+[]
+Error response from daemon: No such image: sha256:cdadbf7bb27d937115f7e471353fc7f74eaf260303a1e7f8d33c23615bbe083d
+
+$ docker image rm erdosproblems-17-erdos-17-refute__eviuqh6__env-main:latest
+Untagged: erdosproblems-17-erdos-17-refute__eviuqh6__env-main:latest
+Deleted: sha256:301dda1a061117ffb435206119c7082792a03c19931c9958ca1eef5dc50e5ba1
+
+$ docker image inspect sha256:301dda1a061117ffb435206119c7082792a03c19931c9958ca1eef5dc50e5ba1
+[]
+Error response from daemon: No such image: sha256:301dda1a061117ffb435206119c7082792a03c19931c9958ca1eef5dc50e5ba1
+
+$ docker image rm erdosproblems-17-erdos-17-refute__cpnydst__env-main:latest
+Untagged: erdosproblems-17-erdos-17-refute__cpnydst__env-main:latest
+Deleted: sha256:b18a387f3a7885e95dbe9997412eec777cff6bc6894d839abf3a21c2be380c7e
+
+$ docker image inspect sha256:b18a387f3a7885e95dbe9997412eec777cff6bc6894d839abf3a21c2be380c7e
+[]
+Error response from daemon: No such image: sha256:b18a387f3a7885e95dbe9997412eec777cff6bc6894d839abf3a21c2be380c7e
+
+$ docker image rm erdosproblems-17-erdos-17-refute__a3ultxk__env-main:latest
+Untagged: erdosproblems-17-erdos-17-refute__a3ultxk__env-main:latest
+Deleted: sha256:11615bc10a6e1c18e2930bcc3f06960222774e23efd89b60eb35c268da750f2a
+
+$ docker image inspect sha256:11615bc10a6e1c18e2930bcc3f06960222774e23efd89b60eb35c268da750f2a
+[]
+Error response from daemon: No such image: sha256:11615bc10a6e1c18e2930bcc3f06960222774e23efd89b60eb35c268da750f2a
+
+$ docker image rm erdosproblems-17-erdos-17-refute__3rrmbqb__env-main:latest
+Untagged: erdosproblems-17-erdos-17-refute__3rrmbqb__env-main:latest
+Deleted: sha256:1fb3fbab9cc202d23498a0488a7aa2b294aad6a3535d4721a9f2898015f7464d
+
+$ docker image inspect sha256:1fb3fbab9cc202d23498a0488a7aa2b294aad6a3535d4721a9f2898015f7464d
+[]
+Error response from daemon: No such image: sha256:1fb3fbab9cc202d23498a0488a7aa2b294aad6a3535d4721a9f2898015f7464d
+
+$ docker ps -aq --filter label=com.docker.compose.project=erdosproblems-17-erdos-17-refute__eviuqh6__env
+
+$ docker ps -aq --filter label=com.docker.compose.project=erdosproblems-17-erdos-17-refute__a3ultxk__env
+
+$ docker ps -aq --filter label=com.docker.compose.project=erdosproblems-17-erdos-17-refute__cpnydst__env
+
+$ docker ps -aq --filter label=com.docker.compose.project=erdosproblems-17-erdos-17-refute__3rrmbqb__env
+
+PASS all 3 owned containers, 5 owned image tags/IDs and 2 owned networks removed; earlier auto-removed/failed Harbor containers absent. No shared/user resources or caches removed.

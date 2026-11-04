@@ -1,0 +1,21 @@
+{
+    "task": {
+        "path": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-fermatcatalanconjecture-fermat-catalan-refute"
+    },
+    "trial_name": "fcb-fermat-refute-delivery3-nt40-20261104",
+    "trials_dir": "/tmp/fcb-fermat-refute-harbor",
+    "agent": {
+        "name": "nop"
+    },
+    "environment": {
+        "type": "docker",
+        "force_build": true,
+        "delete": false,
+        "extra_docker_compose": [
+            "/tmp/fcb-fermat-refute-compose-delivery3.yaml"
+        ],
+        "kwargs": {
+            "keep_containers": true
+        }
+    }
+}

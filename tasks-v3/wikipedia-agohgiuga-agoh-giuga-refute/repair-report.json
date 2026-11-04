@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-agohgiuga-agoh-giuga-refute",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式补入 /opt/formal-conjectures/.lake/packages；容器内三路径 rg 搜索 ^def bernoulli 退出 0，命中 Mathlib/NumberTheory/Bernoulli.lean。见 repair-evidence/search-check.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 仅导入 ProblemImports 与本地 Submission，无额外上游依赖；原 Dockerfile 缺少普通用户最终验证，已以 USER ubuntu 的 RUN lake build +FormalConjecturesBench.Target 结尾。本地 Docker/Harbor 构建及同一 Harbor 子容器 ubuntu 补跑均成功（退出 0）；未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能运行 check_unicode_header.py 两次，均 case=no_issue；原头通过、改头/移除 := 拒绝，两份 checker 一致。未修改头或冻结哈希。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从原 golden 在锁定 Lean 4.27.0/x86_64 环境提前生成并预编译 ExpectedType，独立审计完整类型及前缀定义的传递公理；无 universe/外层参数，无临时 theorem/sorryAx 依赖。两份可信包同步，清单 SHA256=df4346a78e8dd655bb5d11acbb9bf5ca50e84937956dee6ea4f8136de4eac536。checker 固定工具链/依赖/Spec 搜索位置，校验哈希，不在运行时生成 Spec；保留源码、冻结、公理与 canary 规则，仅临时副本复用可信前缀并比较完整类型。当前本地 task 的 Harbor 最终镜像 e2ffddc500f20c5d005c6d942f96a7e75740710fba784ea9a3ee72b427cd431a、子容器 1a009cd80ef8；正式 /tests 与 ubuntu 本地 /opt 入口退出 1/reward 0，原因均为原始 sorry。已在同一子容器实际补测两入口包加载、可信类型审计、ubuntu 编译、完整类型通过/名称遮蔽类型不符拒绝、sorryAx 拒绝、canary、冻结/越界源码负例、同名模块/缓存无法遮蔽、产物缺失/损坏失败且不重建，补测退出 0。宿主与容器两份 checker、全部 Spec 与 golden 哈希匹配；未提供原题证明。首次 Harbor 因共享地址池耗尽失败，使用本题独有子网重试成功。命令、版本、输入/产物哈希及覆盖见 repair-evidence/validation.md、full-hashes.json、supplement.log。报告及证据落盘后已清理并核验：停止/删除本题容器 af1584feb041、1a009cd80ef8，删除四个本题镜像 874509f086a3、a476c47ffe0d、fd432957810f、e2ffddc500f2 及独有 Harbor 网络；inspect 均确认不存在，cleanup 退出 0。Harbor 早期重试容器已自动回收；未清理共享镜像/缓存或用户及其他任务资源。见 repair-evidence/cleanup.log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已读取 pinned 上游全文、当前完整定义及 MathWorld AgohsConjecture、Borwein 等作者论文和来源讲义。实际目标为有意设置的 ¬AgohGiugaCongr；自然数 p≥2、整数 k、Bernoulli 分子分母方程模 p² 与上游一致，未发现明显定义错误或具体反例。开放性及负方向不构成 misformalization，metadata 标 consistent；数学输入未改。来源和方向核对见 repair-evidence/research.md。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 task ID 精确查 CSV 未命中；随后多组联网检索覆盖当前负命题、名称/别名、Mathlib、上游 main、fork、六个相关 PR、作者仓库及公开研究页，实际读取有希望的 Lean 源码。SamuelSchlesinger 主定理依赖 sorry，mo271/PR 7660/6819 为辅助变体，Epoch A309132 为等价性而非本方向证明，其他为开放骨架或有限搜索。经充分检索未找到本负方向公开完整 Lean4 证明，metadata=false/status=searched，并非断言不存在。Wikipedia 403，以可访问原文/替代来源补齐；未遗留声称证明本完整目标的未核实线索。检索词、链接、排除理由及限制见 repair-evidence/research.md；未引入公开答案。"
+    }
+  }
+}

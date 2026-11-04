@@ -1,0 +1,37 @@
+Banned Lean feature found in proof region at line 2: \bsorry\b
+Code above the benchmark target marker changed
+PASS rejection: original sorry
+PASS rejection: frozen text modification
+Unexpected added Lean source outside editable subtree: Outside.lean
+PASS rejection: out-of-subtree source
+Loaded fixed precompiled trusted Spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos1.IsSumDistinctSet: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ C > 0, ∀ (N : ℕ) (A : Finset ℕ), Erdos1.IsSumDistinctSet A N → N ≠ 0 → C * 2 ^ A.card < ↑N
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for Erdos1.erdos_1: ['sorryAx']
+'Erdos1.erdos_1' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+PASS rejection: target sorryAx audit
+PASS sorry canary
+Complete theorem type matches trusted Spec
+PASS fixed Spec wins candidate name/cache/environment shadow
+Candidate compiled as ubuntu with fixed import paths
+Lean audit command failed
+/tmp/formal_conjectures_bench_vrz9acbt/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Erdos1.erdos_1
+has type
+  ∃ C > 0, ∀ (N : ℕ) (A : Finset ℕ), Erdos1.IsSumDistinctSet A N → N ≠ 0 → C * 2 ^ A.card < ↑N
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+PASS rejection: unchanged header with multiplication-instance semantic substitution
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+PASS rejection: Spec artifact missing
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+PASS rejection: Spec artifact hash
+ALL SUPPLEMENTAL CHECKS PASSED

@@ -1,0 +1,22 @@
+{
+    "task": {
+        "path": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-agohgiuga-agoh-giuga-refute"
+    },
+    "trial_name": "wikipedia-agohgiuga-agoh-giuga-r__YAeioH8",
+    "trials_dir": "/tmp/agoh-refute-harbor/agoh-refute-repair-accept-20261104",
+    "agent": {
+        "name": "nop"
+    },
+    "environment": {
+        "type": "docker",
+        "force_build": true,
+        "delete": false,
+        "extra_docker_compose": [
+            "/tmp/agoh-refute-compose-network.yaml"
+        ],
+        "kwargs": {
+            "keep_containers": true
+        }
+    },
+    "job_id": "7ee5b66c-7a56-44b2-82b8-82f553e34fd1"
+}

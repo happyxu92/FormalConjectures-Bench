@@ -1,0 +1,16 @@
+Loaded fixed precompiled trusted Spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited GaussCircleProblem.N: [propext, Quot.sound, Classical.choice]
+audited GaussCircleProblem.E: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+complete expected expression: ∃ o,
+  ∃ (_ : Filter.Tendsto o Filter.atTop (nhds 0)), GaussCircleProblem.E =O[Filter.atTop] fun r ↦ r ^ (1 / 2 + o r)
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ o, ∃ (_ : Filter.Tendsto o Filter.atTop (nhds 0)), GaussCircleProblem.E =O[Filter.atTop] fun r ↦ r ^ (1 / 2 + o r)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for GaussCircleProblem.error_isBigO: ['sorryAx']
+'GaussCircleProblem.error_isBigO' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+LOCAL /opt fixed package: actual ubuntu compile, full type comparison, rejecting axiom audit and canary covered

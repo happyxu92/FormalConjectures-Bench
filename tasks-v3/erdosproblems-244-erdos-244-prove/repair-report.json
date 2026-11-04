@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-244-erdos-244-prove",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式补入 /opt/formal-conjectures/.lake/packages；在 Harbor 子容器实际执行，成功找到 batteries 与 mathlib 的 class Group，无路径或权限错误。见 repair-evidence/package-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 仅有两项标准 import，无额外上游模块需要预编译；补齐 Dockerfile 末尾 HOME/USER ubuntu 下 lake build +FormalConjecturesBench.Target，预编译镜像及当前本地 Harbor 构建均通过，依赖权限未放宽。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能实际运行 check_unicode_header.py，修改前后均 case=no_issue；两份 checker 原始头、修改头拒绝及 := 边界检查通过。未改定理头或冻结哈希。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "由原始 golden 在锁定 Lean 4.27.0/x86_64 Docker 环境提前 elaboration 并预编译可信 Spec，保留完整 forall 类型，universe=[]；独立审计无临时 theorem/sorryAx，仅标准公理。两份源码/olean/ilean/manifest 同步，固定 manifest SHA256=b6da3ea235cbefcdc3eabb839581055e44df06f285a557ddc4cf3e5ff33eceb2。verifier 固定 /tests 或本地 /opt 包及可信依赖路径，不运行生成器；临时候选先导入 Spec，再导入 Submission，实际比较完整类型。当前本地 Harbor 镜像 7093015c498f、子容器 86670542aded 验收：正式与 ubuntu 本地入口均 exit=1/reward=0，仅因原始 sorry 提前拒绝；同一子容器补测实际函数全部通过，包括类型审计、ubuntu 编译、完整类型一致、公理拒绝 sorryAx、canary、冻结/越界负例、同名候选缓存不可替换、缺失/损坏产物拒绝，以及无 sorry 的 LT ℝ 实例语义偷换被完整类型比较拒绝。33 份容器文件哈希与本地一致。详见 repair-evidence/validation.md、supplement-final.log、manifest 与镜像 ID 记录；不代表原数学题已证明。报告及产物落盘后已清理：容器 5ab3f7a8ef0e、86670542aded 已 stop/rm，首轮 2a23dc625191 由 Harbor 自动移除；本题镜像 898c17a5da24、76dac7b9d154、7093015c498f 及三个专属 tag 已删除。docker ps -a / image inspect 核验均不存在；未删除用户/其他题资源、共享镜像或构建缓存，无未清理的本题容器/镜像。见 repair-evidence/cleanup-verified.txt。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已读指定修订上游、完整 Target/密度定义及 Ding arXiv:2503.22700v5 摘要与引言：本题为所有实数 C>1 的正向 lowerDensity 命题，p,k:ℕ、自然数 floor 与正底数相容，未发现明显错误；整数/几乎处处变体不等同此题。task.toml 标 consistent，不改数学内容。来源站直接访问遇 403，论文和上游独立核对一致；见 repair-evidence/research.md。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 task ID 精确查技能 CSV 未命中后，已多组联网搜索定理全名、题号、Romanoff/Kalmár、Ding、GitHub forks/PR、Mathlib 与公开证明集合。实际读取上游 Lean 和相关 PR #2538/#3063 补丁：均仍 sorry，且 PR 只涉整数变体；Ding 仅几乎处处/特定底数，不覆盖本题方向。充分检索未找到本目标已知公开完整 Lean4 证明，metadata 标 public_lean4_proof=false/status=searched，并非证明其不存在。403/API 限流及替代核查记录见 repair-evidence/research.md；未放入公开答案。"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+AST valid; checkers/packages byte-identical. Original bans, frozen header/hash, theorem name, Target, golden and GoldenCheck unchanged. ExpectedType has no universes or binders; trusted transitive audit passes. Dockerfile ends with USER ubuntu and RUN lake build +FormalConjecturesBench.Target. No additional upstream imports.

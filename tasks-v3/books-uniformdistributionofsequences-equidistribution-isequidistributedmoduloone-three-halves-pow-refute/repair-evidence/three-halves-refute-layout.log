@@ -1,0 +1,10 @@
+drwxrwxrwx 2 root root 4096 Nov  4 06:35 /logs/verifier
+drwxr-xr-x 4 root root 4096 Nov  4 06:32 /tests
+/tests/trusted_spec/AuditSpec.lean
+/tests/trusted_spec/FCBTrustedSpec.ilean
+/tests/trusted_spec/FCBTrustedSpec.lean
+/tests/trusted_spec/FCBTrustedSpec.olean
+/tests/trusted_spec/audit.log
+/tests/trusted_spec/generate.py
+/tests/trusted_spec/manifest.json
+/tests/trusted_spec/reproduce.sh

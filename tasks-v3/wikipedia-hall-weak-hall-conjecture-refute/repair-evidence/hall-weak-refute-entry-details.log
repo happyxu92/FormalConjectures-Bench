@@ -1,0 +1,5 @@
+reward=0
+root 755 /tests
+root 755 /tests/trusted_spec
+root 755 /opt/formal-conjectures-bench-checker/trusted_spec
+uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev)

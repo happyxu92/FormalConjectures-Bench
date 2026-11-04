@@ -1,0 +1,39 @@
+Loaded fixed precompiled trusted Spec from /tests/trusted_spec
+Code above the benchmark target marker changed
+Target theorem header changed
+Target theorem no longer has a proof assignment
+PASS rejected: frozen prefix
+PASS rejected: changed header
+PASS rejected: missing assignment
+Unexpected added Lean source outside editable subtree: Outside.lean
+PASS rejected: out of subtree
+audited ExpectedType and all transitive dependencies: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ k ≥ 3, ∀ (n : ℕ), ¬(∏ x ∈ Finset.Ioc n (n + k), x).Powerful
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for Erdos137.erdos_137: ['sorryAx']
+'Erdos137.erdos_137' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+PASS rejected: target sorryAx audit
+PASS sorry canary
+Complete theorem type matches trusted Spec
+PASS candidate module/cache/ambient LEAN_PATH cannot replace Spec
+Candidate compiled as ubuntu with fixed import paths
+Lean audit command failed
+/tmp/formal_conjectures_bench_mbn73yew/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Erdos137.erdos_137
+has type
+  ∀ k ≥ 3, ∀ (n : ℕ), ¬(∏ x ∈ Erdos137.Finset.Ioc n (n + k), x).Powerful
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+PASS rejected: semantic shadow with unchanged header
+PASS shadowed candidate compiled; full type comparison rejected
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+PASS rejected: missing artifact
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+PASS rejected: corrupt artifact
+ALL SUPPLEMENTAL CHECKS PASSED

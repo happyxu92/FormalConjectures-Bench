@@ -1,0 +1,124 @@
+{
+    "id": "7d1f81b1-deb1-4d3c-9b7b-6258010978d4",
+    "task_name": "formal-conjectures-bench/wikipedia-agohgiuga-agoh-giuga-prove",
+    "trial_name": "fcb-agohgiuga-prove-final2-20261104",
+    "trial_uri": "file:///tmp/agohgiuga-prove-harbor/fcb-agohgiuga-prove-final2-20261104",
+    "task_id": {
+        "path": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-agohgiuga-agoh-giuga-prove"
+    },
+    "source": null,
+    "task_checksum": "b9aa3657c8467c0e27fd2db311cb677fe6d8459dd4642d64b06ff674c473d9e0",
+    "config": {
+        "task": {
+            "path": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-agohgiuga-agoh-giuga-prove",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "fcb-agohgiuga-prove-final2-20261104",
+        "trials_dir": "/tmp/agohgiuga-prove-harbor",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "nop",
+            "import_path": null,
+            "model_name": null,
+            "base_url": null,
+            "model_api_key_name": null,
+            "model_api_format": null,
+            "skip_model_parsing": false,
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": true,
+            "delete": false,
+            "stream": false,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [
+                "/tmp/agohgiuga-prove-own-network.yaml"
+            ],
+            "kwargs": {
+                "keep_containers": true
+            },
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": null,
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "nop",
+        "version": "1.0.0",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "model_usage": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "verifier_environment_mode": "shared",
+    "exception_info": null,
+    "started_at": "2026-11-04T08:27:59.376602Z",
+    "finished_at": "2026-11-04T08:28:11.815935Z",
+    "environment_setup": {
+        "started_at": "2026-11-04T08:27:59.402907Z",
+        "finished_at": "2026-11-04T08:28:00.972789Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-11-04T08:28:00.972839Z",
+        "finished_at": "2026-11-04T08:28:00.972900Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-11-04T08:28:00.972970Z",
+        "finished_at": "2026-11-04T08:28:00.973634Z"
+    },
+    "verifier": {
+        "started_at": "2026-11-04T08:28:01.234011Z",
+        "finished_at": "2026-11-04T08:28:01.625135Z"
+    },
+    "step_results": null
+}

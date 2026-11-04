@@ -1,0 +1,23 @@
+{
+    "job_name": "fcb-244-refute-accept-20261104",
+    "jobs_dir": "/tmp/244-refute-harbor",
+    "n_concurrent_trials": 1,
+    "environment": {
+        "type": "docker",
+        "force_build": true,
+        "delete": false,
+        "kwargs": {
+            "keep_containers": true
+        }
+    },
+    "agents": [
+        {
+            "name": "nop"
+        }
+    ],
+    "tasks": [
+        {
+            "path": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-244-erdos-244-refute"
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+FCBTrustedSpec.lean:52:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos264.IsIrrationalitySequence: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬Erdos264.IsIrrationalitySequence Nat.factorial
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

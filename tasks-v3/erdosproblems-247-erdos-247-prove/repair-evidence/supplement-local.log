@@ -1,0 +1,188 @@
+Loaded fixed precompiled trusted Spec
+PASS: load precompiled Spec
+audited ExpectedType transitive dependencies: [propext, Quot.sound, Classical.choice]
+complete binder: n : ℕ → ℕ
+complete binder: a✝¹ : StrictMono n
+complete binder: a✝ : Filter.limsup (fun k ↦ ↑(n k) / ↑k.succ) Filter.atTop = ⊤
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ → ℕ),
+  StrictMono n → Filter.limsup (fun k ↦ ↑(n k) / ↑k.succ) Filter.atTop = ⊤ → Transcendental ℚ (∑' (k : ℕ), 1 / 2 ^ n k)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS: independent transitive trusted type audit
+Candidate compiled as ubuntu with fixed import paths
+PASS: placeholder candidate compiles with actual ubuntu compiler
+Complete theorem type matches trusted Spec
+PASS: complete correct type comparison (placeholder fixture only)
+REJECTED: target axiom audit rejects placeholder Unexpected axioms for Erdos247.erdos_247: ['sorryAx']
+'Erdos247.erdos_247' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+
+PASS: sorry detection canary
+Candidate compiled as ubuntu with fixed import paths
+PASS: normal Mathlib and local helper imports still compile
+Complete theorem type matches trusted Spec
+PASS: ordinary helper does not change expected type
+Complete theorem type matches trusted Spec
+PASS: same-name source/cache/environment cannot replace fixed Spec
+REJECTED: frozen prefix modification Code above the benchmark target marker changed
+
+REJECTED: out-of-bounds added source Unexpected added Lean source outside editable subtree: Outside.lean
+
+REJECTED: non-Lean editable entry Unexpected non-Lean file in editable source tree: FormalConjecturesBench/bad.bin
+
+REJECTED: unchanged original sorry still banned Banned Lean feature found in proof region at line 2: \bsorry\b
+
+PASS: semantic attack retains exact frozen prefix and theorem header
+PASS: semantic attack uses allowed source syntax
+PASS: semantic attack passes original shape/confined/frozen-file rules
+Candidate compiled as ubuntu with fixed import paths
+PASS: semantically shadowed theorem compiles
+REJECTED: full type comparison rejects frozen-text name-shadow attack Lean audit command failed
+/tmp/formal_conjectures_bench_yw4scwph/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Erdos247.erdos_247
+has type
+  ∀ (n : ℕ → ℕ),
+    StrictMono n →
+      Filter.limsup (fun k ↦ ↑(n k) / ↑k.succ) Filter.atTop = ⊤ → Erdos247.Transcendental ℚ (∑' (k : ℕ), 1 / 2 ^ n k)
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+
+PASS: shadow attack itself has allowed axioms
+Loaded fixed precompiled trusted Spec
+audited ExpectedType transitive dependencies: [propext, Quot.sound, Classical.choice]
+complete binder: n : ℕ → ℕ
+complete binder: a✝¹ : StrictMono n
+complete binder: a✝ : Filter.limsup (fun k ↦ ↑(n k) / ↑k.succ) Filter.atTop = ⊤
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ → ℕ),
+  StrictMono n → Filter.limsup (fun k ↦ ↑(n k) / ↑k.succ) Filter.atTop = ⊤ → Transcendental ℚ (∑' (k : ℕ), 1 / 2 ^ n k)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+REJECTED: actual main rejects semantic attack Lean audit command failed
+/tmp/formal_conjectures_bench_5tavjknt/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Erdos247.erdos_247
+has type
+  ∀ (n : ℕ → ℕ),
+    StrictMono n →
+      Filter.limsup (fun k ↦ ↑(n k) / ↑k.succ) Filter.atTop = ⊤ → Erdos247.Transcendental ℚ (∑' (k : ℕ), 1 / 2 ^ n k)
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+
+REJECTED: fixed Spec missing fails closed Missing trusted Spec artifact: FCBTrustedSpec.olean
+
+REJECTED: fixed Spec artifact_hash fails closed Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+
+REJECTED: fixed Spec manifest_hash fails closed Trusted Spec manifest hash mismatch
+
+ALL SUPPLEMENTAL TESTS PASSED
+{
+  "checker": "/opt/formal-conjectures-bench-checker/test_target.py",
+  "tests": [
+    {
+      "test": "load precompiled Spec",
+      "result": "pass"
+    },
+    {
+      "test": "independent transitive trusted type audit",
+      "result": "pass"
+    },
+    {
+      "test": "placeholder candidate compiles with actual ubuntu compiler",
+      "result": "pass"
+    },
+    {
+      "test": "complete correct type comparison (placeholder fixture only)",
+      "result": "pass"
+    },
+    {
+      "test": "target axiom audit rejects placeholder",
+      "result": "rejected",
+      "diagnostic": "Unexpected axioms for Erdos247.erdos_247: ['sorryAx']\n'Erdos247.erdos_247' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n\n"
+    },
+    {
+      "test": "sorry detection canary",
+      "result": "pass"
+    },
+    {
+      "test": "normal Mathlib and local helper imports still compile",
+      "result": "pass"
+    },
+    {
+      "test": "ordinary helper does not change expected type",
+      "result": "pass"
+    },
+    {
+      "test": "same-name source/cache/environment cannot replace fixed Spec",
+      "result": "pass"
+    },
+    {
+      "test": "frozen prefix modification",
+      "result": "rejected",
+      "diagnostic": "Code above the benchmark target marker changed\n"
+    },
+    {
+      "test": "out-of-bounds added source",
+      "result": "rejected",
+      "diagnostic": "Unexpected added Lean source outside editable subtree: Outside.lean\n"
+    },
+    {
+      "test": "non-Lean editable entry",
+      "result": "rejected",
+      "diagnostic": "Unexpected non-Lean file in editable source tree: FormalConjecturesBench/bad.bin\n"
+    },
+    {
+      "test": "unchanged original sorry still banned",
+      "result": "rejected",
+      "diagnostic": "Banned Lean feature found in proof region at line 2: \\bsorry\\b\n"
+    },
+    {
+      "test": "semantic attack retains exact frozen prefix and theorem header",
+      "result": "pass"
+    },
+    {
+      "test": "semantic attack uses allowed source syntax",
+      "result": "pass"
+    },
+    {
+      "test": "semantic attack passes original shape/confined/frozen-file rules",
+      "result": "pass"
+    },
+    {
+      "test": "semantically shadowed theorem compiles",
+      "result": "pass"
+    },
+    {
+      "test": "full type comparison rejects frozen-text name-shadow attack",
+      "result": "rejected",
+      "diagnostic": "Lean audit command failed\n/tmp/formal_conjectures_bench_yw4scwph/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch\n  Erdos247.erdos_247\nhas type\n  \u2200 (n : \u2115 \u2192 \u2115),\n    StrictMono n \u2192\n      Filter.limsup (fun k \u21a6 \u2191(n k) / \u2191k.succ) Filter.atTop = \u22a4 \u2192 Erdos247.Transcendental \u211a (\u2211' (k : \u2115), 1 / 2 ^ n k)\nbut is expected to have type\n  FCBTrustedSpec.ExpectedType\n\n"
+    },
+    {
+      "test": "shadow attack itself has allowed axioms",
+      "result": "pass"
+    },
+    {
+      "test": "actual main rejects semantic attack",
+      "result": "rejected",
+      "diagnostic": "Lean audit command failed\n/tmp/formal_conjectures_bench_5tavjknt/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch\n  Erdos247.erdos_247\nhas type\n  \u2200 (n : \u2115 \u2192 \u2115),\n    StrictMono n \u2192\n      Filter.limsup (fun k \u21a6 \u2191(n k) / \u2191k.succ) Filter.atTop = \u22a4 \u2192 Erdos247.Transcendental \u211a (\u2211' (k : \u2115), 1 / 2 ^ n k)\nbut is expected to have type\n  FCBTrustedSpec.ExpectedType\n\n"
+    },
+    {
+      "test": "fixed Spec missing fails closed",
+      "result": "rejected",
+      "diagnostic": "Missing trusted Spec artifact: FCBTrustedSpec.olean\n"
+    },
+    {
+      "test": "fixed Spec artifact_hash fails closed",
+      "result": "rejected",
+      "diagnostic": "Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean\n"
+    },
+    {
+      "test": "fixed Spec manifest_hash fails closed",
+      "result": "rejected",
+      "diagnostic": "Trusted Spec manifest hash mismatch\n"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-1-erdos-1-refute",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit .lake/packages search path. Actual rg search in matching/final Harbor environments found Mathlib/Data/Finset/Powerset.lean, exit 0 without path errors; repair-evidence/search-final.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No additional upstream imports. Added missing final Dockerfile ubuntu RUN lake build +FormalConjecturesBench.Target after copying/permissions. Current local Harbor image built successfully; independent final-container ubuntu build exit 0. No dependency permissions weakened."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Mandated Unicode script returned case=no_issue, exit 0 before and after changes; original header accepted, altered header and missing := rejected, both checkers consistent."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated/elaborated/precompiled/audited Spec without candidate participation; synchronized two packages and pinned manifest SHA256 498b5c1fcdbab44688ef2bc7c70382156d4866ba13788de3600b146c6d2fdbe6. Fixed verified Spec/dependency paths and full type comparison replace reparsed GoldenCheck. Current local Harbor final2 image sha256:9e6d7fafd4a644e4b7bb8432f94c545141fffb9982ef6b5e045f0d1014f0d3f3; host/container hashes match. Formal/local entries exit 1, reward 0 solely due to original sorry. Same-container actual-function supplements for /tests and /opt exit 0, covering trusted type audit, ubuntu build, full type equality, sorryAx rejection/canary, frozen/out-of-bounds negatives, unchanged-header instance substitution rejected by type mismatch, candidate Spec/cache shadow resistance, and missing/corrupt artifact failure without regeneration. Default-network exhaustion diagnosed; final Harbor run reused only this task's own network. No original proof completion claimed. Commands, versions, input/artifact hashes, logs and coverage: repair-evidence/validation.md. Docker cleanup completed after saving report/artifacts: removed 3 retained task containers (4eac71a77629, 21ef43178da0, 72676fcaebd8); initial Harbor container was already auto-removed. All 4 new task image tags/IDs (5a5ec80fa35f, 97b474dfa4c6, 3cb8a457765c, 9e6d7fafd4a6) and the task-owned network are verified absent. Reused base 0824de0f1647, shared cache/layers and user/other-task resources retained. See repair-evidence/docker-cleanup.log."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Read pinned upstream ErdosProblems/1.lean and source/author pages; this refute target is exactly the negation of Erdos1.erdos_1. Positive naturals, powerset-sum injectivity, uniform C>0 and N!=0 are coherent; strict bound is equivalent after shrinking C. Direct erdosproblems.com fetch was Cloudflare-blocked; source-linked mirror, author repository and MathWorld were read. No mathematical statement/definition/Target/golden/frozen hash/GoldenCheck changed. Sources and boundary analysis in repair-evidence/validation.md."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Full task ID EXACT hit in skill references/public-lean4-proofs.csv: https://github.com/tadamcz/erdos1/blob/0e395153306f34b3829d118b85bdd704136f2843/Erdos1/Resolutions/Erdos1_219usd_38h.lean#L2419 . Marked public_lean4_proof=true; additionally read pinned definition/final declaration and confirmed the same negated direction, not the positive counterpart. Availability marking per collection; not compiled or installed in this task, no public answer bundled."
+    }
+  }
+}

@@ -1,0 +1,12 @@
+Starting trial: erdos1-prove-final-net-20261104
+Task: erdosproblems-1-erdos-1-prove
+Agent: nop
+Environment: docker
+Trials directory: /tmp/erdos1-prove-harbor
+
+Trial completed!
+Trial name: erdos1-prove-final-net-20261104
+Task: formal-conjectures-bench/erdosproblems-1-erdos-1-prove
+Started: 2026-11-04 06:42:40.214042+00:00
+Finished: 2026-11-04 06:42:52.932872+00:00
+Rewards: {'reward': 0.0}

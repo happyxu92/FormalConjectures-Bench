@@ -1,0 +1,5 @@
+tasks-v3/erdosproblems-126-erdos-126-refute/environment/Dockerfile
+tasks-v3/erdosproblems-126-erdos-126-refute/environment/data/checker/test_target.py
+tasks-v3/erdosproblems-126-erdos-126-refute/instruction.md
+tasks-v3/erdosproblems-126-erdos-126-refute/task.toml
+tasks-v3/erdosproblems-126-erdos-126-refute/tests/test_target.py

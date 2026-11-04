@@ -1,0 +1,5 @@
+# Reuse only this task's already-created Harbor network; no host access.
+networks:
+  default:
+    external: true
+    name: erdosproblems-126-erdos-126-refu__dgp2la9__env_default

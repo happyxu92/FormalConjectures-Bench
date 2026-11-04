@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-126-erdos-126-refute",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit .lake/packages search path. Final Harbor container executed the three-path rg command and found Mathlib Ordinal.toNimber, exit 0 without path/permission errors."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports. Added required final ubuntu lake build +FormalConjecturesBench.Target after copies/permissions; local Docker and current-task Harbor builds passed. Dependency permissions unchanged."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Skill Unicode script run before/after changes: exit 0, no_issue; original header, frozen prefix and := boundary verified in both checkers. No constants changed."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Precompiled/audited full trusted Spec from unchanged golden, synchronized two packages; pinned manifest e73fb3ee0291c7043d94db82e014a9835e2ff4d1b119e5c165989532ca6d9645, fixed toolchain/import paths and full type comparison. Final local Harbor JNmda6d image f271f02a3f76 passed construction/hash verification; official/local entry exit 1 reward 0 is expected original sorry rejection. Both independent supplements exit 0: Spec audit, ubuntu build, full type, sorryAx audit/canary, frozen/out-of-tree/semantic-shadow negatives, same-name cache precedence, missing/corrupt artifacts. No actual complete mathematical proof claimed. A repeat hit host network-address exhaustion; retry reused only own Harbor network successfully. Evidence: repair-evidence/validation.md and final logs. After saving report/artifacts, stopped/removed own containers 3b8ce3afd35e, 2732a5bf0f20, 0efb0b63ace7; first Harbor container auto-removed. Removed all 5 own image IDs/tags (16d0432aadbd, 58b499d616de, 28e456aff0d6, 28f4cb94a852, f271f02a3f76) and own network e00b64b37f31. docker ps -a and inspect confirm absent; shared/base images and caches untouched. Cleanup PASS, no own resources left."
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Marked statement_status=mismatch only: Target requires ¬P, but current upstream explicitly records yes and links the exact affirmative Lean theorem P with identical IsMaximalAddFactorsCard. https://github.com/tadamcz/erdos126/blob/2516785fe6bbc43e979cf6029c976d9f998a7fba/Erdos126/Resolutions/Erdos126_132usd_25h.lean#L3053 ; maintained database says proved (Lean). Published source reviewed, not compiled here. Target/golden/Spec mathematical input unchanged; see research.md."
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Exact task ID absent from skill CSV, then sufficient multi-query searches across full target/aliases, GitHub, Mathlib, upstream, author repository and benchmark results found no complete Lean4 proof of THIS NEGATION. Set public_lean4_proof=false, status=searched. Public affirmative proofs are opposite direction; benchmark .disproof is := sorry and excluded. Not an absolute nonexistence claim. Query/source/access details in repair-evidence/research.md."
+    }
+  }
+}

@@ -1,0 +1,59 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from carmichael-prove-spec.Dockerfile
+#1 transferring dockerfile: 2.43kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:24.04
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [ 1/12] FROM docker.io/library/ubuntu:24.04@sha256:fe81560990fae86dc4743202b2cb4d3df98d0bcf949173cecef15ce1127ef852
+#4 resolve docker.io/library/ubuntu:24.04@sha256:fe81560990fae86dc4743202b2cb4d3df98d0bcf949173cecef15ce1127ef852 0.0s done
+#4 DONE 0.0s
+
+#5 [ 3/12] RUN curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh |     sh -s -- -y --default-toolchain none &&     chmod -R a+rX /opt/elan
+#5 CACHED
+
+#6 [ 6/12] RUN id -u ubuntu >/dev/null 2>&1 || useradd -ms /bin/bash ubuntu
+#6 CACHED
+
+#7 [ 2/12] RUN apt-get update && apt-get install -y     bash     ca-certificates     curl     git     python3     unzip     xz-utils   && rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [ 4/12] WORKDIR /opt
+#8 CACHED
+
+#9 [11/12] RUN find /opt/formal-conjectures/.lake/packages -path '*/.lake/config/*' -type d -exec chmod 1777 {} +
+#9 CACHED
+
+#10 [10/12] RUN mkdir -p /opt/formal-conjectures-bench-dependency-config   && cd /opt/formal-conjectures   && find .lake/packages -path '*/.lake/config/*/lakefile.olean*' -type f     -exec cp --parents {} /opt/formal-conjectures-bench-dependency-config/ ;   && chown -R root:root /opt/formal-conjectures-bench-dependency-config   && chmod -R go-w /opt/formal-conjectures-bench-dependency-config
+#10 CACHED
+
+#11 [ 5/12] RUN git clone https://github.com/google-deepmind/formal-conjectures.git /opt/formal-conjectures &&     git -C /opt/formal-conjectures checkout "233a10e857ef78e79fd9fe661d37db724089170a" &&     cd /opt/formal-conjectures &&     lake exe cache get &&     lake build FormalConjectures.Util.ProblemImports &&     find /opt/formal-conjectures -type d -name .git -prune -exec rm -rf {} + &&     rm -rf /root/.cache /tmp/*
+#11 CACHED
+
+#12 [ 7/12] RUN apt-get update && apt-get install -y     asciinema     ripgrep     tmux   && rm -rf /var/lib/apt/lists/*
+#12 CACHED
+
+#13 [ 8/12] RUN find /opt/formal-conjectures/FormalConjectures -maxdepth 1 -type d -name '*Problems' -prune -exec rm -rf {} +
+#13 CACHED
+
+#14 [ 9/12] RUN chmod go-w     /opt/formal-conjectures     /opt/formal-conjectures/.lake     /opt/formal-conjectures/.lake/packages
+#14 CACHED
+
+#15 [12/12] RUN find /opt/formal-conjectures/.lake/packages -path '*/.lake/config/*/lakefile.olean*' -type f -exec chown ubuntu:ubuntu {} +   && find /opt/formal-conjectures/.lake/packages -path '*/.lake/config/*/lakefile.olean*' -type f -exec chmod 666 {} +
+#15 CACHED
+
+#16 exporting to image
+#16 exporting layers done
+#16 exporting manifest sha256:181b4934943bedeb700055f0eabbcee54d05cb7c6c16594fc3d02f6cf5d4a1ac done
+#16 exporting config sha256:3dbb5c099ac9f6df9af6bee66249632122051463286feefdc883697b0e53626d done
+#16 exporting attestation manifest sha256:6de5d6b08ac9d93bd3e8b7db0a597837119c7b1b804db52f21299b0c43db8288 0.0s done
+#16 exporting manifest list sha256:257e2c7b8a9602fa785193d0321a59663019f2753979a6c5ac69a27abb5d111a done
+#16 naming to docker.io/library/fcb-carmichael-prove-spec:20261104 done
+#16 unpacking to docker.io/library/fcb-carmichael-prove-spec:20261104 done
+#16 DONE 0.1s

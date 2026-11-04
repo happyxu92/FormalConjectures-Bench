@@ -1,0 +1,117 @@
+/tmp/green26-repair/plby-lean-proofs/src/v4.29.1/ErdosProblems/Erdos38.lean:33:**Theorem.** There exists a set `B ⊂ ℕ` which is not an additive basis, but for which
+/tmp/green26-repair/plby-lean-proofs/src/v4.29.1/ErdosProblems/Erdos38.lean:70:We use Mathlib's `schnirelmannDensity` and define additive basis and related notions.
+/tmp/green26-repair/plby-lean-proofs/src/v4.29.1/ErdosProblems/Erdos38.lean:89:/-- B is an additive basis if some h-fold sumset of B covers all
+/tmp/green26-repair/plby-lean-proofs/src/v4.29.1/ErdosProblems/Erdos38.lean:91:def IsAdditiveBasis (B : Set ℕ) : Prop :=
+/tmp/green26-repair/plby-lean-proofs/src/v4.29.1/ErdosProblems/Erdos38.lean:1657:# B is not an additive basis
+/tmp/green26-repair/plby-lean-proofs/src/v4.29.1/ErdosProblems/Erdos38.lean:1660:then B is not an additive basis.
+/tmp/green26-repair/plby-lean-proofs/src/v4.29.1/ErdosProblems/Erdos38.lean:1670:/-- If |B ∩ [1,N]|^h / N → 0 for every h, then B is not an additive basis. -/
+/tmp/green26-repair/plby-lean-proofs/src/v4.29.1/ErdosProblems/Erdos38.lean:1673:    ¬IsAdditiveBasis B := by
+/tmp/green26-repair/plby-lean-proofs/src/v4.29.1/ErdosProblems/Erdos38.lean:1846:/-- The constructed B is not an additive basis. -/
+/tmp/green26-repair/plby-lean-proofs/src/v4.29.1/ErdosProblems/Erdos38.lean:1847:theorem constructB_not_basis (d : ShiftApproxData) : ¬IsAdditiveBasis (constructB d) := by
+/tmp/green26-repair/plby-lean-proofs/src/v4.29.1/ErdosProblems/Erdos38.lean:2289:Main theorem: There exists B ⊆ ℕ which is not an additive basis but for which
+/tmp/green26-repair/plby-lean-proofs/src/v4.29.1/ErdosProblems/Erdos38.lean:2295:/-- **Erdős Problem 38**: There exists a set B ⊂ ℕ which is not an additive basis,
+/tmp/green26-repair/plby-lean-proofs/src/v4.29.1/ErdosProblems/Erdos38.lean:2301:      ¬IsAdditiveBasis B ∧
+/tmp/green26-repair/plby-lean-proofs/src/v4.29.1/ErdosProblems/Erdos38.lean:2313:  -- B is not an additive basis
+/tmp/green26-repair/plby-lean-proofs/src/v4.29.1/ErdosProblems/Erdos741b.lean:92:/-- A is an asymptotic additive basis of order 2. -/
+/tmp/green26-repair/plby-lean-proofs/src/v4.29.1/ErdosProblems/Erdos337.lean:1614:The set A constructed is an additive basis of order 3 for N_0.
+/tmp/green26-repair/plby-lean-proofs/src/v4.29.1/ErdosProblems/Erdos337.lean:2006:Let $A\subseteq \mathbb{N}$ be an additive basis (of any finite order)
+/tmp/green26-repair/plby-lean-proofs/src/v4.24.0/ErdosProblems/Erdos337.lean:920:The set A constructed is an additive basis of order 3 for N_0.
+/tmp/green26-repair/plby-lean-proofs/src/v4.24.0/ErdosProblems/Erdos337.lean:1190:Let $A\subseteq \mathbb{N}$ be an additive basis (of any finite order)
+/tmp/green26-repair/plby-lean-proofs/src/v4.32.0/ErdosProblems/Erdos38.lean:33:**Theorem.** There exists a set `B ⊂ ℕ` which is not an additive basis, but for which
+/tmp/green26-repair/plby-lean-proofs/src/v4.32.0/ErdosProblems/Erdos38.lean:70:We use Mathlib's `schnirelmannDensity` and define additive basis and related notions.
+/tmp/green26-repair/plby-lean-proofs/src/v4.32.0/ErdosProblems/Erdos38.lean:89:/-- B is an additive basis if some h-fold sumset of B covers all
+/tmp/green26-repair/plby-lean-proofs/src/v4.32.0/ErdosProblems/Erdos38.lean:91:def IsAdditiveBasis (B : Set ℕ) : Prop :=
+/tmp/green26-repair/plby-lean-proofs/src/v4.32.0/ErdosProblems/Erdos38.lean:1728:# B is not an additive basis
+/tmp/green26-repair/plby-lean-proofs/src/v4.32.0/ErdosProblems/Erdos38.lean:1731:then B is not an additive basis.
+/tmp/green26-repair/plby-lean-proofs/src/v4.32.0/ErdosProblems/Erdos38.lean:1741:/-- If |B ∩ [1,N]|^h / N → 0 for every h, then B is not an additive basis. -/
+/tmp/green26-repair/plby-lean-proofs/src/v4.32.0/ErdosProblems/Erdos38.lean:1744:    ¬IsAdditiveBasis B := by
+/tmp/green26-repair/plby-lean-proofs/src/v4.32.0/ErdosProblems/Erdos38.lean:1917:/-- The constructed B is not an additive basis. -/
+/tmp/green26-repair/plby-lean-proofs/src/v4.32.0/ErdosProblems/Erdos38.lean:1918:theorem constructB_not_basis (d : ShiftApproxData) : ¬IsAdditiveBasis (constructB d) := by
+/tmp/green26-repair/plby-lean-proofs/src/v4.32.0/ErdosProblems/Erdos38.lean:2369:Main theorem: There exists B ⊆ ℕ which is not an additive basis but for which
+/tmp/green26-repair/plby-lean-proofs/src/v4.32.0/ErdosProblems/Erdos38.lean:2375:/-- **Erdős Problem 38**: There exists a set B ⊂ ℕ which is not an additive basis,
+/tmp/green26-repair/plby-lean-proofs/src/v4.32.0/ErdosProblems/Erdos38.lean:2381:      ¬IsAdditiveBasis B ∧
+/tmp/green26-repair/plby-lean-proofs/src/v4.32.0/ErdosProblems/Erdos38.lean:2393:  -- B is not an additive basis
+/tmp/green26-repair/plby-lean-proofs/src/v4.24.0/ErdosProblems/Erdos871.lean:15:"Additive bases with many representations" Paul Erdős and Melvyn
+/tmp/green26-repair/plby-lean-proofs/src/v4.30.0/ErdosProblems/Erdos38.lean:33:**Theorem.** There exists a set `B ⊂ ℕ` which is not an additive basis, but for which
+/tmp/green26-repair/plby-lean-proofs/src/v4.30.0/ErdosProblems/Erdos38.lean:70:We use Mathlib's `schnirelmannDensity` and define additive basis and related notions.
+/tmp/green26-repair/plby-lean-proofs/src/v4.30.0/ErdosProblems/Erdos38.lean:89:/-- B is an additive basis if some h-fold sumset of B covers all
+/tmp/green26-repair/plby-lean-proofs/src/v4.30.0/ErdosProblems/Erdos38.lean:91:def IsAdditiveBasis (B : Set ℕ) : Prop :=
+/tmp/green26-repair/plby-lean-proofs/src/v4.30.0/ErdosProblems/Erdos38.lean:1657:# B is not an additive basis
+/tmp/green26-repair/plby-lean-proofs/src/v4.30.0/ErdosProblems/Erdos38.lean:1660:then B is not an additive basis.
+/tmp/green26-repair/plby-lean-proofs/src/v4.30.0/ErdosProblems/Erdos38.lean:1670:/-- If |B ∩ [1,N]|^h / N → 0 for every h, then B is not an additive basis. -/
+/tmp/green26-repair/plby-lean-proofs/src/v4.30.0/ErdosProblems/Erdos38.lean:1673:    ¬IsAdditiveBasis B := by
+/tmp/green26-repair/plby-lean-proofs/src/v4.30.0/ErdosProblems/Erdos38.lean:1846:/-- The constructed B is not an additive basis. -/
+/tmp/green26-repair/plby-lean-proofs/src/v4.30.0/ErdosProblems/Erdos38.lean:1847:theorem constructB_not_basis (d : ShiftApproxData) : ¬IsAdditiveBasis (constructB d) := by
+/tmp/green26-repair/plby-lean-proofs/src/v4.30.0/ErdosProblems/Erdos38.lean:2289:Main theorem: There exists B ⊆ ℕ which is not an additive basis but for which
+/tmp/green26-repair/plby-lean-proofs/src/v4.30.0/ErdosProblems/Erdos38.lean:2295:/-- **Erdős Problem 38**: There exists a set B ⊂ ℕ which is not an additive basis,
+/tmp/green26-repair/plby-lean-proofs/src/v4.30.0/ErdosProblems/Erdos38.lean:2301:      ¬IsAdditiveBasis B ∧
+/tmp/green26-repair/plby-lean-proofs/src/v4.30.0/ErdosProblems/Erdos38.lean:2313:  -- B is not an additive basis
+/tmp/green26-repair/plby-lean-proofs/src/v4.30.0/ErdosProblems/Erdos741b.lean:92:/-- A is an asymptotic additive basis of order 2. -/
+/tmp/green26-repair/plby-lean-proofs/src/v4.32.0/ComparatorChallenges/ErdosProblems/Erdos38.lean:21:def IsAdditiveBasis (B : Set ℕ) : Prop :=
+/tmp/green26-repair/plby-lean-proofs/src/v4.32.0/ComparatorChallenges/ErdosProblems/Erdos38.lean:77:        And (Not (Erdos38.IsAdditiveBasis B))
+/tmp/green26-repair/plby-lean-proofs/src/v4.30.0/ErdosProblems/Erdos337.lean:1614:The set A constructed is an additive basis of order 3 for N_0.
+/tmp/green26-repair/plby-lean-proofs/src/v4.30.0/ErdosProblems/Erdos337.lean:2006:Let $A\subseteq \mathbb{N}$ be an additive basis (of any finite order)
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos38.lean:33:**Theorem.** There exists a set `B ⊂ ℕ` which is not an additive basis, but for which
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos38.lean:70:We use Mathlib's `schnirelmannDensity` and define additive basis and related notions.
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos38.lean:89:/-- B is an additive basis if some h-fold sumset of B covers all
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos38.lean:91:def IsAdditiveBasis (B : Set ℕ) : Prop :=
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos38.lean:1759:# B is not an additive basis
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos38.lean:1762:then B is not an additive basis.
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos38.lean:1772:/-- If |B ∩ [1,N]|^h / N → 0 for every h, then B is not an additive basis. -/
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos38.lean:1775:    ¬IsAdditiveBasis B := by
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos38.lean:1948:/-- The constructed B is not an additive basis. -/
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos38.lean:1949:theorem constructB_not_basis (d : ShiftApproxData) : ¬IsAdditiveBasis (constructB d) := by
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos38.lean:2400:Main theorem: There exists B ⊆ ℕ which is not an additive basis but for which
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos38.lean:2406:/-- **Erdős Problem 38**: There exists a set B ⊂ ℕ which is not an additive basis,
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos38.lean:2412:      ¬IsAdditiveBasis B ∧
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos38.lean:2424:  -- B is not an additive basis
+/tmp/green26-repair/plby-lean-proofs/src/v4.32.0/ErdosProblems/Erdos337.lean:1637:The set A constructed is an additive basis of order 3 for N_0.
+/tmp/green26-repair/plby-lean-proofs/src/v4.32.0/ErdosProblems/Erdos337.lean:2029:Let $A\subseteq \mathbb{N}$ be an additive basis (of any finite order)
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos869.lean:33:/-- An asymptotic additive basis of order two. -/
+/tmp/green26-repair/plby-lean-proofs/src/latest/ComparatorChallenges/ErdosProblems/Erdos38.lean:18:def IsAdditiveBasis (B : Set ℕ) : Prop :=
+/tmp/green26-repair/plby-lean-proofs/src/latest/ComparatorChallenges/ErdosProblems/Erdos38.lean:29:      ¬IsAdditiveBasis B ∧
+/tmp/green26-repair/plby-lean-proofs/src/latest/ComparatorChallenges/ErdosProblems/Erdos868.lean:22:/-- An asymptotic additive basis of order `o`: its `o`-fold pointwise sum is cofinite.
+/tmp/green26-repair/plby-lean-proofs/src/latest/ComparatorChallenges/ErdosProblems/Erdos868.lean:25:`FormalConjecturesForMathlib.Combinatorics.Additive.Basis`; the local Mathlib
+/tmp/green26-repair/plby-lean-proofs/src/v4.32.0/ErdosProblems/Erdos741b.lean:92:/-- A is an asymptotic additive basis of order 2. -/
+/tmp/green26-repair/plby-lean-proofs/src/latest/ComparatorChallenges/ErdosProblems/Erdos880.lean:17:/-- An infinite asymptotic additive basis whose least unrestricted order is `k`. -/
+/tmp/green26-repair/plby-lean-proofs/src/latest/ComparatorChallenges/ErdosProblems/Erdos880.lean:18:def IsAdditiveBasisOfOrder (A : Set ℕ) (k : ℕ) : Prop :=
+/tmp/green26-repair/plby-lean-proofs/src/latest/ComparatorChallenges/ErdosProblems/Erdos880.lean:32:    (∀ A : Set ℕ, IsAdditiveBasisOfOrder A 2 →
+/tmp/green26-repair/plby-lean-proofs/src/latest/ComparatorChallenges/ErdosProblems/Erdos880.lean:35:      IsAdditiveBasisOfOrder A h ∧ ¬HasBoundedGaps (restrictedSums A h)) := by
+/tmp/green26-repair/plby-lean-proofs/src/latest/ComparatorChallenges/ErdosProblems/Erdos35.lean:9:/-- The exact order-`k` additive-basis predicate used in Problem 35.  Pointwise
+/tmp/green26-repair/plby-lean-proofs/src/latest/ComparatorChallenges/ErdosProblems/Erdos35.lean:11:def IsAdditiveBasisOfOrder (B : Set ℕ) (k : ℕ) : Prop :=
+/tmp/green26-repair/plby-lean-proofs/src/latest/ComparatorChallenges/ErdosProblems/Erdos35.lean:16:    (hBasis : IsAdditiveBasisOfOrder B k) :
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos741b.lean:92:/-- A is an asymptotic additive basis of order 2. -/
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos868.lean:48:/-- An asymptotic additive basis of order `o`: its `o`-fold pointwise sum is cofinite.
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos868.lean:51:`FormalConjecturesForMathlib.Combinatorics.Additive.Basis`; the local Mathlib
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos336/Basic.lean:13:asymptotic additive bases.  A final solution must prove
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos157.lean:113:the natural numbers which is an asymptotic additive basis of order three.
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos29/Assembly.lean:134:The conclusion simultaneously gives the exact additive-basis identity and
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos29/ModularLift.lean:153:/-- The residue digit set is an additive basis of `ZMod (p^2)`. -/
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos35.lean:34:Let `B ⊆ ℕ` be an additive basis of order `k`, with `0 ∈ B`.  Plünnecke's
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos35.lean:67:/-- The exact order-`k` additive-basis predicate used in Problem 35.  Pointwise
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos35.lean:69:def IsAdditiveBasisOfOrder (B : Set ℕ) (k : ℕ) : Prop :=
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos35.lean:1327:/-! ## From an additive basis to block expansion -/
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos35.lean:1369:    {B : Set ℕ} {k n : ℕ} (hBasis : IsAdditiveBasisOfOrder B k)
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos35.lean:1561:    (hBasis : IsAdditiveBasisOfOrder B k) (hk : 0 < k)
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos35.lean:1651:    (hBasis : IsAdditiveBasisOfOrder B k) (hk : 0 < k) :
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos35.lean:1727:    (hBasis : IsAdditiveBasisOfOrder B k) (hk : 0 < k) (hab : a ≤ b)
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos35.lean:1735:/-- **Erdős Problem 35.**  If `B` is an additive basis of order `k` and
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos35.lean:1739:    (hBasis : IsAdditiveBasisOfOrder B k) :
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos35.lean:1771:lemma zero_not_basis_order_zero (B : Set ℕ) : ¬IsAdditiveBasisOfOrder B 0 := by
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos29.lean:26:  Construct an additive basis of the natural numbers whose ordered
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos29.lean:53:/-- At position `i`, use the finite additive basis modulo the square of the
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos29.lean:73:/-- The explicit additive basis: all non-leading mixed-radix digits belong to
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos1180.lean:34:at most `p ^ ε` form an additive basis of `ZMod p` of order bounded only in
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos880.lean:30:distinct elements of an additive basis of order two have eventual gaps at
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos880.lean:31:most two, while for every order at least three there is an additive basis
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos880.lean:53:/-- An infinite asymptotic additive basis whose least unrestricted order is `k`. -/
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos880.lean:54:def IsAdditiveBasisOfOrder (A : Set ℕ) (k : ℕ) : Prop :=
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos880.lean:143:    (hA : IsAdditiveBasisOfOrder A 2) :
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos880.lean:186:theorem order_two_bounded_gaps {A : Set ℕ} (hA : IsAdditiveBasisOfOrder A 2) :
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos880.lean:543:    IsAdditiveBasisOfOrder (counterexample h) h := by
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos880.lean:778:    (∀ A : Set ℕ, IsAdditiveBasisOfOrder A 2 →
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos880.lean:781:      IsAdditiveBasisOfOrder A h ∧ ¬HasBoundedGaps (restrictedSums A h)) := by
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos1147.lean:89:/-- An asymptotic additive basis of order two. -/
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos1147.lean:536:positive irrational parameter gives an asymptotic additive basis of order
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos337.lean:1637:The set A constructed is an additive basis of order 3 for N_0.
+/tmp/green26-repair/plby-lean-proofs/src/latest/ErdosProblems/Erdos337.lean:2029:Let $A\subseteq \mathbb{N}$ be an additive basis (of any finite order)

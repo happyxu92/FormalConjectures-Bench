@@ -1,0 +1,104 @@
+$ docker stop c20340b0036413e38e50c175de033c04bc281e597bd20795d05ba442c633c2cc
+c20340b0036413e38e50c175de033c04bc281e597bd20795d05ba442c633c2cc
+exit=0
+
+$ docker rm c20340b0036413e38e50c175de033c04bc281e597bd20795d05ba442c633c2cc
+c20340b0036413e38e50c175de033c04bc281e597bd20795d05ba442c633c2cc
+exit=0
+
+$ docker container inspect c20340b0036413e38e50c175de033c04bc281e597bd20795d05ba442c633c2cc
+[]
+Error response from daemon: No such container: c20340b0036413e38e50c175de033c04bc281e597bd20795d05ba442c633c2cc
+exit=1
+
+$ docker stop 4f51826845362cab8ca0fa5c21557fdd2704c34e66360f5bf7f5a8af71ad5ec5
+4f51826845362cab8ca0fa5c21557fdd2704c34e66360f5bf7f5a8af71ad5ec5
+exit=0
+
+$ docker rm 4f51826845362cab8ca0fa5c21557fdd2704c34e66360f5bf7f5a8af71ad5ec5
+4f51826845362cab8ca0fa5c21557fdd2704c34e66360f5bf7f5a8af71ad5ec5
+exit=0
+
+$ docker container inspect 4f51826845362cab8ca0fa5c21557fdd2704c34e66360f5bf7f5a8af71ad5ec5
+[]
+Error response from daemon: No such container: 4f51826845362cab8ca0fa5c21557fdd2704c34e66360f5bf7f5a8af71ad5ec5
+exit=1
+
+$ docker stop 79ff81b23454274fcb71769cd79576227ff71a42ae23142f6393096a11f4e9b7
+79ff81b23454274fcb71769cd79576227ff71a42ae23142f6393096a11f4e9b7
+exit=0
+
+$ docker rm 79ff81b23454274fcb71769cd79576227ff71a42ae23142f6393096a11f4e9b7
+79ff81b23454274fcb71769cd79576227ff71a42ae23142f6393096a11f4e9b7
+exit=0
+
+$ docker container inspect 79ff81b23454274fcb71769cd79576227ff71a42ae23142f6393096a11f4e9b7
+[]
+Error response from daemon: No such container: 79ff81b23454274fcb71769cd79576227ff71a42ae23142f6393096a11f4e9b7
+exit=1
+
+$ docker image rm fcb-erdos11-refute-20261104__env-main:latest
+Untagged: fcb-erdos11-refute-20261104__env-main:latest
+Deleted: sha256:df3c22899883ef1ed83b7f1fcddaf50abf1c0174eafe799938c3643977eeffe1
+exit=0
+
+$ docker image inspect fcb-erdos11-refute-20261104__env-main:latest
+[]
+Error response from daemon: No such image: fcb-erdos11-refute-20261104__env-main:latest
+exit=1
+
+$ docker image inspect sha256:df3c22899883ef1ed83b7f1fcddaf50abf1c0174eafe799938c3643977eeffe1
+[]
+Error response from daemon: No such image: sha256:df3c22899883ef1ed83b7f1fcddaf50abf1c0174eafe799938c3643977eeffe1
+exit=1
+
+$ docker image rm fcb-erdos11-refute-final-20261104__env-main:latest
+Untagged: fcb-erdos11-refute-final-20261104__env-main:latest
+Deleted: sha256:39209788a462c3d986c23d79bce90beb9580df1ddb6dd18d7d926769db7dcbf8
+exit=0
+
+$ docker image inspect fcb-erdos11-refute-final-20261104__env-main:latest
+[]
+Error response from daemon: No such image: fcb-erdos11-refute-final-20261104__env-main:latest
+exit=1
+
+$ docker image inspect sha256:39209788a462c3d986c23d79bce90beb9580df1ddb6dd18d7d926769db7dcbf8
+[]
+Error response from daemon: No such image: sha256:39209788a462c3d986c23d79bce90beb9580df1ddb6dd18d7d926769db7dcbf8
+exit=1
+
+$ docker image rm fcb-erdos11-refute-accept-20261104__env-main:latest
+Untagged: fcb-erdos11-refute-accept-20261104__env-main:latest
+Deleted: sha256:161102ca1b9b84888b9fa5af60c432d6ff3208f48b768b25fc5f3d249bbd5884
+exit=0
+
+$ docker image inspect fcb-erdos11-refute-accept-20261104__env-main:latest
+[]
+Error response from daemon: No such image: fcb-erdos11-refute-accept-20261104__env-main:latest
+exit=1
+
+$ docker image inspect sha256:161102ca1b9b84888b9fa5af60c432d6ff3208f48b768b25fc5f3d249bbd5884
+[]
+Error response from daemon: No such image: sha256:161102ca1b9b84888b9fa5af60c432d6ff3208f48b768b25fc5f3d249bbd5884
+exit=1
+
+$ docker image inspect sha256:a62b543b0ec90e56d94a56910f239f058bee941c4809c524e2edff0833ea0ec7
+[]
+Error response from daemon: No such image: sha256:a62b543b0ec90e56d94a56910f239f058bee941c4809c524e2edff0833ea0ec7
+exit=1
+
+$ docker network rm fcb-erdos11-refute-final-20261104__env_default
+fcb-erdos11-refute-final-20261104__env_default
+exit=0
+
+$ docker ps -a --no-trunc --filter name=fcb-erdos11-refute
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+exit=0
+
+$ docker image ls --no-trunc --filter reference=fcb-erdos11-refute*
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+exit=0
+
+$ docker network ls --filter label=com.docker.compose.project=fcb-erdos11-refute-final-20261104__env
+NETWORK ID   NAME      DRIVER    SCOPE
+exit=0

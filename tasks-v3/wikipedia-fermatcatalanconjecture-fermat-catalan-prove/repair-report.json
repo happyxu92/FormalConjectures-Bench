@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-fermatcatalanconjecture-fermat-catalan-prove",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 的 rg 命令已显式增加 .lake/packages；最终 Harbor 子容器实际搜索 Mathlib IsEvenlyCovered 成功，退出码 0。见 repair-evidence/package-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；原 Dockerfile 缺少末尾普通用户验证，已增加 USER ubuntu 下 lake build +FormalConjecturesBench.Target。本地 Docker 与最终 Harbor 构建成功，保留只读依赖权限。见 repair-evidence/spec-build.log 与 harbor-image-history.txt。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能脚本初检及最终复检均为 no_issue（退出码 0）；两份 checker 的原始头、冻结前缀及 := 边界检查通过，无需编码修复。见 repair-evidence/unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从原始 golden 隔离 elaboration、预编译并独立审计 ExpectedType 与三个前缀定义，同步两份可信 Spec 包；清单 SHA256 8e2e068b60a50b79e705d61f9eeb28d16b94595111950ffac2a1c521dbe16d09，版本/输入/产物哈希见包清单。固定 /tests 或 /opt 来源及锁定依赖，临时副本复用可信前缀并比较完整类型，保留原有限制、公理检查和 canary。最终本地 Harbor 镜像 7a604efb0e6d8ba4ca94e77942eee2387bf40a4489d3473347d3b0ca37e807b9、子容器 06d7d99367f6 验证：正式与 ubuntu 本地入口均因原题 sorry 按预期退出 1/reward 0；两个入口的实际函数补测均退出 0，覆盖 Spec 审计、ubuntu 编译、完整类型、sorryAx 拒绝、canary、冻结/越界/语义遮蔽负例、同名缓存及缺失/损坏产物。两处上传包/golden 哈希吻合。网络地址池与保留容器选项障碍已排查并解决；完整命令、资源及日志见 repair-evidence/verification.md。报告和证据落盘后已停止并删除本题容器 57490cb48b32/899350249b68/06d7d99367f6，删除六个独有镜像（d71628a947f2/b1177e80782d/564be9821a64/3e7d2d138b2f/ef9921372fc8/7a604efb0e6d）及两个自建网络；docker ps 与逐项 inspect 已核验不存在，其余 Harbor 尝试已自动回收或未创建容器。无本题遗留资源，未清理共享层/缓存或其他任务资源。见 repair-evidence/docker-cleanup.log。不是原题证明通过。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已核对 task.toml 指定的固定上游、完整定义及 prove 方向；这是正整数原始解的幂值三元组有限性，非六元组有限性，也非固定指数变体。与 Sikora arXiv:2410.21552 §2 和 MathWorld 来源一致，未发现明显错误；metadata.statement_status=consistent。Wikipedia 返回 403，以可读原论文交叉核对。数学陈述、Target、golden、冻结哈希及 GoldenCheck 未改。见 repair-evidence/research.md。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 task ID 精确查技能 CSV 未命中，已多组联网检索上游/PR、Mathlib、作者项目及等价表述。实际读取 PR 2610/3134 的 diff 和 Lean 源码：均只改固定指数变体分类且保留 sorry；Mathlib/lean-poly-abc 是多项式命题，Prove Together #257 只是 Prop 定义，FLT 与 defect-one 均不覆盖本目标。尚有索引到的 Euclids-path 源码/仓库及镜像均 HTTP 404，无法彻底核实该线索，故 metadata 与报告保守标 unknown，不据开放性或未命中写 false。查询词、来源、排除依据及访问限制见 repair-evidence/research.md。未加入公开答案。"
+    }
+  }
+}

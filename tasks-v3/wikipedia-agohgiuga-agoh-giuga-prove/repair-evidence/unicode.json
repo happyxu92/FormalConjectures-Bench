@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-agohgiuga-agoh-giuga-prove",
+  "mode": "auto_repair",
+  "status": "passed",
+  "case": "no_issue",
+  "has_problem": false,
+  "has_unicode_issue": false,
+  "repair_attempted": false,
+  "repair_success": null,
+  "modified": false,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "e4e3c85d4a977f717680a02ef293497d03bd4d784b875b28205a73822c5700a9",
+      "header_before": "theorem agoh_giuga : AgohGiugaCongr",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem agoh_giuga : AgohGiugaCongr",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "e4e3c85d4a977f717680a02ef293497d03bd4d784b875b28205a73822c5700a9",
+      "header_after": "theorem agoh_giuga : AgohGiugaCongr"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "e4e3c85d4a977f717680a02ef293497d03bd4d784b875b28205a73822c5700a9",
+      "header_before": "theorem agoh_giuga : AgohGiugaCongr",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem agoh_giuga : AgohGiugaCongr",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "e4e3c85d4a977f717680a02ef293497d03bd4d784b875b28205a73822c5700a9",
+      "header_after": "theorem agoh_giuga : AgohGiugaCongr"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "6fc3cd24297d1e9a92114cde1b591229b59738654798f12b73cae2c003e3c39c"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "6fc3cd24297d1e9a92114cde1b591229b59738654798f12b73cae2c003e3c39c"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "6fc3cd24297d1e9a92114cde1b591229b59738654798f12b73cae2c003e3c39c"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 0
+}

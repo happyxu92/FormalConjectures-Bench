@@ -1,0 +1,5 @@
+# Reuse only this task's already-created Harbor network; no shared cleanup.
+networks:
+  default:
+    external: true
+    name: erdos1-prove-accept-20261104__env_default

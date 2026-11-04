@@ -1,0 +1,22 @@
+  1/1 Mean: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:00:12 0:00:00
+adhoc • nop
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 0.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 13s
+Results written to 
+/tmp/green26-refute-harbor-jobs/fcb-green26-refute-accept-20261104/result.json
+Inspect results by running `harbor view /tmp/green26-refute-harbor-jobs`
+Share results by running `harbor upload 
+/tmp/green26-refute-harbor-jobs/fcb-green26-refute-accept-20261104`
+

@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-gausscircleproblem-error-isbigo-prove",
+  "mode": "auto_repair",
+  "status": "repaired",
+  "case": "unicode_repaired",
+  "has_problem": true,
+  "has_unicode_issue": true,
+  "repair_attempted": true,
+  "repair_success": true,
+  "modified": true,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "d369b9dd6a73ca7429d0468a8958d5cefb0a038ae405542454aba9e5092522f5",
+      "header_before": "theorem error_isBigO : \u2203 (o : \u211d \u2192 \u211d) (_ : Tendsto o atTop (\ud835\udcdd 0)),\n    E =O[atTop] fun r => r ^ (1/2 + o r)",
+      "has_unicode_issue": true,
+      "modified": true,
+      "verification": "passed",
+      "unicode_case": "surrogate_pair",
+      "normalized_header": "theorem error_isBigO : \u2203 (o : \u211d \u2192 \u211d) (_ : Tendsto o atTop (\ud835\udcdd 0)),\n    E =O[atTop] fun r => r ^ (1/2 + o r)",
+      "normalized_header_checks": "passed",
+      "original_header_passes": false,
+      "sha256_after": "b6313543d5bdd0accf4f4d17a33abfcc89ac032448077078ec092499f0f6a859",
+      "header_after": "theorem error_isBigO : \u2203 (o : \u211d \u2192 \u211d) (_ : Tendsto o atTop (\ud835\udcdd 0)),\n    E =O[atTop] fun r => r ^ (1/2 + o r)"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "d369b9dd6a73ca7429d0468a8958d5cefb0a038ae405542454aba9e5092522f5",
+      "header_before": "theorem error_isBigO : \u2203 (o : \u211d \u2192 \u211d) (_ : Tendsto o atTop (\ud835\udcdd 0)),\n    E =O[atTop] fun r => r ^ (1/2 + o r)",
+      "has_unicode_issue": true,
+      "modified": true,
+      "verification": "passed",
+      "unicode_case": "surrogate_pair",
+      "normalized_header": "theorem error_isBigO : \u2203 (o : \u211d \u2192 \u211d) (_ : Tendsto o atTop (\ud835\udcdd 0)),\n    E =O[atTop] fun r => r ^ (1/2 + o r)",
+      "normalized_header_checks": "passed",
+      "original_header_passes": false,
+      "sha256_after": "b6313543d5bdd0accf4f4d17a33abfcc89ac032448077078ec092499f0f6a859",
+      "header_after": "theorem error_isBigO : \u2203 (o : \u211d \u2192 \u211d) (_ : Tendsto o atTop (\ud835\udcdd 0)),\n    E =O[atTop] fun r => r ^ (1/2 + o r)"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "7ecaa1f3b9bbb7bd5ecb03dcfb578f89946dbc6b13a204f25e5cf5ed2da1531d"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "7ecaa1f3b9bbb7bd5ecb03dcfb578f89946dbc6b13a204f25e5cf5ed2da1531d"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "7ecaa1f3b9bbb7bd5ecb03dcfb578f89946dbc6b13a204f25e5cf5ed2da1531d"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 2
+}

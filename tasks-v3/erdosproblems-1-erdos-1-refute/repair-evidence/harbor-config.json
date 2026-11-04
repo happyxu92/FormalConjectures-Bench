@@ -1,0 +1,21 @@
+{
+    "task": {
+        "path": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-1-erdos-1-refute"
+    },
+    "trial_name": "fcb-erdos1-refute-final2-20261104",
+    "trials_dir": "/tmp/erdos1-refute-harbor",
+    "agent": {
+        "name": "nop"
+    },
+    "environment": {
+        "type": "docker",
+        "force_build": true,
+        "delete": false,
+        "extra_docker_compose": [
+            "/tmp/erdos1-refute-network.json"
+        ],
+        "kwargs": {
+            "keep_containers": true
+        }
+    }
+}

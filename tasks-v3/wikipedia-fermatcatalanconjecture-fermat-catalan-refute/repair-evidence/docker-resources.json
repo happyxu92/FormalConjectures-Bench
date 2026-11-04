@@ -1,0 +1,42 @@
+{
+  "images": [
+    {
+      "tag": "fcb-fermat-refute-spec:nt40-20261104",
+      "id": "sha256:8246c151b03577bd99879d2ea68bfa4d23acc7dc3bc29f4983382b96cfb76f83"
+    },
+    {
+      "tag": "fcb-fermat-refute-accept-nt40-20261104__env-main:latest",
+      "id": "sha256:12fa76dae3ca6236a0b9a33501ce018265a32e8e7558b068bd9491257b25a18c"
+    },
+    {
+      "tag": "fcb-fermat-refute-final-nt40-20261104__env-main:latest",
+      "id": "sha256:51723e39ff44f7fe5b354172471aa8813b45af440c9548079473d6d67cbfc053"
+    },
+    {
+      "tag": "fcb-fermat-refute-delivery-nt40-20261104__env-main:latest",
+      "id": "sha256:c63241ad34753e289c9dcf4c4b5bdebfda8a19faeca0db79a09a2736d86076eb"
+    },
+    {
+      "tag": "fcb-fermat-refute-delivery2-nt40-20261104__env-main:latest",
+      "id": "sha256:653bcd2d6760b4219bfb6d9de976001add64eb5dce27df4f8719b946f7d76f92"
+    },
+    {
+      "tag": "fcb-fermat-refute-delivery3-nt40-20261104__env-main:latest",
+      "id": "sha256:e6858b572337ff40ae533acbd22890242bad7b4462c21e55b6c2682e2964973c"
+    },
+    {
+      "tag": "fcb-fermat-refute-nt40-20261104__env-main:latest",
+      "id": "sha256:e700b45505f23c2f42c7d773f8891a757170a154ea570abe238aa0e92940ac47"
+    }
+  ],
+  "containers": [
+    "3c1a600408b891b5d50298dc8a0fc32dc4e1e1fcd820049584baeb3110ab7b5f",
+    "d5a7b879ddad14c90276f640fd50c8887ddcf9b7308956939ea504963d8eebbe",
+    "2b0be845ce5659d4732a3a343a543582b662f586e55ae5df0f0227092af98a74"
+  ],
+  "networks": [
+    "fcb-fermat-refute-final-nt40-20261104__env_default",
+    "fcb-fermat-refute-delivery3-nt40-20261104__env_default"
+  ],
+  "notes": "Only exact names created by this task are claimed. The first accept run was automatically removed by Harbor; network-failed attempts never created containers. Existing shared/base images and all other-agent/user resources excluded. Build cache is not pruned."
+}

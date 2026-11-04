@@ -1,0 +1,23 @@
+{
+  "original frozen header": "passed",
+  "frozen prefix mutation": "rejected",
+  "header mutation": "rejected",
+  "missing assignment": "rejected",
+  "manifest/artifact/version validation": "passed",
+  "precompiled Spec independent import and transitive type audit": "passed",
+  "baseline ubuntu build (isolated original sorry fixture)": "passed",
+  "baseline complete type comparison": "passed",
+  "baseline target sorryAx audit": "rejected",
+  "sorry canary": "passed",
+  "same-name candidate module/cache and environment cannot shadow trusted Spec": "passed",
+  "same-name shadow cannot change full comparison": "passed",
+  "normal external precompiled import remains allowed": "passed",
+  "out-of-scope source": "rejected",
+  "banned helper declaration": "rejected",
+  "semantic fixture helper passes original syntax rules": "passed",
+  "semantic fixture frozen header unchanged": "passed",
+  "semantic fixture ubuntu compile": "passed",
+  "semantic Tendsto shadow full-type comparison": "rejected",
+  "missing precompiled artifact": "rejected",
+  "corrupt precompiled artifact": "rejected"
+}

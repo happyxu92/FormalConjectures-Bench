@@ -1,0 +1,42 @@
+Loaded fixed precompiled trusted Spec
+audited complete ExpectedType: ¬∀ C > 1,
+    0 < {x | ∃ p k, ∃ (_ : Nat.Prime p), p + ⌊C ^ k⌋₊ = x}.lowerDensity; axioms: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ C > 1, 0 < {x | ∃ p k, ∃ (_ : Nat.Prime p), p + ⌊C ^ k⌋₊ = x}.lowerDensity
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for Erdos244.formal_conjectures_bench_refutation: ['sorryAx']
+'Erdos244.formal_conjectures_bench_refutation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+PASS REJECTION target_sorry_axiom_audit
+Code above the benchmark target marker changed
+Target theorem header changed
+PASS REJECTION frozen_prefix
+PASS REJECTION header
+PASS REJECTION outside_editable_source
+Unexpected added Lean source outside editable subtree: Extra.lean
+Candidate compiled as ubuntu with fixed import paths
+Lean audit command failed
+/tmp/formal_conjectures_bench_ktp9ztv9/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Erdos244.formal_conjectures_bench_refutation
+has type
+  ¬∀ C > 1, 0 < {x | ∃ p k, ∃ (_ : Nat.Prime p), p + ⌊C ^ k⌋₊ = x}.lowerDensity
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+PASS REJECTION semantic_shadow_LT_complete_type
+audited complete ExpectedType: ¬∀ C > 1,
+    0 < {x | ∃ p k, ∃ (_ : Nat.Prime p), p + ⌊C ^ k⌋₊ = x}.lowerDensity; axioms: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ C > 1, 0 < {x | ∃ p k, ∃ (_ : Nat.Prime p), p + ⌊C ^ k⌋₊ = x}.lowerDensity
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+PASS REJECTION missing_precompiled_artifact
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+PASS REJECTION corrupt_precompiled_artifact
+COVERAGE_RESULTS {"candidate_named_module_cache": "fixed trusted olean selected; compile/audit/type passed", "complete_type_comparison": "passed", "corrupt_precompiled_artifact": "rejected as expected", "frozen_prefix": "rejected as expected", "header": "rejected as expected", "missing_precompiled_artifact": "rejected as expected", "outside_editable_source": "rejected as expected", "semantic_shadow_LT_complete_type": "rejected as expected", "sorry_canary": "passed", "spec_load": "passed", "spec_type_audit": "passed", "target_sorry_axiom_audit": "rejected as expected", "ubuntu_candidate_compile": "passed (isolated original sorry fixture)"}

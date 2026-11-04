@@ -1,0 +1,55 @@
+Loaded fixed precompiled trusted Spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Hall.HallConjectureExp: [propext, Quot.sound, Classical.choice]
+audited Hall.HallIneq: [propext, Quot.sound, Classical.choice]
+outer binders: 0; negated universal epsilon and positivity premise retained
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ ε > 0, Hall.HallConjectureExp (2⁻¹ - ε)
+def Hall.HallConjectureExp : ℝ → Prop :=
+fun e ↦ ∃ C > 0, Hall.HallIneq C e
+def Hall.HallIneq : ℝ → ℝ → Prop :=
+fun C e ↦ ∀ (x y : ℤ), y ^ 2 ≠ x ^ 3 → ↑|y ^ 2 - x ^ 3| > C * |↑x| ^ e
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for Hall.formal_conjectures_bench_refutation: ['sorryAx']
+'Hall.formal_conjectures_bench_refutation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+Complete theorem type matches trusted Spec
+Candidate compiled as ubuntu with fixed import paths
+Lean audit command failed
+/tmp/formal_conjectures_bench_wmu3gi9v/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Hall.formal_conjectures_bench_refutation
+has type
+  ¬∀ ε > 0, Hall.HallConjectureExp (2⁻¹ - ε)
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+Code above the benchmark target marker changed
+Target theorem header changed
+Unexpected added Lean source outside editable subtree: Outside.lean
+Found banned Lean syntax:
+FormalConjecturesBench/Submission.lean:1: pattern '(?m)^\\s*(?:private\\s+|protected\\s+)?axiom\\b'
+FormalConjecturesBench/Target.lean:7: pattern '\\bsorry\\b'
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+Loaded fixed precompiled trusted Spec
+[
+  "fixed /tests Spec manifest artifacts version inputs: passed",
+  "independent type and transitive prefix axiom audit: passed",
+  "ubuntu candidate build (isolated sorry fixture only): passed",
+  "complete original type comparison: passed",
+  "target axiom audit detects fixture sorryAx: rejected",
+  "sorry canary: passed",
+  "candidate same-name source/cache and environment cannot replace fixed Spec: passed",
+  "semantic instance attack fixture compiles: passed",
+  "full type comparison rejects changed inverse instance with unchanged frozen text: rejected",
+  "frozen prefix mutation: rejected",
+  "header mutation: rejected",
+  "out-of-tree Lean source: rejected",
+  "banned helper axiom: rejected",
+  "precompiled artifact missing fails without regeneration: rejected",
+  "precompiled artifact hash fails without regeneration: rejected",
+  "local /opt package fixed artifact load: passed"
+]

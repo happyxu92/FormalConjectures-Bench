@@ -1,0 +1,2 @@
+reward=0
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Log/Basic.lean:44:noncomputable def log (x : ℝ) : ℝ :=

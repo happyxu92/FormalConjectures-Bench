@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/greensopenproblems-2-green-2-refute",
+  "mode": "auto_repair",
+  "status": "passed",
+  "case": "no_issue",
+  "has_problem": false,
+  "has_unicode_issue": false,
+  "repair_attempted": false,
+  "repair_success": null,
+  "modified": false,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "8a6921a1a85af430bce83315363f442ad8e88ee31e73d6736cbe2aff04ace8ac",
+      "header_before": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200\u1da0 n : \u2115 in atTop, \u2200 A : Finset \u2124, A.card = n \u2192\n            (maxRestrictedSumAvoidingSubsetSize A : \u211d) \u2265 (Real.log n) ^ 100\n    )",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200\u1da0 n : \u2115 in atTop, \u2200 A : Finset \u2124, A.card = n \u2192\n            (maxRestrictedSumAvoidingSubsetSize A : \u211d) \u2265 (Real.log n) ^ 100\n    )",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "8a6921a1a85af430bce83315363f442ad8e88ee31e73d6736cbe2aff04ace8ac",
+      "header_after": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200\u1da0 n : \u2115 in atTop, \u2200 A : Finset \u2124, A.card = n \u2192\n            (maxRestrictedSumAvoidingSubsetSize A : \u211d) \u2265 (Real.log n) ^ 100\n    )"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "8a6921a1a85af430bce83315363f442ad8e88ee31e73d6736cbe2aff04ace8ac",
+      "header_before": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200\u1da0 n : \u2115 in atTop, \u2200 A : Finset \u2124, A.card = n \u2192\n            (maxRestrictedSumAvoidingSubsetSize A : \u211d) \u2265 (Real.log n) ^ 100\n    )",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200\u1da0 n : \u2115 in atTop, \u2200 A : Finset \u2124, A.card = n \u2192\n            (maxRestrictedSumAvoidingSubsetSize A : \u211d) \u2265 (Real.log n) ^ 100\n    )",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "8a6921a1a85af430bce83315363f442ad8e88ee31e73d6736cbe2aff04ace8ac",
+      "header_after": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200\u1da0 n : \u2115 in atTop, \u2200 A : Finset \u2124, A.card = n \u2192\n            (maxRestrictedSumAvoidingSubsetSize A : \u211d) \u2265 (Real.log n) ^ 100\n    )"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "4ce3c4f590e58dd939b3326693e7ff9ba4200d0dce65f3af4f7d22a7f3142ba5"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "4ce3c4f590e58dd939b3326693e7ff9ba4200d0dce65f3af4f7d22a7f3142ba5"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "4ce3c4f590e58dd939b3326693e7ff9ba4200d0dce65f3af4f7d22a7f3142ba5"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 0
+}

@@ -1,0 +1,1 @@
+PASS: AST, synchronized checkers and packages, pinned manifest and all artifact hashes, original golden/Target/GoldenCheck unchanged, TOML parse, final USER ubuntu dependency validation.

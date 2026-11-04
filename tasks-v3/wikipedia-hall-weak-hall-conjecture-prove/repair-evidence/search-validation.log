@@ -1,0 +1,13 @@
+/opt/formal-conjectures/.lake/packages/batteries/Batteries/Data/Nat/Basic.lean:def sqrt (n : Nat) : Nat :=
+/opt/formal-conjectures/.lake/packages/mathlib/MathlibTest/sqrt.lean:def sqrt_10005_approx : ℚ := eval% ratSqrt 10005 (10^(2 * 10^6))
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Analysis/Matrix/Order.lean:noncomputable def sqrt : Matrix n n 𝕜 :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Trigonometric/Basic.lean:noncomputable def sqrtTwoAddSeries (x : ℝ) : ℕ → ℝ
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/ContinuousFunctionalCalculus/Rpow/Basic.lean:noncomputable def sqrt (a : A) : A := cfcₙ NNReal.sqrt a
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/NumberTheory/Zsqrtd/Basic.lean:def sqrtd : ℤ√d :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Num/Basic.lean:private def sqrtAux1 (b : PosNum) (r n : Num) : Num × Num :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Num/Basic.lean:private def sqrtAux : PosNum → Num → Num → Num
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Int/Sqrt.lean:def sqrt (z : ℤ) : ℤ :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Rat/Sqrt.lean:def sqrt (q : ℚ) : ℚ := mkRat (Int.sqrt q.num) (Nat.sqrt q.den)
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Real/Sqrt.lean:noncomputable def sqrt : ℝ≥0 ≃o ℝ≥0 :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Real/Sqrt.lean:noncomputable def sqrtHom : ℝ≥0 →*₀ ℝ≥0 :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Real/Sqrt.lean:@[irreducible] noncomputable def sqrt (x : ℝ) : ℝ :=

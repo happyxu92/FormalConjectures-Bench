@@ -1,0 +1,22 @@
+{
+    "task": {
+        "path": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-137-erdos-137-refute"
+    },
+    "trial_name": "erdosproblems-137-erdos-137-refu__3udNqd7",
+    "trials_dir": "/tmp/fcb137ref-harbor/fcb137ref-retained-20261104",
+    "agent": {
+        "name": "nop"
+    },
+    "environment": {
+        "type": "docker",
+        "force_build": true,
+        "delete": false,
+        "extra_docker_compose": [
+            "/tmp/fcb137ref-compose.yaml"
+        ],
+        "kwargs": {
+            "keep_containers": true
+        }
+    },
+    "job_id": "84dc0c33-84e1-4343-a562-c545da41afdd"
+}

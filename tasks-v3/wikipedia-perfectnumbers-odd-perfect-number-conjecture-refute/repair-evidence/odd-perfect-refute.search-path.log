@@ -1,0 +1,3 @@
+/opt/formal-conjectures/FormalConjectures/Wikipedia/Superperfectnumbers.lean:def PerfectFor (n m k : ℕ) : Prop := Nat.iterate (fun x => σ 1 x) m n = k * n
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/NumberTheory/Divisors.lean:def Perfect (n : ℕ) : Prop :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/FieldTheory/PerfectClosure.lean:def PerfectClosure : Type u :=

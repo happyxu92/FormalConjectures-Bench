@@ -1,0 +1,64 @@
+{
+  "containers": [
+    {
+      "id": "35663be2934690cc2861ff4d902c0ada9f948bd5437f6f7e4b633b7434876941",
+      "name": "/fcb-green26-open-spec-20261104"
+    },
+    {
+      "id": "2fbabe61bf18481bf263bbdbccbfa76c9d9be1689b6d52145417b1a1bff85b99",
+      "name": "/greensopenproblems-26-open-prove__xksagwo__env-main-1"
+    },
+    {
+      "id": "6eadd2ca82006fe7caaad6a8c24d49d46fadf2762e0e47f5d0471e513d8bac8b",
+      "name": "/greensopenproblems-26-open-prove__zjl4wwf__env-main-1"
+    }
+  ],
+  "images": [
+    {
+      "tag": "greensopenproblems-26-open-prove__jsmyxgx__env-main:latest",
+      "id": "sha256:c528d69a700cd44b3f9f2f1b590d3308b3e6507fc9ab3c8ce25c6f621bb3dca7"
+    },
+    {
+      "tag": "greensopenproblems-26-open-prove__m38n62q__env-main:latest",
+      "id": "sha256:974cb8d2b31a0c97a17ad8f9faf89be52859331d231781deb26421990d8ad3b0"
+    },
+    {
+      "tag": "greensopenproblems-26-open-prove__xksagwo__env-main:latest",
+      "id": "sha256:8584a11f2575f69cd0a72e787d7b9383b9fa75376108fd080f7cdd1f3d48f1cf"
+    },
+    {
+      "tag": "greensopenproblems-26-open-prove__tvxbcwe__env-main:latest",
+      "id": "sha256:62848e7ecd081d6e0b3f50409c4c88acad527a34f983814c77bee11ea1667f8f"
+    },
+    {
+      "tag": "greensopenproblems-26-open-prove__zjl4wwf__env-main:latest",
+      "id": "sha256:a171f407ede3d13167336a1a091cfe2ac319f1b44a15d5843647b4a3425e8d93"
+    }
+  ],
+  "networks": [
+    {
+      "name": "greensopenproblems-26-open-prove__xksagwo__env_default",
+      "id": "cd6e842f69e7438411649dbf338fefb40719f57574d3c1d609a6b9a4b6bf6e86"
+    },
+    {
+      "name": "greensopenproblems-26-open-prove__zjl4wwf__env_default",
+      "id": "ba86ef44540cb314a7899fb396e0b67ec14a26367e609ae41aeb6adb8cc3549f"
+    }
+  ],
+  "reused_not_owned": [
+    "erdos1062-import-20261102__env-main:latest",
+    "ubuntu:24.04"
+  ],
+  "auto_removed": [
+    "Harbor M38n62Q child and network were automatically removed; no image deleted by us yet"
+  ],
+  "cleanup": "complete: own containers, networks and all five images removed; previously borrowed image removed during follow-up after confirming no users",
+  "cleanup_failures": [],
+  "retained": [],
+  "followup_cleanup": {
+    "image": "sha256:c528d69a700cd44b3f9f2f1b590d3308b3e6507fc9ab3c8ce25c6f621bb3dca7",
+    "previous_reason": "retained while other agent container fcb-green26-refute-spec-20261104 used it",
+    "result": "docker ps -a ancestor filter found no users; removed only the task-owned tag without force; exact image ID and tag both confirmed absent",
+    "log": "cleanup.log (appended follow-up section)"
+  }
+}

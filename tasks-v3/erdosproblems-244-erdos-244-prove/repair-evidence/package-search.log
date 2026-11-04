@@ -1,0 +1,2 @@
+/opt/formal-conjectures/.lake/packages/batteries/BatteriesTest/simpa.lean:class Group (α) extends Mul α, Div α, Inv α
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Algebra/Group/Defs.lean:class Group (G : Type u) extends DivInvMonoid G where

@@ -1,0 +1,68 @@
+Code above the benchmark target marker changed
+Target theorem header changed
+Target theorem no longer has a proof assignment
+Banned Lean feature found in proof region at line 2: \bsorry\b
+Unexpected added Lean source outside editable subtree: Outside.lean
+Loaded fixed precompiled trusted Spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green26.𝔽: [propext]
+audited Green26.𝔽₃: [propext, Quot.sound, Classical.choice]
+audited Green26.StandardCube: [propext, Quot.sound, Classical.choice]
+audited Green26.IsCube: [propext, Quot.sound, Classical.choice]
+binder: p, Lean.BinderInfo.default, type ℕ
+binder: inst._@.FCBTrustedSpec.4038600577._hygCtx._hyg.7, Lean.BinderInfo.instImplicit, type Fact (Nat.Prime p)
+complete outer binder count: 2; existential C and all nested binders retained
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (p : ℕ) [inst : Fact (Nat.Prime p)],
+  ∃ C, ∀ (n : ℕ) (A : Fin C → Set (Green26.𝔽 p n)), (∀ (i : Fin C), Green26.IsCube (A i)) → ∑ i, A i = Set.univ
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for Green26.green_26.variants.open: ['sorryAx']
+'Green26.green_26.variants.open' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+Complete theorem type matches trusted Spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green26.𝔽: [propext]
+audited Green26.𝔽₃: [propext, Quot.sound, Classical.choice]
+audited Green26.StandardCube: [propext, Quot.sound, Classical.choice]
+audited Green26.IsCube: [propext, Quot.sound, Classical.choice]
+binder: p, Lean.BinderInfo.default, type ℕ
+binder: inst._@.FCBTrustedSpec.4038600577._hygCtx._hyg.7, Lean.BinderInfo.instImplicit, type Fact (Nat.Prime p)
+complete outer binder count: 2; existential C and all nested binders retained
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (p : ℕ) [inst : Fact (Nat.Prime p)],
+  ∃ C, ∀ (n : ℕ) (A : Fin C → Set (Green26.𝔽 p n)), (∀ (i : Fin C), Green26.IsCube (A i)) → ∑ i, A i = Set.univ
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Lean audit command failed
+/tmp/formal_conjectures_bench_pgwtmx3t/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Green26.green_26.variants.open
+has type
+  ∀ (p : ℕ) [inst : Fact (Nat.Prime p)],
+    ∃ C, ∀ (n : ℕ) (A : Fin C → Set (Green26.𝔽 p n)), (∀ (i : Fin C), Green26.IsCube (A i)) → ∑ i, A i = Green26.univ
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+COVERAGE_JSON={
+  "original_frozen_header": "passed",
+  "frozen_prefix_mutation": "rejected as expected",
+  "header_mutation": "rejected as expected",
+  "missing_assignment": "rejected as expected",
+  "placeholder_source_rule": "rejected as expected",
+  "out_of_bounds_source": "rejected as expected",
+  "trusted_spec_audit": "passed",
+  "ubuntu_candidate_compilation": "passed (isolated placeholder fixture)",
+  "complete_type_comparison": "passed for original full type",
+  "target_axioms_sorryAx": "rejected as expected",
+  "sorry_canary": "detected sorryAx",
+  "same_name_source_cache_environment": "fixed trusted olean selected; audit and complete type still pass",
+  "semantic_univ_shadow_full_type": "rejected as expected",
+  "semantic_shadow_frozen_text": "original frozen prefix/header unchanged; altered type compiles and full comparison rejects",
+  "missing_artifact": "rejected as expected",
+  "corrupt_artifact": "rejected as expected"
+}

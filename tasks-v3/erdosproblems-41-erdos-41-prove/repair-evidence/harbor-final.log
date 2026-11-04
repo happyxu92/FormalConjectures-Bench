@@ -1,0 +1,12 @@
+Starting trial: fcb41-prove-final2-20261104
+Task: erdosproblems-41-erdos-41-prove
+Agent: nop
+Environment: docker
+Trials directory: /tmp/erdos41-harbor-final2
+
+Trial completed!
+Trial name: fcb41-prove-final2-20261104
+Task: formal-conjectures-bench/erdosproblems-41-erdos-41-prove
+Started: 2026-11-04 08:03:32.128766+00:00
+Finished: 2026-11-04 08:03:44.613841+00:00
+Rewards: {'reward': 0.0}

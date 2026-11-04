@@ -1,0 +1,23 @@
+Only explicitly recorded task-owned resources are cleaned.
+25241b3328e2528aebe51df5f242a6605fc416ed25f8185b5636e28e37a776f7
+4fd8037ad9ce41262f12e16a2842656e93ee518a94ebad8d7d48ba7892e3bee7
+25241b3328e2528aebe51df5f242a6605fc416ed25f8185b5636e28e37a776f7
+4fd8037ad9ce41262f12e16a2842656e93ee518a94ebad8d7d48ba7892e3bee7
+Untagged: erdosproblems-126-erdos-126-prov__za8tz4p__env-main:latest
+Deleted: sha256:8e232d5d9b0da3b66198cf4120f25b5e2adfb31687327f738db865cf2865be2b
+Untagged: erdosproblems-126-erdos-126-prov__qvgpman__env-main:latest
+Deleted: sha256:a97d90bc74a460ed87e9f9e104344df1801480160814debe8393553cbe3a8cbf
+erdosproblems-126-erdos-126-prov__qvgpman__env_default
+
+Verify exact container IDs are absent:
+
+Verify created image IDs absent (inspect must fail):
+[]
+Error response from daemon: No such image: sha256:8e232d5d9b0da3b66198cf4120f25b5e2adfb31687327f738db865cf2865be2b
+first inspect exit=1
+[]
+Error response from daemon: No such image: sha256:a97d90bc74a460ed87e9f9e104344df1801480160814debe8393553cbe3a8cbf
+final inspect exit=1
+
+Shared pre-existing base preserved:
+sha256:0824de0f16475f1f619701869e59de4e4ce3229bfce229a5fd16f88072c37e8f

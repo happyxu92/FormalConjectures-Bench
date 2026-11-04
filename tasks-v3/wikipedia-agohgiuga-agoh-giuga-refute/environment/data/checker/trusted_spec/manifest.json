@@ -1,0 +1,29 @@
+{
+  "task_id": "wikipedia-agohgiuga-agoh-giuga-refute",
+  "target_name": "AgohGiuga.formal_conjectures_bench_refutation",
+  "universe_params": [],
+  "platform": "x86_64",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "819ba9cb9e88ec077f31b79e218c2a73047e700b6715c89f1ddcea996a383f2c",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "e1e9f6385be1af47669bd4834abd9f30393e2215a660775fc1fae6145448b711",
+    "FCBTrustedSpec.ilean": "815ac67e31fcf0eeb7cfe251ae7c206e0c48a3ccadc5e1476588b0db91a53321",
+    "FCBTrustedSpec.lean": "90a5e498d497f32afcecd02efcd9dd16157a5d51fdbd7661bde172dfb0891768",
+    "FCBTrustedSpec.olean": "329a075f7187aa26e707b2c850e065156950d4e7f11e80ba30d955818d62cc84",
+    "audit.log": "0b3dc03f335cc5391bd412a4f85d290b8df61aa71bcaaea0d3a4bf237743a25e",
+    "generate.py": "1fb2219401644ab8ab84fb5e91622e229a0f3b23c43d578a9630f662192f8245",
+    "reproduce.sh": "f1bf0251f31c720fc31875647e3c1d87b14ac87ea9530fb860c8203eb5e55517"
+  },
+  "generation": "bash trusted_spec/reproduce.sh in fcb-agoh-refute-spec:20261104; isolated trusted golden, no candidate modules/cache/config; original declaration environment restored before addAndCompile",
+  "audit": "AuditSpec.lean: zero outer parameters/universes; ExpectedType value is Not AgohGiuga.AgohGiugaCongr; both prefix definitions and transitive ExpectedType axioms allowed; temporary theorem absent"
+}

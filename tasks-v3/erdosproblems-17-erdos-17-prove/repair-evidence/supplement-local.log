@@ -1,0 +1,54 @@
+Loaded fixed precompiled trusted Spec from /opt/formal-conjectures-bench-checker/trusted_spec
+Code above the benchmark target marker changed
+Target theorem header changed
+Target theorem no longer has a proof assignment
+PASS rejected: frozen prefix
+PASS rejected: changed header
+PASS rejected: missing proof assignment
+Banned Lean feature found in proof region at line 2: \bsorry\b
+PASS rejected: source sorry ban
+Unexpected added Lean source outside editable subtree: Outside.lean
+PASS rejected: source outside editable subtree
+audited FCBTrustedSpec.ExpectedType: [propext]
+audited Erdos17.IsClusterPrime: [propext]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+{p | Erdos17.IsClusterPrime p}.Infinite
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for Erdos17.erdos_17: ['sorryAx']
+'Erdos17.erdos_17' depends on axioms: [propext, sorryAx]
+
+PASS rejected: original placeholder target sorryAx audit
+PASS sorry canary
+/opt/elan/toolchains/leanprover--lean4---v4.27.0/lib/lean/Init.olean
+/opt/formal-conjectures-bench-checker/trusted_spec/FCBTrustedSpec.olean
+/tmp/formal_conjectures_bench_acfo3tw5/FormalConjecturesBench/Submission.olean
+
+Complete theorem type matches trusted Spec
+PASS candidate namesake source/cache/ambient LEAN_PATH cannot replace Spec
+audited FCBTrustedSpec.ExpectedType: [propext]
+audited Erdos17.IsClusterPrime: [propext]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+{p | Erdos17.IsClusterPrime p}.Infinite
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]
+Candidate compiled as ubuntu with fixed import paths
+theorem Erdos17.erdos_17 : (setOf Hacker.IsClusterPrime).Infinite :=
+id Set.infinite_univ
+
+Lean audit command failed
+/tmp/formal_conjectures_bench_9r9kc9fy/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Erdos17.erdos_17
+has type
+  (setOf Hacker.IsClusterPrime).Infinite
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+PASS rejected: name redirection; identical frozen text; compiled altered candidate full type
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+PASS rejected: missing Spec artifact
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+PASS rejected: corrupt Spec artifact
+ALL SUPPLEMENTAL CHECKS PASSED

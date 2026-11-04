@@ -1,0 +1,8 @@
+Loaded fixed precompiled trusted Spec from /opt/formal-conjectures-bench-checker/trusted_spec
+audited ExpectedType transitive axioms: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ C > 1, 0 < {x | ∃ p k, ∃ (_ : Nat.Prime p), p + ⌊C ^ k⌋₊ = x}.lowerDensity
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec

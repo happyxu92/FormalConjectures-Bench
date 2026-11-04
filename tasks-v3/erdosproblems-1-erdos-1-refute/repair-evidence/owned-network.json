@@ -1,0 +1,55 @@
+[
+    {
+        "Name": "fcb-erdos1-refute-verify-20261104__env_default",
+        "Id": "c08b545ac9ed9829999894176b09449821c36da3d06190fc38dba6daf47ab747",
+        "Created": "2026-11-04T14:35:37.521777295+08:00",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "192.168.224.0/20",
+                    "IPRange": "",
+                    "Gateway": "192.168.224.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {},
+        "Labels": {
+            "com.docker.compose.config-hash": "5a0ba8981b55ab9fb31eb5dc6ccfce80b59c51dffa1664f2b354d730d6a32533",
+            "com.docker.compose.network": "default",
+            "com.docker.compose.project": "fcb-erdos1-refute-verify-20261104__env",
+            "com.docker.compose.version": "2.40.3"
+        },
+        "Containers": {
+            "21ef43178da0349d91a2337c1bb4169229328efdc712662fbe45946491672143": {
+                "Name": "fcb-erdos1-refute-verify-20261104__env-main-1",
+                "EndpointID": "9590ad01e27146a9edb947083994763e0b83f8c6dd145e641966c937be8cf344",
+                "MacAddress": "e6:17:fb:17:af:51",
+                "IPv4Address": "192.168.224.2/20",
+                "IPv6Address": ""
+            }
+        },
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "192.168.224.0/20": {
+                        "IPsInUse": 4,
+                        "DynamicIPsAvailable": 4092
+                    }
+                }
+            }
+        }
+    }
+]

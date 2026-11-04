@@ -9,6 +9,11 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "consistent"
+statement_fidelity_note = "Intentional refutation task: not AgohGiugaCongr, over naturals p >= 2 with integral witness k and Bernoulli numerator/denominator equation modulo p^2. Matches the pinned upstream definition; no obvious mathematical defect found. This is not a proof or disproof of the open conjecture."
+public_lean4_proof = false
+public_lean4_proof_status = "searched"
+public_lean4_proof_note = "Exact task-ID CSV lookup missed. Multiple web searches and source inspection covered upstream/main, linked forks/PRs, Mathlib, SamuelSchlesinger, Epoch A309132 equivalence, and other research pages. Found related equivalences/conditional results, not a complete Lean4 proof of this negation; see repair-evidence/research.md."
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/Wikipedia/AgohGiuga.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

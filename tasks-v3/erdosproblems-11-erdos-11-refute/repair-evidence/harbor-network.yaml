@@ -1,0 +1,5 @@
+# Reuse this task's own Harbor network; do not alter any shared networks.
+networks:
+  default:
+    name: fcb-erdos11-refute-final-20261104__env_default
+    external: true

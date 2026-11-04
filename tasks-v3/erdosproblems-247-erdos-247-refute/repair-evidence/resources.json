@@ -1,0 +1,60 @@
+{
+  "baseline_snapshots": [
+    "/tmp/247refute-docker-before.txt",
+    "/tmp/247refute-images-before.txt"
+  ],
+  "images": [
+    {
+      "tag": "fcb-247-refute:spec-20261104",
+      "id": "sha256:de90f7b7ee6a28936009417ce63a5c6567c8097d3f4167c68de18cfdfda25be6"
+    },
+    {
+      "tag": "erdosproblems-247-erdos-247-refu__fwdisgg__env-main:latest",
+      "id": "sha256:2a98437eb678d8320f0fbba1521958f2e0cab40bad9e0c34a710850e9c622848"
+    },
+    {
+      "tag": "erdosproblems-247-erdos-247-refu__ynslcbw__env-main:latest",
+      "id": "sha256:c03e3179541cfed8b374afb7775c2e11afcc5828833937b2787f0057467cfef1"
+    },
+    {
+      "tag": "erdosproblems-247-erdos-247-refu__jrc5wox__env-main:latest",
+      "id": "sha256:58e816d6e88395257947b79b24a768bdfe58333dd05e3b0ce8c7260a31c4e728"
+    },
+    {
+      "tag": "erdosproblems-247-erdos-247-refu__6hdmbyq__env-main:latest",
+      "id": "sha256:3afa52552535260f8855308cb4f3a5cea78012a0eccdb66a68de55faaeb1da0f"
+    }
+  ],
+  "containers": [
+    {
+      "name": "fcb-247-refute-spec-20261104",
+      "id": "15e09eb1a14e9f15c58446d3ad1d9611c4233db58a1d1050bcbd07ea08efd307",
+      "image": "sha256:de90f7b7ee6a28936009417ce63a5c6567c8097d3f4167c68de18cfdfda25be6"
+    },
+    {
+      "name": "erdosproblems-247-erdos-247-refu__jrc5wox__env-main-1",
+      "id": "31c2084f7c20fd8f2d882518b949c82a9c2e265c4973dc7e2b39025dd08da711",
+      "image": "sha256:58e816d6e88395257947b79b24a768bdfe58333dd05e3b0ce8c7260a31c4e728"
+    },
+    {
+      "name": "erdosproblems-247-erdos-247-refu__6hdmbyq__env-main-1",
+      "id": "19efd808f0ae22adff44cd6ec5fb3d725c3c7cab036c384184c7a61823fc47cd",
+      "image": "sha256:3afa52552535260f8855308cb4f3a5cea78012a0eccdb66a68de55faaeb1da0f"
+    }
+  ],
+  "networks": [
+    {
+      "name": "erdosproblems-247-erdos-247-refu__jrc5wox__env_default",
+      "id": "d47c8877fa4ff1a4757016216a3b8b5469c3cc0c5441a90a97c6f701e106dde1"
+    },
+    {
+      "name": "erdosproblems-247-erdos-247-refu__6hdmbyq__env_default",
+      "id": "74f6c8219d83cd3490c24c1f78a76884a8407119ec82b1d1b9ac66a2d812c486"
+    }
+  ],
+  "automatically_removed_projects": [
+    "erdosproblems-247-erdos-247-refu__ynslcbw__env"
+  ],
+  "first_network_failure": "fwdisgg: default address pools fully subnetted; build succeeded, no container created",
+  "network_recovery": "per-task explicit subnets in compose overlay, no existing network removed"
+}

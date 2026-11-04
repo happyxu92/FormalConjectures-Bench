@@ -1,0 +1,5 @@
+⚠ [7992/7992] Replayed FormalConjecturesBench.Target
+warning: FormalConjecturesBench/Target.lean:67:8: declaration uses 'sorry'
+warning: FormalConjecturesBench/Target.lean:77:8: declaration uses 'sorry'
+warning: FormalConjecturesBench/Target.lean:92:8: declaration uses 'sorry'
+Build completed successfully (7992 jobs).

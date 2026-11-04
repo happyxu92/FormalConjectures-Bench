@@ -1,0 +1,8 @@
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited AgohGiuga.AgohGiugaCongr: [propext, Quot.sound, Classical.choice]
+audited AgohGiuga.AgohGiugaSum: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+AgohGiuga.AgohGiugaCongr
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

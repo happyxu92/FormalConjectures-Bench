@@ -1,0 +1,41 @@
+/tests ALL FILE HASHES MATCH HOST {
+  "test_target.py": "43848e3e143f42107c98affd800e18ca40c6f494baef073bde07f7a2f0231ca8",
+  "test.sh": "a25ffe113bd44f4334d7fd0a269a248fc0698cb650ab6e102707340593b5b61c",
+  "GoldenCheck.lean": "9e5b39d2f0ef1c285afe72d64cde649907184e320b55ec96952b73d8bcc3931f",
+  "trusted_spec/audit.log": "3c5cd1aaaaad4cb964302ec707a7efe265e533fa278f4d3a51685f29e1f77b38",
+  "trusted_spec/FCBTrustedSpec.olean": "549119d7eb5a13debe2af905472d1ee8956c0cbae0b4c6b365d647b86407d73d",
+  "trusted_spec/AuditSpec.lean": "1d32c238d9b6605fdbf9b30fe07bfee271ff3746cbd87fae24dd8502923d916e",
+  "trusted_spec/generate.py": "8ac20682c89efe3b2ad168ade859f2f573bd97c5b1ad6e14760994fae3952418",
+  "trusted_spec/FCBTrustedSpec.ilean": "7dc0df41998e754bc10aa8707d98017cb8977a8cbc9440c4a822337471864a16",
+  "trusted_spec/manifest.json": "442df4804252367413f86b941b6afe4d6f9984b711217f8cd854d8cf5ab62c8b",
+  "trusted_spec/reproduce.sh": "ede6a2a9636394e9b93ab45c02647e96820f334d723375ff378758ff00312c70",
+  "trusted_spec/FCBTrustedSpec.lean": "f3f640598a77af874b4b66515e6df318855dfa1c3699b88ac5b63877798a98a9",
+  "golden_env/FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+  "golden_env/lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb",
+  "golden_env/lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+  "golden_env/lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+  "golden_env/FormalConjecturesBench/Target.lean": "694ff3c9fcb1b2b7e4153b265e54d4f278b04b9300a3ad397ac0d0af50ea1117",
+  "golden_env/FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93"
+}
+/opt/formal-conjectures-bench-checker ALL FILE HASHES MATCH HOST {
+  "test_target.py": "43848e3e143f42107c98affd800e18ca40c6f494baef073bde07f7a2f0231ca8",
+  "GoldenCheck.lean": "9e5b39d2f0ef1c285afe72d64cde649907184e320b55ec96952b73d8bcc3931f",
+  "trusted_spec/audit.log": "3c5cd1aaaaad4cb964302ec707a7efe265e533fa278f4d3a51685f29e1f77b38",
+  "trusted_spec/FCBTrustedSpec.olean": "549119d7eb5a13debe2af905472d1ee8956c0cbae0b4c6b365d647b86407d73d",
+  "trusted_spec/AuditSpec.lean": "1d32c238d9b6605fdbf9b30fe07bfee271ff3746cbd87fae24dd8502923d916e",
+  "trusted_spec/generate.py": "8ac20682c89efe3b2ad168ade859f2f573bd97c5b1ad6e14760994fae3952418",
+  "trusted_spec/FCBTrustedSpec.ilean": "7dc0df41998e754bc10aa8707d98017cb8977a8cbc9440c4a822337471864a16",
+  "trusted_spec/manifest.json": "442df4804252367413f86b941b6afe4d6f9984b711217f8cd854d8cf5ab62c8b",
+  "trusted_spec/reproduce.sh": "ede6a2a9636394e9b93ab45c02647e96820f334d723375ff378758ff00312c70",
+  "trusted_spec/FCBTrustedSpec.lean": "f3f640598a77af874b4b66515e6df318855dfa1c3699b88ac5b63877798a98a9",
+  "golden_env/FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+  "golden_env/lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb",
+  "golden_env/lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+  "golden_env/lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+  "golden_env/FormalConjecturesBench/Target.lean": "694ff3c9fcb1b2b7e4153b265e54d4f278b04b9300a3ad397ac0d0af50ea1117",
+  "golden_env/FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93"
+}
+checker AST, byte identity, Spec package sync passed
+metadata parsed: {'statement_status': 'consistent', 'public_lean4_proof': False, 'public_lean4_proof_status': 'searched', 'category': 'formal_mathematics', 'source': 'google-deepmind/formal-conjectures', 'source_file': 'FormalConjectures/Books/UniformDistributionOfSequences/Equidistribution.lean', 'formal_conjectures_commit': '233a10e857ef78e79fd9fe661d37db724089170a', 'lean_toolchain': 'leanprover/lean4:v4.27.0', 'mathlib_commit': 'a3a10db0e9d66acbebf76c5e6a135066525ac900', 'theorem_name': 'Equidistribution.formal_conjectures_bench_refutation', 'benchmark_bucket': 'open_problem', 'oracle_status': 'none', 'difficulty_explanation': 'The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment.', 'solution_explanation': 'No bundled oracle is provided. This task is one side of an internet-enabled paired open-problem challenge.', 'verification_explanation': 'The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary.'}
+final image: sha256:47eccb4a04fc87aa4725469fa8a203b87b677418079e16d089cfaf3434574e14
+reward: 0

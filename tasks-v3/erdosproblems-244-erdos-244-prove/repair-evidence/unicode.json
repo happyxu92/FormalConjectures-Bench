@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-244-erdos-244-prove",
+  "mode": "auto_repair",
+  "status": "passed",
+  "case": "no_issue",
+  "has_problem": false,
+  "has_unicode_issue": false,
+  "repair_attempted": false,
+  "repair_success": null,
+  "modified": false,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "1e0cb33f4a59d04ca0c16d4bc52acde919d27c8e1a13fddb2546af031d83338b",
+      "header_before": "theorem erdos_244 : \u2200 C > (1 : \u211d), 0 < { p + \u230aC ^ k\u230b\u208a | (p) (k) (_ : p.Prime) }.lowerDensity",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem erdos_244 : \u2200 C > (1 : \u211d), 0 < { p + \u230aC ^ k\u230b\u208a | (p) (k) (_ : p.Prime) }.lowerDensity",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "1e0cb33f4a59d04ca0c16d4bc52acde919d27c8e1a13fddb2546af031d83338b",
+      "header_after": "theorem erdos_244 : \u2200 C > (1 : \u211d), 0 < { p + \u230aC ^ k\u230b\u208a | (p) (k) (_ : p.Prime) }.lowerDensity"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "1e0cb33f4a59d04ca0c16d4bc52acde919d27c8e1a13fddb2546af031d83338b",
+      "header_before": "theorem erdos_244 : \u2200 C > (1 : \u211d), 0 < { p + \u230aC ^ k\u230b\u208a | (p) (k) (_ : p.Prime) }.lowerDensity",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem erdos_244 : \u2200 C > (1 : \u211d), 0 < { p + \u230aC ^ k\u230b\u208a | (p) (k) (_ : p.Prime) }.lowerDensity",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "1e0cb33f4a59d04ca0c16d4bc52acde919d27c8e1a13fddb2546af031d83338b",
+      "header_after": "theorem erdos_244 : \u2200 C > (1 : \u211d), 0 < { p + \u230aC ^ k\u230b\u208a | (p) (k) (_ : p.Prime) }.lowerDensity"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "1a2cf2aa395b59abf263bc31219d97aa291b80536b10f8834f7b75c582babdfc"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "1a2cf2aa395b59abf263bc31219d97aa291b80536b10f8834f7b75c582babdfc"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "1a2cf2aa395b59abf263bc31219d97aa291b80536b10f8834f7b75c582babdfc"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 0
+}

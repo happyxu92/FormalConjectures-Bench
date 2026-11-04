@@ -1,0 +1,341 @@
+Skipping image OS validation for hb__36bfe2868136d2ed5f9fa1d6e2b27760: docker inspect returned 1
+Trial erdosproblems-126-erdos-126-refu__4jtwJYo failed: Docker compose command failed for environment erdosproblems-126-erdos-126-refute. Command: docker compose --project-name erdosproblems-126-erdos-126-refu__4jtwjyo__env --project-directory /root/FormalConjectures-Bench/tasks-v3/erdosproblems-126-erdos-126-refute/environment -f /tmp/tmpxa9lxis5/erdosproblems-126-erdos-126-refu__4jtwJYo__env-docker-compose-resources.json -f /root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /tmp/tmp1frd34p8/docker-compose-environment.json -f /tmp/tmpxsxk851g/docker-compose-mounts.json up --detach --wait. Return code: 1. Stdout: #1 [internal] load local bake definitions
+#1 reading from stdin 693B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 3.34kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [ 1/17] FROM docker.io/library/ubuntu:24.04@sha256:fe81560990fae86dc4743202b2cb4d3df98d0bcf949173cecef15ce1127ef852
+#5 resolve docker.io/library/ubuntu:24.04@sha256:fe81560990fae86dc4743202b2cb4d3df98d0bcf949173cecef15ce1127ef852 done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 1.58kB done
+#6 DONE 0.0s
+
+#7 [ 9/17] RUN chmod go-w     /opt/formal-conjectures     /opt/formal-conjectures/.lake     /opt/formal-conjectures/.lake/packages
+#7 CACHED
+
+#8 [15/17] RUN mkdir -p /opt/formal-conjectures-bench-checker   && cp -a /app/checker/. /opt/formal-conjectures-bench-checker/   && rm -rf /app/checker   && find /opt/formal-conjectures-bench-checker -type d -name __pycache__ -prune -exec rm -rf {} +   && mkdir -p /app/.lake   && ln -s /opt/formal-conjectures/.lake/packages /app/.lake/packages   && chown -R root:root /app /opt/formal-conjectures-bench-checker   && chmod -R go-w /app /opt/formal-conjectures-bench-checker   && chmod 755 /app/check.sh   && chown ubuntu:ubuntu /app/.lake   && chown -R ubuntu:ubuntu /app/FormalConjecturesBench   && chown -h ubuntu:ubuntu /app/.lake/packages
+#8 CACHED
+
+#9 [ 7/17] RUN apt-get update && apt-get install -y     asciinema     ripgrep     tmux   && rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [ 8/17] RUN find /opt/formal-conjectures/FormalConjectures -maxdepth 1 -type d -name '*Problems' -prune -exec rm -rf {} +
+#10 CACHED
+
+#11 [11/17] RUN find /opt/formal-conjectures/.lake/packages -path '*/.lake/config/*' -type d -exec chmod 1777 {} +
+#11 CACHED
+
+#12 [ 2/17] RUN apt-get update && apt-get install -y     bash     ca-certificates     curl     git     python3     unzip     xz-utils   && rm -rf /var/lib/apt/lists/*
+#12 CACHED
+
+#13 [ 5/17] RUN git clone https://github.com/google-deepmind/formal-conjectures.git /opt/formal-conjectures &&     git -C /opt/formal-conjectures checkout "233a10e857ef78e79fd9fe661d37db724089170a" &&     cd /opt/formal-conjectures &&     lake exe cache get &&     lake build FormalConjectures.Util.ProblemImports &&     find /opt/formal-conjectures -type d -name .git -prune -exec rm -rf {} + &&     rm -rf /root/.cache /tmp/*
+#13 CACHED
+
+#14 [10/17] RUN mkdir -p /opt/formal-conjectures-bench-dependency-config   && cd /opt/formal-conjectures   && find .lake/packages -path '*/.lake/config/*/lakefile.olean*' -type f     -exec cp --parents {} /opt/formal-conjectures-bench-dependency-config/ ;   && chown -R root:root /opt/formal-conjectures-bench-dependency-config   && chmod -R go-w /opt/formal-conjectures-bench-dependency-config
+#14 CACHED
+
+#15 [ 3/17] RUN curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh |     sh -s -- -y --default-toolchain none &&     chmod -R a+rX /opt/elan
+#15 CACHED
+
+#16 [14/17] COPY data/ /app/
+#16 CACHED
+
+#17 [ 4/17] WORKDIR /opt
+#17 CACHED
+
+#18 [12/17] RUN find /opt/formal-conjectures/.lake/packages -path '*/.lake/config/*/lakefile.olean*' -type f -exec chown ubuntu:ubuntu {} +   && find /opt/formal-conjectures/.lake/packages -path '*/.lake/config/*/lakefile.olean*' -type f -exec chmod 666 {} +
+#18 CACHED
+
+#19 [16/17] WORKDIR /app
+#19 CACHED
+
+#20 [13/17] WORKDIR /app
+#20 CACHED
+
+#21 [ 6/17] RUN id -u ubuntu >/dev/null 2>&1 || useradd -ms /bin/bash ubuntu
+#21 CACHED
+
+#22 [17/17] RUN lake build +FormalConjecturesBench.Target
+#22 CACHED
+
+#23 exporting to image
+#23 exporting layers done
+#23 exporting manifest sha256:8e38923cf82dc0ec404330636121b95a2942874273beb6895f1e5f8cfc8614f0 done
+#23 exporting config sha256:c2022f686539a99a66b0876ec3c577daa3ba7666d86fe1a62d939260f3872526 done
+#23 exporting attestation manifest sha256:76428dca2a48878bdf5926bb125b87baa5c1d1c5f9bee2b12b681155868f5bfe 0.0s done
+#23 exporting manifest list sha256:28f4cb94a852dde615924133268b1a8870286d1ae331a89b6a7dab4c43ae74f3
+#23 exporting manifest list sha256:28f4cb94a852dde615924133268b1a8870286d1ae331a89b6a7dab4c43ae74f3 done
+#23 naming to docker.io/library/erdosproblems-126-erdos-126-refu__4jtwjyo__env-main:latest done
+#23 unpacking to docker.io/library/erdosproblems-126-erdos-126-refu__4jtwjyo__env-main:latest done
+#23 DONE 0.1s
+
+#24 resolving provenance for metadata file
+#24 DONE 0.0s
+ erdosproblems-126-erdos-126-refu__4jtwjyo__env-main  Built
+ Network erdosproblems-126-erdos-126-refu__4jtwjyo__env_default  Creating
+ Network erdosproblems-126-erdos-126-refu__4jtwjyo__env_default  Error
+failed to create network erdosproblems-126-erdos-126-refu__4jtwjyo__env_default: Error response from daemon: all predefined address pools have been fully subnetted
+. Stderr: None. 
+compose cp failed; retrying download with engine cp: Docker compose command failed for environment erdosproblems-126-erdos-126-refute. Command: docker compose --project-name erdosproblems-126-erdos-126-refu__4jtwjyo__env --project-directory /root/FormalConjectures-Bench/tasks-v3/erdosproblems-126-erdos-126-refute/environment -f /tmp/tmpxa9lxis5/erdosproblems-126-erdos-126-refu__4jtwJYo__env-docker-compose-resources.json -f /root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /tmp/tmp1frd34p8/docker-compose-environment.json -f /tmp/tmpxsxk851g/docker-compose-mounts.json cp main:/logs/agent/. /tmp/erdos126-refute-harbor/erdos126-refute-final-20261104/erdosproblems-126-erdos-126-refu__4jtwJYo/agent. Return code: 1. Stdout: no container found for service "main"
+. Stderr: None. 
+Failed to download logs to /tmp/erdos126-refute-harbor/erdos126-refute-final-20261104/erdosproblems-126-erdos-126-refu__4jtwJYo/agent: Could not resolve container for compose service 'main' in project 'erdosproblems-126-erdos-126-refu__4jtwjyo__env'.
+Traceback (most recent call last):
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 606, in run
+    await self._prepare()
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 645, in _prepare
+    await self._setup_agent_environment()
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 1849, in _setup_agent_environment
+    await self._start_agent_environment()
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 1855, in _start_agent_environment
+    await asyncio.wait_for(
+  File "/usr/lib/python3.12/asyncio/tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 1091, in start
+    await self._run_docker_compose_command(["up", *runtime.up_args])
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 765, in _run_docker_compose_command
+    raise RuntimeError(
+RuntimeError: Docker compose command failed for environment erdosproblems-126-erdos-126-refute. Command: docker compose --project-name erdosproblems-126-erdos-126-refu__4jtwjyo__env --project-directory /root/FormalConjectures-Bench/tasks-v3/erdosproblems-126-erdos-126-refute/environment -f /tmp/tmpxa9lxis5/erdosproblems-126-erdos-126-refu__4jtwJYo__env-docker-compose-resources.json -f /root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /tmp/tmp1frd34p8/docker-compose-environment.json -f /tmp/tmpxsxk851g/docker-compose-mounts.json up --detach --wait. Return code: 1. Stdout: #1 [internal] load local bake definitions
+#1 reading from stdin 693B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 3.34kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [ 1/17] FROM docker.io/library/ubuntu:24.04@sha256:fe81560990fae86dc4743202b2cb4d3df98d0bcf949173cecef15ce1127ef852
+#5 resolve docker.io/library/ubuntu:24.04@sha256:fe81560990fae86dc4743202b2cb4d3df98d0bcf949173cecef15ce1127ef852 done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 1.58kB done
+#6 DONE 0.0s
+
+#7 [ 9/17] RUN chmod go-w     /opt/formal-conjectures     /opt/formal-conjectures/.lake     /opt/formal-conjectures/.lake/packages
+#7 CACHED
+
+#8 [15/17] RUN mkdir -p /opt/formal-conjectures-bench-checker   && cp -a /app/checker/. /opt/formal-conjectures-bench-checker/   && rm -rf /app/checker   && find /opt/formal-conjectures-bench-checker -type d -name __pycache__ -prune -exec rm -rf {} +   && mkdir -p /app/.lake   && ln -s /opt/formal-conjectures/.lake/packages /app/.lake/packages   && chown -R root:root /app /opt/formal-conjectures-bench-checker   && chmod -R go-w /app /opt/formal-conjectures-bench-checker   && chmod 755 /app/check.sh   && chown ubuntu:ubuntu /app/.lake   && chown -R ubuntu:ubuntu /app/FormalConjecturesBench   && chown -h ubuntu:ubuntu /app/.lake/packages
+#8 CACHED
+
+#9 [ 7/17] RUN apt-get update && apt-get install -y     asciinema     ripgrep     tmux   && rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [ 8/17] RUN find /opt/formal-conjectures/FormalConjectures -maxdepth 1 -type d -name '*Problems' -prune -exec rm -rf {} +
+#10 CACHED
+
+#11 [11/17] RUN find /opt/formal-conjectures/.lake/packages -path '*/.lake/config/*' -type d -exec chmod 1777 {} +
+#11 CACHED
+
+#12 [ 2/17] RUN apt-get update && apt-get install -y     bash     ca-certificates     curl     git     python3     unzip     xz-utils   && rm -rf /var/lib/apt/lists/*
+#12 CACHED
+
+#13 [ 5/17] RUN git clone https://github.com/google-deepmind/formal-conjectures.git /opt/formal-conjectures &&     git -C /opt/formal-conjectures checkout "233a10e857ef78e79fd9fe661d37db724089170a" &&     cd /opt/formal-conjectures &&     lake exe cache get &&     lake build FormalConjectures.Util.ProblemImports &&     find /opt/formal-conjectures -type d -name .git -prune -exec rm -rf {} + &&     rm -rf /root/.cache /tmp/*
+#13 CACHED
+
+#14 [10/17] RUN mkdir -p /opt/formal-conjectures-bench-dependency-config   && cd /opt/formal-conjectures   && find .lake/packages -path '*/.lake/config/*/lakefile.olean*' -type f     -exec cp --parents {} /opt/formal-conjectures-bench-dependency-config/ ;   && chown -R root:root /opt/formal-conjectures-bench-dependency-config   && chmod -R go-w /opt/formal-conjectures-bench-dependency-config
+#14 CACHED
+
+#15 [ 3/17] RUN curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh |     sh -s -- -y --default-toolchain none &&     chmod -R a+rX /opt/elan
+#15 CACHED
+
+#16 [14/17] COPY data/ /app/
+#16 CACHED
+
+#17 [ 4/17] WORKDIR /opt
+#17 CACHED
+
+#18 [12/17] RUN find /opt/formal-conjectures/.lake/packages -path '*/.lake/config/*/lakefile.olean*' -type f -exec chown ubuntu:ubuntu {} +   && find /opt/formal-conjectures/.lake/packages -path '*/.lake/config/*/lakefile.olean*' -type f -exec chmod 666 {} +
+#18 CACHED
+
+#19 [16/17] WORKDIR /app
+#19 CACHED
+
+#20 [13/17] WORKDIR /app
+#20 CACHED
+
+#21 [ 6/17] RUN id -u ubuntu >/dev/null 2>&1 || useradd -ms /bin/bash ubuntu
+#21 CACHED
+
+#22 [17/17] RUN lake build +FormalConjecturesBench.Target
+#22 CACHED
+
+#23 exporting to image
+#23 exporting layers done
+#23 exporting manifest sha256:8e38923cf82dc0ec404330636121b95a2942874273beb6895f1e5f8cfc8614f0 done
+#23 exporting config sha256:c2022f686539a99a66b0876ec3c577daa3ba7666d86fe1a62d939260f3872526 done
+#23 exporting attestation manifest sha256:76428dca2a48878bdf5926bb125b87baa5c1d1c5f9bee2b12b681155868f5bfe 0.0s done
+#23 exporting manifest list sha256:28f4cb94a852dde615924133268b1a8870286d1ae331a89b6a7dab4c43ae74f3
+#23 exporting manifest list sha256:28f4cb94a852dde615924133268b1a8870286d1ae331a89b6a7dab4c43ae74f3 done
+#23 naming to docker.io/library/erdosproblems-126-erdos-126-refu__4jtwjyo__env-main:latest done
+#23 unpacking to docker.io/library/erdosproblems-126-erdos-126-refu__4jtwjyo__env-main:latest done
+#23 DONE 0.1s
+
+#24 resolving provenance for metadata file
+#24 DONE 0.0s
+ erdosproblems-126-erdos-126-refu__4jtwjyo__env-main  Built
+ Network erdosproblems-126-erdos-126-refu__4jtwjyo__env_default  Creating
+ Network erdosproblems-126-erdos-126-refu__4jtwjyo__env_default  Error
+failed to create network erdosproblems-126-erdos-126-refu__4jtwjyo__env_default: Error response from daemon: all predefined address pools have been fully subnetted
+. Stderr: None. 
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 824, in _download_role_logs
+    await self.agent_environment.download_dir(
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 1308, in download_dir
+    await self._platform.download_dir(source_dir, target_dir)
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker_unix.py", line 304, in download_dir
+    await self._download_via_engine_cp(f"{source_dir}/.", target_dir, service)
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker_unix.py", line 251, in _download_via_engine_cp
+    container = await self._resolve_service_container(service)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker_unix.py", line 230, in _resolve_service_container
+    raise RuntimeError(
+RuntimeError: Could not resolve container for compose service 'main' in project 'erdosproblems-126-erdos-126-refu__4jtwjyo__env'.
+Collecting main service artifacts
+compose cp failed; retrying download with engine cp: Docker compose command failed for environment erdosproblems-126-erdos-126-refute. Command: docker compose --project-name erdosproblems-126-erdos-126-refu__4jtwjyo__env --project-directory /root/FormalConjectures-Bench/tasks-v3/erdosproblems-126-erdos-126-refute/environment -f /tmp/tmpxa9lxis5/erdosproblems-126-erdos-126-refu__4jtwJYo__env-docker-compose-resources.json -f /root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /tmp/tmp1frd34p8/docker-compose-environment.json -f /tmp/tmpxsxk851g/docker-compose-mounts.json cp main:/logs/artifacts /tmp/erdos126-refute-harbor/erdos126-refute-final-20261104/erdosproblems-126-erdos-126-refu__4jtwJYo/artifacts/logs/artifacts. Return code: 1. Stdout: no container found for service "main"
+. Stderr: None. 
+Failed to download artifact '/logs/artifacts' from service 'main' (best-effort)
+Traceback (most recent call last):
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 606, in run
+    await self._prepare()
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 645, in _prepare
+    await self._setup_agent_environment()
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 1849, in _setup_agent_environment
+    await self._start_agent_environment()
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 1855, in _start_agent_environment
+    await asyncio.wait_for(
+  File "/usr/lib/python3.12/asyncio/tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 1091, in start
+    await self._run_docker_compose_command(["up", *runtime.up_args])
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 765, in _run_docker_compose_command
+    raise RuntimeError(
+RuntimeError: Docker compose command failed for environment erdosproblems-126-erdos-126-refute. Command: docker compose --project-name erdosproblems-126-erdos-126-refu__4jtwjyo__env --project-directory /root/FormalConjectures-Bench/tasks-v3/erdosproblems-126-erdos-126-refute/environment -f /tmp/tmpxa9lxis5/erdosproblems-126-erdos-126-refu__4jtwJYo__env-docker-compose-resources.json -f /root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /tmp/tmp1frd34p8/docker-compose-environment.json -f /tmp/tmpxsxk851g/docker-compose-mounts.json up --detach --wait. Return code: 1. Stdout: #1 [internal] load local bake definitions
+#1 reading from stdin 693B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 3.34kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [ 1/17] FROM docker.io/library/ubuntu:24.04@sha256:fe81560990fae86dc4743202b2cb4d3df98d0bcf949173cecef15ce1127ef852
+#5 resolve docker.io/library/ubuntu:24.04@sha256:fe81560990fae86dc4743202b2cb4d3df98d0bcf949173cecef15ce1127ef852 done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 1.58kB done
+#6 DONE 0.0s
+
+#7 [ 9/17] RUN chmod go-w     /opt/formal-conjectures     /opt/formal-conjectures/.lake     /opt/formal-conjectures/.lake/packages
+#7 CACHED
+
+#8 [15/17] RUN mkdir -p /opt/formal-conjectures-bench-checker   && cp -a /app/checker/. /opt/formal-conjectures-bench-checker/   && rm -rf /app/checker   && find /opt/formal-conjectures-bench-checker -type d -name __pycache__ -prune -exec rm -rf {} +   && mkdir -p /app/.lake   && ln -s /opt/formal-conjectures/.lake/packages /app/.lake/packages   && chown -R root:root /app /opt/formal-conjectures-bench-checker   && chmod -R go-w /app /opt/formal-conjectures-bench-checker   && chmod 755 /app/check.sh   && chown ubuntu:ubuntu /app/.lake   && chown -R ubuntu:ubuntu /app/FormalConjecturesBench   && chown -h ubuntu:ubuntu /app/.lake/packages
+#8 CACHED
+
+#9 [ 7/17] RUN apt-get update && apt-get install -y     asciinema     ripgrep     tmux   && rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [ 8/17] RUN find /opt/formal-conjectures/FormalConjectures -maxdepth 1 -type d -name '*Problems' -prune -exec rm -rf {} +
+#10 CACHED
+
+#11 [11/17] RUN find /opt/formal-conjectures/.lake/packages -path '*/.lake/config/*' -type d -exec chmod 1777 {} +
+#11 CACHED
+
+#12 [ 2/17] RUN apt-get update && apt-get install -y     bash     ca-certificates     curl     git     python3     unzip     xz-utils   && rm -rf /var/lib/apt/lists/*
+#12 CACHED
+
+#13 [ 5/17] RUN git clone https://github.com/google-deepmind/formal-conjectures.git /opt/formal-conjectures &&     git -C /opt/formal-conjectures checkout "233a10e857ef78e79fd9fe661d37db724089170a" &&     cd /opt/formal-conjectures &&     lake exe cache get &&     lake build FormalConjectures.Util.ProblemImports &&     find /opt/formal-conjectures -type d -name .git -prune -exec rm -rf {} + &&     rm -rf /root/.cache /tmp/*
+#13 CACHED
+
+#14 [10/17] RUN mkdir -p /opt/formal-conjectures-bench-dependency-config   && cd /opt/formal-conjectures   && find .lake/packages -path '*/.lake/config/*/lakefile.olean*' -type f     -exec cp --parents {} /opt/formal-conjectures-bench-dependency-config/ ;   && chown -R root:root /opt/formal-conjectures-bench-dependency-config   && chmod -R go-w /opt/formal-conjectures-bench-dependency-config
+#14 CACHED
+
+#15 [ 3/17] RUN curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh |     sh -s -- -y --default-toolchain none &&     chmod -R a+rX /opt/elan
+#15 CACHED
+
+#16 [14/17] COPY data/ /app/
+#16 CACHED
+
+#17 [ 4/17] WORKDIR /opt
+#17 CACHED
+
+#18 [12/17] RUN find /opt/formal-conjectures/.lake/packages -path '*/.lake/config/*/lakefile.olean*' -type f -exec chown ubuntu:ubuntu {} +   && find /opt/formal-conjectures/.lake/packages -path '*/.lake/config/*/lakefile.olean*' -type f -exec chmod 666 {} +
+#18 CACHED
+
+#19 [16/17] WORKDIR /app
+#19 CACHED
+
+#20 [13/17] WORKDIR /app
+#20 CACHED
+
+#21 [ 6/17] RUN id -u ubuntu >/dev/null 2>&1 || useradd -ms /bin/bash ubuntu
+#21 CACHED
+
+#22 [17/17] RUN lake build +FormalConjecturesBench.Target
+#22 CACHED
+
+#23 exporting to image
+#23 exporting layers done
+#23 exporting manifest sha256:8e38923cf82dc0ec404330636121b95a2942874273beb6895f1e5f8cfc8614f0 done
+#23 exporting config sha256:c2022f686539a99a66b0876ec3c577daa3ba7666d86fe1a62d939260f3872526 done
+#23 exporting attestation manifest sha256:76428dca2a48878bdf5926bb125b87baa5c1d1c5f9bee2b12b681155868f5bfe 0.0s done
+#23 exporting manifest list sha256:28f4cb94a852dde615924133268b1a8870286d1ae331a89b6a7dab4c43ae74f3
+#23 exporting manifest list sha256:28f4cb94a852dde615924133268b1a8870286d1ae331a89b6a7dab4c43ae74f3 done
+#23 naming to docker.io/library/erdosproblems-126-erdos-126-refu__4jtwjyo__env-main:latest done
+#23 unpacking to docker.io/library/erdosproblems-126-erdos-126-refu__4jtwjyo__env-main:latest done
+#23 DONE 0.1s
+
+#24 resolving provenance for metadata file
+#24 DONE 0.0s
+ erdosproblems-126-erdos-126-refu__4jtwjyo__env-main  Built
+ Network erdosproblems-126-erdos-126-refu__4jtwjyo__env_default  Creating
+ Network erdosproblems-126-erdos-126-refu__4jtwjyo__env_default  Error
+failed to create network erdosproblems-126-erdos-126-refu__4jtwjyo__env_default: Error response from daemon: all predefined address pools have been fully subnetted
+. Stderr: None. 
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/artifact_handler.py", line 351, in _download_artifact
+    await source_env.service_download_file(
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 1319, in service_download_file
+    await self.download_file(source_path, target_path)
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 1304, in download_file
+    await self._platform.download_file(source_path, target_path)
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker_unix.py", line 278, in download_file
+    await self._download_via_engine_cp(source_path, target_path, service)
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker_unix.py", line 251, in _download_via_engine_cp
+    container = await self._resolve_service_container(service)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker_unix.py", line 230, in _resolve_service_container
+    raise RuntimeError(
+RuntimeError: Could not resolve container for compose service 'main' in project 'erdosproblems-126-erdos-126-refu__4jtwjyo__env'.

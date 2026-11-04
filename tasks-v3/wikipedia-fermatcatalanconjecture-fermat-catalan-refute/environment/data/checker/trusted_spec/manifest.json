@@ -1,0 +1,40 @@
+{
+  "task_id": "wikipedia-fermatcatalanconjecture-fermat-catalan-refute",
+  "target_name": "FermatCatalanConjecture.formal_conjectures_bench_refutation",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "edb3463fea95bf84b2d87a2025b3e89fb43cd3614e3f91abef3894a4dffd87b1",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "bf33cddb1ff86e566e6f8721246db39bbb2e9005a23ab44300143e7f59f2462a",
+    "FCBTrustedSpec.ilean": "62ad9ffe5f1c48f333cc2b4572104b80468d3b84c73a5e5176f235fe6b392d13",
+    "FCBTrustedSpec.lean": "2cf2581457cf09c1918f1128b709ae1d55e6b11711f8804f69844ba13944cc0f",
+    "FCBTrustedSpec.olean": "749048cebab8e4b3600eec1b8b64d216dbdcb52a84bc41037e2c5280117a7ee4",
+    "audit.log": "8d23c336d5320588ebfd484b5b8b357ac0a2cbeaf4454551386c652dc816e403",
+    "generate.py": "3b2a8fb02d230ad53abb29e9ba3445241ab0913b304ce5995e954cc4d5fa2e0a",
+    "reproduce.sh": "683530a9e9411c16b12ee930d70676356317d9c7dd67aeb22a0f6d5851d70d2d"
+  },
+  "generation_image": "sha256:8246c151b03577bd99879d2ea68bfa4d23acc7dc3bc29f4983382b96cfb76f83",
+  "generation_command": "docker build -t fcb-fermat-refute-spec:nt40-20261104 environment; docker run -d --network none --name fcb-fermat-refute-spec-nt40-20261104 fcb-fermat-refute-spec:nt40-20261104 sleep infinity; docker cp tests/trusted_spec and tests/golden_env to /tmp/fcb-fermat-refute-generation; docker exec -u root fcb-fermat-refute-spec-nt40-20261104 bash /tmp/fcb-fermat-refute-generation/trusted_spec/reproduce.sh",
+  "audit": "Independent import checks definition value is Not applied to the original fermatCatalanConjecture, zero syntactic forall binders and zero universe parameters. All prefix definitions transitively use only propext, Classical.choice, Quot.sound. Temporary target elaborated in a restored environment and not exported; no candidate sources, Lake config or caches loaded."
+}

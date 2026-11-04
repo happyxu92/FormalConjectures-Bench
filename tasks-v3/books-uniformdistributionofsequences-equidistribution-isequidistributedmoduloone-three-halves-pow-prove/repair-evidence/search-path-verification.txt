@@ -1,0 +1,4 @@
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Analysis/Asymptotics/AsymptoticEquivalent.lean
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Analysis/AbsoluteValue/Equivalence.lean
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Topology/Algebra/Valued/WithVal.lean
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/RingTheory/Valuation/Basic.lean

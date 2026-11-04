@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-17-erdos-17-prove",
+  "mode": "auto_repair",
+  "status": "passed",
+  "case": "no_issue",
+  "has_problem": false,
+  "has_unicode_issue": false,
+  "repair_attempted": false,
+  "repair_success": null,
+  "modified": false,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "97f60105a9bed5466dfad767b3028a86af037b58a488e9a273b79a0247cf1b09",
+      "header_before": "theorem erdos_17 : {p : \u2115 | IsClusterPrime p}.Infinite",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem erdos_17 : {p : \u2115 | IsClusterPrime p}.Infinite",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "97f60105a9bed5466dfad767b3028a86af037b58a488e9a273b79a0247cf1b09",
+      "header_after": "theorem erdos_17 : {p : \u2115 | IsClusterPrime p}.Infinite"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "97f60105a9bed5466dfad767b3028a86af037b58a488e9a273b79a0247cf1b09",
+      "header_before": "theorem erdos_17 : {p : \u2115 | IsClusterPrime p}.Infinite",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem erdos_17 : {p : \u2115 | IsClusterPrime p}.Infinite",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "97f60105a9bed5466dfad767b3028a86af037b58a488e9a273b79a0247cf1b09",
+      "header_after": "theorem erdos_17 : {p : \u2115 | IsClusterPrime p}.Infinite"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "11ef8eea20c17edaedc03e851ea3a79e49ea64f42dea78fc96ebced070d44be5"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "11ef8eea20c17edaedc03e851ea3a79e49ea64f42dea78fc96ebced070d44be5"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "11ef8eea20c17edaedc03e851ea3a79e49ea64f42dea78fc96ebced070d44be5"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 0
+}

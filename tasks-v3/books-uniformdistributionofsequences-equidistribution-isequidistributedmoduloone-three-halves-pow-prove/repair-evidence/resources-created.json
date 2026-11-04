@@ -1,0 +1,74 @@
+[
+  {
+    "container_name": "fcb-three-halves-prove-spec-20261104",
+    "container_id": "9da298b4a5b59e5b821f62d7cd2064e4d1aadb1d93db92eac8e40d36c0573879",
+    "container_status": "running",
+    "image_tag": "fcb-three-halves-prove:spec-stage-20261104",
+    "image_id": "sha256:88c4cd7a1c6d1a67a0fb169fdb1436740abaef6a2249273488341a2b84cad107",
+    "image_tags": [
+      "fcb-three-halves-prove:spec-stage-20261104"
+    ],
+    "network_name": null,
+    "network_id": null
+  },
+  {
+    "container_name": "books-uniformdistributionofseque__jxkugxe__env-main-1",
+    "container_id": null,
+    "container_status": "already_absent_or_never_created",
+    "image_tag": "books-uniformdistributionofseque__jxkugxe__env-main:latest",
+    "image_id": "sha256:6ecdfa3713cfb830bd0c611030b6b21cf8fd7f66ea4bfaa3492cefe67f084908",
+    "image_tags": [
+      "books-uniformdistributionofseque__jxkugxe__env-main:latest"
+    ],
+    "network_name": "books-uniformdistributionofseque__jxkugxe__env_default",
+    "network_id": null
+  },
+  {
+    "container_name": "books-uniformdistributionofseque__pnwyqay__env-main-1",
+    "container_id": null,
+    "container_status": "already_absent_or_never_created",
+    "image_tag": "books-uniformdistributionofseque__pnwyqay__env-main:latest",
+    "image_id": "sha256:0151fd1d500e5d9632119d44907414d96bc697101ef65cd7c336a40960b40a2c",
+    "image_tags": [
+      "books-uniformdistributionofseque__pnwyqay__env-main:latest"
+    ],
+    "network_name": "books-uniformdistributionofseque__pnwyqay__env_default",
+    "network_id": null
+  },
+  {
+    "container_name": "books-uniformdistributionofseque__lfj2uzy__env-main-1",
+    "container_id": "3062db3e41c1f05b6b1eba5f3b0641c1fe255cb5a7bc81e3bf779f40025affcb",
+    "container_status": "running",
+    "image_tag": "books-uniformdistributionofseque__lfj2uzy__env-main:latest",
+    "image_id": "sha256:8be9f2e283710472a2d455767fc09512cf765d34b03bc419af637884f9232b63",
+    "image_tags": [
+      "books-uniformdistributionofseque__lfj2uzy__env-main:latest"
+    ],
+    "network_name": "books-uniformdistributionofseque__lfj2uzy__env_default",
+    "network_id": "9dbfce7b28f56176c859d5fa17a2336e8f5198b0cc6165819ae9d3ba079bc1d0"
+  },
+  {
+    "container_name": "books-uniformdistributionofseque__bgda8mf__env-main-1",
+    "container_id": null,
+    "container_status": "already_absent_or_never_created",
+    "image_tag": "books-uniformdistributionofseque__bgda8mf__env-main:latest",
+    "image_id": "sha256:d9c181d4dc83d87fe98d74565db3efbb1a33b80695a8a0df2c364ef32227a0ed",
+    "image_tags": [
+      "books-uniformdistributionofseque__bgda8mf__env-main:latest"
+    ],
+    "network_name": "books-uniformdistributionofseque__bgda8mf__env_default",
+    "network_id": null
+  },
+  {
+    "container_name": "books-uniformdistributionofseque__gml2pay__env-main-1",
+    "container_id": "70b82fb568255449e6b0bfd43ffe69f7bc1ab31a6b67ca386aa6d233ee5ccb31",
+    "container_status": "running",
+    "image_tag": "books-uniformdistributionofseque__gml2pay__env-main:latest",
+    "image_id": "sha256:65f696c13f3668c4307da778909bfe70b8d81b22b9aeab43d00cf58c21c00a23",
+    "image_tags": [
+      "books-uniformdistributionofseque__gml2pay__env-main:latest"
+    ],
+    "network_name": "books-uniformdistributionofseque__gml2pay__env_default",
+    "network_id": "f43d862ab4b6431046c30a65222878e6e7b3a270ab9c80c42facbe701db81f7a"
+  }
+]

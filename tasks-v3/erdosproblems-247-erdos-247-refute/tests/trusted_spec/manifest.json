@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-247-erdos-247-refute",
+  "target_name": "Erdos247.formal_conjectures_bench_refutation",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "33ad08a2c9b474b2ccfc5b93098ab1c7b7ade4b5230364cbb185b8f4a6513e5f",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "44165568492c8fbf5ebaba5082135fc7ed61706286700d619901ab2500233642",
+    "FCBTrustedSpec.ilean": "d3ae2739f301c186ae6199655c5ddfdf938bf93a1de8ca06782e56f2ef460fe8",
+    "FCBTrustedSpec.lean": "d27eb008ee9499a81e0d6781dbcd108a349af02e7328bc0e152dd7aa6f91bb32",
+    "FCBTrustedSpec.olean": "3d2324155e6149a6c919722add7dbba7d9aef512978e79f7e2469a7c75933734",
+    "audit.log": "d3826713574d3f1189f624d2a29bb119e37ce5d41d4b343402a32fcdd85be6c1",
+    "generate.py": "8b85ff6ef4a171660a740da7aa4575e28cf5cbbc773ed915fb7dec27bd42787c",
+    "reproduce.sh": "f42c69b0142542c0bc1a5f35b517de0c7a03ebbc81f13b8b7863dadf07f29b18"
+  },
+  "generation_image": "sha256:de90f7b7ee6a28936009417ce63a5c6567c8097d3f4167c68de18cfdfda25be6",
+  "generation_command": "docker build -t fcb-247-refute:spec-20261104 -f environment/Dockerfile environment; docker run -d --network none --name fcb-247-refute-spec-20261104 fcb-247-refute:spec-20261104 sleep infinity; docker cp tests/. fcb-247-refute-spec-20261104:/tmp/247refute-bundle/; docker exec -u root fcb-247-refute-spec-20261104 bash /tmp/247refute-bundle/trusted_spec/reproduce.sh",
+  "audit": "Independent import; ExpectedType value is complete negated universally quantified proposition, with zero universe parameters; no temporary theorem or children exported; transitive axiom audit allows only propext, Classical.choice, Quot.sound. No task-local prefix definitions exist."
+}

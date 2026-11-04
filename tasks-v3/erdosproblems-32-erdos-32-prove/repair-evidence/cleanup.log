@@ -1,0 +1,31 @@
+Cleanup only explicitly recorded fcb32-prove resources
+fa6e01820cc8
+4e8f67347c23
+fa6e01820cc8
+4e8f67347c23
+Untagged: erdosproblems-32-erdos-32-prove__pl7dp6g__env-main:latest
+Deleted: sha256:3a71217994f3e14b70b778e7f6a78eafe97deea0c82e99c973c765b2025afe14
+Untagged: erdosproblems-32-erdos-32-prove__poujttk__env-main:latest
+Deleted: sha256:0eecf50d571f2e371443f4d3d7fc636fc8ec1ef59ab87cb8e705068526f54ff3
+Untagged: erdosproblems-32-erdos-32-prove__sc9hhtx__env-main:latest
+Deleted: sha256:4b232a2053f2d1c38cefdee8c10a3d84c5f44a1eaf9fb01e1f9af6a3806d2a39
+aa63bd2ff0cb7bf4539103fd9b003c9c0cbc1f6b5b22255b3fb501fbfd88d6d4 erdosproblems-32-erdos-32-prove__sc9hhtx__env_default {"com.docker.compose.config-hash":"9c863d922589f52a8697c8941681485a89b70185827d837489551a76b85f3afb","com.docker.compose.network":"default","com.docker.compose.project":"erdosproblems-32-erdos-32-prove__sc9hhtx__env","com.docker.compose.version":"2.40.3"}
+erdosproblems-32-erdos-32-prove__sc9hhtx__env_default
+Verify recorded containers absent:
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+Verify recorded images absent (inspect exit 1 expected):
+
+Error response from daemon: No such image: sha256:3a71217994f3e14b70b778e7f6a78eafe97deea0c82e99c973c765b2025afe14
+inspect_exit=1 id=3a71217994f3e14b70b778e7f6a78eafe97deea0c82e99c973c765b2025afe14
+
+Error response from daemon: No such image: sha256:0eecf50d571f2e371443f4d3d7fc636fc8ec1ef59ab87cb8e705068526f54ff3
+inspect_exit=1 id=0eecf50d571f2e371443f4d3d7fc636fc8ec1ef59ab87cb8e705068526f54ff3
+
+Error response from daemon: No such image: sha256:4b232a2053f2d1c38cefdee8c10a3d84c5f44a1eaf9fb01e1f9af6a3806d2a39
+inspect_exit=1 id=4b232a2053f2d1c38cefdee8c10a3d84c5f44a1eaf9fb01e1f9af6a3806d2a39
+Shared generation base retained:
+sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a
+
+Error response from daemon: network aa63bd2ff0cb not found
+network_inspect_exit=1 (expected 1)
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES

@@ -1,0 +1,19 @@
+{
+    "task": {
+        "path": "/root/FormalConjectures-Bench/tasks-v3/greensopenproblems-2-green-2-refute"
+    },
+    "trial_name": "greensopenproblems-2-green-2-ref__i34EmTi",
+    "trials_dir": "/tmp/green2refute-harbor/green2-refute-accept-20261104",
+    "agent": {
+        "name": "nop"
+    },
+    "environment": {
+        "type": "docker",
+        "force_build": true,
+        "delete": false,
+        "kwargs": {
+            "docker_image_name": "green2-refute-accept-20261104"
+        }
+    },
+    "job_id": "e0b82522-d0f8-4eda-a8f6-48a4a826a937"
+}

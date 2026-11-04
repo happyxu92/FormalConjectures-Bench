@@ -1,0 +1,6 @@
+networks:
+  default:
+    name: fcb-gauss-refute-nt40-20261104
+    ipam:
+      config:
+        - subnet: 10.253.245.0/28

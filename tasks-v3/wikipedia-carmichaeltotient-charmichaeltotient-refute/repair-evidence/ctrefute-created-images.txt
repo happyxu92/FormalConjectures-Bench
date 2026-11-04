@@ -1,0 +1,5 @@
+sha256:8fbc99a480ceaec8763eac09f04703fd812cec18e15d0cb4379bc7a7cf3a4f02 ["fcb-ctrefute-spec:20261104"]
+sha256:733ec32f8fc64fab72ec452377fd4b100ae947a801c9e0685cede3258ad70502 ["fcb-ctrefute-accept-20261104__env-main:latest"]
+sha256:ceccb8f0175c56f4440d910fdb6cac8cf2ef9ee2e50cbe3c4bfbc459d0c123e1 ["fcb-ctrefute-accept2-20261104__env-main:latest"]
+sha256:e9798d72d1c99806ddfb254506d230765c4779d578f67b67e956d566fa34ff8b ["fcb-ctrefute-keep-20261104__env-main:latest"]
+sha256:25c7ddd08bef61309de840efd37e0a4b1d8d035c26ea8db2e4cd56276bedb502 ["fcb-ctrefute-final-20261104__env-main:latest"]

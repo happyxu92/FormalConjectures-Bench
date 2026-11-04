@@ -1,0 +1,9 @@
+FCBTrustedSpec.lean:53:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:69:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Nat.Perfect: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ), n.Perfect → Even n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

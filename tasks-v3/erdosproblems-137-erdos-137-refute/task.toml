@@ -8,6 +8,11 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+statement_status_note = "Refutation direction: equivalent classically to existence of a powerful product of k >= 3 consecutive positive naturals. Pinned upstream and Nat.Full/Powerful definitions checked; no evident statement defect. Open status alone is not a mismatch. Mathematical inputs unchanged."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID absent from skill CSV. Multiple online searches and upstream/current Lean, Hughes conditional Finiteness source, formal-conjectures issue 372 and TheoremDB checked. No complete proof of this existential/refutation direction located; conditional finiteness and k=2 examples do not qualify. Final branch/fork/PR follow-up blocked by GitHub API rate limits; constellate DNS failure and erdosproblems 403. See repair-evidence/research.md. No proof installed."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/137.lean"

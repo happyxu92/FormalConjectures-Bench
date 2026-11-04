@@ -1,0 +1,43 @@
+{
+  "containers": [
+    {
+      "id": "f62b177bf95d0e81f05f7840951929897812026d02716891a9ac8d944cae68c5",
+      "name": "/fcb-carmichael-prove-spec-20261104",
+      "image": "sha256:257e2c7b8a9602fa785193d0321a59663019f2753979a6c5ac69a27abb5d111a"
+    },
+    {
+      "id": "0ddb88249da698865a3152429840444e13fbb29418323f5f47da7379cab99b31",
+      "name": "/fcb-carmichael-prove-spec2-20261104",
+      "image": "sha256:257e2c7b8a9602fa785193d0321a59663019f2753979a6c5ac69a27abb5d111a"
+    },
+    {
+      "id": "b6d28e4fe769b05530703d079b66f24fb210f1f125445b0624add3949363e2fa",
+      "name": "/wikipedia-carmichaeltotient-char__p9kcfm7__env-main-1",
+      "image": "sha256:d619bc3d04745a7a4e14294a2a9b9562eb5aea9b9fa248e1d5dfd8521b1ddb1d"
+    }
+  ],
+  "images": [
+    {
+      "tag": "fcb-carmichael-prove-spec:20261104",
+      "id": "sha256:257e2c7b8a9602fa785193d0321a59663019f2753979a6c5ac69a27abb5d111a"
+    },
+    {
+      "tag": "wikipedia-carmichaeltotient-char__hsxkpa4__env-main:latest",
+      "id": "sha256:5ae93538a75fd9706d6d4445dcc3d011cd1291f6f1e2c302a7181c98a2bfb343"
+    },
+    {
+      "tag": "wikipedia-carmichaeltotient-char__czdtvst__env-main:latest",
+      "id": "sha256:d70ada2b258b9df483693b293ac6b94ddedeeddd5309bb80620146b556f4c75d"
+    },
+    {
+      "tag": "wikipedia-carmichaeltotient-char__p9kcfm7__env-main:latest",
+      "id": "sha256:d619bc3d04745a7a4e14294a2a9b9562eb5aea9b9fa248e1d5dfd8521b1ddb1d"
+    }
+  ],
+  "networks": [
+    {
+      "name": "wikipedia-carmichaeltotient-char__p9kcfm7__env_default",
+      "id": "9903a5988d60370915cbe5b6ed00b78bd9087c35d30a1f2610f4e4d05308f0f8"
+    }
+  ]
+}

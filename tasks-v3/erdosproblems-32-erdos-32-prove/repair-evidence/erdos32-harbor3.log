@@ -1,0 +1,22 @@
+  1/1 Mean: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:00:15 0:00:00
+adhoc • nop
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 0.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 15s
+Results written to 
+/tmp/fcb32-prove-harbor/fcb32-prove-accept3-20261104/result.json
+Inspect results by running `harbor view /tmp/fcb32-prove-harbor`
+Share results by running `harbor upload 
+/tmp/fcb32-prove-harbor/fcb32-prove-accept3-20261104`
+

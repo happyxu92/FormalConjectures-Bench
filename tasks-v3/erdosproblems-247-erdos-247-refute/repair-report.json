@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-247-erdos-247-refute",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已补显式 .lake/packages 搜索路径；最终 Harbor 容器以 ubuntu 执行三路径 rg，命中 package 定义，退出 0。见 repair-evidence/accept-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；原 Dockerfile 缺普通用户末尾构建验收，已在 USER ubuntu 后添加 RUN lake build +FormalConjecturesBench.Target，本地 Docker 与当前 task Harbor 构建通过，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整运行技能 check_unicode_header.py，exit 0、case=no_issue；两份头、原始头和负例检查通过。见 repair-evidence/unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从原 golden 无候选环境提前提取完整类型，预编译并独立审计 Spec；零 universe 参数，无临时 theorem 导出或 sorryAx 依赖，两份包及 checker 一致。固定清单 SHA256 14819cc509b08b773c8427b7f1b07ae89e69a4e505cdb16a84cd557680e289c9；Lean 4.27.0/x86_64，输入/产物/依赖哈希见包清单。最终本地 Harbor 镜像 sha256:3afa52552535260f8855308cb4f3a5cea78012a0eccdb66a68de55faaeb1da0f，容器 19efd808f0ae；正式 /tests 与 ubuntu 本地 /opt 入口均实际运行，原 sorry 预期 exit 1/reward 0。两路径同容器补测均 exit 0，实际覆盖可信加载/类型审计、ubuntu 编译、完整类型比较、sorryAx 拒绝、canary、冻结及越界负例、语义遮蔽类型拒绝、同名缓存与缺失/损坏产物拒绝。33 项容器哈希和 AST 检查通过。Docker 默认地址池耗尽已用本题独立子网解决。详细命令/日志见 repair-evidence/validation.md；报告落盘后已清理本题 3 个容器（15e09eb1a14e、31c2084f7c20、19efd808f0ae）、5 个镜像/tag 及 2 个专用网络，逐项 ps/image inspect 核验均不存在；其余 Harbor 临时容器已自动回收，无遗留本题资源。详见 repair-evidence/resources.json、cleanup.json；未动既有或共享资源/缓存。未提供原题证明，未扩展通用安全范围。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已完整读取 pinned 上游及来源转录；当前任务准确否定 erdos_247 的全称 RHS，并非 stronger_condition 变体。EReal 除法、k+1 索引、自然数域及可求和性未见明显缺陷；开放方向不据此判错。task.toml 标 consistent，不代表已知反命题成立。未改数学输入。来源和受限访问见 repair-evidence/research.md。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "精确 task ID 未命中技能 CSV，已多组联网检索当前反方向，读取 upstream/main、PR #2540/#3065、Jig 实际 Lean 源及 registry 线索；仅发现 sorry 骨架、较强正向变体/属性更改、可求和/增长见证或无关 #206，未核实完整反向证明。官方题目及讨论页 HTTP 403，另有研究仓库线索 404，故保守标 public_lean4_proof=unknown/status=blocked，不能断言 false。检索词、URL、排除原因详见 repair-evidence/research.md；未放入公开答案。"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+Both uploaded/preinstalled checker, golden and Spec packages match
+Loaded fixed precompiled Spec: /opt/formal-conjectures-bench-checker/trusted_spec
+audited full value and transitive dependencies: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ k ≥ 3, ∀ (n : ℕ), ¬(∏ x ∈ Finset.Ioc n (n + k), x).Powerful
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for Erdos137.formal_conjectures_bench_refutation: ['sorryAx']
+'Erdos137.formal_conjectures_bench_refutation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+EXPECTED REJECTION: placeholder target axiom audit
+sorry canary detected sorryAx
+audited full value and transitive dependencies: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ k ≥ 3, ∀ (n : ℕ), ¬(∏ x ∈ Finset.Ioc n (n + k), x).Powerful
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Complete theorem type matches trusted Spec
+Candidate same-name module, Lake cache and environment cannot shadow Spec
+Code above the benchmark target marker changed
+EXPECTED REJECTION: changed frozen prefix
+EXPECTED REJECTION: changed theorem header
+Target theorem header changed
+Target theorem no longer has a proof assignment
+EXPECTED REJECTION: missing assignment
+Banned Lean feature found in proof region at line 1: \bsorry\b
+EXPECTED REJECTION: source rule sorry
+Banned Lean feature found in proof region at line 1: (?m)^\s*(?:private\s+|protected\s+)?axiom\b
+EXPECTED REJECTION: source rule axiom bad : False
+EXPECTED REJECTION: source rule unsafe def bad := 0
+Banned Lean feature found in proof region at line 1: \bunsafe\b
+Banned Lean feature found in proof region at line 1: (?m)^\s*(?:local\s+|scoped\s+)?notation\b
+EXPECTED REJECTION: source rule notation "bad" => True
+Unexpected added Lean source outside editable subtree: Outside.lean
+EXPECTED REJECTION: out-of-bounds Lean source
+Unexpected non-Lean file in editable source tree: FormalConjecturesBench/extra.txt
+EXPECTED REJECTION: non-Lean editable file
+Candidate compiled as ubuntu with fixed import paths
+Lean audit command failed
+/tmp/formal_conjectures_bench_5z_vbw0b/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Erdos137.formal_conjectures_bench_refutation
+has type
+  ¬∀ k ≥ 3, ∀ (n : ℕ), ¬(∏ x ∈ Finset.Ioc n (n + k), x).Powerful
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+EXPECTED REJECTION: unchanged frozen text with instance-shadowed target type
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+EXPECTED REJECTION: missing precompiled artifact
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+EXPECTED REJECTION: corrupt precompiled artifact
+ALL SUPPLEMENTAL PATHS PASSED

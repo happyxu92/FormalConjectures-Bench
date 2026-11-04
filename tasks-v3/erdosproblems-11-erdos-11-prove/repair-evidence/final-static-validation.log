@@ -1,0 +1,1 @@
+PASS: fixed report JSON schema/value checks; both checker ASTs; identical checkers and trusted packages; manifest artifact/golden hashes; protected Target/golden/GoldenCheck unchanged; task TOML parsed.

@@ -1,0 +1,17 @@
+{
+  "environment/data/FormalConjecturesBench/Target.lean": "b6741577e37774d69c76dec7b869a52fab2f85c5925508645ef4df3b15678688",
+  "tests/golden_env/FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+  "tests/golden_env/lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb",
+  "tests/golden_env/lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+  "tests/golden_env/lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+  "tests/golden_env/FormalConjecturesBench/Target.lean": "b6741577e37774d69c76dec7b869a52fab2f85c5925508645ef4df3b15678688",
+  "tests/golden_env/FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+  "environment/data/checker/golden_env/FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+  "environment/data/checker/golden_env/lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb",
+  "environment/data/checker/golden_env/lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+  "environment/data/checker/golden_env/lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+  "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean": "b6741577e37774d69c76dec7b869a52fab2f85c5925508645ef4df3b15678688",
+  "environment/data/checker/golden_env/FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+  "tests/GoldenCheck.lean": "0e7800df86f986de9894d50a48d552a2b5d2621c2846b35a3134c2d5a74d901b",
+  "environment/data/checker/GoldenCheck.lean": "0e7800df86f986de9894d50a48d552a2b5d2621c2846b35a3134c2d5a74d901b"
+}

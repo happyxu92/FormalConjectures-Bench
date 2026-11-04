@@ -73,3 +73,6 @@ RUN mkdir -p /opt/formal-conjectures-bench-checker \
 WORKDIR /app
 ENV HOME=/home/ubuntu
 USER ubuntu
+
+# Exercise the checker build as its unprivileged runtime user.
+RUN lake build +FormalConjecturesBench.Target

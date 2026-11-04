@@ -1,0 +1,6 @@
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited ExpectedType and all transitive dependencies: [propext]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ), Odd n → 1 < n → ∃ k l, Squarefree k ∧ n = k + 2 ^ l
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]

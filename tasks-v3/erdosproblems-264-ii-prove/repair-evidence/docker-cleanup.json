@@ -1,0 +1,250 @@
+{
+  "all_owned_resources_absent": true,
+  "shared_base_preserved": true,
+  "commands": [
+    {
+      "command": [
+        "docker",
+        "stop",
+        "697c7c330f24cf6cdaa4e153e3c26f1e7bfe4e70128193fec8aec17fd011b9ba"
+      ],
+      "exit": 0,
+      "output": "697c7c330f24cf6cdaa4e153e3c26f1e7bfe4e70128193fec8aec17fd011b9ba\n"
+    },
+    {
+      "command": [
+        "docker",
+        "rm",
+        "697c7c330f24cf6cdaa4e153e3c26f1e7bfe4e70128193fec8aec17fd011b9ba"
+      ],
+      "exit": 0,
+      "output": "697c7c330f24cf6cdaa4e153e3c26f1e7bfe4e70128193fec8aec17fd011b9ba\n"
+    },
+    {
+      "command": [
+        "docker",
+        "stop",
+        "1e70adb334afb55d627718e7ddef337efbfba9b9311c5823ec04fc62ca44c383"
+      ],
+      "exit": 0,
+      "output": "1e70adb334afb55d627718e7ddef337efbfba9b9311c5823ec04fc62ca44c383\n"
+    },
+    {
+      "command": [
+        "docker",
+        "rm",
+        "1e70adb334afb55d627718e7ddef337efbfba9b9311c5823ec04fc62ca44c383"
+      ],
+      "exit": 0,
+      "output": "1e70adb334afb55d627718e7ddef337efbfba9b9311c5823ec04fc62ca44c383\n"
+    },
+    {
+      "command": [
+        "docker",
+        "stop",
+        "8b1d12ecd60f19d31da35b30438e9d7ef901a7cd0b7ced3f92a08d82a228b427"
+      ],
+      "exit": 0,
+      "output": "8b1d12ecd60f19d31da35b30438e9d7ef901a7cd0b7ced3f92a08d82a228b427\n"
+    },
+    {
+      "command": [
+        "docker",
+        "rm",
+        "8b1d12ecd60f19d31da35b30438e9d7ef901a7cd0b7ced3f92a08d82a228b427"
+      ],
+      "exit": 0,
+      "output": "8b1d12ecd60f19d31da35b30438e9d7ef901a7cd0b7ced3f92a08d82a228b427\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "fcb-264ii-accept-20261104__env-main:latest"
+      ],
+      "exit": 0,
+      "output": "Untagged: fcb-264ii-accept-20261104__env-main:latest\nDeleted: sha256:cada2a248bfabf32da27eea5160cd892894efafc914cd03ebf671a7bc3939159\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "fcb-264ii-accept2-20261104__env-main:latest"
+      ],
+      "exit": 0,
+      "output": "Untagged: fcb-264ii-accept2-20261104__env-main:latest\nDeleted: sha256:55e42ae9140905f89f6948cf1920a28d760350a8b1a39716ecc55b51534af5b1\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "fcb-264ii-accept3-20261104__env-main:latest"
+      ],
+      "exit": 0,
+      "output": "Untagged: fcb-264ii-accept3-20261104__env-main:latest\nDeleted: sha256:28fcdcb239a7983f2d0be290774204f7d212424ed33c6c3ad37b87813a147de2\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "fcb-264ii-final-20261104__env-main:latest"
+      ],
+      "exit": 0,
+      "output": "Untagged: fcb-264ii-final-20261104__env-main:latest\nDeleted: sha256:93fe6653caddcbe60a30683d386622794cab6f0290c188fb4e2cb19261cda1e4\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "fcb-264ii-final2-20261104__env-main:latest"
+      ],
+      "exit": 0,
+      "output": "Untagged: fcb-264ii-final2-20261104__env-main:latest\nDeleted: sha256:30c8bcd3d12714a1b972ecebda3d7eb65abf79ea594c0590ecca16a97f88b748\n"
+    },
+    {
+      "command": [
+        "docker",
+        "network",
+        "rm",
+        "c1bf3ec957c0e5995844b3362c656d49e4afa93b5c96204e1557497860949071"
+      ],
+      "exit": 0,
+      "output": "c1bf3ec957c0e5995844b3362c656d49e4afa93b5c96204e1557497860949071\n"
+    },
+    {
+      "command": [
+        "docker",
+        "network",
+        "rm",
+        "191a4baa2151a76b06fae07671a3bbe15bde905c43c30837ddde52fe1c40b8f5"
+      ],
+      "exit": 0,
+      "output": "191a4baa2151a76b06fae07671a3bbe15bde905c43c30837ddde52fe1c40b8f5\n"
+    },
+    {
+      "command": [
+        "docker",
+        "container",
+        "inspect",
+        "697c7c330f24cf6cdaa4e153e3c26f1e7bfe4e70128193fec8aec17fd011b9ba"
+      ],
+      "exit": 1,
+      "output": "[]\nError response from daemon: No such container: 697c7c330f24cf6cdaa4e153e3c26f1e7bfe4e70128193fec8aec17fd011b9ba\n"
+    },
+    {
+      "command": [
+        "docker",
+        "container",
+        "inspect",
+        "1e70adb334afb55d627718e7ddef337efbfba9b9311c5823ec04fc62ca44c383"
+      ],
+      "exit": 1,
+      "output": "[]\nError response from daemon: No such container: 1e70adb334afb55d627718e7ddef337efbfba9b9311c5823ec04fc62ca44c383\n"
+    },
+    {
+      "command": [
+        "docker",
+        "container",
+        "inspect",
+        "8b1d12ecd60f19d31da35b30438e9d7ef901a7cd0b7ced3f92a08d82a228b427"
+      ],
+      "exit": 1,
+      "output": "[]\nError response from daemon: No such container: 8b1d12ecd60f19d31da35b30438e9d7ef901a7cd0b7ced3f92a08d82a228b427\n"
+    },
+    {
+      "command": [
+        "docker",
+        "container",
+        "inspect",
+        "fcb-264ii-accept2-20261104__env-main-1"
+      ],
+      "exit": 1,
+      "output": "[]\nError response from daemon: No such container: fcb-264ii-accept2-20261104__env-main-1\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "sha256:cada2a248bfabf32da27eea5160cd892894efafc914cd03ebf671a7bc3939159"
+      ],
+      "exit": 1,
+      "output": "[]\nError response from daemon: No such image: sha256:cada2a248bfabf32da27eea5160cd892894efafc914cd03ebf671a7bc3939159\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "sha256:55e42ae9140905f89f6948cf1920a28d760350a8b1a39716ecc55b51534af5b1"
+      ],
+      "exit": 1,
+      "output": "[]\nError response from daemon: No such image: sha256:55e42ae9140905f89f6948cf1920a28d760350a8b1a39716ecc55b51534af5b1\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "sha256:28fcdcb239a7983f2d0be290774204f7d212424ed33c6c3ad37b87813a147de2"
+      ],
+      "exit": 1,
+      "output": "[]\nError response from daemon: No such image: sha256:28fcdcb239a7983f2d0be290774204f7d212424ed33c6c3ad37b87813a147de2\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "sha256:93fe6653caddcbe60a30683d386622794cab6f0290c188fb4e2cb19261cda1e4"
+      ],
+      "exit": 1,
+      "output": "[]\nError response from daemon: No such image: sha256:93fe6653caddcbe60a30683d386622794cab6f0290c188fb4e2cb19261cda1e4\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "sha256:30c8bcd3d12714a1b972ecebda3d7eb65abf79ea594c0590ecca16a97f88b748"
+      ],
+      "exit": 1,
+      "output": "[]\nError response from daemon: No such image: sha256:30c8bcd3d12714a1b972ecebda3d7eb65abf79ea594c0590ecca16a97f88b748\n"
+    },
+    {
+      "command": [
+        "docker",
+        "network",
+        "inspect",
+        "c1bf3ec957c0e5995844b3362c656d49e4afa93b5c96204e1557497860949071"
+      ],
+      "exit": 1,
+      "output": "[]\nError response from daemon: network c1bf3ec957c0e5995844b3362c656d49e4afa93b5c96204e1557497860949071 not found\n"
+    },
+    {
+      "command": [
+        "docker",
+        "network",
+        "inspect",
+        "191a4baa2151a76b06fae07671a3bbe15bde905c43c30837ddde52fe1c40b8f5"
+      ],
+      "exit": 1,
+      "output": "[]\nError response from daemon: network 191a4baa2151a76b06fae07671a3bbe15bde905c43c30837ddde52fe1c40b8f5 not found\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a"
+      ],
+      "exit": 0,
+      "output": "[\n    {\n        \"Id\": \"sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a\",\n        \"RepoTags\": [\n            \"erdos1062-import-20261102__env-main:latest\"\n        ],\n        \"RepoDigests\": [\n            \"erdos1062-import-20261102__env-main@sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a\"\n        ],\n        \"Comment\": \"buildkit.dockerfile.v0\",\n        \"Created\": \"2026-11-02T10:11:59.176612534+08:00\",\n        \"Config\": {\n            \"User\": \"ubuntu\",\n            \"Env\": [\n                \"PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\",\n                \"DEBIAN_FRONTEND=noninteractive\",\n                \"ELAN_HOME=/opt/elan\",\n                \"HOME=/home/ubuntu\"\n            ],\n            \"Cmd\": [\n                \"/bin/bash\"\n            ],\n            \"WorkingDir\": \"/app\",\n            \"Labels\": {\n                \"com.docker.compose.project\": \"erdos1062-import-20261102__env\",\n                \"com.docker.compose.service\": \"main\",\n                \"com.docker.compose.version\": \"2.40.3\",\n                \"org.opencontainers.image.version\": \"24.04\"\n            }\n        },\n        \"Architecture\": \"amd64\",\n        \"Os\": \"linux\",\n        \"Size\": 2710508331,\n        \"RootFS\": {\n            \"Type\": \"layers\",\n            \"Layers\": [\n                \"sha256:bec87777bc2fb2edcdf9af11df1531469e7df911309c1413082b18fcb8610278\",\n                \"sha256:d57ecceaf810a84b4237264f1ed2ba5d2ae076d4f265aaf5f76e6df1b33e413d\",\n                \"sha256:2af5aa503676e7d8cb97fd264224b051b1b00f195ad61459869006aec2951d88\",\n                \"sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef\",\n                \"sha256:c7bf032aee341b884094c840765a47a5ef06c0b573e9fc98eeb19fa6701112d6\",\n                \"sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef\",\n                \"sha256:3139dcfdf17027a4d750d42bdf1d6d7308aedab1cb635ad3dd7586b57a7b4edc\",\n                \"sha256:5021c75f10d699956aee947fb80e457c02069d52f52a6992417ecbf7b61bfc29\",\n                \"sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef\",\n                \"sha256:e62a49adb98a03b0d14675299a0923ac1f793566d71362a5af84e21ed4ceb329\",\n                \"sha256:b49c4e736e3e57b74aa4cdd21a3b0da7594ff70da490fc0a98a0c71f6548431c\",\n                \"sha256:d6237268f4b60a26bb0a3400eb7965dda0f96581535cec8ee9f4c011ef97d115\",\n                \"sha256:50923da4046e4cefdbe6223884ff7892587873e7cfd0ca988d6e37cbf1e9ab5c\",\n                \"sha256:18b5eb8f7d4c48470eaa1df8129f429a18d4b23ee284aa34dfa33423d2e939e9\",\n                \"sha256:bfbc83bf9fb0b61215dd2e826eaf8819ecdb0fc9a20462f8aa952885740b6447\",\n                \"sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef\",\n                \"sha256:42b7a1f7711c7ac76b002a20ebb41534538097fc1f6f28b9f3ae62aaf9b9befc\"\n            ]\n        },\n        \"Metadata\": {\n            \"LastTagTime\": \"2026-11-02T02:12:41.525120364Z\"\n        },\n        \"Descriptor\": {\n            \"mediaType\": \"application/vnd.oci.image.index.v1+json\",\n            \"digest\": \"sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a\",\n            \"size\": 856\n        }\n    }\n]\n"
+    }
+  ]
+}

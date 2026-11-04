@@ -1,0 +1,65 @@
+[
+    {
+        "Id": "sha256:7a604efb0e6d8ba4ca94e77942eee2387bf40a4489d3473347d3b0ca37e807b9",
+        "RepoTags": [
+            "wikipedia-fermatcatalanconjectur__qnl3u4m__env-main:latest"
+        ],
+        "RepoDigests": [
+            "wikipedia-fermatcatalanconjectur__qnl3u4m__env-main@sha256:7a604efb0e6d8ba4ca94e77942eee2387bf40a4489d3473347d3b0ca37e807b9"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-04T16:27:22.768313827+08:00",
+        "Config": {
+            "User": "ubuntu",
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "/bin/bash"
+            ],
+            "WorkingDir": "/app",
+            "Labels": {
+                "com.docker.compose.project": "wikipedia-fermatcatalanconjectur__qnl3u4m__env",
+                "com.docker.compose.service": "main",
+                "com.docker.compose.version": "2.40.3",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 2710252253,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:bec87777bc2fb2edcdf9af11df1531469e7df911309c1413082b18fcb8610278",
+                "sha256:d57ecceaf810a84b4237264f1ed2ba5d2ae076d4f265aaf5f76e6df1b33e413d",
+                "sha256:2af5aa503676e7d8cb97fd264224b051b1b00f195ad61459869006aec2951d88",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:6162f9bbf1aebdfbb963f4c11aa343eb370feabefcef59034b218ae9a9db042d",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:4988fcd9a53dd6b7a1b029b87ba30b10bd80481173dd525a77bd83d94c439ce9",
+                "sha256:77381126e43e25ce0d0565ecf29bd075651f0b9bd4cf556c6f2316008296fb57",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:082a7c71dfe8eccb5b57843600bcb5743f3532aa07f010b667f2feb2f8ee237b",
+                "sha256:e7e104ba7ec61c0dd55dde9bd5f3bfcf0f110f00abff7be07557fa72652f84b8",
+                "sha256:600d9acdcf41aec74f1010154f3a4cd54fd9bd7cda0c578557053a8e0844b1f8",
+                "sha256:fb185bbd8c244b9beadee3ce1ddb63abd58c25c641ad8e869c1ec5b0184f9fef",
+                "sha256:2e399d30802d6cb7c723cddd5b0c08db9af942a9a59fb5e1c3c2cb7fad5adead",
+                "sha256:bf80170fa6e38f4d605eaa2f76adf0e504a4597a7264923044cdbf792b002bba",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:9fc30adc9a7a7e4d124a7755a4d4bf43ba7c9fd416cd4cceb791b525c58efa28"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-04T08:42:48.316357799Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:7a604efb0e6d8ba4ca94e77942eee2387bf40a4489d3473347d3b0ca37e807b9",
+            "size": 856
+        }
+    }
+]

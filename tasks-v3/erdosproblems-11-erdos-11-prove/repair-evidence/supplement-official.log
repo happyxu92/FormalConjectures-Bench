@@ -1,0 +1,46 @@
+Loaded fixed precompiled trusted Spec from /tests/trusted_spec
+audited ExpectedType and all transitive dependencies: [propext]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ), Odd n → 1 < n → ∃ k l, Squarefree k ∧ n = k + 2 ^ l
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for Erdos11.erdos_11: ['sorryAx']
+'Erdos11.erdos_11' depends on axioms: [propext, sorryAx]
+
+EXPECTED REJECTION: original placeholder theorem axiom audit (sorryAx)
+PASS: independent Spec audit, ubuntu build, full type, sorry rejection, canary
+Complete theorem type matches trusted Spec
+audited ExpectedType and all transitive dependencies: [propext]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ), Odd n → 1 < n → ∃ k l, Squarefree k ∧ n = k + 2 ^ l
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]
+PASS: same-name candidate source/artifact/cache and ambient LEAN_PATH cannot replace Spec
+audited ExpectedType and all transitive dependencies: [propext]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ), Odd n → 1 < n → ∃ k l, Squarefree k ∧ n = k + 2 ^ l
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]
+Candidate compiled as ubuntu with fixed import paths
+Lean audit command failed
+/tmp/formal_conjectures_bench_7zsgs5_q/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Erdos11.erdos_11
+has type
+  ∀ (n : ℕ), Erdos11.Odd n → 1 < n → ∃ k l, Squarefree k ∧ n = k + 2 ^ l
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+EXPECTED REJECTION: frozen-header semantic name-shadowing (Erdos11.Odd := False)
+Code above the benchmark target marker changed
+EXPECTED REJECTION: frozen-prefix mutation
+Unexpected added Lean source outside editable subtree: OutOfBounds.lean
+EXPECTED REJECTION: Lean source outside editable subtree
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+EXPECTED REJECTION: missing precompiled Spec; no fallback compile
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+EXPECTED REJECTION: artifact hash mismatch; no regeneration
+Trusted Spec manifest hash mismatch
+EXPECTED REJECTION: manifest hash mismatch
+ALL SUPPLEMENTAL PATHS PASSED

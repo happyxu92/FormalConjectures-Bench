@@ -1,0 +1,6 @@
+networks:
+  default:
+    name: fcb-hall-prove-nt40-20261104
+    ipam:
+      config:
+        - subnet: 10.251.73.0/24

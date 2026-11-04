@@ -1,0 +1,29 @@
+{
+  "task_id": "erdosproblems-126-erdos-126-prove",
+  "target_name": "Erdos126.erdos_126",
+  "universe_params": [],
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "generation_environment": "Docker fcb-local/erdosproblems-1-least-n-5:cache-smoke sha256:0824de0f16475f1f619701869e59de4e4ce3229bfce229a5fd16f88072c37e8f; isolated /tmp/erdos126-generation; no candidate files or Lake configuration loaded",
+  "generation_command": "bash trusted_spec/reproduce.sh",
+  "files": {
+    "AuditSpec.lean": "4054c2bfd675267fbd3326910e8a05bbe4bad20aeaae83721337c3331c497a00",
+    "FCBTrustedSpec.ilean": "b14b937a64eb7f60fce0b57d002e978c7898f0d77d22a1d83fde49f95132d1de",
+    "FCBTrustedSpec.lean": "beb5922b2fa6fbb9df9792530268d0330c0a6201e0d090199f9afa4c63a98f0d",
+    "FCBTrustedSpec.olean": "36ce91440224bcd0cfe1c065995b066fe1b12cbf9a7d2325ed98c9904860d51c",
+    "audit.log": "389fc239f2239c779d059246038e216bdfeb3d4b0cbbc278ca8a66c1f30fe486",
+    "generate.py": "e36cd63ca8b6be93fd471ea5c36afd0fd1e09e3d4d829efaa2099a7ae1bb7331",
+    "reproduce.sh": "9a0d6384f12f1bc161b99f91068a210238d440a4ecc17ec63d15f0b55acc9bce"
+  },
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "dc811b12220e1a3f0d473228a071f19357f69aa94e7f846c62236a0a145979b8",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  }
+}

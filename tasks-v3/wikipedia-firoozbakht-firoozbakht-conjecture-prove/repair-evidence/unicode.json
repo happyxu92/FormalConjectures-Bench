@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-firoozbakht-firoozbakht-conjecture-prove",
+  "mode": "auto_repair",
+  "status": "passed",
+  "case": "no_issue",
+  "has_problem": false,
+  "has_unicode_issue": false,
+  "repair_attempted": false,
+  "repair_success": null,
+  "modified": false,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "63c2998bfc6423e4ff06a925d2d27e7891e57171630588545489bd20b360451f",
+      "header_before": "theorem firoozbakht_conjecture (n : \u2115) :\n    firoozbakhtSeq (n+1) < firoozbakhtSeq n",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem firoozbakht_conjecture (n : \u2115) :\n    firoozbakhtSeq (n+1) < firoozbakhtSeq n",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "63c2998bfc6423e4ff06a925d2d27e7891e57171630588545489bd20b360451f",
+      "header_after": "theorem firoozbakht_conjecture (n : \u2115) :\n    firoozbakhtSeq (n+1) < firoozbakhtSeq n"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "63c2998bfc6423e4ff06a925d2d27e7891e57171630588545489bd20b360451f",
+      "header_before": "theorem firoozbakht_conjecture (n : \u2115) :\n    firoozbakhtSeq (n+1) < firoozbakhtSeq n",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem firoozbakht_conjecture (n : \u2115) :\n    firoozbakhtSeq (n+1) < firoozbakhtSeq n",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "63c2998bfc6423e4ff06a925d2d27e7891e57171630588545489bd20b360451f",
+      "header_after": "theorem firoozbakht_conjecture (n : \u2115) :\n    firoozbakhtSeq (n+1) < firoozbakhtSeq n"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "1cd75ed262e15fe969fa88eff1d7f1c80d0ebe3ff362a8e4d24d0c0cabce96b9"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "1cd75ed262e15fe969fa88eff1d7f1c80d0ebe3ff362a8e4d24d0c0cabce96b9"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "1cd75ed262e15fe969fa88eff1d7f1c80d0ebe3ff362a8e4d24d0c0cabce96b9"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 0
+}

@@ -1,0 +1,32 @@
+{
+  "container:38b6f13dd03164c49bfe1cf86169ea538c3d10d921dbca7380be0a6a82d79d54": {
+    "inspect_exit": 1,
+    "removed": true,
+    "stderr": "Error response from daemon: No such container: 38b6f13dd03164c49bfe1cf86169ea538c3d10d921dbca7380be0a6a82d79d54"
+  },
+  "container:63b897c00fa9": {
+    "inspect_exit": 1,
+    "removed": true,
+    "stderr": "Error response from daemon: No such container: 63b897c00fa9"
+  },
+  "image:sha256:fa47536448e53c6b77855f14f49642e983e65487ac760bdc20955988e0614ab8": {
+    "inspect_exit": 1,
+    "removed": true,
+    "stderr": "Error response from daemon: No such image: sha256:fa47536448e53c6b77855f14f49642e983e65487ac760bdc20955988e0614ab8"
+  },
+  "image:sha256:a524d98632c4d220c274e122956fed5122df0aa8187c723b652397cacffb36d6": {
+    "inspect_exit": 1,
+    "removed": true,
+    "stderr": "Error response from daemon: No such image: sha256:a524d98632c4d220c274e122956fed5122df0aa8187c723b652397cacffb36d6"
+  },
+  "image:sha256:13cd325132e31e17087e8ee4e766cd8245c4a6d0cfd38f5e5bc580f92d9f67f4": {
+    "inspect_exit": 1,
+    "removed": true,
+    "stderr": "Error response from daemon: No such image: sha256:13cd325132e31e17087e8ee4e766cd8245c4a6d0cfd38f5e5bc580f92d9f67f4"
+  },
+  "network:ff9e7619f00b": {
+    "inspect_exit": 1,
+    "removed": true,
+    "stderr": "Error response from daemon: network ff9e7619f00b not found"
+  }
+}

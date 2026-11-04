@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-2-green-2-refute",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 的 rg 命令已显式包含 /app、/opt/formal-conjectures 和隐藏 packages 路径；在最终 Harbor 容器以 ubuntu 搜到 Mathlib 的 def IsCoprime，退出 0。见 repair-evidence/instruction-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无两个标准 import 之外的额外依赖；补齐 Dockerfile 末尾 HOME/USER ubuntu 后的 RUN lake build +FormalConjecturesBench.Target。当前本地任务 Harbor 构建成功，同一容器以 ubuntu 实测 lake build 退出 0；依赖权限未放宽。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能脚本检测 case=no_issue，原始头通过，修改头及移除 := 均被拒绝；无代理码点问题，两份 checker 一致。见 repair-evidence/unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从原始 golden 在匹配 Lean 4.27.0/x86_64 固定依赖环境提前提取、预编译并独立审计 ExpectedType 和前缀定义，临时目标未导出且无 sorryAx 依赖；两份可信包和 checker 同步。清单固定哈希 fbad60e1ebfc0ff52a5912eccb8f053cb787423b9a6479e12b72e712a93c4fd5，源码/产物/输入/修订哈希在包清单。固定 /tests 或本地 /opt Spec 来源，锁定工具链与依赖搜索顺序，临时候选复用 Spec 前缀，并比较完整类型；保留原限制、公理审计和 canary。当前本地任务 Harbor 子容器 447501fc0cd2、镜像 cd5b77953fce 验收；32 项交付哈希一致。正式入口和 ubuntu check.sh 均因原始 sorry 预期退出 1/reward 0；同一子容器通过两入口实际函数补测，Spec 加载/审计、ubuntu 编译、完整类型、公理拒绝 sorryAx、canary、冻结/越界/名称遮蔽负例、同名模块及缓存不能替换 Spec、缺失/损坏产物明确失败且不再生成，均实测。未提供数学证明。初次网络地址池耗尽经本题专属 IPAM 配置解决；命令、覆盖与日志见 repair-evidence/validation.md。报告及产物保存后已清理并复核本题容器 5985de64fdf3、447501fc0cd2（另一个 Harbor 容器已自动移除）、本题镜像 8fdcfc4b82c5/f34b785b3acc/cd5b77953fce 及专属网络；inspect 均确认不存在。共享基础镜像、缓存和他人资源未清理。见 repair-evidence/docker-cleanup.log 和 docker-cleanup-result.json，无清理失败。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已读锁定上游 GreensOpenProblems/2.lean、作者 100 open problems 第 2 题及 restrictedSumset 实现。当前方向是否定最终对所有 n 元整数集成立的 (log n)^100 下界，即要求任意大规模的反例；不是正向命题。powerset/filter/sup、offDiag 排除相等加数、自然数规模与实对数阈值及 atTop 定义匹配合理题意，未发现明确错误；开放性不作判错依据。metadata 标 consistent，数学陈述、公开 Target、golden、冻结哈希和 GoldenCheck 均未改。见 repair-evidence/research.md。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 task ID 精确查 CSV 未命中，随后多组联网搜索本题名称、完整定理名、定义、Erdős–Moser/Sanders/Ruzsa、反证方向及 GitHub/PR。实际读取上游 main（sorry）、Conjectures.io（非反证且无贡献）、两方向 contribution 索引（0）、相关 trace 与候选 Lean 源码，并搜索 Mathlib。相关不同题目或依赖新 axiom 的候选已排除；无未核实的本命题证明线索。经此充分但有界检索未找到已知公开完整 Lean4 反证，metadata 标 false/searched，并非断言绝不存在。无关候选源码 404、无关 Green7 issue API 限流已记录。详见 repair-evidence/research.md 与 public-csv.json；未放入公开答案。"
+    }
+  }
+}

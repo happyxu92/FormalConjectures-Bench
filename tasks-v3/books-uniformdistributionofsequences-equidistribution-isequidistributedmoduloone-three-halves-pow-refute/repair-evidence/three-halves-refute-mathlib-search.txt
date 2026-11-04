@@ -1,0 +1,6 @@
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Combinatorics/Additive/VerySmallDoubling.lean:285:lemma smul_inv_mul_opSMul_eq_mul_of_doubling_lt_three_halves (h : #(A * A) < (3 / 2 : ℚ) * #A)
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Combinatorics/Additive/VerySmallDoubling.lean:289:lemma card_inv_mul_of_doubling_lt_three_halves (h : #(A * A) < (3 / 2 : ℚ) * #A) :
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Combinatorics/Additive/VerySmallDoubling.lean:292:  simp_rw [← smul_inv_mul_opSMul_eq_mul_of_doubling_lt_three_halves h ha, card_smul_finset]
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Combinatorics/Additive/VerySmallDoubling.lean:324:theorem doubling_lt_three_halves (h : #(A * A) < (3 / 2 : ℚ) * #A) :
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Combinatorics/Additive/VerySmallDoubling.lean:331:    rwa [Nat.card_eq_finsetCard, card_inv_mul_of_doubling_lt_three_halves h]
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Real/Sqrt.lean:341:lemma sqrt_two_lt_three_halves : √2 < 3 / 2 := by

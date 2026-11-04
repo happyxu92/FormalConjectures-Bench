@@ -1,0 +1,5 @@
+/app/FormalConjecturesBench/Target.lean
+/app/FormalConjecturesBench/Submission.lean
+/app/FormalConjecturesBench.lean
+drwxrwxrwx 2 root root 4096 Nov  4 08:24 /logs/verifier
+drwxr-xr-x 4 root root 4096 Nov  4 08:18 /tests

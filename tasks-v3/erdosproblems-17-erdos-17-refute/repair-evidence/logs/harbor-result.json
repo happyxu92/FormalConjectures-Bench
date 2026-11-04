@@ -1,0 +1,124 @@
+{
+    "id": "f2e199a3-9783-4d74-b187-251098fceaa0",
+    "task_name": "formal-conjectures-bench/erdosproblems-17-erdos-17-refute",
+    "trial_name": "erdosproblems-17-erdos-17-refute__3RRMBqB",
+    "trial_uri": "file:///tmp/ep17r-harbor-jobs/ep17r-repair-finalnet-20261104/erdosproblems-17-erdos-17-refute__3RRMBqB",
+    "task_id": {
+        "path": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-17-erdos-17-refute"
+    },
+    "source": null,
+    "task_checksum": "3cc98f851d24e57ee22b5c451a5595cad9905853d1019f8718481e9807ad2da6",
+    "config": {
+        "task": {
+            "path": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-17-erdos-17-refute",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "erdosproblems-17-erdos-17-refute__3RRMBqB",
+        "trials_dir": "/tmp/ep17r-harbor-jobs/ep17r-repair-finalnet-20261104",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "nop",
+            "import_path": null,
+            "model_name": null,
+            "base_url": null,
+            "model_api_key_name": null,
+            "model_api_format": null,
+            "skip_model_parsing": false,
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": true,
+            "delete": false,
+            "stream": false,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [
+                "/tmp/ep17r-network.yaml"
+            ],
+            "kwargs": {
+                "keep_containers": true
+            },
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "13983be5-5061-4cb5-920e-028823033be5",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "nop",
+        "version": "1.0.0",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "model_usage": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "verifier_environment_mode": "shared",
+    "exception_info": null,
+    "started_at": "2026-11-04T07:25:12.898261Z",
+    "finished_at": "2026-11-04T07:25:25.595076Z",
+    "environment_setup": {
+        "started_at": "2026-11-04T07:25:12.924421Z",
+        "finished_at": "2026-11-04T07:25:14.548967Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-11-04T07:25:14.549021Z",
+        "finished_at": "2026-11-04T07:25:14.549077Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-11-04T07:25:14.549157Z",
+        "finished_at": "2026-11-04T07:25:14.549695Z"
+    },
+    "verifier": {
+        "started_at": "2026-11-04T07:25:14.812651Z",
+        "finished_at": "2026-11-04T07:25:15.224011Z"
+    },
+    "step_results": null
+}

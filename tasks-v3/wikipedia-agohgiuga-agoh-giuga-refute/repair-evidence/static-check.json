@@ -1,0 +1,8 @@
+{
+  "AST": true,
+  "packages_identical": true,
+  "original_restrictions_and_frozen_constants": true,
+  "public_target_and_golden_unchanged": true,
+  "Dockerfile_final_ubuntu_build": true,
+  "toml": true
+}

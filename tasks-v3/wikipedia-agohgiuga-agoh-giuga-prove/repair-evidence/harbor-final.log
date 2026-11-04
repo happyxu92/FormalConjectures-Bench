@@ -1,0 +1,12 @@
+Starting trial: fcb-agohgiuga-prove-final2-20261104
+Task: wikipedia-agohgiuga-agoh-giuga-prove
+Agent: nop
+Environment: docker
+Trials directory: /tmp/agohgiuga-prove-harbor
+
+Trial completed!
+Trial name: fcb-agohgiuga-prove-final2-20261104
+Task: formal-conjectures-bench/wikipedia-agohgiuga-agoh-giuga-prove
+Started: 2026-11-04 08:27:59.376602+00:00
+Finished: 2026-11-04 08:28:11.815935+00:00
+Rewards: {'reward': 0.0}

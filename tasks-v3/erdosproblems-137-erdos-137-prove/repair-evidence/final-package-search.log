@@ -1,0 +1,1 @@
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Algebra/Group/Even.lean:def IsSquare (a : α) : Prop := ∃ r, a = r * r

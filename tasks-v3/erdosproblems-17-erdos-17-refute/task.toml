@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = false
+public_lean4_proof_status = "searched"
+public_lean4_proof_note = "Exact task ID absent from skill CSV; multi-query searches covered upstream pinned/main Lean, Mathlib/GitHub PRs, author paper, Conjectures.io counterexample/contribution index, and linked attempts. No public complete Lean4 proof of the negated infinitude target found; not a claim of nonexistence. See repair-evidence/research.md."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/17.lean"

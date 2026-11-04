@@ -1,0 +1,124 @@
+{
+    "id": "621eeff7-e5eb-4dc6-9cd0-ee2d0b700579",
+    "task_name": "formal-conjectures-bench/wikipedia-firoozbakht-firoozbakht-conjecture-prove",
+    "trial_name": "wikipedia-firoozbakht-firoozbakh__nrQmQ2s",
+    "trial_uri": "file:///tmp/fcb-firoozbakht-prove-harbor/fcb-firoozbakht-prove-covered-20261104/wikipedia-firoozbakht-firoozbakh__nrQmQ2s",
+    "task_id": {
+        "path": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-firoozbakht-firoozbakht-conjecture-prove"
+    },
+    "source": null,
+    "task_checksum": "a0cca1e222082b5b329f82d04014879016732767394e08afd71f9165e8ea114e",
+    "config": {
+        "task": {
+            "path": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-firoozbakht-firoozbakht-conjecture-prove",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "wikipedia-firoozbakht-firoozbakh__nrQmQ2s",
+        "trials_dir": "/tmp/fcb-firoozbakht-prove-harbor/fcb-firoozbakht-prove-covered-20261104",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "nop",
+            "import_path": null,
+            "model_name": null,
+            "base_url": null,
+            "model_api_key_name": null,
+            "model_api_format": null,
+            "skip_model_parsing": false,
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": false,
+            "stream": false,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [
+                "/tmp/fcb-firoozbakht-prove-compose.json"
+            ],
+            "kwargs": {
+                "keep_containers": true
+            },
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "847f29b2-4192-446b-baed-d96b0eba3913",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "nop",
+        "version": "1.0.0",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "model_usage": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "verifier_environment_mode": "shared",
+    "exception_info": null,
+    "started_at": "2026-11-04T08:42:17.294922Z",
+    "finished_at": "2026-11-04T08:42:29.766560Z",
+    "environment_setup": {
+        "started_at": "2026-11-04T08:42:17.322487Z",
+        "finished_at": "2026-11-04T08:42:18.923769Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-11-04T08:42:18.923818Z",
+        "finished_at": "2026-11-04T08:42:18.923877Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-11-04T08:42:18.923955Z",
+        "finished_at": "2026-11-04T08:42:18.924478Z"
+    },
+    "verifier": {
+        "started_at": "2026-11-04T08:42:19.173954Z",
+        "finished_at": "2026-11-04T08:42:19.557271Z"
+    },
+    "step_results": null
+}

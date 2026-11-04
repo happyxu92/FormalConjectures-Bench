@@ -1,0 +1,65 @@
+[
+    {
+        "Id": "sha256:a97d90bc74a460ed87e9f9e104344df1801480160814debe8393553cbe3a8cbf",
+        "RepoTags": [
+            "erdosproblems-126-erdos-126-prov__qvgpman__env-main:latest"
+        ],
+        "RepoDigests": [
+            "erdosproblems-126-erdos-126-prov__qvgpman__env-main@sha256:a97d90bc74a460ed87e9f9e104344df1801480160814debe8393553cbe3a8cbf"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-04T14:52:40.127686147+08:00",
+        "Config": {
+            "User": "ubuntu",
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "/bin/bash"
+            ],
+            "WorkingDir": "/app",
+            "Labels": {
+                "com.docker.compose.project": "erdosproblems-126-erdos-126-prov__qvgpman__env",
+                "com.docker.compose.service": "main",
+                "com.docker.compose.version": "2.40.3",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 2710245810,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:bec87777bc2fb2edcdf9af11df1531469e7df911309c1413082b18fcb8610278",
+                "sha256:d57ecceaf810a84b4237264f1ed2ba5d2ae076d4f265aaf5f76e6df1b33e413d",
+                "sha256:2af5aa503676e7d8cb97fd264224b051b1b00f195ad61459869006aec2951d88",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:6162f9bbf1aebdfbb963f4c11aa343eb370feabefcef59034b218ae9a9db042d",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:4988fcd9a53dd6b7a1b029b87ba30b10bd80481173dd525a77bd83d94c439ce9",
+                "sha256:77381126e43e25ce0d0565ecf29bd075651f0b9bd4cf556c6f2316008296fb57",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:082a7c71dfe8eccb5b57843600bcb5743f3532aa07f010b667f2feb2f8ee237b",
+                "sha256:e7e104ba7ec61c0dd55dde9bd5f3bfcf0f110f00abff7be07557fa72652f84b8",
+                "sha256:600d9acdcf41aec74f1010154f3a4cd54fd9bd7cda0c578557053a8e0844b1f8",
+                "sha256:fb185bbd8c244b9beadee3ce1ddb63abd58c25c641ad8e869c1ec5b0184f9fef",
+                "sha256:29b0546aabae6e4859b34cf4345367c7a7c6436cdd708047e7169ff9b097e894",
+                "sha256:ff5c74b35f7a90a416cac90116ddd5a174d96f1468028e3a6a5c092abb433269",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:0436dc5c6cc2ff3ca20f8f820888fe5c033e8338c33995c94ca63d54361c1c6e"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-04T06:54:29.473230425Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:a97d90bc74a460ed87e9f9e104344df1801480160814debe8393553cbe3a8cbf",
+            "size": 856
+        }
+    }
+]

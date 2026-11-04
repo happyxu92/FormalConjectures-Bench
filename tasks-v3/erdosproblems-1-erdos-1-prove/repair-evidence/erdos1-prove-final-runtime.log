@@ -1,0 +1,4 @@
+uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev)
+reward=0
+abe93840c98d1c0831caf5f6f700870d0496ab500da21d3cb57f677ac81486c7  /tests/trusted_spec/manifest.json
+abe93840c98d1c0831caf5f6f700870d0496ab500da21d3cb57f677ac81486c7  /opt/formal-conjectures-bench-checker/trusted_spec/manifest.json

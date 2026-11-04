@@ -1,0 +1,98 @@
+Loaded fixed precompiled trusted Spec: /tests/trusted_spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos126.IsMaximalAddFactorsCard: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ (f : ℕ → ℕ),
+    Erdos126.IsMaximalAddFactorsCard f → Filter.Tendsto (fun n ↦ ↑(f n) / Real.log ↑n) Filter.atTop Filter.atTop
+def Erdos126.IsMaximalAddFactorsCard : (ℕ → ℕ) → Prop :=
+fun f ↦
+  ∀ (n : ℕ),
+    IsGreatest
+      {m |
+        ∀ (A : Finset ℕ),
+          A.card = n →
+            m ≤
+              (∏ x ∈ A.offDiag,
+                    match x with
+                    | (a, b) => a + b).primeFactors.card}
+      (f n)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for Erdos126.formal_conjectures_bench_refutation: ['sorryAx']
+'Erdos126.formal_conjectures_bench_refutation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+EXPECTED REJECTION: original placeholder axiom audit detects sorryAx
+PASS: Spec audit, ubuntu build, complete type, axiom rejection, canary
+Complete theorem type matches trusted Spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos126.IsMaximalAddFactorsCard: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ (f : ℕ → ℕ),
+    Erdos126.IsMaximalAddFactorsCard f → Filter.Tendsto (fun n ↦ ↑(f n) / Real.log ↑n) Filter.atTop Filter.atTop
+def Erdos126.IsMaximalAddFactorsCard : (ℕ → ℕ) → Prop :=
+fun f ↦
+  ∀ (n : ℕ),
+    IsGreatest
+      {m |
+        ∀ (A : Finset ℕ),
+          A.card = n →
+            m ≤
+              (∏ x ∈ A.offDiag,
+                    match x with
+                    | (a, b) => a + b).primeFactors.card}
+      (f n)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS: fixed Spec wins over candidate same-name source/artifact/cache/environment
+Banned Lean feature found in proof region at line 2: \bsorry\b
+EXPECTED REJECTION: unchanged formal fixture placeholder still banned
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos126.IsMaximalAddFactorsCard: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ (f : ℕ → ℕ),
+    Erdos126.IsMaximalAddFactorsCard f → Filter.Tendsto (fun n ↦ ↑(f n) / Real.log ↑n) Filter.atTop Filter.atTop
+def Erdos126.IsMaximalAddFactorsCard : (ℕ → ℕ) → Prop :=
+fun f ↦
+  ∀ (n : ℕ),
+    IsGreatest
+      {m |
+        ∀ (A : Finset ℕ),
+          A.card = n →
+            m ≤
+              (∏ x ∈ A.offDiag,
+                    match x with
+                    | (a, b) => a + b).primeFactors.card}
+      (f n)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Lean audit command failed
+/tmp/formal_conjectures_bench_zbz030jd/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Erdos126.formal_conjectures_bench_refutation
+has type
+  ¬∀ (f : ℕ → ℕ),
+      Erdos126.IsMaximalAddFactorsCard f → Erdos126.Tendsto (fun n ↦ ↑(f n) / Real.log ↑n) Filter.atTop Filter.atTop
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+EXPECTED REJECTION: frozen-text name shadowing Tendsto := False, full type mismatch
+Unexpected axioms for Erdos126.formal_conjectures_bench_refutation: ['sorryAx']
+'Erdos126.formal_conjectures_bench_refutation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+EXPECTED REJECTION: shadow fixture placeholder is also detected by axiom audit
+Code above the benchmark target marker changed
+EXPECTED REJECTION: frozen prefix mutation
+Unexpected added Lean source outside editable subtree: OutOfBounds.lean
+EXPECTED REJECTION: Lean source outside editable tree
+EXPECTED REJECTION: missing precompiled Spec; no fallback
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+EXPECTED REJECTION: corrupt artifact; no regeneration
+EXPECTED REJECTION: manifest hash mismatch
+Trusted Spec manifest hash mismatch
+ALL SUPPLEMENTAL PATHS PASSED

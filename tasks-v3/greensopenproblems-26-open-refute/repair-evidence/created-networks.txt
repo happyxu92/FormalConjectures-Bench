@@ -1,0 +1,2 @@
+NETWORK ID                                                         NAME                                                     DRIVER    SCOPE
+c2f0706f6f83d2182be8e50008e7a0ee2307bbd57ffdacc4d560066e99e0816b   greensopenproblems-26-open-refut__vjwzlp5__env_default   bridge    local

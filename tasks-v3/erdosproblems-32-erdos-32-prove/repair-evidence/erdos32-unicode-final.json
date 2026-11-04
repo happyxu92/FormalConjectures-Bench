@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-32-erdos-32-prove",
+  "mode": "auto_repair",
+  "status": "passed",
+  "case": "no_issue",
+  "has_problem": false,
+  "has_unicode_issue": false,
+  "repair_attempted": false,
+  "repair_success": null,
+  "modified": false,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "6941decab8988b5ebff1b758e97a7fb04d2fe96487c565aaac4335783e14cf47",
+      "header_before": "theorem erdos_32 : \u2203 A : Set \u2115,\n    IsAdditiveComplementToPrimes A \u2227\n    (fun N => (((Finset.Icc 1 N).filter (\u00b7 \u2208 A)).card : \u211d)) =o[atTop]\n      fun N => (Real.log N) ^ 2",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem erdos_32 : \u2203 A : Set \u2115,\n    IsAdditiveComplementToPrimes A \u2227\n    (fun N => (((Finset.Icc 1 N).filter (\u00b7 \u2208 A)).card : \u211d)) =o[atTop]\n      fun N => (Real.log N) ^ 2",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "6941decab8988b5ebff1b758e97a7fb04d2fe96487c565aaac4335783e14cf47",
+      "header_after": "theorem erdos_32 : \u2203 A : Set \u2115,\n    IsAdditiveComplementToPrimes A \u2227\n    (fun N => (((Finset.Icc 1 N).filter (\u00b7 \u2208 A)).card : \u211d)) =o[atTop]\n      fun N => (Real.log N) ^ 2"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "6941decab8988b5ebff1b758e97a7fb04d2fe96487c565aaac4335783e14cf47",
+      "header_before": "theorem erdos_32 : \u2203 A : Set \u2115,\n    IsAdditiveComplementToPrimes A \u2227\n    (fun N => (((Finset.Icc 1 N).filter (\u00b7 \u2208 A)).card : \u211d)) =o[atTop]\n      fun N => (Real.log N) ^ 2",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem erdos_32 : \u2203 A : Set \u2115,\n    IsAdditiveComplementToPrimes A \u2227\n    (fun N => (((Finset.Icc 1 N).filter (\u00b7 \u2208 A)).card : \u211d)) =o[atTop]\n      fun N => (Real.log N) ^ 2",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "6941decab8988b5ebff1b758e97a7fb04d2fe96487c565aaac4335783e14cf47",
+      "header_after": "theorem erdos_32 : \u2203 A : Set \u2115,\n    IsAdditiveComplementToPrimes A \u2227\n    (fun N => (((Finset.Icc 1 N).filter (\u00b7 \u2208 A)).card : \u211d)) =o[atTop]\n      fun N => (Real.log N) ^ 2"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "b3d63c8b25f85a05e0e84458748ae54390c9ac0f772594a9225b763349828361"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "b3d63c8b25f85a05e0e84458748ae54390c9ac0f772594a9225b763349828361"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "b3d63c8b25f85a05e0e84458748ae54390c9ac0f772594a9225b763349828361"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 0
+}

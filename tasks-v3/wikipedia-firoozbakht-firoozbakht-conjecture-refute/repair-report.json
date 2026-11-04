@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-firoozbakht-firoozbakht-conjecture-refute",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit .lake/packages search path; actual ubuntu rg found package add_comm definitions, exit 0 (repair-evidence/search-path.log)."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports. Added required Dockerfile-final ubuntu lake build; current local Docker/Harbor builds succeed with read-only dependencies."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Skill script case=no_issue, both original headers/frozen inputs and negative header checks pass; no modification."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated and audited fixed precompiled Spec from original golden, no exported target/sorryAx; synchronized/pinned packages. Full-type comparison rejects legal LT Real instance substitution with frozen text unchanged. Current local Harbor image sha256:48003e433b526d71428a53ffa7121d194179af19efe85ddca85fc3abb3f3db47; formal/local entries exit 1 and reward 0 solely on original sorry. Both package paths independently supplement-tested: Spec audit, ubuntu build, full type, axiom rejection, canary, cache shadow and missing/corrupt artifact failures. Source bans/frozen hashes/golden unchanged. See repair-evidence/validation.md and logs. Cleanup verified complete: removed task-owned containers d74a5c032a22 and 6c4a3fb8b236 (first Harbor child had auto-removed), images 91d45e5a3550, 41ea8625a189 and 48003e433b52, and the task-specific Harbor network. No shared/user resources or build caches deleted; see repair-evidence/resources.json and docker-cleanup.log."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked consistent. Pinned upstream and primepuzzles source match this negation of the universal prime-root inequality; zero-based Nat.nth and real exponent 1/(n+1) are appropriate. Open status is not an error; no mathematical input changed. See repair-evidence/research.md."
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "public_lean4_proof=false, status=searched. Exact full-ID CSV miss followed by 11 varied web queries, upstream/main/PR234, Mathlib, catalogues and fork/related-source checks; no known complete Lean4 proof of this refutation found. Unrelated OEIS proofs and finite verification excluded. API rate limits resolved via raw issue HTML; search is not a nonexistence guarantee. Evidence: repair-evidence/research.md."
+    }
+  }
+}

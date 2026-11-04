@@ -1,0 +1,3 @@
+trusted_spec host two packages and Harbor /tests /opt packages identical: 8 files
+golden_env host two packages and Harbor /tests /opt packages identical: 6 files
+AST, frozen Target, checker package synchronization passed

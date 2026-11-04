@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-244-erdos-244-refute",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令补齐显式 .lake/packages 路径；实际容器 rg 搜到 Mathlib 的 def Prime，退出 0。证据见 repair-evidence/244-refute-package-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；补上 Dockerfile 末尾 USER ubuntu 后的 lake build +FormalConjecturesBench.Target。当前本地 Harbor 镜像构建成功，同一子容器 ubuntu 再构建退出 0；未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整运行技能 check_unicode_header.py，退出 0，case=no_issue；原头、修改头及 := 边界验证通过，两份 checker 头一致，未改头或冻结哈希。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从原始 golden 独立提前 elaboration/预编译并审计完整 ExpectedType（无 universe 参数，仅标准公理），两份可信包同步；固定工具链/依赖及 Spec 来源，完整类型比较取代候选环境解析 GoldenCheck。manifest SHA256=4917df2acc39ebbc5cf987dd617e16f68ee55dc6377d76d351f61695501407ac；版本、全部输入/产物哈希在包清单。实际本地 Harbor 镜像 f03f89685ed9，子容器 38b907a70f7b 验收：/tests 正式及 /opt 本地入口均退出 1、reward=0（原始 sorry 的预期拒绝）；同容器独立补测退出 0，实际覆盖 Spec 加载/类型公理审计、ubuntu 编译、完整类型匹配、目标 sorryAx 拒绝、canary、冻结/越界负例、冻结文字不变的 LT Real 实例偷换类型拒绝、同名模块/缓存遮蔽无效及缺失/损坏产物失败且不重生成。未声称原题证明通过。命令、镜像 ID、哈希及日志见 repair-evidence/acceptance.md。报告落盘后已清理本题容器 b749a299e47c、38b907a70f7b，镜像 09724b6fce6a、f03f89685ed9 及本题 Harbor 网络；inspect 与 docker ps -a 核验均已不存在。首轮容器由 Harbor 自动回收；共享基础镜像、缓存和用户/其他任务资源未清理。见 repair-evidence/docker-cleanup.log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata statement_status=consistent。核对锁定上游 244.lean、完整 Target、lowerDensity 定义、Ding arXiv:2503.22700 及上游 issue 59/PR179：本题是对所有实 C>1 正下密度命题的否定方向；Nat p/k、自然下取整、k=0 与来源兼容。未见明显定义/陈述错误；开放性不等于错误，未修改数学内容。直接题源 403，已交叉核对可访问原论文及来源页；详见 repair-evidence/research.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 task ID 精确 CSV 查无命中后，进行题号/名称/完整定理名/数学式/Romanoff/Kalmar/作者/Mathlib/GitHub 多组联网搜索并读取当前上游源码、相关 PR/fork 源码和作者 Lean 项目。未找到本否定方向的公开完整 Lean4 证明；metadata public_lean4_proof=false、status=searched。PR2538/3063 仅改标签且留 sorry；Tomar 项目是带分析假设的正向 base-2 下界，不覆盖本题。检索不证明绝对不存在；来源、排除理由及访问限制见 repair-evidence/research.json。"
+    }
+  }
+}

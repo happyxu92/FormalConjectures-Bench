@@ -1,0 +1,148 @@
+Loaded fixed precompiled trusted Spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited FermatCatalanConjecture.fermatCatalanConjecture: [propext, Quot.sound, Classical.choice]
+audited FermatCatalanConjecture.FermatCatalanSet: [propext, Quot.sound, Classical.choice]
+audited FermatCatalanConjecture.FermatCatalanSet': [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬FermatCatalanConjecture.fermatCatalanConjecture
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+EXPECTED REJECTION: placeholder target axiom audit 
+ Unexpected axioms for FermatCatalanConjecture.formal_conjectures_bench_refutation: ['sorryAx']
+'FermatCatalanConjecture.formal_conjectures_bench_refutation' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+
+
+Candidate compiled as ubuntu with fixed import paths
+FIXED RESOLUTION: /opt/elan/toolchains/leanprover--lean4---v4.27.0/lib/lean/Init.olean
+/tests/trusted_spec/FCBTrustedSpec.olean
+/tmp/formal_conjectures_bench_7pi8qx5b/FormalConjecturesBench/Submission.olean
+
+Complete theorem type matches trusted Spec
+EXPECTED REJECTION: semantic hijack rejected by preserved source ban 
+ Found banned Lean syntax:
+FormalConjecturesBench/Submission.lean:2: pattern '(?m)^\\s*(?:local\\s+|scoped\\s+)?notation\\b'
+
+Candidate compiled as ubuntu with fixed import paths
+HIJACK TYPE: FermatCatalanConjecture.formal_conjectures_bench_refutation : ¬False
+
+EXPECTED REJECTION: full type comparator rejects Not False semantic hijack 
+ Lean audit command failed
+/tmp/formal_conjectures_bench_5diauudm/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  FermatCatalanConjecture.formal_conjectures_bench_refutation
+has type
+  ¬False
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+
+EXPECTED REJECTION: frozen prefix modification 
+ Code above the benchmark target marker changed
+
+EXPECTED REJECTION: header modification 
+ Target theorem header changed
+
+EXPECTED REJECTION: proof assignment removed 
+ Target theorem no longer has a proof assignment
+
+EXPECTED REJECTION: out-of-tree source 
+ Unexpected added Lean source outside editable subtree: Outside.lean
+
+EXPECTED REJECTION: missing precompiled artifact fails closed 
+ Missing trusted Spec artifact: FCBTrustedSpec.olean
+
+EXPECTED REJECTION: corrupt precompiled artifact fails closed 
+ Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+
+[
+  {
+    "case": "independent precompiled Spec and prefix transitive axiom audit",
+    "result": "passed"
+  },
+  {
+    "case": "ubuntu build original placeholder fixture",
+    "result": "passed"
+  },
+  {
+    "case": "full type agrees for original refutation fixture",
+    "result": "passed"
+  },
+  {
+    "case": "placeholder target axiom audit",
+    "result": "rejected",
+    "actual_message": "Unexpected axioms for FermatCatalanConjecture.formal_conjectures_bench_refutation: ['sorryAx']\n'FermatCatalanConjecture.formal_conjectures_bench_refutation' depends on axioms: [propext,\n sorryAx,\n Classical.choice,\n Quot.sound]\n\n"
+  },
+  {
+    "case": "sorry canary",
+    "result": "passed"
+  },
+  {
+    "case": "ordinary external import and helper lemma",
+    "result": "passed"
+  },
+  {
+    "case": "ordinary external precompiled module still importable",
+    "result": "passed"
+  },
+  {
+    "case": "same-name module/cache/env cannot replace Spec",
+    "result": "passed"
+  },
+  {
+    "case": "semantic fixture frozen prefix/header unchanged",
+    "result": "passed"
+  },
+  {
+    "case": "semantic hijack rejected by preserved source ban",
+    "result": "rejected",
+    "actual_message": "Found banned Lean syntax:\nFormalConjecturesBench/Submission.lean:2: pattern '(?m)^\\\\s*(?:local\\\\s+|scoped\\\\s+)?notation\\\\b'\n"
+  },
+  {
+    "case": "semantic hijack compiles with frozen text unchanged",
+    "result": "passed"
+  },
+  {
+    "case": "full type comparator rejects Not False semantic hijack",
+    "result": "rejected",
+    "actual_message": "Lean audit command failed\n/tmp/formal_conjectures_bench_5diauudm/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch\n  FermatCatalanConjecture.formal_conjectures_bench_refutation\nhas type\n  \u00acFalse\nbut is expected to have type\n  FCBTrustedSpec.ExpectedType\n\n"
+  },
+  {
+    "case": "frozen prefix modification",
+    "result": "rejected",
+    "actual_message": "Code above the benchmark target marker changed\n"
+  },
+  {
+    "case": "header modification",
+    "result": "rejected",
+    "actual_message": "Target theorem header changed\n"
+  },
+  {
+    "case": "proof assignment removed",
+    "result": "rejected",
+    "actual_message": "Target theorem no longer has a proof assignment\n"
+  },
+  {
+    "case": "out-of-tree source",
+    "result": "rejected",
+    "actual_message": "Unexpected added Lean source outside editable subtree: Outside.lean\n"
+  },
+  {
+    "case": "normal helper allowed by syntax restrictions",
+    "result": "passed"
+  },
+  {
+    "case": "missing precompiled artifact fails closed",
+    "result": "rejected",
+    "actual_message": "Missing trusted Spec artifact: FCBTrustedSpec.olean\n"
+  },
+  {
+    "case": "corrupt precompiled artifact fails closed",
+    "result": "rejected",
+    "actual_message": "Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean\n"
+  }
+]
+ALL SUPPLEMENTAL CASES PASSED

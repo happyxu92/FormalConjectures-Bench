@@ -1,0 +1,205 @@
+$ docker image inspect books-uniformdistributionofseque__sjudfhe__env-main:latest --format {{.Id}} 
+exit= 0 
+ sha256:86a747300d7bb8bedfd58ab1900684ba437d0ebd34a67131935ab4f2a95a795e
+
+$ docker image inspect books-uniformdistributionofseque__3d6qypa__env-main:latest --format {{.Id}} 
+exit= 0 
+ sha256:d5c191dd5177fe1548640cc551446ecc1f7674603eeac469a3cc0c4efe194e37
+
+$ docker image inspect books-uniformdistributionofseque__veopkxd__env-main:latest --format {{.Id}} 
+exit= 0 
+ sha256:d68ecd8e78c5ba4a096b6cb76423221a2efe9f66221041166626a7587fe904af
+
+$ docker image inspect books-uniformdistributionofseque__dttt9np__env-main:latest --format {{.Id}} 
+exit= 0 
+ sha256:47eccb4a04fc87aa4725469fa8a203b87b677418079e16d089cfaf3434574e14
+
+$ docker inspect ad1816648a88488b4153ee8bf7d5304d9ec3b6349d86e81fa924efd1777a83e9 --format {{.State.Running}} 
+exit= 0 
+ true
+
+$ docker stop ad1816648a88488b4153ee8bf7d5304d9ec3b6349d86e81fa924efd1777a83e9 
+exit= 0 
+ ad1816648a88488b4153ee8bf7d5304d9ec3b6349d86e81fa924efd1777a83e9
+
+$ docker rm ad1816648a88488b4153ee8bf7d5304d9ec3b6349d86e81fa924efd1777a83e9 
+exit= 0 
+ ad1816648a88488b4153ee8bf7d5304d9ec3b6349d86e81fa924efd1777a83e9
+
+$ docker inspect 343c778a34f29b21c318f9788bad37e42aa3d9db21fca3f860b729c8f671207b --format {{.State.Running}} 
+exit= 1 
+ 
+error: no such object: 343c778a34f29b21c318f9788bad37e42aa3d9db21fca3f860b729c8f671207b
+
+Already automatically removed by Harbor: 343c778a34f29b21c318f9788bad37e42aa3d9db21fca3f860b729c8f671207b
+$ docker inspect e6851aa70d6906d76fbc370e185b956725ec27a86f00b3f5b9745622f0ff2e25 --format {{.State.Running}} 
+exit= 0 
+ true
+
+$ docker stop e6851aa70d6906d76fbc370e185b956725ec27a86f00b3f5b9745622f0ff2e25 
+exit= 0 
+ e6851aa70d6906d76fbc370e185b956725ec27a86f00b3f5b9745622f0ff2e25
+
+$ docker rm e6851aa70d6906d76fbc370e185b956725ec27a86f00b3f5b9745622f0ff2e25 
+exit= 0 
+ e6851aa70d6906d76fbc370e185b956725ec27a86f00b3f5b9745622f0ff2e25
+
+$ docker inspect c553fe101d69099fb1328992359919288492ba8c57d55ba6011d10f4b5cbd5ea --format {{.State.Running}} 
+exit= 0 
+ true
+
+$ docker stop c553fe101d69099fb1328992359919288492ba8c57d55ba6011d10f4b5cbd5ea 
+exit= 0 
+ c553fe101d69099fb1328992359919288492ba8c57d55ba6011d10f4b5cbd5ea
+
+$ docker rm c553fe101d69099fb1328992359919288492ba8c57d55ba6011d10f4b5cbd5ea 
+exit= 0 
+ c553fe101d69099fb1328992359919288492ba8c57d55ba6011d10f4b5cbd5ea
+
+$ docker image rm books-uniformdistributionofseque__sjudfhe__env-main:latest 
+exit= 0 
+ Untagged: books-uniformdistributionofseque__sjudfhe__env-main:latest
+Deleted: sha256:86a747300d7bb8bedfd58ab1900684ba437d0ebd34a67131935ab4f2a95a795e
+
+$ docker image rm books-uniformdistributionofseque__3d6qypa__env-main:latest 
+exit= 0 
+ Untagged: books-uniformdistributionofseque__3d6qypa__env-main:latest
+Deleted: sha256:d5c191dd5177fe1548640cc551446ecc1f7674603eeac469a3cc0c4efe194e37
+
+$ docker image rm books-uniformdistributionofseque__veopkxd__env-main:latest 
+exit= 0 
+ Untagged: books-uniformdistributionofseque__veopkxd__env-main:latest
+Deleted: sha256:d68ecd8e78c5ba4a096b6cb76423221a2efe9f66221041166626a7587fe904af
+
+$ docker image rm books-uniformdistributionofseque__dttt9np__env-main:latest 
+exit= 0 
+ Untagged: books-uniformdistributionofseque__dttt9np__env-main:latest
+Deleted: sha256:47eccb4a04fc87aa4725469fa8a203b87b677418079e16d089cfaf3434574e14
+
+$ docker network inspect books-uniformdistributionofseque__sjudfhe__env_default --format {{.Id}} 
+exit= 1 
+ 
+Error response from daemon: network books-uniformdistributionofseque__sjudfhe__env_default not found
+
+$ docker network inspect books-uniformdistributionofseque__3d6qypa__env_default --format {{.Id}} 
+exit= 0 
+ 98fbb257d3dc05d5f649fe4fb614f922d8250e7a552f1dd1ebb99d7e0fb0fa06
+
+$ docker network rm books-uniformdistributionofseque__3d6qypa__env_default 
+exit= 0 
+ books-uniformdistributionofseque__3d6qypa__env_default
+
+$ docker network inspect books-uniformdistributionofseque__veopkxd__env_default --format {{.Id}} 
+exit= 1 
+ 
+Error response from daemon: network books-uniformdistributionofseque__veopkxd__env_default not found
+
+$ docker network inspect books-uniformdistributionofseque__dttt9np__env_default --format {{.Id}} 
+exit= 0 
+ 8868770806ab9cc45cac37439d0e6c473d41bd75adae8bcc62873d1045155c62
+
+$ docker network rm books-uniformdistributionofseque__dttt9np__env_default 
+exit= 0 
+ books-uniformdistributionofseque__dttt9np__env_default
+
+$ docker inspect ad1816648a88488b4153ee8bf7d5304d9ec3b6349d86e81fa924efd1777a83e9 
+exit= 1 
+ []
+error: no such object: ad1816648a88488b4153ee8bf7d5304d9ec3b6349d86e81fa924efd1777a83e9
+
+$ docker inspect 343c778a34f29b21c318f9788bad37e42aa3d9db21fca3f860b729c8f671207b 
+exit= 1 
+ []
+error: no such object: 343c778a34f29b21c318f9788bad37e42aa3d9db21fca3f860b729c8f671207b
+
+$ docker inspect e6851aa70d6906d76fbc370e185b956725ec27a86f00b3f5b9745622f0ff2e25 
+exit= 1 
+ []
+error: no such object: e6851aa70d6906d76fbc370e185b956725ec27a86f00b3f5b9745622f0ff2e25
+
+$ docker inspect c553fe101d69099fb1328992359919288492ba8c57d55ba6011d10f4b5cbd5ea 
+exit= 1 
+ []
+error: no such object: c553fe101d69099fb1328992359919288492ba8c57d55ba6011d10f4b5cbd5ea
+
+$ docker image inspect books-uniformdistributionofseque__sjudfhe__env-main:latest 
+exit= 1 
+ []
+Error response from daemon: No such image: books-uniformdistributionofseque__sjudfhe__env-main:latest
+
+$ docker image inspect books-uniformdistributionofseque__3d6qypa__env-main:latest 
+exit= 1 
+ []
+Error response from daemon: No such image: books-uniformdistributionofseque__3d6qypa__env-main:latest
+
+$ docker image inspect books-uniformdistributionofseque__veopkxd__env-main:latest 
+exit= 1 
+ []
+Error response from daemon: No such image: books-uniformdistributionofseque__veopkxd__env-main:latest
+
+$ docker image inspect books-uniformdistributionofseque__dttt9np__env-main:latest 
+exit= 1 
+ []
+Error response from daemon: No such image: books-uniformdistributionofseque__dttt9np__env-main:latest
+
+$ docker image inspect sha256:86a747300d7bb8bedfd58ab1900684ba437d0ebd34a67131935ab4f2a95a795e 
+exit= 1 
+ []
+Error response from daemon: No such image: sha256:86a747300d7bb8bedfd58ab1900684ba437d0ebd34a67131935ab4f2a95a795e
+
+$ docker image inspect sha256:d5c191dd5177fe1548640cc551446ecc1f7674603eeac469a3cc0c4efe194e37 
+exit= 1 
+ []
+Error response from daemon: No such image: sha256:d5c191dd5177fe1548640cc551446ecc1f7674603eeac469a3cc0c4efe194e37
+
+$ docker image inspect sha256:d68ecd8e78c5ba4a096b6cb76423221a2efe9f66221041166626a7587fe904af 
+exit= 1 
+ []
+Error response from daemon: No such image: sha256:d68ecd8e78c5ba4a096b6cb76423221a2efe9f66221041166626a7587fe904af
+
+$ docker image inspect sha256:47eccb4a04fc87aa4725469fa8a203b87b677418079e16d089cfaf3434574e14 
+exit= 1 
+ []
+Error response from daemon: No such image: sha256:47eccb4a04fc87aa4725469fa8a203b87b677418079e16d089cfaf3434574e14
+
+$ docker network inspect books-uniformdistributionofseque__sjudfhe__env_default 
+exit= 1 
+ []
+Error response from daemon: network books-uniformdistributionofseque__sjudfhe__env_default not found
+
+$ docker network inspect books-uniformdistributionofseque__3d6qypa__env_default 
+exit= 1 
+ []
+Error response from daemon: network books-uniformdistributionofseque__3d6qypa__env_default not found
+
+$ docker network inspect books-uniformdistributionofseque__veopkxd__env_default 
+exit= 1 
+ []
+Error response from daemon: network books-uniformdistributionofseque__veopkxd__env_default not found
+
+$ docker network inspect books-uniformdistributionofseque__dttt9np__env_default 
+exit= 1 
+ []
+Error response from daemon: network books-uniformdistributionofseque__dttt9np__env_default not found
+
+$ docker ps -a --no-trunc 
+exit= 0 
+ CONTAINER ID                                                       IMAGE                                                                     COMMAND                                                                                                                        CREATED          STATUS                    PORTS                    NAMES
+3062db3e41c1f05b6b1eba5f3b0641c1fe255cb5a7bc81e3bf779f40025affcb   books-uniformdistributionofseque__lfj2uzy__env-main                       "sh -c 'sleep infinity'"                                                                                                       47 seconds ago   Up 14 seconds                                      books-uniformdistributionofseque__lfj2uzy__env-main-1
+668b6f47fc6479baf6d84e616f0716b038a08851ba8a0761a1dbec4a4cfe5a93   fcb-erdos11-prove-final-20261104__env-main                                "sh -c 'sleep infinity'"                                                                                                       3 minutes ago    Up 2 minutes                                       fcb-erdos11-prove-final-20261104__env-main-1
+72676fcaebd8e31995357be4660bee505f5d7a69742a56d6a2eee465f8027356   fcb-erdos1-refute-final2-20261104__env-main                               "sh -c 'sleep infinity'"                                                                                                       5 minutes ago    Up 5 minutes                                       fcb-erdos1-refute-final2-20261104__env-main-1
+70b82fb568255449e6b0bfd43ffe69f7bc1ab31a6b67ca386aa6d233ee5ccb31   books-uniformdistributionofseque__gml2pay__env-main                       "sh -c 'sleep infinity'"                                                                                                       10 minutes ago   Up 9 minutes                                       books-uniformdistributionofseque__gml2pay__env-main-1
+21ef43178da0349d91a2337c1bb4169229328efdc712662fbe45946491672143   fcb-erdos1-refute-verify-20261104__env-main                               "sh -c 'sleep infinity'"                                                                                                       12 minutes ago   Up 11 minutes                                      fcb-erdos1-refute-verify-20261104__env-main-1
+4ac4d469414a228f8bb670b8dc86dc1ac4e7e856f5bdd39e482a6ce2c4bb2403   fcb-erdos11-prove-20261104__env-main                                      "sh -c 'sleep infinity'"                                                                                                       12 minutes ago   Up 12 minutes                                      fcb-erdos11-prove-20261104__env-main-1
+9da298b4a5b59e5b821f62d7cd2064e4d1aadb1d93db92eac8e40d36c0573879   fcb-three-halves-prove:spec-stage-20261104                                "sleep infinity"                                                                                                               14 minutes ago   Up 14 minutes                                      fcb-three-halves-prove-spec-20261104
+4eac71a77629b365736bcbaca6cbc8fc4586b5c9cc8c7de7cf6c91f369f27d0d   fcb-local/erdosproblems-1-least-n-5:cache-smoke                           "sleep infinity"                                                                                                               15 minutes ago   Up 15 minutes                                      fcb-erdos1-refute-spec-20261104
+6d7f2290c1df267ee9a221b3bfc4a286ac9a33ec62737d92e115d82565cb4fbc   fcb-local/erdosproblems-1-least-n-5:cache-smoke                           "sleep infinity"                                                                                                               16 minutes ago   Up 16 minutes                                      fcb-erdos11-prove-spec-20261104
+418e01ddfc0350357b6366d0053d11f109696c1fa17318a6e5e0fe4262857a51   weishaw/sub2api:0.2.15                                                    "/app/docker-entrypoint.sh /app/sub2api"                                                                                       44 hours ago     Up 3 hours (healthy)      0.0.0.0:8080->8080/tcp   sub2api
+f87663ee43dc6988a89ad187b16dab3013b41ac26a1f92d78138099d083f7c1e   erdos1062-lower-import-current-20261102__env-main                         "sh -c 'sleep infinity'"                                                                                                       2 days ago       Exited (137) 2 days ago                            erdos1062-lower-import-current-20261102__env-main-1
+e3e0088b94c6bddc783b1c63d7e6c8da3708e230e998cbf6db1146abd0c92f8c   erdos1062-import-20261102__env-main                                       "sh -c 'sleep infinity'"                                                                                                       2 days ago       Exited (137) 2 days ago                            erdos1062-import-20261102__env-main-1
+9d88b1e34a20193355bd977f203b9b26d4ae86fd120281afad36f83425c0aa05   erdos1051-import-20261102__env-main                                       "sh -c 'sleep infinity'"                                                                                                       2 days ago       Exited (137) 2 days ago                            erdos1051-import-20261102__env-main-1
+969a5a561de9e07c912576ff9cd1edfd1950668280e678277bfc7d9569f86659   postgres:18-alpine                                                        "docker-entrypoint.sh postgres"                                                                                                6 weeks ago      Up 3 hours (healthy)      5432/tcp                 sub2api-postgres
+038757ae87f97d3ecccc7e8bff6b3fd52732187cd470dbff58273a590649bed4   redis:8-alpine                                                            "docker-entrypoint.sh sh -c '\n  redis-server \\\n  --save 60 1 \\\n  --appendonly yes \\\n  --appendfsync everysec \\\n  '"   6 weeks ago      Up 3 hours (healthy)      6379/tcp                 sub2api-redis
+2c28f9c67fbab8d813769633221539e3dc3e05a445c2a8e336bbdc241cd20be9   sha256:4e1081d31f83482cef2acf20d8de31d71ed5d8247711028f3494393e782d18df   "/bin/bash -lc 'trap 'exit 0' TERM INT; while true; do sleep 3600; done'"                                                      2 months ago     Dead                                               
+
+CLEANUP VERIFIED: all task-created containers, four image tags/IDs and task networks absent. Preexisting reused dependency image retained; no shared images or build caches removed.

@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-264-ii-refute",
+  "mode": "auto_repair",
+  "status": "passed",
+  "case": "no_issue",
+  "has_problem": false,
+  "has_unicode_issue": false,
+  "repair_attempted": false,
+  "repair_success": null,
+  "modified": false,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "a3d8d42eab0f6b94dede0bbf6ab2a76f7bb07229b8188084ea9ab01822fa223c",
+      "header_before": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      IsIrrationalitySequence Nat.factorial\n    )",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      IsIrrationalitySequence Nat.factorial\n    )",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "a3d8d42eab0f6b94dede0bbf6ab2a76f7bb07229b8188084ea9ab01822fa223c",
+      "header_after": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      IsIrrationalitySequence Nat.factorial\n    )"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "a3d8d42eab0f6b94dede0bbf6ab2a76f7bb07229b8188084ea9ab01822fa223c",
+      "header_before": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      IsIrrationalitySequence Nat.factorial\n    )",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      IsIrrationalitySequence Nat.factorial\n    )",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "a3d8d42eab0f6b94dede0bbf6ab2a76f7bb07229b8188084ea9ab01822fa223c",
+      "header_after": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      IsIrrationalitySequence Nat.factorial\n    )"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "6c66ff862b176b6c4f5a7fa145dd1adf90737487edfcf46760dd726d4e42b634"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "6c66ff862b176b6c4f5a7fa145dd1adf90737487edfcf46760dd726d4e42b634"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "6c66ff862b176b6c4f5a7fa145dd1adf90737487edfcf46760dd726d4e42b634"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 0
+}

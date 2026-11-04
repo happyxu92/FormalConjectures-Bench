@@ -1,0 +1,12 @@
+Starting trial: fcb-erdos11-refute-accept-20261104
+Task: erdosproblems-11-erdos-11-refute
+Agent: nop
+Environment: docker
+Trials directory: /tmp/erdos11-refute-harbor-accept-retry
+
+Trial completed!
+Trial name: fcb-erdos11-refute-accept-20261104
+Task: formal-conjectures-bench/erdosproblems-11-erdos-11-refute
+Started: 2026-11-04 07:01:56.787459+00:00
+Finished: 2026-11-04 07:02:09.196912+00:00
+Rewards: {'reward': 0.0}

@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/books-uniformdistributionofsequences-equidistribution-isequidistributedmoduloone-three-halves-pow-prove",
+  "mode": "auto_repair",
+  "status": "passed",
+  "case": "no_issue",
+  "has_problem": false,
+  "has_unicode_issue": false,
+  "repair_attempted": false,
+  "repair_success": null,
+  "modified": false,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "d34e49cf643475511597b6efd69b2b7def1a35287fcc39ad4702952847f7a37c",
+      "header_before": "theorem isEquidistributedModuloOne_three_halves_pow :\n    IsEquidistributedModuloOne (fun n => (3 / 2 : \u211d)^n)",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem isEquidistributedModuloOne_three_halves_pow :\n    IsEquidistributedModuloOne (fun n => (3 / 2 : \u211d)^n)",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "d34e49cf643475511597b6efd69b2b7def1a35287fcc39ad4702952847f7a37c",
+      "header_after": "theorem isEquidistributedModuloOne_three_halves_pow :\n    IsEquidistributedModuloOne (fun n => (3 / 2 : \u211d)^n)"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "d34e49cf643475511597b6efd69b2b7def1a35287fcc39ad4702952847f7a37c",
+      "header_before": "theorem isEquidistributedModuloOne_three_halves_pow :\n    IsEquidistributedModuloOne (fun n => (3 / 2 : \u211d)^n)",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem isEquidistributedModuloOne_three_halves_pow :\n    IsEquidistributedModuloOne (fun n => (3 / 2 : \u211d)^n)",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "d34e49cf643475511597b6efd69b2b7def1a35287fcc39ad4702952847f7a37c",
+      "header_after": "theorem isEquidistributedModuloOne_three_halves_pow :\n    IsEquidistributedModuloOne (fun n => (3 / 2 : \u211d)^n)"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "ad404c2c6883380dbd8c3e7918ec96ba87242db5baca280ab95accb3caa6c3c0"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "ad404c2c6883380dbd8c3e7918ec96ba87242db5baca280ab95accb3caa6c3c0"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "ad404c2c6883380dbd8c3e7918ec96ba87242db5baca280ab95accb3caa6c3c0"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 0
+}

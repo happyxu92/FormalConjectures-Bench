@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-137-erdos-137-prove",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式补齐 .lake/packages 搜索路径；最终 Harbor 容器用三根路径搜索 def IsSquare，退出 0 并命中 Mathlib。见 repair-evidence/final-package-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；补上 Dockerfile 末尾 HOME/USER ubuntu 的 Target 构建。当前本地 task 的 Harbor 构建成功，最终容器 ubuntu lake build 退出 0，仅原始 sorry 警告。未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整执行技能 Unicode 脚本：退出 0、case=no_issue；两份 checker、三份原始 Target 基线和头/赋值边界复验通过，无修改。见 repair-evidence/unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已生成、预编译并传递公理审计可信 Spec，两包同步，固定来源加载，比较完整类型值；保留冻结、源码限制、公理审计及 canary。最终本地 Harbor 镜像 e2547c42bf4d、容器 15f5c18424c0；正式/ubuntu 本地入口退出 1、reward=0，原因仅原始 sorry。两入口包的实际函数补测均退出 0，覆盖 ubuntu 编译、完整类型通过/语义遮蔽拒绝、sorryAx 拒绝、canary、冻结/越界拒绝、同名模块/缓存不可替换、缺失/损坏产物无回退。哈希/版本/命令及覆盖范围见 repair-evidence/verification.md、manifest 与日志。报告落盘后已清理并核验：容器 6f3a87ab2ada、17a794a46908、15f5c18424c0 已删除，e99bdb518f9a 由 Harbor 自动删除；镜像 8a99156c0e97、408d0c52d9d6、e2547c42bf4d 及本题两个残留网络已删除。共享基础镜像、缓存和用户/其他任务资源保留。见 repair-evidence/cleanup.log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已核对锁定上游全文、Nat.Full/Powerful 定义及 Tao arXiv:2603.27990v3 §1.2。本题保留全称非 powerful 方向；Ioc 包含 k 个正自然数，n=0 不引入零乘积。未发现明显错误；metadata 标 consistent。未修改数学输入。见 repair-evidence/research.md。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 task ID 精确 CSV 未命中后，已多组联网搜索定理名、数学陈述、作者、上游/PR、GitHub、Mathlib。实读 scottdhughes/erdos137 的 Lean 源码，仅为附加 RadLB 等假设的有限性/抽象拼接，非本题无条件全称命题。来源/forum 403 与 GitHub API 限流留下覆盖缺口，故 metadata 标 public_lean4_proof=unknown、status=blocked，不以未命中断言 false。详见 repair-evidence/research.md。"
+    }
+  }
+}

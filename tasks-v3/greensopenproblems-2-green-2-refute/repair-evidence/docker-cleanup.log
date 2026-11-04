@@ -1,0 +1,591 @@
+$ docker container inspect 5985de64fdf3ce54f52cd89247684e449332d636e9591cc6d5046ff28f92eecb
+exit=0
+[
+    {
+        "Id": "5985de64fdf3ce54f52cd89247684e449332d636e9591cc6d5046ff28f92eecb",
+        "Created": "2026-11-04T07:50:19.039928573Z",
+        "Path": "sleep",
+        "Args": [
+            "infinity"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1956435,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-04T07:50:19.086367948Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a",
+        "ResolvConfPath": "/var/lib/docker/containers/5985de64fdf3ce54f52cd89247684e449332d636e9591cc6d5046ff28f92eecb/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/5985de64fdf3ce54f52cd89247684e449332d636e9591cc6d5046ff28f92eecb/hostname",
+        "HostsPath": "/var/lib/docker/containers/5985de64fdf3ce54f52cd89247684e449332d636e9591cc6d5046ff28f92eecb/hosts",
+        "LogPath": "/var/lib/docker/containers/5985de64fdf3ce54f52cd89247684e449332d636e9591cc6d5046ff28f92eecb/5985de64fdf3ce54f52cd89247684e449332d636e9591cc6d5046ff28f92eecb-json.log",
+        "Name": "/green2-refute-spec-20261104",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "none",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "5985de64fdf3",
+            "Domainname": "",
+            "User": "ubuntu",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "sleep",
+                "infinity"
+            ],
+            "Image": "erdos1062-import-20261102__env-main:latest",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.project": "erdos1062-import-20261102__env",
+                "com.docker.compose.service": "main",
+                "com.docker.compose.version": "2.40.3",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "e198e855e92d95f7082274ec4006fbe9de70155904d62f798c6b1642cc2474cb",
+            "SandboxKey": "/var/run/docker/netns/e198e855e92d",
+            "Ports": {},
+            "Networks": {
+                "none": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "3ce15e35b16a0ccd716c811654548dc89869e504ee57059f69703a505ff9a361",
+                    "EndpointID": "c325a503233169112fe738fe7f813a67ecf8c83bb37316b0aa57f04497b8bf72",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "MacAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:d3a53f3fb068f28d19d39a5c29db3a8eb80e6d555edf7d611ab032d280965b78",
+            "size": 3518,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
+
+$ docker stop 5985de64fdf3ce54f52cd89247684e449332d636e9591cc6d5046ff28f92eecb
+exit=0
+5985de64fdf3ce54f52cd89247684e449332d636e9591cc6d5046ff28f92eecb
+
+$ docker rm 5985de64fdf3ce54f52cd89247684e449332d636e9591cc6d5046ff28f92eecb
+exit=0
+5985de64fdf3ce54f52cd89247684e449332d636e9591cc6d5046ff28f92eecb
+
+$ docker container inspect green2-refute-spec-20261104
+exit=1
+[]
+Error response from daemon: No such container: green2-refute-spec-20261104
+
+$ docker container inspect 5985de64fdf3ce54f52cd89247684e449332d636e9591cc6d5046ff28f92eecb
+exit=1
+[]
+Error response from daemon: No such container: 5985de64fdf3ce54f52cd89247684e449332d636e9591cc6d5046ff28f92eecb
+
+$ docker container inspect greensopenproblems-2-green-2-ref__kl5ufqt__env-main-1
+exit=1
+[]
+Error response from daemon: No such container: greensopenproblems-2-green-2-ref__kl5ufqt__env-main-1
+
+$ docker container inspect greensopenproblems-2-green-2-ref__kl5ufqt__env-main-1
+exit=1
+[]
+Error response from daemon: No such container: greensopenproblems-2-green-2-ref__kl5ufqt__env-main-1
+
+$ docker container inspect 447501fc0cd210550e2ec0eddeb08dc4a53dc9f3db74887bf3c15f7abaffe81d
+exit=0
+[
+    {
+        "Id": "447501fc0cd210550e2ec0eddeb08dc4a53dc9f3db74887bf3c15f7abaffe81d",
+        "Created": "2026-11-04T07:54:31.099008983Z",
+        "Path": "sh",
+        "Args": [
+            "-c",
+            "sleep infinity"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1972156,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-04T07:55:19.005235978Z",
+            "FinishedAt": "2026-11-04T07:54:42.566135218Z"
+        },
+        "Image": "sha256:cd5b77953fce1a1c753822781632ea8a50ea3bd66830b35fadc580d19af10cf9",
+        "ResolvConfPath": "/var/lib/docker/containers/447501fc0cd210550e2ec0eddeb08dc4a53dc9f3db74887bf3c15f7abaffe81d/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/447501fc0cd210550e2ec0eddeb08dc4a53dc9f3db74887bf3c15f7abaffe81d/hostname",
+        "HostsPath": "/var/lib/docker/containers/447501fc0cd210550e2ec0eddeb08dc4a53dc9f3db74887bf3c15f7abaffe81d/hosts",
+        "LogPath": "/var/lib/docker/containers/447501fc0cd210550e2ec0eddeb08dc4a53dc9f3db74887bf3c15f7abaffe81d/447501fc0cd210550e2ec0eddeb08dc4a53dc9f3db74887bf3c15f7abaffe81d-json.log",
+        "Name": "/greensopenproblems-2-green-2-ref__rzfuzbv__env-main-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "greensopenproblems-2-green-2-ref__rzfuzbv__env_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 8589934592,
+            "NanoCpus": 4000000000,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 17179869184,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "447501fc0cd2",
+            "Domainname": "",
+            "User": "ubuntu",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "sh",
+                "-c",
+                "sleep infinity"
+            ],
+            "Image": "greensopenproblems-2-green-2-ref__rzfuzbv__env-main",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "51aad5c89590a1a6e9c1ad96ea2ce4fda2faa9a91d5566e8faca5dd271f86973",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:cd5b77953fce1a1c753822781632ea8a50ea3bd66830b35fadc580d19af10cf9",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "greensopenproblems-2-green-2-ref__rzfuzbv__env",
+                "com.docker.compose.project.config_files": "/tmp/tmps29y7x4_/greensopenproblems-2-green-2-ref__rZFuzbv__env-docker-compose-resources.json,/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml,/tmp/green2refute-compose.yaml,/tmp/tmp5_zxiidt/docker-compose-environment.json,/tmp/tmpalpeavi3/docker-compose-mounts.json",
+                "com.docker.compose.project.working_dir": "/root/FormalConjectures-Bench/tasks-v3/greensopenproblems-2-green-2-refute/environment",
+                "com.docker.compose.service": "main",
+                "com.docker.compose.version": "2.40.3",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "363475f0b2220987c2a1a8b29409d04aeb99ba5dffcd102c02c89ca5cb8da121",
+            "SandboxKey": "/var/run/docker/netns/363475f0b222",
+            "Ports": {},
+            "Networks": {
+                "greensopenproblems-2-green-2-ref__rzfuzbv__env_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "greensopenproblems-2-green-2-ref__rzfuzbv__env-main-1",
+                        "main"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "0b3ef0777b75d2fc12f0afd193b36c5fccfd9f2c08c5f4b8dc90b4851eeef653",
+                    "EndpointID": "62dd556e35334ca924e8f78eefe816079c0cb066e0649782105a41823628bc63",
+                    "Gateway": "10.249.202.1",
+                    "IPAddress": "10.249.202.2",
+                    "MacAddress": "ea:09:55:89:79:1a",
+                    "IPPrefixLen": 24,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "greensopenproblems-2-green-2-ref__rzfuzbv__env-main-1",
+                        "main",
+                        "447501fc0cd2"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:91b2413d6833756e14b8203b8b3501c8a522b0b7fcd63a12a43555c7e25d1723",
+            "size": 3518,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
+
+$ docker stop 447501fc0cd210550e2ec0eddeb08dc4a53dc9f3db74887bf3c15f7abaffe81d
+exit=0
+447501fc0cd210550e2ec0eddeb08dc4a53dc9f3db74887bf3c15f7abaffe81d
+
+$ docker rm 447501fc0cd210550e2ec0eddeb08dc4a53dc9f3db74887bf3c15f7abaffe81d
+exit=0
+447501fc0cd210550e2ec0eddeb08dc4a53dc9f3db74887bf3c15f7abaffe81d
+
+$ docker container inspect greensopenproblems-2-green-2-ref__rzfuzbv__env-main-1
+exit=1
+[]
+Error response from daemon: No such container: greensopenproblems-2-green-2-ref__rzfuzbv__env-main-1
+
+$ docker container inspect 447501fc0cd210550e2ec0eddeb08dc4a53dc9f3db74887bf3c15f7abaffe81d
+exit=1
+[]
+Error response from daemon: No such container: 447501fc0cd210550e2ec0eddeb08dc4a53dc9f3db74887bf3c15f7abaffe81d
+
+$ docker image rm greensopenproblems-2-green-2-ref__i34emti__env-main:latest
+exit=0
+Untagged: greensopenproblems-2-green-2-ref__i34emti__env-main:latest
+Deleted: sha256:8fdcfc4b82c5b268e04d04e7e5e9ea6a9a10f05b1c05a756cdb9fe3db49b6c6c
+
+$ docker image inspect greensopenproblems-2-green-2-ref__i34emti__env-main:latest
+exit=1
+[]
+Error response from daemon: No such image: greensopenproblems-2-green-2-ref__i34emti__env-main:latest
+
+$ docker image inspect sha256:8fdcfc4b82c5b268e04d04e7e5e9ea6a9a10f05b1c05a756cdb9fe3db49b6c6c
+exit=1
+[]
+Error response from daemon: No such image: sha256:8fdcfc4b82c5b268e04d04e7e5e9ea6a9a10f05b1c05a756cdb9fe3db49b6c6c
+
+$ docker image rm greensopenproblems-2-green-2-ref__kl5ufqt__env-main:latest
+exit=0
+Untagged: greensopenproblems-2-green-2-ref__kl5ufqt__env-main:latest
+Deleted: sha256:f34b785b3acc06d1c135e96a2eabb298b0ece0bd7ca5f80b6c107412752d9f0d
+
+$ docker image inspect greensopenproblems-2-green-2-ref__kl5ufqt__env-main:latest
+exit=1
+[]
+Error response from daemon: No such image: greensopenproblems-2-green-2-ref__kl5ufqt__env-main:latest
+
+$ docker image inspect sha256:f34b785b3acc06d1c135e96a2eabb298b0ece0bd7ca5f80b6c107412752d9f0d
+exit=1
+[]
+Error response from daemon: No such image: sha256:f34b785b3acc06d1c135e96a2eabb298b0ece0bd7ca5f80b6c107412752d9f0d
+
+$ docker image rm greensopenproblems-2-green-2-ref__rzfuzbv__env-main:latest
+exit=0
+Untagged: greensopenproblems-2-green-2-ref__rzfuzbv__env-main:latest
+Deleted: sha256:cd5b77953fce1a1c753822781632ea8a50ea3bd66830b35fadc580d19af10cf9
+
+$ docker image inspect greensopenproblems-2-green-2-ref__rzfuzbv__env-main:latest
+exit=1
+[]
+Error response from daemon: No such image: greensopenproblems-2-green-2-ref__rzfuzbv__env-main:latest
+
+$ docker image inspect sha256:cd5b77953fce1a1c753822781632ea8a50ea3bd66830b35fadc580d19af10cf9
+exit=1
+[]
+Error response from daemon: No such image: sha256:cd5b77953fce1a1c753822781632ea8a50ea3bd66830b35fadc580d19af10cf9
+
+$ docker network inspect greensopenproblems-2-green-2-ref__rzfuzbv__env_default
+exit=0
+[
+    {
+        "Name": "greensopenproblems-2-green-2-ref__rzfuzbv__env_default",
+        "Id": "0b3ef0777b75d2fc12f0afd193b36c5fccfd9f2c08c5f4b8dc90b4851eeef653",
+        "Created": "2026-11-04T15:54:31.063396148+08:00",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "10.249.202.0/24",
+                    "IPRange": "",
+                    "Gateway": "10.249.202.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {},
+        "Labels": {
+            "com.docker.compose.config-hash": "c59028f22dc9f53df37f895486d6aad993c9b91a6c11a85834f32828d7a034fb",
+            "com.docker.compose.network": "default",
+            "com.docker.compose.project": "greensopenproblems-2-green-2-ref__rzfuzbv__env",
+            "com.docker.compose.version": "2.40.3"
+        },
+        "Containers": {},
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "10.249.202.0/24": {
+                        "IPsInUse": 3,
+                        "DynamicIPsAvailable": 253
+                    }
+                }
+            }
+        }
+    }
+]
+
+$ docker network rm greensopenproblems-2-green-2-ref__rzfuzbv__env_default
+exit=0
+greensopenproblems-2-green-2-ref__rzfuzbv__env_default
+
+$ docker network inspect greensopenproblems-2-green-2-ref__rzfuzbv__env_default
+exit=1
+[]
+Error response from daemon: network greensopenproblems-2-green-2-ref__rzfuzbv__env_default not found
+
+$ docker ps -a --no-trunc
+exit=0
+CONTAINER ID                                                       IMAGE                                                                     COMMAND                                                                                                                        CREATED          STATUS                    PORTS                    NAMES
+caf1e8e4a5e377a9bb386850cfa263a08042bba2c0593b70b3e382f9d393ddd7   greensopenproblems-26-open-prove__jsmyxgx__env-main:latest                "sleep infinity"                                                                                                               45 seconds ago   Up 45 seconds                                      fcb-green26-refute-spec-20261104
+2fbabe61bf18481bf263bbdbccbfa76c9d9be1689b6d52145417b1a1bff85b99   greensopenproblems-26-open-prove__xksagwo__env-main                       "sh -c 'sleep infinity'"                                                                                                       7 minutes ago    Up 6 minutes                                       greensopenproblems-26-open-prove__xksagwo__env-main-1
+35663be2934690cc2861ff4d902c0ada9f948bd5437f6f7e4b633b7434876941   erdos1062-import-20261102__env-main:latest                                "sleep infinity"                                                                                                               13 minutes ago   Up 13 minutes                                      fcb-green26-open-spec-20261104
+418e01ddfc0350357b6366d0053d11f109696c1fa17318a6e5e0fe4262857a51   weishaw/sub2api:0.2.15                                                    "/app/docker-entrypoint.sh /app/sub2api"                                                                                       45 hours ago     Up 5 hours (healthy)      0.0.0.0:8080->8080/tcp   sub2api
+f87663ee43dc6988a89ad187b16dab3013b41ac26a1f92d78138099d083f7c1e   erdos1062-lower-import-current-20261102__env-main                         "sh -c 'sleep infinity'"                                                                                                       2 days ago       Exited (137) 2 days ago                            erdos1062-lower-import-current-20261102__env-main-1
+e3e0088b94c6bddc783b1c63d7e6c8da3708e230e998cbf6db1146abd0c92f8c   erdos1062-import-20261102__env-main                                       "sh -c 'sleep infinity'"                                                                                                       2 days ago       Exited (137) 2 days ago                            erdos1062-import-20261102__env-main-1
+9d88b1e34a20193355bd977f203b9b26d4ae86fd120281afad36f83425c0aa05   erdos1051-import-20261102__env-main                                       "sh -c 'sleep infinity'"                                                                                                       2 days ago       Exited (137) 2 days ago                            erdos1051-import-20261102__env-main-1
+969a5a561de9e07c912576ff9cd1edfd1950668280e678277bfc7d9569f86659   postgres:18-alpine                                                        "docker-entrypoint.sh postgres"                                                                                                6 weeks ago      Up 5 hours (healthy)      5432/tcp                 sub2api-postgres
+038757ae87f97d3ecccc7e8bff6b3fd52732187cd470dbff58273a590649bed4   redis:8-alpine                                                            "docker-entrypoint.sh sh -c '\n  redis-server \\\n  --save 60 1 \\\n  --appendonly yes \\\n  --appendfsync everysec \\\n  '"   6 weeks ago      Up 5 hours (healthy)      6379/tcp                 sub2api-redis
+2c28f9c67fbab8d813769633221539e3dc3e05a445c2a8e336bbdc241cd20be9   sha256:4e1081d31f83482cef2acf20d8de31d71ed5d8247711028f3494393e782d18df   "/bin/bash -lc 'trap 'exit 0' TERM INT; while true; do sleep 3600; done'"                                                      2 months ago     Dead                                               
+
+$ docker image inspect sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a --format {{.Id}}
+exit=0
+sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a

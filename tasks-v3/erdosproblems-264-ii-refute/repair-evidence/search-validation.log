@@ -1,0 +1,5 @@
+/app/FormalConjecturesBench/Target.lean:def IsIrrationalitySequence (a : ℕ → ℕ) : Prop := ∀ b : ℕ → ℕ, BddAbove (Set.range b) →
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/SetTheory/Nimber/Basic.lean:protected theorem add_comm (a b : Nimber) : a + b = b + a := by
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/SetTheory/PGame/Algebra.lean:theorem add_comm_le {x y : PGame} : x + y ≤ y + x :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/SetTheory/PGame/Algebra.lean:theorem add_comm_equiv {x y : PGame} : x + y ≈ y + x :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/RingTheory/OreLocalization/Basic.lean:protected theorem add_comm (x y : X[S⁻¹]) : x + y = y + x := by

@@ -1,0 +1,162 @@
+[
+  {
+    "host": "tests/GoldenCheck.lean",
+    "container": "/tests/GoldenCheck.lean",
+    "sha256": "a567d8d69472daffdfbaab7ce26478c79549c46bcf10fa4bcb0ead64e79417e9"
+  },
+  {
+    "host": "tests/golden_env/FormalConjecturesBench/Submission.lean",
+    "container": "/tests/golden_env/FormalConjecturesBench/Submission.lean",
+    "sha256": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93"
+  },
+  {
+    "host": "tests/golden_env/FormalConjecturesBench/Target.lean",
+    "container": "/tests/golden_env/FormalConjecturesBench/Target.lean",
+    "sha256": "4ce3c4f590e58dd939b3326693e7ff9ba4200d0dce65f3af4f7d22a7f3142ba5"
+  },
+  {
+    "host": "tests/golden_env/FormalConjecturesBench.lean",
+    "container": "/tests/golden_env/FormalConjecturesBench.lean",
+    "sha256": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90"
+  },
+  {
+    "host": "tests/golden_env/lake-manifest.json",
+    "container": "/tests/golden_env/lake-manifest.json",
+    "sha256": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71"
+  },
+  {
+    "host": "tests/golden_env/lakefile.toml",
+    "container": "/tests/golden_env/lakefile.toml",
+    "sha256": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db"
+  },
+  {
+    "host": "tests/golden_env/lean-toolchain",
+    "container": "/tests/golden_env/lean-toolchain",
+    "sha256": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  {
+    "host": "tests/test_target.py",
+    "container": "/tests/test_target.py",
+    "sha256": "25ce2ff8b5e75f295dd27273c5ec6b1c0f9bdc8b12698b6b4abad1d29c09cd13"
+  },
+  {
+    "host": "tests/trusted_spec/AuditSpec.lean",
+    "container": "/tests/trusted_spec/AuditSpec.lean",
+    "sha256": "c8db94db2fa766b758b2f130037102b4753c9815cf6357517a47a54eafcf0ca5"
+  },
+  {
+    "host": "tests/trusted_spec/FCBTrustedSpec.ilean",
+    "container": "/tests/trusted_spec/FCBTrustedSpec.ilean",
+    "sha256": "b84f8c66d27a95f0ed558f2e3c4349138ab571f43ebdd24acb5910a07b6a5d18"
+  },
+  {
+    "host": "tests/trusted_spec/FCBTrustedSpec.lean",
+    "container": "/tests/trusted_spec/FCBTrustedSpec.lean",
+    "sha256": "53eb6baec23da58873f65c83e6ea0f3bcd9a739e2af469ab48b25e89c96c8158"
+  },
+  {
+    "host": "tests/trusted_spec/FCBTrustedSpec.olean",
+    "container": "/tests/trusted_spec/FCBTrustedSpec.olean",
+    "sha256": "a42d0f0eb6e064674eb54a24e33c6857463acb0d056b2bc13650fb94d4eea558"
+  },
+  {
+    "host": "tests/trusted_spec/audit.log",
+    "container": "/tests/trusted_spec/audit.log",
+    "sha256": "796129d5d71e77d442bfb1dd98f72afd63a2d2d910e37824e8067598765e8ab3"
+  },
+  {
+    "host": "tests/trusted_spec/generate.py",
+    "container": "/tests/trusted_spec/generate.py",
+    "sha256": "5e0cc5418bb1bc2a5d5e0fe7370758cd8fbec8adbe767a27cd3824cbca04185b"
+  },
+  {
+    "host": "tests/trusted_spec/manifest.json",
+    "container": "/tests/trusted_spec/manifest.json",
+    "sha256": "fbad60e1ebfc0ff52a5912eccb8f053cb787423b9a6479e12b72e712a93c4fd5"
+  },
+  {
+    "host": "tests/trusted_spec/reproduce.sh",
+    "container": "/tests/trusted_spec/reproduce.sh",
+    "sha256": "ede6a2a9636394e9b93ab45c02647e96820f334d723375ff378758ff00312c70"
+  },
+  {
+    "host": "environment/data/checker/GoldenCheck.lean",
+    "container": "/opt/formal-conjectures-bench-checker/GoldenCheck.lean",
+    "sha256": "a567d8d69472daffdfbaab7ce26478c79549c46bcf10fa4bcb0ead64e79417e9"
+  },
+  {
+    "host": "environment/data/checker/golden_env/FormalConjecturesBench/Submission.lean",
+    "container": "/opt/formal-conjectures-bench-checker/golden_env/FormalConjecturesBench/Submission.lean",
+    "sha256": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93"
+  },
+  {
+    "host": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+    "container": "/opt/formal-conjectures-bench-checker/golden_env/FormalConjecturesBench/Target.lean",
+    "sha256": "4ce3c4f590e58dd939b3326693e7ff9ba4200d0dce65f3af4f7d22a7f3142ba5"
+  },
+  {
+    "host": "environment/data/checker/golden_env/FormalConjecturesBench.lean",
+    "container": "/opt/formal-conjectures-bench-checker/golden_env/FormalConjecturesBench.lean",
+    "sha256": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90"
+  },
+  {
+    "host": "environment/data/checker/golden_env/lake-manifest.json",
+    "container": "/opt/formal-conjectures-bench-checker/golden_env/lake-manifest.json",
+    "sha256": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71"
+  },
+  {
+    "host": "environment/data/checker/golden_env/lakefile.toml",
+    "container": "/opt/formal-conjectures-bench-checker/golden_env/lakefile.toml",
+    "sha256": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db"
+  },
+  {
+    "host": "environment/data/checker/golden_env/lean-toolchain",
+    "container": "/opt/formal-conjectures-bench-checker/golden_env/lean-toolchain",
+    "sha256": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  {
+    "host": "environment/data/checker/test_target.py",
+    "container": "/opt/formal-conjectures-bench-checker/test_target.py",
+    "sha256": "25ce2ff8b5e75f295dd27273c5ec6b1c0f9bdc8b12698b6b4abad1d29c09cd13"
+  },
+  {
+    "host": "environment/data/checker/trusted_spec/AuditSpec.lean",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/AuditSpec.lean",
+    "sha256": "c8db94db2fa766b758b2f130037102b4753c9815cf6357517a47a54eafcf0ca5"
+  },
+  {
+    "host": "environment/data/checker/trusted_spec/FCBTrustedSpec.ilean",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/FCBTrustedSpec.ilean",
+    "sha256": "b84f8c66d27a95f0ed558f2e3c4349138ab571f43ebdd24acb5910a07b6a5d18"
+  },
+  {
+    "host": "environment/data/checker/trusted_spec/FCBTrustedSpec.lean",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/FCBTrustedSpec.lean",
+    "sha256": "53eb6baec23da58873f65c83e6ea0f3bcd9a739e2af469ab48b25e89c96c8158"
+  },
+  {
+    "host": "environment/data/checker/trusted_spec/FCBTrustedSpec.olean",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/FCBTrustedSpec.olean",
+    "sha256": "a42d0f0eb6e064674eb54a24e33c6857463acb0d056b2bc13650fb94d4eea558"
+  },
+  {
+    "host": "environment/data/checker/trusted_spec/audit.log",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/audit.log",
+    "sha256": "796129d5d71e77d442bfb1dd98f72afd63a2d2d910e37824e8067598765e8ab3"
+  },
+  {
+    "host": "environment/data/checker/trusted_spec/generate.py",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/generate.py",
+    "sha256": "5e0cc5418bb1bc2a5d5e0fe7370758cd8fbec8adbe767a27cd3824cbca04185b"
+  },
+  {
+    "host": "environment/data/checker/trusted_spec/manifest.json",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/manifest.json",
+    "sha256": "fbad60e1ebfc0ff52a5912eccb8f053cb787423b9a6479e12b72e712a93c4fd5"
+  },
+  {
+    "host": "environment/data/checker/trusted_spec/reproduce.sh",
+    "container": "/opt/formal-conjectures-bench-checker/trusted_spec/reproduce.sh",
+    "sha256": "ede6a2a9636394e9b93ab45c02647e96820f334d723375ff378758ff00312c70"
+  }
+]

@@ -1,0 +1,2 @@
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Algebra/Squarefree/Basic.lean:def Squarefree [Monoid R] (r : R) : Prop :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Nat/Squarefree.lean:def SquarefreeHelper (n k : ℕ) : Prop :=

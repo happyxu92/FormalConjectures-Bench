@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-carmichaeltotient-charmichaeltotient-prove",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式加入 /opt/formal-conjectures/.lake/packages；在最终 Harbor 子容器中以 ubuntu 执行三路径 rg 命令找到 Nat.totient 定义，退出码 0。见 repair-evidence/search-validation.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；原 Dockerfile 缺普通用户依赖验收。末尾补 RUN lake build +FormalConjecturesBench.Target，保留 ubuntu、HOME 和只读依赖权限。本地 task Harbor 镜像构建成功，同一子容器 ubuntu 再次 lake build 退出 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "技能脚本修复前后均为 no_issue；原头通过，改头和移除 := 被拒绝，两份 checker 一致。未修改 EXPECTED_HEADER、冻结哈希或数学输入。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从原 golden 在无候选的匹配 Docker 环境提前 elaboration、预编译并递归审计 Spec，移除 Submission 输入且不导出临时占位定理；两包同步，manifest SHA256 214a9d926c721fa4d02465738cc0806bcc19e1d1428473df2a6483a4584be646，universes=[]。运行时固定 /tests 或本地 /opt 可信产物及依赖，校验哈希/版本/输入，临时候选先导入 Spec，比较完整定理类型。当前本地 Harbor 构建镜像 d619bc3d04745a7a4e14294a2a9b9562eb5aea9b9fa248e1d5dfd8521b1ddb1d；正式和本地入口退出 1、reward=0，仅因原始 sorry。两个入口来源的补测各17项全部通过，覆盖审计、ubuntu 编译、完整类型比较、sorryAx 拒绝、canary、冻结/越界负例、实例语义偷换、同名缓存、缺失/损坏产物不再生成。31 个容器文件及公开 Target 哈希与宿主一致。初次地址池耗尽已用独有子网解决；生成阶段初次 Lake/elan 调用失败已用全新容器及直接固定编译器解决。详情、命令、哈希和退出码见 repair-evidence/validation.md；未提供原题证明。报告落盘后已清理本题容器 f62b177bf95d、0ddb88249da6、b6d28e4fe769，4 个独有镜像/tag（257e2c7b8a96、5ae93538a75f、d70ada2b258b、d619bc3d0474）及独有网络 9903a5988d60；逐一 inspect 与 docker ps -a 核验均已移除，无本题遗留资源，未删除已有/其他任务资源或共享缓存。见 repair-evidence/cleanup-results.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。已读锁定上游完整前缀/目标、Ford 1104.3264 §1.3 及 MathWorld；本题为全部正整数的 Carmichael totient 正向猜想，非有界结果。Nat.totient_pos 自动排除见证 m=0，n=0 已正确排除，未发现明显错误；不因开放而判无解，未改数学输入。见 repair-evidence/research.md。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "public_lean4_proof=false，status=searched。完整 task ID 精确查 CSV 未命中后完成11组联网检索，覆盖上游/main、Mathlib、GitHub PR/分支/fork、作者及 conjectures.io；实际读取候选 Lean。上游和 SamuelSchlesinger 骨架仍有 sorry；PR2567/3091 仅修改有界定理分类且保留 sorry；contributions=0。未找到本正向目标的已知公开完整 Lean4 证明，不断言绝对不存在；Wikipedia 403 已由可访问原论文及来源替代，关键证明线索均已核清。详见 repair-evidence/research.md，未放入任何公开答案。"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+Starting trial: erdos41-refute-accept2-20261104
+Task: erdosproblems-41-erdos-41-refute
+Agent: nop
+Environment: docker
+Trials directory: /tmp/erdos41-refute-harbor-trials
+
+Trial completed!
+Trial name: erdos41-refute-accept2-20261104
+Task: formal-conjectures-bench/erdosproblems-41-erdos-41-refute
+Started: 2026-11-04 07:53:57.344709+00:00
+Finished: 2026-11-04 07:54:09.762669+00:00
+Rewards: {'reward': 0.0}

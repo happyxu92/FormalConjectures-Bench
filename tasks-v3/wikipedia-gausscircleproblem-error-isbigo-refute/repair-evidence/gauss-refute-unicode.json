@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-gausscircleproblem-error-isbigo-refute",
+  "mode": "auto_repair",
+  "status": "repaired",
+  "case": "unicode_repaired",
+  "has_problem": true,
+  "has_unicode_issue": true,
+  "repair_attempted": true,
+  "repair_success": true,
+  "modified": true,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "1bbf4d962666691279c119aa4a513ae4b923dee2978b1ae3658ad3e902ecb65f",
+      "header_before": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2203 (o : \u211d \u2192 \u211d) (_ : Tendsto o atTop (\ud835\udcdd 0)),\n          E =O[atTop] fun r => r ^ (1/2 + o r)\n    )",
+      "has_unicode_issue": true,
+      "modified": true,
+      "verification": "passed",
+      "unicode_case": "surrogate_pair",
+      "normalized_header": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2203 (o : \u211d \u2192 \u211d) (_ : Tendsto o atTop (\ud835\udcdd 0)),\n          E =O[atTop] fun r => r ^ (1/2 + o r)\n    )",
+      "normalized_header_checks": "passed",
+      "original_header_passes": false,
+      "sha256_after": "453a018401fd426d7bf7326bef4332f46b08dce4b364537080b1477f598ebb41",
+      "header_after": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2203 (o : \u211d \u2192 \u211d) (_ : Tendsto o atTop (\ud835\udcdd 0)),\n          E =O[atTop] fun r => r ^ (1/2 + o r)\n    )"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "1bbf4d962666691279c119aa4a513ae4b923dee2978b1ae3658ad3e902ecb65f",
+      "header_before": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2203 (o : \u211d \u2192 \u211d) (_ : Tendsto o atTop (\ud835\udcdd 0)),\n          E =O[atTop] fun r => r ^ (1/2 + o r)\n    )",
+      "has_unicode_issue": true,
+      "modified": true,
+      "verification": "passed",
+      "unicode_case": "surrogate_pair",
+      "normalized_header": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2203 (o : \u211d \u2192 \u211d) (_ : Tendsto o atTop (\ud835\udcdd 0)),\n          E =O[atTop] fun r => r ^ (1/2 + o r)\n    )",
+      "normalized_header_checks": "passed",
+      "original_header_passes": false,
+      "sha256_after": "453a018401fd426d7bf7326bef4332f46b08dce4b364537080b1477f598ebb41",
+      "header_after": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2203 (o : \u211d \u2192 \u211d) (_ : Tendsto o atTop (\ud835\udcdd 0)),\n          E =O[atTop] fun r => r ^ (1/2 + o r)\n    )"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "9dc5ee7460346a3b8d8eb8041fcc7495c2fdb35b76a57500d8bd2e27af1df97e"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "9dc5ee7460346a3b8d8eb8041fcc7495c2fdb35b76a57500d8bd2e27af1df97e"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "9dc5ee7460346a3b8d8eb8041fcc7495c2fdb35b76a57500d8bd2e27af1df97e"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 2
+}

@@ -1,0 +1,144 @@
+Failed to download logs to /tmp/fcb-three-halves-prove/harbor/fcb-three-halves-prove-final-20261104/books-uniformdistributionofseque__pnWYqAY/agent: Could not resolve container for compose service 'main' in project 'books-uniformdistributionofseque__pnwyqay__env'.
+Traceback (most recent call last):
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 606, in run
+    await self._prepare()
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 645, in _prepare
+    await self._setup_agent_environment()
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 1849, in _setup_agent_environment
+    await self._start_agent_environment()
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 1855, in _start_agent_environment
+    await asyncio.wait_for(
+  File "/usr/lib/python3.12/asyncio/tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 1091, in start
+    await self._run_docker_compose_command(["up", *runtime.up_args])
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 765, in _run_docker_compose_command
+    raise RuntimeError(
+RuntimeError: Docker compose command failed for environment books-uniformdistributionofsequences-equidistribution-isequidistributedmoduloone-three-halves-pow-prove. Command: docker compose --project-name books-uniformdistributionofseque__pnwyqay__env --project-directory /root/FormalConjectures-Bench/tasks-v3/books-uniformdistributionofsequences-equidistribution-isequidistributedmoduloone-three-halves-pow-prove/environment -f /tmp/tmpyxv392hy/books-uniformdistributionofseque__pnWYqAY__env-docker-compose-resources.json -f /root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /tmp/fcb-three-halves-prove/compose-final-subnet.yaml -f /tmp/tmpb3z6abq4/docker-compose-environment.json -f /tmp/tmppivxwuzo/docker-compose-mounts.json up --detach --wait. Return code: 1. Stdout: #1 [internal] load local bake definitions
+#1 reading from stdin 831B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 3.24kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [ 1/17] FROM docker.io/library/ubuntu:24.04@sha256:fe81560990fae86dc4743202b2cb4d3df98d0bcf949173cecef15ce1127ef852
+#5 resolve docker.io/library/ubuntu:24.04@sha256:fe81560990fae86dc4743202b2cb4d3df98d0bcf949173cecef15ce1127ef852 0.0s done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 1.58kB done
+#6 DONE 0.0s
+
+#7 [ 7/17] RUN apt-get update && apt-get install -y     asciinema     ripgrep     tmux   && rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [12/17] RUN find /opt/formal-conjectures/.lake/packages -path '*/.lake/config/*/lakefile.olean*' -type f -exec chown ubuntu:ubuntu {} +   && find /opt/formal-conjectures/.lake/packages -path '*/.lake/config/*/lakefile.olean*' -type f -exec chmod 666 {} +
+#8 CACHED
+
+#9 [ 3/17] RUN curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh |     sh -s -- -y --default-toolchain none &&     chmod -R a+rX /opt/elan
+#9 CACHED
+
+#10 [ 4/17] WORKDIR /opt
+#10 CACHED
+
+#11 [10/17] RUN mkdir -p /opt/formal-conjectures-bench-dependency-config   && cd /opt/formal-conjectures   && find .lake/packages -path '*/.lake/config/*/lakefile.olean*' -type f     -exec cp --parents {} /opt/formal-conjectures-bench-dependency-config/ ;   && chown -R root:root /opt/formal-conjectures-bench-dependency-config   && chmod -R go-w /opt/formal-conjectures-bench-dependency-config
+#11 CACHED
+
+#12 [15/17] RUN mkdir -p /opt/formal-conjectures-bench-checker   && cp -a /app/checker/. /opt/formal-conjectures-bench-checker/   && rm -rf /app/checker   && find /opt/formal-conjectures-bench-checker -type d -name __pycache__ -prune -exec rm -rf {} +   && mkdir -p /app/.lake   && ln -s /opt/formal-conjectures/.lake/packages /app/.lake/packages   && chown -R root:root /app /opt/formal-conjectures-bench-checker   && chmod -R go-w /app /opt/formal-conjectures-bench-checker   && chmod 755 /app/check.sh   && chown ubuntu:ubuntu /app/.lake   && chown -R ubuntu:ubuntu /app/FormalConjecturesBench   && chown -h ubuntu:ubuntu /app/.lake/packages
+#12 CACHED
+
+#13 [ 8/17] RUN find /opt/formal-conjectures/FormalConjectures -maxdepth 1 -type d -name '*Problems' -prune -exec rm -rf {} +
+#13 CACHED
+
+#14 [ 9/17] RUN chmod go-w     /opt/formal-conjectures     /opt/formal-conjectures/.lake     /opt/formal-conjectures/.lake/packages
+#14 CACHED
+
+#15 [11/17] RUN find /opt/formal-conjectures/.lake/packages -path '*/.lake/config/*' -type d -exec chmod 1777 {} +
+#15 CACHED
+
+#16 [ 6/17] RUN id -u ubuntu >/dev/null 2>&1 || useradd -ms /bin/bash ubuntu
+#16 CACHED
+
+#17 [ 2/17] RUN apt-get update && apt-get install -y     bash     ca-certificates     curl     git     python3     unzip     xz-utils   && rm -rf /var/lib/apt/lists/*
+#17 CACHED
+
+#18 [13/17] WORKDIR /app
+#18 CACHED
+
+#19 [16/17] WORKDIR /app
+#19 CACHED
+
+#20 [14/17] COPY data/ /app/
+#20 CACHED
+
+#21 [ 5/17] RUN git clone https://github.com/google-deepmind/formal-conjectures.git /opt/formal-conjectures &&     git -C /opt/formal-conjectures checkout "233a10e857ef78e79fd9fe661d37db724089170a" &&     cd /opt/formal-conjectures &&     lake exe cache get &&     lake build FormalConjectures.Util.ProblemImports &&     find /opt/formal-conjectures -type d -name .git -prune -exec rm -rf {} + &&     rm -rf /root/.cache /tmp/*
+#21 CACHED
+
+#22 [17/17] RUN lake build +FormalConjecturesBench.Target
+#22 CACHED
+
+#23 exporting to image
+#23 exporting layers done
+#23 exporting manifest sha256:706c88125b54a310030d8d5499ce5d72198b698a19b271eed57f3c6779655ea6 done
+#23 exporting config sha256:0fad2d90d6d006ce5bd69ddcecba1ab4fe2b275bcb357d11fc8f821cf4afb3a1 done
+#23 exporting attestation manifest sha256:7010edf43c168ad5410b4b6e110d317e22eb4e7dd4c1ad040c54d46e51bf5195 0.0s done
+#23 exporting manifest list sha256:0151fd1d500e5d9632119d44907414d96bc697101ef65cd7c336a40960b40a2c done
+#23 naming to docker.io/library/books-uniformdistributionofseque__pnwyqay__env-main:latest done
+#23 unpacking to docker.io/library/books-uniformdistributionofseque__pnwyqay__env-main:latest done
+#23 DONE 0.1s
+
+#24 resolving provenance for metadata file
+#24 DONE 0.0s
+ books-uniformdistributionofseque__pnwyqay__env-main  Built
+ Network books-uniformdistributionofseque__pnwyqay__env_default  Creating
+ Network books-uniformdistributionofseque__pnwyqay__env_default  Error
+failed to create network books-uniformdistributionofseque__pnwyqay__env_default: Error response from daemon: invalid pool request: Pool overlaps with other one on this address space
+. Stderr: None. 
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 824, in _download_role_logs
+    await self.agent_environment.download_dir(
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 1308, in download_dir
+    await self._platform.download_dir(source_dir, target_dir)
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker_unix.py", line 304, in download_dir
+    await self._download_via_engine_cp(f"{source_dir}/.", target_dir, service)
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker_unix.py", line 251, in _download_via_engine_cp
+    container = await self._resolve_service_container(service)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker_unix.py", line 230, in _resolve_service_container
+    raise RuntimeError(
+RuntimeError: Could not resolve container for compose service 'main' in project 'books-uniformdistributionofseque__pnwyqay__env'.
+  1/1 Mean: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:00:01 0:00:00
+adhoc • nop
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      0 │          1 │ 0.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ Exception    ┃ Count ┃
+┡━━━━━━━━━━━━━━╇━━━━━━━┩
+│ RuntimeError │     1 │
+└──────────────┴───────┘
+
+Job Info
+Total runtime: 1s
+Results written to 
+/tmp/fcb-three-halves-prove/harbor/fcb-three-halves-prove-final-20261104/result.
+json
+Inspect results by running `harbor view /tmp/fcb-three-halves-prove/harbor`
+Share results by running `harbor upload 
+/tmp/fcb-three-halves-prove/harbor/fcb-three-halves-prove-final-20261104`
+

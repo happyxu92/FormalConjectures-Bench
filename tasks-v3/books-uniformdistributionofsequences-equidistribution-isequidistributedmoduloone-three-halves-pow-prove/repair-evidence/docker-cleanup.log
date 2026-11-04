@@ -1,0 +1,1264 @@
+docker container inspect fcb-three-halves-prove-spec-20261104
+[
+    {
+        "Id": "9da298b4a5b59e5b821f62d7cd2064e4d1aadb1d93db92eac8e40d36c0573879",
+        "Created": "2026-11-04T06:33:01.699568302Z",
+        "Path": "sleep",
+        "Args": [
+            "infinity"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1791685,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-04T06:33:01.739704418Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:88c4cd7a1c6d1a67a0fb169fdb1436740abaef6a2249273488341a2b84cad107",
+        "ResolvConfPath": "/var/lib/docker/containers/9da298b4a5b59e5b821f62d7cd2064e4d1aadb1d93db92eac8e40d36c0573879/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/9da298b4a5b59e5b821f62d7cd2064e4d1aadb1d93db92eac8e40d36c0573879/hostname",
+        "HostsPath": "/var/lib/docker/containers/9da298b4a5b59e5b821f62d7cd2064e4d1aadb1d93db92eac8e40d36c0573879/hosts",
+        "LogPath": "/var/lib/docker/containers/9da298b4a5b59e5b821f62d7cd2064e4d1aadb1d93db92eac8e40d36c0573879/9da298b4a5b59e5b821f62d7cd2064e4d1aadb1d93db92eac8e40d36c0573879-json.log",
+        "Name": "/fcb-three-halves-prove-spec-20261104",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "bridge",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "9da298b4a5b5",
+            "Domainname": "",
+            "User": "root",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "sleep",
+                "infinity"
+            ],
+            "Image": "fcb-three-halves-prove:spec-stage-20261104",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "7c8fe85c4719b45196d5bb005dbbc10392564ac011976c44793f3584fcc57e67",
+            "SandboxKey": "/var/run/docker/netns/7c8fe85c4719",
+            "Ports": {},
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "3e4bd1e8469087291b108ac64e3bbe1eec606c2b3805c235ac79fe5d92a4f5dc",
+                    "EndpointID": "d5d132947d37844ea8d59605c77d1932a7c0cde515ed7c2c92e6d80c68a53fcc",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.3",
+                    "MacAddress": "fe:96:f4:0b:a2:2b",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:0c1a263929766ee1885192b0136a3bf2d7e8c6ee423e5b56d5ee54eea30272d0",
+            "size": 3516,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
+
+docker stop 9da298b4a5b59e5b821f62d7cd2064e4d1aadb1d93db92eac8e40d36c0573879
+9da298b4a5b59e5b821f62d7cd2064e4d1aadb1d93db92eac8e40d36c0573879
+
+docker rm 9da298b4a5b59e5b821f62d7cd2064e4d1aadb1d93db92eac8e40d36c0573879
+9da298b4a5b59e5b821f62d7cd2064e4d1aadb1d93db92eac8e40d36c0573879
+
+docker container inspect books-uniformdistributionofseque__jxkugxe__env-main-1
+[]
+Error response from daemon: No such container: books-uniformdistributionofseque__jxkugxe__env-main-1
+
+docker container inspect books-uniformdistributionofseque__pnwyqay__env-main-1
+[]
+Error response from daemon: No such container: books-uniformdistributionofseque__pnwyqay__env-main-1
+
+docker container inspect books-uniformdistributionofseque__lfj2uzy__env-main-1
+[
+    {
+        "Id": "3062db3e41c1f05b6b1eba5f3b0641c1fe255cb5a7bc81e3bf779f40025affcb",
+        "Created": "2026-11-04T06:47:11.254359944Z",
+        "Path": "sh",
+        "Args": [
+            "-c",
+            "sleep infinity"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1828986,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-04T06:47:44.148656713Z",
+            "FinishedAt": "2026-11-04T06:47:22.693424414Z"
+        },
+        "Image": "sha256:8be9f2e283710472a2d455767fc09512cf765d34b03bc419af637884f9232b63",
+        "ResolvConfPath": "/var/lib/docker/containers/3062db3e41c1f05b6b1eba5f3b0641c1fe255cb5a7bc81e3bf779f40025affcb/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/3062db3e41c1f05b6b1eba5f3b0641c1fe255cb5a7bc81e3bf779f40025affcb/hostname",
+        "HostsPath": "/var/lib/docker/containers/3062db3e41c1f05b6b1eba5f3b0641c1fe255cb5a7bc81e3bf779f40025affcb/hosts",
+        "LogPath": "/var/lib/docker/containers/3062db3e41c1f05b6b1eba5f3b0641c1fe255cb5a7bc81e3bf779f40025affcb/3062db3e41c1f05b6b1eba5f3b0641c1fe255cb5a7bc81e3bf779f40025affcb-json.log",
+        "Name": "/books-uniformdistributionofseque__lfj2uzy__env-main-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "books-uniformdistributionofseque__lfj2uzy__env_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 8589934592,
+            "NanoCpus": 4000000000,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 17179869184,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "3062db3e41c1",
+            "Domainname": "",
+            "User": "ubuntu",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "sh",
+                "-c",
+                "sleep infinity"
+            ],
+            "Image": "books-uniformdistributionofseque__lfj2uzy__env-main",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "51aad5c89590a1a6e9c1ad96ea2ce4fda2faa9a91d5566e8faca5dd271f86973",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:8be9f2e283710472a2d455767fc09512cf765d34b03bc419af637884f9232b63",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "books-uniformdistributionofseque__lfj2uzy__env",
+                "com.docker.compose.project.config_files": "/tmp/tmph8riw4cm/books-uniformdistributionofseque__LFJ2uzy__env-docker-compose-resources.json,/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml,/tmp/fcb-three-halves-prove/compose-final-subnet.yaml,/tmp/tmps9xza0x1/docker-compose-environment.json,/tmp/tmpipkv8mdq/docker-compose-mounts.json",
+                "com.docker.compose.project.working_dir": "/root/FormalConjectures-Bench/tasks-v3/books-uniformdistributionofsequences-equidistribution-isequidistributedmoduloone-three-halves-pow-prove/environment",
+                "com.docker.compose.service": "main",
+                "com.docker.compose.version": "2.40.3",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "bc1a85801a313e0d335819ef4aa6a4c0fc019a4b9dbc2686f9d261a1df772836",
+            "SandboxKey": "/var/run/docker/netns/bc1a85801a31",
+            "Ports": {},
+            "Networks": {
+                "books-uniformdistributionofseque__lfj2uzy__env_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "books-uniformdistributionofseque__lfj2uzy__env-main-1",
+                        "main"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "9dbfce7b28f56176c859d5fa17a2336e8f5198b0cc6165819ae9d3ba079bc1d0",
+                    "EndpointID": "2f43b569657971a2018e5f450ec18f8196afc430d189d8bfb971800e4496d3af",
+                    "Gateway": "10.194.67.1",
+                    "IPAddress": "10.194.67.2",
+                    "MacAddress": "3a:bc:0a:03:a6:9f",
+                    "IPPrefixLen": 28,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "books-uniformdistributionofseque__lfj2uzy__env-main-1",
+                        "main",
+                        "3062db3e41c1"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:4994559d793f2664b883f7d55886f54fa5c061d94a7517288bfa03012f4124a8",
+            "size": 3518,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
+
+docker stop 3062db3e41c1f05b6b1eba5f3b0641c1fe255cb5a7bc81e3bf779f40025affcb
+3062db3e41c1f05b6b1eba5f3b0641c1fe255cb5a7bc81e3bf779f40025affcb
+
+docker rm 3062db3e41c1f05b6b1eba5f3b0641c1fe255cb5a7bc81e3bf779f40025affcb
+3062db3e41c1f05b6b1eba5f3b0641c1fe255cb5a7bc81e3bf779f40025affcb
+
+docker container inspect books-uniformdistributionofseque__bgda8mf__env-main-1
+[]
+Error response from daemon: No such container: books-uniformdistributionofseque__bgda8mf__env-main-1
+
+docker container inspect books-uniformdistributionofseque__gml2pay__env-main-1
+[
+    {
+        "Id": "70b82fb568255449e6b0bfd43ffe69f7bc1ab31a6b67ca386aa6d233ee5ccb31",
+        "Created": "2026-11-04T06:37:43.415844878Z",
+        "Path": "sh",
+        "Args": [
+            "-c",
+            "sleep infinity"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1810849,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-04T06:38:13.64907276Z",
+            "FinishedAt": "2026-11-04T06:37:54.947740459Z"
+        },
+        "Image": "sha256:65f696c13f3668c4307da778909bfe70b8d81b22b9aeab43d00cf58c21c00a23",
+        "ResolvConfPath": "/var/lib/docker/containers/70b82fb568255449e6b0bfd43ffe69f7bc1ab31a6b67ca386aa6d233ee5ccb31/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/70b82fb568255449e6b0bfd43ffe69f7bc1ab31a6b67ca386aa6d233ee5ccb31/hostname",
+        "HostsPath": "/var/lib/docker/containers/70b82fb568255449e6b0bfd43ffe69f7bc1ab31a6b67ca386aa6d233ee5ccb31/hosts",
+        "LogPath": "/var/lib/docker/containers/70b82fb568255449e6b0bfd43ffe69f7bc1ab31a6b67ca386aa6d233ee5ccb31/70b82fb568255449e6b0bfd43ffe69f7bc1ab31a6b67ca386aa6d233ee5ccb31-json.log",
+        "Name": "/books-uniformdistributionofseque__gml2pay__env-main-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "books-uniformdistributionofseque__gml2pay__env_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 8589934592,
+            "NanoCpus": 4000000000,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 17179869184,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "70b82fb56825",
+            "Domainname": "",
+            "User": "ubuntu",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "sh",
+                "-c",
+                "sleep infinity"
+            ],
+            "Image": "books-uniformdistributionofseque__gml2pay__env-main",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "51aad5c89590a1a6e9c1ad96ea2ce4fda2faa9a91d5566e8faca5dd271f86973",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:65f696c13f3668c4307da778909bfe70b8d81b22b9aeab43d00cf58c21c00a23",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "books-uniformdistributionofseque__gml2pay__env",
+                "com.docker.compose.project.config_files": "/tmp/tmpu25lr160/books-uniformdistributionofseque__GmL2pay__env-docker-compose-resources.json,/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml,/tmp/fcb-three-halves-prove/compose-subnet.yaml,/tmp/tmpw5rxblc4/docker-compose-environment.json,/tmp/tmpubmn58by/docker-compose-mounts.json",
+                "com.docker.compose.project.working_dir": "/root/FormalConjectures-Bench/tasks-v3/books-uniformdistributionofsequences-equidistribution-isequidistributedmoduloone-three-halves-pow-prove/environment",
+                "com.docker.compose.service": "main",
+                "com.docker.compose.version": "2.40.3",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "d818ea323332e35a1008fc0b9f109fc478c11c5524ebcd6768b17417ec2b5143",
+            "SandboxKey": "/var/run/docker/netns/d818ea323332",
+            "Ports": {},
+            "Networks": {
+                "books-uniformdistributionofseque__gml2pay__env_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "books-uniformdistributionofseque__gml2pay__env-main-1",
+                        "main"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "f43d862ab4b6431046c30a65222878e6e7b3a270ab9c80c42facbe701db81f7a",
+                    "EndpointID": "2419c57cd8ec212e632ecd4a61c2686fde8f8bedb3222f42f7d41a6b23d80fe6",
+                    "Gateway": "10.247.194.1",
+                    "IPAddress": "10.247.194.2",
+                    "MacAddress": "7e:fa:9a:6e:54:66",
+                    "IPPrefixLen": 28,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "books-uniformdistributionofseque__gml2pay__env-main-1",
+                        "main",
+                        "70b82fb56825"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:8cfaebd48d2656c2e2d911e9eb42997e6035678eaee830bc9a7ca238c696606e",
+            "size": 3518,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
+
+docker stop 70b82fb568255449e6b0bfd43ffe69f7bc1ab31a6b67ca386aa6d233ee5ccb31
+70b82fb568255449e6b0bfd43ffe69f7bc1ab31a6b67ca386aa6d233ee5ccb31
+
+docker rm 70b82fb568255449e6b0bfd43ffe69f7bc1ab31a6b67ca386aa6d233ee5ccb31
+70b82fb568255449e6b0bfd43ffe69f7bc1ab31a6b67ca386aa6d233ee5ccb31
+
+docker image inspect fcb-three-halves-prove:spec-stage-20261104
+[
+    {
+        "Id": "sha256:88c4cd7a1c6d1a67a0fb169fdb1436740abaef6a2249273488341a2b84cad107",
+        "RepoTags": [
+            "fcb-three-halves-prove:spec-stage-20261104"
+        ],
+        "RepoDigests": [
+            "fcb-three-halves-prove@sha256:88c4cd7a1c6d1a67a0fb169fdb1436740abaef6a2249273488341a2b84cad107"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-04T14:32:05.918464117+08:00",
+        "Config": {
+            "User": "ubuntu",
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "/bin/bash"
+            ],
+            "WorkingDir": "/app",
+            "Labels": {
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 2710202734,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:bec87777bc2fb2edcdf9af11df1531469e7df911309c1413082b18fcb8610278",
+                "sha256:d57ecceaf810a84b4237264f1ed2ba5d2ae076d4f265aaf5f76e6df1b33e413d",
+                "sha256:2af5aa503676e7d8cb97fd264224b051b1b00f195ad61459869006aec2951d88",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:6162f9bbf1aebdfbb963f4c11aa343eb370feabefcef59034b218ae9a9db042d",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:4988fcd9a53dd6b7a1b029b87ba30b10bd80481173dd525a77bd83d94c439ce9",
+                "sha256:77381126e43e25ce0d0565ecf29bd075651f0b9bd4cf556c6f2316008296fb57",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:082a7c71dfe8eccb5b57843600bcb5743f3532aa07f010b667f2feb2f8ee237b",
+                "sha256:e7e104ba7ec61c0dd55dde9bd5f3bfcf0f110f00abff7be07557fa72652f84b8",
+                "sha256:600d9acdcf41aec74f1010154f3a4cd54fd9bd7cda0c578557053a8e0844b1f8",
+                "sha256:fb185bbd8c244b9beadee3ce1ddb63abd58c25c641ad8e869c1ec5b0184f9fef",
+                "sha256:ede1f0e8eda0c2ac18a9c40cc78e3ad4485d2e36d76aa55c642cb8f64e8036d6",
+                "sha256:353bb7cd35f4e2273078398b3ae720f118fa41a8fc30ee9eb93867b1660ea0bc",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:283e8ab66f3195d3cf3314e8e8ff5aabb5f372c18919cf4239917e4a8668ae59"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-04T06:32:06.168788545Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:88c4cd7a1c6d1a67a0fb169fdb1436740abaef6a2249273488341a2b84cad107",
+            "size": 856
+        }
+    }
+]
+
+docker image rm fcb-three-halves-prove:spec-stage-20261104
+Untagged: fcb-three-halves-prove:spec-stage-20261104
+Deleted: sha256:88c4cd7a1c6d1a67a0fb169fdb1436740abaef6a2249273488341a2b84cad107
+
+docker image inspect books-uniformdistributionofseque__jxkugxe__env-main:latest
+[
+    {
+        "Id": "sha256:6ecdfa3713cfb830bd0c611030b6b21cf8fd7f66ea4bfaa3492cefe67f084908",
+        "RepoTags": [
+            "books-uniformdistributionofseque__jxkugxe__env-main:latest"
+        ],
+        "RepoDigests": [
+            "books-uniformdistributionofseque__jxkugxe__env-main@sha256:6ecdfa3713cfb830bd0c611030b6b21cf8fd7f66ea4bfaa3492cefe67f084908"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-04T14:35:16.348555694+08:00",
+        "Config": {
+            "User": "ubuntu",
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "/bin/bash"
+            ],
+            "WorkingDir": "/app",
+            "Labels": {
+                "com.docker.compose.project": "books-uniformdistributionofseque__jxkugxe__env",
+                "com.docker.compose.service": "main",
+                "com.docker.compose.version": "2.40.3",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 2710261445,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:bec87777bc2fb2edcdf9af11df1531469e7df911309c1413082b18fcb8610278",
+                "sha256:d57ecceaf810a84b4237264f1ed2ba5d2ae076d4f265aaf5f76e6df1b33e413d",
+                "sha256:2af5aa503676e7d8cb97fd264224b051b1b00f195ad61459869006aec2951d88",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:6162f9bbf1aebdfbb963f4c11aa343eb370feabefcef59034b218ae9a9db042d",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:4988fcd9a53dd6b7a1b029b87ba30b10bd80481173dd525a77bd83d94c439ce9",
+                "sha256:77381126e43e25ce0d0565ecf29bd075651f0b9bd4cf556c6f2316008296fb57",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:082a7c71dfe8eccb5b57843600bcb5743f3532aa07f010b667f2feb2f8ee237b",
+                "sha256:e7e104ba7ec61c0dd55dde9bd5f3bfcf0f110f00abff7be07557fa72652f84b8",
+                "sha256:600d9acdcf41aec74f1010154f3a4cd54fd9bd7cda0c578557053a8e0844b1f8",
+                "sha256:fb185bbd8c244b9beadee3ce1ddb63abd58c25c641ad8e869c1ec5b0184f9fef",
+                "sha256:075c178b4bfaba2aa4d3d824d30fe66289df12862190005444f9252296245fdd",
+                "sha256:8c7e4c76553d460307f42242080141614874cfdd41d7e95c40862164773c5941",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:f8c82b9b4adc8b71bdc5955152c36656c0142b162e698f339ef713c014866afa"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-04T06:35:17.077323353Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:6ecdfa3713cfb830bd0c611030b6b21cf8fd7f66ea4bfaa3492cefe67f084908",
+            "size": 856
+        }
+    }
+]
+
+docker image rm books-uniformdistributionofseque__jxkugxe__env-main:latest
+Untagged: books-uniformdistributionofseque__jxkugxe__env-main:latest
+Deleted: sha256:6ecdfa3713cfb830bd0c611030b6b21cf8fd7f66ea4bfaa3492cefe67f084908
+
+docker image inspect books-uniformdistributionofseque__pnwyqay__env-main:latest
+[
+    {
+        "Id": "sha256:0151fd1d500e5d9632119d44907414d96bc697101ef65cd7c336a40960b40a2c",
+        "RepoTags": [
+            "books-uniformdistributionofseque__pnwyqay__env-main:latest"
+        ],
+        "RepoDigests": [
+            "books-uniformdistributionofseque__pnwyqay__env-main@sha256:0151fd1d500e5d9632119d44907414d96bc697101ef65cd7c336a40960b40a2c"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-04T14:35:16.348555694+08:00",
+        "Config": {
+            "User": "ubuntu",
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "/bin/bash"
+            ],
+            "WorkingDir": "/app",
+            "Labels": {
+                "com.docker.compose.project": "books-uniformdistributionofseque__pnwyqay__env",
+                "com.docker.compose.service": "main",
+                "com.docker.compose.version": "2.40.3",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 2710261445,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:bec87777bc2fb2edcdf9af11df1531469e7df911309c1413082b18fcb8610278",
+                "sha256:d57ecceaf810a84b4237264f1ed2ba5d2ae076d4f265aaf5f76e6df1b33e413d",
+                "sha256:2af5aa503676e7d8cb97fd264224b051b1b00f195ad61459869006aec2951d88",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:6162f9bbf1aebdfbb963f4c11aa343eb370feabefcef59034b218ae9a9db042d",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:4988fcd9a53dd6b7a1b029b87ba30b10bd80481173dd525a77bd83d94c439ce9",
+                "sha256:77381126e43e25ce0d0565ecf29bd075651f0b9bd4cf556c6f2316008296fb57",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:082a7c71dfe8eccb5b57843600bcb5743f3532aa07f010b667f2feb2f8ee237b",
+                "sha256:e7e104ba7ec61c0dd55dde9bd5f3bfcf0f110f00abff7be07557fa72652f84b8",
+                "sha256:600d9acdcf41aec74f1010154f3a4cd54fd9bd7cda0c578557053a8e0844b1f8",
+                "sha256:fb185bbd8c244b9beadee3ce1ddb63abd58c25c641ad8e869c1ec5b0184f9fef",
+                "sha256:075c178b4bfaba2aa4d3d824d30fe66289df12862190005444f9252296245fdd",
+                "sha256:8c7e4c76553d460307f42242080141614874cfdd41d7e95c40862164773c5941",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:f8c82b9b4adc8b71bdc5955152c36656c0142b162e698f339ef713c014866afa"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-04T06:46:11.584965163Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:0151fd1d500e5d9632119d44907414d96bc697101ef65cd7c336a40960b40a2c",
+            "size": 856
+        }
+    }
+]
+
+docker image rm books-uniformdistributionofseque__pnwyqay__env-main:latest
+Untagged: books-uniformdistributionofseque__pnwyqay__env-main:latest
+Deleted: sha256:0151fd1d500e5d9632119d44907414d96bc697101ef65cd7c336a40960b40a2c
+
+docker image inspect books-uniformdistributionofseque__lfj2uzy__env-main:latest
+[
+    {
+        "Id": "sha256:8be9f2e283710472a2d455767fc09512cf765d34b03bc419af637884f9232b63",
+        "RepoTags": [
+            "books-uniformdistributionofseque__lfj2uzy__env-main:latest"
+        ],
+        "RepoDigests": [
+            "books-uniformdistributionofseque__lfj2uzy__env-main@sha256:8be9f2e283710472a2d455767fc09512cf765d34b03bc419af637884f9232b63"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-04T14:35:16.348555694+08:00",
+        "Config": {
+            "User": "ubuntu",
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "/bin/bash"
+            ],
+            "WorkingDir": "/app",
+            "Labels": {
+                "com.docker.compose.project": "books-uniformdistributionofseque__lfj2uzy__env",
+                "com.docker.compose.service": "main",
+                "com.docker.compose.version": "2.40.3",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 2710261445,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:bec87777bc2fb2edcdf9af11df1531469e7df911309c1413082b18fcb8610278",
+                "sha256:d57ecceaf810a84b4237264f1ed2ba5d2ae076d4f265aaf5f76e6df1b33e413d",
+                "sha256:2af5aa503676e7d8cb97fd264224b051b1b00f195ad61459869006aec2951d88",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:6162f9bbf1aebdfbb963f4c11aa343eb370feabefcef59034b218ae9a9db042d",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:4988fcd9a53dd6b7a1b029b87ba30b10bd80481173dd525a77bd83d94c439ce9",
+                "sha256:77381126e43e25ce0d0565ecf29bd075651f0b9bd4cf556c6f2316008296fb57",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:082a7c71dfe8eccb5b57843600bcb5743f3532aa07f010b667f2feb2f8ee237b",
+                "sha256:e7e104ba7ec61c0dd55dde9bd5f3bfcf0f110f00abff7be07557fa72652f84b8",
+                "sha256:600d9acdcf41aec74f1010154f3a4cd54fd9bd7cda0c578557053a8e0844b1f8",
+                "sha256:fb185bbd8c244b9beadee3ce1ddb63abd58c25c641ad8e869c1ec5b0184f9fef",
+                "sha256:075c178b4bfaba2aa4d3d824d30fe66289df12862190005444f9252296245fdd",
+                "sha256:8c7e4c76553d460307f42242080141614874cfdd41d7e95c40862164773c5941",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:f8c82b9b4adc8b71bdc5955152c36656c0142b162e698f339ef713c014866afa"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-04T06:47:11.101220042Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:8be9f2e283710472a2d455767fc09512cf765d34b03bc419af637884f9232b63",
+            "size": 856
+        }
+    }
+]
+
+docker image rm books-uniformdistributionofseque__lfj2uzy__env-main:latest
+Untagged: books-uniformdistributionofseque__lfj2uzy__env-main:latest
+Deleted: sha256:8be9f2e283710472a2d455767fc09512cf765d34b03bc419af637884f9232b63
+
+docker image inspect books-uniformdistributionofseque__bgda8mf__env-main:latest
+[
+    {
+        "Id": "sha256:d9c181d4dc83d87fe98d74565db3efbb1a33b80695a8a0df2c364ef32227a0ed",
+        "RepoTags": [
+            "books-uniformdistributionofseque__bgda8mf__env-main:latest"
+        ],
+        "RepoDigests": [
+            "books-uniformdistributionofseque__bgda8mf__env-main@sha256:d9c181d4dc83d87fe98d74565db3efbb1a33b80695a8a0df2c364ef32227a0ed"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-04T14:35:16.348555694+08:00",
+        "Config": {
+            "User": "ubuntu",
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "/bin/bash"
+            ],
+            "WorkingDir": "/app",
+            "Labels": {
+                "com.docker.compose.project": "books-uniformdistributionofseque__bgda8mf__env",
+                "com.docker.compose.service": "main",
+                "com.docker.compose.version": "2.40.3",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 2710261445,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:bec87777bc2fb2edcdf9af11df1531469e7df911309c1413082b18fcb8610278",
+                "sha256:d57ecceaf810a84b4237264f1ed2ba5d2ae076d4f265aaf5f76e6df1b33e413d",
+                "sha256:2af5aa503676e7d8cb97fd264224b051b1b00f195ad61459869006aec2951d88",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:6162f9bbf1aebdfbb963f4c11aa343eb370feabefcef59034b218ae9a9db042d",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:4988fcd9a53dd6b7a1b029b87ba30b10bd80481173dd525a77bd83d94c439ce9",
+                "sha256:77381126e43e25ce0d0565ecf29bd075651f0b9bd4cf556c6f2316008296fb57",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:082a7c71dfe8eccb5b57843600bcb5743f3532aa07f010b667f2feb2f8ee237b",
+                "sha256:e7e104ba7ec61c0dd55dde9bd5f3bfcf0f110f00abff7be07557fa72652f84b8",
+                "sha256:600d9acdcf41aec74f1010154f3a4cd54fd9bd7cda0c578557053a8e0844b1f8",
+                "sha256:fb185bbd8c244b9beadee3ce1ddb63abd58c25c641ad8e869c1ec5b0184f9fef",
+                "sha256:075c178b4bfaba2aa4d3d824d30fe66289df12862190005444f9252296245fdd",
+                "sha256:8c7e4c76553d460307f42242080141614874cfdd41d7e95c40862164773c5941",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:f8c82b9b4adc8b71bdc5955152c36656c0142b162e698f339ef713c014866afa"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-04T06:36:16.652819408Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:d9c181d4dc83d87fe98d74565db3efbb1a33b80695a8a0df2c364ef32227a0ed",
+            "size": 856
+        }
+    }
+]
+
+docker image rm books-uniformdistributionofseque__bgda8mf__env-main:latest
+Untagged: books-uniformdistributionofseque__bgda8mf__env-main:latest
+Deleted: sha256:d9c181d4dc83d87fe98d74565db3efbb1a33b80695a8a0df2c364ef32227a0ed
+
+docker image inspect books-uniformdistributionofseque__gml2pay__env-main:latest
+[
+    {
+        "Id": "sha256:65f696c13f3668c4307da778909bfe70b8d81b22b9aeab43d00cf58c21c00a23",
+        "RepoTags": [
+            "books-uniformdistributionofseque__gml2pay__env-main:latest"
+        ],
+        "RepoDigests": [
+            "books-uniformdistributionofseque__gml2pay__env-main@sha256:65f696c13f3668c4307da778909bfe70b8d81b22b9aeab43d00cf58c21c00a23"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-04T14:35:16.348555694+08:00",
+        "Config": {
+            "User": "ubuntu",
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "/bin/bash"
+            ],
+            "WorkingDir": "/app",
+            "Labels": {
+                "com.docker.compose.project": "books-uniformdistributionofseque__gml2pay__env",
+                "com.docker.compose.service": "main",
+                "com.docker.compose.version": "2.40.3",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 2710261445,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:bec87777bc2fb2edcdf9af11df1531469e7df911309c1413082b18fcb8610278",
+                "sha256:d57ecceaf810a84b4237264f1ed2ba5d2ae076d4f265aaf5f76e6df1b33e413d",
+                "sha256:2af5aa503676e7d8cb97fd264224b051b1b00f195ad61459869006aec2951d88",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:6162f9bbf1aebdfbb963f4c11aa343eb370feabefcef59034b218ae9a9db042d",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:4988fcd9a53dd6b7a1b029b87ba30b10bd80481173dd525a77bd83d94c439ce9",
+                "sha256:77381126e43e25ce0d0565ecf29bd075651f0b9bd4cf556c6f2316008296fb57",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:082a7c71dfe8eccb5b57843600bcb5743f3532aa07f010b667f2feb2f8ee237b",
+                "sha256:e7e104ba7ec61c0dd55dde9bd5f3bfcf0f110f00abff7be07557fa72652f84b8",
+                "sha256:600d9acdcf41aec74f1010154f3a4cd54fd9bd7cda0c578557053a8e0844b1f8",
+                "sha256:fb185bbd8c244b9beadee3ce1ddb63abd58c25c641ad8e869c1ec5b0184f9fef",
+                "sha256:075c178b4bfaba2aa4d3d824d30fe66289df12862190005444f9252296245fdd",
+                "sha256:8c7e4c76553d460307f42242080141614874cfdd41d7e95c40862164773c5941",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:f8c82b9b4adc8b71bdc5955152c36656c0142b162e698f339ef713c014866afa"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-04T06:37:43.281184314Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:65f696c13f3668c4307da778909bfe70b8d81b22b9aeab43d00cf58c21c00a23",
+            "size": 856
+        }
+    }
+]
+
+docker image rm books-uniformdistributionofseque__gml2pay__env-main:latest
+Untagged: books-uniformdistributionofseque__gml2pay__env-main:latest
+Deleted: sha256:65f696c13f3668c4307da778909bfe70b8d81b22b9aeab43d00cf58c21c00a23
+
+docker network inspect 9dbfce7b28f56176c859d5fa17a2336e8f5198b0cc6165819ae9d3ba079bc1d0
+[
+    {
+        "Name": "books-uniformdistributionofseque__lfj2uzy__env_default",
+        "Id": "9dbfce7b28f56176c859d5fa17a2336e8f5198b0cc6165819ae9d3ba079bc1d0",
+        "Created": "2026-11-04T14:47:11.220531577+08:00",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "10.194.67.0/28",
+                    "IPRange": "",
+                    "Gateway": "10.194.67.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {},
+        "Labels": {
+            "com.docker.compose.config-hash": "6879147fccba19db8a0d803f632dcc160c262eafd701ad7d6fe0a805b7975d25",
+            "com.docker.compose.network": "default",
+            "com.docker.compose.project": "books-uniformdistributionofseque__lfj2uzy__env",
+            "com.docker.compose.version": "2.40.3"
+        },
+        "Containers": {},
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "10.194.67.0/28": {
+                        "IPsInUse": 3,
+                        "DynamicIPsAvailable": 13
+                    }
+                }
+            }
+        }
+    }
+]
+
+docker network rm 9dbfce7b28f56176c859d5fa17a2336e8f5198b0cc6165819ae9d3ba079bc1d0
+9dbfce7b28f56176c859d5fa17a2336e8f5198b0cc6165819ae9d3ba079bc1d0
+
+docker network inspect f43d862ab4b6431046c30a65222878e6e7b3a270ab9c80c42facbe701db81f7a
+[
+    {
+        "Name": "books-uniformdistributionofseque__gml2pay__env_default",
+        "Id": "f43d862ab4b6431046c30a65222878e6e7b3a270ab9c80c42facbe701db81f7a",
+        "Created": "2026-11-04T14:37:43.379573795+08:00",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "10.247.194.0/28",
+                    "IPRange": "",
+                    "Gateway": "10.247.194.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {},
+        "Labels": {
+            "com.docker.compose.config-hash": "fa98b422cd468bd15bd3fb0be735fb6afda71374d86f9b02f133b394c777a194",
+            "com.docker.compose.network": "default",
+            "com.docker.compose.project": "books-uniformdistributionofseque__gml2pay__env",
+            "com.docker.compose.version": "2.40.3"
+        },
+        "Containers": {},
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "10.247.194.0/28": {
+                        "IPsInUse": 3,
+                        "DynamicIPsAvailable": 13
+                    }
+                }
+            }
+        }
+    }
+]
+
+docker network rm f43d862ab4b6431046c30a65222878e6e7b3a270ab9c80c42facbe701db81f7a
+f43d862ab4b6431046c30a65222878e6e7b3a270ab9c80c42facbe701db81f7a
+
+docker container inspect fcb-three-halves-prove-spec-20261104
+[]
+Error response from daemon: No such container: fcb-three-halves-prove-spec-20261104
+
+docker image inspect sha256:88c4cd7a1c6d1a67a0fb169fdb1436740abaef6a2249273488341a2b84cad107
+[]
+Error response from daemon: No such image: sha256:88c4cd7a1c6d1a67a0fb169fdb1436740abaef6a2249273488341a2b84cad107
+
+docker container inspect books-uniformdistributionofseque__jxkugxe__env-main-1
+[]
+Error response from daemon: No such container: books-uniformdistributionofseque__jxkugxe__env-main-1
+
+docker image inspect sha256:6ecdfa3713cfb830bd0c611030b6b21cf8fd7f66ea4bfaa3492cefe67f084908
+[]
+Error response from daemon: No such image: sha256:6ecdfa3713cfb830bd0c611030b6b21cf8fd7f66ea4bfaa3492cefe67f084908
+
+docker container inspect books-uniformdistributionofseque__pnwyqay__env-main-1
+[]
+Error response from daemon: No such container: books-uniformdistributionofseque__pnwyqay__env-main-1
+
+docker image inspect sha256:0151fd1d500e5d9632119d44907414d96bc697101ef65cd7c336a40960b40a2c
+[]
+Error response from daemon: No such image: sha256:0151fd1d500e5d9632119d44907414d96bc697101ef65cd7c336a40960b40a2c
+
+docker container inspect books-uniformdistributionofseque__lfj2uzy__env-main-1
+[]
+Error response from daemon: No such container: books-uniformdistributionofseque__lfj2uzy__env-main-1
+
+docker image inspect sha256:8be9f2e283710472a2d455767fc09512cf765d34b03bc419af637884f9232b63
+[]
+Error response from daemon: No such image: sha256:8be9f2e283710472a2d455767fc09512cf765d34b03bc419af637884f9232b63
+
+docker network inspect 9dbfce7b28f56176c859d5fa17a2336e8f5198b0cc6165819ae9d3ba079bc1d0
+[]
+Error response from daemon: network 9dbfce7b28f56176c859d5fa17a2336e8f5198b0cc6165819ae9d3ba079bc1d0 not found
+
+docker container inspect books-uniformdistributionofseque__bgda8mf__env-main-1
+[]
+Error response from daemon: No such container: books-uniformdistributionofseque__bgda8mf__env-main-1
+
+docker image inspect sha256:d9c181d4dc83d87fe98d74565db3efbb1a33b80695a8a0df2c364ef32227a0ed
+[]
+Error response from daemon: No such image: sha256:d9c181d4dc83d87fe98d74565db3efbb1a33b80695a8a0df2c364ef32227a0ed
+
+docker container inspect books-uniformdistributionofseque__gml2pay__env-main-1
+[]
+Error response from daemon: No such container: books-uniformdistributionofseque__gml2pay__env-main-1
+
+docker image inspect sha256:65f696c13f3668c4307da778909bfe70b8d81b22b9aeab43d00cf58c21c00a23
+[]
+Error response from daemon: No such image: sha256:65f696c13f3668c4307da778909bfe70b8d81b22b9aeab43d00cf58c21c00a23
+
+docker network inspect f43d862ab4b6431046c30a65222878e6e7b3a270ab9c80c42facbe701db81f7a
+[]
+Error response from daemon: network f43d862ab4b6431046c30a65222878e6e7b3a270ab9c80c42facbe701db81f7a not found
+
+docker ps -a --no-trunc
+CONTAINER ID                                                       IMAGE                                                                     COMMAND                                                                                                                        CREATED          STATUS                    PORTS                    NAMES
+6f3a87ab2ada20a7c17c761549c58610de909f17ca6cb0d3e696f168d00d2db6   fcb-local/erdosproblems-1-least-n-5:cache-smoke                           "sleep infinity"                                                                                                               17 seconds ago   Up 16 seconds                                      fcb-ep137-prove-spec-20261104
+3b8ce3afd35eff6ee69db947e7dfa1bce3917eb2b90fd5d91667c33d7d7e5b85   fcb-erdos126-refute:spec-20261104                                         "sleep infinity"                                                                                                               20 seconds ago   Up 20 seconds                                      fcb-erdos126-refute-spec-20261104
+c20340b0036413e38e50c175de033c04bc281e597bd20795d05ba442c633c2cc   fcb-local/erdosproblems-1-least-n-5:cache-smoke                           "sleep infinity"                                                                                                               2 minutes ago    Up 2 minutes                                       fcb-erdos11-refute-spec-20261104
+4fd8037ad9ce41262f12e16a2842656e93ee518a94ebad8d7d48ba7892e3bee7   fcb-local/erdosproblems-1-least-n-5:cache-smoke                           "sleep infinity"                                                                                                               2 minutes ago    Up 2 minutes                                       fcb-erdos126-spec-20261104
+418e01ddfc0350357b6366d0053d11f109696c1fa17318a6e5e0fe4262857a51   weishaw/sub2api:0.2.15                                                    "/app/docker-entrypoint.sh /app/sub2api"                                                                                       44 hours ago     Up 4 hours (healthy)      0.0.0.0:8080->8080/tcp   sub2api
+f87663ee43dc6988a89ad187b16dab3013b41ac26a1f92d78138099d083f7c1e   erdos1062-lower-import-current-20261102__env-main                         "sh -c 'sleep infinity'"                                                                                                       2 days ago       Exited (137) 2 days ago                            erdos1062-lower-import-current-20261102__env-main-1
+e3e0088b94c6bddc783b1c63d7e6c8da3708e230e998cbf6db1146abd0c92f8c   erdos1062-import-20261102__env-main                                       "sh -c 'sleep infinity'"                                                                                                       2 days ago       Exited (137) 2 days ago                            erdos1062-import-20261102__env-main-1
+9d88b1e34a20193355bd977f203b9b26d4ae86fd120281afad36f83425c0aa05   erdos1051-import-20261102__env-main                                       "sh -c 'sleep infinity'"                                                                                                       2 days ago       Exited (137) 2 days ago                            erdos1051-import-20261102__env-main-1
+969a5a561de9e07c912576ff9cd1edfd1950668280e678277bfc7d9569f86659   postgres:18-alpine                                                        "docker-entrypoint.sh postgres"                                                                                                6 weeks ago      Up 4 hours (healthy)      5432/tcp                 sub2api-postgres
+038757ae87f97d3ecccc7e8bff6b3fd52732187cd470dbff58273a590649bed4   redis:8-alpine                                                            "docker-entrypoint.sh sh -c '\n  redis-server \\\n  --save 60 1 \\\n  --appendonly yes \\\n  --appendfsync everysec \\\n  '"   6 weeks ago      Up 4 hours (healthy)      6379/tcp                 sub2api-redis
+2c28f9c67fbab8d813769633221539e3dc3e05a445c2a8e336bbdc241cd20be9   sha256:4e1081d31f83482cef2acf20d8de31d71ed5d8247711028f3494393e782d18df   "/bin/bash -lc 'trap 'exit 0' TERM INT; while true; do sleep 3600; done'"                                                      2 months ago     Dead                                               

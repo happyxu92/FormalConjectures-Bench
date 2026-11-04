@@ -1,0 +1,26 @@
+{
+    "job_name": "fcb-green26-open-final2-20261104",
+    "jobs_dir": "/tmp/green26-repair/jobs",
+    "n_concurrent_trials": 1,
+    "environment": {
+        "type": "docker",
+        "force_build": true,
+        "delete": false,
+        "extra_docker_compose": [
+            "/tmp/green26-repair/network-final-overlay.yaml"
+        ],
+        "kwargs": {
+            "keep_containers": true
+        }
+    },
+    "agents": [
+        {
+            "name": "nop"
+        }
+    ],
+    "tasks": [
+        {
+            "path": "/root/FormalConjectures-Bench/tasks-v3/greensopenproblems-26-open-prove"
+        }
+    ]
+}

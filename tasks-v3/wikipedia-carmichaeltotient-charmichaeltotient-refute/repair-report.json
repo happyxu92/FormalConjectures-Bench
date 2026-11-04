@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-carmichaeltotient-charmichaeltotient-refute",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "源码搜索显式补入 .lake/packages；实际容器 rg 找到 mathlib 的 def totient，无路径或权限错误。见 repair-evidence/ctrefute-search-validation.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "没有额外上游 import；补上 Dockerfile 末尾 ubuntu 的 lake build +FormalConjecturesBench.Target。实际本地 Docker/Harbor 构建成功；原 sorry 警告属预期。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整运行技能脚本，case=no_issue；两份原始头通过，修改头和移除 := 的负例被拒绝。见 repair-evidence/ctrefute-unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从原始 golden 提前 elaboration/预编译/审计可信 Spec，两包同步，固定编译器/来源加载并比较完整类型；原冻结/源码/公理/canary 规则保留。Lean 4.27.0 Linux x86_64，universe=[]；manifest SHA256=d38a43a04762fbbad9f5399753b64aa958eda886c601c48edddb72211cb8fc37。最终本地 Harbor 镜像 fcb-ctrefute-final-20261104__env-main:latest (25c7ddd08bef)，正式和 ubuntu 本地入口因原 sorry 返回1/reward0；同一实际子容器两入口各17项补测通过，含可信审计、ubuntu编译、完整类型、sorryAx拒绝/canary、冻结/越界、合法实例语义偷换、同名缓存遮蔽、产物缺失/损坏无回退。未提供原题证明。构建排查及全部证据见 repair-evidence/validation.md。报告落盘后已清理自行创建容器 ea9852cfa8da/f1282915d133/1f76837fdfbb（先前试编译容器和 Harbor 自动回收项亦已不存在）；5个 fcb-ctrefute 专属镜像 8fbc99a480ce/733ec32f8fc6/ceccb8f0175c/e9798d72d1c9/25c7ddd08bef 及两张专属网络已删除，逐一 inspect 和 docker ps -a 复核，无遗留；未清理共享镜像、缓存或用户资源。见 repair-evidence/ctrefute-cleanup-results.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已读取 pinned 上游完整定义/命题及 Ford 原论文 §1.3/Theorem6；本题有意要求 Carmichael totient 猜想的否定方向。0<n 正确排除零，m=0 不构成正 n 的伪见证；未发现明显错误，metadata 标 consistent。Wikipedia 403 以可访问的原论文核对替代。数学输入均未改。见 repair-evidence/research.md。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 task ID 精确查 CSV 未命中后，8组联网检索并读取上游、独立 Lean scaffold、Mathlib、conjectures.io、GitHub PR/分支/fork 等来源。未找到本否定方向的已知公开完整 Lean4 证明；scaffold/upstream 含 sorry，PR2567/3091 为仍含 sorry 的有界正向结果，不能算本题证明。metadata public_lean4_proof=false/status=searched，不断言证明绝对不存在；来源、关键词、排除原因和访问限制见 repair-evidence/research.md。"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-perfectnumbers-odd-perfect-number-conjecture-prove",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式加入 .lake/packages；在最终 Harbor 子容器实际搜索 Nat.Perfect 定义，退出码 0，无路径/权限错误。见 repair-evidence/oddperfect-search-final.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；原 Dockerfile 缺少最后的 ubuntu 构建验证，现以 RUN lake build +FormalConjecturesBench.Target 结尾。当前本地 task 的 Harbor 镜像成功构建；保留原依赖权限和命令链。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 check_unicode_header.py：case=no_issue；两份 checker 一致，原始头通过、修改头和移除 := 被拒绝，未改头或冻结基线。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从原始 golden 在匹配 Lean 4.27.0/x86_64 Docker 环境提前提取完整类型，预编译并独立审计 ExpectedType 及传递公理；同步两份固定 Spec 包，清单哈希 a240d84a70b9908dbd6da241fc64a8b76daf2bc8a2e6d6f8050f48c55b38947d。两份 checker 固定产物/依赖来源、校验哈希与版本、ubuntu 编译临时副本并比较完整类型。当前本地 Harbor 两次构建成功；最终镜像 9d2d435c8354be87d18a7298731ddb24e8ccf22e24ccb5b0893a2b6836e39021。正式 /tests 与本地 /opt 入口均按预期因原始 sorry 退出 1，reward=0；同一 Harbor 子容器两种包路径的补测退出 0，实际覆盖可信加载/审计、ubuntu 编译、完整类型比较、目标 sorryAx 拒绝及 canary、冻结/越界拒绝、冻结文字不变的 Even 名称偷换拒绝、同名缓存不能替换 Spec、缺失/损坏产物不回退生成。两份包、checker、golden 的容器/宿主哈希一致。未提供原题证明，未覆盖真实无 sorry 完整证明的 reward=1 分支。完整命令、输入/产物哈希、日志和覆盖范围见 repair-evidence/validation.md。报告落盘后已停止并移除自建容器 a570c93e2eb3、69bee3de30fd，首轮 f858935fe863 已由 Harbor 自动移除；已删除本题两个镜像 742e3dc92c92、9d2d435c8354 及自建网络 428d4905951f，逐一 inspect 确认不存在。原有共享基础镜像、用户及其他 agent 容器未动；见 oddperfect-cleanup.log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已读取锁定上游完整前缀与当前正向目标、Mathlib Nat.Perfect 定义及 Ochem–Rao 原论文。命题确为所有正完全自然数均为偶数；Perfect 排除零，未发现明显定义/陈述错误。task.toml 标记 consistent；开放性不视为陈述错误。数学输入均未修改，见 repair-evidence/research.md。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 task ID 精确查技能 CSV 未命中；继续多组联网搜索并读取上游/main/AlphaProof fork、Mathlib、Euler–Touchard 及 OPN 声称非存在性仓库的实际 Lean 源码、Prove2Me 完整目标与相关引理。完整目标仍 OPEN/sorry，候选仅必要条件或另加未推导假设，均不覆盖本题方向。经充分检索未找到已知公开完整 Lean4 证明，metadata public_lean4_proof=false、status=searched；非绝对不存在断言。检索词、链接、排除原因与 Wikipedia 403 的替代核查见 repair-evidence/research.md。未放入任何公开答案。"
+    }
+  }
+}

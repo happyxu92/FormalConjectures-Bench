@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-carmichaeltotient-charmichaeltotient-refute",
+  "mode": "auto_repair",
+  "status": "passed",
+  "case": "no_issue",
+  "has_problem": false,
+  "has_unicode_issue": false,
+  "repair_attempted": false,
+  "repair_success": null,
+  "modified": false,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "29c00bc8951e1c6c8db6ff7e97ba374b62cbdf518ca2a4bc20e737334a3ca2e4",
+      "header_before": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 \u2983n : \u2115\u2984, 0 < n \u2192 CarmichaelTotientFor n\n    )",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 \u2983n : \u2115\u2984, 0 < n \u2192 CarmichaelTotientFor n\n    )",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "29c00bc8951e1c6c8db6ff7e97ba374b62cbdf518ca2a4bc20e737334a3ca2e4",
+      "header_after": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 \u2983n : \u2115\u2984, 0 < n \u2192 CarmichaelTotientFor n\n    )"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "29c00bc8951e1c6c8db6ff7e97ba374b62cbdf518ca2a4bc20e737334a3ca2e4",
+      "header_before": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 \u2983n : \u2115\u2984, 0 < n \u2192 CarmichaelTotientFor n\n    )",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 \u2983n : \u2115\u2984, 0 < n \u2192 CarmichaelTotientFor n\n    )",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "29c00bc8951e1c6c8db6ff7e97ba374b62cbdf518ca2a4bc20e737334a3ca2e4",
+      "header_after": "theorem formal_conjectures_bench_refutation :\n    \u00ac (\n      \u2200 \u2983n : \u2115\u2984, 0 < n \u2192 CarmichaelTotientFor n\n    )"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "bf9a89b3f65158c76b914232d6839d7dc47076b2f1ecd94cc06dfdeebfae2e92"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "bf9a89b3f65158c76b914232d6839d7dc47076b2f1ecd94cc06dfdeebfae2e92"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "bf9a89b3f65158c76b914232d6839d7dc47076b2f1ecd94cc06dfdeebfae2e92"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 0
+}

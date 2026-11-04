@@ -1,0 +1,30 @@
+{
+  "task_id": "wikipedia-firoozbakht-firoozbakht-conjecture-prove",
+  "target_name": "Firoozbakht.firoozbakht_conjecture",
+  "universe_params": [],
+  "platform": "x86_64",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "files": {
+    "AuditSpec.lean": "c09b8433b9f954c3a34ffc32902eb3c2d090f84c0ab11908eba4f15854d7bc04",
+    "FCBTrustedSpec.ilean": "0ec3b846917166162f97a1d4bd5ab23b1fb6af3a8c2d473a257116dbafa27f67",
+    "FCBTrustedSpec.lean": "15aa45cfb5f846ed36e72e32ee08a29c7cd79050443922a433bc3ab6ff52aff7",
+    "FCBTrustedSpec.olean": "5a197cbd2ca1d39224f4a5aad4a46623392e55721e5f51df98f2a4789c51e274",
+    "audit.log": "bc409ef88f06ada9f7ea2d11ef48c4a29aa0a97a3bc93d9ccb0020e4d49b37b0",
+    "dependency-manifest.sha256": "fd6cc32adde5fa1c5fae0eaba474bcac7711cf49a0897da4e1cb6bd8c03a0d05",
+    "generate.py": "52d089ea3cf4e80e09d8b7458ee7fd34cca03b15ca5ab0ccfd46d610d03884cb",
+    "lean-version.txt": "2d8b545fa35eb827e0381e75c4179bbe27b6e98c66cde8e15eec24ae90d79548",
+    "platform.txt": "aaf631698ae5160ceb04a97681a14887fdcab47cd6e0f163c87485b3b1340b62",
+    "reproduce.sh": "b38ddf284dcdfa0b26d34b34bec86b7581f876c21246a8c85d57cfa9904c84c6"
+  },
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "1cd75ed262e15fe969fa88eff1d7f1c80d0ebe3ff362a8e4d24d0c0cabce96b9",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  }
+}

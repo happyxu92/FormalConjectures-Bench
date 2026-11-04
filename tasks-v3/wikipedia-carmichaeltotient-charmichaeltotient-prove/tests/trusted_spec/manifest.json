@@ -1,0 +1,26 @@
+{
+  "task_id": "wikipedia-carmichaeltotient-charmichaeltotient-prove",
+  "target_name": "CarmichaelTotient.charmichaelTotient",
+  "universe_params": [],
+  "platform": "x86_64",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "34d076cea0fc7cd3fc1720c11164370f61b6bfbdf4a89b65dd722881474a7fd8",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "26429d393302889d88c2f92a2b0ff4f00147df31a7c2daa45ef8957d4ad601c0",
+    "FCBTrustedSpec.lean": "89b99603da8216a611aaba3b5a319772de8603d20df78b3b0500b7936d5d61bd",
+    "FCBTrustedSpec.olean": "b25e6a6408d2934c309b6131ebd6df9fd10c37c929464ffc17ddd77cc37c28ef",
+    "README.md": "ca5be7c6563acb4404798bff8416c28807eb32e0a6effb7919cfddba972af686",
+    "generate.py": "1588a7a3711350ff4fd0626409fe6938bb80beccb11085d695924d451b12c1bd",
+    "generation-audit.log": "03cd87d0c97f72915f587ed9c5a1ade2a08a9f9ebf7e3a6cf40a6362884ee967"
+  }
+}

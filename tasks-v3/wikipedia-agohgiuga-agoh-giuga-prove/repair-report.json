@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-agohgiuga-agoh-giuga-prove",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "补齐隐藏 .lake/packages 显式搜索路径；最终 Harbor 子容器 ubuntu 执行三路径 rg 找到 bernoulli 定义，退出 0。见 repair-evidence/search-path.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；补齐 Dockerfile 末尾 USER ubuntu 的 lake build +FormalConjecturesBench.Target，最终当前本地任务 Harbor 构建成功，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "技能脚本初检及最终复验均 no_issue、退出 0；两份头一致，原始头通过、改头与缺失 := 均拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从原 golden 独立生成、预编译并审计固定 Spec；完整类型、原名前缀定义、universes=[]，无 sorryAx/新增公理依赖。两份包一致，固定清单 SHA256=9291bcd9b44f4d99bdb123cd8315b047d953ace77873c499bd6de7ffe971edfe，验证时不生成 Spec。当前本地任务最终 Harbor 镜像 6dcde57323d2e4005193dcd91b3e53b51e2b44aefc21ae30fa9d1cb48d2de939 构建/Harbor 退出 0；两入口原始 sorry 预期退出 1、reward 0。同一最终子容器实际补测两 checker 的固定包加载、独立审计、ubuntu 编译、完整类型匹配、目标 sorryAx 拒绝及 canary；冻结、越界、固定文字不变而 scoped 名称将实际类型改成 True 的语义负例经完整类型比较拒绝；同名模块/缓存、缺失/损坏产物亦已测试。保留正常 imports 和原限制。网络池耗尽后仅复用本题自建 bridge 重试成功。33 个容器文件哈希吻合；命令、版本、哈希及覆盖详见 repair-evidence/validation.md。不是原题数学证明通过。 报告/证据落盘后 Docker 清理并核验完成：本题容器 8deefb24c7a9、037d959658a3、c66b39292a53 均已停止删除；本题镜像 4da6b3e6a740、05fb88038a5b、6dcde57323d2 的三个 tag 和 ID 均不存在；自建 bridge 已删除。预存共享基础镜像 e21dc171550d 保留，未动用户/其他任务资源或共享构建缓存。详见 repair-evidence/docker-cleanup.log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。读取锁定上游完整前缀/目标和 Borwein 等 1996 原论文 p.49 problem 10，核对 Nat p>=2、iff 两向、Int k、Bernoulli 正 B1 约定、分子分母及 p²；未发现明显错误，不修改陈述。Wikipedia 403 已用原论文交叉核对。见 repair-evidence/research.md。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 task ID 精确 CSV 未命中后，多组联网检索数学别名、Lean 名、作者、GitHub/PR/branch/fork、Mathlib，实际读取上游、mo271、SamuelSchlesinger、Chokmah 及相关 PR 链接的 Lean 源码。主命题仍 sorry；前向/结构/下界证明及 sorry 依赖 reduction 不覆盖本题完整正向 Bernoulli iff。充分检索未找到已知公开完整 Lean4 证明，metadata false/searched；不是绝对不存在断言，未放入公开答案。来源、排除理由及非关键访问限制见 repair-evidence/research.md。"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+    "task": {
+        "path": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-firoozbakht-firoozbakht-conjecture-prove"
+    },
+    "trial_name": "wikipedia-firoozbakht-firoozbakh__FrCqMV4",
+    "trials_dir": "/tmp/fcb-firoozbakht-prove-harbor/fcb-firoozbakht-prove-final-20261104",
+    "agent": {
+        "name": "nop"
+    },
+    "environment": {
+        "type": "docker",
+        "delete": false,
+        "extra_docker_compose": [
+            "/tmp/fcb-firoozbakht-prove-compose.json"
+        ]
+    },
+    "job_id": "ee1351bd-11f4-42fa-9860-57726bd6d1fc"
+}

@@ -8,6 +8,12 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+statement_status_note = "Positive direction of pinned Erdos126.erdos_126: the minimum distinct-prime count for pairwise sums divided by log n tends to infinity. Definition checked against pinned upstream and Erdos-Turan (1934), pp. 608-611. Ordered pairs only square the product; allowing zero affects at most one set element and does not change this asymptotic question. No evident false-statement defect; mathematical input preserved."
+public_lean4_proof = true
+public_lean4_proof_status = "local_collection_exact_match"
+public_lean4_proof_urls = ["https://github.com/tadamcz/erdos126/blob/2516785fe6bbc43e979cf6029c976d9f998a7fba/Erdos126/Resolutions/Erdos126_132usd_25h.lean#L3053"]
+public_lean4_proof_note = "Exact full task ID hit in lean-task-repair/references/public-lean4-proofs.csv; marked under the skill's trusted-collection rule. Public proof not copied, installed, or compiled in this task."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/126.lean"

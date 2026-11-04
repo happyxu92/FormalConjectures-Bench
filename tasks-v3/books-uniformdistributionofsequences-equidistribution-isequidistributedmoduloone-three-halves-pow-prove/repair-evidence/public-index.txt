@@ -1,0 +1,4 @@
+{
+  "task": "books-uniformdistributionofsequences-equidistribution-isequidistributedmoduloone-three-halves-pow-prove",
+  "exact_matches": []
+}

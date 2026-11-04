@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-26-open-prove",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式列出 /app、/opt/formal-conjectures 和隐藏的 .lake/packages；最终 Harbor 子容器以 ubuntu 搜索 package 中 ^def IsOpen 成功，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 仅导入 ProblemImports 和本地 Submission，无额外上游模块。原 Dockerfile 缺末尾普通用户验证，现保留 USER ubuntu 后的 RUN lake build +FormalConjecturesBench.Target；当前本地 Harbor 镜像构建及容器内 ubuntu Lake 构建成功。"
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "技能脚本检测并同步修复两份 EXPECTED_HEADER 中 𝔽 的合法代理对；原始头通过、修改头及移除 := 被拒绝。最终复验通过，数学输入和冻结基线未改。详见 repair-evidence/unicode.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从可信 golden 提前生成、预编译并独立审计 Spec；两份包一致，清单 SHA256=84fb9f3b33b495b7cf85f76016c73c366c6ffd5f79f46aca2f2d8c1fb3ba8bdf。固定工具链/依赖路径加载，完整类型比较替换运行 GoldenCheck 的路径，保留原限制、公理审计和 canary。最终当前 task Harbor 镜像 a171f407ede3d13167336a1a091cfe2ac319f1b44a15d5843647b4a3425e8d93，容器 6eadd2ca8200；33 个容器内可信文件哈希匹配。正式及 ubuntu 本地入口退出 1/reward 0，因原始 sorry 预期拒绝；同容器 /tests 与 /opt 实际函数补测均退出 0，覆盖 Spec 审计、ubuntu 编译、全类型比较、公理拒绝 sorryAx、canary、冻结/越界负例、文字不变的 univ 偷换、同名缓存及环境遮蔽、产物缺失/损坏。未构造开放题证明；证据和命令在 repair-evidence/verification.md。报告落盘后已停止并删除自建容器 35663be29346、2fbabe61bf18、6eadd2ca8200，删除两条自建网络和四个本题镜像，inspect 核验不存在。首轮镜像 c528d69a700c 此前被并发题容器 fcb-green26-refute-spec-20261104 借用，因占用按规则保留。后续资源收尾实际确认该镜像已无运行或停止容器使用，现已仅删除本题 tag greensopenproblems-26-open-prove__jsmyxgx__env-main:latest，并用 docker image inspect 核验完整镜像 ID 及 tag 均不存在。本题自建资源清理完成；追加证据见 repair-evidence/cleanup.log，资源状态见 resources.json；未删除其他 agent/用户资源、原有资源或共享缓存。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已读取 pinned 上游 26.lean、Green 来源 PDF 第26题及更新、Yu25 与 Open Problem Garden。实际为对每个素数 p 存在独立于维数 n 的 C 的正向命题，并非仅 p=3/100 或 Yu 的 p=3/4 结果；完整 cube 定义、量词和零维边界未发现明显错误。metadata 标 consistent；未修改任何数学陈述。来源见 repair-evidence/research.md。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 task ID 精确查技能 CSV 未命中后，完成多组联网检索并核查 pinned/main 上游 Lean 源码、PR2368 diff、相关 issues、作者/论文来源、Mathlib、aiXiv 线索及实际 clone 的 plby/lean-proofs。未找到覆盖本题全素数正向命题的公开完整 Lean4 证明；p=3、自然数 additive-basis 和 sorry 骨架均不算。GitHub API 限流通过 raw/HTML/diff/git 读取补足。metadata 标 public_lean4_proof=false/status=searched，仅表示本次充分检索未找到，并非证明不存在；检索词与排除理由见 repair-evidence/research.md。"
+    }
+  }
+}

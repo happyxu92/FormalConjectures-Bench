@@ -1,0 +1,16 @@
+/opt/formal-conjectures/FormalConjectures/OEIS/80170.lean:def PrimePowerCondition (k : ℕ) : Prop :=
+/opt/formal-conjectures/FormalConjectures/OEIS/231201.lean:def PrimeCondition (n : ℕ) : Prop :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/PNat/Factors.lean:def PrimeMultiset :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/PNat/Prime.lean:def Prime (p : ℕ+) : Prop :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/RingTheory/Spectrum/Prime/TensorProduct.lean:def PrimeSpectrum.tensorProductTo (x : PrimeSpectrum (S ⊗[R] T)) :
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/RingTheory/Spectrum/Prime/RingHom.lean:def PrimeSpectrum.comap {R S : Type*} [CommSemiring R] [CommSemiring S] (f : R →+* S)
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Nat/Prime/Defs.lean:def Prime (p : ℕ) :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Nat/Prime/Defs.lean:def Primes :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Num/Prime.lean:def Prime (n : PosNum) : Prop :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Num/Prime.lean:def Prime (n : Num) : Prop :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/RingTheory/LocalRing/ResidueField/Fiber.lean:noncomputable def PrimeSpectrum.preimageEquivFiber (p : PrimeSpectrum R) :
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/RingTheory/LocalRing/ResidueField/Fiber.lean:noncomputable def PrimeSpectrum.preimageOrderIsoFiber (p : PrimeSpectrum R) :
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/RingTheory/LocalRing/ResidueField/Fiber.lean:noncomputable def PrimeSpectrum.primesOverOrderIsoFiber (R S : Type*) [CommRing R]
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/RingTheory/LocalRing/ResidueField/Fiber.lean:noncomputable def PrimeSpectrum.preimageHomeomorphFiber (R S : Type*) [CommRing R]
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/AlgebraicGeometry/StructureSheaf.lean:def PrimeSpectrum.Top : TopCat :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Algebra/Prime/Defs.lean:def Prime (p : M) : Prop :=

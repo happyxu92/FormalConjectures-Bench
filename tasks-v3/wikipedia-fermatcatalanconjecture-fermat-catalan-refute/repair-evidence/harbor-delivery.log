@@ -1,0 +1,13 @@
+Starting trial: fcb-fermat-refute-delivery3-nt40-20261104
+Task: wikipedia-fermatcatalanconjecture-fermat-catalan-refute
+Agent: nop
+Environment: docker
+Trials directory: /tmp/fcb-fermat-refute-harbor
+
+Trial completed!
+Trial name: fcb-fermat-refute-delivery3-nt40-20261104
+Task: 
+formal-conjectures-bench/wikipedia-fermatcatalanconjecture-fermat-catalan-refute
+Started: 2026-11-04 08:45:40.558039+00:00
+Finished: 2026-11-04 08:45:53.032024+00:00
+Rewards: {'reward': 0.0}

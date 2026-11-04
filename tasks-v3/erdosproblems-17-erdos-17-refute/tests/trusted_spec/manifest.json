@@ -1,0 +1,31 @@
+{
+  "task_id": "erdosproblems-17-erdos-17-refute",
+  "target_name": "Erdos17.formal_conjectures_bench_refutation",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "31ade934c8d49607bba95e60b21fd1eb72a4120f917b66a7ba0459db797196dd",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "4d69ad7454c94781abf543140c4bb03a232e12f27b4e221cff1eafa2542977e0",
+    "FCBTrustedSpec.ilean": "bbd88ee17545bb2a252cbac183094c1d8b9be8545839e1c296611b9ef3e9d881",
+    "FCBTrustedSpec.lean": "ddb8a0e029c70dec02ffb5715267707609b5988ca52aaaa52f005be2a4f22e02",
+    "FCBTrustedSpec.olean": "b6a746c508e29c23921a2597f7151fbd0555a90dbadafeb1e588c2d07345976c",
+    "audit.log": "f758d62959729b227ab6cfcd5a48cee9f97a0a1cf43b791467c558ea560c8425",
+    "generate.py": "cb37f5753e389d866fef35d5adefa506a4abcd3c086aa42223e1c0ad4402d42e",
+    "reproduce.sh": "117c7011a069c9c37f8b5b602557aef183064898cd76c3ae2758dac848ca1790"
+  },
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "universe_params": [],
+  "generation_command": "bash /tmp/ep17r-clean/trusted_spec/reproduce.sh (clean matching Docker environment; no candidate files/config/cache)",
+  "audit": "Independent import: ExpectedType definition value and IsClusterPrime transitive axioms [propext]; no exported temporary target; no universes.",
+  "precompile_image": "fcb-erdos17-refute:spec-20261104",
+  "precompile_image_id": "sha256:cdadbf7bb27d937115f7e471353fc7f74eaf260303a1e7f8d33c23615bbe083d"
+}

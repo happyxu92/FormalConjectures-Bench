@@ -1,0 +1,35 @@
+{
+  "task_id": "books-uniformdistributionofsequences-equidistribution-isequidistributedmoduloone-three-halves-pow-prove",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式补齐 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages 三条搜索路径；容器内 rg 成功找到 Mathlib 的 IsEquivalent 等定义，退出码 0。证据见 repair-evidence/search-path-verification.txt。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 只有两个标准 imports，无额外上游模块需预编译。原 Dockerfile 缺少最终 ubuntu 依赖验证，已在复制、权限设置及 USER ubuntu 后追加 RUN lake build +FormalConjecturesBench.Target；Spec 环境及当前本地 task 的 Harbor 构建均成功。保留依赖原权限与正常 import 规则。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整运行技能 check_unicode_header.py，初次和最终均 case=no_issue；原头通过、修改头及移除 := 被拒绝，两份 checker 一致；未修改头或冻结哈希。见 repair-evidence/unicode-final.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在加载可编辑 Submission 后重新解析 GoldenCheck 命题，存在语义遮蔽风险。已从原 golden 在锁定 Docker 工具链中提前 elaboration、预编译并独立审计 ExpectedType，完整类型无外层 binders/universes；两份 trusted_spec 包和清单同步。固定工具链与可信路径优先加载，校验输入/版本/产物哈希，临时 Target 复用 Spec 前缀；完整类型比较替代 GoldenCheck 运行路径，保留原源码限制、冻结检查、公理审计及 canary。最终本地 Harbor 构建/入口成功验收（lfj2uzy，镜像 8be9f2e28371）；正式及 ubuntu 本地入口均因原 sorry 退出 1、reward=0（预期），同一子容器两种布局的独立实际函数补测均退出 0，覆盖 Spec 加载审计、ubuntu 编译、完整类型比较、公理拒绝 sorryAx、canary。冻结头不变的 HDiv 实例偷换经完整类型比较实际拒绝；同名模块/缓存遮蔽失败，缺失/损坏产物明确拒绝且不再生成。35 项容器文件哈希与宿主一致。详见 repair-evidence/validation.md、final-*.log 及 trusted_spec/manifest.json。网络地址池与一次子网冲突已排查并用独有子网成功重试。未提供数学证明。报告与证据保存后，已停止并移除 Spec 容器 9da298b4a5b5、Harbor 容器 70b82fb56825/3062db3e41c1，删除本题 spec-stage 及 jxkugxe/bgda8mf/gml2pay/pnwyqay/lfj2uzy 五个 Harbor 镜像和两条自建网络；docker ps -a 与逐个 image inspect 核验全部已不存在。首轮 Harbor 容器已自动回收，失败启动未留下容器；未清理任何共享镜像、缓存、既有或其他 agent 资源。完整标识见 resources-created.json，清理结果 docker-cleanup.json：remaining=[]。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。已读锁定上游完整前缀/目标、Kuipers–Niederreiter 原书 Ch.1 pp.35–36 及 Neeley 等作者论文。实际为正向 (3/2)^n 模一等分布；区间、实数计数比例、Int.fract、起始索引与退化端点未见导致目标不成立的明显问题。开放性不等于错误。上游 #5003 反例针对另一条任意超越乘子的命题，不适用于本题。仅标记，不修改数学输入；见 repair-evidence/research.md。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "public_lean4_proof=false，status=searched。完整 task ID 精确查 CSV 未命中；随后多组联网搜索 theorem/数学别名/作者/GitHub/Mathlib/上游 PR，并实际读取当前及锁定上游、相关 Lean4 仓库源码。当前目标仍 sorry；Stephan steering-word 复杂度、jjc16 Mahler 条件归约、线性 Weyl 及累积点证明均不覆盖本目标，部分还依赖 sorry 或额外公理。已充分检索但未找到已知公开完整 Lean4 证明，不宣称绝对不存在；未留待核查的有效证明线索。Wikipedia 403 由成功读取原书及作者论文补足。关键词、来源与排除理由见 repair-evidence/research.md；未把公开答案放入任务或镜像。"
+    }
+  }
+}

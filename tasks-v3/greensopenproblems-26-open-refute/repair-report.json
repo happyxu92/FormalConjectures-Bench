@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-26-open-refute",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages. Three-path rg command ran as ubuntu in the Harbor container, found Mathlib card_union_le and exited 0; repair-evidence/search-final.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports. Added missing final Dockerfile ubuntu Target build gate; current local Harbor builds and direct final ubuntu lake build +FormalConjecturesBench.Target passed without dependency permission changes."
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Skill script repaired the valid surrogate pair for 𝔽 in both EXPECTED_HEADER literals; golden/frozen/header/boundary checks passed. Final rerun: no_issue. Mathematical header and frozen hashes unchanged."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated, precompiled and independently audited trusted negated ExpectedType from this task's golden, excluding Submission; synchronized pinned packages, no runtime regeneration. Fixed-toolchain/dependency loading and full candidate type comparison replace dynamic GoldenCheck execution. Current local Harbor image 3adf35b8e93a957e82c9ab0169f294f9f237cbe6bdf4cdf40a12b947c7de8df3; container 11909060d420. Formal/local entries exit 1, reward 0 due solely to original sorry. Supplemental actual-function tests passed for /tests and ubuntu /opt: Spec audit/load, candidate compile, full type comparison, sorryAx rejection/canary, frozen/out-of-tree rejection, unchanged-header Fin shadowing rejection, candidate cache non-shadowing, missing/corrupt artifact failures. Hashes/versions/commands and coverage: repair-evidence/validation.md. Default Docker network pool exhaustion was resolved with a task-only explicit-subnet overlay. After saving report/evidence, stopped and removed owned containers 11909060d420 and caf1e8e4a5e3; removed owned images 3adf35b8e93a and 2f7d0673ae05 and the owned Harbor network. Failed-attempt image was already auto-removed. docker ps/image inspect verified all absent; pre-existing base images and shared cache retained, no prune. See repair-evidence/cleanup.log."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Checked complete prefix and negative all-prime target against pinned/current upstream, Green Problem 26 and Yu Conjecture 1. This is intentionally the refutation side of the general additive basis conjecture, not the solved p=3 variant. No obvious mathematical defect found; no mathematical files changed. See repair-evidence/public-proof-search.md."
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Exact full task ID absent from skill CSV. Thirteen varied web queries plus upstream, Mathlib, literature and PR follow-up found no known public complete Lean4 proof of this NEGATED target; metadata false/searched is not an assertion of absolute nonexistence. Read full diffs of PRs 2467/2999: metadata-only positive-variant claims retaining sorry. Access limits and exclusions documented in repair-evidence/public-proof-search.md; no proof imported."
+    }
+  }
+}

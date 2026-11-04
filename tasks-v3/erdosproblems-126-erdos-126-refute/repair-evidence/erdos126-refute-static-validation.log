@@ -1,0 +1,7 @@
+Final Harbor container /tests and /opt checker, Spec, golden and entrypoint hashes equal local delivery
+official 1
+local 1
+supplement-official 0
+supplement-local 0
+search 0
+AST, TOML, synchronized packages, untouched Target and ubuntu final dependency validation: PASS

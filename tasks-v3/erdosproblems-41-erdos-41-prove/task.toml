@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = false
+public_lean4_proof_status = "searched"
+public_lean4_proof_note = "No complete public Lean4 proof found for this task's finite-subset triple-sum direction after multi-source searches; see repair-evidence/research.md."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/41.lean"

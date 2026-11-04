@@ -1,0 +1,55 @@
+{
+  "images": [
+    {
+      "Id": "sha256:cdadbf7bb27d937115f7e471353fc7f74eaf260303a1e7f8d33c23615bbe083d",
+      "RepoTags": [
+        "fcb-erdos17-refute:spec-20261104"
+      ]
+    },
+    {
+      "Id": "sha256:301dda1a061117ffb435206119c7082792a03c19931c9958ca1eef5dc50e5ba1",
+      "RepoTags": [
+        "erdosproblems-17-erdos-17-refute__eviuqh6__env-main:latest"
+      ]
+    },
+    {
+      "Id": "sha256:b18a387f3a7885e95dbe9997412eec777cff6bc6894d839abf3a21c2be380c7e",
+      "RepoTags": [
+        "erdosproblems-17-erdos-17-refute__cpnydst__env-main:latest"
+      ]
+    },
+    {
+      "Id": "sha256:11615bc10a6e1c18e2930bcc3f06960222774e23efd89b60eb35c268da750f2a",
+      "RepoTags": [
+        "erdosproblems-17-erdos-17-refute__a3ultxk__env-main:latest"
+      ]
+    },
+    {
+      "Id": "sha256:1fb3fbab9cc202d23498a0488a7aa2b294aad6a3535d4721a9f2898015f7464d",
+      "RepoTags": [
+        "erdosproblems-17-erdos-17-refute__3rrmbqb__env-main:latest"
+      ]
+    }
+  ],
+  "containers": [
+    {
+      "Id": "3a035497ad5caf033083b8e442fc0af63e43c5ca1f8aef52faad095c1a79ea57",
+      "Name": "/fcb-erdos17-refute-spec-20261104",
+      "Image": "sha256:cdadbf7bb27d937115f7e471353fc7f74eaf260303a1e7f8d33c23615bbe083d"
+    },
+    {
+      "Id": "24f1f8f06a351f6ee3ea2f3ea3cb2a91ccfc36f3f4239353f0a0d43f01c72e0a",
+      "Name": "/erdosproblems-17-erdos-17-refute__cpnydst__env-main-1",
+      "Image": "sha256:b18a387f3a7885e95dbe9997412eec777cff6bc6894d839abf3a21c2be380c7e"
+    },
+    {
+      "Id": "896afda880d43c4002e9a5308a492629c77f37c18bf4917f7b43116d2c42da4a",
+      "Name": "/erdosproblems-17-erdos-17-refute__3rrmbqb__env-main-1",
+      "Image": "sha256:1fb3fbab9cc202d23498a0488a7aa2b294aad6a3535d4721a9f2898015f7464d"
+    }
+  ],
+  "networks": [
+    "f06daca208cc",
+    "8fc81a03b099"
+  ]
+}

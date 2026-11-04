@@ -1,0 +1,56 @@
+                                                                                
+ Usage: harbor task start-env [OPTIONS]                                         
+                                                                                
+ Start an environment for a task.                                               
+                                                                                
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --help  -h        Show this message and exit.                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Task ───────────────────────────────────────────────────────────────────────╮
+│ *  --path  -p      <path>  Path to task directory. [required]                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Environment ────────────────────────────────────────────────────────────────╮
+│ --env                   -e      [ack|apple-container|  Environment type      │
+│                                 beam|blaxel|cua-cloud  (default: docker) or  │
+│                                 |cwsandbox|daytona|do  a custom environment  │
+│                                 cker|e2b|ec2|gke|hf-s  import path           │
+│                                 andbox|hyperbrowser|i  (module.path:ClassNa… │
+│                                 slo|kata|kernel|langs                        │
+│                                 mith|modal|mosaic|nov                        │
+│                                 ita|opensandbox|opens                        │
+│                                 hift|podman|prime|run                        │
+│                                 loop|runta|sail|sbx|s                        │
+│                                 ingularity|skypilot|s                        │
+│                                 mol|tensorlake|use-co                        │
+│                                 mputer|vercel]                               │
+│ --mounts,--mounts-json          <str>                  JSON array of volume  │
+│                                                        mounts for the        │
+│                                                        environment container │
+│                                                        (Docker Compose       │
+│                                                        service volume        │
+│                                                        format).              │
+│                                                        --mounts-json is a    │
+│                                                        deprecated alias.     │
+│ --ek,--environment-kw…          <str>                  Environment kwarg in  │
+│                                                        key=value format (can │
+│                                                        be used multiple      │
+│                                                        times).               │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Setup ──────────────────────────────────────────────────────────────────────╮
+│ --all          -a                         Add solution and tests to          │
+│                                           environment.                       │
+│                                           [default: True]                    │
+│ --interactive  -i  --non-interactive      Start environment in interactive   │
+│                                           mode.                              │
+│                                           [default: i]                       │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Agent ──────────────────────────────────────────────────────────────────────╮
+│ --agent                     <str>  Agent name to install in the environment, │
+│                                    or a custom agent import path             │
+│                                    (module.path:ClassName).                  │
+│ --model             -m      <str>  Model name for the agent (e.g.,           │
+│                                    'anthropic/claude-3-5-sonnet-20241022').  │
+│ --ak,--agent-kwarg          <str>  Additional agent kwarg in the format      │
+│                                    'key=value'. Can be set multiple times.   │
+╰──────────────────────────────────────────────────────────────────────────────╯
+

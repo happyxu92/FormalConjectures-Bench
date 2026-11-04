@@ -1,0 +1,40 @@
+{
+  "task_id": "wikipedia-gausscircleproblem-error-isbigo-refute",
+  "target_name": "GaussCircleProblem.formal_conjectures_bench_refutation",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "9dc5ee7460346a3b8d8eb8041fcc7495c2fdb35b76a57500d8bd2e27af1df97e",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "c3cfeaa0de3f26d4fcc0abf56c1474ad04c2023c321f2faa3bc901fdc61fcb61",
+    "FCBTrustedSpec.ilean": "c798bc70abb9496639737ead1dccb365d81e5de0a2293e4a81123e630b39d1be",
+    "FCBTrustedSpec.lean": "ae2667653ebce196751e72e9e26d0b624543b21456312bb556f7b1ac3e7cc5e0",
+    "FCBTrustedSpec.olean": "5a4fed4c371e9d26b89893db5a1dafebe7d19612faf070617a98223aeff959c8",
+    "audit.log": "efeaeb0e49d05263521069861110eabb643e53c33791cec7d5d87b5d98f8d106",
+    "generate.py": "a4c9e37447e84caf7116649d5450fe14b02e4ee726e4d9309c876a87186b186d",
+    "reproduce.sh": "5cd4f651ea98a2a8485d161840a84e1e94f4d66ad1e5fad6576169adc02007ec"
+  },
+  "generation_image": "sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a",
+  "generation_command": "docker run -d --network none --name fcb-gauss-refute-spec-nt40-20261104 --user root --workdir /tmp erdos1062-import-20261102__env-main:latest sleep infinity; docker cp trusted golden and generation sources to /tmp/fcb-gauss-refute-generation; docker exec fcb-gauss-refute-spec-nt40-20261104 bash /tmp/fcb-gauss-refute-generation/trusted_spec/reproduce.sh",
+  "audit": "Independent import audited complete negated existential, empty universe list, ExpectedType/N/E transitive allowed axioms only. Temporary target and children absent. Original prefix solved theorem placeholders not in expected type dependencies."
+}

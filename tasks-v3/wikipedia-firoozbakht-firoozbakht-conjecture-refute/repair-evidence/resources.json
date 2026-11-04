@@ -1,0 +1,44 @@
+{
+  "containers": [
+    {
+      "name": "fcb-firooz-refute-spec-nt40",
+      "id": "d74a5c032a22d3dfa5a40dd8db4ee4f812cfa4218ad01ef2482ffcd26112e9b5",
+      "removed": true
+    },
+    {
+      "name": "wikipedia-firoozbakht-firoozbakh__opjhcps__env-main-1",
+      "id": "6c4a3fb8b2363faa0f11912d7ebd90bd33df8ac7cfa71149fa8fa94fb93de493",
+      "removed": true
+    },
+    {
+      "name": "wikipedia-firoozbakht-firoozbakh__e4rgxik__env-main-1",
+      "id": null,
+      "note": "Automatically removed by first Harbor run before ID recorded; absence verified.",
+      "removed": true
+    }
+  ],
+  "images": [
+    {
+      "tag": "fcb-firooz-refute-spec:nt40-20261104",
+      "id": "sha256:91d45e5a355023ce73339416ac86a78751cfa2b744dbcb6309cad03018f4f4c8",
+      "removed": true
+    },
+    {
+      "tag": "wikipedia-firoozbakht-firoozbakh__e4rgxik__env-main:latest",
+      "id": "sha256:41ea8625a189bae0c1c6da5ce39edbc88351fccef285a5ce014b8e9ce6e9ba3f",
+      "removed": true
+    },
+    {
+      "tag": "wikipedia-firoozbakht-firoozbakh__opjhcps__env-main:latest",
+      "id": "sha256:48003e433b526d71428a53ffa7121d194179af19efe85ddca85fc3abb3f3db47",
+      "removed": true
+    }
+  ],
+  "network": {
+    "name": "wikipedia-firoozbakht-firoozbakh__opjhcps__env_default",
+    "id": "3efee0170e0a8f8f5a71ebc761c8e892f6c71d506ebca1c27a75210a28abc199",
+    "removed": true
+  },
+  "cleanup": "complete",
+  "cleanup_failures": []
+}

@@ -1,0 +1,88 @@
+PASS fixed Spec load
+Loaded fixed precompiled trusted Spec from /opt/formal-conjectures-bench-checker/trusted_spec
+
+PASS trusted Spec import/value/universes/transitive axiom audit
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited CarmichaelTotient.CarmichaelTotientFor: [propext, Quot.sound, Classical.choice]
+audited CarmichaelTotient.carchimichealTotientFor_zero: [propext, Quot.sound, Classical.choice]
+audited CarmichaelTotient.carmichealTotientFor_odd: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ ⦃n : ℕ⦄, 0 < n → CarmichaelTotient.CarmichaelTotientFor n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+PASS ubuntu candidate compile (original placeholder fixture)
+Candidate compiled as ubuntu with fixed import paths
+
+PASS complete theorem type comparison (matching placeholder fixture)
+Complete theorem type matches trusted Spec
+
+PASS target axiom audit rejects placeholder
+Unexpected axioms for CarmichaelTotient.charmichaelTotient: ['sorryAx']
+'CarmichaelTotient.charmichaelTotient' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+
+PASS sorry canary
+
+PASS same-name candidate module/cache and environment cannot replace Spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited CarmichaelTotient.CarmichaelTotientFor: [propext, Quot.sound, Classical.choice]
+audited CarmichaelTotient.carchimichealTotientFor_zero: [propext, Quot.sound, Classical.choice]
+audited CarmichaelTotient.carmichealTotientFor_odd: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ ⦃n : ℕ⦄, 0 < n → CarmichaelTotient.CarmichaelTotientFor n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+PASS changed frozen prefix
+Code above the benchmark target marker changed
+
+PASS out-of-tree source
+Unexpected added Lean source outside editable subtree: Outside.lean
+
+PASS semantic fixture frozen/header check
+
+PASS semantic fixture source restrictions
+
+PASS semantic replacement compiles as ubuntu
+Candidate compiled as ubuntu with fixed import paths
+
+PASS semantic replacement is axiom-clean
+
+PASS complete type rejects altered LT instance
+Lean audit command failed
+/tmp/formal_conjectures_bench_2sjajwe2/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  CarmichaelTotient.charmichaelTotient
+has type
+  ∀ ⦃n : ℕ⦄, 0 < n → CarmichaelTotient.CarmichaelTotientFor n
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+
+PASS full actual checker rejects legal-syntax instance attack
+Loaded fixed precompiled trusted Spec from /opt/formal-conjectures-bench-checker/trusted_spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited CarmichaelTotient.CarmichaelTotientFor: [propext, Quot.sound, Classical.choice]
+audited CarmichaelTotient.carchimichealTotientFor_zero: [propext, Quot.sound, Classical.choice]
+audited CarmichaelTotient.carmichealTotientFor_odd: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ ⦃n : ℕ⦄, 0 < n → CarmichaelTotient.CarmichaelTotientFor n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Lean audit command failed
+/tmp/formal_conjectures_bench_y2kkccsd/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  CarmichaelTotient.charmichaelTotient
+has type
+  ∀ ⦃n : ℕ⦄, 0 < n → CarmichaelTotient.CarmichaelTotientFor n
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+
+PASS missing precompiled artifact fails without regeneration
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+
+PASS artifact hash mismatch fails without regeneration
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+
+ALL 17 SUPPLEMENTAL CHECKS PASSED

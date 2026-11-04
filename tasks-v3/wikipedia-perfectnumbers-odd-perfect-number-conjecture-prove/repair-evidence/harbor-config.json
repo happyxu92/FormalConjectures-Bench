@@ -1,0 +1,22 @@
+{
+    "job_name": "oddperfect-prove-retain-nt40-143048",
+    "jobs_dir": "/tmp/oddperfect-harbor-jobs",
+    "n_concurrent_trials": 1,
+    "environment": {
+        "type": "docker",
+        "delete": false,
+        "kwargs": {
+            "keep_containers": true
+        }
+    },
+    "agents": [
+        {
+            "name": "nop"
+        }
+    ],
+    "tasks": [
+        {
+            "path": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-perfectnumbers-odd-perfect-number-conjecture-prove"
+        }
+    ]
+}

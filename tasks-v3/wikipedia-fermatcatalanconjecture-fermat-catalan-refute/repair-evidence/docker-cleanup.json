@@ -1,0 +1,405 @@
+{
+  "summary": {
+    "remaining_containers": [],
+    "remaining_tags": [],
+    "remaining_image_ids": [],
+    "remaining_networks": [],
+    "completed": true
+  },
+  "commands": [
+    {
+      "command": [
+        "docker",
+        "container",
+        "inspect",
+        "3c1a600408b891b5d50298dc8a0fc32dc4e1e1fcd820049584baeb3110ab7b5f"
+      ],
+      "exit_code": 0,
+      "output": "[\n    {\n        \"Id\": \"3c1a600408b891b5d50298dc8a0fc32dc4e1e1fcd820049584baeb3110ab7b5f\",\n        \"Created\": \"2026-11-04T08:33:15.993148121Z\",\n        \"Path\": \"sleep\",\n        \"Args\": [\n            \"infinity\"\n        ],\n        \"State\": {\n            \"Status\": \"running\",\n            \"Running\": true,\n            \"Paused\": false,\n            \"Restarting\": false,\n            \"OOMKilled\": false,\n            \"Dead\": false,\n            \"Pid\": 2041727,\n            \"ExitCode\": 0,\n            \"Error\": \"\",\n            \"StartedAt\": \"2026-11-04T08:33:16.027923856Z\",\n            \"FinishedAt\": \"0001-01-01T00:00:00Z\"\n        },\n        \"Image\": \"sha256:8246c151b03577bd99879d2ea68bfa4d23acc7dc3bc29f4983382b96cfb76f83\",\n        \"ResolvConfPath\": \"/var/lib/docker/containers/3c1a600408b891b5d50298dc8a0fc32dc4e1e1fcd820049584baeb3110ab7b5f/resolv.conf\",\n        \"HostnamePath\": \"/var/lib/docker/containers/3c1a600408b891b5d50298dc8a0fc32dc4e1e1fcd820049584baeb3110ab7b5f/hostname\",\n        \"HostsPath\": \"/var/lib/docker/containers/3c1a600408b891b5d50298dc8a0fc32dc4e1e1fcd820049584baeb3110ab7b5f/hosts\",\n        \"LogPath\": \"/var/lib/docker/containers/3c1a600408b891b5d50298dc8a0fc32dc4e1e1fcd820049584baeb3110ab7b5f/3c1a600408b891b5d50298dc8a0fc32dc4e1e1fcd820049584baeb3110ab7b5f-json.log\",\n        \"Name\": \"/fcb-fermat-refute-spec-nt40-20261104\",\n        \"RestartCount\": 0,\n        \"Driver\": \"overlayfs\",\n        \"Platform\": \"linux\",\n        \"MountLabel\": \"\",\n        \"ProcessLabel\": \"\",\n        \"AppArmorProfile\": \"docker-default\",\n        \"ExecIDs\": null,\n        \"HostConfig\": {\n            \"Binds\": null,\n            \"ContainerIDFile\": \"\",\n            \"LogConfig\": {\n                \"Type\": \"json-file\",\n                \"Config\": {}\n            },\n            \"NetworkMode\": \"none\",\n            \"PortBindings\": {},\n            \"RestartPolicy\": {\n                \"Name\": \"no\",\n                \"MaximumRetryCount\": 0\n            },\n            \"AutoRemove\": false,\n            \"VolumeDriver\": \"\",\n            \"VolumesFrom\": null,\n            \"ConsoleSize\": [\n                0,\n                0\n            ],\n            \"CapAdd\": null,\n            \"CapDrop\": null,\n            \"CgroupnsMode\": \"private\",\n            \"Dns\": null,\n            \"DnsOptions\": [],\n            \"DnsSearch\": [],\n            \"ExtraHosts\": null,\n            \"GroupAdd\": null,\n            \"IpcMode\": \"private\",\n            \"Cgroup\": \"\",\n            \"Links\": null,\n            \"OomScoreAdj\": 0,\n            \"PidMode\": \"\",\n            \"Privileged\": false,\n            \"PublishAllPorts\": false,\n            \"ReadonlyRootfs\": false,\n            \"SecurityOpt\": null,\n            \"UTSMode\": \"\",\n            \"UsernsMode\": \"\",\n            \"ShmSize\": 67108864,\n            \"Runtime\": \"runc\",\n            \"Isolation\": \"\",\n            \"CpuShares\": 0,\n            \"Memory\": 0,\n            \"NanoCpus\": 0,\n            \"CgroupParent\": \"\",\n            \"BlkioWeight\": 0,\n            \"BlkioWeightDevice\": [],\n            \"BlkioDeviceReadBps\": [],\n            \"BlkioDeviceWriteBps\": [],\n            \"BlkioDeviceReadIOps\": [],\n            \"BlkioDeviceWriteIOps\": [],\n            \"CpuPeriod\": 0,\n            \"CpuQuota\": 0,\n            \"CpuRealtimePeriod\": 0,\n            \"CpuRealtimeRuntime\": 0,\n            \"CpusetCpus\": \"\",\n            \"CpusetMems\": \"\",\n            \"Devices\": [],\n            \"DeviceCgroupRules\": null,\n            \"DeviceRequests\": null,\n            \"MemoryReservation\": 0,\n            \"MemorySwap\": 0,\n            \"MemorySwappiness\": null,\n            \"OomKillDisable\": null,\n            \"PidsLimit\": null,\n            \"Ulimits\": [],\n            \"CpuCount\": 0,\n            \"CpuPercent\": 0,\n            \"IOMaximumIOps\": 0,\n            \"IOMaximumBandwidth\": 0,\n            \"MaskedPaths\": [\n                \"/proc/acpi\",\n                \"/proc/asound\",\n                \"/proc/interrupts\",\n                \"/proc/kcore\",\n                \"/proc/keys\",\n                \"/proc/latency_stats\",\n                \"/proc/sched_debug\",\n                \"/proc/scsi\",\n                \"/proc/timer_list\",\n                \"/proc/timer_stats\",\n                \"/sys/devices/virtual/powercap\",\n                \"/sys/firmware\"\n            ],\n            \"ReadonlyPaths\": [\n                \"/proc/bus\",\n                \"/proc/fs\",\n                \"/proc/irq\",\n                \"/proc/sys\",\n                \"/proc/sysrq-trigger\"\n            ]\n        },\n        \"Storage\": {\n            \"RootFS\": {\n                \"Snapshot\": {\n                    \"Name\": \"overlayfs\"\n                }\n            }\n        },\n        \"Mounts\": [],\n        \"Config\": {\n            \"Hostname\": \"3c1a600408b8\",\n            \"Domainname\": \"\",\n            \"User\": \"ubuntu\",\n            \"AttachStdin\": false,\n            \"AttachStdout\": false,\n            \"AttachStderr\": false,\n            \"Tty\": false,\n            \"OpenStdin\": false,\n            \"StdinOnce\": false,\n            \"Env\": [\n                \"PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\",\n                \"DEBIAN_FRONTEND=noninteractive\",\n                \"ELAN_HOME=/opt/elan\",\n                \"HOME=/home/ubuntu\"\n            ],\n            \"Cmd\": [\n                \"sleep\",\n                \"infinity\"\n            ],\n            \"Image\": \"fcb-fermat-refute-spec:nt40-20261104\",\n            \"Volumes\": null,\n            \"WorkingDir\": \"/app\",\n            \"Entrypoint\": null,\n            \"Labels\": {\n                \"org.opencontainers.image.version\": \"24.04\"\n            }\n        },\n        \"NetworkSettings\": {\n            \"SandboxID\": \"7294af8818b04a127e65283cc5faa6b304a2931e02f4fbf0858be205a6c7aa3f\",\n            \"SandboxKey\": \"/var/run/docker/netns/7294af8818b0\",\n            \"Ports\": {},\n            \"Networks\": {\n                \"none\": {\n                    \"IPAMConfig\": null,\n                    \"Links\": null,\n                    \"Aliases\": null,\n                    \"DriverOpts\": null,\n                    \"GwPriority\": 0,\n                    \"NetworkID\": \"3ce15e35b16a0ccd716c811654548dc89869e504ee57059f69703a505ff9a361\",\n                    \"EndpointID\": \"89b7748013093ba69595df144c216e86bc2f59815a158b3a824cb384a7035d4b\",\n                    \"Gateway\": \"\",\n                    \"IPAddress\": \"\",\n                    \"MacAddress\": \"\",\n                    \"IPPrefixLen\": 0,\n                    \"IPv6Gateway\": \"\",\n                    \"GlobalIPv6Address\": \"\",\n                    \"GlobalIPv6PrefixLen\": 0,\n                    \"DNSNames\": null\n                }\n            }\n        },\n        \"ImageManifestDescriptor\": {\n            \"mediaType\": \"application/vnd.oci.image.manifest.v1+json\",\n            \"digest\": \"sha256:bdfd5e4f48113bd2a56f695fad5a21689c69d37b31cc00de9edbf8273d6184e4\",\n            \"size\": 3516,\n            \"platform\": {\n                \"architecture\": \"amd64\",\n                \"os\": \"linux\"\n            }\n        }\n    }\n]\n"
+    },
+    {
+      "command": [
+        "docker",
+        "stop",
+        "3c1a600408b891b5d50298dc8a0fc32dc4e1e1fcd820049584baeb3110ab7b5f"
+      ],
+      "exit_code": 0,
+      "output": "3c1a600408b891b5d50298dc8a0fc32dc4e1e1fcd820049584baeb3110ab7b5f\n"
+    },
+    {
+      "command": [
+        "docker",
+        "rm",
+        "3c1a600408b891b5d50298dc8a0fc32dc4e1e1fcd820049584baeb3110ab7b5f"
+      ],
+      "exit_code": 0,
+      "output": "3c1a600408b891b5d50298dc8a0fc32dc4e1e1fcd820049584baeb3110ab7b5f\n"
+    },
+    {
+      "command": [
+        "docker",
+        "container",
+        "inspect",
+        "d5a7b879ddad14c90276f640fd50c8887ddcf9b7308956939ea504963d8eebbe"
+      ],
+      "exit_code": 0,
+      "output": "[\n    {\n        \"Id\": \"d5a7b879ddad14c90276f640fd50c8887ddcf9b7308956939ea504963d8eebbe\",\n        \"Created\": \"2026-11-04T08:39:23.673790079Z\",\n        \"Path\": \"sh\",\n        \"Args\": [\n            \"-c\",\n            \"sleep infinity\"\n        ],\n        \"State\": {\n            \"Status\": \"running\",\n            \"Running\": true,\n            \"Paused\": false,\n            \"Restarting\": false,\n            \"OOMKilled\": false,\n            \"Dead\": false,\n            \"Pid\": 2055695,\n            \"ExitCode\": 0,\n            \"Error\": \"\",\n            \"StartedAt\": \"2026-11-04T08:40:15.356720355Z\",\n            \"FinishedAt\": \"2026-11-04T08:39:35.098162731Z\"\n        },\n        \"Image\": \"sha256:51723e39ff44f7fe5b354172471aa8813b45af440c9548079473d6d67cbfc053\",\n        \"ResolvConfPath\": \"/var/lib/docker/containers/d5a7b879ddad14c90276f640fd50c8887ddcf9b7308956939ea504963d8eebbe/resolv.conf\",\n        \"HostnamePath\": \"/var/lib/docker/containers/d5a7b879ddad14c90276f640fd50c8887ddcf9b7308956939ea504963d8eebbe/hostname\",\n        \"HostsPath\": \"/var/lib/docker/containers/d5a7b879ddad14c90276f640fd50c8887ddcf9b7308956939ea504963d8eebbe/hosts\",\n        \"LogPath\": \"/var/lib/docker/containers/d5a7b879ddad14c90276f640fd50c8887ddcf9b7308956939ea504963d8eebbe/d5a7b879ddad14c90276f640fd50c8887ddcf9b7308956939ea504963d8eebbe-json.log\",\n        \"Name\": \"/fcb-fermat-refute-final-nt40-20261104__env-main-1\",\n        \"RestartCount\": 0,\n        \"Driver\": \"overlayfs\",\n        \"Platform\": \"linux\",\n        \"MountLabel\": \"\",\n        \"ProcessLabel\": \"\",\n        \"AppArmorProfile\": \"docker-default\",\n        \"ExecIDs\": null,\n        \"HostConfig\": {\n            \"Binds\": null,\n            \"ContainerIDFile\": \"\",\n            \"LogConfig\": {\n                \"Type\": \"json-file\",\n                \"Config\": {}\n            },\n            \"NetworkMode\": \"fcb-fermat-refute-final-nt40-20261104__env_default\",\n            \"PortBindings\": {},\n            \"RestartPolicy\": {\n                \"Name\": \"no\",\n                \"MaximumRetryCount\": 0\n            },\n            \"AutoRemove\": false,\n            \"VolumeDriver\": \"\",\n            \"VolumesFrom\": null,\n            \"ConsoleSize\": [\n                0,\n                0\n            ],\n            \"CapAdd\": null,\n            \"CapDrop\": null,\n            \"CgroupnsMode\": \"private\",\n            \"Dns\": null,\n            \"DnsOptions\": null,\n            \"DnsSearch\": null,\n            \"ExtraHosts\": [],\n            \"GroupAdd\": null,\n            \"IpcMode\": \"private\",\n            \"Cgroup\": \"\",\n            \"Links\": null,\n            \"OomScoreAdj\": 0,\n            \"PidMode\": \"\",\n            \"Privileged\": false,\n            \"PublishAllPorts\": false,\n            \"ReadonlyRootfs\": false,\n            \"SecurityOpt\": null,\n            \"UTSMode\": \"\",\n            \"UsernsMode\": \"\",\n            \"ShmSize\": 67108864,\n            \"Runtime\": \"runc\",\n            \"Isolation\": \"\",\n            \"CpuShares\": 0,\n            \"Memory\": 8589934592,\n            \"NanoCpus\": 4000000000,\n            \"CgroupParent\": \"\",\n            \"BlkioWeight\": 0,\n            \"BlkioWeightDevice\": null,\n            \"BlkioDeviceReadBps\": null,\n            \"BlkioDeviceWriteBps\": null,\n            \"BlkioDeviceReadIOps\": null,\n            \"BlkioDeviceWriteIOps\": null,\n            \"CpuPeriod\": 0,\n            \"CpuQuota\": 0,\n            \"CpuRealtimePeriod\": 0,\n            \"CpuRealtimeRuntime\": 0,\n            \"CpusetCpus\": \"\",\n            \"CpusetMems\": \"\",\n            \"Devices\": null,\n            \"DeviceCgroupRules\": null,\n            \"DeviceRequests\": null,\n            \"MemoryReservation\": 0,\n            \"MemorySwap\": 17179869184,\n            \"MemorySwappiness\": null,\n            \"OomKillDisable\": null,\n            \"PidsLimit\": null,\n            \"Ulimits\": null,\n            \"CpuCount\": 0,\n            \"CpuPercent\": 0,\n            \"IOMaximumIOps\": 0,\n            \"IOMaximumBandwidth\": 0,\n            \"MaskedPaths\": [\n                \"/proc/acpi\",\n                \"/proc/asound\",\n                \"/proc/interrupts\",\n                \"/proc/kcore\",\n                \"/proc/keys\",\n                \"/proc/latency_stats\",\n                \"/proc/sched_debug\",\n                \"/proc/scsi\",\n                \"/proc/timer_list\",\n                \"/proc/timer_stats\",\n                \"/sys/devices/virtual/powercap\",\n                \"/sys/firmware\"\n            ],\n            \"ReadonlyPaths\": [\n                \"/proc/bus\",\n                \"/proc/fs\",\n                \"/proc/irq\",\n                \"/proc/sys\",\n                \"/proc/sysrq-trigger\"\n            ]\n        },\n        \"Storage\": {\n            \"RootFS\": {\n                \"Snapshot\": {\n                    \"Name\": \"overlayfs\"\n                }\n            }\n        },\n        \"Mounts\": [],\n        \"Config\": {\n            \"Hostname\": \"d5a7b879ddad\",\n            \"Domainname\": \"\",\n            \"User\": \"ubuntu\",\n            \"AttachStdin\": false,\n            \"AttachStdout\": true,\n            \"AttachStderr\": true,\n            \"Tty\": false,\n            \"OpenStdin\": false,\n            \"StdinOnce\": false,\n            \"Env\": [\n                \"PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\",\n                \"DEBIAN_FRONTEND=noninteractive\",\n                \"ELAN_HOME=/opt/elan\",\n                \"HOME=/home/ubuntu\"\n            ],\n            \"Cmd\": [\n                \"sh\",\n                \"-c\",\n                \"sleep infinity\"\n            ],\n            \"Image\": \"fcb-fermat-refute-final-nt40-20261104__env-main\",\n            \"Volumes\": null,\n            \"WorkingDir\": \"/app\",\n            \"Entrypoint\": null,\n            \"Labels\": {\n                \"com.docker.compose.config-hash\": \"51aad5c89590a1a6e9c1ad96ea2ce4fda2faa9a91d5566e8faca5dd271f86973\",\n                \"com.docker.compose.container-number\": \"1\",\n                \"com.docker.compose.depends_on\": \"\",\n                \"com.docker.compose.image\": \"sha256:51723e39ff44f7fe5b354172471aa8813b45af440c9548079473d6d67cbfc053\",\n                \"com.docker.compose.oneoff\": \"False\",\n                \"com.docker.compose.project\": \"fcb-fermat-refute-final-nt40-20261104__env\",\n                \"com.docker.compose.project.config_files\": \"/tmp/tmp89kz0bih/fcb-fermat-refute-final-nt40-20261104__env-docker-compose-resources.json,/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml,/tmp/fcb-fermat-refute-compose.yaml,/tmp/tmpx2us1d5e/docker-compose-environment.json,/tmp/tmpsv07vzqw/docker-compose-mounts.json\",\n                \"com.docker.compose.project.working_dir\": \"/root/FormalConjectures-Bench/tasks-v3/wikipedia-fermatcatalanconjecture-fermat-catalan-refute/environment\",\n                \"com.docker.compose.service\": \"main\",\n                \"com.docker.compose.version\": \"2.40.3\",\n                \"org.opencontainers.image.version\": \"24.04\"\n            }\n        },\n        \"NetworkSettings\": {\n            \"SandboxID\": \"8611d442fdb623b9db8f95842c4b8b7615fccb2caa6ca3b35e4e08aaffbafbac\",\n            \"SandboxKey\": \"/var/run/docker/netns/8611d442fdb6\",\n            \"Ports\": {},\n            \"Networks\": {\n                \"fcb-fermat-refute-final-nt40-20261104__env_default\": {\n                    \"IPAMConfig\": null,\n                    \"Links\": null,\n                    \"Aliases\": [\n                        \"fcb-fermat-refute-final-nt40-20261104__env-main-1\",\n                        \"main\"\n                    ],\n                    \"DriverOpts\": null,\n                    \"GwPriority\": 0,\n                    \"NetworkID\": \"72e172279bdfa4a7fa3d12103ae2aa3c76b157f258c8faa05e4427e46f2dcc67\",\n                    \"EndpointID\": \"5b573ecd09654be53f40909e753d3482bf53cc54b7b306ad93cdda1c54684fb0\",\n                    \"Gateway\": \"10.249.175.1\",\n                    \"IPAddress\": \"10.249.175.2\",\n                    \"MacAddress\": \"6e:32:68:36:80:c3\",\n                    \"IPPrefixLen\": 24,\n                    \"IPv6Gateway\": \"\",\n                    \"GlobalIPv6Address\": \"\",\n                    \"GlobalIPv6PrefixLen\": 0,\n                    \"DNSNames\": [\n                        \"fcb-fermat-refute-final-nt40-20261104__env-main-1\",\n                        \"main\",\n                        \"d5a7b879ddad\"\n                    ]\n                }\n            }\n        },\n        \"ImageManifestDescriptor\": {\n            \"mediaType\": \"application/vnd.oci.image.manifest.v1+json\",\n            \"digest\": \"sha256:09578cdfa7cc78b0912130cdfab3b82fd762e839c0d524deccad3d97e56eceb9\",\n            \"size\": 3518,\n            \"platform\": {\n                \"architecture\": \"amd64\",\n                \"os\": \"linux\"\n            }\n        }\n    }\n]\n"
+    },
+    {
+      "command": [
+        "docker",
+        "stop",
+        "d5a7b879ddad14c90276f640fd50c8887ddcf9b7308956939ea504963d8eebbe"
+      ],
+      "exit_code": 0,
+      "output": "d5a7b879ddad14c90276f640fd50c8887ddcf9b7308956939ea504963d8eebbe\n"
+    },
+    {
+      "command": [
+        "docker",
+        "rm",
+        "d5a7b879ddad14c90276f640fd50c8887ddcf9b7308956939ea504963d8eebbe"
+      ],
+      "exit_code": 0,
+      "output": "d5a7b879ddad14c90276f640fd50c8887ddcf9b7308956939ea504963d8eebbe\n"
+    },
+    {
+      "command": [
+        "docker",
+        "container",
+        "inspect",
+        "2b0be845ce5659d4732a3a343a543582b662f586e55ae5df0f0227092af98a74"
+      ],
+      "exit_code": 0,
+      "output": "[\n    {\n        \"Id\": \"2b0be845ce5659d4732a3a343a543582b662f586e55ae5df0f0227092af98a74\",\n        \"Created\": \"2026-11-04T08:45:41.46042268Z\",\n        \"Path\": \"sh\",\n        \"Args\": [\n            \"-c\",\n            \"sleep infinity\"\n        ],\n        \"State\": {\n            \"Status\": \"running\",\n            \"Running\": true,\n            \"Paused\": false,\n            \"Restarting\": false,\n            \"OOMKilled\": false,\n            \"Dead\": false,\n            \"Pid\": 2072082,\n            \"ExitCode\": 0,\n            \"Error\": \"\",\n            \"StartedAt\": \"2026-11-04T08:46:38.915595635Z\",\n            \"FinishedAt\": \"2026-11-04T08:45:52.904773828Z\"\n        },\n        \"Image\": \"sha256:e6858b572337ff40ae533acbd22890242bad7b4462c21e55b6c2682e2964973c\",\n        \"ResolvConfPath\": \"/var/lib/docker/containers/2b0be845ce5659d4732a3a343a543582b662f586e55ae5df0f0227092af98a74/resolv.conf\",\n        \"HostnamePath\": \"/var/lib/docker/containers/2b0be845ce5659d4732a3a343a543582b662f586e55ae5df0f0227092af98a74/hostname\",\n        \"HostsPath\": \"/var/lib/docker/containers/2b0be845ce5659d4732a3a343a543582b662f586e55ae5df0f0227092af98a74/hosts\",\n        \"LogPath\": \"/var/lib/docker/containers/2b0be845ce5659d4732a3a343a543582b662f586e55ae5df0f0227092af98a74/2b0be845ce5659d4732a3a343a543582b662f586e55ae5df0f0227092af98a74-json.log\",\n        \"Name\": \"/fcb-fermat-refute-delivery3-nt40-20261104__env-main-1\",\n        \"RestartCount\": 0,\n        \"Driver\": \"overlayfs\",\n        \"Platform\": \"linux\",\n        \"MountLabel\": \"\",\n        \"ProcessLabel\": \"\",\n        \"AppArmorProfile\": \"docker-default\",\n        \"ExecIDs\": null,\n        \"HostConfig\": {\n            \"Binds\": null,\n            \"ContainerIDFile\": \"\",\n            \"LogConfig\": {\n                \"Type\": \"json-file\",\n                \"Config\": {}\n            },\n            \"NetworkMode\": \"fcb-fermat-refute-delivery3-nt40-20261104__env_default\",\n            \"PortBindings\": {},\n            \"RestartPolicy\": {\n                \"Name\": \"no\",\n                \"MaximumRetryCount\": 0\n            },\n            \"AutoRemove\": false,\n            \"VolumeDriver\": \"\",\n            \"VolumesFrom\": null,\n            \"ConsoleSize\": [\n                0,\n                0\n            ],\n            \"CapAdd\": null,\n            \"CapDrop\": null,\n            \"CgroupnsMode\": \"private\",\n            \"Dns\": null,\n            \"DnsOptions\": null,\n            \"DnsSearch\": null,\n            \"ExtraHosts\": [],\n            \"GroupAdd\": null,\n            \"IpcMode\": \"private\",\n            \"Cgroup\": \"\",\n            \"Links\": null,\n            \"OomScoreAdj\": 0,\n            \"PidMode\": \"\",\n            \"Privileged\": false,\n            \"PublishAllPorts\": false,\n            \"ReadonlyRootfs\": false,\n            \"SecurityOpt\": null,\n            \"UTSMode\": \"\",\n            \"UsernsMode\": \"\",\n            \"ShmSize\": 67108864,\n            \"Runtime\": \"runc\",\n            \"Isolation\": \"\",\n            \"CpuShares\": 0,\n            \"Memory\": 8589934592,\n            \"NanoCpus\": 4000000000,\n            \"CgroupParent\": \"\",\n            \"BlkioWeight\": 0,\n            \"BlkioWeightDevice\": null,\n            \"BlkioDeviceReadBps\": null,\n            \"BlkioDeviceWriteBps\": null,\n            \"BlkioDeviceReadIOps\": null,\n            \"BlkioDeviceWriteIOps\": null,\n            \"CpuPeriod\": 0,\n            \"CpuQuota\": 0,\n            \"CpuRealtimePeriod\": 0,\n            \"CpuRealtimeRuntime\": 0,\n            \"CpusetCpus\": \"\",\n            \"CpusetMems\": \"\",\n            \"Devices\": null,\n            \"DeviceCgroupRules\": null,\n            \"DeviceRequests\": null,\n            \"MemoryReservation\": 0,\n            \"MemorySwap\": 17179869184,\n            \"MemorySwappiness\": null,\n            \"OomKillDisable\": null,\n            \"PidsLimit\": null,\n            \"Ulimits\": null,\n            \"CpuCount\": 0,\n            \"CpuPercent\": 0,\n            \"IOMaximumIOps\": 0,\n            \"IOMaximumBandwidth\": 0,\n            \"MaskedPaths\": [\n                \"/proc/acpi\",\n                \"/proc/asound\",\n                \"/proc/interrupts\",\n                \"/proc/kcore\",\n                \"/proc/keys\",\n                \"/proc/latency_stats\",\n                \"/proc/sched_debug\",\n                \"/proc/scsi\",\n                \"/proc/timer_list\",\n                \"/proc/timer_stats\",\n                \"/sys/devices/virtual/powercap\",\n                \"/sys/firmware\"\n            ],\n            \"ReadonlyPaths\": [\n                \"/proc/bus\",\n                \"/proc/fs\",\n                \"/proc/irq\",\n                \"/proc/sys\",\n                \"/proc/sysrq-trigger\"\n            ]\n        },\n        \"Storage\": {\n            \"RootFS\": {\n                \"Snapshot\": {\n                    \"Name\": \"overlayfs\"\n                }\n            }\n        },\n        \"Mounts\": [],\n        \"Config\": {\n            \"Hostname\": \"2b0be845ce56\",\n            \"Domainname\": \"\",\n            \"User\": \"ubuntu\",\n            \"AttachStdin\": false,\n            \"AttachStdout\": true,\n            \"AttachStderr\": true,\n            \"Tty\": false,\n            \"OpenStdin\": false,\n            \"StdinOnce\": false,\n            \"Env\": [\n                \"PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\",\n                \"DEBIAN_FRONTEND=noninteractive\",\n                \"ELAN_HOME=/opt/elan\",\n                \"HOME=/home/ubuntu\"\n            ],\n            \"Cmd\": [\n                \"sh\",\n                \"-c\",\n                \"sleep infinity\"\n            ],\n            \"Image\": \"fcb-fermat-refute-delivery3-nt40-20261104__env-main\",\n            \"Volumes\": null,\n            \"WorkingDir\": \"/app\",\n            \"Entrypoint\": null,\n            \"Labels\": {\n                \"com.docker.compose.config-hash\": \"51aad5c89590a1a6e9c1ad96ea2ce4fda2faa9a91d5566e8faca5dd271f86973\",\n                \"com.docker.compose.container-number\": \"1\",\n                \"com.docker.compose.depends_on\": \"\",\n                \"com.docker.compose.image\": \"sha256:e6858b572337ff40ae533acbd22890242bad7b4462c21e55b6c2682e2964973c\",\n                \"com.docker.compose.oneoff\": \"False\",\n                \"com.docker.compose.project\": \"fcb-fermat-refute-delivery3-nt40-20261104__env\",\n                \"com.docker.compose.project.config_files\": \"/tmp/tmpcotshprq/fcb-fermat-refute-delivery3-nt40-20261104__env-docker-compose-resources.json,/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml,/tmp/fcb-fermat-refute-compose-delivery3.yaml,/tmp/tmpvthcfsoh/docker-compose-environment.json,/tmp/tmp_x2od6py/docker-compose-mounts.json\",\n                \"com.docker.compose.project.working_dir\": \"/root/FormalConjectures-Bench/tasks-v3/wikipedia-fermatcatalanconjecture-fermat-catalan-refute/environment\",\n                \"com.docker.compose.service\": \"main\",\n                \"com.docker.compose.version\": \"2.40.3\",\n                \"org.opencontainers.image.version\": \"24.04\"\n            }\n        },\n        \"NetworkSettings\": {\n            \"SandboxID\": \"016282f2b42f55970fdc5d000e4f4cf6f8a3f0cc6f7e5ca222b11b3590e0b663\",\n            \"SandboxKey\": \"/var/run/docker/netns/016282f2b42f\",\n            \"Ports\": {},\n            \"Networks\": {\n                \"fcb-fermat-refute-delivery3-nt40-20261104__env_default\": {\n                    \"IPAMConfig\": null,\n                    \"Links\": null,\n                    \"Aliases\": [\n                        \"fcb-fermat-refute-delivery3-nt40-20261104__env-main-1\",\n                        \"main\"\n                    ],\n                    \"DriverOpts\": null,\n                    \"GwPriority\": 0,\n                    \"NetworkID\": \"e4451acca21c2fc8dc2560ae21f45138c61b11cbc966d803fc7bffe147ded619\",\n                    \"EndpointID\": \"3343fa3ff832f82264e713b5acccb55a44954db88b454e552d4fb180f2f060d8\",\n                    \"Gateway\": \"10.247.201.1\",\n                    \"IPAddress\": \"10.247.201.2\",\n                    \"MacAddress\": \"0a:eb:86:b4:cd:0e\",\n                    \"IPPrefixLen\": 24,\n                    \"IPv6Gateway\": \"\",\n                    \"GlobalIPv6Address\": \"\",\n                    \"GlobalIPv6PrefixLen\": 0,\n                    \"DNSNames\": [\n                        \"fcb-fermat-refute-delivery3-nt40-20261104__env-main-1\",\n                        \"main\",\n                        \"2b0be845ce56\"\n                    ]\n                }\n            }\n        },\n        \"ImageManifestDescriptor\": {\n            \"mediaType\": \"application/vnd.oci.image.manifest.v1+json\",\n            \"digest\": \"sha256:5195ceb744fcef5cb0707e129a794819169e34a1430afb4bdd029b45ed46b315\",\n            \"size\": 3518,\n            \"platform\": {\n                \"architecture\": \"amd64\",\n                \"os\": \"linux\"\n            }\n        }\n    }\n]\n"
+    },
+    {
+      "command": [
+        "docker",
+        "stop",
+        "2b0be845ce5659d4732a3a343a543582b662f586e55ae5df0f0227092af98a74"
+      ],
+      "exit_code": 0,
+      "output": "2b0be845ce5659d4732a3a343a543582b662f586e55ae5df0f0227092af98a74\n"
+    },
+    {
+      "command": [
+        "docker",
+        "rm",
+        "2b0be845ce5659d4732a3a343a543582b662f586e55ae5df0f0227092af98a74"
+      ],
+      "exit_code": 0,
+      "output": "2b0be845ce5659d4732a3a343a543582b662f586e55ae5df0f0227092af98a74\n"
+    },
+    {
+      "command": [
+        "docker",
+        "network",
+        "inspect",
+        "fcb-fermat-refute-final-nt40-20261104__env_default"
+      ],
+      "exit_code": 0,
+      "output": "[\n    {\n        \"Name\": \"fcb-fermat-refute-final-nt40-20261104__env_default\",\n        \"Id\": \"72e172279bdfa4a7fa3d12103ae2aa3c76b157f258c8faa05e4427e46f2dcc67\",\n        \"Created\": \"2026-11-04T16:39:23.639932181+08:00\",\n        \"Scope\": \"local\",\n        \"Driver\": \"bridge\",\n        \"EnableIPv4\": true,\n        \"EnableIPv6\": false,\n        \"IPAM\": {\n            \"Driver\": \"default\",\n            \"Options\": null,\n            \"Config\": [\n                {\n                    \"Subnet\": \"10.249.175.0/24\",\n                    \"IPRange\": \"\",\n                    \"Gateway\": \"10.249.175.1\"\n                }\n            ]\n        },\n        \"Internal\": false,\n        \"Attachable\": false,\n        \"Ingress\": false,\n        \"ConfigFrom\": {\n            \"Network\": \"\"\n        },\n        \"ConfigOnly\": false,\n        \"Options\": {},\n        \"Labels\": {\n            \"com.docker.compose.config-hash\": \"3f9fcf7831b711b7e9a369e3392d2986474fb7dc5aa642fb441c16fd7b59f6e8\",\n            \"com.docker.compose.network\": \"default\",\n            \"com.docker.compose.project\": \"fcb-fermat-refute-final-nt40-20261104__env\",\n            \"com.docker.compose.version\": \"2.40.3\"\n        },\n        \"Containers\": {},\n        \"Status\": {\n            \"IPAM\": {\n                \"Subnets\": {\n                    \"10.249.175.0/24\": {\n                        \"IPsInUse\": 3,\n                        \"DynamicIPsAvailable\": 253\n                    }\n                }\n            }\n        }\n    }\n]\n"
+    },
+    {
+      "command": [
+        "docker",
+        "network",
+        "rm",
+        "fcb-fermat-refute-final-nt40-20261104__env_default"
+      ],
+      "exit_code": 0,
+      "output": "fcb-fermat-refute-final-nt40-20261104__env_default\n"
+    },
+    {
+      "command": [
+        "docker",
+        "network",
+        "inspect",
+        "fcb-fermat-refute-delivery3-nt40-20261104__env_default"
+      ],
+      "exit_code": 0,
+      "output": "[\n    {\n        \"Name\": \"fcb-fermat-refute-delivery3-nt40-20261104__env_default\",\n        \"Id\": \"e4451acca21c2fc8dc2560ae21f45138c61b11cbc966d803fc7bffe147ded619\",\n        \"Created\": \"2026-11-04T16:45:41.426387996+08:00\",\n        \"Scope\": \"local\",\n        \"Driver\": \"bridge\",\n        \"EnableIPv4\": true,\n        \"EnableIPv6\": false,\n        \"IPAM\": {\n            \"Driver\": \"default\",\n            \"Options\": null,\n            \"Config\": [\n                {\n                    \"Subnet\": \"10.247.201.0/24\",\n                    \"IPRange\": \"\",\n                    \"Gateway\": \"10.247.201.1\"\n                }\n            ]\n        },\n        \"Internal\": false,\n        \"Attachable\": false,\n        \"Ingress\": false,\n        \"ConfigFrom\": {\n            \"Network\": \"\"\n        },\n        \"ConfigOnly\": false,\n        \"Options\": {},\n        \"Labels\": {\n            \"com.docker.compose.config-hash\": \"5ea7bcbf35bb68b9c11e64b1eb2a8869c19d9952508ccbbeaaac51648db3e20b\",\n            \"com.docker.compose.network\": \"default\",\n            \"com.docker.compose.project\": \"fcb-fermat-refute-delivery3-nt40-20261104__env\",\n            \"com.docker.compose.version\": \"2.40.3\"\n        },\n        \"Containers\": {},\n        \"Status\": {\n            \"IPAM\": {\n                \"Subnets\": {\n                    \"10.247.201.0/24\": {\n                        \"IPsInUse\": 3,\n                        \"DynamicIPsAvailable\": 253\n                    }\n                }\n            }\n        }\n    }\n]\n"
+    },
+    {
+      "command": [
+        "docker",
+        "network",
+        "rm",
+        "fcb-fermat-refute-delivery3-nt40-20261104__env_default"
+      ],
+      "exit_code": 0,
+      "output": "fcb-fermat-refute-delivery3-nt40-20261104__env_default\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "fcb-fermat-refute-spec:nt40-20261104"
+      ],
+      "exit_code": 0,
+      "output": "Untagged: fcb-fermat-refute-spec:nt40-20261104\nDeleted: sha256:8246c151b03577bd99879d2ea68bfa4d23acc7dc3bc29f4983382b96cfb76f83\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "fcb-fermat-refute-accept-nt40-20261104__env-main:latest"
+      ],
+      "exit_code": 0,
+      "output": "Untagged: fcb-fermat-refute-accept-nt40-20261104__env-main:latest\nDeleted: sha256:12fa76dae3ca6236a0b9a33501ce018265a32e8e7558b068bd9491257b25a18c\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "fcb-fermat-refute-final-nt40-20261104__env-main:latest"
+      ],
+      "exit_code": 0,
+      "output": "Untagged: fcb-fermat-refute-final-nt40-20261104__env-main:latest\nDeleted: sha256:51723e39ff44f7fe5b354172471aa8813b45af440c9548079473d6d67cbfc053\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "fcb-fermat-refute-delivery-nt40-20261104__env-main:latest"
+      ],
+      "exit_code": 0,
+      "output": "Untagged: fcb-fermat-refute-delivery-nt40-20261104__env-main:latest\nDeleted: sha256:c63241ad34753e289c9dcf4c4b5bdebfda8a19faeca0db79a09a2736d86076eb\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "fcb-fermat-refute-delivery2-nt40-20261104__env-main:latest"
+      ],
+      "exit_code": 0,
+      "output": "Untagged: fcb-fermat-refute-delivery2-nt40-20261104__env-main:latest\nDeleted: sha256:653bcd2d6760b4219bfb6d9de976001add64eb5dce27df4f8719b946f7d76f92\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "fcb-fermat-refute-delivery3-nt40-20261104__env-main:latest"
+      ],
+      "exit_code": 0,
+      "output": "Untagged: fcb-fermat-refute-delivery3-nt40-20261104__env-main:latest\nDeleted: sha256:e6858b572337ff40ae533acbd22890242bad7b4462c21e55b6c2682e2964973c\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "fcb-fermat-refute-nt40-20261104__env-main:latest"
+      ],
+      "exit_code": 0,
+      "output": "Untagged: fcb-fermat-refute-nt40-20261104__env-main:latest\nDeleted: sha256:e700b45505f23c2f42c7d773f8891a757170a154ea570abe238aa0e92940ac47\n"
+    },
+    {
+      "command": [
+        "docker",
+        "container",
+        "inspect",
+        "3c1a600408b891b5d50298dc8a0fc32dc4e1e1fcd820049584baeb3110ab7b5f"
+      ],
+      "exit_code": 1,
+      "output": "[]\nError response from daemon: No such container: 3c1a600408b891b5d50298dc8a0fc32dc4e1e1fcd820049584baeb3110ab7b5f\n"
+    },
+    {
+      "command": [
+        "docker",
+        "container",
+        "inspect",
+        "d5a7b879ddad14c90276f640fd50c8887ddcf9b7308956939ea504963d8eebbe"
+      ],
+      "exit_code": 1,
+      "output": "[]\nError response from daemon: No such container: d5a7b879ddad14c90276f640fd50c8887ddcf9b7308956939ea504963d8eebbe\n"
+    },
+    {
+      "command": [
+        "docker",
+        "container",
+        "inspect",
+        "2b0be845ce5659d4732a3a343a543582b662f586e55ae5df0f0227092af98a74"
+      ],
+      "exit_code": 1,
+      "output": "[]\nError response from daemon: No such container: 2b0be845ce5659d4732a3a343a543582b662f586e55ae5df0f0227092af98a74\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "fcb-fermat-refute-spec:nt40-20261104"
+      ],
+      "exit_code": 1,
+      "output": "[]\nError response from daemon: No such image: fcb-fermat-refute-spec:nt40-20261104\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "fcb-fermat-refute-accept-nt40-20261104__env-main:latest"
+      ],
+      "exit_code": 1,
+      "output": "[]\nError response from daemon: No such image: fcb-fermat-refute-accept-nt40-20261104__env-main:latest\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "fcb-fermat-refute-final-nt40-20261104__env-main:latest"
+      ],
+      "exit_code": 1,
+      "output": "[]\nError response from daemon: No such image: fcb-fermat-refute-final-nt40-20261104__env-main:latest\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "fcb-fermat-refute-delivery-nt40-20261104__env-main:latest"
+      ],
+      "exit_code": 1,
+      "output": "[]\nError response from daemon: No such image: fcb-fermat-refute-delivery-nt40-20261104__env-main:latest\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "fcb-fermat-refute-delivery2-nt40-20261104__env-main:latest"
+      ],
+      "exit_code": 1,
+      "output": "[]\nError response from daemon: No such image: fcb-fermat-refute-delivery2-nt40-20261104__env-main:latest\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "fcb-fermat-refute-delivery3-nt40-20261104__env-main:latest"
+      ],
+      "exit_code": 1,
+      "output": "[]\nError response from daemon: No such image: fcb-fermat-refute-delivery3-nt40-20261104__env-main:latest\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "fcb-fermat-refute-nt40-20261104__env-main:latest"
+      ],
+      "exit_code": 1,
+      "output": "[]\nError response from daemon: No such image: fcb-fermat-refute-nt40-20261104__env-main:latest\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "sha256:12fa76dae3ca6236a0b9a33501ce018265a32e8e7558b068bd9491257b25a18c"
+      ],
+      "exit_code": 1,
+      "output": "[]\nError response from daemon: No such image: sha256:12fa76dae3ca6236a0b9a33501ce018265a32e8e7558b068bd9491257b25a18c\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "sha256:51723e39ff44f7fe5b354172471aa8813b45af440c9548079473d6d67cbfc053"
+      ],
+      "exit_code": 1,
+      "output": "[]\nError response from daemon: No such image: sha256:51723e39ff44f7fe5b354172471aa8813b45af440c9548079473d6d67cbfc053\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "sha256:653bcd2d6760b4219bfb6d9de976001add64eb5dce27df4f8719b946f7d76f92"
+      ],
+      "exit_code": 1,
+      "output": "[]\nError response from daemon: No such image: sha256:653bcd2d6760b4219bfb6d9de976001add64eb5dce27df4f8719b946f7d76f92\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "sha256:8246c151b03577bd99879d2ea68bfa4d23acc7dc3bc29f4983382b96cfb76f83"
+      ],
+      "exit_code": 1,
+      "output": "[]\nError response from daemon: No such image: sha256:8246c151b03577bd99879d2ea68bfa4d23acc7dc3bc29f4983382b96cfb76f83\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "sha256:c63241ad34753e289c9dcf4c4b5bdebfda8a19faeca0db79a09a2736d86076eb"
+      ],
+      "exit_code": 1,
+      "output": "[]\nError response from daemon: No such image: sha256:c63241ad34753e289c9dcf4c4b5bdebfda8a19faeca0db79a09a2736d86076eb\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "sha256:e6858b572337ff40ae533acbd22890242bad7b4462c21e55b6c2682e2964973c"
+      ],
+      "exit_code": 1,
+      "output": "[]\nError response from daemon: No such image: sha256:e6858b572337ff40ae533acbd22890242bad7b4462c21e55b6c2682e2964973c\n"
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "sha256:e700b45505f23c2f42c7d773f8891a757170a154ea570abe238aa0e92940ac47"
+      ],
+      "exit_code": 1,
+      "output": "[]\nError response from daemon: No such image: sha256:e700b45505f23c2f42c7d773f8891a757170a154ea570abe238aa0e92940ac47\n"
+    },
+    {
+      "command": [
+        "docker",
+        "network",
+        "inspect",
+        "fcb-fermat-refute-final-nt40-20261104__env_default"
+      ],
+      "exit_code": 1,
+      "output": "[]\nError response from daemon: network fcb-fermat-refute-final-nt40-20261104__env_default not found\n"
+    },
+    {
+      "command": [
+        "docker",
+        "network",
+        "inspect",
+        "fcb-fermat-refute-delivery3-nt40-20261104__env_default"
+      ],
+      "exit_code": 1,
+      "output": "[]\nError response from daemon: network fcb-fermat-refute-delivery3-nt40-20261104__env_default not found\n"
+    },
+    {
+      "command": [
+        "docker",
+        "ps",
+        "-a",
+        "--no-trunc"
+      ],
+      "exit_code": 0,
+      "output": "CONTAINER ID                                                       IMAGE                                                                     COMMAND                                                                                                                        CREATED          STATUS                    PORTS                    NAMES\nb9b21d646ecbea473fcb53c629c2fdb7512eb7e65cae1b19f574b559d46604bc   erdos1062-import-20261102__env-main:latest                                \"sleep infinity\"                                                                                                               2 minutes ago    Up 2 minutes                                       fcb-gauss-refute-spec-nt40-20261104\n38b6f13dd03164c49bfe1cf86169ea538c3d10d921dbca7380be0a6a82d79d54   wikipedia-gausscircleproblem-err__dazhtwr__env-main                       \"sh -c 'sleep infinity'\"                                                                                                       6 minutes ago    Up 6 minutes                                       wikipedia-gausscircleproblem-err__dazhtwr__env-main-1\n04fe2660756fad122355f262212184120d1a3ef9b20a27ee7e2fdfc3cc915c2a   fcb-firoozbakht-prove-final:nt40-20261104                                 \"sh -c 'sleep infinity'\"                                                                                                       10 minutes ago   Up 10 minutes                                      wikipedia-firoozbakht-firoozbakh__nrqmq2s__env-main-1\n63b897c00fa9acf795de0c20588c82faa4327ea053f88cbabdd84dcf87d490b0   erdos1062-import-20261102__env-main:latest                                \"sleep infinity\"                                                                                                               11 minutes ago   Up 11 minutes                                      fcb-gauss-error-spec-20261104\n6c4a3fb8b2363faa0f11912d7ebd90bd33df8ac7cfa71149fa8fa94fb93de493   wikipedia-firoozbakht-firoozbakh__opjhcps__env-main                       \"sh -c 'sleep infinity'\"                                                                                                       11 minutes ago   Up 10 minutes                                      wikipedia-firoozbakht-firoozbakh__opjhcps__env-main-1\nd74a5c032a22d3dfa5a40dd8db4ee4f812cfa4218ad01ef2482ffcd26112e9b5   fcb-firooz-refute-spec:nt40-20261104                                      \"sleep infinity\"                                                                                                               14 minutes ago   Up 14 minutes                                      fcb-firooz-refute-spec-nt40\n7bca38a61a6b88aa4762b02f487f5ade25592089e7a1036e2c082b60c04af766   fcb-firoozbakht-prove-spec:nt40-20261104                                  \"sleep infinity\"                                                                                                               15 minutes ago   Up 15 minutes                                      fcb-firoozbakht-prove-spec-nt40-20261104\n418e01ddfc0350357b6366d0053d11f109696c1fa17318a6e5e0fe4262857a51   weishaw/sub2api:0.2.15                                                    \"/app/docker-entrypoint.sh /app/sub2api\"                                                                                       46 hours ago     Up 6 hours (healthy)      0.0.0.0:8080->8080/tcp   sub2api\nf87663ee43dc6988a89ad187b16dab3013b41ac26a1f92d78138099d083f7c1e   erdos1062-lower-import-current-20261102__env-main                         \"sh -c 'sleep infinity'\"                                                                                                       2 days ago       Exited (137) 2 days ago                            erdos1062-lower-import-current-20261102__env-main-1\ne3e0088b94c6bddc783b1c63d7e6c8da3708e230e998cbf6db1146abd0c92f8c   erdos1062-import-20261102__env-main                                       \"sh -c 'sleep infinity'\"                                                                                                       2 days ago       Exited (137) 2 days ago                            erdos1062-import-20261102__env-main-1\n9d88b1e34a20193355bd977f203b9b26d4ae86fd120281afad36f83425c0aa05   erdos1051-import-20261102__env-main                                       \"sh -c 'sleep infinity'\"                                                                                                       2 days ago       Exited (137) 2 days ago                            erdos1051-import-20261102__env-main-1\n969a5a561de9e07c912576ff9cd1edfd1950668280e678277bfc7d9569f86659   postgres:18-alpine                                                        \"docker-entrypoint.sh postgres\"                                                                                                6 weeks ago      Up 6 hours (healthy)      5432/tcp                 sub2api-postgres\n038757ae87f97d3ecccc7e8bff6b3fd52732187cd470dbff58273a590649bed4   redis:8-alpine                                                            \"docker-entrypoint.sh sh -c '\\n  redis-server \\\\\\n  --save 60 1 \\\\\\n  --appendonly yes \\\\\\n  --appendfsync everysec \\\\\\n  '\"   6 weeks ago      Up 6 hours (healthy)      6379/tcp                 sub2api-redis\n2c28f9c67fbab8d813769633221539e3dc3e05a445c2a8e336bbdc241cd20be9   sha256:4e1081d31f83482cef2acf20d8de31d71ed5d8247711028f3494393e782d18df   \"/bin/bash -lc 'trap 'exit 0' TERM INT; while true; do sleep 3600; done'\"                                                      2 months ago     Dead                                               \n"
+    }
+  ]
+}

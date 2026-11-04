@@ -1,0 +1,46 @@
+Loaded fixed precompiled trusted Spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Equidistribution.IsEquidistributed: [propext, Quot.sound, Classical.choice]
+audited Equidistribution.IsEquidistributedModuloOne: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Equidistribution.IsEquidistributedModuloOne fun n ↦ (3 / 2) ^ n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+REJECTED placeholder target axiom audit Unexpected axioms for Equidistribution.isEquidistributedModuloOne_three_halves_pow: ['sorryAx']
+'Equidistribution.isEquidistributedModuloOne_three_halves_pow' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+PASS sorry canary
+Complete theorem type matches trusted Spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Equidistribution.IsEquidistributed: [propext, Quot.sound, Classical.choice]
+audited Equidistribution.IsEquidistributedModuloOne: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Equidistribution.IsEquidistributedModuloOne fun n ↦ (3 / 2) ^ n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS candidate same-name modules/cache/environment did not replace trusted Spec/dependencies
+REJECTED frozen prefix edit Code above the benchmark target marker changed
+REJECTED header edit Target theorem header changed
+REJECTED removed assignment Target theorem no longer has a proof assignment
+REJECTED original sorry source Banned Lean feature found in proof region at line 2: \bsorry\b
+REJECTED out of subtree Lean source Unexpected added Lean source outside editable subtree: Escape.lean
+REJECTED frozen project configuration Trusted benchmark file was modified: lakefile.toml
+REJECTED editable symlink Symlinks are not allowed in the editable source tree: FormalConjecturesBench/link.lean
+Candidate compiled as ubuntu with fixed import paths
+REJECTED unchanged header but helper HDiv semantic substitution Lean audit command failed
+/tmp/formal_conjectures_bench_oeir3xxx/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Equidistribution.isEquidistributedModuloOne_three_halves_pow
+has type
+  Equidistribution.IsEquidistributedModuloOne fun n ↦ (3 / 2) ^ n
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+REJECTED missing precompiled Spec Missing trusted Spec artifact: FCBTrustedSpec.olean
+REJECTED corrupt precompiled Spec Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+REJECTED manifest tamper Trusted Spec manifest hash mismatch
+PASS all supplementary stages; original theorem remains unproved

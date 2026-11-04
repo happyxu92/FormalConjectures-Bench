@@ -1,0 +1,90 @@
+[
+  {
+    "case": "fixed manifest, inputs, toolchain and artifact verification",
+    "result": "passed"
+  },
+  {
+    "case": "precompiled ExpectedType complete value and transitive axiom audit",
+    "result": "passed"
+  },
+  {
+    "case": "ubuntu candidate compilation (isolated original sorry fixture)",
+    "result": "passed"
+  },
+  {
+    "case": "original complete theorem type comparison",
+    "result": "passed"
+  },
+  {
+    "case": "target axiom audit detects sorryAx",
+    "result": "rejected"
+  },
+  {
+    "case": "sorry canary",
+    "result": "passed"
+  },
+  {
+    "case": "Spec and dependency homonyms/cache/environment do not shadow fixed modules",
+    "result": "passed"
+  },
+  {
+    "case": "trusted type audit still identical after counterfeit modules",
+    "result": "passed"
+  },
+  {
+    "case": "frozen prefix mutation",
+    "result": "rejected"
+  },
+  {
+    "case": "changed theorem header",
+    "result": "rejected"
+  },
+  {
+    "case": "missing proof assignment",
+    "result": "rejected"
+  },
+  {
+    "case": "original placeholder syntax",
+    "result": "rejected"
+  },
+  {
+    "case": "semantic attack preserves original frozen prefix/header",
+    "result": "passed"
+  },
+  {
+    "case": "semantic attack obeys source restrictions",
+    "result": "passed"
+  },
+  {
+    "case": "semantic attack compiles as ubuntu without placeholders",
+    "result": "passed"
+  },
+  {
+    "case": "semantic attack itself passes axiom audit",
+    "result": "passed"
+  },
+  {
+    "case": "semantic attack rejected by complete trusted type comparison",
+    "result": "rejected"
+  },
+  {
+    "case": "actual checker main rejects unchanged-text semantic attack",
+    "result": "rejected"
+  },
+  {
+    "case": "out-of-bounds Lean source",
+    "result": "rejected"
+  },
+  {
+    "case": "non-Lean editable source",
+    "result": "rejected"
+  },
+  {
+    "case": "missing Spec precompiled artifact fails closed",
+    "result": "rejected"
+  },
+  {
+    "case": "corrupt Spec precompiled artifact fails closed",
+    "result": "rejected"
+  }
+]

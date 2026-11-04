@@ -1,0 +1,6 @@
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited ExpectedType and all transitive dependencies: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ k ≥ 3, ∀ (n : ℕ), ¬(∏ x ∈ Finset.Ioc n (n + k), x).Powerful
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

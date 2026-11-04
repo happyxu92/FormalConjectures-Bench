@@ -1,0 +1,7 @@
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos1.IsSumDistinctSet: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ C > 0, ∀ (N : ℕ) (A : Finset ℕ), Erdos1.IsSumDistinctSet A N → N ≠ 0 → C * 2 ^ A.card < ↑N
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

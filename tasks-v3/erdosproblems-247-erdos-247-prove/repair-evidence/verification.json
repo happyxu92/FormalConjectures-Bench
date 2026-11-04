@@ -1,0 +1,85 @@
+{
+  "task_id": "erdosproblems-247-erdos-247-prove",
+  "static_checks": "PASS: both ASTs and packages identical; final container hashes match both local deliveries",
+  "immutable_files_verified": {
+    "environment/data/FormalConjecturesBench/Target.lean": "0a381a8bb98c33d6a63d97ec20ce36b6a5cebff5e41f9d57cb50e1a96a060d83",
+    "tests/GoldenCheck.lean": "5a68aeee76ab4c2acd3a5b289cf785e91ed9868daa415bcd89119f9928f28139",
+    "environment/data/checker/GoldenCheck.lean": "5a68aeee76ab4c2acd3a5b289cf785e91ed9868daa415bcd89119f9928f28139",
+    "tests/golden_env/FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "tests/golden_env/lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb",
+    "tests/golden_env/lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "tests/golden_env/lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "tests/golden_env/FormalConjecturesBench/Target.lean": "0a381a8bb98c33d6a63d97ec20ce36b6a5cebff5e41f9d57cb50e1a96a060d83",
+    "tests/golden_env/FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "environment/data/checker/golden_env/FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "environment/data/checker/golden_env/lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb",
+    "environment/data/checker/golden_env/lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "environment/data/checker/golden_env/lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean": "0a381a8bb98c33d6a63d97ec20ce36b6a5cebff5e41f9d57cb50e1a96a060d83",
+    "environment/data/checker/golden_env/FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93"
+  },
+  "spec_manifest_sha256": "5c4e40e05b671f02e8ff40a51d87e219039ac1453e8ab3dd7cc7fdccc5bb3e29",
+  "generation": {
+    "command": "docker exec -u root ep247-prove-spec-20261104 bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+    "exit_code": 0,
+    "image": "sha256:0824de0f16475f1f619701869e59de4e4ce3229bfce229a5fd16f88072c37e8f",
+    "log": "spec-generation.log"
+  },
+  "harbor": {
+    "command": "harbor run --path /root/FormalConjectures-Bench/tasks-v3/erdosproblems-247-erdos-247-prove --agent nop --env docker --job-name ep247-prove-final-20261104 --jobs-dir /tmp/ep247-harbor-jobs --no-delete --force-build --ek keep_containers=true --n-concurrent 1",
+    "job_dir": "/tmp/ep247-harbor-jobs/ep247-prove-final-20261104",
+    "image_id": "sha256:02faf5ef21fcdd5e910395774cc1272526f6e86713e2b39cd3cb804e483642a9",
+    "tags": [
+      "erdosproblems-247-erdos-247-prov__fbhuhgl__env-main:latest"
+    ],
+    "container_id": "7cbd2644241bbeb10a222d23db00704634421da4ae02400c16a279d93ec64af0",
+    "container_name": "/erdosproblems-247-erdos-247-prov__fbhuhgl__env-main-1",
+    "mounts": [],
+    "note": "Harbor built this local environment, uploaded tests in verifier phase, provided /logs/verifier, and stopped the retained container. Restarted same container for supplemental actual-function tests."
+  },
+  "entrypoints": {
+    "official": {
+      "command": "docker exec -u root 7cbd2644241bbeb10a222d23db00704634421da4ae02400c16a279d93ec64af0 bash /tests/test.sh",
+      "FCB_TASK_DIR": "/app",
+      "FCB_TESTS_DIR": "/tests",
+      "exit_code": 1,
+      "reward": 0.0,
+      "reason": "Original proof contains banned sorry; expected proof failure, not infrastructure failure"
+    },
+    "local": {
+      "command": "docker exec -u ubuntu 7cbd2644241bbeb10a222d23db00704634421da4ae02400c16a279d93ec64af0 bash /app/check.sh",
+      "FCB_TASK_DIR": "/app",
+      "FCB_TESTS_DIR": "/opt/formal-conjectures-bench-checker",
+      "exit_code": 1,
+      "reason": "Original proof contains banned sorry"
+    }
+  },
+  "supplements": {
+    "program": "supplement.py",
+    "official_exit": 0,
+    "local_ubuntu_exit": 0,
+    "coverage": [
+      "fixed precompiled Spec loading and transitive audit",
+      "three complete binders, no universes",
+      "actual ubuntu candidate build; .olean owner uid=1000",
+      "complete type comparison with correct placeholder fixture",
+      "sorryAx rejection by target axiom audit",
+      "sorry canary",
+      "normal Mathlib and local helper imports",
+      "unchanged frozen-prefix/header semantic shadow candidate compiles with allowed syntax and axioms, but full type comparison and actual main reject it",
+      "frozen prefix, out-of-bounds source, non-Lean tree entry negatives",
+      "same-name source/cache, candidate .lake and environment cannot shadow Spec",
+      "missing/corrupt Spec and corrupt manifest fail without generating files"
+    ]
+  },
+  "dependency": {
+    "extra_upstream_imports": [],
+    "Dockerfile_ends_with_ubuntu_build": true,
+    "actual_ubuntu_lake_build_exit": 0,
+    "instruction_package_search_exit": 0,
+    "known_match": "mathlib/Mathlib/RingTheory/Coprime/Basic.lean:def IsCoprime"
+  },
+  "uncovered": [
+    "No complete proof of the open mathematical target was requested, supplied, or accepted. Placeholder fixture was used only to reach audit and comparison paths."
+  ]
+}

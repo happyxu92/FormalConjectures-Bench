@@ -1,0 +1,22 @@
+From 168049a32e659f895f3986684e57b6144b147199 Mon Sep 17 00:00:00 2001
+From: theaustinhatfield <justintimeinnovation@gmail.com>
+Date: Tue, 3 Mar 2026 07:04:42 +0000
+Subject: [PATCH] solve(ErdosProblems): formally solved Romanoff variant in 244
+
+---
+ FormalConjectures/ErdosProblems/244.lean | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/FormalConjectures/ErdosProblems/244.lean b/FormalConjectures/ErdosProblems/244.lean
+index 6669d75b93..61358319b5 100644
+--- a/FormalConjectures/ErdosProblems/244.lean
++++ b/FormalConjectures/ErdosProblems/244.lean
+@@ -35,7 +35,7 @@ theorem erdos_244 : answer(sorry) ↔
+ 
+ [Ro34] Romanoff, N. P., _Über einige Sätze der additiven Zahlentheorie_.
+ Math. Ann. (1934), 668-678. -/
+-@[category research solved, AMS 11]
++@[category research formally solved using formal_conjectures at "https://www.erdosproblems.com/244", AMS 11]
+ theorem erdos_244.variants.Romanoff {C : ℕ} (hC : 1 < C) :
+     0 < { p + ⌊C ^ k⌋₊ | (p) (k) (_ : p.Prime) }.lowerDensity := by
+   sorry

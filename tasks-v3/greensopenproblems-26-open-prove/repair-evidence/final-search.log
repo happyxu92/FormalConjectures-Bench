@@ -1,0 +1,5 @@
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Topology/OmegaCompletePartialOrder.lean
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Topology/Defs/Basic.lean
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Topology/Category/TopCat/Opens.lean
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Topology/Sets/OpenCover.lean
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/AlgebraicGeometry/OpenImmersion.lean

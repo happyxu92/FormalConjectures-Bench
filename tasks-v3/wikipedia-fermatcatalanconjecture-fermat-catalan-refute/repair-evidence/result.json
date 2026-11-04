@@ -1,0 +1,124 @@
+{
+    "id": "ab631b08-3d15-4610-ac0a-04a338707766",
+    "task_name": "formal-conjectures-bench/wikipedia-fermatcatalanconjecture-fermat-catalan-refute",
+    "trial_name": "fcb-fermat-refute-delivery3-nt40-20261104",
+    "trial_uri": "file:///tmp/fcb-fermat-refute-harbor/fcb-fermat-refute-delivery3-nt40-20261104",
+    "task_id": {
+        "path": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-fermatcatalanconjecture-fermat-catalan-refute"
+    },
+    "source": null,
+    "task_checksum": "643a4cc972f71a6af9ba2e6f7ea3878e991b472baa68f66f8b5895e54b13db19",
+    "config": {
+        "task": {
+            "path": "/root/FormalConjectures-Bench/tasks-v3/wikipedia-fermatcatalanconjecture-fermat-catalan-refute",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "fcb-fermat-refute-delivery3-nt40-20261104",
+        "trials_dir": "/tmp/fcb-fermat-refute-harbor",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "nop",
+            "import_path": null,
+            "model_name": null,
+            "base_url": null,
+            "model_api_key_name": null,
+            "model_api_format": null,
+            "skip_model_parsing": false,
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": true,
+            "delete": false,
+            "stream": false,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [
+                "/tmp/fcb-fermat-refute-compose-delivery3.yaml"
+            ],
+            "kwargs": {
+                "keep_containers": true
+            },
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": null,
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "nop",
+        "version": "1.0.0",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "model_usage": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "verifier_environment_mode": "shared",
+    "exception_info": null,
+    "started_at": "2026-11-04T08:45:40.558039Z",
+    "finished_at": "2026-11-04T08:45:53.032024Z",
+    "environment_setup": {
+        "started_at": "2026-11-04T08:45:40.583514Z",
+        "finished_at": "2026-11-04T08:45:42.183172Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-11-04T08:45:42.183227Z",
+        "finished_at": "2026-11-04T08:45:42.183285Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-11-04T08:45:42.183354Z",
+        "finished_at": "2026-11-04T08:45:42.183867Z"
+    },
+    "verifier": {
+        "started_at": "2026-11-04T08:45:42.438078Z",
+        "finished_at": "2026-11-04T08:45:42.818731Z"
+    },
+    "step_results": null
+}

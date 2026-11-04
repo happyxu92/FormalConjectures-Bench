@@ -1,0 +1,2 @@
+PASS: exact report JSON schema/values, TOML, both checker ASTs, identical checker and Spec packages, package hashes, final Dockerfile ubuntu build validation.
+Step 6 remains honestly blocked/unknown. Docker cleanup verified in cleanup.log.

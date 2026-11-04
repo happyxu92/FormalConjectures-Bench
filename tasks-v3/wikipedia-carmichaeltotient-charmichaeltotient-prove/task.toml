@@ -9,6 +9,12 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "consistent"
+statement_status_note = "Positive-n Carmichael totient conjecture, matching pinned upstream and Ford 1104.3264 section 1.3. Nat.totient_pos excludes m=0 automatically; the zero case is correctly excluded. No mathematical input was changed."
+public_lean4_proof = false
+public_lean4_proof_status = "searched"
+public_lean4_proof_urls = []
+public_lean4_proof_note = "Exact full task ID absent from skill CSV. Multi-query searches covered upstream/main, GitHub PRs and fork branches, Mathlib, author pages, and conjectures.io. Main upstream and SamuelSchlesinger's scaffold retain sorry; PRs 2567/3091 only relabel a bounded theorem and retain sorry. No known complete public Lean4 proof of this positive direction found; not a claim of absolute nonexistence. See repair-evidence/research.md."
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/Wikipedia/CarmichaelTotient.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

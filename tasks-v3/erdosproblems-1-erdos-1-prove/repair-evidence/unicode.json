@@ -1,0 +1,60 @@
+{
+  "task": "/root/FormalConjectures-Bench/tasks-v3/erdosproblems-1-erdos-1-prove",
+  "mode": "auto_repair",
+  "status": "passed",
+  "case": "no_issue",
+  "has_problem": false,
+  "has_unicode_issue": false,
+  "repair_attempted": false,
+  "repair_success": null,
+  "modified": false,
+  "rollback": "not_needed",
+  "verification": "passed",
+  "checkers": [
+    {
+      "path": "tests/test_target.py",
+      "sha256_before": "e471d2b9c990b49621821ab4a6145da081773dc57ace491bd358b5e80a614ff7",
+      "header_before": "theorem erdos_1 : \u2203 C > (0 : \u211d), \u2200 (N : \u2115) (A : Finset \u2115) (_ : IsSumDistinctSet A N),\n    N \u2260 0 \u2192 C * 2 ^ A.card < N",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem erdos_1 : \u2203 C > (0 : \u211d), \u2200 (N : \u2115) (A : Finset \u2115) (_ : IsSumDistinctSet A N),\n    N \u2260 0 \u2192 C * 2 ^ A.card < N",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "e471d2b9c990b49621821ab4a6145da081773dc57ace491bd358b5e80a614ff7",
+      "header_after": "theorem erdos_1 : \u2203 C > (0 : \u211d), \u2200 (N : \u2115) (A : Finset \u2115) (_ : IsSumDistinctSet A N),\n    N \u2260 0 \u2192 C * 2 ^ A.card < N"
+    },
+    {
+      "path": "environment/data/checker/test_target.py",
+      "sha256_before": "e471d2b9c990b49621821ab4a6145da081773dc57ace491bd358b5e80a614ff7",
+      "header_before": "theorem erdos_1 : \u2203 C > (0 : \u211d), \u2200 (N : \u2115) (A : Finset \u2115) (_ : IsSumDistinctSet A N),\n    N \u2260 0 \u2192 C * 2 ^ A.card < N",
+      "has_unicode_issue": false,
+      "modified": false,
+      "verification": "passed",
+      "unicode_case": "none",
+      "normalized_header": "theorem erdos_1 : \u2203 C > (0 : \u211d), \u2200 (N : \u2115) (A : Finset \u2115) (_ : IsSumDistinctSet A N),\n    N \u2260 0 \u2192 C * 2 ^ A.card < N",
+      "normalized_header_checks": "passed",
+      "original_header_passes": true,
+      "sha256_after": "e471d2b9c990b49621821ab4a6145da081773dc57ace491bd358b5e80a614ff7",
+      "header_after": "theorem erdos_1 : \u2203 C > (0 : \u211d), \u2200 (N : \u2115) (A : Finset \u2115) (_ : IsSumDistinctSet A N),\n    N \u2260 0 \u2192 C * 2 ^ A.card < N"
+    }
+  ],
+  "copies_match_before": true,
+  "trusted_inputs": [
+    {
+      "path": "environment/data/FormalConjecturesBench/Target.lean",
+      "sha256": "dcf555b05172a3390e0af4035232a11319845ebcac0977d8d3332aac5c8a211b"
+    },
+    {
+      "path": "tests/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "dcf555b05172a3390e0af4035232a11319845ebcac0977d8d3332aac5c8a211b"
+    },
+    {
+      "path": "environment/data/checker/golden_env/FormalConjecturesBench/Target.lean",
+      "sha256": "dcf555b05172a3390e0af4035232a11319845ebcac0977d8d3332aac5c8a211b"
+    }
+  ],
+  "copies_match_after": true,
+  "unicode_issue_checker_count": 0
+}

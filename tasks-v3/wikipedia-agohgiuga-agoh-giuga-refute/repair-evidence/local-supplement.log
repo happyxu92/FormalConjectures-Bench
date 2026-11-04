@@ -1,0 +1,15 @@
+Loaded fixed precompiled trusted Spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited AgohGiuga.AgohGiugaCongr: [propext, Quot.sound, Classical.choice]
+audited AgohGiuga.AgohGiugaSum: [propext, Quot.sound, Classical.choice]
+complete outer parameter count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬AgohGiuga.AgohGiugaCongr
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for AgohGiuga.formal_conjectures_bench_refutation: ['sorryAx']
+'AgohGiuga.formal_conjectures_bench_refutation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+LOCAL FIXED SPEC, TYPE, AXIOM REJECTION AND CANARY PASS

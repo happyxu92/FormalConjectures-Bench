@@ -1,0 +1,27 @@
+{
+  "task_id": "erdosproblems-126-erdos-126-refute",
+  "target_name": "Erdos126.formal_conjectures_bench_refutation",
+  "universe_params": [],
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "4414a59b82e82a4e2cb564fb37b676b5b86e4f6ca4c0ead617e299a61b980c4e",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "456275374d09c2d2ddea1815599a1e4ba7303e4dcdb09bfada2fda52c4f88795",
+    "FCBTrustedSpec.ilean": "f994d8eea049f55fd6d7174d047b6a0b0505fc9092d83183fe6a716ff499851e",
+    "FCBTrustedSpec.lean": "7a8289cccaedda093fe0caae00087f57d803735e67ed8bd994edd8a36469521f",
+    "FCBTrustedSpec.olean": "51afccaacae794a5b0158621cb7c91f96af136c0fd73c97224155e80fd6973b6",
+    "audit.log": "6e6f12a03dc0acd64b06bb67039cb788abb8ca77331b3cbd0fc65cc581da49dd",
+    "generate.py": "c70ebce910d0d05aae81c59b12fedb12b85413c63f6c5be3e0f30de7427f83b7",
+    "reproduce.sh": "9c1e8c323aab44d4286c7e62be089903bd3cdecbc6d3942538463c71533cd395"
+  }
+}

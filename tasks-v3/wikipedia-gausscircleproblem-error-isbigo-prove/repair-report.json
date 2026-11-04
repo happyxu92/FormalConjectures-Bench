@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-gausscircleproblem-error-isbigo-prove",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式列出 /app、/opt/formal-conjectures、隐藏 .lake/packages。Harbor 子容器中 ubuntu 执行原命令形式，找到 Mathlib 的已知 add_comm 定义，rg 退出 0；见 repair-evidence/final-search-path.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 仅导入 ProblemImports 和本地 Submission，无额外上游依赖。补上 Dockerfile 末尾 HOME、USER ubuntu 后的 RUN lake build +FormalConjecturesBench.Target。本地 Harbor 构建成功；同一子容器 ubuntu 再构建退出 0（原 sorry 警告不代表证明通过）。"
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "技能脚本检测到 𝓝 的 UTF-16 代理对，已仅同步修复两份 EXPECTED_HEADER 字面量。原头通过，改头及移除 := 被拒绝，最终复验 no_issue；未改 Target、golden 或冻结哈希。见 repair-evidence/unicode.json、unicode-final.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从原 golden 无 Submission 环境提前生成并编译可信 ExpectedType，保留完整存在量词及 Tendsto 证据，无 universe 参数。独立审计 ExpectedType、N、E 的传递依赖仅含标准三公理，临时目标未导出。两份源码/olean/ilean/审计/清单一致，清单 SHA256=2e9fa0625e1cae37bce08688bacb64bcfa526ff3783ac66462e4cbac2c798820。锁定 Lean 4.27、依赖路径和清单哈希，运行时仅加载固定包，不生成 Spec；保留原冻结、源码限制、公理审计和 canary。当前本地 task Harbor 镜像 fa47536448e5 构建成功；默认网络池耗尽经独占子网排查解决。正式 /tests/test.sh 和 ubuntu /app/check.sh 均退出 1、reward=0，原因仅为原始 sorry 提前拒绝。两入口后续实际函数均补测：固定 Spec 加载/审计、ubuntu 编译、完整类型比较、sorryAx 拒绝、canary；另验证冻结/越界负例、头不变的 Tendsto 名称偷换被完整类型比较拒绝、同名模块/缓存/环境不能遮蔽、缺失或损坏 olean 明确失败且不重建。容器 /tests 与 /opt 包及 golden 均与本地哈希一致。详细命令、版本、镜像、哈希与覆盖见 repair-evidence/validation.json 和日志；不声称原题证明通过。报告先落盘后已清理：容器 38b6f13dd031、63b897c00fa9 已 stop/rm；本题三个新镜像 fa47536448e5、a524d98632c4、13cd325132e3 及独占网络 ff9e7619f00b 已删除，逐项 inspect 确认不存在。复用的既有基础镜像保留，未删除用户或其他任务资源、共享缓存；清理凭记录的独有标识，未用全量 diff 认领。见 cleanup-verification.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已读 task 指定修订的完整上游 GaussCircleProblem.lean，以及 Lester–Wigman arXiv:2305.03549 摘要和引言。整数点闭圆盘 N、实数 E=N−πr²、实数指数 1/2 与 atTop 下 o→0 的正向存在命题符合 Hardy 圆问题猜想；负半径无关 atTop，未发现导致不成立的定义或量词错误。开放性不是基础设施错误。metadata 标 consistent，数学内容不改。Wikipedia 403，已用成功访问的所引原论文核对；见 repair-evidence/research.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 task ID 精确查技能 CSV 未命中，随后 12 组关键词覆盖目标全名、Hardy/圆问题等价渐近形式、GitHub/PR/fork 和 Mathlib。实际读取当前上游 Lean（仍 sorry）、源码浏览器、Conjectures.io 及贡献仓库（0 contributions）、#2215（仅补入陈述，非证明）、ProofAtlas（保留未解缺口）；核查并排除 Hardy 软件、Gauss/PNT、GMC(2)、Hardy Z、Riesz 能量等异题线索，检索锁定 Mathlib 源码。经充分检索未找到本正向目标的公开完整 Lean4 证明，不是绝对不存在断言。GitHub API 限流已用直接 HTML 成功补读。metadata 标 public_lean4_proof=false、status=searched；检索词、来源、排除理由及限制见 repair-evidence/research.json，未放入公开答案。"
+    }
+  }
+}

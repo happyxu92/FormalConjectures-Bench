@@ -1,0 +1,193 @@
+$ docker inspect --format {{.State.Running}} 35663be2934690cc2861ff4d902c0ada9f948bd5437f6f7e4b633b7434876941
+true
+exit=0
+$ docker stop 35663be2934690cc2861ff4d902c0ada9f948bd5437f6f7e4b633b7434876941
+35663be2934690cc2861ff4d902c0ada9f948bd5437f6f7e4b633b7434876941
+exit=0
+$ docker rm 35663be2934690cc2861ff4d902c0ada9f948bd5437f6f7e4b633b7434876941
+35663be2934690cc2861ff4d902c0ada9f948bd5437f6f7e4b633b7434876941
+exit=0
+$ docker inspect --format {{.State.Running}} 2fbabe61bf18481bf263bbdbccbfa76c9d9be1689b6d52145417b1a1bff85b99
+true
+exit=0
+$ docker stop 2fbabe61bf18481bf263bbdbccbfa76c9d9be1689b6d52145417b1a1bff85b99
+2fbabe61bf18481bf263bbdbccbfa76c9d9be1689b6d52145417b1a1bff85b99
+exit=0
+$ docker rm 2fbabe61bf18481bf263bbdbccbfa76c9d9be1689b6d52145417b1a1bff85b99
+2fbabe61bf18481bf263bbdbccbfa76c9d9be1689b6d52145417b1a1bff85b99
+exit=0
+$ docker inspect --format {{.State.Running}} 6eadd2ca82006fe7caaad6a8c24d49d46fadf2762e0e47f5d0471e513d8bac8b
+true
+exit=0
+$ docker stop 6eadd2ca82006fe7caaad6a8c24d49d46fadf2762e0e47f5d0471e513d8bac8b
+6eadd2ca82006fe7caaad6a8c24d49d46fadf2762e0e47f5d0471e513d8bac8b
+exit=0
+$ docker rm 6eadd2ca82006fe7caaad6a8c24d49d46fadf2762e0e47f5d0471e513d8bac8b
+6eadd2ca82006fe7caaad6a8c24d49d46fadf2762e0e47f5d0471e513d8bac8b
+exit=0
+$ docker image rm greensopenproblems-26-open-prove__jsmyxgx__env-main:latest
+Error response from daemon: conflict: unable to delete greensopenproblems-26-open-prove__jsmyxgx__env-main:latest (must be forced) - container caf1e8e4a5e3 is using its referenced image c528d69a700c
+exit=1
+$ docker image rm greensopenproblems-26-open-prove__m38n62q__env-main:latest
+Untagged: greensopenproblems-26-open-prove__m38n62q__env-main:latest
+Deleted: sha256:974cb8d2b31a0c97a17ad8f9faf89be52859331d231781deb26421990d8ad3b0
+exit=0
+$ docker image rm greensopenproblems-26-open-prove__xksagwo__env-main:latest
+Untagged: greensopenproblems-26-open-prove__xksagwo__env-main:latest
+Deleted: sha256:8584a11f2575f69cd0a72e787d7b9383b9fa75376108fd080f7cdd1f3d48f1cf
+exit=0
+$ docker image rm greensopenproblems-26-open-prove__tvxbcwe__env-main:latest
+Untagged: greensopenproblems-26-open-prove__tvxbcwe__env-main:latest
+Deleted: sha256:62848e7ecd081d6e0b3f50409c4c88acad527a34f983814c77bee11ea1667f8f
+exit=0
+$ docker image rm greensopenproblems-26-open-prove__zjl4wwf__env-main:latest
+Untagged: greensopenproblems-26-open-prove__zjl4wwf__env-main:latest
+Deleted: sha256:a171f407ede3d13167336a1a091cfe2ac319f1b44a15d5843647b4a3425e8d93
+exit=0
+$ docker network rm cd6e842f69e7438411649dbf338fefb40719f57574d3c1d609a6b9a4b6bf6e86
+cd6e842f69e7438411649dbf338fefb40719f57574d3c1d609a6b9a4b6bf6e86
+exit=0
+$ docker network rm ba86ef44540cb314a7899fb396e0b67ec14a26367e609ae41aeb6adb8cc3549f
+ba86ef44540cb314a7899fb396e0b67ec14a26367e609ae41aeb6adb8cc3549f
+exit=0
+$ docker inspect 35663be2934690cc2861ff4d902c0ada9f948bd5437f6f7e4b633b7434876941
+[]
+error: no such object: 35663be2934690cc2861ff4d902c0ada9f948bd5437f6f7e4b633b7434876941
+exit=1
+$ docker inspect 2fbabe61bf18481bf263bbdbccbfa76c9d9be1689b6d52145417b1a1bff85b99
+[]
+error: no such object: 2fbabe61bf18481bf263bbdbccbfa76c9d9be1689b6d52145417b1a1bff85b99
+exit=1
+$ docker inspect 6eadd2ca82006fe7caaad6a8c24d49d46fadf2762e0e47f5d0471e513d8bac8b
+[]
+error: no such object: 6eadd2ca82006fe7caaad6a8c24d49d46fadf2762e0e47f5d0471e513d8bac8b
+exit=1
+$ docker image inspect sha256:c528d69a700cd44b3f9f2f1b590d3308b3e6507fc9ab3c8ce25c6f621bb3dca7
+[
+    {
+        "Id": "sha256:c528d69a700cd44b3f9f2f1b590d3308b3e6507fc9ab3c8ce25c6f621bb3dca7",
+        "RepoTags": [
+            "greensopenproblems-26-open-prove__jsmyxgx__env-main:latest"
+        ],
+        "RepoDigests": [
+            "greensopenproblems-26-open-prove__jsmyxgx__env-main@sha256:c528d69a700cd44b3f9f2f1b590d3308b3e6507fc9ab3c8ce25c6f621bb3dca7"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-04T15:58:11.066912985+08:00",
+        "Config": {
+            "User": "ubuntu",
+            "Env": [
+                "PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "ELAN_HOME=/opt/elan",
+                "HOME=/home/ubuntu"
+            ],
+            "Cmd": [
+                "/bin/bash"
+            ],
+            "WorkingDir": "/app",
+            "Labels": {
+                "com.docker.compose.project": "greensopenproblems-26-open-prove__jsmyxgx__env",
+                "com.docker.compose.service": "main",
+                "com.docker.compose.version": "2.40.3",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 2710284447,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:bec87777bc2fb2edcdf9af11df1531469e7df911309c1413082b18fcb8610278",
+                "sha256:d57ecceaf810a84b4237264f1ed2ba5d2ae076d4f265aaf5f76e6df1b33e413d",
+                "sha256:2af5aa503676e7d8cb97fd264224b051b1b00f195ad61459869006aec2951d88",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:6162f9bbf1aebdfbb963f4c11aa343eb370feabefcef59034b218ae9a9db042d",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:4988fcd9a53dd6b7a1b029b87ba30b10bd80481173dd525a77bd83d94c439ce9",
+                "sha256:77381126e43e25ce0d0565ecf29bd075651f0b9bd4cf556c6f2316008296fb57",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:082a7c71dfe8eccb5b57843600bcb5743f3532aa07f010b667f2feb2f8ee237b",
+                "sha256:e7e104ba7ec61c0dd55dde9bd5f3bfcf0f110f00abff7be07557fa72652f84b8",
+                "sha256:600d9acdcf41aec74f1010154f3a4cd54fd9bd7cda0c578557053a8e0844b1f8",
+                "sha256:fb185bbd8c244b9beadee3ce1ddb63abd58c25c641ad8e869c1ec5b0184f9fef",
+                "sha256:dd81cc8e31f843a4391af472cada36cec2dde26d8e7dc9ead5ebc4815d827d4e",
+                "sha256:6ef1aca5807259c6d97c18fcb101b6cf24a20037988edece7c1c18f3848465b7",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:d35dfdd5e590f75d13322e2ff643175181f8f2485e5e4c3d96ed34e5bbd30041"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-04T07:58:11.815521831Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:c528d69a700cd44b3f9f2f1b590d3308b3e6507fc9ab3c8ce25c6f621bb3dca7",
+            "size": 856
+        }
+    }
+]
+exit=0
+$ docker image inspect sha256:974cb8d2b31a0c97a17ad8f9faf89be52859331d231781deb26421990d8ad3b0
+[]
+Error response from daemon: No such image: sha256:974cb8d2b31a0c97a17ad8f9faf89be52859331d231781deb26421990d8ad3b0
+exit=1
+$ docker image inspect sha256:8584a11f2575f69cd0a72e787d7b9383b9fa75376108fd080f7cdd1f3d48f1cf
+[]
+Error response from daemon: No such image: sha256:8584a11f2575f69cd0a72e787d7b9383b9fa75376108fd080f7cdd1f3d48f1cf
+exit=1
+$ docker image inspect sha256:62848e7ecd081d6e0b3f50409c4c88acad527a34f983814c77bee11ea1667f8f
+[]
+Error response from daemon: No such image: sha256:62848e7ecd081d6e0b3f50409c4c88acad527a34f983814c77bee11ea1667f8f
+exit=1
+$ docker image inspect sha256:a171f407ede3d13167336a1a091cfe2ac319f1b44a15d5843647b4a3425e8d93
+[]
+Error response from daemon: No such image: sha256:a171f407ede3d13167336a1a091cfe2ac319f1b44a15d5843647b4a3425e8d93
+exit=1
+$ docker network inspect cd6e842f69e7438411649dbf338fefb40719f57574d3c1d609a6b9a4b6bf6e86
+[]
+Error response from daemon: network cd6e842f69e7438411649dbf338fefb40719f57574d3c1d609a6b9a4b6bf6e86 not found
+exit=1
+$ docker network inspect ba86ef44540cb314a7899fb396e0b67ec14a26367e609ae41aeb6adb8cc3549f
+[]
+Error response from daemon: network ba86ef44540cb314a7899fb396e0b67ec14a26367e609ae41aeb6adb8cc3549f not found
+exit=1
+$ docker ps -a --no-trunc
+CONTAINER ID                                                       IMAGE                                                                     COMMAND                                                                                                                        CREATED              STATUS                    PORTS                    NAMES
+11909060d4200e5d2e876864c3c672995461857878677fc7de20421f068714e3   greensopenproblems-26-open-refut__vjwzlp5__env-main                       "sh -c 'sleep infinity'"                                                                                                       About a minute ago   Up 2 seconds                                       greensopenproblems-26-open-refut__vjwzlp5__env-main-1
+0ddb88249da698865a3152429840444e13fbb29418323f5f47da7379cab99b31   fcb-carmichael-prove-spec:20261104                                        "sleep infinity"                                                                                                               About a minute ago   Up About a minute                                  fcb-carmichael-prove-spec2-20261104
+f62b177bf95d0e81f05f7840951929897812026d02716891a9ac8d944cae68c5   fcb-carmichael-prove-spec:20261104                                        "sleep infinity"                                                                                                               3 minutes ago        Up 3 minutes                                       fcb-carmichael-prove-spec-20261104
+037d959658a38a337ecfed70fc75a02db335022c58607485a992587631dc6c34   fcb-agohgiuga-prove-accept-20261104__env-main                             "sh -c 'sleep infinity'"                                                                                                       3 minutes ago        Up 2 minutes                                       fcb-agohgiuga-prove-accept-20261104__env-main-1
+af1584feb0414769cb92e81c25efae8b503008ca54f53e3eec3669aa89fa6ffb   fcb-agoh-refute-spec:20261104                                             "sleep infinity"                                                                                                               4 minutes ago        Up 4 minutes                                       fcb-agoh-refute-spec-20261104
+8deefb24c7a92c80defc6eb7d6f179229c3a02ca6596669aa25da72cc97ffa98   fcb-repair/erdosproblems-252-k-eq-four:252four-20261102-183405            "sleep infinity"                                                                                                               5 minutes ago        Up 5 minutes                                       fcb-agohgiuga-prove-spec-20261104
+caf1e8e4a5e377a9bb386850cfa263a08042bba2c0593b70b3e382f9d393ddd7   greensopenproblems-26-open-prove__jsmyxgx__env-main:latest                "sleep infinity"                                                                                                               6 minutes ago        Up 6 minutes                                       fcb-green26-refute-spec-20261104
+418e01ddfc0350357b6366d0053d11f109696c1fa17318a6e5e0fe4262857a51   weishaw/sub2api:0.2.15                                                    "/app/docker-entrypoint.sh /app/sub2api"                                                                                       45 hours ago         Up 5 hours (healthy)      0.0.0.0:8080->8080/tcp   sub2api
+f87663ee43dc6988a89ad187b16dab3013b41ac26a1f92d78138099d083f7c1e   erdos1062-lower-import-current-20261102__env-main                         "sh -c 'sleep infinity'"                                                                                                       2 days ago           Exited (137) 2 days ago                            erdos1062-lower-import-current-20261102__env-main-1
+e3e0088b94c6bddc783b1c63d7e6c8da3708e230e998cbf6db1146abd0c92f8c   erdos1062-import-20261102__env-main                                       "sh -c 'sleep infinity'"                                                                                                       2 days ago           Exited (137) 2 days ago                            erdos1062-import-20261102__env-main-1
+9d88b1e34a20193355bd977f203b9b26d4ae86fd120281afad36f83425c0aa05   erdos1051-import-20261102__env-main                                       "sh -c 'sleep infinity'"                                                                                                       2 days ago           Exited (137) 2 days ago                            erdos1051-import-20261102__env-main-1
+969a5a561de9e07c912576ff9cd1edfd1950668280e678277bfc7d9569f86659   postgres:18-alpine                                                        "docker-entrypoint.sh postgres"                                                                                                6 weeks ago          Up 5 hours (healthy)      5432/tcp                 sub2api-postgres
+038757ae87f97d3ecccc7e8bff6b3fd52732187cd470dbff58273a590649bed4   redis:8-alpine                                                            "docker-entrypoint.sh sh -c '\n  redis-server \\\n  --save 60 1 \\\n  --appendonly yes \\\n  --appendfsync everysec \\\n  '"   6 weeks ago          Up 5 hours (healthy)      6379/tcp                 sub2api-redis
+2c28f9c67fbab8d813769633221539e3dc3e05a445c2a8e336bbdc241cd20be9   sha256:4e1081d31f83482cef2acf20d8de31d71ed5d8247711028f3494393e782d18df   "/bin/bash -lc 'trap 'exit 0' TERM INT; while true; do sleep 3600; done'"                                                      2 months ago         Dead                                               
+exit=0
+CLEANUP_RESULT=incomplete
+
+=== Follow-up cleanup 2026-11-04T09:19:12.865016+00:00 ===
+$ docker image inspect greensopenproblems-26-open-prove__jsmyxgx__env-main:latest --format {{.Id}}
+sha256:c528d69a700cd44b3f9f2f1b590d3308b3e6507fc9ab3c8ce25c6f621bb3dca7
+exit=0
+$ docker ps -a --no-trunc --filter ancestor=sha256:c528d69a700cd44b3f9f2f1b590d3308b3e6507fc9ab3c8ce25c6f621bb3dca7 --format {{.ID}} {{.Names}} {{.Image}}
+exit=0
+$ docker image rm greensopenproblems-26-open-prove__jsmyxgx__env-main:latest
+Untagged: greensopenproblems-26-open-prove__jsmyxgx__env-main:latest
+Deleted: sha256:c528d69a700cd44b3f9f2f1b590d3308b3e6507fc9ab3c8ce25c6f621bb3dca7
+exit=0
+$ docker image inspect sha256:c528d69a700cd44b3f9f2f1b590d3308b3e6507fc9ab3c8ce25c6f621bb3dca7
+[]
+Error response from daemon: No such image: sha256:c528d69a700cd44b3f9f2f1b590d3308b3e6507fc9ab3c8ce25c6f621bb3dca7
+exit=1
+$ docker image inspect greensopenproblems-26-open-prove__jsmyxgx__env-main:latest
+[]
+Error response from daemon: No such image: greensopenproblems-26-open-prove__jsmyxgx__env-main:latest
+exit=1
+FOLLOWUP_RESULT=removed; exact image ID and tag no longer exist; no other resources modified

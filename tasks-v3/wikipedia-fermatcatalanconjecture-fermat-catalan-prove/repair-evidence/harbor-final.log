@@ -1,0 +1,25 @@
+Agent 'nop' does not declare an options_model; leftover kwargs are ignored
+Skipping image OS validation for hb__4482bd62c14257baab925781f5ebb157: docker inspect returned 1
+Collecting main service artifacts
+  1/1 Mean: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:00:13 0:00:00
+adhoc • nop
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 0.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 13s
+Results written to 
+/tmp/fcb-fermatcatalan-harbor/fcb-fermatcatalan-final2-20261104/result.json
+Inspect results by running `harbor view /tmp/fcb-fermatcatalan-harbor`
+Share results by running `harbor upload 
+/tmp/fcb-fermatcatalan-harbor/fcb-fermatcatalan-final2-20261104`
+

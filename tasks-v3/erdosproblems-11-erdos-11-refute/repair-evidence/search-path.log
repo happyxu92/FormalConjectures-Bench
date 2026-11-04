@@ -1,0 +1,11 @@
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Algebra/Squarefree/Basic.lean:def Squarefree [Monoid R] (r : R) : Prop :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Algebra/Squarefree/Basic.lean:theorem squarefree_iff_emultiplicity_le_one [CommMonoid R] (r : R) :
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Algebra/Squarefree/Basic.lean:theorem squarefree_iff_no_irreducibles {x : R} (hx₀ : x ≠ 0) :
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Algebra/Squarefree/Basic.lean:theorem squarefree_iff_irreducible_sq_not_dvd_of_ne_zero {r : R} (hr : r ≠ 0) :
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Algebra/Squarefree/Basic.lean:theorem squarefree_iff_irreducible_sq_not_dvd_of_exists_irreducible {r : R}
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Algebra/Squarefree/Basic.lean:theorem squarefree_iff_nodup_normalizedFactors [NormalizationMonoid R] {x : R}
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Nat/Squarefree.lean:theorem squarefree_iff_nodup_primeFactorsList {n : ℕ} (h0 : n ≠ 0) :
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Nat/Squarefree.lean:theorem squarefree_iff_prime_squarefree {n : ℕ} : Squarefree n ↔ ∀ x, Prime x → ¬x * x ∣ n :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Nat/Squarefree.lean:theorem squarefree_iff_factorization_le_one {n : ℕ} (hn : n ≠ 0) :
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Nat/Squarefree.lean:theorem squarefree_iff_minSqFac {n : ℕ} : Squarefree n ↔ n.minSqFac = none := by
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Nat/Squarefree.lean:def SquarefreeHelper (n k : ℕ) : Prop :=

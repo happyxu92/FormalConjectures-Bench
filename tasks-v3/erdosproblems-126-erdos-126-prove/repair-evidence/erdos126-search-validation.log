@@ -1,0 +1,5 @@
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/RingTheory/Radical.lean:def primeFactors (a : M) : Finset M :=
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Algebra/Order/Antidiag/Nat.lean:private def primeFactorsPiBij (d n : ℕ) :
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Nat/Factors.lean:def primeFactorsList : ℕ → List ℕ
+/opt/formal-conjectures/.lake/packages/mathlib/Mathlib/Data/Nat/PrimeFin.lean:def primeFactors (n : ℕ) : Finset ℕ := n.primeFactorsList.toFinset
+rg exit=0

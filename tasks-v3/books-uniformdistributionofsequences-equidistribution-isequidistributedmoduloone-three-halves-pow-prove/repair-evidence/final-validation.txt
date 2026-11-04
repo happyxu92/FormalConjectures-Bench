@@ -1,0 +1,1 @@
+PASS: report JSON/schema, metadata TOML, AST/package synchronization, original Target hash, resource cleanup

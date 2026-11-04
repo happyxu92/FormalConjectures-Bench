@@ -1,0 +1,67 @@
+Loaded fixed precompiled trusted Spec: /tests/trusted_spec
+Code above the benchmark target marker changed
+PASS rejected: frozen prefix
+PASS rejected: changed header
+Target theorem header changed
+PASS rejected: missing assignment
+Target theorem no longer has a proof assignment
+Banned Lean feature found in proof region at line 2: \bsorry\b
+PASS rejected: original sorry source
+Loaded fixed precompiled trusted Spec: /tests/trusted_spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos126.IsMaximalAddFactorsCard: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (f : ℕ → ℕ),
+  Erdos126.IsMaximalAddFactorsCard f → Filter.Tendsto (fun n ↦ ↑(f n) / Real.log ↑n) Filter.atTop Filter.atTop
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for Erdos126.erdos_126: ['sorryAx']
+'Erdos126.erdos_126' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+PASS rejected: /tests target sorryAx
+PASS /tests Spec audit, ubuntu build, full type, sorryAx rejection, canary
+Loaded fixed precompiled trusted Spec: /opt/formal-conjectures-bench-checker/trusted_spec
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos126.IsMaximalAddFactorsCard: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (f : ℕ → ℕ),
+  Erdos126.IsMaximalAddFactorsCard f → Filter.Tendsto (fun n ↦ ↑(f n) / Real.log ↑n) Filter.atTop Filter.atTop
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for Erdos126.erdos_126: ['sorryAx']
+'Erdos126.erdos_126' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+PASS rejected: /opt/formal-conjectures-bench-checker target sorryAx
+PASS /opt/formal-conjectures-bench-checker Spec audit, ubuntu build, full type, sorryAx rejection, canary
+PASS semantic negative unchanged frozen text and allowed syntax
+Candidate compiled as ubuntu with fixed import paths
+Lean audit command failed
+/tmp/formal_conjectures_bench_bpltsv9u/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Erdos126.erdos_126
+has type
+  ∀ (f : ℕ → ℕ),
+    Erdos126.IsMaximalAddFactorsCard f → Erdos126.Tendsto (fun n ↦ ↑(f n) / Real.log ↑n) Filter.atTop Filter.atTop
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+PASS rejected: shadowed Tendsto full theorem type
+Unexpected added Lean source outside editable subtree: Outside.lean
+PASS rejected: out-of-bounds Lean source
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos126.IsMaximalAddFactorsCard: [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (f : ℕ → ℕ),
+  Erdos126.IsMaximalAddFactorsCard f → Filter.Tendsto (fun n ↦ ↑(f n) / Real.log ↑n) Filter.atTop Filter.atTop
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS same-name candidate cache and hostile env cannot replace Spec
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+PASS rejected: missing precompiled artifact
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+PASS rejected: corrupt artifact
+ALL SUPPLEMENTAL PATHS PASSED
+supplement ubuntu exit=0

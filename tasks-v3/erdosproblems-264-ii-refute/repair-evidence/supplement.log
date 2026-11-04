@@ -1,0 +1,42 @@
+Supplement uid 1000
+Loaded fixed precompiled trusted Spec
+Code above the benchmark target marker changed
+PASS expected rejection: frozen prefix
+PASS expected rejection: header
+Target theorem header changed
+Banned Lean feature found in proof region at line 2: \bsorry\b
+PASS expected rejection: original sorry source
+Unexpected added Lean source outside editable subtree: Outside.lean
+PASS expected rejection: outside source
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos264.IsIrrationalitySequence: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬Erdos264.IsIrrationalitySequence Nat.factorial
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS fixed Spec resolution over candidate and env
+Candidate compiled as ubuntu with fixed import paths
+Complete theorem type matches trusted Spec
+Unexpected axioms for Erdos264.formal_conjectures_bench_refutation: ['sorryAx']
+'Erdos264.formal_conjectures_bench_refutation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+PASS expected rejection: sorryAx target audit
+PASS sorry canary
+Candidate compiled as ubuntu with fixed import paths
+Lean audit command failed
+/tmp/formal_conjectures_bench_toa8i7li/_formal_conjectures_bench_audit.lean:3:48: error: Type mismatch
+  Erdos264.formal_conjectures_bench_refutation
+has type
+  ¬Erdos264.IsIrrationalitySequence Erdos264.Nat.factorial
+but is expected to have type
+  FCBTrustedSpec.ExpectedType
+
+PASS expected rejection: factorial name shadow complete type
+Missing trusted Spec artifact: FCBTrustedSpec.olean
+PASS expected rejection: missing precompiled Spec
+Trusted Spec artifact hash mismatch: FCBTrustedSpec.olean
+PASS expected rejection: corrupt precompiled Spec
+PASS expected rejection: corrupt manifest
+Trusted Spec manifest hash mismatch
+Loaded fixed precompiled trusted Spec
+ALL SUPPLEMENTAL PATHS PASS
