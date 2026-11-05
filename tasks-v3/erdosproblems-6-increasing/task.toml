@@ -9,6 +9,11 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "consistent"
+public_lean4_proof = false
+public_lean4_proof_status = "searched"
+public_lean4_proof_note = "Exact ID absent from skill CSV. Multi-query search and inspected upstream/PR7432, plby, Jayyhk, mirrors, Mathlib and prime-gap library leads found only the three-gap Lean proof, not this all-m variant. Initial web-tool 403 was overcome by direct forum retrieval; no remaining relevant proof link was found. This is not proof of nonexistence; no public proof was compiled here."
+public_lean4_proof_urls = ["https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/6.lean", "https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos6.lean", "https://github.com/Jayyhk/erdos-lean/blob/main/problems/6/Erdos6.lean"]
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/6.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

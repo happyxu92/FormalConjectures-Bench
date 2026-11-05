@@ -8,6 +8,11 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "mismatch"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact skill CSV miss; searched full theorem name, definition, problem number, authors, upstream main/history/PRs, Mathlib and related repositories. PRs 2748/2757/3278 retain sorry; main corrects the statement but retains sorry. Global GitHub code search requires sign-in and commit API is rate-limited; no qualifying proof verified."
+statement_status_note = "The cofinite filter on Nat requires ordinary convergence, not a density-one assertion. EGRS75 Theorem 1 gives infinitely many n with neither 3 nor 5 dividing centralBinom n, hence f(n) >= 8/15 > gamma0; statement retained unchanged."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/377.lean"

@@ -1,0 +1,12 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos945.F: [propext, Quot.sound, Classical.choice]
+audited Erdos945.τ: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+(fun x => √(Real.log ↑x) / Real.log (Real.log ↑x)) =O[Filter.atTop] fun n => ↑(Erdos945.F ↑n)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos945.F : ℝ → ℕ :=
+fun x => sSup {k | ∃ n, ↑n + ↑k ≤ x ∧ Set.InjOn Erdos945.τ (Set.Ioc n (n + k))}
+@[reducible] def Erdos945.τ : ℕ → ℕ :=
+fun n => n.divisors.card

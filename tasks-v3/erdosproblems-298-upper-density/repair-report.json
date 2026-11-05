@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-298-upper-density",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；Harbor 子容器以 ubuntu 实搜命中 mathlib 的 Irrational 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；补齐 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。本地 Harbor force_build 成功，同一子容器再次 ubuntu 构建退出码 0；未放宽可信依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已执行技能 Unicode 脚本并最终复验，均为 no_issue；两份 checker 的原始头和冻结基线保留。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "由本题可信 golden 在匹配 Lean 4.27.0 Docker 中提前 elaboration 提取完整类型，universes=[]；前置独立 sorry 定理和临时目标均未导出，ExpectedType 传递依赖仅允许公理。两份固定预编译包、清单及 checker AST/内容一致，运行时不重解析命题或生成 Spec。最终本地 Harbor 子容器 erdosproblems-298-upper-density-g61-394990fe-final__env-main-1 的 /tests 上传包及 /opt 包均与本地哈希一致；两入口因原题 sorry 预期退出 1、reward=0，并非实现故障。同一子容器两包实际函数补测全部通过：可信加载/审计、ubuntu UID1000 编译、完整类型匹配、目标 sorryAx 拒绝、canary、冻结/越界/合法 helper、冻结文字不变的 LT ℝ 实例偷换编译后完整类型拒绝、同名模块/缓存/环境遮蔽及产物缺失/篡改拒绝且不再生成。未提供原题证明；范围不含通用外部模块或 initializer 沙箱。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-298-upper-density/attempt-001。Docker 清理完成并核实：本题预编译及两次 Harbor 共 3 个容器、镜像 d9c386ae5e53/42269405ccaa 及对应 2 个网络均已移除；保留预先存在的共享依赖镜像 0824de0f1647，未清理其他任务资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已核对锁定上游 298.lean、完整前缀和 Set.upperDensity 定义，以及 Bloom arXiv:2112.03726v2 Theorem 2/§2.2；零排除、正上密度和有限有理倒数和结论一致，[0,N) 与 [1,N] 密度约定不影响 limsup。未发现明显数学错误，metadata 标 consistent；未修改任何数学输入。erdosproblems.com 返回 403，但作者论文及锁定源码均成功读取。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID 精确命中技能 references/public-lean4-proofs.csv，已标 public_lean4_proof=true：https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos298.lean#L23 。按要求无需联网复核，未将公开证明装入镜像，也未声称在本题环境编译该证明。"
+    }
+  }
+}

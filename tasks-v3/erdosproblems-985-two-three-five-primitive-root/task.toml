@@ -9,6 +9,11 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_urls = []
+public_lean4_proof_note = "Exact skill CSV miss. Searched equivalent primitive-root formulations and inspected upstream, PRs 2723/3245 (both still sorry), Mathlib and release leads. GitHub code search requires authentication and API search/history are rate-limited; no complete proof verified. See repair-report.json and external evidence."
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/985.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

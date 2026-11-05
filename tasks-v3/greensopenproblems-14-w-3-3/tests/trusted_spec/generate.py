@@ -1,0 +1,41 @@
+"""Repair-time generator. Input is this task's original, isolated golden only."""
+from pathlib import Path
+import json
+
+pkg = Path(__file__).resolve().parent
+golden = (pkg.parent / 'golden_env/FormalConjecturesBench/Target.lean').read_text()
+marker = '-- FORMAL_CONJECTURES_BENCH_TARGET_BEGIN'
+prefix, rest = golden.split(marker, 1)
+assert prefix.count('import FormalConjecturesBench.Submission\n') == 1
+prefix = prefix.replace('import FormalConjecturesBench.Submission\n', '')
+# The final doc comment belongs to the temporary theorem, not run_cmd.
+prefix = prefix[:prefix.rindex('/--')]
+target = rest[:rest.rindex('end Green14')].strip()
+assert target.startswith('theorem W_3_3 :')
+source = prefix + '''
+-- Generated from original golden, with no candidate imports/config/cache.
+-- Elaborate the whole declaration; retain its type and universes, but restore
+-- the original environment before exporting the definition (not the proof).
+open Lean Elab Command in
+run_cmd do
+  let original ← getEnv
+  let stx ← ofExcept <| Parser.runParserCategory (← getEnv) `command ''' + json.dumps(target, ensure_ascii=False) + '''
+  elabCommand stx
+  let some info := (← getEnv).find? `Green14.W_3_3
+    | throwError "missing temporary target"
+  let expected := info.type
+  let levels := info.levelParams
+  logInfo m!"extracted complete type: {expected}; universes: {levels}"
+  setEnv original
+  liftTermElabM do
+    addAndCompile <| .defnDecl {
+      name := `FCBTrustedSpec.ExpectedType
+      levelParams := levels
+      type := ← Meta.inferType expected
+      value := expected
+      hints := .abbrev
+      safety := .safe
+    }
+end Green14
+'''
+(pkg / 'FCBTrustedSpec.lean').write_text(source)

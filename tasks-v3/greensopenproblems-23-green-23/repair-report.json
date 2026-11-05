@@ -4,32 +4,32 @@
     "instruction_search": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "搜索命令已显式覆盖 /app、/opt/formal-conjectures 和 .lake/packages；在当前 Harbor 子容器以 ubuntu 实际搜到 mathlib/Mathlib/Algebra/Group/Even.lean 的 def IsSquare。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-23-green-23/attempt-002/instruction-search.log"
+      "note": "保留并复验已有修复：命令显式包含 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages；最终 Harbor 容器以 ubuntu 实际搜到 mathlib/Mathlib/Algebra/Group/Even.lean 的 IsSquare。证据：本次 attempt-001/final-validation/instruction-search.log。"
     },
     "lean_dependency": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "实际 Target 仅导入 ProblemImports 和本地 Submission，无额外上游 import；原有 ProblemImports 预编译保留，Dockerfile 末尾已补 USER ubuntu / RUN lake build +FormalConjecturesBench.Target。当前本地 task Harbor 构建成功，同一容器 ubuntu lake build 成功（7992 jobs，原始 sorry warning 预期）。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-23-green-23/attempt-002/ubuntu-lake-build.log"
+      "note": "实际 Target 仅导入 ProblemImports 和本地 Submission，无额外上游 imports。保留 ProblemImports 预编译及 Dockerfile 最终 USER ubuntu / RUN lake build +FormalConjecturesBench.Target。当前本地 task 已经 Harbor Docker 构建成功（使用匹配缓存），同一最终子容器 ubuntu lake build exit=0；原始 sorry warning 不代表依赖故障。证据：attempt-001/final-docker-commands.log、final-docker-build-*.log、final-validation/ubuntu-lake-build.log。"
     },
     "unicode_header": {
       "has_issue": false,
       "repair_status": "not_needed",
-      "note": "按 skill 运行 Unicode 脚本，修复前后均 no_issue；两份原始头、前缀、:= 边界和负例通过，无 Unicode 修改。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-23-green-23/attempt-002/unicode.json 和 unicode-final.json"
+      "note": "实际运行 skill 的 check_unicode_header.py，case=no_issue；原始头、可信 golden、冻结前缀及 := 边界一致，变更头和移除赋值负例被拒绝。无 Unicode 修改。证据：attempt-001/unicode.json。"
     },
     "semantic_checker": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "从原始 golden 经 Lean parser/elaborator 提前提取完整类型，无候选输入；Lean v4.27.0 x86_64 预编译，ExpectedType 全量词保留、universe=[]、传递公理仅 propext，临时目标不导出。两份 checker 字节/AST 与可信包一致。固定工具链和依赖，Spec 路径优先，运行时不生成/回退编译；保留正常 import 与原有源码/冻结/公理/canary 规则，无外部模块通用白名单。当前本地 Harbor 镜像 sha256:adad241af2b22b89a3989527a5b62bbaa6c18a2228a738b1b584927174d242be；正式 /tests 上传来源及 /opt 本地来源均核对全部哈希，入口 exit=1/reward=0 为原始 sorry 被源码规则拒绝。两入口实际函数各27项通过：Spec加载与审计、ubuntu候选编译、完整类型比较、sorryAx拒绝、canary、冻结/越界负例、OfNat Nat 2实例偷换后实际类型不匹配、同名模块/缓存/env遮蔽、缺失/损坏产物且无运行时生成。首次补测 exit137 是 Harbor 收尾 stop 竞态，CLI完全结束后同容器重启并完整重测通过。原题完整证明未提供/未验收。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-23-green-23/attempt-002/coverage.json；生成/构建/入口日志在同目录。Docker 清理已核实：容器61112a12f9f9（Spec）、9bbf01dc496e（Harbor）已停止并移除；本次镜像adad241af2b2及专用网络3ee822c8b0c7已删除并inspect确认不存在。预存生成基础镜像、共享缓存和其他任务资源未清理。记录 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-23-green-23/attempt-002/docker-cleanup.json。"
+      "note": "核对并保留已有固定 Spec 实现；本次从不可变 golden 隔离候选，使用匹配 Docker/Lean4.27.0 重新 parser/elaborator 提取完整类型及 universes，源码、olean、ilean 与两份交付包逐字节相同。ExpectedType 为完整 Prop 定义，universes=[]，传递公理仅 propext，临时占位目标未导出；两 checker 内容/AST、包和所有 immutable 哈希一致。正式固定 /tests/trusted_spec，本地固定 /opt/formal-conjectures-bench-checker/trusted_spec；不运行时重解析或回退生成，保留原 import、安全、冻结、公理及 canary 规则。最终本地 Harbor trial greensopenproblems-23-green-23-g61-a001-23c8-final2，镜像 sha256:9845b7997f3fe979ec2783d8fc9fab180cff18204e8829ec7304b3abefca539d；上传 /tests 与预装 /opt 全量哈希均核对。两入口 exit=1/reward=0 为原始 sorry 的预期源码拒绝；同一最终子容器两份 checker 实际函数各28项通过，覆盖 Spec 加载/可信审计、ubuntu编译、完整类型、目标 sorryAx 拒绝、canary、冻结/越界/语义实例偷换/同名模块及缓存遮蔽/缺失与篡改产物且不生成。额外日志复建首次因本题两个网络复用子网失败，已选未占用子网并以 final2 完整重验；不是证明失败。证据根目录 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-23-green-23/attempt-001，详见 regeneration-comparison.json、final-validation/coverage.json、delivery.json 及 Harbor 日志。未提供原题完整证明，未宣称证明通过。Docker 已核实清理：Spec 容器117e09aaefa4、首轮Harbor容器c6d468439a89、最终容器b02cae6af56f均stop/rm；本次3个任务镜像tag和镜像ID9845b7997f3f均不存在，专用网络已移除（失败试验网络原本未创建）。预存匹配基础镜像及共享缓存保留；详见 docker-cleanup.json。"
     },
     "statement_fidelity": {
       "has_issue": false,
       "repair_status": "not_needed",
-      "note": "已阅读锁定上游、完整前缀/目标、Green 100 open problems 第23题（p15）和 Frantzikinakis–Klurman–Moreira arXiv:2309.10636v5 Theorem1.1(i)（p2）。a=b=c=1即正整数同色Pythagorean pair；Lean全有限着色、x,y>0和IsSquare匹配；k=0无着色故真空成立。不要求根同色，未发现明显错误，metadata statement_status=consistent。数学输入未改。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-23-green-23/attempt-002/statement-audit.json"
+      "note": "读取完整 Target/锁定上游、Green 第23题 p15 与 arXiv:2309.10636v5 Theorem1.1(i) p2；取 a=b=c=1 得正整数同色 Pythagorean pair，根无需同色。Lean 对 Nat 的全有限着色和 x,y>0 与其一致，k=0 无着色故真空成立；无前缀数学定义遗漏。未发现明显数学错误，statement_status=consistent。数学输入未改；证据 attempt-001/statement-audit.json。"
     },
     "public_lean4_proof": {
       "has_issue": null,
       "repair_status": "not_repaired",
-      "note": "完整ID精确匹配 skill CSV 未命中。已检索题号/完整Lean名/论文名/作者/等价表述，核查上游当前源码、历史、PR1728原题提交及候选PR2460/2989/3387（后三者只改分类且完整目标仍sorry；所引2404.06063是无关NLP论文），Mathlib及Pythagorean候选仓库；无完整目标证明已核实。Google仅JS挑战页、Bing结果无关、GitHub代码搜索401、Moreira网页403及搜索API认证/模型限制，故public_lean4_proof=unknown/blocked，不能确认不存在。所有已发现有效线索均已追踪；IPSets ZIP仅一般IP集结构分类，其他候选为几何Pythagorean、具体三元组或受限着色，均非本目标。详见 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-23-green-23/attempt-002/public-proof-review.json。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-23-green-23/attempt-002/proof-search-queries.json、各fetch-index和proof-candidates/。"
+      "note": "完整 task ID 精确匹配技能 CSV 未命中。按完整 Lean 名、green_23、论文、作者、同色 Pythagorean pair 及 Fin k/IsSquare 等多组检索，重读当前/锁定上游、可疑 PR2460/2989/3387 的完整目标源码（均 sorry）、Mathlib 及候选 Lean 源码；没有核实覆盖本目标的完整证明。GitHub code/history/部分PR API 返回403，Moreira作者站403，关键来源覆盖受限，故 metadata 保留 public_lean4_proof=unknown/status=blocked，而非断言不存在。实际来源、候选排除和限制记录在本次 attempt-001/public-proof-review.json、research-fetch-index.json、follow-fetch-index.json 与 last-leads-index.json。"
     }
   }
 }

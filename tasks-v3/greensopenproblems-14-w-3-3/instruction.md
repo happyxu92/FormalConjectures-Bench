@@ -39,11 +39,17 @@ cd /app && ./check.sh
 
 This runs the same substantive checks as the official verifier. If it passes
 without modifying the checker itself, the official verifier is intended to pass.
+The verifier uses a fixed precompiled trusted specification and compares the
+complete theorem type; helper declarations cannot reinterpret the frozen target.
+Only a temporary verification copy is transformed; the public Target stays unchanged.
 
 For source search, prefer commands such as:
 
 ```bash
-rg --glob '*.lean' 'search term' /app /opt/formal-conjectures
+rg --glob '*.lean' 'search term' \
+  /app \
+  /opt/formal-conjectures \
+  /opt/formal-conjectures/.lake/packages
 ```
 
 Internet access is enabled for this task. You may use external literature and web resources, but the final Lean proof must pass the local verifier.

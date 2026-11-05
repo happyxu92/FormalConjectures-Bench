@@ -1,0 +1,6 @@
+audited ExpectedType transitive dependencies: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0; inner set and hypothesis binders retained in original expression
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+True ↔ ∀ (A : Set ℕ), 0 ∉ A → 0 < A.upperDensity → ∃ S, ↑S ⊆ A ∧ ∑ n ∈ S, 1 / ↑n = 1
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

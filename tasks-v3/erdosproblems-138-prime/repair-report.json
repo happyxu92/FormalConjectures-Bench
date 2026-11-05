@@ -4,32 +4,32 @@
     "instruction_search": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "源码搜索命令已显式加入 /app、/opt/formal-conjectures 和 /opt/formal-conjectures/.lake/packages；在匹配Docker环境实际运行，找到package内 add_comm 定义，退出0。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-138-prime/instruction-search.log"
+      "note": "保留并复验已有修复：搜索命令显式包含/app、/opt/formal-conjectures及其.lake/packages；匹配Docker内实际找到package中add_comm，退出0。全部本次证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-138-prime/attempt-001；见instruction-search.log。"
     },
     "lean_dependency": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "实际Target仅import ProblemImports和本地Submission，无额外上游import；保留清理前 lake build FormalConjectures.Util.ProblemImports，Dockerfile末尾追加 WORKDIR /app、HOME=/home/ubuntu、USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。当前本地task Harbor镜像构建及同子容器ubuntu实测构建均成功。日志 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-138-prime/ubuntu-target-build.log"
+      "note": "保留已有修复。实际Target仅import ProblemImports和本地Submission，无额外上游import；Dockerfile清理前预编译ProblemImports，最终以ubuntu执行RUN lake build +FormalConjecturesBench.Target。当前本地task经Harbor force_build完成，使用本地构建缓存而非registry旧task；最终子容器ubuntu再次构建退出0。见harbor-final-config.json、harbor-final.log、harbor-final-image-history.txt、final-validation/ubuntu-target-build.log。"
     },
     "unicode_header": {
       "has_issue": false,
       "repair_status": "not_needed",
-      "note": "完整执行skill Unicode脚本，初检及最终复验case=no_issue；两份EXPECTED_HEADER无代理码点，可信Target、golden、冻结前缀及赋值边界检查均通过。/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-138-prime/unicode-final.json"
+      "note": "实际执行技能Unicode脚本并最终复验，均退出0、case=no_issue；两份checker与可信原始Target/golden的头、冻结前缀及:=边界通过，无改动。见unicode.json、unicode-final.json。"
     },
     "semantic_checker": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "原checker在候选加载后重新elaborate GoldenCheck，存在语义遮蔽。已从原始golden移除Submission导入，在锁定Lean4.27.0/x86_64匹配Docker环境用Lean parser/elaborator提取完整类型保存FCBTrustedSpec.ExpectedType定义值，回滚临时目标环境；保留p、hp全部参数，universe_params=[]。独立导入审计ExpectedType及W/monoAPNumber/monoAP_guarantee_set传递依赖仅允许标准公理；无关原前缀sorry不在类型依赖中。两份checker与可信包字节/AST一致；清单固定原始输入、版本、依赖修订和产物哈希。正式SPEC_DIR=/tests/trusted_spec，本地=/opt/formal-conjectures-bench-checker/trusted_spec；固定工具链/可信库在候选目录前，直接加载预编译产物，不使用候选Lake配置/缓存生成Spec；保留普通imports、def/lemma/instance，未加入通用外部模块白名单。临时Target先导入Spec，共用可信前缀，再加载Submission及原目标后缀；完整类型只引用ExpectedType。生成 bash /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-138-prime/generation.sh，打包审计 package.py；golden SHA256=915318b3562a4e0f42246313d7f62c893de5625c139830136530ea16a8390e8f，olean SHA256=c7a8da7a5902e0f3302967305d8c6b4df43f332508fe28fc0ef149f5476fe394，manifest SHA256=6e846944caee7b69e345901f0e47e41ecf1cd29419ac471865016b94536313fa。最终harbor trial start -p /root/FormalConjectures-Bench/tasks-v3/erdosproblems-138-prime -a nop --env docker --force-build --no-delete --environment-kwarg keep_containers=true --extra-docker-compose /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-138-prime/compose-network.yaml --trial-name erdosproblems-138-prime-pi138p-6e91-net --trials-dir /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-138-prime/harbor，退出0无异常；镜像ID见owned-resources.json。Harbor实际上传/tests，包/checker/golden与宿主哈希一致。正式bash /tests/test.sh及ubuntu /app/check.sh退出1/reward0，均仅因原始sorry源码拒绝。最终同一子容器两种入口位置的独立fixture均实际调用checker函数，覆盖预编译Spec加载/审计、ubuntu编译、完整类型比较、目标sorryAx拒绝和canary；冻结前缀/头/缺少:=、越界源码、非Lean文件、符号链接、helper axiom、冻结配置负例均拒绝；同名模块/缓存和环境变量不能遮蔽Spec；缺失/损坏/清单哈希不符明确失败且不运行时重建。冻结文本不变的LE ℕ恒真实例攻击无需sorry可用trivial编译，但完整类型比较实际拒绝。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-138-prime/verification-coverage.json、delivery-verification.json及validation-{official,local}.log。未提供原题完整证明，未验收真实原题证明reward1分支。资源清理：本agent的3个容器（36ee4ef5d39b、1ee24f4483ec、8cbf4cb5d00d）、3个任务镜像tag及ID（f4179eb443be、8147f3137dbb、e59f2c24c1db）和2个独立网络均已stop/rm并通过inspect确认不存在；共享基线镜像/其他任务资源及构建缓存未清理。详情 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-138-prime/cleanup.json。"
+      "note": "核对并保留已有固定预编译Spec实现。本次从本题可信golden隔离候选独立重新生成，生成源码及olean/ilean与两份交付包完全一致；Lean4.27.0/x86_64及锁定依赖匹配。ExpectedType完整保留p和Prime假设，无universes；独立审计ExpectedType和前缀定义的传递依赖仅标准公理，临时目标未导出。见generation.sh、generation.log、regeneration-comparison.json。清单SHA256=6e846944caee7b69e345901f0e47e41ecf1cd29419ac471865016b94536313fa，olean SHA256=c7a8da7a5902e0f3302967305d8c6b4df43f332508fe28fc0ef149f5476fe394。运行时仅加载固定产物，不重新解析ExpectedType或回退生成。最终Harbor从当前本地task构建，镜像sha256:fa2fa9158d154ad3420095ef148401de00f5bdccf8d82cb7a4b2bc69c535ed77；Harbor实际上传/tests，checker、Spec包、golden与宿主哈希相同；正式/tests及本地/opt入口分别读取各自可信包。两入口均退出1/reward0，仅因原始sorry；未提供或验收原题完整证明。最终同一子容器两套实际函数补测各28项，覆盖Spec加载/可信审计、ubuntu编译、完整类型比较、目标sorryAx拒绝、canary、冻结/越界/源码限制、同名模块/缓存/环境遮蔽及缺失/损坏/清单篡改无回退；冻结文字不变的无sorry LE Nat恒真实例攻击编译成功，但完整类型比较实际拒绝。普通import规则及原安全函数/常量保持，未新增通用白名单或initializer沙箱。见final-validation/、verification-coverage.json、static-final.json；两份checker AST/字节及两份Spec包一致，全部immutable-before哈希保持。清理已完成：本次3个容器1ac9274a5331/a910ceb0dded/f467091eabdd、2个任务镜像tag及ID a3e1ab55387f/fa2fa9158d15、2个专属网络均已移除并inspect核实不存在；预存共享镜像和构建缓存保留。见cleanup.json、cleanup.log、docker-after-*.txt。"
     },
     "statement_fidelity": {
       "has_issue": false,
       "repair_status": "not_needed",
-      "note": "metadata.statement_status=consistent。逐项核对完整定义：W为两色Icc 1 N保证长度k单色AP的最小N，p为自然素数≥2；实际import的AP定义包含精确基数，排除长度p+1的退化AP。Berlekamp 1968原论文pp409-410/Theorem2用W(2,t)表示长度t+1，证明prime t时W(2,t)>t*2^t，蕴含本题弱不等式；是Erdős138的已知prime变体。注释残留p^(2^p)笔误；PR1240显示Lean乘法版本已纠正，不导致当前目标错误，保持所有数学输入原样。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-138-prime/mathematical-check.json、berlekamp-paper.txt、monoAP-definition.log。"
+      "note": "保持statement_status=consistent。检查完整定义及实际导入AP的精确基数条件；W是两色Icc 1 N的最小保证数，prime p确保p>=2。Berlekamp1968 DOI10.4153/CMB-1968-047-7 pp409-410/Theorem2以W(2,t)表示长度t+1，prime t时W(2,t)>t*2^t，蕴含本题弱不等式；原题网页亦明确p*2^p。本题是已知prime变体，不是完整root-growth问题。冻结注释p^(2^p)为残留笔误，不导致当前Lean乘法目标错误；未改数学输入。见research-audit.json、berlekamp-paper.txt、original-138.txt、definition-audit.log。"
     },
     "public_lean4_proof": {
       "has_issue": null,
       "repair_status": "not_repaired",
-      "note": "先按完整task ID精确查public-lean4-proofs.csv，未命中。已多组关键词检索GitHub issues/PR/仓库、一般搜索、作者网页、当前及锁定上游、Mathlib；读取PR2831/3347/3618和XC0R/mo271实际Lean源码，prime目标仍sorry；标题称已解不算证明。OpenAI Main为eventual渐近界；Atlas原版/verified为dvd_two_pow变体，有限构造不覆盖当前精确全素数界；lean-genius的相同Berlekamp界明确为axiom，均排除。未验证到本目标完整公开Lean4证明；GitHub code/tree API限流403、网站代码搜索要求登录，一般搜索工具API400、直接Bing结果无关/Google仅JS跳转，关键广泛代码检索不可用，因此metadata和报告诚实标unknown/blocked，不能断言不存在。公开源码未在本题编译或放入镜像。详情、查询词、来源及排除原因 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-138-prime/public-proof-check.json；原始HTTP日志与源码保存在同目录。"
+      "note": "完整ID精确匹配技能CSV未命中。多组关键词检索并实际读取锁定/当前上游、PR2831/3347/3618、XC0R、mo271、Atlas、OpenAI及LeanGenius源码：前几者prime仍sorry；Atlas是ratio变体及较弱有限界；OpenAI是eventual渐近界；LeanGenius精确界是axiom，均不是本目标完整证明。另跟进qed.bot、源浏览器、Mathlib、作者页及GitHub相关issue线索。普通网页搜索及树/issue API本次可用，但GitHub全库代码搜索HTTP401要求认证，关键广泛代码检索受阻，保留metadata unknown/blocked，不断言不存在公开证明。见public-csv-match.json、research-audit.json、source-fetch-results.json及实际Lean源码；未将公开答案放入镜像。"
     }
   }
 }

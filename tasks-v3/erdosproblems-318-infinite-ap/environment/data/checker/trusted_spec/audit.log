@@ -1,0 +1,7 @@
+audited FCBTrustedSpec.ExpectedType: [Quot.sound, propext, Classical.choice]
+audited Erdos318.P₁: [propext, Quot.sound, Classical.choice]
+complete binder count: 2
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {A : Set ℕ}, A.IsAPOfLength ⊤ → Erdos318.P₁ A
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

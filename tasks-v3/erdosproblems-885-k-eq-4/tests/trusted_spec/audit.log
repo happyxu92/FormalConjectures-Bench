@@ -1,0 +1,7 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos885.factorDifferenceSet: [propext, Classical.choice, Quot.sound]
+complete outer binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ Ns, (∀ n ∈ Ns, 1 ≤ n) ∧ Ns.card = 4 ∧ (⋂ n ∈ Ns, Erdos885.factorDifferenceSet n).ncard ≥ 4
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

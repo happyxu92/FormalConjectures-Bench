@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-ellipticcurverank-twentynine-le-rank-elkiesklagsbrun29",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 的 rg 命令已显式包含 /app、/opt/formal-conjectures 和 .lake/packages；在最终 Harbor 子容器以 ubuntu 实际检索到 Mathlib 的 finrank 定义（退出码 0）。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 imports；保留 ProblemImports 预编译。补齐 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的 Harbor 构建及同容器 ubuntu 再构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本并最终复验，均为 no_issue；原头通过，改头和移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重新解析 GoldenCheck，存在语义遮蔽。现从本题可信 golden 隔离候选提取完整类型并预编译 ExpectedType；0 个外层 binders，universes=[]，传递公理审计仅允许标准公理，临时目标未导出。两份可信包、checker 内容/AST、全部 immutable 哈希一致；固定加载路径且无运行时生成或回退。最终本地 Harbor 镜像 sha256:91d52ef25bfe629205a841d282f1d4aa04374f2db1ebfd98491ed1377ea64359；/tests 上传包及 /opt 包与本地哈希逐项一致。正式入口、本地入口均因原始 sorry 预期退出 1，reward=0；不是原题证明通过。同一子容器两套包的实际函数补测退出 0：Spec 加载/可信审计、ubuntu 编译、完整类型比较、公理拒绝 sorryAx、sorry canary、冻结/越界/名称偷换/缓存遮蔽/缺失及篡改负例全部覆盖；普通 def/lemma/instance 与原安全规则保留。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-ellipticcurverank-twentynine-le-rank-elkiesklagsbrun29/attempt-001（generation.log、final-review.json、delivery-hashes.json、final-validation-*.log 等）。Docker 清理已核实：本题新建的 3 个容器（0fb15783aa80、9dc9926f32ce、c817ffad4171）、2 个镜像（91d52ef25bfe、a7df28359e4d）及 29bd/29bf 两个网络均已移除；已有共享预编译镜像未动，无本题遗留资源，详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核对 pinned 上游、完整前缀及曲线系数：a1=1,a2=a3=0 和 a4/a6 均与 Elkies–Klagsbrun 公告相同。目标是有理点群整数秩 ≥29，为无条件下界；GRH 仅用于恰为29的上界，不是本题缺失假设。来源：https://mathoverflow.net/a/478509（HTML 403，StackExchange API 成功取得公告全文及29个点）、ICERM 2024 公告。未改数学陈述、定义、Target、golden 或 GoldenCheck。详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "public_lean4_proof=unknown，status=blocked。完整 ID 精确匹配技能 CSV 未命中。多组检索并读取上游当前源码、Mathlib/作者来源、相关仓库及 PR：2601/3125 仅改标签，仍 sorry；5309 及 b-mehta/EllipticCurveRank 的 Curve012 给出真实有限子模秩证书，但全点群 finrank 下界另需有限生成桥接，原目标仍 sorry；Stoll 的一般 Mordell–Weil 项目与本题兼容的完整公开组合链未确认。GitHub 全局代码 API 403、网页搜索 429，PR API 亦受限（相关 diff 已取得）；不宣称不存在完整证明，也未将关键引理当完整证明。详见 public-search-summary.json、public-fetch.json 和 public-followup-fetch.json。"
+    }
+  }
+}

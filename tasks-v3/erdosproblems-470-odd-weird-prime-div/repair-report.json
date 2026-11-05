@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-470-odd-weird-prime-div",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式加入 .lake/packages；最终 Harbor 子容器中以 ubuntu 实测 rg 找到 Mathlib 的 def Weird，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 没有额外上游 imports。补上缺失的 Dockerfile 末尾 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target；当前本地 task 两次 Harbor 构建成功，最终子容器内同命令退出码 0，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本并最终复验，均为 no_issue/exit 0；原头通过，修改头及移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境解析 GoldenCheck，存在名称遮蔽风险。现由本题 immutable golden 独立生成并预编译 ExpectedType，完整保留 n、Odd n、n.Weird 三个绑定参数，universes=[]；传递公理仅标准三公理，临时目标未导出。两份可信包及 checker AST/内容一致，固定来源/hash/version/dependency 校验，无运行时重建或回退。最终本地 Harbor 镜像 sha256:74a5d0ea2d3dfcc60d67c27f688f5c6a191eece3a2d8bc838cefb40b643fa81f；/tests 上传包与 /opt 包均逐文件匹配本地。正式及本地入口均因原题 sorry 预期退出 1，reward=0，不代表证明通过。两入口各在同一最终子容器调用实际函数完成 28 项补测：Spec 加载/审计、观测 uid1000 编译、完整类型匹配、sorryAx 目标拒绝及 canary、冻结/越界拒绝、冻结不变但 Odd 被改为 False 的合法候选编译后完整类型拒绝、同名模块/缓存/环境遮蔽、产物缺失/篡改拒绝且不重建。全部 immutable 哈希未变。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-470-odd-weird-prime-div/attempt-001（generation.log、manifest、harbor/、delivery.json、validation-coverage.json、final-audit.log）。Docker 已清理并核实：本题 3 个容器均 stop/rm，2 个自建镜像（17a77bafdfab、74a5d0ea2d3d）及 2 个自建网络已删除，inspect 确认不存在；预先存在的匹配缓存镜像及其他任务资源未动。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核对 pinned upstream、完整冻结前缀、Mathlib Weird/Abundant/Pseudoperfect 定义及 Liddy 2018 原作者大学页面摘要 https://ideaexchange.uakron.edu/honors_research_projects/728/：目标是奇 weird 数至少有六个不同素因子的已知变体；有限 divisors 集、n=0/1 边界无明显错误。非断言奇 weird 数存在。未修改任何数学陈述/定义；论文全文及 erdos 页面受限，具体范围见 statement-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "public_lean4_proof=unknown，status=blocked。完整 ID 精确匹配技能 CSV 未命中；多组题号/完整定理名/数学关键词/作者检索，并读取 upstream、Mathlib、相关 PR/fork 源码差异及 Howie P470 完整源码。当前目标仍 sorry；PR2732/2768/2926/3254/3370 的声称已解决仍保留 sorry，Howie 证明仅覆盖 abundancy_index，不覆盖此目标。未找到可确认的完整匹配证明，但 GitHub 全局代码搜索须登录、API 限流及部分关键来源 403/DNS 阻塞，不能认定不存在。详见 public-proof-review.json、fetch-results.json；未把公开答案放入镜像。"
+    }
+  }
+}

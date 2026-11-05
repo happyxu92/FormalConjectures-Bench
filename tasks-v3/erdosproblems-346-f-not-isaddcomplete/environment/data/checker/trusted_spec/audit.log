@@ -1,0 +1,15 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Classical.choice, Quot.sound]
+audited Erdos346.f: [propext, Classical.choice, Quot.sound]
+complete outer binder count: 3; B implicit, h and hB explicit
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {B : Set Nat},
+  @Subset (Set Nat) (@Set.instHasSubset Nat) B (@Set.range Nat Nat Erdos346.f) →
+    @Set.Infinite Nat B →
+      Not
+        (@IsAddComplete Nat Nat.instAddCommMonoid Nat.instPreorder
+          (@sdiff (Set Nat) (@Set.instSDiff Nat) (@Set.range Nat Nat Erdos346.f) B))
+def Erdos346.f : ℕ → ℕ :=
+fun n => if Even n then Nat.fib n - 1 else Nat.fib n + 1
+'Erdos346.f' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

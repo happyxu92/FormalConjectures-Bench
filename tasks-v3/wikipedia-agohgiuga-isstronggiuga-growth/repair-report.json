@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-agohgiuga-isstronggiuga-growth",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 及 .lake/packages；最终 Harbor 子容器执行成功并命中 Mathlib 的 Irrational 定义。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；补上 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。最终本地 Harbor 构建及容器内 ubuntu 重验均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整执行技能 Unicode 脚本两次，均为 no_issue；原始头、冻结前缀及 := 边界验证通过。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden 隔离 Submission 提前 elaboration，提取 G/hG 完整类型及空 universe 列表；ExpectedType/IsStrongGiuga 传递公理审计通过。两份固定预编译 Spec、清单及 checker 内容/AST 一致。最终 Harbor 从当前本地 task 构建，/tests 上传包与 /opt 包均核对宿主哈希。正式/本地入口均因原题 sorry 预期 exit=1、reward=0；同一子容器两份 checker 实际函数补测通过：Spec加载审计、ubuntu编译、完整类型、目标公理正反例、sorry canary，以及冻结/越界/语义偷换/缓存遮蔽/缺失及篡改负例。原 Target、golden、GoldenCheck、定义及冻结基线哈希全部不变；未证明原题。证据见指定 attempt-001 的 final-verification.json、coverage-*.json、delivery-hashes.json。已 stop/rm 本题 spec、initial Harbor、final Harbor 三容器，移除本题两镜像标签及两网络并核实；共享缓存保留，见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 consistent。已阅读全文前缀、锁定上游及 Tipu 2007 原论文 Theorem 1（pp.159–160）：强 Giuga 定义、[1,n] 计数和最终 O(sqrt n log n) 相符。N 可取足够大，O 的存在量词无明显错误；未修改数学陈述。见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "public_lean4_proof=unknown，status=blocked。完整 ID 未命中技能 CSV；已多组检索、读取上游/分支、Giuga 项目及实际 PR 补丁，发现的 growth 证明仍为 sorry，其他完整结果不覆盖本目标。GitHub API 限流阻止 tracking issue 3623/PR 后续评论和当前 Mathlib tree 核查，不能声称充分确认不存在。见 public-proof-review.json 与来源/访问日志。"
+    }
+  }
+}

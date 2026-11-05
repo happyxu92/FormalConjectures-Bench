@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-31-upper-li69",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；真实容器中 ubuntu 搜到 Mathlib/Order/Filter/Defs.lean 的 Tendsto，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 只有 ProblemImports 和 Submission 两项 import，无额外上游模块。补齐 Dockerfile 最末 ubuntu RUN lake build +FormalConjecturesBench.Target；最终本地 Harbor 构建及同容器 ubuntu 构建均成功，未放宽可信依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本，初检和终检均为 no_issue；原头通过，修改头及移除 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden 隔离 Submission 提取完整类型及 universes，在匹配 Lean 4.27.0 Docker 预编译并审计 ExpectedType、Green31.F；无外层 forall 或 universe 参数，传递依赖仅允许的标准公理。两份可信包及 checker 内容/AST 一致，固定加载预编译产物，不运行时生成或重解析预期命题。最终当前本地 task 经 Harbor force_build 验收，/tests 上传包、/opt 包、golden 与本地哈希一致。正式、本地入口均因原始 sorry 预期退出 1，reward=0；同一最终子容器两入口各补测 29 项通过，涵盖可信审计、实测 UID1000 编译、完整类型、公理拒绝、canary、冻结/越界/LE 实例语义偷换/缓存遮蔽/产物缺失及篡改。未覆盖必测路径为空，不声称原题证明通过。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-31-upper-li69/attempt-001。已 stop/rm 三个本题容器 b836db43ef67、a089d6781d31、28b085404566，删除本题镜像 5d46aa0b928d、9064bbacc170 及两个本题网络并核实不存在；预先存在的共享生成镜像 09445111b95d 保留。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。已核对锁定上游、F、IsSidon、maxSidonSubsetCard 及 Green 原文 Problem 31；本题是已知 Lindstrom 上界的合理变体，不是完整开放改进问题。有限最大值、自然数区间、实数四次根及 eventual 单侧加常数界无明显数学错误。B4/B2 参考文献混淆仅属书目信息；数学定义、陈述、公开 Target、全部 golden、GoldenCheck 和冻结基线未改，immutable 全部匹配。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "技能 CSV 完整 ID 精确匹配未命中；多组检索并追踪 PR #6778，读取完整固定提交源码：https://github.com/MendozaLab/formal-conjectures/blob/04f9c7a96bf7bc02ae2b1170093530f15d4c01e1/FormalConjecturesForMathlib/Combinatorics/Sidon/Lindstrom.lean 。Finset.maxSidonSubsetCard_Icc_le_lindstrom 使用相同定义，证明更强的所有 N、C=1 上界，覆盖本题。证明链无 sorry/admit/新增公理；已标 public_lean4_proof=true。源码工具链为 Lean 4.33.1，仅完成源码核对，未声称在本题环境编译。旧 Zenodo 19444428 的上界是 axiom，已排除。GitHub API 部分限流，但决定性固定源码及依赖定义已成功取得，不阻碍肯定结论；见 public-proof-audit.json、search-audit.json。"
+    }
+  }
+}

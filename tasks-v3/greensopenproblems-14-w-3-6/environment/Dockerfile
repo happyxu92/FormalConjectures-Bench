@@ -57,9 +57,9 @@ RUN find /opt/formal-conjectures/.lake/packages -path '*/.lake/config/*/lakefile
 
 WORKDIR /app
 COPY data/ /app/
-RUN mkdir -p /opt/formal-conjectures-bench-checker \
-  && cp -a /app/checker/. /opt/formal-conjectures-bench-checker/ \
-  && rm -rf /app/checker \
+# Install the trusted package directly from this task's build context.
+COPY data/checker/ /opt/formal-conjectures-bench-checker/
+RUN rm -rf /app/checker \
   && find /opt/formal-conjectures-bench-checker -type d -name __pycache__ -prune -exec rm -rf {} + \
   && mkdir -p /app/.lake \
   && ln -s /opt/formal-conjectures/.lake/packages /app/.lake/packages \
@@ -73,3 +73,7 @@ RUN mkdir -p /opt/formal-conjectures-bench-checker \
 WORKDIR /app
 ENV HOME=/home/ubuntu
 USER ubuntu
+
+# Exercise the same build as the checker without granting write access to the
+# trusted dependency. Missing precompiled imports must fail the image build.
+RUN lake build +FormalConjecturesBench.Target

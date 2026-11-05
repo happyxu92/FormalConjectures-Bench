@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-387-easy",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式加入 .lake/packages；最终 Harbor 子容器中以 ubuntu 执行三路径 rg，命中 mathlib 的 choose_mul_factorial_mul_factorial，退出 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；补齐 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的 Harbor 构建及同容器 ubuntu 构建均成功，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本，初检及最终复验均为 no_issue；原头、修改头和缺失 := 检查通过。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离生成并预编译 ExpectedType，完整保留隐式 n、k 及显式 hn、hk，universes=[]；独立导入审计通过，两份 Spec 包及 checker AST/字节一致。固定产物哈希、工具链和依赖加载路径，不在运行时生成或重解析预期命题。当前本地 Harbor 镜像 sha256:d317efe0de0a398e30016a5142a4fbda773fa45cc236d66adec4bf1af6ee1c08；/tests 上传包与 /opt 安装包均逐文件核对本地哈希。两入口退出 1、reward=0，仅因原始 sorry 被预期拒绝；同一子容器三轮各 30 项实际函数补测全部通过，覆盖 Spec 审计、ubuntu 编译、完整类型、公理、canary、冻结/越界、Set.Icc 语义偷换、缓存遮蔽、产物缺失及篡改。所有 immutable 哈希保持不变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-387-easy/attempt-001。Docker 清理完成：本题 Spec 容器 8b5e4f9f44eb、Harbor 容器 bbc4f6dfe1e4 均 stop/rm；本题镜像 d317efe0de0a 及专属网络已移除并核实不存在。预先存在的共享依赖镜像保留，未操作其他任务资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。核对锁定上游 387.lean、完整前缀和题目来源；这是 [n/k,n] 内存在二项式系数约数的 easy 变体，不是解决常数 c 的主问题。k=0 时 d=1；k>0 时 n/gcd(n,k) 给出所需约数及区间界，未发现明显错误。原站直连 403 已记录，上游与镜像可访问；不修改任何数学输入。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID erdosproblems-387-easy 精确命中技能 references/public-lean4-proofs.csv，已标记 public_lean4_proof=true。来源：https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/387.lean#L68 。依要求无需重新联网确认；未将公开答案放入镜像，未声称提交证明已通过。"
+    }
+  }
+}

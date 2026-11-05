@@ -1,0 +1,9 @@
+ExpectedType transitive axioms: [propext, Quot.sound, Classical.choice]
+binder: f : ℕ → ↑(Metric.sphere 0 1)
+binder: C : ℝ
+binder: hC : 0 < C
+complete binder count: 3
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (f : ℕ → ↑(Metric.sphere 0 1)) (C : ℝ), 0 < C → ∃ d ≥ 1, ∃ m ≥ 1, C < ‖∑ k ∈ Finset.Icc 1 m, ↑(f (k * d))‖
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

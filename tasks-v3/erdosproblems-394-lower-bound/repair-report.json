@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-394-lower-bound",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式包含 /app、/opt/formal-conjectures 及其 .lake/packages；最终 Harbor 容器内以 ubuntu 搜到 Mathlib 的 isBigO_zero，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 imports，保留原 ProblemImports 预编译。补齐 Dockerfile 最终 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target；当前本地 task 的最终 Harbor 构建成功，同一子容器 ubuntu 重建退出码 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本两次，均为 no_issue；原头通过，修改头及移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题不可变 golden 隔离候选提取完整类型与 universes，匹配 Lean 4.27.0/x86_64 Docker 预编译 ExpectedType；其值及 t 的传递依赖仅有允许的标准公理，临时目标未导出。两份可信包和 checker 内容/AST 一致，全部 immutable 哈希通过。verifier 固定加载已校验的预编译 Spec，不运行时重解析或生成。最终本地 Harbor trial erdosproblems-394-lower-bound-g61-394lb9-auditfinal 构建成功，/tests 上传包及 /opt 包与本地哈希一致。正式/本地入口均因原题 sorry 预期退出 1，reward=0；同一子容器两种包入口各 28 项实际函数补测通过，覆盖 Spec 审计、ubuntu 编译、完整类型、公理/sorry canary、冻结/越界、保持冻结文本的 Icc 名称偷换、缓存遮蔽、产物缺失及篡改拒绝。未宣称原题证明通过。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-394-lower-bound/attempt-001（final-review.json、validation-coverage.json、delivery-hashes.json 等）。Docker 清理完成：本次 4 个容器（Spec 及三个 g61-394lb9 Harbor trial）、3 个任务镜像和 3 个专属网络均删除并复查不存在；最终镜像 82b2d2155112 已移除。预先存在的共享依赖镜像 erdos1062-import-20261102__env-main 保留；无本题资源残留，详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "仅标记 statement_status=suspect，不改陈述或定义。Target.lean:91-95 的 ≫ 实际要求自然数截断的 Σt₂(n)=O(x²/log x)，与注释的下界相反；上游 issue #5062 及修正 8ffb799/#5108 明确确认方向误写。已读取 Erdős–Hall 1978 原文 p.481 和题目/讨论/证明声明；未建立保留上界的严格反例，故不以方向差异或仍开放判其必假。详见证据 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "public_lean4_proof=unknown，status=blocked。完整 task ID 精确匹配技能 CSV 未命中；多组搜索并读取当前/锁定上游、原作者项目、关联 Lean 源码、题目证明声明及独立重建记录。上游为 sorry 且已改成反方向；Blair/Snyder 完整证明针对 c=1/2048 或相邻 k 的 little-o，不覆盖保留的 c=1 上界。主站已通过直接请求成功获取；GitHub PR/全局代码搜索 API 403 限流，不能排除未检出的分支/fork，未确认匹配公开完整证明，也不声称不存在。详见 public-proof-review.json 和抓取日志。"
+    }
+  }
+}

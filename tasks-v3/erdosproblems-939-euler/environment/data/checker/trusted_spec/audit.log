@@ -1,0 +1,7 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound]
+audited Erdos939.Erdos939Sums: [propext, Quot.sound, Classical.choice]
+complete universal binder count under Not: 4
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ k ≥ 4, ∀ (S : Finset ℕ), S.card = k - 1 → ¬∃ q, ∑ s ∈ S, s ^ k = q ^ k
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Quot.sound]

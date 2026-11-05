@@ -1,0 +1,5 @@
+complete outer binders: 3; universe parameters: []
+transitive ExpectedType axioms: [propext, Quot.sound, Classical.choice]
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (A : Finset ℕ), 0 ∉ A → A.Nonempty → ∃ a ∈ A, ∃ b ∈ A, ↑(a.gcd b) ≤ ↑a / ↑A.card
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

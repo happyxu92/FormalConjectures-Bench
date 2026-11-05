@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-321-upper",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "源码搜索命令已显式加入 .lake/packages；最终 Harbor 子容器实际搜索命中 Mathlib/Data/Set/Operations.lean 的 InjOn，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 imports，保留 ProblemImports 预编译。补上 Dockerfile 末尾 USER ubuntu 后的 RUN lake build +FormalConjecturesBench.Target；当前本地任务两次 Harbor Docker 构建及最终 ubuntu 构建成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整运行技能 Unicode 脚本并最终复验，均为 no_issue；原头通过，修改头及移除 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden 隔离候选提取并预编译 ExpectedType，保留 N,r,hr,hrN 四个完整参数，universes=[]；ExpectedType 与 R 的传递公理审计通过。两份可信包及 checker 内容/AST 一致，运行时固定加载并校验预编译产物，不重解析命题或回退生成。最终本地 Harbor 镜像 3d73885cbd39 的 /tests 上传包、/opt 包及 golden 哈希均与本地一致。两入口退出 1、reward=0，仅因原题 sorry；同一子容器两套实际函数各 29 项补测通过，覆盖 Spec 审计、ubuntu 编译、完整类型比较、目标公理/sorry canary、冻结/越界/语义实例偷换/缓存遮蔽/产物缺失及篡改。root 调用编译器也实测 uid=1000。原安全规则及正常 import 规则保留。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-321-upper/attempt-001。Docker 已清理并复核：本题容器 c1a53c7c38ab、54da71d09385、f5f4fac6c792，镜像 5625ccc67956、3d73885cbd39 及两条本题网络均已移除；预先存在的共享依赖镜像保留，未清理其他任务资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "已标 statement_status=mismatch，未修改数学输入或冻结基线。Real.log 对负数仍有定义；N=13,r=4 时 log^[8]13∈(1.21071,1.21072)，满足原假设，但 RHS∈(-3.46952,-3.46950)，而 (R 13 : ℝ)≥0。70 位区间计算证据见 counterexample.py/statement-counterexample.txt，并非 Lean 内核反证。原论文 genuine iterated log 的正域条件及当前上游新增全部中间迭代≥1的说明佐证了缺失假设。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。多组检索覆盖上游、Mathlib、GitHub、作者/论文及别名，实际下载并读取 Star Fleet Math 的 Lean 源码；其最终结果是有阈值、存在常数的渐近终止深度定理，不覆盖本题精确有限界。上游 upper 仍为 sorry，当前假设亦已加强。整数子集和方差证明、有限 SAT/DRAT 计算及主问题 answer 反证均不覆盖本题。原题评论 HTTP 403、GitHub issue/API 限流及部分历史页 HTTP 500，故保守标记 public_lean4_proof=unknown、status=blocked，不宣称不存在公开证明。见 research-summary.json 和来源下载证据。"
+    }
+  }
+}

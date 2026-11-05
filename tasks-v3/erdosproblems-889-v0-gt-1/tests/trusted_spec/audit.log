@@ -1,0 +1,12 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos889.v: [propext, Quot.sound, Classical.choice]
+audited Erdos889.v₀: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 2 (n : Nat, excluded-set hypothesis)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ n ∉ {0, 1, 2, 3, 4, 7, 8, 16}, 1 < Erdos889.v₀ n
+def Erdos889.v : ℕ → ℕ → ℕ :=
+fun n k => {p ∈ (n + k).primeFactors | ∀ i ∈ Finset.range k, ¬p ∣ n + i}.card
+def Erdos889.v₀ : ℕ → ℕ∞ :=
+fun n => ⨆ k, ↑(Erdos889.v n k)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

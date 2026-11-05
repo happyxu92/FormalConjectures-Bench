@@ -1,0 +1,6 @@
+audited ExpectedType transitive dependencies: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Transcendental ℚ catalanConstant ∨ Transcendental ℚ gompertzConstant
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

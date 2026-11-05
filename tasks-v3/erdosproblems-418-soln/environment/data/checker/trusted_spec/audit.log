@@ -1,0 +1,6 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+{x | ∃ k, 2 ^ (k + 1) * 509203 = x} ⊆ {x | ∃ n, n - n.totient = x}ᶜ
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

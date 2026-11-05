@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-868-fixed",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to instruction search. The documented three-path command finds Set.ncard as ubuntu in the final Harbor child (exit 0)."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Only ProblemImports and Submission are imported; no extra upstream modules needed. Added final Dockerfile USER ubuntu RUN lake build +FormalConjecturesBench.Target. Local-task Harbor builds and separate final-child ubuntu build succeed; trusted dependency permissions unchanged."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran the skill Unicode script before and after repair: case=no_issue; original header accepted, header/assignment mutations rejected; frozen constants unchanged."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated ExpectedType from this task's immutable golden without Submission in matching Lean 4.27.0 Docker; complete Iff and its internal binders retained, universe list empty. Independent transitive axiom audit passes; synchronized pinned source/artifact manifests in both trusted packages. Checker loads fixed precompiled Spec and trusted dependencies before candidate paths, never regenerates or re-parses the expected proposition; normal import/source/security rules retained. Two local-task Harbor Docker builds, uploaded /tests and /opt hashes, both real entries and four 29-case actual-function runs pass implementation checks. Real entries exit 1/reward 0 solely for original sorry; supplemental tests cover Spec audit, uid1000 compilation, full type equality, target sorryAx rejection, canary, frozen/out-of-tree violations, source-legal LT-instance semantic substitution rejected by full type mismatch, cache/environment shadowing, missing/tampered artifacts without regeneration. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-868-fixed/attempt-001/ (validation-summary.json, final-delivery/, static-validation.json, immutable-final.json). Cleanup verified: stopped/removed all 3 owned containers (7c58f8a62f15, 278ac632bae4, d00117f01702), removed both owned image tags/IDs (baf2cc12da39, f1a538d68880) and both own networks. Pre-existing generation image/shared caches preserved; cleanup.json records success with no errors."
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Marked statement_status=suspect only. Target.lean:38-39 counts ordered tuples; :72-75 uses endpoint K=1/log(4/3). Erdos-Nathanson 1979 pp.89,100 (Theorem 2), https://www.renyi.hu/~p_erdos/1979-25.pdf, instead counts unordered representations and requires a fixed c>K. Upstream PR 6500 corrects both differences. These are concrete warning signs, not a demonstrated counterexample to this retained variant; no claim of impossibility. All mathematical inputs/definitions remain unchanged; see statement-audit.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Exact full-ID skill CSV miss. Multi-query searches and actual upstream/fork/PR source inspection found no verified proof of this retained fixed variant: upstream and hjyuh fixed_ε are sorry; hjyuh proves Hartter_Nathanson only; plby proves negative parts i/ii (epsilon=1/1000000), not this target; PRs 2708/3230 merely change attributes and retain sorry. Marked unknown/blocked, not false: erdosproblems page/forum are Cloudflare/403 blocked and GitHub APIs rate limited. Search terms, URLs, exclusions and saved sources are in public-search-audit.json and public-*-results.json."
+    }
+  }
+}

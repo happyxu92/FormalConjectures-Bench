@@ -1,0 +1,6 @@
+transitive ExpectedType axiom audit: [propext, Quot.sound, Classical.choice]
+complete binder count: 1; m : Nat
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (m : ℕ), {n | ∀ i ∈ Finset.range m, primeGap (n + i) < primeGap (n + i + 1)}.Infinite
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

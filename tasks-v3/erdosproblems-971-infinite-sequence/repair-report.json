@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-971-infinite-sequence",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "源码搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；在本题 Harbor 子容器以 ubuntu 实际检索到 Mathlib/Data/Nat/Totient.lean 的 totient 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import，无需扩充预编译列表；原 Dockerfile 缺少普通用户构建验收，现最终以 USER ubuntu 的 RUN lake build +FormalConjecturesBench.Target 结尾。当前本地 task 已由 Harbor force_build 构建，且同一子容器 ubuntu 构建再次成功；sorry 警告不是依赖故障。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本并最终复验，均为 no_issue；原头通过，改头及移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境解析 GoldenCheck，存在语义遮蔽风险。现从本题 immutable golden 移除 Submission 导入，独立提取完整类型生成预编译 ExpectedType（零外层 binder、无 universe 参数），审计其及 leastCongruentPrime 仅依赖三项标准公理；两份包及固定清单一致。checker 固定工具链、Spec/依赖来源及完整类型比较，无运行时生成/回退。当前本地 Harbor 镜像 sha256:f686a72177516b9ea1bb3b0c0a88933b96508b875c434c31f0dc6bbfd3d6227d 已验收；/tests 上传包、/opt 包与本地逐文件哈希一致。两入口均因原题 sorry 退出 1、reward=0；同一子容器两包各 29 项补测通过，覆盖可信审计、ubuntu 编译、完整类型、目标 sorryAx、公理成功分支、canary、冻结/越界/实例偷换/缓存遮蔽/产物缺失及篡改拒绝。原安全检查 AST 保留，所有 immutable 哈希不变；不宣称原题证明通过。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-971-infinite-sequence/attempt-001。Docker 日志和产物已保存；已 stop/rm 本题 Spec 容器 d1ba7fc3b050 和 Harbor 容器 6cb8d5b37981，删除本题镜像 f686a7217751 及网络 ffec37030f54，并 inspect/ps 核实不存在；预存共享基础镜像保留，无本题资源遗留，详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。已核对锁定上游及 Erdős《On some applications of Brun’s method》p.57 Theorem 1（证明 pp.60–63），本题为无限多个模数的已知变体，并非充分大均成立的开放原题。最小素数定义、互素剩余类计数、正统一常数及严格阈值无明显错误；仅标记 metadata，未改数学陈述或定义。题目网站受 Cloudflare 阻挡，但原始论文可访问。详见 statement-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID 未命中技能 CSV，已多组检索并读取 daizisheng/erdos-971-lean 的公开完整源码（5221258c2b44143832605ee77378224b9bbe8685），Main.lean 证明同定义下更强的 eventually-atTop 命题。项目及锁定分析依赖的 860 个可达源码文件未发现 sorry/admit/新增 axiom；非可达 vendor/Challenge 文件中的占位未冒充证明。另在本题环境编译无占位的命题蕴含桥，验证其覆盖完整 ExpectedType。metadata 标记 public_lean4_proof=true 并记录固定源码链接。外部完整开发使用 Lean 4.33.1，未在本题 4.27.0 环境重编译或独立 kernel replay；公开存在不等于社区审定或本题证明通过，未将答案放入镜像。详见 public-proof-review.json。"
+    }
+  }
+}

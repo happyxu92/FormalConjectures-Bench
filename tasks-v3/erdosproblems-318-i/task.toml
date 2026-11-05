@@ -15,6 +15,12 @@ formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"
 lean_toolchain = "leanprover/lean4:v4.27.0"
 mathlib_commit = "a3a10db0e9d66acbebf76c5e6a135066525ac900"
 theorem_name = "Erdos318.erdos_318.parts.i"
+statement_status = "mismatch"
+statement_status_note = "The parts.i target is valid (odd naturals together with 2 have density 1/2 and fail P₁). The frozen non-target contain_single_even lemma is false for A={2}: its hypothesis holds but P₁ is vacuous. Marked only; no mathematical input changed."
+public_lean4_proof = true
+public_lean4_proof_status = "found"
+public_lean4_proof_urls = ["https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos318.lean#L385"]
+public_lean4_proof_note = "Exact-ID skill CSV miss; inspected full public Lean source and matching Util.Density definitions. not_erdos_318 and final parts.i alias cover this target without placeholders or extra axioms in their proof dependency slice. Source targets Lean 4.33.0; not compiled as a task submission."
 benchmark_bucket = "informal_proof"
 oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."

@@ -4,32 +4,32 @@
     "instruction_search": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Explicit /app, /opt/formal-conjectures and /opt/formal-conjectures/.lake/packages paths retained. Attempt-002 verified current command syntax and prior same-task ubuntu rg exit 0 with actual package def IsCoprime match. Evidence: attempt-002/step1.json in the run task evidence directory."
+      "note": "保留已修复的显式 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages 搜索路径。本次当前本地 Harbor 子容器内以 ubuntu 实际 rg 检索 package 中 def IsCoprime，退出 0。证据根目录 E=/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-247-strong-condition/attempt-001；见 instruction-search.log、steps1-3-static.json。"
     },
     "lean_dependency": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Actual Target imports only ProblemImports and local Submission; no additional upstream modules required. Dockerfile retains final USER ubuntu RUN lake build +FormalConjecturesBench.Target. Attempt-002 checked actual prior local Harbor image history and ubuntu build exit 0; no repeated build for unchanged artifacts. Evidence: attempt-002/step2.json."
+      "note": "实际 Target 只有 ProblemImports 与本地 Submission imports，无额外上游依赖。保留 Dockerfile 最终 USER ubuntu、RUN lake build +FormalConjecturesBench.Target。本次按当前本地 task 经 Harbor force_build 构建成功（使用匹配缓存），同一子容器 ubuntu 实际 Target 构建退出 0。见 E/harbor-config.json、harbor.log、harbor-image-history.txt、ubuntu-target-build.log。"
     },
     "unicode_header": {
       "has_issue": false,
       "repair_status": "not_needed",
-      "note": "Required skill Unicode script executed again in attempt-002: case=no_issue, verification=passed, no changes. Both original heads and negative header/assignment boundaries passed. Evidence: attempt-002/unicode.json."
+      "note": "本次实际运行技能 Unicode 脚本：case=no_issue、verification=passed、modified=false。两份头、冻结前缀及 := 边界核对通过；无需修改。见 E/unicode.json。"
     },
     "semantic_checker": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Attempt-002 audited current checker, generator, manifest and package hashes against the actual same-task Harbor delivery and raw runtime logs; identical artifacts, both checker content/AST and packages match. Prior locked Lean 4.27.0 x86_64 precompilation/audit retained: complete n, hn, h type, no universes, standard allowed axioms only. Current local-task Harbor image sha256:61cb28261d56 built; /tests upload and /opt package identities verified. Official/local entries exit 1 and reward 0 on original sorry; both actual-function supplements exit 0, covering fixed Spec load/audit, observed ubuntu uid 1000 compile, complete type comparison, sorryAx rejection, canary, frozen/tree negatives, name/cache/environment shielding and missing/tampered package rejection without regeneration. Frozen-text Transcendental:=True attack compiled then failed full type comparison and actual main. Normal import rules retained; no general external-module whitelist added. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-247-strong-condition/attempt-002/step4-evidence-recheck.json. Original 15 immutable files unchanged. Prior own containers 621584e399ab and 5cf176393a43, task image 61cb28261d56 and network were removed; attempt-002 reconfirmed absent, created no Docker resources, and left shared resources/cache untouched. Resource evidence: attempt-002/resource-verification.json."
+      "note": "保留既有固定预编译 Spec 实现。本次在匹配 Harbor Docker 中从本题可信 golden 隔离重生成并独立审计：完整 n、hn、h，universes=[]，仅标准公理；源码、olean、ilean 均与两份交付包逐字哈希一致。当前本地 task 经 Harbor force_build 验收，镜像 sha256:990c0ad53ffafc75181f47257d57f1b4f9ab3693f78943e98fba4eb13fd92e42；/tests 上传和 /opt 包全部哈希核对通过，两份 checker 内容/AST 一致，15 个 immutable 不变。两入口实际退出 1、reward=0，原因均为原题 sorry，非实现故障。两包各 28 项实际函数补测通过：固定 Spec 加载/可信审计、观测 ubuntu uid1000 编译、完整类型比较、目标 sorryAx 拒绝、sorry canary、冻结/越界/树形负例；冻结文字不变的 Transcendental:=True 偷换编译后被完整类型比较及 main 拒绝；候选同名源/缓存/环境不能遮蔽 Spec；产物缺失/篡改及清单篡改均失败且不重生成。保留正常 imports 和原安全检查，未增加外部模块通用白名单或 initializer 沙箱。见 E/generation-commands.json、generation.log、generation-comparison.json、delivery-verification.json、validation-commands.json、validation-coverage.json。本题容器 50254e778ec2 已 stop/rm，任务镜像 990c0ad53ffa 和网络 erdosproblems-247-strong-condition-g61-a001-247b__env_default 已移除并 inspect 核实不存在；未触碰预存资源或共享缓存。见 E/cleanup.json、cleanup.log。"
     },
     "statement_fidelity": {
       "has_issue": false,
       "repair_status": "not_needed",
-      "note": "Re-read full Target, original problem LaTeX and Erdős–Graham 1980 printed p.61 image; known strong-condition variant matches pinned source. Checked quantifiers, StrictMono, geometric convergence, rpow/toEReal and finite index/initial-zero shifts. statement_status=consistent retained; mathematical inputs unchanged. Evidence: attempt-002/step5.json and prior statement-review.json."
+      "note": "重读完整 Target、锁定上游全文、题目 LaTeX 和 Erdős–Graham 1980 原书 p.61 扫描。本题为已知 stronger-condition 合理变体；检查了量词、StrictMono、几何级数收敛、rpow/toEReal、零起点及有限移位，未发现导致命题不成立的明显错误。保留 statement_status=consistent，未改任何数学输入。见 E/statement-review.json、research/pinned-source.txt、research/problem-latex.txt。"
     },
     "public_lean4_proof": {
       "has_issue": null,
       "repair_status": "not_repaired",
-      "note": "Full task ID again absent from skill CSV. Prior multi-source proof searches and candidate exclusions reviewed; supplementary searches followed new TauCeti lacunary-series leads, whose actual Lean source covers only c^k with c>=3, not this arbitrary-sequence target. Upstream/PRs 2540/3065 retain sorry; lean-genius general theorem uses a new axiom, ratio-growth/factorial proofs are narrower. Claimed complete proof in prize PR 3080 still points to HTTP 404 source; pinned/current tree, comments and global code APIs remain 403/rate-limited. No complete target proof verified or compiled; metadata remains unknown/blocked, not a claim of nonexistence. Evidence: attempt-002/public-proof-review.json and prior public-proof-review.json."
+      "note": "完整 task ID 精确匹配技能 CSV 未命中。复核既有本题检索并执行多组新搜索，实际读取上游、PR2540/3065、lean-genius、ratio-growth、TauCeti 及 Mathlib 源码；前者仍 sorry/axiom，其余为较窄特例或基础设施。新跟进 AlphaProof Nexus：247 仅在 attempted 列表，实际成功证明目录无 247；另一个 lean-proofs 仓库列表也无本目标。Prize PR3080 声称完整证明的精确源仍 HTTP404，树/评论 HTTP403 限流，关键线索无法核实，故保留 metadata unknown/blocked；不声称证明不存在。见 E/csv-exact-match.json、public-proof-review.json、research-fetch.json。"
     }
   }
 }

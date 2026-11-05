@@ -8,6 +8,11 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "suspect"
+statement_status_note = "The retained hypothesis is GRH for primitive Dirichlet L-functions, whereas Hooley's density theorem uses Dedekind zeta RH for generally non-abelian Kummer fields. This is a concrete assumption-strength concern, not a counterexample or proof of falsity; mathematical inputs are unchanged. See repair-report.json and the evidence source review."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact skill CSV ID absent. Multi-query search and upstream/source review found no complete proof of the retained positive-density statement. cadamcat/artin-primitive-roots-lean4 proves only infinitude; upstream conditional density target still has sorry and now assumes HooleyHypothesis. GitHub code search requires sign-in and history API is rate-limited, so unindexed branches/forks remain unverified."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/Wikipedia/ArtinPrimitiveRootsConjecture.lean"

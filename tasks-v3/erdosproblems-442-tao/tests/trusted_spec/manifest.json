@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-442-tao",
+  "target_name": "Erdos442.erdos_442.variants.tao",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "fdd0b0279f0498f5c668a908579d903cff1ea0959622868e60f3592340d866fc",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "ae1a221f617bbd6daed227e0731dacd1f510be3dd547853322aae3f456f85020",
+    "FCBTrustedSpec.ilean": "440454b3366c7b387c2325c642e4174c50fa9bf7fc7f517e23dc42aedcbd42ff",
+    "FCBTrustedSpec.lean": "2aec2f16344e84e04b4b1d71f1452ab70a04e09d6c6faf852dd808816d375aac",
+    "FCBTrustedSpec.olean": "f56be5b747378b7935f1d9059a4f1a7d82915c07d2d1fc89fcbc99005f84cb92",
+    "audit.log": "21b941a8e4d9279dd6b111ed1915db66570b57df25bc93e12a2abb314a6533cd",
+    "generate.py": "a9c8ed603d229d4fb53c16f179ab8e731a813dd44b43a52a651959eafdb870d3",
+    "reproduce.sh": "ede6a2a9636394e9b93ab45c02647e96820f334d723375ff378758ff00312c70"
+  },
+  "generation_image": "sha256:e21dc171550d4c49aceba963047d00d1a350ce711019cbd9cb32c4770c7a39df",
+  "generation_command": "docker exec -u root erdosproblems-442-tao-spec-g61-a001-8b91 bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Full kernel type extracted using Lean parser/elaborator from this golden without Submission. Temporary target environment discarded. No outer forall binders; existential A, f, C, hC, hf and eventual x all retained; zero universes. ExpectedType and referenced prefix definitions transitively use only propext/Classical.choice/Quot.sound. Frozen earlier erdos_442 has sorry but is not a dependency of ExpectedType."
+}

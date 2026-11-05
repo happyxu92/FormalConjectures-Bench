@@ -73,3 +73,7 @@ RUN mkdir -p /opt/formal-conjectures-bench-checker \
 WORKDIR /app
 ENV HOME=/home/ubuntu
 USER ubuntu
+
+# Exercise the same build as the checker without granting write access to the
+# trusted dependency. Missing precompiled imports must fail the image build.
+RUN lake build +FormalConjecturesBench.Target

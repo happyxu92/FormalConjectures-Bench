@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-392-implication",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式加入 .lake/packages；容器中三路径 rg 搜索到 package 内 add_comm 定理，退出 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 imports；补齐 Dockerfile 末尾 ubuntu RUN lake build +FormalConjecturesBench.Target。当前本地任务经 Harbor force_build 构建完成，同一子容器 ubuntu 复编译退出 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能脚本两次，均为 no_issue；原头通过、改头及去掉 := 拒绝，冻结基线未改。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离候选提取并预编译 ExpectedType（完整 h/A/hA，universes=[]），传递公理审计仅标准三公理；两包/两 checker AST与字节、/tests上传包和/opt包、全部 immutable 哈希一致。固定加载产物，不运行时生成/回退。当前本地 Harbor final 构建及两入口实际验收；原题 sorry 按预期退出1/reward0。同子容器两入口补测均通过：Spec审计、ubuntu编译、完整类型、目标公理拒绝/允许、sorry canary、冻结/越界/语义换名/缓存遮蔽/缺失/篡改；换名攻击在可信前缀下构建拒绝，其原始环境编译出的错误完整类型另由实际比较函数拒绝；仅改 h 的无公理负例也拒绝。曾因并发补测触发8GiB OOM，串行重试通过，日志保留。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-392-implication/attempt-001/validation-summary.json。已核实清理本题 spec 容器及初次/final Harbor 容器、两任务镜像及两网络；镜像 aacb6b1473b4 / fa7ffc5b065e 均已不存在。预存共享缓存 e21dc171550d 保留。见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 consistent，未改数学输入。锁定命题 main(n²)→lower(n) 与 pairing 注释/上游修正 #5525 的方向相反，但 lower 是独立已知结果，不能据此判该变体为假。量词、最小正因子个数、实数运算及 atTop 已核对；见 research-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整ID精确查技能CSV未命中，已多组检索并读取源码、仓库树/分支及上游PR。同名公开证明为 lower→main，排除；PNT+ Solution_1/2 只有相关上界，未验证覆盖本题完整 IsLeast/little-o 命题。主要题目页/论坛受Cloudflare阻挡，保留 unknown/blocked，不断言无公开证明。详见证据 public-proof-review.json。"
+    }
+  }
+}

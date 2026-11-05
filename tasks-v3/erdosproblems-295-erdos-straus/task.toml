@@ -8,6 +8,11 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+statement_status_note = "Known Erdos-Straus asymptotic-bound variant. Frozen Fin k.succ counts one fewer term than the usual convention; additive constants absorb this shift. No mathematical statement or definition changed. The independent trusted Spec now proves the identical prerequisite exists_k without sorryAx; the public frozen prefix remains untouched."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact skill CSV miss. Renewed multi-query/source review: upstream target remains sorry; Sodelin proves only a finite N=18 bound. Followed direct diffs for purported solve PRs #3096/#2572: category-only changes, no proof; #6952/#5344 only change definitions. Direct source alternatives were checked rather than treating GitHub code-search authentication as decisive. The claim author's public ai-erdos repository/PDF was followed and explicitly disclaims formal verification. The primary current problem/proof-claim inventory remains HTTP 403, so unknown/blocked is retained rather than asserting exhaustive absence."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/295.lean"

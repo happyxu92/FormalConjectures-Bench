@@ -1,0 +1,13 @@
+audited ExpectedType and transitive dependencies: [Classical.choice, propext, Quot.sound]
+complete RHS binder count: 4; conclusion: ∃ o,
+  ∃ (_ : o =o[Filter.atTop] 1), ∀ k ∈ S, ↑(f k) = (1 + o k) * Real.exp 1 / (Real.exp 1 - 1) * (↑k + 1)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+True ↔
+  ∀ (f : ℕ → ℕ) (S : Set ℕ),
+    S = {k | ∃ n, StrictMono n ∧ 0 ∉ Set.range n ∧ 1 = ∑ i, 1 / ↑(n i)} →
+      (∀ k ∈ S,
+          IsLeast {x | ∃ n, ∃ (_ : StrictMono n) (_ : 0 ∉ Set.range n) (_ : 1 = ∑ i, 1 / ↑(n i)), n (Fin.last k) = x}
+            (f k)) →
+        ∃ o, ∃ (_ : o =o[Filter.atTop] 1), ∀ k ∈ S, ↑(f k) = (1 + o k) * Real.exp 1 / (Real.exp 1 - 1) * (↑k + 1)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

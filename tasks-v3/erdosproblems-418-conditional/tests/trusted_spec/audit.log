@@ -1,0 +1,9 @@
+audited ExpectedType and all transitive dependencies: [propext, Quot.sound, Classical.choice]
+binder goldbach: ∀ (n : ℕ), 6 < n → Even n → ∃ p q, p ≠ q ∧ Nat.Prime p ∧ Nat.Prime q ∧ n = p + q
+binder m: ℕ
+binder h: Odd m
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+(∀ (n : ℕ), 6 < n → Even n → ∃ p q, p ≠ q ∧ Nat.Prime p ∧ Nat.Prime q ∧ n = p + q) →
+  ∀ (m : ℕ), Odd m → ∃ n, m + n.totient = n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

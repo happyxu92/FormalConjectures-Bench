@@ -1,0 +1,8 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos325.IsSumThreePower: [propext]
+audited Erdos325.cardIsSumThreePowerBelow: [Quot.sound, propext, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+(fun x => ↑x ^ 0.917) =O[Filter.atTop] fun x => ↑(Erdos325.cardIsSumThreePowerBelow 3 x)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,11 @@
+FCBTrustedSpec.lean:84:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green32.HasGap: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 4
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (p : ℕ), Nat.Prime p → ∀ (A : Finset (ZMod p)), 1 < A.card → ∃ c, Green32.HasGap (c • A) ⌊2 * ↑p / ↑A.card - 2⌋₊
+def Green32.HasGap : {p : ℕ} → Finset (ZMod p) → ℕ → Prop :=
+fun {p} A L => ∃ x, ∀ i < L, x + ↑i ∉ A
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -73,3 +73,6 @@ RUN mkdir -p /opt/formal-conjectures-bench-checker \
 WORKDIR /app
 ENV HOME=/home/ubuntu
 USER ubuntu
+
+# Exercise the checker build without write access to the trusted dependency.
+RUN lake build +FormalConjecturesBench.Target

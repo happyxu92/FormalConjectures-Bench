@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-445-heath-brown",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式列出 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages。最终 Harbor 子容器以 ubuntu 实际搜索命中 Mathlib/Algebra/Group/Even.lean 的 IsSquare，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题仅导入 ProblemImports 与本地 Submission，无额外上游 import。补上 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target；最终本地 Harbor 构建及同一子容器的 ubuntu lake build 均成功。原冻结前缀及目标的 sorry 警告不属于依赖故障。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 check_unicode_header.py，修复前后均为 no_issue；原头、冻结前缀和 := 边界测试通过，未改变 EXPECTED_HEADER。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已替换候选导入后重解析 GoldenCheck 的路径。从本题不可变 golden 隔离 Submission，提前提取完整类型为 ExpectedType 定义；universes=[]，完整外层参数 c、c>3/4 及其后所有量词均保留。匹配 Lean 4.27.0/x86_64 Docker 中预编译并独立审计 ExpectedType/Erdos445Prop 的传递公理仅有标准三项，临时目标未导出。两份可信包及 checker AST/字节相同，清单哈希固定；运行时只加载 /tests 或 /opt 的已校验产物，固定可信依赖优先于候选路径，不生成或回退编译 Spec。保留原冻结、越界、源码限制、公理和 canary 检查，无通用外部模块白名单或 initializer 沙箱。最终从当前本地 task 经 Harbor force_build 构建镜像 sha256:425c2faf964898e0d121376579e3467851f700dd953e540f770b428c9f216e07；上传 /tests、镜像 /opt 包及 golden、本地 /app 输入哈希均匹配。两实际入口均因原题 sorry 预期退出 1，reward=0，不表示原题证明通过。同一最终子容器对正式/本地包各完成 29 项实际函数补测：Spec 加载及审计、ubuntu uid=1000 编译、完整类型匹配、目标 sorryAx 拒绝、canary、冻结/越界负例、冻结文本不变的 LT 实例偷换（可编译且公理合法但完整类型拒绝）、候选同名缓存/依赖/环境遮蔽、产物缺失及篡改且不再生成。全部补测通过，无未覆盖的必需验收路径。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-445-heath-brown/attempt-001（generation.log、static-final.json、delivery-hashes.json、coverage-*.json、Harbor 及两入口日志）。Docker 清理已完成并 inspect 核实：本题 3 个容器、2 个网络、2 个任务镜像及其 ID（5abbaae9ef8c、425c2faf9648）均已移除；预存 e21dc171550d 依赖镜像和共享缓存未动。无遗留本题资源，详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata.statement_status=consistent。已核对完整 Erdos445Prop、量词、自然数域、实数幂、严格开区间及 c>3/4。Heath-Brown 2000 pp.380-382 与 Browning-Haynes arXiv:1204.6374 pp.1-2 的任意区间判据支持该已知变体；拆分模 p 的环绕区间给出对所有 n 统一的阈值，c>=1 可用较小指数区间包含处理。未发现明显错误；不修改数学陈述或定义。来源及推导见 statement-review.json；原始上游、论文均已保存。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "public_lean4_proof=unknown，status=blocked。已按完整 ID 精确查技能 CSV，未命中；以完整定理名、题号、Kloosterman/短区间逆元/Heath-Brown 等多组关键词检索上游、GitHub PR/仓库、Mathlib、Conjectures.io、AxiomMath、LeanGenius。实际读取上游 main 及 PR2429 均为 sorry；追踪 LeanGenius 部署数据及完整 Lean 文件，发现 heath_brown_2000 是新增 axiom，不能算完整证明；另两个同题仓库只有标题或 2+2=4 fixture。未核实任何完整证明，但关键 GitHub code/PR-comment API 403 限流，MathOverflow 亦 403，不能宣称已确认不存在。检索词、候选排除原因和访问记录见 public-proof-review.json、fetch-results.json 及后续源码证据；未将公开答案加入任务。"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+FCBTrustedSpec.lean:42:8: warning: declaration uses 'sorry'
+extracted universe parameters: []
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited ExpectedType and all referenced prefix dependencies: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 4
+universe parameters (in order): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (N : ℕ), ∀ A ⊆ Finset.Icc 1 (2 * N), A.card ≥ N + 2 → ∃ a ∈ A, ∃ b ∈ A, a ≠ b ∧ a + b ∈ A
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

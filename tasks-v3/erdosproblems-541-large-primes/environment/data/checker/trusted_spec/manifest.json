@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-541-large-primes",
+  "target_name": "Erdos541.erdos_541.variants.large_primes",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "2f03614dba5bb9a3c3245d152afcac1d905cb52dc6d1e04fcc7b071537f85495",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "0ed5e59be1d08b093cae6a4612a291e2772a76626af77735f23f4d4c10839e09",
+    "FCBTrustedSpec.ilean": "ad00a4a44255e34ed051eee6a3718182e28529e3522f8c7885c8693e8dc24708",
+    "FCBTrustedSpec.lean": "90fcb43f881d1bbfe268fedb3268926ebfbba8dd46c7ec7e873eadc5465557d9",
+    "FCBTrustedSpec.olean": "c2ce6d921f3fc0ceed96a7d0262f020538c7b988e880e1c378d69d0a98a86a34",
+    "audit.log": "d0bc68e811610d95af1ca6221ab6764f54b5858741cbca0c3438e6b5469742f3",
+    "generate.py": "f7a7abbfb5886a1b4c933278b8a26d511ad08fbcd6d55de532395c92c8bb35d4",
+    "reproduce.sh": "92f1b99a09ed15ab1e854f2b9082a81d91c855488cf6c7caf030cff8ed0b342a"
+  },
+  "generation_image": "sha256:e21dc171550d4c49aceba963047d00d1a350ce711019cbd9cb32c4770c7a39df",
+  "generation_command": "docker run -d --network none --name erdosproblems-541-large-primes-spec-g61-541lp1 fcb-repair/erdosproblems-252-k-eq-four:252four-20261102-183405 sleep infinity; docker cp generation-input erdosproblems-541-large-primes-spec-g61-541lp1:/tmp/repair-bundle; docker exec -u root erdosproblems-541-large-primes-spec-g61-541lp1 bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Full eventual proposition, no outer explicit binders and no universes. Temporary target and children absent. ExpectedType and all referenced prefix definitions transitively have only standard axioms. The two unrelated preexisting sorry theorems are preserved but not dependencies of ExpectedType."
+}

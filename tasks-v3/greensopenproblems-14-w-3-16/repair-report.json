@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-14-w-3-16",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式加入 .lake/packages；在匹配容器中实际搜索 def factorial，找到 Mathlib 源码，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题没有额外上游 import。补齐 Dockerfile 最终 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target；当前本地 task 经 Harbor force_build 成功，同一最终子容器 ubuntu 构建退出码 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已在修改前和最终状态实际运行技能 Unicode 脚本，均为 no_issue；定理头及冻结基线未修改。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题可信 golden 隔离候选提取完整类型及 universes，预编译 ExpectedType（W 3 16 = 238；零外层参数、零 universe 参数），独立导入审计其及 W/mixedMonoAPGuaranteeSet 的传递公理。两份 Spec/清单与 checker 内容、AST 均一致。固定路径加载预编译包，无运行时生成或命题重解析。最终本地 Harbor 镜像 40bce86914cd，/tests 上传包及 /opt 包均核对哈希；两入口因原题 sorry 预期退出 1、reward=0，并分别在同一子容器补测实际函数 29 项通过：可信审计、ubuntu 编译、完整类型、公理、canary、冻结/越界、OfNat 238 实例语义偷换、缓存遮蔽、产物缺失/篡改。原始证明仍未完成，不是证明通过。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-14-w-3-16/attempt-001/validation-summary.json。Docker 清理完成并核实：本题 3 个容器（993304b28111、0a8abb68eef7、baf0b4cbd1c2）、2 个任务镜像（0867b55143f4、40bce86914cd）及 2 个任务网络均已移除；预存匹配依赖镜像与共享缓存保留。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。已核对完整定义、AP 的精确基数约束、Green 原题和 AKS14（arXiv:1102.5433）定义 1.1/表 1；W(3,16)=238 是合理的已知精确值变体，未发现明显数学错误。陈述、定义、公开 Target、所有 golden、GoldenCheck 及冻结哈希保持不变。见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。已做 14 组检索，读取上游、PR6061 链接的 Konamiu fork Lean 源码、formal_ramsey、OpenAI 数量界 comparator，并跟进 issue7680/Zenodo 等；未核实覆盖本题的完整允许公理证明。相关小参数证明或 (3,20)/(3,21) 结果不覆盖本题。GitHub 全局代码搜索 HTTP 401，关键检索覆盖受阻，保留 public_lean4_proof=unknown、状态 blocked，不断言不存在。见 public-proof-review.json 和抓取日志。"
+    }
+  }
+}

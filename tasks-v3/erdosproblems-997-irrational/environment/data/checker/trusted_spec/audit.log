@@ -1,0 +1,18 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos997.IsWellDistributed: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0 (closed existential proposition)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ α, Irrational α ∧ ¬Erdos997.IsWellDistributed fun n => Int.fract (α * ↑(Nat.nth Nat.Prime n))
+def Erdos997.IsWellDistributed : (ℕ → ℝ) → Prop :=
+fun x =>
+  ∀ ε > 0,
+    ∀ᶠ (k : ℕ) in Filter.atTop,
+      ∀ (n : ℕ) (a b : ℝ),
+        0 ≤ a →
+          a ≤ b →
+            b ≤ 1 →
+              have count := {m ∈ Finset.Ioc n (n + k) | x m ∈ Set.Ico a b};
+              |↑count.card - (b - a) * ↑k| < ε * ↑k
+'Erdos997.IsWellDistributed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

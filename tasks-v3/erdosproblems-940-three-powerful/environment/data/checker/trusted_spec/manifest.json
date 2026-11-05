@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-940-three-powerful",
+  "target_name": "Erdos940.erdos_940.variants.three_powerful",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "8794fa76dcddf4977c13bb49e15e38753651a13e286bba190000f5847ba37e25",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "ac47af31b815993de7ea253805cc4512eb93e3751b7c8fba6db7310521e07c8e",
+    "FCBTrustedSpec.ilean": "07f53472f7d401bfaf7af97b3f9a722453fc3406b52c0495964b232db717fa1d",
+    "FCBTrustedSpec.lean": "7d58b5fed989e50092cf5f7a9844d74f99ac07c1cc27a258b4b10628b325f48e",
+    "FCBTrustedSpec.olean": "4cf7a43d0360b560c8053e838c28cb92db12eaa0086b20cbbd5d2930a58dd338",
+    "audit.log": "80c7c25aa11bfeb33912b1ea6b99341991b7b59d1e6739b1d07a4c9bdae3383c",
+    "generate.py": "cd7740df30bde4c576782ac8aadc6bc7c77d08bed4a4f18b41a929a39a9901e3",
+    "reproduce.sh": "2f2cb02ddb38c1783a852797cf72e88539766e17024a2101fd4cdf9fb19686e1"
+  },
+  "generation_image": "sha256:e21dc171550d4c49aceba963047d00d1a350ce711019cbd9cb32c4770c7a39df",
+  "generation_command": "docker exec -u root erdosproblems-940-three-powerful-spec-g61-940p-a001 bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Complete elaborated Eventually proposition captured with all inner quantifiers, no outer Pi binders or universe parameters. Temporary target/children absent. Transitive ExpectedType dependency audit allows only standard axioms; unrelated frozen prefix sorry declarations are not dependencies."
+}

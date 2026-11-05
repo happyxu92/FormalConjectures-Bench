@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-36-haugland-2022",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 及 .lake/packages；bash 语法校验与最终 Harbor 容器内 package 定义搜索均通过。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "没有额外上游 imports；原 Dockerfile 缺少末尾普通用户验收，已增加 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。最终本地 Harbor 构建及容器内 ubuntu 同命令均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本，修复前后均为 no_issue；两份头、可信原始输入及拒绝变更头/缺失 := 的检查通过，无需修改头。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离 Submission 后提取完整类型，编译 ExpectedType，universes=[]、外层参数数=0；审计 ExpectedType 与四个相关定义的传递公理仅含允许标准公理。两份固定 Spec 包、checker 内容/AST 与 immutable 哈希一致。checker 固定加载已校验预编译产物，不运行时生成或重解析预期命题。最终本地 Harbor trial erdosproblems-36-haugland-2022-g61-36c8-final 构建成功；/tests 与 /opt 包逐文件哈希匹配。正式入口、本地入口均因原题 sorry 预期退出1，reward=0；同一子容器两套实际函数补测通过 Spec 审计、ubuntu 编译、完整类型、公理拒绝 sorryAx、canary、冻结/越界/语义偷换/缓存遮蔽/缺失及篡改负例，非原题完整证明通过。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-36-haugland-2022/attempt-001。Docker 清理已核实：本题3个容器、2个镜像（bcd535166dbf、6da0d3bc0968）及2个网络均已移除；预存共享依赖镜像保留，未清理资源为0。见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。逐项核对 Overlap、MaxOverlap、非空平衡分割的 M、实数商及 limsup；White 2201.05704 引言明确给出极限存在及 μ≤0.3809268534330870，Haugland 作者页及51阶构造亦吻合。此题是已知上界变体，不是求开放问题精确常数。未改动陈述或定义。见证据 research-review.json 与保存的原始来源。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "public_lean4_proof=unknown，status=blocked。完整 ID 精确匹配技能 CSV 未命中；完成11组检索及上游、作者、Mathlib/GitHub、相关PR与仓库核查。上游本目标仍为 sorry；Linrock 源码只证明其他界及收敛，PR2894仍保留本目标 sorry，计算证书不构成完整 Lean4 证明。论坛 HTTP403、GitHub 代码搜索 HTTP401，不能确认公开完整证明是否存在；详见 research-review.json、public-csv-match.json、source-fetch-results.json。未捆绑公开答案。"
+    }
+  }
+}

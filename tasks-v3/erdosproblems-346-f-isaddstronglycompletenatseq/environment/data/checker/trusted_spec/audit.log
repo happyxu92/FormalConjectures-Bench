@@ -1,0 +1,13 @@
+FCBTrustedSpec.lean:38:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:48:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos346.f: [propext, Classical.choice, Quot.sound]
+complete outer binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+IsAddStronglyCompleteNatSeq Erdos346.f
+def Erdos346.f : ℕ → ℕ :=
+fun n => if Even n then Nat.fib n - 1 else Nat.fib n + 1
+'Erdos346.f' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

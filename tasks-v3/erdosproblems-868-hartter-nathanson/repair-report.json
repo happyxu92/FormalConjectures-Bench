@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-868-hartter-nathanson",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；在 Harbor 子容器以 ubuntu 实际检索包内 card_empty，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import。补上 Dockerfile 最终 USER ubuntu 的 RUN lake build +FormalConjecturesBench.Target；当前本地任务经 Harbor force_build 成功，子容器同命令复验退出码 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本并最终复验，均为 no_issue；原头、冻结前缀和 := 边界校验通过。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题 immutable golden 隔离候选 elaboration 提取完整 ExpectedType（o、ho，无 universe 参数），在匹配 Docker 中预编译并递归审计仅依赖允许公理；同步两份哈希锁定包。checker 固定预编译来源、不运行时生成或重解析目标，比较完整类型；保留原安全检查及正常 import。当前本地 Harbor 镜像 acba5c219980 的 /tests 上传包、/opt 包与宿主哈希全部一致。正式/本地入口均退出 1，reward=0，仅因原题 sorry；同一子容器分别从两包实际补测 Spec 审计、ubuntu 编译、完整类型、公理/sorry canary、冻结/越界/语义偷换/缓存遮蔽/产物缺失及篡改负例全部通过。公开 Target、golden、GoldenCheck、冻结基线及数学定义未改。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-868-hartter-nathanson/attempt-001（generation.log、delivery-hashes.json、validation-coverage.json、static-final.json、immutable-final.json）。Docker 已清理并复核：两个本题容器 021e37a35d5d、322dde1aa883 已 stop/rm，本题镜像 acba5c219980（含 tag）与专属网络 e6d18269b1ca 均已移除；预先存在的共享基镜像及构建缓存保留。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。本题是所有阶 o>1 的无极小渐近子基存在性变体，不是原问题的对数表示数条件。已核对锁定上游、完整前缀、渐近加法基定义及 Nathanson 作者论文 nath1990-76.pdf 第197–198页的 A={1}∪oℕ 例子；未发现导致命题不成立的问题。erdosproblems.com 返回403，但作者全文可读。未改任何陈述或定义，详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "按完整 task ID 精确命中技能 public-lean4-proofs.csv，已标记 public_lean4_proof=true；依要求无需联网复核或编译。来源：https://github.com/hjyuh/formal-conjectures/blob/e0da6ec78953b17618895a093d4bee90fd3f6f67/FormalConjectures/ErdosProblems/868.lean#L132 。未把公开答案放入任务或镜像。"
+    }
+  }
+}

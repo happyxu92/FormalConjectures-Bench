@@ -57,7 +57,9 @@ RUN find /opt/formal-conjectures/.lake/packages -path '*/.lake/config/*/lakefile
 
 WORKDIR /app
 COPY data/ /app/
-RUN mkdir -p /opt/formal-conjectures-bench-checker \
+# Fail rather than deliver a stale same-size GoldenCheck from a build-context cache.
+RUN echo '3e56caf6445a32bcc5bdaa9171f9e086d26e6856dda82180dde7fd50e8d89a0c  /app/checker/GoldenCheck.lean' | sha256sum -c - \
+  && mkdir -p /opt/formal-conjectures-bench-checker \
   && cp -a /app/checker/. /opt/formal-conjectures-bench-checker/ \
   && rm -rf /app/checker \
   && find /opt/formal-conjectures-bench-checker -type d -name __pycache__ -prune -exec rm -rf {} + \
@@ -73,3 +75,7 @@ RUN mkdir -p /opt/formal-conjectures-bench-checker \
 WORKDIR /app
 ENV HOME=/home/ubuntu
 USER ubuntu
+
+# Exercise the same build as the checker without granting write access to the
+# trusted dependency. Missing precompiled imports must fail the image build.
+RUN lake build +FormalConjecturesBench.Target

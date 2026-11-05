@@ -1,0 +1,9 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos890.omegaGt: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Filter.limsup (fun n => ↑(ArithmeticFunction.cardDistinctFactors n) * (↑(Real.log (Real.log ↑n)) / ↑(Real.log ↑n)))
+    Filter.atTop =
+  1
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

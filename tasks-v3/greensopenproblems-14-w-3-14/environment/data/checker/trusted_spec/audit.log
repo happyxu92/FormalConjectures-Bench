@@ -1,0 +1,16 @@
+audited FCBTrustedSpec.ExpectedType: [Classical.choice, propext, Quot.sound]
+audited Green14.W: [Classical.choice, propext, Quot.sound]
+audited Green14.mixedMonoAPGuaranteeSet: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Green14.W 3 14 = 186
+def Green14.W : ℕ → ℕ → ℕ :=
+fun k r => sInf (Green14.mixedMonoAPGuaranteeSet k r)
+def Green14.mixedMonoAPGuaranteeSet : ℕ → ℕ → Set ℕ :=
+fun k r =>
+  {N |
+    ∀ (coloring : ↑(Set.Icc 1 N) → Fin 2),
+      (∃ s, {x | ∃ s' ∈ s, ↑s' = x}.IsAPOfLength ↑k ∧ ∀ x ∈ s, coloring x = 0) ∨
+        ∃ s, {x | ∃ s' ∈ s, ↑s' = x}.IsAPOfLength ↑r ∧ ∀ x ∈ s, coloring x = 1}
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

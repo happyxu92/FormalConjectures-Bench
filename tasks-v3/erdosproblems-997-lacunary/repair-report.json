@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-997-lacunary",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式包含 packages；在最终 Harbor 容器中以 ubuntu 搜到 package 中的 HasProd 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题只有 ProblemImports 和 Submission，无额外上游 import；补上 Dockerfile 末尾 USER ubuntu 下的 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的最终 Harbor 构建及容器内 ubuntu 重建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能实际运行 Unicode 脚本并最终复验，均为 no_issue；头、冻结前缀及 := 边界测试通过，未修改常量。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题原始 golden 隔离 Submission，在匹配 Lean 4.27.0 Docker 中提前提取完整 n、h 类型（universes=[]），编译并独立审计 ExpectedType 及 IsWellDistributed 的传递公理；两份可信包及 checker 内容/AST 一致。运行时只加载固定哈希包，不生成或回退编译 Spec。最终本地 Harbor 镜像 87b3ded095a7，两入口均因原题 sorry 预期返回 1/reward 0；同一子容器实际函数补测通过：Spec 审计、ubuntu 编译、完整类型、公理/sorry canary，以及冻结、越界、合法名称偷换 IsLacunary、缓存遮蔽、缺失/篡改负例。原安全/import 规则保留，全部 immutable 哈希一致。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-997-lacunary/attempt-001，最终验收在 final-validation/。Docker 清理已验证：本题三个容器（spec、首次及 final）均 stop/rm，两镜像 d22e4d6c8b8b、87b3ded095a7 的 tag/ID 及两个网络均已移除；预存共享依赖镜像保留。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已核对完整 IsWellDistributed、上游 IsLacunary 及实际 a.e. lacunary 目标，并读取 Erdős 1964 原文 §III pp.58–59；eventual lacunarity、有限前缀、区间及测度量词未发现明显错误。metadata 标 consistent；数学定义、Target、golden、GoldenCheck 和冻结基线全部保留。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 未命中技能 CSV；已多组检索并核查上游、作者 gist、Jayyhk 源码、AlphaProof 输出及相关 PR/分支。PR 3247/2725 只改类别且保留 sorry；已见素数序列证明不覆盖本 lacunary 目标。Vela 相关证明线索 HTTP 500、GitHub 代码搜索需登录，故 metadata 标 unknown/blocked，不能宣称没有公开证明。详见证据 public-proof-review.json 和抓取记录；未将公开答案放入镜像。"
+    }
+  }
+}

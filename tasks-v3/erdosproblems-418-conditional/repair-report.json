@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-418-conditional",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit .lake/packages search path; actual container search found Mathlib's Nat.totient definition (exit 0)."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports. Added missing final ubuntu RUN lake build +FormalConjecturesBench.Target; current local Harbor image build and same-container ubuntu build passed."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Required skill script executed before and after repair: no_issue; original/mutated header and assignment-boundary tests passed."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Replaced candidate-environment GoldenCheck reparsing with isolated golden-derived, precompiled Spec and complete type comparison (goldbach, m, h; universes []). Both trusted packages match; independent transitive axiom audit passed. Current local task Harbor image sha256:de38d4e9b1d596ba6146f37314d542731af2601ef94fcf9a25df2fc85153677d built successfully; uploaded /tests and installed /opt packages/golden match local hashes. Both entries exit 1/reward 0 only for original sorry. Same-container real-function supplements passed under both entry configurations, covering ubuntu uid 1000, compilation, complete types, target sorryAx refusal, canary, frozen/confinement rules, legal Odd-name semantic attack, cache/dependency shadowing, missing/tampered artifacts and no fallback. Immutable hashes and checker AST/content match. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-418-conditional/attempt-001. Docker cleanup verified: stopped/removed containers 10e93d63d314 and f7e3b0857fd4, removed task image de38d4e9b1d5 and network c9df5253aff0. Pre-existing shared generation image/build cache retained; no outstanding task resources."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked consistent: this is the conditional cototient variant, not the infinitude theorem. Pinned upstream source and related literature page read. Cases m=1,3,5 use n=2,9,25; for odd m>=7, distinct primes p+q=m+1 give m+phi(pq)=pq. Original problem page/OEIS returned 403, but readable pinned source and direct arithmetic suffice for this review. No mathematical inputs changed."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true via exact task-ID match in skill CSV: https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/418.lean#L69 . No further network verification required; public proof not installed or compiled as a task submission."
+    }
+  }
+}

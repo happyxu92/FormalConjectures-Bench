@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-6-erdos-6",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md now explicitly searches /app, /opt/formal-conjectures and .lake/packages; syntax checked and ubuntu rg found Set.infinite_univ in mathlib (exit 0)."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports. Added required final USER ubuntu RUN lake build +FormalConjecturesBench.Target; current local Harbor image build and same-container ubuntu build succeeded."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Skill Unicode script ran before and after repair: no_issue, original header accepted; changed header and missing := rejected. No surrogate issue."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated parser/elaborator-derived ExpectedType from isolated original golden in matching Lean 4.27.0 Docker; zero binders/universes, independent transitive allowed-axiom audit passed. Synchronized pinned precompiled packages; fixed trusted import paths and complete type comparison replace runtime GoldenCheck parsing. Current local task Harbor build and /tests vs /opt hashes matched. Both entries exit 1 only for unchanged original sorry (official reward 0); same final container actual-function tests cover Spec loading/audit, ubuntu compilation, full type match, target axioms, canary, frozen/out-of-bounds/name-shadowing/cache-shadowing/missing/tampered negatives, including sorry-free Erdos6.primeGap n := n rejected by type comparison. Initial final-rebuild subnet overlap was resolved by removing only our stopped initial container/network and retrying. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-6-erdos-6/attempt-001. Docker cleaned: spec container cb40fb84f564, initial Harbor aef9408a025f and final Harbor 5d394b501633; both task image tags/IDs and own networks removed and absence checked. Preexisting shared dependency image/cache retained."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Actual target is infinitely many runs of three strictly increasing consecutive prime gaps, matching BFT15 Corollary 1 (m=3), https://arxiv.org/html/1311.7003v3 and pinned upstream 6.lean. Checked primeGap Nat.nth definition; no truncation/index/quantifier issue. erdosproblems.com returned 403; original paper accessible. Mathematical statement/definitions unchanged."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact full-ID match in skill CSV; public_lean4_proof=true. https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos6.lean#L154 (also main URL in public-csv-match.json). Per instruction no renewed online proof verification; proof not compiled here or bundled."
+    }
+  }
+}

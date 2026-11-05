@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-14-w-3-6",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；最终 Harbor 子容器实际搜索三个目录，命中 Mathlib 的 Irrational 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 Dockerfile 缺少末尾普通用户构建验证，已添加 USER ubuntu 后的 RUN lake build +FormalConjecturesBench.Target。本题无额外上游 import；最终本地 Harbor 构建及容器内 ubuntu Target 构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "技能 Unicode 脚本修复前、最终复验均为 no_issue；原头通过，改头与删除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题 immutable golden 隔离提取并预编译 ExpectedType（完整 W 3 6 = 32，零外层参数、零 universe），审计其及两项前缀定义的传递依赖仅含标准允许公理；两份包、checker AST/内容及全部 immutable 哈希一致。运行时只加载固定产物，不重新生成或解析预期命题。最终本地 Harbor trial greensopenproblems-14-w-3-6-g61-a001-6d42-r2，镜像 sha256:58d3b93dc04fd45f6674aba558fdafac27cadcd0b10c44370829a953accf5049；/tests 上传与 /opt 安装包逐文件匹配本地。两真实入口均因原题 sorry 预期退出 1、reward 0；同一子容器 root/ubuntu 分别完成实际函数 29 项补测，覆盖 Spec 审计、ubuntu 编译、完整类型、公理、canary、冻结/越界、可编译且公理合法的实例偷换、缓存遮蔽、缺失及篡改拒绝。首轮 /opt GoldenCheck 打包不符已通过直接 COPY 可信包修正并重新完整验收；未改任何 GoldenCheck 或数学输入。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-14-w-3-6/attempt-001/。Docker 清理完成并核实：本题 3 个容器（spec、首轮、r2）已 stop/rm，2 个镜像（2f4158a82c43、58d3b93dc04f）及 2 个网络已移除；预先存在的共享依赖镜像保留，未操作其他任务资源。详见 cleanup.json/cleanup.log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。核对 Green 原文 Problem 14、AKS14 定义 1.1/Table 1（t=6 对应 32）、锁定上游及完整 AP/区间/sInf 定义；本题是已知有限精确值，不是解决开放的渐近问题。未发现使目标不成立的明显错误，未修改陈述或定义。详见证据 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。已多组检索并读取上游 main、Konamiu 链接修订及 main、PR6061、LeanCSP、formal_ramsey、open-problems-lab 等实际源码：W_3_6 仍 sorry，相关证明是其他参数或方向。PR6061 明确不含本目标。GitHub 全局 Lean 代码搜索 HTTP 401 需要认证，不能确认未索引 fork 的情况；如实标记 public_lean4_proof=unknown/status=blocked，不断言不存在。详见证据 public-proof-review.json；未将公开答案放入镜像。"
+    }
+  }
+}

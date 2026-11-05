@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-539-sq-isbigo",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 .lake/packages；在本题 Harbor 容器实际搜到 mathlib 的 IsBigOWith 定义。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；补上 Dockerfile 最末 ubuntu RUN lake build +FormalConjecturesBench.Target。本地 task 两次 Harbor 构建及 ubuntu 实际构建通过。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "技能 Unicode 脚本两次执行成功，case=no_issue；原始头通过，修改头及移除赋值被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离提取完整类型，ExpectedType 无外层参数、无 universe；编译及传递公理审计通过，两份预编译包/清单一致。固定 Spec 路径、工具链和依赖，禁止运行时生成或回退。最终本地 Harbor 上传 /tests 与镜像 /opt 包均逐文件哈希匹配；两入口因原题 sorry 预期退出1、reward=0。同一最终子容器两套入口函数补测通过：Spec审计、ubuntu编译、完整类型、目标公理、sorry canary，以及冻结/越界/实例语义偷换/缓存遮蔽/产物缺失篡改负例。未提供原题证明。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-539-sq-isbigo/attempt-001，详见 final-validation-*.log、final-delivery-hashes.json、static-validation.json。Docker 已核实清理：3个本题容器（d1b5d98a35e4、63f861104ecf、c76a05da3eb4）、2个本题镜像（9eae6007de3c、9115b25d27f4）及2个本题网络均已删除；预存共享依赖镜像与缓存保留，详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 consistent。目标是已知 sqrt(n)=O(h(n)) 下界变体，不是完整开放估计。已读取 Granville–Roesler 原论文预印本第2页配对论证；允许0至多损失一个元素，不影响渐近下界。sSup 集非空且由n²有界。未改陈述、定义、Target、golden或冻结基线。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "CSV 按完整ID精确匹配未命中。多组检索并读取当前上游、Kitamura 的 FC/Main 与 sqrt-disproof 项目及 PR4869 patch；上游本目标仍 sorry，相关指数极限、平方下界及超sqrt结果尚未核实为本题完整目标证明。Erdős官网403，GitHub讨论/API限流，仍有覆盖及依赖桥接未确认，故标 unknown/blocked，不能断言不存在公开证明。详见 research-summary.json。"
+    }
+  }
+}

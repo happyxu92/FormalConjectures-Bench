@@ -1,0 +1,17 @@
+audited ExpectedType and all transitive dependencies: [propext, Quot.sound, Classical.choice]
+binder: A : Finset ℕ
+binder: h₁ : 0 ∉ A
+binder: h₂ : A.Nonempty
+binder: h₃ : A.gcd id = 1
+binder: h : ∀ a ∈ A, ∀ b ∈ A, ↑a / ↑A.card ≤ ↑(a.gcd b)
+complete binder count: 5
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (A : Finset ℕ),
+  0 ∉ A →
+    A.Nonempty →
+      A.gcd id = 1 →
+        (∀ a ∈ A, ∀ b ∈ A, ↑a / ↑A.card ≤ ↑(a.gcd b)) →
+          A = Finset.Icc 1 A.card ∨
+            A = Finset.image (fun x => (Finset.Icc 1 A.card).lcm id / x) (Finset.Icc 1 A.card) ∨ A = {2, 3, 4, 6}
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-36-haugland-1996-2",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 和隐藏 packages；在最终 Harbor 子容器以 ubuntu 实际检索到 Mathlib 的 IsEvenlyCovered 定义（退出码 0）。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import。补上 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target；两次当前本地 task Harbor 构建及最终 ubuntu 构建均成功，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本并最终复验，均为 no_issue；原头通过，修改头及移除 := 被拒绝，冻结头和前缀哈希未变。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境解析 GoldenCheck，存在语义遮蔽风险。现从本题可信 golden 隔离生成并编译 ExpectedType（完整类型无外层参数、无 universe 参数），审计其及全部四个前缀定义的传递公理；同步两份哈希固定 Spec 包，运行时只加载可信产物并比较完整类型。当前本地 Harbor 最终镜像 sha256:12539abab136038c6e59b0f4a1c0aceb353367f2cf1a43e3132c6997690277cf；/tests 上传包、/opt 包及 /app 与本地哈希匹配。正式及 ubuntu 本地入口均因原题 sorry 预期退出 1，reward=0，不代表证明完成；同一最终子容器两套实际函数补测均退出 0，覆盖 Spec 加载/审计、ubuntu 编译、完整类型比较、目标公理与 sorry canary，以及冻结/越界/源规则、保持冻结文字的 atTop 名称偷换、缓存/环境遮蔽、产物缺失和篡改拒绝。原安全检查和普通 import 规则保留。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-36-haugland-1996-2/attempt-001，主要见 final-validation/、static-validation.json 和 final-delivery-review.json。Docker 清理已核实：本题 3 个容器（2734e6b2f18d、a22ca7843afb、7ab6400ab083）、2 个镜像（8d9ebd9705d4、12539abab136）及 2 个 c71f 网络均已删除；共享缓存及预存资源未动，详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。完整有限平分、差值计数、自然数上确界/下确界及实数 limsup 定义与 Haugland 2016 原论文 arXiv:1609.08000 pp.1–2 相符；其更强上界也支持本题历史上界变体，未发现导致目标不成立的明显问题。仅标记，数学定义、Target、golden 和 GoldenCheck 均未修改。见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "unknown/blocked。完整 ID 精确匹配技能 CSV 未命中；已多组检索并读取上游源码、PR/历史、作者网页及公开 Lean 候选。上游本目标仍为 sorry；Linrock 仅证明较弱的 1/2 上界；Dualverse 及两条题目证明声称是下界，其他相关结果为非 Lean 数值证书。GitHub 全局代码检索 API 401、网页要求登录，不能据此宣称不存在公开完整证明。检索词、来源、排除理由与访问限制见 public-proof-review.json；未将公开答案放入题目。"
+    }
+  }
+}

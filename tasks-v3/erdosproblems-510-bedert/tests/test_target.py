@@ -326,6 +326,19 @@ def check_sorry_canary(project_dir: Path) -> None:
         fail("Verifier canary failed: sorryAx was not detected")
 
 
+# Bind only the fixed-Spec loading/build/type-comparison implementation.
+# The original source policy, frozen checks, axiom audit and canary remain intact.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import spec_support as _spec
+_spec.configure(globals())
+load_trusted_spec = _spec.load_trusted_spec
+make_fresh_golden_project = _spec.make_fresh_golden_project
+check_trusted_type = _spec.check_trusted_type
+check_build = _spec.check_build
+lean_output = _spec.lean_output
+check_golden_theorem_import = _spec.check_golden_theorem_import
+
+
 def main() -> None:
     text = target_text()
     proof_region = check_frozen_prefix_and_header(text)
@@ -334,9 +347,10 @@ def main() -> None:
     check_no_banned_patterns_in_editable_sources()
     check_extra_lean_files_confined()
     check_frozen_files_unchanged()
-    restore_dependency_config_cache()
+    load_trusted_spec()
     with make_fresh_golden_project() as tmp:
         project_dir = Path(tmp)
+        check_trusted_type(project_dir)
         check_build(project_dir)
         check_golden_theorem_import(project_dir)
         check_axioms(project_dir)

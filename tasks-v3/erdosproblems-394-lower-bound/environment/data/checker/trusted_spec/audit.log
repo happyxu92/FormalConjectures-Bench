@@ -1,0 +1,8 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos394.t: [Classical.choice, propext, Quot.sound]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+(fun x => ∑ n ∈ Finset.Icc 1 ⌊x⌋₊, ↑(Erdos394.t 2 n)) =O[Filter.atTop] fun x => ↑x ^ 2 / Real.log ↑x
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos394.t' depends on axioms: [propext, Classical.choice, Quot.sound]

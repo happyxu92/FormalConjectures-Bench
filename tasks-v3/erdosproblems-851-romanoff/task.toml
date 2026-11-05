@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact skill CSV miss. Inspected pinned/current upstream, Mathlib, public PRs and plby/lean-proofs 851 sources. The linked plby theorem proves existence of some r, not the fixed r=1 target; Romanoff PRs 2705/3227 retain sorry. GitHub global code search requires login, so existence remains unknown rather than confirmed absent. See repair-report.json and external evidence."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/851.lean"

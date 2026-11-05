@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-541-large-primes",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；真实 Harbor 容器 ubuntu 搜索 def ncard 成功，见证据 instruction-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import。补齐 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target；当前本地 task 两次 Harbor 构建成功，最终 ubuntu 构建退出 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本，case=no_issue；原始头通过，变更头及删除 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离生成完整 ExpectedType（universes=[]），匹配 Lean 4.27.0 Docker 预编译，传递依赖仅标准公理；两份包及 checker 一致。固定清单、版本和产物哈希，Spec/依赖路径优先且无运行时生成回退。最终本地 Harbor 镜像 sha256:ce33118f67f4568de0c3c603c3200314e0e23af19760d55aca0c5f7cdf1e1bb2；/tests、/opt、/app 与本地哈希一致。两入口退出 1，正式 reward=0，仅因原题 sorry。最终同一子容器 root 正式包和 ubuntu 本地包函数补测均退出 0：Spec 审计、ubuntu 编译、完整类型比较、目标 sorryAx 拒绝、canary、冻结/越界/同名模块及缓存遮蔽/缺失和篡改负例全部覆盖；冻结文字不变的 Erdos541.Set.range 语义偷换虽合法编译且公理合规，仍被完整类型比较拒绝。未声称原题证明通过，未扩展普通 import 安全范围。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-541-large-primes/attempt-001（final-entry-results.json、final-validation-*.log、final-*-delivery-hashes.json）。Docker 清理完成并复核：已 stop/rm 本题三个容器（1e5159f2e1dc、0937aecf2718、921775211a84），删除两次 Harbor 创建的镜像（9becb52f8345、ce33118f67f4）及两个本题网络；预先存在的依赖镜像与共享缓存未删除。见 cleanup.json、cleanup.log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 consistent，未修改陈述或定义。与指定上游 large_primes 一致；GHW arXiv:0902.4758 Theorem 1.1 覆盖更强的所有正模数及零剩余，故本题充分大素数变体合理。已核对索引子集、非空、同一长度、模和及不同值数目；题目网站 403，但原论文可访问。见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID 精确匹配技能 CSV 未命中；多组检索后实际读取 https://github.com/plby/lean-proofs/blob/e011328d3a6f1de3b1af7ae67d5f610498ca455d/src/v4.24.0/ErdosProblems/Erdos541.lean 。末尾 Erdos541.erdos_541 的所有素数命题直接蕴含本题 eventual 变体；完整源码无 sorry/admit/新增公理，记录标准公理审计。已标记 public_lean4_proof=true；公开 v4.24.0 证明未在本题 v4.27.0 编译，未向镜像加入答案。见 public-csv-match.json、public-proof-audit.json。"
+    }
+  }
+}

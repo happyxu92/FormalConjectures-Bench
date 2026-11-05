@@ -1,0 +1,12 @@
+FCBTrustedSpec.lean:48:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:57:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:68:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos329.sqrtPartialDensity: [propext, Quot.sound, Classical.choice]
+audited Erdos329.sidonUpperDensity: [propext, Quot.sound, Classical.choice]
+complete binder count: 2
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (A : Set ℕ), IsSidon A → Erdos329.sidonUpperDensity A ≤ 1
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

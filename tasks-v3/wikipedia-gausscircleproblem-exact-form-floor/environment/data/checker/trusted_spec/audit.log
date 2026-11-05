@@ -1,0 +1,37 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited GaussCircleProblem.N: [propext, Quot.sound, Classical.choice]
+audited GaussCircleProblem.E: [propext, Quot.sound, Classical.choice]
+complete binders: [r, hr]; universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (r : Real),
+  @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) r →
+    @Eq Int (@Nat.cast Int instNatCastInt (GaussCircleProblem.N r))
+      (@HAdd.hAdd Int Int Int (@instHAdd Int Int.instAdd) (@OfNat.ofNat Int (nat_lit 1) (@instOfNat (nat_lit 1)))
+        (@HMul.hMul Int Int Int (@instHMul Int Int.instMul) (@OfNat.ofNat Int (nat_lit 4) (@instOfNat (nat_lit 4)))
+          (@tsum Int Nat Int.instAddCommMonoid instTopologicalSpaceInt
+            (fun i =>
+              @HSub.hSub Int Int Int (@instHSub Int Int.instSub)
+                (@Int.floor Real Real.instRing Real.linearOrder Real.instFloorRing
+                  (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))
+                    (@HPow.hPow Real Nat Real (@instHPow Real Nat (@Monoid.toNatPow Real Real.instMonoid)) r
+                      (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                    (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)
+                      (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)
+                        (@OfNat.ofNat Real (nat_lit 4) (@instOfNatAtLeastTwo Real (nat_lit 4) Real.instNatCast ⋯))
+                        (@Nat.cast Real Real.instNatCast i))
+                      (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)))))
+                (@Int.floor Real Real.instRing Real.linearOrder Real.instFloorRing
+                  (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))
+                    (@HPow.hPow Real Nat Real (@instHPow Real Nat (@Monoid.toNatPow Real Real.instMonoid)) r
+                      (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                    (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)
+                      (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)
+                        (@OfNat.ofNat Real (nat_lit 4) (@instOfNatAtLeastTwo Real (nat_lit 4) Real.instNatCast ⋯))
+                        (@Nat.cast Real Real.instNatCast i))
+                      (@OfNat.ofNat Real (nat_lit 3) (@instOfNatAtLeastTwo Real (nat_lit 3) Real.instNatCast ⋯))))))
+            (SummationFilter.unconditional Nat))))
+@[reducible] def GaussCircleProblem.N : ℝ → ℕ :=
+fun r => {(m, n) | !₂[↑m, ↑n] ∈ Metric.closedBall 0 r}.ncard
+@[reducible] def GaussCircleProblem.E : ℝ → ℝ :=
+fun r => ↑(GaussCircleProblem.N r) - Real.pi * r ^ 2
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

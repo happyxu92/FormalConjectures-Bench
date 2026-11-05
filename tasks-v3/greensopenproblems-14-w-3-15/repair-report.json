@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-14-w-3-15",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md now explicitly lists /app, /opt/formal-conjectures and /opt/formal-conjectures/.lake/packages. Actual ubuntu rg search found Mathlib mem_Icc in packages (exit 0). Evidence: attempt-001/instruction-search-known.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports beyond ProblemImports and local Submission. Added final USER ubuntu RUN lake build +FormalConjecturesBench.Target. Current local Harbor Docker build and same-container ubuntu Target build succeeded; dependency permissions unchanged."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Skill Unicode script ran before and after checker repair: no_issue; original/mutated header and := boundary checks pass. Frozen header and prefix unchanged."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated Spec independently from this task's immutable golden in matching Lean 4.27.0/x86_64 Docker dependencies. Extracted full type W 3 15 = 218, zero outer binders/universes; temporary theorem removed and transitive ExpectedType/W/guarantee definitions audited with only standard axioms. Two identical trusted packages and checker AST/content verified. Runtime validates fixed manifest/artifacts and loads precompiled Spec first, with no generation/fallback or candidate Lake cache; compares full target type. Local-task Harbor build succeeded (image sha256:1df6c29421b89019df39dae9e4fde1574cc23a262c9f16d60d6ec64cb869d5bb). Uploaded /tests and installed /opt checker/Spec/golden hashes match local. Both actual entrypoints exit 1/reward 0 because original target contains sorry, as expected. Same child-container actual-function tests pass for both entry packages: Spec loading/audit, ubuntu UID/build, complete type comparison, placeholder sorryAx rejection, canary, frozen/header/config and out-of-bounds negatives, unchanged-frozen-text OfNat Nat 218 semantic attack rejected by full type comparison, same-name module/cache/env shadowing, missing/tampered artifacts/manifest fail without regeneration. Normal imports and original source/security restrictions retained; no general module whitelist/initializer sandbox added. Evidence directory: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-14-w-3-15/attempt-001 (generation.log, delivery.json, validation-*.log, Harbor records). Docker cleanup verified complete: stopped/removed own Spec container 40b1ae50aed7 and Harbor child 70b99964bf8e; removed own image/tag sha256:1df6c29421b8 and network 492e7b3de2d1. Pre-existing shared dependency image e21dc171550d retained unchanged; no other resources removed. See cleanup.json/log."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Read locked upstream, full prefix, AP cardinality definition, Green Problem 14 and AKS14 Definition 1.1/Table 1 (t=15 gives 218). Natural sInf and interval/coloring/coercion/exact AP cardinality agree with the known mixed exact-value variant. No obvious error found; no mathematical inputs changed. Evidence: attempt-001/math-review.json and aks-table1.txt."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "public_lean4_proof=unknown, status=blocked. Exact full-ID skill CSV lookup missed. Nine varied searches and direct upstream/Mathlib/related Lean source reviews found no verified complete proof of W(3,15)=218. Current upstream remains sorry; formal_ramsey proves W(3,3)=9, asymptotic projects and t=20/21 Zenodo deposit do not cover this target. GitHub code search requires login; issue API rate-limited and mirror HTTP 403, leaving fork/branch/discussion coverage incomplete. Do not infer nonexistence. Evidence: attempt-001/public-proof-review.json, public-fetch.json and public-csv-match.json."
+    }
+  }
+}

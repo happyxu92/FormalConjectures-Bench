@@ -1,0 +1,23 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos975.Erdos975Sum: [propext, Quot.sound, Classical.choice]
+complete outer binders: [f, hf, hf_pos]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (f : @Polynomial Int Int.instSemiring),
+  @Irreducible (@Polynomial Int Int.instSemiring)
+      (@MonoidWithZero.toMonoid (@Polynomial Int Int.instSemiring)
+        (@Semiring.toMonoidWithZero (@Polynomial Int Int.instSemiring) (@Polynomial.semiring Int Int.instSemiring)))
+      f →
+    @Filter.Eventually Int
+        (fun n =>
+          @LE.le Int Int.instLEInt (@OfNat.ofNat Int (nat_lit 1) (@instOfNat (nat_lit 1)))
+            (@Polynomial.eval Int Int.instSemiring n f))
+        (@Filter.atTop Int
+          (@PartialOrder.toPreorder Int
+            (@SemilatticeInf.toPartialOrder Int (@Lattice.toSemilatticeInf Int instLatticeInt)))) →
+      @Asymptotics.IsBigO Real Real Real Real.norm Real.norm (@Filter.atTop Real Real.instPreorder)
+        (Erdos975.Erdos975Sum f) fun x => @HMul.hMul Real Real Real (@instHMul Real Real.instMul) x (Real.log x)
+def Erdos975.Erdos975Sum : Polynomial ℤ → ℝ → ℝ :=
+fun f x => ∑ n ∈ Finset.Iic ⌊x⌋₊, ↑((ArithmeticFunction.sigma 0) ⌊Polynomial.eval (↑n) f⌋₊)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos975.Erdos975Sum' depends on axioms: [propext, Classical.choice, Quot.sound]

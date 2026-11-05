@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-catalan-catalans-conjecture",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 的搜索命令已显式包含 /app、/opt/formal-conjectures 和隐藏 .lake/packages；在本题 Harbor 容器以 ubuntu 实搜并命中 Mathlib，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import。原 Dockerfile 缺少最终普通用户构建验证，已追加 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的 Harbor Docker 构建成功，同一容器 ubuntu 再构建退出码 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本及最终复验，均为 no_issue；两份头、冻结前缀和 := 边界匹配，未改写头部常量。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题不可变 golden 隔离候选提取并预编译 ExpectedType：9 个完整参数，universes=[]；独立审计仅依赖 propext，无临时目标或 sorryAx。两份可信包一致，清单哈希 19f8d22edb74fa32a8cc5b2bb8257c889a5eb036adeb51afff173ff0e39a0c7d。checker 固定加载已校验产物及依赖，完整类型比较不再重新解析命题或运行 GoldenCheck，无运行时生成回退。全部标记完成后再次从当前本地 task 构建，最终 Harbor 镜像 sha256:22b97781c84c0f338d9c400d0b7c56aeb573920e4534715a3f1df7e5249b1d68 验收完成；/tests 上传包及 /opt 包哈希均与本地一致。两入口均因原题 sorry 预期退出 1、reward=0；同一子容器两包各 29 项实际函数补测通过，覆盖可信审计、uid=1000 编译、完整类型、目标公理、canary，以及冻结/越界/实例偷换/缓存遮蔽/缺失与篡改负例。原安全函数 AST、所有 immutable 哈希均保持。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-catalan-catalans-conjecture/attempt-001。Docker 清理已核实：已 stop/rm 本题 spec-g61-a001-6c41、g61-a001-6c41 和 g61-a001-6c41-final 三个容器，删除两个本题镜像（820b7e65c89a、22b97781c84c）及两个专用网络；预存共享依赖缓存保留，未清理其他资源。详见 cleanup.json。无修复验收缺口；不表示原题证明完成。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。已核对锁定上游完整前缀和定理及 MathWorld Catalan's Conjecture：正自然数底数、指数>1、3^2-2^3=1 方向一致；Nat 截断减法等于1强制真实相差1，底数1不产生解。未发现明显数学错误，未修改任何数学输入。Wikipedia 403，但可用上游与 MathWorld 足以核查。详见证据 statement-audit.json、statement-fetch.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "技能 CSV 的 task 列按完整 ID 精确命中，依规则标记 public_lean4_proof=true，无需联网复核。来源：https://github.com/cadamcat/catalan-lean4/blob/4bf1f742eb341decbdfc59ec56e1616f4d13e33b/Catalan/Final/Assembly.lean#L32 。未在本题环境编译该公开证明，未将答案加入镜像。"
+    }
+  }
+}

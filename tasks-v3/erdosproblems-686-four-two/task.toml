@@ -21,6 +21,13 @@ difficulty_explanation = "The agent must construct a Lean 4 proof of a research-
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
 verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
 
+statement_status = "consistent"
+statement_note = "Known k=2, N=4 impossibility variant, not the full open problem. Products are positive for natural n,m; clearing denominators gives (m+1)(m+2)=4(n+1)(n+2), impossible by adjacent-square bounds (or the factorization (2m+3-2(2n+3))(2m+3+2(2n+3))=-3). Pinned upstream source and its proof agree. No statement or definition changed."
+public_lean4_proof = true
+public_lean4_proof_status = "catalog_match"
+public_lean4_proof_urls = ["https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/686.lean#L72"]
+public_lean4_proof_note = "Exact full task ID matched the skill CSV. Existence accepted per skill; the proof is not bundled or compiled as a submission."
+
 [verifier]
 timeout_sec = 7200.0
 

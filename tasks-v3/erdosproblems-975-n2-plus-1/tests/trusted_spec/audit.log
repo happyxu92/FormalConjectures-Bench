@@ -1,0 +1,11 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos975.Erdos975Sum: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0 (closed existential proposition)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ c > 0,
+  Filter.Tendsto (fun x => Erdos975.Erdos975Sum (Polynomial.X ^ 2 + 1) x / (x * Real.log x)) Filter.atTop (nhds c)
+def Erdos975.Erdos975Sum : Polynomial ℤ → ℝ → ℝ :=
+fun f x => ∑ n ∈ Finset.Iic ⌊x⌋₊, ↑((ArithmeticFunction.sigma 0) ⌊Polynomial.eval (↑n) f⌋₊)
+'Erdos975.Erdos975Sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-885-k-eq-2",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；Harbor 子容器实搜命中 Mathlib 的 theorem add_comm，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 imports；补齐 Dockerfile 最终 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。本地 task 经 Harbor force_build 成功，子容器 ubuntu 实际重验退出码 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已执行技能 Unicode 脚本并最终复验，均为 no_issue；原始头通过、改头与移除 := 拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题原始 golden 隔离 Submission 提取、预编译并审计完整 ExpectedType（零外层 forall、无 universe 参数），同步两份可信包。固定清单及模块来源，不运行时生成或重解析命题；完整类型比较替换旧 GoldenCheck 路径，原源码限制/冻结/公理/canary 函数保留。当前本地 task 的 Harbor 镜像 sha256:ef102588be4f1f768267f5dc732bc303d3753977dd69440593178aa909806a84；核对 /tests 上传包与 /opt 包等 40 个文件哈希。正式及本地入口均因原题 sorry 预期拒绝（退出码 1，reward 0）；同一子容器分别以 root 入口和 ubuntu 本地路径调用实际函数，覆盖可信审计、ubuntu 编译、完整类型、公理拒绝 sorryAx、canary，以及冻结/越界/合法 LE 实例语义偷换/缓存遮蔽/产物缺失及篡改负例，全部符合预期。未声称原题证明通过或通用外部模块安全。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-885-k-eq-2/attempt-001。Docker 清理：本题容器 f78480e61d2d、e6d364f7d839 已 stop/rm，专属网络 522c712e1bfb 已删除并核实不存在；本题镜像 ef102588be4f 暂保留，因为另一题正在运行的 erdosproblems-885-k-eq-4-spec-g61-a001-885d 使用它。未删除该其他题容器或预存共享缓存；详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "核对锁定上游完整定义及 k=2 已知变体，未发现明显数学错误。独立算术见证 Ns={10,70}、共同差值 {3,9}，正整数因子保证集合有限。题目及论文摘要镜像可读，原站和论文 PDF 下载受 403 限制，未冒称读到全文。仅标记 statement_status=consistent，未改陈述、定义、Target、golden 或冻结基线。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "技能 CSV 的 task 列完整 ID 精确命中，已标记 public_lean4_proof=true；按规则无需重新联网验证。来源：https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/885.lean#L76 及 https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos885_erdos_885_variants_k_eq_2.lean#L76 。未将公开答案放入镜像，也未宣称在本题环境编译该答案。"
+    }
+  }
+}

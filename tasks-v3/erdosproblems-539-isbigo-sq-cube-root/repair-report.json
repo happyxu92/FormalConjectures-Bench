@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-539-isbigo-sq-cube-root",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 及其 .lake/packages；实际以 ubuntu 搜到 mathlib 的 theorem gcd_self，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 imports，保留 ProblemImports 预编译。补齐 Dockerfile 末尾 USER ubuntu 的 RUN lake build +FormalConjecturesBench.Target；本地 Harbor 构建及容器内 ubuntu 实测成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本并最终复验，均为 no_issue；原头通过，修改头与缺失 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离生成编译 ExpectedType，完整类型无外层 binders、universes=[]；审计 ExpectedType、IsCofactorLowerBound、cofactorThreshold 传递依赖仅含允许公理，临时目标未导出。两份包及 checker 内容/AST 一致，原安全检查保留；固定工具链与 Spec 优先路径，无运行时生成或回退。最终本地 Harbor 镜像 sha256:b8f7481f52770a1860b479cec909b060b39d78f060cec74967d289fe9f1aafe1；核对上传 /tests 与预装 /opt 的 checker/Spec/golden 哈希。两入口均因原题 sorry 预期退出 1，reward=0；同一最终子容器内两套实际函数补测覆盖 Spec 审计、ubuntu 编译、完整类型、公理及 canary，并拒绝冻结修改、越界、NatCast 实例语义偷换、候选缓存遮蔽及产物缺失/篡改。未证明原题。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-539-isbigo-sq-cube-root/attempt-001。Docker cleanup 已核实：停止并删除本次 3 个容器（5f3080364f20、ea9d463f3e25、c5be27b991a6），删除本次 2 个镜像（4242ffc8c1c5、b8f7481f5277）及 2 个网络；预存共享依赖镜像/缓存保留，未触碰其他任务资源。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。按 task.toml 锁定源及 Granville–Roesler 原论文 PDF 第2–3页核对，本目标仅为已知 h(n)=O(n^(2/3))。下界集合非空且有界；允许 0 只会减小阈值，仍满足正整数构造给出的上界；实数指数及 atTop 正确。未修改数学输入；不把已被否定的相邻 Theta/平方根变体归为本题错误。详见 statement-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "public_lean4_proof=unknown，status=blocked。完整 ID 精确匹配技能 CSV 未命中。多组检索并读取上游、Mathlib、Kitamura 两个仓库、ProofCouncil 及相关 issue/镜像；发现完整的更强指数极限结果，但未核实覆盖本精确 Big-O 目标的公开完整 Lean 证明。官方问题页和讨论区持续 HTTP 403，不能宣称不存在。详见 public-proof-review.json、public-fetch.json；未将公开答案放入任务。"
+    }
+  }
+}

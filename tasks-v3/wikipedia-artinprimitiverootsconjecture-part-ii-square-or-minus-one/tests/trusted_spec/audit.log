@@ -1,0 +1,15 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited ArtinPrimitiveRootsConjecture.S: [propext, Classical.choice, Quot.sound]
+complete outer binders: [a, ha]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (a : Int),
+  Or (@IsSquare Int Int.instMul a)
+      (@Eq Int a (@Neg.neg Int Int.instNegInt (@OfNat.ofNat Int (nat_lit 1) (@instOfNat (nat_lit 1))))) →
+    @Set.HasDensity Nat Nat.instPreorder
+      (@LocallyFiniteOrder.toLocallyFiniteOrderBot Nat Nat.instPreorder Nat.instOrderBot Nat.instLocallyFiniteOrder)
+      (ArtinPrimitiveRootsConjecture.S a) (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero))
+      (@setOf Nat fun p => Nat.Prime p)
+@[reducible] def ArtinPrimitiveRootsConjecture.S : ℤ → Set ℕ :=
+fun a => {p | Nat.Prime p ∧ orderOf ↑a = p - 1}
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

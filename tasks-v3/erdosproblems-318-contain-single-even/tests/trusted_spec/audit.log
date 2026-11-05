@@ -1,0 +1,16 @@
+FCBTrustedSpec.lean:49:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:54:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [Quot.sound, propext, Classical.choice]
+audited Erdos318.P₁: [propext, Quot.sound, Classical.choice]
+complete outer binders: {A : Set ℕ} (hA : {n | n ∈ A ∧ Even n}.ncard = 1)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {A : Set ℕ}, {n | n ∈ A ∧ Even n}.ncard = 1 → ¬Erdos318.P₁ A
+def Erdos318.P₁ : Set ℕ → Prop :=
+fun A =>
+  ∀ (f : ℕ → ℝ),
+    (f ∘ Subtype.val ≠ fun x => 1) →
+      (f ∘ Subtype.val ≠ fun x => -1) → Set.range f ⊆ {1, -1} → ∃ S, S.Nonempty ∧ ↑S ⊆ A \ {0} ∧ ∑ n ∈ S, f n / ↑n = 0
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos318.P₁' depends on axioms: [propext, Classical.choice, Quot.sound]

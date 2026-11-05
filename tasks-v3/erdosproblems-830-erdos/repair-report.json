@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-830-erdos",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式补入 /opt/formal-conjectures/.lake/packages；最终 Harbor 容器内以 ubuntu 按三个路径搜索 isLittleO_bot，退出码0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import；补齐 Dockerfile 末尾 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。本地 Harbor 实际构建成功，同容器 ubuntu 复验退出码0；未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "执行技能 Unicode 脚本及最终复验，均为 no_issue；原始头通过、修改头及缺失 := 被拒绝，两 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题原始 golden 隔离候选提取、编译 ExpectedType；完整外层参数0，universes=[]，ExpectedType 与 A 传递公理仅标准三项。两份可信包和 checker 一致，固定产物路径、哈希及版本校验，无运行时生成/回退，保留原源码/冻结/公理/canary 规则。最终本地 Harbor 镜像 sha256:0ea00e427a8a0e7bd6870e44b030fc3309d4deb016bb185dbb1c7e2ace55dd8c，上传 /tests 和 /opt 包均核对本地哈希。正式与本地入口均退出1、reward=0，原因仅原题 sorry；同一最终子容器两入口实际函数补测均退出0，覆盖可信审计、ubuntu 编译、完整类型比较、sorryAx 拒绝、canary、冻结/越界/语义偷换/缓存遮蔽/产物缺失及篡改。合法完整证明的 namespace-local atTop=bottom 偷换被类型比较拒绝。所有 immutable 哈希保持不变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-830-erdos/attempt-001。Docker 已清理并核实：容器 def153f2070c、5dffd44fff9f、8f81f15960cc，镜像 eb88fd117713、0ea00e427a8a 及两条本题网络均已移除；预存共享依赖镜像保留，其他任务资源未动。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata 标记 consistent。核对固定上游、IsAmicable 定义及 Erdős 1955《On amicable numbers》pp.108、110–111：本题是已知 A(x)=o(x) 上界变体，非原问题开放下界。计数允许完美数对角项，但其密度同样为0，不导致错误。仅标记，未改数学输入；详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整ID精确匹配技能CSV未命中。多组检索并核查上游 main、PR2701/3223、issue2100、PR2254、Chen/Tang/Zhan论文及 chainstart Lean 源码；上游和声称已解PR仍有 sorry，构造公式/有限实例不覆盖本目标。GitHub 代码搜索要求登录、文件历史API限流，未能验证完整公开 Lean4 证明，故 metadata 为 unknown/blocked，不断言不存在。详见 public-proof-review.json、source-fetch-results.json。"
+    }
+  }
+}

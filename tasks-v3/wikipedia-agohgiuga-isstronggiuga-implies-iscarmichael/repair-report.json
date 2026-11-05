@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-agohgiuga-isstronggiuga-implies-iscarmichael",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 的 rg 命令已显式补齐 .lake/packages；Harbor 子容器中以 ubuntu 执行该搜索成功找到 Mathlib 的 FermatPsp 定义（exit 0）。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题仅有 ProblemImports 和 Submission，无额外上游 import；原 Dockerfile 缺少普通用户最终构建验证，现以 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target 结尾。当前本地任务 Harbor Docker 构建成功，同一子容器 ubuntu 构建 exit 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 check_unicode_header.py 两次，均为 no_issue/passed；两份原始头、冻结前缀和 := 边界一致，无需修改 Unicode 常量。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重解析 GoldenCheck。现由本题 golden 隔离 Submission 后经 Lean elaborator 提取完整类型，编译固定 FCBTrustedSpec.ExpectedType（a、ha 两参数，universes=[]）；独立审计其及 IsStrongGiuga、IsCarmichael 传递依赖仅用标准公理，临时目标未导出。两份可信包及 checker 字节/AST 一致，清单固定输入、版本、依赖和产物哈希。正式入口使用 Harbor 上传的 /tests/trusted_spec，本地入口使用 /opt 包；两处全包哈希与本地一致。当前本地 Harbor 镜像 sha256:25926448bc53f40a61204b7532fe1097c49138f57f718011e9164bb5725071fb。两入口 exit 1、reward 0，原因是未改动的原题 sorry；不是实现故障。已在同一 Harbor 子容器分别通过正式/本地 checker 实际函数的29项补测，覆盖 Spec加载/可信审计、uid1000编译、完整类型比较、sorryAx拒绝、canary、冻结/越界/语义偷换/缓存与同名模块遮蔽/产物缺失及篡改。语义偷换候选冻结头不变、可编译且无额外公理，但完整类型比较明确拒绝。所有 immutable 哈希保持原值。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-agohgiuga-isstronggiuga-implies-iscarmichael/attempt-001。清理已核实：本次两个容器 9099ed41414d、37936d6cd023 已 stop/rm，c74a 专属网络已移除。镜像 25926448bc53 删除时发现另一任务的容器 wikipedia-agohgiuga-le-primefactors-card-of-isstronggiuga-spec-g61-a001-9f2c 正使用它，按规则保留占用镜像，不干扰其他 agent；预先存在的共享生成缓存镜像也保留。详见 cleanup.json/cleanup-first.log。原题证明未完成，不宣称原题通过。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已标记 statement_status=consistent。核对 task.toml 指定的 pinned AgohGiuga.lean、完整前缀及 Mathlib FermatPsp 定义；Tipu《A Note on Giuga's Conjecture》(2007), p.158 明确证明满足该幂和同余的合数必为 Carmichael。IsCarmichael 经 FermatPsp 已包含合数条件，b≥1 使自然数减法与标准 Fermat 条件一致。Wikipedia 403，但原论文 PDF 和 pinned Lean 源码成功读取，未发现使本目标不成立的明显错误。数学定义、陈述和 golden 未改动；详见 statement-audit.json、tipu2007.txt。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "先按完整 task ID 精确匹配技能 references/public-lean4-proofs.csv，命中，按技能标记 public_lean4_proof=true，无需联网复核。来源：https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/394ec1c1ff92bdf2fa10f30d62ae9d0455d3ce20/Proofs/T_AgohGiuga_agoh_giuga_variants_isStrongGiuga_implies_isCarmichael.lean#L283；另一个 CSV 修订为 3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd。记录于 task.toml 和 public-csv-match.json；本次未将公开答案写入镜像，未在本题编译该公开证明。"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-865-upper-bound",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；在本次 Harbor 子容器内以 ubuntu 执行，退出码 0，并找到 package 内 theorem add_comm。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import，不需新增预编译模块；原 Dockerfile 缺最终普通用户验证，现以 USER ubuntu 的 RUN lake build +FormalConjecturesBench.Target 结尾。当前本地 task 经 Harbor force_build 构建成功；同一子容器 ubuntu 构建再次返回 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本，修复前及最终均为 no_issue/passed，原头、冻结前缀和 := 边界核对通过，无需改头。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题不可变 golden 移除 Submission import，在匹配 Lean 4.27.0/x86_64 Docker 中隔离 elaboration，保存完整 k、hk 类型，universes=[]；独立审计 ExpectedType 和 f 的传递依赖仅为允许标准公理，临时目标及子声明未导出。两份预编译 Spec/清单和 checker 内容及 AST 一致，固定来源、产物哈希和完整类型比较，不运行时重建或重新解析原命题。当前本地 Harbor 镜像 sha256:079ebf0f2423606873efa5b9946aceee042ee4c344233fb1e45b2661ec04fec7；Harbor 上传 /tests 与镜像 /opt 包均和本地哈希一致。正式及本地入口均因原题 sorry 预期退出 1，reward=0，不代表原题证明通过；同一子容器内对两份实际 checker 各补测 28 项，覆盖 Spec 加载/可信审计、ubuntu(uid=1000)编译、完整类型比较、目标 sorryAx 拒绝、canary、冻结/越界、冻结文字不变的 atTop 名称偷换编译后类型拒绝、同名模块/缓存/环境遮蔽，以及缺失/篡改产物和清单 fail-closed 且不重建。全部 immutable 哈希不变。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-865-upper-bound/attempt-001（generation-retry.log、manifest、delivery-final.json、validation-{official,local}-coverage.json、static-validation.json）。Docker 已 stop/rm 本题两个容器（5318597a7849、3afb202bb010），删除本题新建镜像 079ebf0f2423 及 task 专属网络，inspect 核实均不存在；预先存在的匹配依赖镜像和共享构建缓存保留，未操作其他 agent 资源。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。核对 pinned 上游、f 的完整定义及 CES75 原论文 Theorem 8（印刷 p.46，PDF p.10）。sInf 集非空（N+1 阈值真空成立），缩小 epsilon 可吸收取整误差，得到本题一般 k>=3 的最终上界；未发现明显错误，不修改任何数学陈述/定义。证据 statement-review.json、1975-39.pdf、theorem8-page46.png。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中；已多组检索完整名、题号、作者、等价陈述、Mathlib/GitHub/PR，并读取实际 Lean 候选。当前 upstream upper_bound 仍 sorry；Jayyhk、mrricky22 公开证明仅覆盖 k=3，不能覆盖本题全部 k>=3；PR 2707/3229 仅修改 solved 注解，仍保留 sorry，已排除。GitHub code search 和递归 tree API 实际返回限流 403，故 metadata 标 unknown/blocked，不能宣称不存在公开证明。详细关键词、来源、排除依据及访问限制见证据目录 public-proof-review.json、public-fetch-results.json。"
+    }
+  }
+}

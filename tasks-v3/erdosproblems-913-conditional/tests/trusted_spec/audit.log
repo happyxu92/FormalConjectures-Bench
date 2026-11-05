@@ -1,0 +1,7 @@
+complete outer binder count: 1 (explicit hypothesis h)
+universe parameters: []
+ExpectedType transitive axioms: [propext, Quot.sound, Classical.choice]
+def FCBTrustedSpec.ExpectedType : Prop :=
+{p | Nat.Prime p ∧ Nat.Prime (8 * p ^ 2 - 1)}.Infinite →
+  {n | Set.InjOn ⇑(n * (n + 1)).factorization ↑(n * (n + 1)).primeFactors}.Infinite
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

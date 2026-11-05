@@ -1,0 +1,20 @@
+FCBTrustedSpec.lean:56:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green26.𝔽: [propext]
+audited Green26.𝔽₃: [propext, Quot.sound, Classical.choice]
+audited Green26.StandardCube: [propext, Quot.sound, Classical.choice]
+audited Green26.IsCube: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 3 (n, A, cube hypothesis)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ) (A : Fin 4 → Set (Green26.𝔽₃ n)), (∀ (i : Fin 4), Green26.IsCube (A i)) → ∑ i, A i = Set.univ
+@[reducible] def Green26.𝔽 : (p : ℕ) → ℕ → [Fact (Nat.Prime p)] → Type :=
+fun p n [Fact (Nat.Prime p)] => Fin n → ZMod p
+@[reducible] def Green26.𝔽₃ : ℕ → Type :=
+fun n => Green26.𝔽 3 n
+def Green26.StandardCube : {p : ℕ} → [inst : Fact (Nat.Prime p)] → (n : ℕ) → Set (Green26.𝔽 p n) :=
+fun {p} [Fact (Nat.Prime p)] n => {x | ∀ (i : Fin n), x i = 0 ∨ x i = 1}
+def Green26.IsCube : {p n : ℕ} → [inst : Fact (Nat.Prime p)] → Set (Green26.𝔽 p n) → Prop :=
+fun {p n} [Fact (Nat.Prime p)] A => ∃ φ, A = ⇑φ '' Green26.StandardCube n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

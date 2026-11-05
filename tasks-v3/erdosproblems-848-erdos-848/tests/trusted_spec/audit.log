@@ -1,0 +1,15 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos848.NonSquarefreeProductProp: [propext, Quot.sound]
+audited Erdos848.A₇: [propext, Quot.sound, Classical.choice]
+audited Erdos848.Erdos848For: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0 (closed equivalence; internal forall N retained)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+True ↔ ∀ (N : ℕ), Erdos848.Erdos848For N
+def Erdos848.NonSquarefreeProductProp : Finset ℕ → Prop :=
+fun A => ∀ a ∈ A, ∀ b ∈ A, ¬Squarefree (a * b + 1)
+def Erdos848.A₇ : ℕ → Finset ℕ :=
+fun N => {n ∈ Finset.range N | n % 25 = 7}
+def Erdos848.Erdos848For : ℕ → Prop :=
+fun N => ∀ A ⊆ Finset.range N, Erdos848.NonSquarefreeProductProp A → A.card ≤ (Erdos848.A₇ N).card
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

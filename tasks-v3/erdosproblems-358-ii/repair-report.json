@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-358-ii",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；最终 Harbor 子容器实际搜索 StrictMono 定义成功，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import；补上 Dockerfile 最末 ubuntu RUN lake build +FormalConjecturesBench.Target。当前本地 task 经 Harbor force_build 构建成功，同容器 ubuntu 实测构建退出码 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本两次，均为 no_issue；原头通过，修改头和移除 := 被拒绝；未改冻结常量。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离 Submission，使用匹配 Docker/Lean 4.27.0 提取完整类型及 universes=[]，预编译并审计 ExpectedType 和前缀依赖；两份 Spec 包、checker AST/内容、全部 immutable 哈希一致。checker 固定可信产物及依赖路径，不重解析命题、不生成或回退 Spec，保留原安全检查和正常 import。最终本地 Harbor trial erdosproblems-358-ii-g61-a001-358b 的 /tests 上传包、/opt 包均与本地逐文件哈希一致。两入口因原题 sorry 预期退出 1、reward=0；同一子容器内两套各29项实际函数补测通过，覆盖加载/审计、ubuntu 编译、完整类型、公理、canary、冻结/越界、atTop 名称偷换、缓存遮蔽及产物缺失/篡改拒绝。未证明原题。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-358-ii/attempt-001。Docker 清理完成：spec-358a 及 Harbor-358a/358b 三个本题容器已 stop/rm，镜像 51a0973a6111/33beb1a92fde 和两个本题网络已移除并核实不存在；保留预先存在的共享缓存 e21dc171550d，详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata 标记 consistent。已读完整定义、固定修订上游源及 Chojecki 原始论文 https://www.ulam.ai/research/erdos358.pdf 的同一计数定义/陈述；StrictMono 保证正 n 的表示集合有限，空区间仅影响 n=0，不影响 eventually >=2。未发现明显数学错误，未改陈述。题站及 Tao PDF 403，访问限制和替代来源见 math-review.json；不声称认证论文证明。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "按完整 ID 精确命中技能 public-lean4-proofs.csv，metadata 标记 public_lean4_proof=true。来源：https://github.com/plby/lean-proofs/blob/1268917deaaaa0d674f651287027baa26cea9920/src/latest/ErdosProblems/Erdos358.lean#L9115 。依要求无需联网复核；未将答案放入任务或在本环境编译该公开证明。"
+    }
+  }
+}

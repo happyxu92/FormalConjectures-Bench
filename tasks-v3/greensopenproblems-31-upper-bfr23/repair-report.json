@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-31-upper-bfr23",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令显式加入 .lake/packages；最终容器实际 rg 命中 mathlib 的 sqrt_nonneg，exit=0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 只有 ProblemImports 和本地 Submission，无额外上游 imports。补齐 Dockerfile 最末 ubuntu RUN lake build +FormalConjecturesBench.Target；最终 Harbor 构建及同容器 ubuntu 构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "技能 Unicode 脚本修复前及最终均 no_issue；原头/冻结前缀匹配，修改头及移除 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "独立 golden 提取完整类型并预编译（无 universe/外层参数；保留 eventual N 绑定），审计 ExpectedType 及 Green31.F 的传递公理均只含标准公理；固定哈希包同步，checker 不重解析或回退生成。当前本地 task 经两次 Harbor Docker 构建，最终镜像 ce04effe20e319031c9f4cf194775d329357f298c4e6ad99e1bc1316592a3914；/tests 上传及 /opt 包/Golden 哈希与本地一致。正式与本地入口 exit=1/reward=0 均为原题 sorry 预期拒绝；最终同一子容器两套实际函数补测 exit=0，覆盖 Spec、ubuntu UID1000 编译、完整类型、公理拒绝 sorryAx、canary、冻结/越界/atTop 名称偷换/缓存遮蔽/产物缺失和篡改。原数学输入未改，不代表原题证明完成。详见 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-31-upper-bfr23/attempt-001/validation-coverage.json、delivery.json、Harbor/入口日志。初次生成的文档注释语法问题及 Harbor 自动停止后的补测启动问题已修复并重验；不扩展外部 import/initializer 安全范围。 Docker 清理：本次3个容器均 stop/rm、最终验收镜像 ce04effe20e3 和2个专属网络均移除并 inspect 核实；初次镜像 09445111b95d 已被其他任务 greensopenproblems-31-upper-li69-spec-g61-31a9 使用，按共享资源规则保留，未强制删除或触碰该容器；预存共享依赖缓存也保留。证据 cleanup-final.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。Green Problem 31 的 2021 update 和 BFR arXiv:2103.15850 摘要给出相同的充分大 N、[1,N] Sidon 最大基数、sqrt(N)+0.998 N^(1/4) 界；是已知结果变体而非完整开放问题。核对 Finset 有限最大值及标准 Sidon 定义，未发现明显错误；不改陈述。见证据 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 ID 精确匹配技能 CSV 未命中；多组关键词覆盖上游、GitHub/PR、Mathlib、作者/论文及相关 formalization。未找到已知完整公开证明，metadata public_lean4_proof=false/status=searched（非不存在断言）。Mendoza GitHub 与两份 Zenodo 源码都假设 axiom bfr_core_bound；Singer 仅系数1界，LeanGenius 仅初等界，上游对应目标仍 sorry。访问受限线索均用公开源码/差异包替代核实，无待跟进有效线索。详见证据 public-proof-review.json。"
+    }
+  }
+}

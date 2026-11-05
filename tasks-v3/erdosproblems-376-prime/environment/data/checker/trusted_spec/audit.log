@@ -1,0 +1,11 @@
+audited ExpectedType and all referenced definitions transitively: [propext]
+binder p, Lean.BinderInfo.implicit, type ℕ
+binder q, Lean.BinderInfo.implicit, type ℕ
+binder h₁, Lean.BinderInfo.default, type Nat.Prime p
+binder h₂, Lean.BinderInfo.default, type Odd p
+binder h₃, Lean.BinderInfo.default, type Nat.Prime q
+binder h₄, Lean.BinderInfo.default, type Odd q
+complete outer binder count: 6; universes: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {p q : ℕ}, Nat.Prime p → Odd p → Nat.Prime q → Odd q → {n | n.centralBinom.Coprime (p * q)}.Infinite
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]

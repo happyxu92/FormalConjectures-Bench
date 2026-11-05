@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos377.sumInvPrimesNotDvdCentralBinom: [propext, Quot.sound, Classical.choice]
+complete outer binders (name, binderInfo): #[]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ c < 1, ∀ᶠ (n : ℕ) in Filter.atTop, Erdos377.sumInvPrimesNotDvdCentralBinom n ≤ c * Real.log (Real.log ↑n)
+@[reducible] def Erdos377.sumInvPrimesNotDvdCentralBinom : ℕ → ℝ :=
+fun n => ∑ p ∈ Finset.Icc 1 n with Nat.Prime p, if p ∣ n.centralBinom then 0 else 1 / ↑p
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos377.sumInvPrimesNotDvdCentralBinom' depends on axioms: [propext, Classical.choice, Quot.sound]

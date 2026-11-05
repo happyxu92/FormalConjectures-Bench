@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-697-delta-lt",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "保留前轮修复：搜索显式包含 /app、/opt/formal-conjectures、.lake/packages；本轮最终 Harbor 子容器以 ubuntu 实测找到 package 内 IsPrimePow，exit=0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "保留前轮 Dockerfile 修复；本题无额外上游 import，末尾仍为 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。本轮从当前本地 task 强制 Harbor Docker 构建成功，最终子容器再次 ubuntu 构建 exit=0；允许原输入 sorry 的编译成功不代表证明成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "本轮前后均实际运行技能 Unicode 脚本，case=no_issue；两份 checker 头、冻结前缀及 := 边界核对通过。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已解除旧阻塞：在隔离候选的匹配 Lean 4.27.0 Docker 中，以 N! 为周期给 density_exists 真实 Lean 证明，仅在独立 Spec 替换其证明体。原名、完整类型/universes、δ 的 choose 定义及目标数学含义不变；AuditTypeIdentity.lean 实际编译，通过原 golden 的完整类型比较及 δ 的 kernel rfl 等式。ExpectedType 从本题 golden parser/elaborator 提取，完整参数 m:Nat、α:Real，universes=[]；临时目标不导出，传递公理仅 propext/Classical.choice/Quot.sound。两份可信包一致，checker 固定产物来源及哈希、直接比较完整类型，无运行时命题解析/生成/回退；原源码规则、公理审计、canary 保留。当前本地 Harbor 构建镜像 8e8e537e53d9；正式 /tests/test.sh 与 ubuntu /app/check.sh 均 exit=1，reward=0，原因仅原目标 sorry 的预期拒绝。同一子容器对两份实际 checker 各补测30项全部符合预期，覆盖可信加载/审计、ubuntu编译、完整类型、公理/canary、冻结/越界/语义偷换/缓存遮蔽/产物缺失和篡改；另实测 root verifier 降权至 ubuntu。语义偷换可编译且公理合规，但被完整类型比较拒绝。Harbor 上传 /tests、镜像 /opt 和 /app 共42文件哈希匹配；checker AST/内容、两包及所有 immutable 哈希通过。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/retry-seven-20261105/tasks/erdosproblems-697-delta-lt/attempt-001。Docker 清理完成并复核不存在：本轮容器 c40f7bf04fb7、92ec24110116 已 stop/rm，新镜像 8e8e537e53d9 及本轮 Harbor 网络已移除；预存共享依赖镜像/缓存与其他任务资源保留。详见 cleanup-summary.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "保留 statement_status=mismatch，不修改陈述/定义：m=0 时同余迫使 d=1，集合为空；密度非负而 RHS=0，严格上界不成立。本轮 StatementCounterexample.lean 在最终 Harbor 内直接证明 ¬FCBTrustedSpec.ExpectedType，公理仅三个允许公理，无 sorry。实际读取 Erdős 正文/论坛及上游；PR #5271 和当前 main 添加 hm:0<m，佐证边界问题。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。本轮多组检索并跟进实际源码：锁定/当前上游和 solve PR #2691/#3213 仍 sorry；plby/lean-proofs 的 Lean 4.33 源码使用不同 δ 定义，初等界仅为 m>0 的非严格界，不覆盖保留目标。Erdős 正文、论坛及 proof-claims 本轮实际可读，零证明声明；不再沿用旧403结论。关键 proof tracker problems.science 仍500，GitHub全局代码API401；已使用直接源码替代核查有效线索，但 tracker 缺口仍在，故 public_lean4_proof=unknown/status=blocked，不宣称不存在。详见本轮 research-review.json、实际来源文件及抓取日志。"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+FCBTrustedSpec.lean:34:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:43:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:54:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited ExpectedType transitive axioms: []
+complete binder count: 2
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (k : ℕ), 2 ≤ k → {n | (n + k).factorial * (n + 1).factorial ∣ (2 * n).factorial}.Infinite
+'FCBTrustedSpec.ExpectedType' does not depend on any axioms

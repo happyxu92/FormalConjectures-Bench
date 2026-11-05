@@ -1,0 +1,6 @@
+audited ExpectedType and transitive dependencies: [propext]
+complete binder count: 5 (n x y implicit, two hypotheses)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {n x y : ℕ}, 1 < x * y → n.factorial = x ^ 2 + y ^ 2 → n = 6 ∧ (x = 12 ∧ y = 24 ∨ x = 24 ∧ y = 12)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]

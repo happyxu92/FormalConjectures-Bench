@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-69-specialisation-of-erdos-257",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "源码搜索命令已显式包含 /app、/opt/formal-conjectures 及其 .lake/packages；最终 Harbor 子容器内以 ubuntu 搜索 cardDistinctFactors_apply 成功（退出码 0）。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 imports；补齐 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的 Harbor 构建及容器内 ubuntu 构建均成功，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已运行技能 Unicode 脚本并复验，case=no_issue；原始头通过，改头及移除 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题 golden 隔离提取完整类型及空 universe 参数，匹配 Lean 4.27.0 Docker 预编译并独立审计 ExpectedType；两份固定 Spec/清单及 checker 一致，所有 immutable 哈希未变。最终本地 Harbor 镜像 sha256:19c420fec064ff9440737dc1337a72fc9a4136b699986329f0a45bbe57ca1a0c；已核对上传 /tests 与安装 /opt 包全部文件哈希。两入口因原始 sorry 预期退出 1、reward=0；同一子容器两包各 30 项实际函数补测及 root 调用补测通过，覆盖 Spec 审计、ubuntu 编译、完整类型、公理、canary、冻结/越界/合法实例偷换/缓存遮蔽/产物缺失及篡改。实例偷换具有实际证明和标准公理，仍被完整类型及完整 checker 拒绝。无运行时 Spec 生成/回退，保留原安全及正常 import 规则。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-69-specialisation-of-erdos-257/attempt-001；Docker 已清理并核实：4 个本题容器（69c1-spec 及三个 Harbor 子容器）、3 个本题镜像（506c1c33941e、2173cdcab3ee、19c420fec064）及 3 个本题网络均不存在；预存共享生成镜像 e21dc171550d 保留，未清理其他资源。清理助手的 Harbor __env 标签断言问题已按记录的网络 ID 修正并完成清理，详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 consistent。目标是上游 69.lean 的 Lambert 级数恒等式变体，不是无理性主命题。omega 正确计数不同素因子；n+2 覆盖 m≥2，绝对收敛后按 m=p*k 重排得到每个素数的几何级数 1/(2^p-1)。未发现错误，数学输入未改。已读固定上游与实际 Mathlib 定义；题目网站 HTTP403 限制见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确命中技能 public-lean4-proofs.csv，已标记 public_lean4_proof=true。来源：https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/69.lean#L50 。依规则无需重新联网确认；未将公开证明放入镜像，也未声称已在本题编译公开证明。"
+    }
+  }
+}

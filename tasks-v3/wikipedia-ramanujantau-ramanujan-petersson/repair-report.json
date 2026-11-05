@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-ramanujantau-ramanujan-petersson",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式补入 /opt/formal-conjectures/.lake/packages；最终 Harbor 容器内以 ubuntu 执行搜索，成功找到 mathlib 的 def IsPrimePow（退出码0）。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 imports；原 Dockerfile 缺少最终普通用户验证，现以 USER ubuntu 的 RUN lake build +FormalConjecturesBench.Target 结尾。最终本地 Harbor 构建及同容器 ubuntu 复测均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际执行技能 Unicode 脚本及最终复验，均为 no_issue；两份 checker 头、冻结前缀及 := 边界检查通过，未改定理头。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "旧 checker 在候选环境重新解析 GoldenCheck，存在名称/实例语义遮蔽风险。已从本题原始 golden 隔离提取完整类型及 universes，匹配 Docker 中预编译并独立审计 ExpectedType、Δ、τ：完整2个绑定、universes=[]、仅标准公理，临时目标未导出。两份可信包一致，清单固定哈希00199ad665d8283e697face2836c868209f36dd7da4cc560e24fde738805c8bc；运行时仅加载固定产物，无解析/重建回退。最终从当前 task 经 Harbor 本地构建；/tests 上传包、/opt 包、golden 与本地哈希一致。正式与本地入口均退出1（原题 sorry 的预期拒绝），reward=0；同一最终 Harbor 容器对两份实际 checker 各完成29项函数补测：Spec审计、ubuntu编译、完整类型、公理、canary及冻结/越界/Prime名称偷换/缓存遮蔽/产物缺失篡改，全部符合预期。15项 immutable 哈希未变，原安全检查和普通 import 规则保留。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-ramanujantau-ramanujan-petersson/attempt-001。Docker已清理并复核：容器bb76dd10eec4/61949f0f54b2/cb791bf6b23c、镜像d30e3d13b572/4b9839407fbb及两个本题网络均已移除；预先存在的共享依赖缓存保留，详见cleanup.json。不宣称原题证明完成。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。核对锁定上游、Ramanujan 1916 §16式(92)/§18式(105)、MathWorld Petersson 式(5)-(6)及 Deligne 原文：正整数指标乘积、外乘X、整数系数、Prime条件、常数2及实指数11/2均合理；未发现明显数学错误。Wikipedia/EoM受限已用实际取得的原文及替代来源覆盖。数学定义、陈述、golden均未修改；详细见 statement-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整ID精确匹配技能CSV未命中；充分检索后标记 public_lean4_proof=false、status=searched（不代表绝对不存在）。已实际读取上游 main、声称解决的PR2495/2555/3079完整头及diff，均仍有sorry；lioristhmus仓库及其fork只证明附加纯性假设下的归约，sneed仓库仅系数/同余结果；挑战页也仍为占位。已覆盖 Mathlib、本题全名和等价命名检索。GitHub API鉴权/限流受阻，但关键PR代码均由公开网页/diff/raw替代取得，无未读的有效证明线索。详见 public-proof-review.json；未将任何答案放入镜像。"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "task_id": "erdosproblems-697-i",
+  "target_name": "Erdos697.erdos_697.parts.i",
+  "universe_params": [],
+  "complete_binders": [
+    "{α : Real}",
+    "(hα : 1 / Real.log 2 < α)"
+  ],
+  "platform": "x86_64",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "6fc83cbea6ecbb2d65dc2d1cf32d0b44c62cf6cee49d193d2e47c073321f71d4",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "fc04bd849533c70f8242dc66f63c140f995db57e08d2f869de1e6c237ccbbe56",
+    "DensityProof.lean": "1c27807daf9412cee418133c333dd4549953aca699d43e889ab47bcc95475d61",
+    "FCBTrustedSpec.ilean": "37ebffab71073b9991111830e565c0b1595fb5224f698738ef3cec9e362f555d",
+    "FCBTrustedSpec.lean": "66b91c599624b9772a3b4295e044e8032ff814c18abfa6071604421425f9c8c0",
+    "FCBTrustedSpec.olean": "119deecf67b06548ab9d30ca9ee8aa159db970c274bacb586f538f32a6a3e8d3",
+    "ProveDensityExists.lean": "814a9b33cf4b93538bc4274d6adf9d76d5b5bc339801b066e90a3e6862c3729c",
+    "generate-spec.py": "d08d58c53dadbd5297fbea119cd2eb0e7399ff76980c497732591be5997cc294",
+    "reproduce.sh": "61c476c0a600f560d5799b339c8ab0b7449eab77547dc3701a0dd17e14140ec8"
+  },
+  "proof_transformation": "Replace only density_exists proof by periodic-density kernel proof, keeping original name/type/universes. All mathematical definitions, δ choose definition, hypotheses and target type unchanged. Repair-time AuditTypeIdentity independently compares this task original golden types and verifies δ equality by rfl. Unreferenced delta_lt remains unchanged and is not in ExpectedType dependency closure. Temporary target is discarded before adding ExpectedType; no target proof is exported.",
+  "generation_options": [
+    "autoImplicit=false",
+    "relaxedAutoImplicit=false",
+    "maxHeartbeats=0",
+    "maxRecDepth=4000"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "task_id": "wikipedia-goldbachconjecture-ternarygoldbach",
+  "target_name": "TernaryGoldbachConjecture.ternaryGoldbach",
+  "universe_params": [],
+  "binder_names": [
+    "n",
+    "hn",
+    "hn_odd"
+  ],
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "1a2b7e6f0af1e8ed200048b5451ce49a21265a97e534236a0fd862145ab699cc",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "490efe6869c602f67c1149c558146a0326f272dcf2779be73f8f3534ede93212",
+    "FCBTrustedSpec.ilean": "fba6dbbe2f45103324452f0d20a24ab076d527f1a5e99a7091c0bb3b57f09750",
+    "FCBTrustedSpec.lean": "2e7ed99cde85448c8486fd134e2bd98c0877973329aa253d152af8f5fcec0628",
+    "FCBTrustedSpec.olean": "e41ae3c8fc192ce67b4cb2f2f19ff9d0a0721201160312895f93067b122954c6",
+    "audit.log": "9ff4e76470d11610253610cc6351cabef5f83939142132a8fa843f8afeb16895",
+    "generate.py": "5ecf5306708bccee475b5ca0d4a1ba4f477749a70ec23603c05e56aa9eada67f",
+    "reproduce.sh": "4afbf705055a41be7d1753dcbcc074ddbda674a9e692a8f1d1d00e79e82841fd"
+  },
+  "audit_note": "Full type extracted by Lean from isolated golden without Submission. Temporary target restored away. Existing unrelated GoldbachConjecture.goldbach placeholder retained in prefix, not in ExpectedType dependencies (only propext)."
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-707-counterexample-hall",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md explicitly includes /app, /opt/formal-conjectures and /opt/formal-conjectures/.lake/packages. Actual ubuntu rg search found mathlib theorem sigma_apply; exit 0."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra imports beyond ProblemImports/Submission. Added final Dockerfile USER ubuntu RUN lake build +FormalConjecturesBench.Target. Current local-task Harbor Docker builds completed, and final-container ubuntu Target build exited 0."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran skill Unicode script before and after repair: no_issue; original header accepted, modified header and removed assignment rejected; two checkers match."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated fixed precompiled ExpectedType independently from this task golden, removed Submission import, retained trusted prefix names, extracted full A/hA binders and [] universes. Temporary target is absent; ExpectedType transitive axioms only propext/Classical.choice/Quot.sound (unrelated original prefix sorry declarations are not its dependencies). Manifest pinned; two packages and checker AST/bytes match; all immutable hashes unchanged. Final current-task local Harbor trial erdosproblems-707-counterexample-hall-g61-707a-final, image 955e316c4303; /tests Harbor upload and /opt checker/Spec/golden hashes match local. Official and ubuntu local entries exit 1 as expected on original sorry; reward 0. Same-child actual-function supplemental tests pass through fixed Spec audit, ubuntu UID/build, full type comparison, target sorryAx rejection and canary. Frozen/header/config/tree/symlink/out-of-bounds bans, legal unchanged-header semantic-name attack (compiles, full-type mismatch), candidate module/cache/env shadowing, missing/tampered artifact and manifest rejection all exercised under both entries. No runtime Spec generation/fallback, general import whitelist or initializer sandbox added. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-707-counterexample-hall/attempt-001. Cleaned and verified absent: Spec container d0896395e6bc, Harbor containers b4933cbc6c44 and 03e99094ce7f; own images fc658a2afd1c and 955e316c4303 and both own networks. Preexisting shared base retained; no other resources removed."
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Marked metadata statement_status=mismatch only. Target.lean:116-119 lacks 0 < n and permits infinite B. At n=0, ZMod 0=Int; greedy extension of Hall set {1,3,9,10,13} gives B subset Nat containing A with unique differences representing all nonzero integers, hence IsPerfectDifferenceSet B 0, contradicting target. Alexeev–Mixon arXiv:2510.19804 Section 2 Claim 10 (Hall Theorem 3.1), author issue #1137 and current upstream positive-modulus correction corroborate this. Mathematical inputs, golden and Spec proposition unchanged; construction/source hashes in research-review.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Exact complete-ID CSV lookup missed. Seven varied queries plus actual author/upstream/Tao Lean sources, paper, qed.bot record and issue/gist leads reviewed. Alexeev counterexampleH2_noExt requires v != 0; Tao proves prime case; current upstream Hall variant remains sorry with 0 < n. None proves this exact unchanged all-n task. Erdos problem/forum and Xena pages returned 403; conservatively marked metadata public_lean4_proof=unknown, status=blocked, not an exhaustive absence claim. Related public proof not compiled or installed. See research-review.json and source-downloads.json."
+    }
+  }
+}

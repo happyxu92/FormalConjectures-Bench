@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-694-inf-unique",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式加入 /opt/formal-conjectures/.lake/packages；最终 Harbor 子容器以 ubuntu 实际搜索到 Mathlib/Data/Nat/Totient.lean，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 imports；原 Dockerfile 缺少末尾普通用户验证，已补 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。当前本地 task 两次 Harbor 构建成功，最终子容器 ubuntu 构建退出码 0；未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本及最终复验，均 case=no_issue；原头通过、修改头和移除赋值被拒绝，未改 EXPECTED_HEADER 或冻结基线。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题可信 golden 隔离提取完整类型（1 个假设参数、universes=[]），匹配 Lean 4.27.0 Docker 预编译 ExpectedType 并独立审计其传递公理；两份固定包及 checker 内容/AST 一致。最终本地 Harbor 镜像 sha256:5ba068b8630f9329cacbee5fb156aa0fe519ff6389e396e4810044e282b439d5 验收成功；/tests 上传包、/opt 包和本地哈希一致。两入口均因原题 sorry 预期退出 1/reward=0；同一最终子容器分别完成 29 项实际函数补测，覆盖 Spec 审计、ubuntu(uid=1000) 编译、完整类型、公理拒绝 sorryAx、canary、冻结/越界/语义偷换/缓存遮蔽/产物缺失及篡改负例。冻结文字不变的恒等 totient 攻击可编译且公理合法，但完整类型比较拒绝。公开 Target、golden、GoldenCheck 与全部 15 项 immutable 哈希不变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-694-inf-unique/attempt-001/final-verification.json；Docker 已 stop/rm 本题容器 ec7bcc21522f、5de23a05c43c、9b4642cb5d86，删除新建镜像 145acb82a2dc、5ba068b8630f 及两个本题网络；逐项 inspect 确认不存在，未删除预存共享镜像/缓存。见 cleanup.json（all_removed=true）。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata.statement_status=consistent。本目标是正 totient 值唯一原像存在则此类值无限的已知条件变体，与原题页、锁定上游及 Ford The distribution of totients Theorem 2 一致。Nat 的 0 仅给结论增加一个元素；假设 n>0 排除零的平凡唯一原像。前缀另一个主定理的空纤维问题不影响本目标。数学陈述/定义均未修改，详见证据 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "metadata.public_lean4_proof=unknown、status=blocked。技能 CSV 按完整 ID 精确匹配未命中；多组关键词检索并读取上游、精确目标 PR 2690/3212 及其 fork 源码、题目论坛、Shashi456/Jayyhk/plby、Carmichael scaffold、AlphaProof 和 OpenAI totient 相关来源。精确目标 PR 仍为 sorry；已核查的其他证明是比值/碰撞/计数等不同命题。GitHub 全局代码搜索需认证（401），故不宣称不存在完整证明；详见证据 public-proof-review.json。"
+    }
+  }
+}

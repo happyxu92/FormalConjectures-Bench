@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-14-w-3-4",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原搜索命令遗漏 .lake/packages，现已显式补齐。Harbor 容器内 ubuntu 使用该三路径命令成功找到 Mathlib.irrational_sqrt_two（exit 0）。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 imports；原 Dockerfile 缺少普通用户最终构建验收，现以 USER ubuntu / RUN lake build +FormalConjecturesBench.Target 结尾。本地 Harbor 镜像成功构建，容器内同命令 exit 0；原始 sorry 警告不是依赖故障。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能脚本实际执行初检及终检，均为 no_issue；两份头一致，原头通过，改头与移除 := 均被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "旧 GoldenCheck 在候选环境重解析命题。已从本题 immutable golden 隔离 elaboration 完整类型 Green14.W 3 4 = 18；无外层参数/universes，ExpectedType 及引用定义传递依赖仅标准公理，无临时 W_3_4/sorryAx。两包、清单和 checker AST/内容一致；固定预编译 Spec 优先路径，无运行时生成/回退。当前本地任务经 Harbor Docker 构建（image sha256:71c11f8ee2342807b467b1e7a8385fb867acaa220519d4b77fc8556d3924ef40）；/tests 上传包与 /opt 安装包哈希均核对。正式入口 exit 1/reward 0，本地入口 exit 1：仅因原题 sorry，非实现故障。同一子容器两包及 root 分支实际函数补测覆盖 Spec 加载/审计、ubuntu(uid1000)编译、完整类型匹配、目标公理拒绝 sorryAx、canary；冻结/越界/语义实例偷换/缓存遮蔽/产物缺失篡改负例通过。原正常 imports 与安全检查保留。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-14-w-3-4/attempt-001（validation-coverage.json、delivery*.json、generation.log、harbor*）。已 stop/rm 本题两个容器，删除本题镜像 sha256:71c11f8ee2342807b467b1e7a8385fb867acaa220519d4b77fc8556d3924ef40 及网络 greensopenproblems-14-w-3-4-g61-a001-34b7__env_default，inspect 核实均不存在；预存共享依赖镜像保留。见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata.statement_status=consistent。核对 Target:53–65 及 Set.IsAPOfLengthWith 的精确基数约束，符合 Green Problem 14 定义；AKS14 https://arxiv.org/pdf/1102.5433 第3页 Definition 1.1/Table 1 给出 W(3,4)=18。独立穷举17点有2个避色染色、18点无避色染色（非Lean证明）。这是已知精确值变体，未修改任何数学陈述/定义。见 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "按完整ID精确命中技能 references/public-lean4-proofs.csv，public_lean4_proof=true；来源 https://github.com/Konamiu/formal-conjectures/blob/d6a68af97f6ca7856d892569d88ab1ecc8e927bf/FormalConjectures/GreensOpenProblems/14.lean#L301 。按技能无需再次联网；未声称在本环境重编译该公开证明，未放入任务答案。见 public-proof-csv.json。"
+    }
+  }
+}

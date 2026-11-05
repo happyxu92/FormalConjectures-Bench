@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-961-jutila-ramachandra-shorey-upper-bound",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "保留已修复的三个显式搜索路径，含 .lake/packages；本轮最终 Harbor 子容器内 ubuntu 实际 rg 找到 Nat.smoothNumbers，退出 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；保留 Dockerfile 末尾 USER ubuntu 的 RUN lake build +FormalConjecturesBench.Target。本轮当前本地 task 经 Harbor force_build 成功，同一子容器 ubuntu 复验构建退出 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整运行技能 Unicode 脚本并最终复验，case=no_issue；原头通过、修改头及移除 := 被拒绝；两份 checker 内容/AST 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已解除旧阻塞：仅在修复生成的 Spec 中，为同名同完整类型的 well_defined 提供独立无 sorry 存在性证明（素数 p≥k+1，区间长度 p+1）。Lean 从相同环境分别 elaboration 原/新辅助声明，核对完整 Expr 类型及 universes 完全相同；f 的定义源码不变。ExpectedType、f、well_defined 的传递公理审计均仅含标准允许公理；未允许原 Sylvester–Schur 的 sorryAx。原目标临时声明未导出，完整外层参数=0、universes=[]。两份源码/预编译包/清单已同步并固定哈希，verifier 不重新生成或解析预期命题。当前本地 Harbor 镜像 c2d5a665e3a1dcbd02fb0c66ca5f33f9677a669f82511b36a0bc2fee295ebcd1；上传 /tests、预装 /opt 包及本地全部交付哈希一致。两入口实际退出 1、reward=0，原因仅为原目标 sorry 的预期源码拒绝；同一子容器分别从两入口包调用实际函数，各 33 项补测通过，覆盖可信审计、ubuntu 编译、完整类型比较、公理拒绝、canary、冻结/越界/语义偷换/缓存遮蔽/缺失及篡改负例。语义攻击本身无禁用公理，但被真实完整类型比较拒绝。所有 immutable 哈希保持不变。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/retry-seven-20261105/tasks/erdosproblems-961-jutila-ramachandra-shorey-upper-bound/attempt-001；详见 generation.log、validation-summary.json、delivery-hashes.json、static-validation.json。Docker 清理完成并 inspect 核实：3 个本轮容器均不存在（首个先前已移除，其余 c8133a267ab9、dff188c74b2a 已停止并删除），本轮镜像 c2d5a665e3a1 及专用网络 e5e5ce2b0163 已删除；预先存在的共享依赖缓存和其他任务资源未触碰，见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。重新核对完整 golden 定义、锁定上游及 Erdős 1976《Problems and results on consecutive integers》首页公式(1)：本题是已知 Jutila–Ramachandra–Shorey 上界变体。自然数区间、平滑阈值、最小值及实对数 atTop 大O未发现明显数学错误；不改陈述、定义、假设或任何冻结文件。见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。追加多组检索并实际读取上游、GitHub issue/PR API、作者 fork、Mathlib 和其他候选 Lean 源码；新跟进 PR 2552/3077 的 patch 与固定提交源码，确认仅重标属性、仍含 sorry，不是完整证明。未核实到本目标公开完整证明；当前问题/论坛 HTTP403、Constellate DNS失败仍留下关键缺口，故 metadata 保持 unknown/blocked，不以 GitHub 全局代码搜索认证受限为唯一理由，也不宣称不存在证明。见 public-proof-search.json、fetch-results.json。"
+    }
+  }
+}

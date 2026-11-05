@@ -1,0 +1,35 @@
+{
+  "task_id": "mathoverflow-75792-complexity-three-pow",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令显式补入 .lake/packages；在 Harbor 子容器中以 ubuntu 执行三路径 rg，找到 Mathlib 的 Semigroup 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；原 Dockerfile 缺少最终普通用户验证，现以 USER ubuntu / RUN lake build +FormalConjecturesBench.Target 结尾。本地 Harbor 构建及容器内 ubuntu 再构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能运行 Unicode 脚本并最终复验，均为 no_issue；原始头通过、改头和缺少 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden 隔离候选，通过 Lean elaborator 提取完整 Iff 类型及空 universe 列表，预编译并审计 ExpectedType、complexity、Reachable；临时占位声明及 sorryAx 不进入可信依赖。两份包及 checker 内容/AST、清单和全部 immutable 哈希一致。固定 /tests 或 /opt 包、锁定工具链及依赖路径，运行时不生成 Spec。当前本地 task 经 Harbor force_build，镜像 sha256:510d382a25ee6df4b649d961cc19285642e60fb46778f1a706760a3649bb44b4；上传 /tests 与镜像 /opt 包逐文件哈希匹配本地。正式和本地入口均因原题 sorry 预期退出 1，正式 reward=0；同一子容器分别用两份实际 checker 补测 Spec 加载/审计、ubuntu 编译、完整类型比较、目标 sorryAx 拒绝和 canary，并拒绝冻结修改、越界源码、合法实例语义偷换、缓存/环境遮蔽、产物缺失和篡改。无实现异常，不表示原题证明完成。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/mathoverflow-75792-complexity-three-pow/attempt-001。清理已核实：删除本题 spec-g61-757a 和 g61-757a__env-main-1 两容器、上述任务镜像/tag 及本题 Harbor 网络；保留预先存在的共享生成镜像和依赖缓存，未使用 prune。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已标记 consistent。核对完整 Reachable/complexity 定义、正指数范围及 pinned 上游，与 Altman–Zelinsky arXiv:1207.4841 的 Selfridge 下界和 3 的幂等号情形一致；这是已解决的 powers-of-three 变体，不是开放的 powers-of-two 问题。MathOverflow 403，但引用原论文可读；未改数学输入。详见 research-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID 精确匹配技能 CSV 未命中；六组检索后读取 BrettKnox/open-problems-lab 在 04ef51fe64bbdd85a40c7105cf0ea46a3bee80af 的完整 IntegerComplexity.lean。其 complexity_three_pow 无占位或新增公理，证明全部正指数的等价命题；表达式 eval/size 的最小值与本题 Reachable 的 Nat.find 定义经构造子归纳一致。已标记 public_lean4_proof=true 并记录固定源码 URL。源码核对而非本题编译验收：公开仓库为 Lean 4.34.0-rc1，本题为 4.27.0，未移植证明或把答案加入镜像。GitHub 历史 API 限流、匿名代码搜索受限，不影响已访问的完整证明。"
+    }
+  }
+}

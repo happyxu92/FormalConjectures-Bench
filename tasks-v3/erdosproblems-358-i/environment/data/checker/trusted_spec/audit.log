@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [Quot.sound, propext, Classical.choice]
+audited Erdos358.f: [Quot.sound, propext, Classical.choice]
+audited Erdos358.intervalRepresentations: [propext, Quot.sound, Classical.choice]
+audited Erdos358.g: [Quot.sound, propext, Classical.choice]
+audited Erdos358.intervalRepresentationsNonTrivial: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+True ↔ ∃ A, StrictMono A ∧ Filter.Tendsto (Erdos358.f A) Filter.atTop Filter.atTop
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

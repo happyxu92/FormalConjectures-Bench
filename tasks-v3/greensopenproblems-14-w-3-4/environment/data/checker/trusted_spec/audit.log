@@ -1,0 +1,29 @@
+FCBTrustedSpec.lean:68:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:74:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:84:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:90:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:97:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:104:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:111:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:118:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:125:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:135:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:150:8: warning: declaration uses 'sorry'
+extracted complete type: W 3 4 = 18; universes: []
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [Classical.choice, propext, Quot.sound]
+audited Green14.W: [Classical.choice, propext, Quot.sound]
+audited Green14.mixedMonoAPGuaranteeSet: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0 (original elaborated expression)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Green14.W 3 4 = 18
+def Green14.W : ℕ → ℕ → ℕ :=
+fun k r => sInf (Green14.mixedMonoAPGuaranteeSet k r)
+def Green14.mixedMonoAPGuaranteeSet : ℕ → ℕ → Set ℕ :=
+fun k r =>
+  {N |
+    ∀ (coloring : ↑(Set.Icc 1 N) → Fin 2),
+      (∃ s, {x | ∃ s' ∈ s, ↑s' = x}.IsAPOfLength ↑k ∧ ∀ x ∈ s, coloring x = 0) ∨
+        ∃ s, {x | ∃ s' ∈ s, ↑s' = x}.IsAPOfLength ↑r ∧ ∀ x ∈ s, coloring x = 1}
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

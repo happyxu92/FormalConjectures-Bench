@@ -21,6 +21,13 @@ difficulty_explanation = "The agent must construct a Lean 4 proof of a research-
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
 verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
 
+statement_status = "consistent"
+statement_note = "Full Erdos4 large-prime-gap assertion. The real-valued gap and four iterated logarithms match the pinned source. Ford-Green-Konyagin-Maynard-Tao, arXiv:1412.5029v3, Introduction and Theorem 1 give a stronger bound; zero-based prime indexing and finitely many small log arguments do not affect infinitude. No mathematical statement or definition changed. erdosproblems.com/4 returned HTTP 403; the pinned source and original paper were accessible."
+public_lean4_proof = true
+public_lean4_proof_status = "catalog_match"
+public_lean4_proof_urls = ["https://github.com/openai/LongGapsBetweenPrimes/blob/master/LongGapsBetweenPrimes.lean"]
+public_lean4_proof_note = "Exact full task ID matched lean-task-repair/references/public-lean4-proofs.csv; existence accepted per skill without re-fetching or compiling the public proof. No answer was bundled."
+
 [verifier]
 timeout_sec = 7200.0
 

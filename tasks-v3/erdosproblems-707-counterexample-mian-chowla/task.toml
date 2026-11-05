@@ -9,6 +9,11 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "mismatch"
+statement_status_note = "The target quantifies over n = 0 without a positivity assumption. ZMod 0 is the integers, and any finite Sidon set extends to an infinite perfect difference set. Statement and definitions intentionally left unchanged."
+public_lean4_proof = false
+public_lean4_proof_status = "searched"
+public_lean4_proof_note = "No complete public Lean4 proof of the retained statement found after source and PR review. Alexeev's public counterexampleAM_noExt requires a nonzero modulus, so does not cover this target's n=0 case. API restrictions were bypassed via raw sources and PR patches."
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/707.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

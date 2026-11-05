@@ -1,0 +1,11 @@
+{
+  "task_id": "erdosproblems-672-oblath",
+  "checks": {
+    "instruction_search": {"has_issue": true, "repair_status": "repaired", "note": "源码搜索命令已显式补齐 .lake/packages；真实容器 rg 命中 Mathlib 的 Nat.Prime 定义，退出码 0。"},
+    "lean_dependency": {"has_issue": true, "repair_status": "repaired", "note": "本题仅有两项标准 import，无额外上游依赖；Dockerfile 已补末尾 USER ubuntu 下的 RUN lake build +FormalConjecturesBench.Target。本地 Harbor 镜像构建和实际 ubuntu 构建均通过。"},
+    "unicode_header": {"has_issue": false, "repair_status": "not_needed", "note": "已实际运行技能 Unicode 脚本，初检及复检均为 no_issue；两份头部和冻结基线保持不变。"},
+    "semantic_checker": {"has_issue": true, "repair_status": "repaired", "note": "从本题 golden 隔离候选提取完整四项合取类型及空 universe 列表，预编译并审计 ExpectedType 与 Erdos672With；两份包哈希一致，加载来源固定，无运行时生成或命题重解析。最终当前本地 Harbor 构建镜像 sha256:692b4e6fe38a1e0ebb457d73214da504d07fa6ecf5d781341bc70364cdd92bf8，通过 /tests 上传及 /opt 安装包哈希核对。两入口均以原始 sorry 预期退出 1、正式 reward=0；同一子容器内两套实际函数补测均通过，包括 ubuntu UID1000 编译、Spec 审计、完整类型比较、sorryAx 审计及 canary、冻结/越界/合法实例语义偷换/缓存遮蔽/缺失和篡改负例。合法语义偷换亦经完整 main 实际到达类型比较后拒绝。所有 immutable 哈希未变；不表示原题证明通过。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-672-oblath/attempt-001。已核实清理：带 g61-a001-672b 标识的 3 个本题容器、2 个本题镜像（304449df76dc、692b4e6fe38a）及 2 个网络均已移除；预先存在的共享预编译镜像保留，无本题资源残留。"},
+    "statement_fidelity": {"has_issue": false, "repair_status": "not_needed", "note": "metadata 已标 consistent。完整 Erdos672With 和 Set.IsAPOfLengthWith 定义核对无明显数学错误；Gyory–Hajdu–Pinter 2009，DOI 10.1112/S0010437X09004114，p.846 明确覆盖 (5,2),(3,3),(3,4),(3,5)。这是已知特例合取，不是开放原题全解；(3,3) 的 Euler/Oblath 归属差异不影响陈述有效性。所有数学输入未改。"},
+    "public_lean4_proof": {"has_issue": null, "repair_status": "not_repaired", "note": "完整 ID 精确匹配技能 CSV 未命中；已执行 12 组多角度检索并追踪上游、Mathlib、生成文档、AlphaProof 尝试清单与实际 Euler 仓库 Lean 源码。Euler 仓库仅证明 (4,2)，不覆盖本题；上游 oblath 仍为 sorry。原题/论坛 403、GitHub API 限流及代码搜索需登录，故 metadata 标 unknown/blocked，不宣称确认不存在公开完整证明。详见证据 math-and-public-review.json、source-fetch-results.json。"}
+  }
+}

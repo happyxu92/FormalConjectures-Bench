@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-14-w-3-3",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；在本题 Harbor 子容器以 ubuntu 实际 rg 找到 Mathlib 定义，退出 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import。原 Dockerfile 缺普通用户最终验证，已以 ubuntu RUN lake build +FormalConjecturesBench.Target 结尾；本地 Harbor 构建及同容器 ubuntu 重建成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已执行技能 Unicode 脚本，case=no_issue；原头通过、改头及移除 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题原始 golden 隔离提取完整 elaborated 类型及 universes=[]，预编译并审计 ExpectedType/Green14.W/mixedMonoAPGuaranteeSet，仅允许标准公理；两份可信包一致，固定清单及加载路径，无运行时生成或重解析原命题。当前本地 task 经 Harbor force_build 验收；/tests 上传包、/opt 包和本地全部哈希一致。两入口均仅因原题 sorry 预期退出1/reward0；同一子容器实际函数在 root/ubuntu 两种入口路径补测加载与可信审计、ubuntu编译(uid1000)、完整类型比较、公理拒绝sorryAx、sorry canary，以及冻结/越界/语义实例偷换/候选缓存遮蔽/产物缺失篡改负例，全部符合预期。安全检查原函数 AST 保持不变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-14-w-3-3/attempt-001（generation.log、delivery.json、harbor/、validation-coverage.json、static-final.json）。Docker 已 stop/rm 本题 Spec 容器及 Harbor 子容器，删除本题镜像 bcc94194c4c1（greensopenproblems-14-w-3-3-g61-333-a001__env-main:latest）和自有网络并核实不存在；预存共享依赖镜像保留。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。目标是已知精确值 W(3,3)=9，不是完整开放渐近问题。已核对 Green Problem14、AKS14 p.3 Definition1.1/Table1、锁定上游及 IsAPOfLengthWith 的基数限制（排除零公差）。独立穷举8/9点二染色与9吻合。未改数学陈述、定义、公开Target、golden或冻结基线。见 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID 精确命中技能 references/public-lean4-proofs.csv，按规则标记 public_lean4_proof=true，无需重新联网或在本环境编译公开证明。来源：https://github.com/Konamiu/formal-conjectures/blob/d6a68af97f6ca7856d892569d88ab1ecc8e927bf/FormalConjectures/GreensOpenProblems/14.lean#L289；见 public-proof-csv.json。"
+    }
+  }
+}

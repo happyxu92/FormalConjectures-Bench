@@ -1,0 +1,5 @@
+audited complete ExpectedType and its transitive references: [propext]
+complete outer binder count: 5; universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {n x y : ℕ}, x.Coprime y → 1 < x * y → n.factorial ≠ x ^ 4 + y ^ 4
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]

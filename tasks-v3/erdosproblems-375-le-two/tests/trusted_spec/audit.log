@@ -1,0 +1,16 @@
+audited FCBTrustedSpec.ExpectedType: [propext]
+audited Erdos375.Erdos375Prop: [propext]
+complete outer binders (names, binder kinds): #[(`n, Lean.BinderInfo.default), (Lean.Name.mkNum `a._@._internal._hyg 0, Lean.BinderInfo.default),
+  (`k, Lean.BinderInfo.default), (Lean.Name.mkNum `a._@._internal._hyg 0, Lean.BinderInfo.default),
+  (Lean.Name.mkNum `a._@._internal._hyg 0, Lean.BinderInfo.default)]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ n ≥ 1,
+  ∀ k ≤ 2,
+    (∀ i < k, ¬Nat.Prime (n + i + 1)) → ∃ p, Function.Injective p ∧ ∀ (i : Fin k), Nat.Prime (p i) ∧ p i ∣ n + ↑i + 1
+def Erdos375.Erdos375Prop : Prop :=
+∀ n ≥ 1,
+  ∀ (k : ℕ),
+    (∀ i < k, ¬Nat.Prime (n + i + 1)) → ∃ p, Function.Injective p ∧ ∀ (i : Fin k), Nat.Prime (p i) ∧ p i ∣ n + ↑i + 1
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]
+'Erdos375.Erdos375Prop' depends on axioms: [propext]

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-889-v0-gt-1",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "源码搜索命令已显式包含 /app、/opt/formal-conjectures 和其 .lake/packages；最终 Harbor 容器中以 ubuntu 搜索 primeFactors 成功（退出码0），无路径或权限错误。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题没有额外上游 imports；原 Dockerfile 缺少末尾普通用户构建验证，已补 RUN lake build +FormalConjecturesBench.Target。最终本地 Harbor 镜像构建及同容器 ubuntu 实际构建均成功，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本，修复前及最终均为 no_issue；原头通过，修改头及移除 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题可信 golden 隔离候选、提前提取完整类型（两个外层参数，无 universe 参数），预编译并独立审计 ExpectedType、v、v₀ 的传递公理；两份 Spec 包及 checker 内容/AST 一致。运行时固定可信来源、校验哈希及版本、仅加载产物，无重新解析或缺失回退。最终本地 Harbor 镜像 sha256:ff17b166dfe67eb4b7bf43c83cb444fc92ccb19de46578a7c98a31ad2f8bfd62；/tests 上传包及 /opt 安装包与本地逐文件哈希一致。正式与本地入口均因原题 sorry 预期退出1、reward=0；同一子容器的两份 checker 各完成28项实际函数补测，包括可信审计、ubuntu编译、完整类型比较、sorryAx目标公理拒绝、canary、冻结/越界/合法实例语义偷换/同名模块及缓存遮蔽/产物缺失和篡改拒绝。无必需路径未覆盖，不声称原题已获证明。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-889-v0-gt-1/attempt-001（validation-summary.json、delivery.json、static-validation.json 及生成/Harbor日志）。Docker 已清理并核实：后缀 g61-a001-889d 的 spec、首轮 Harbor、final Harbor 共3个容器均已 stop/rm；本题2个镜像（d75c1c3a418b、ff17b166dfe6）及2个网络均已删除，完整ID核验不存在。预存共享依赖镜像 e21dc171550d 和共享构建缓存保留；cleanup.json 记录成功，无本题遗留资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核读完整定义、锁定上游及 Erdős–Selfridge 1967 原论文 p.428：https://users.renyi.hu/~p_erdos/1967-21.pdf。本题为已知 v₀(n)>1 下界变体，正整数例外集合完全一致，另外排除自然数0；primeFactors计数、range k及ℕ∞上确界未见明显错误。不是原开放趋于无穷问题；数学陈述、定义、Target、golden、GoldenCheck和冻结基线均未改。题目网页403，由可访问原论文补足证据。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "按完整ID精确命中技能 references/public-lean4-proofs.csv，已标 public_lean4_proof=true；依要求无需重新联网验证。来源：https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos889_erdos_889_variants_v0_gt_1.lean#L103。未在本题编译该公开证明，也未将答案放入镜像。"
+    }
+  }
+}

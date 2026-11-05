@@ -1,0 +1,21 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos442.Real.maxLogOne: [propext, Quot.sound, Classical.choice]
+audited Erdos442.Set.bddProdUpper: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0 (original elaborated expression)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ A f C,
+  ∃ (_ : 0 < C) (_ : f =o[Filter.atTop] 1),
+    ∀ᶠ (x : ℝ) in Filter.atTop,
+      ∑ n ∈ (A ∩ Set.Icc 1 ⌊x⌋₊).toFinset, 1 / ↑n =
+          Real.exp
+            ((1 / 2 + f x) * √(Erdos442.Real.maxLogOne (Erdos442.Real.maxLogOne x)) *
+              Erdos442.Real.maxLogOne (Erdos442.Real.maxLogOne (Erdos442.Real.maxLogOne x))) ∧
+        |∑ nm ∈ ((A ∩ Set.Icc 1 ⌊x⌋₊) ×ˢ (A ∩ Set.Icc 1 ⌊x⌋₊)).toFinset, 1 / ↑(nm.1.lcm nm.2)| ≤
+          C * (∑ n ∈ (A ∩ Set.Icc 1 ⌊x⌋₊).toFinset, 1 / ↑n) ^ 2
+def Erdos442.Real.maxLogOne : ℝ → ℝ :=
+fun x => max (Real.log x) 1
+@[reducible] def Erdos442.Set.bddProdUpper : Set ℕ → ℝ → Set (ℕ × ℕ) :=
+fun A x => {y | y ∈ (A ∩ Set.Icc 1 ⌊x⌋₊) ×ˢ (A ∩ Set.Icc 1 ⌊x⌋₊) ∧ y.1 < y.2}
+'Erdos442.Real.maxLogOne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

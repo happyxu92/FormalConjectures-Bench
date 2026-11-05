@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-394-hall-bound",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 和 .lake/packages；实际搜索命中 Mathlib 的 Nat.factorial，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 imports；补齐 Dockerfile 末尾 USER ubuntu 下的 RUN lake build +FormalConjecturesBench.Target。当前本地任务两次 Harbor 构建及最终容器 ubuntu 构建成功；原始 sorry 警告不等于依赖故障。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已运行技能 Unicode 脚本并最终复验，均为 no_issue；原头通过，修改头及缺失 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离候选提取完整类型并预编译 ExpectedType；完整自然数 cutoff Big-O 命题无外层参数、无 universes，ExpectedType 及 t 的传递公理审计通过。两份可信包和 checker 一致，固定产物来源、清单及哈希校验，无运行时生成或回退。最终本地 Harbor 子容器核对 /tests 上传包、/opt 包及 /app 输入哈希；两入口原题 sorry 预期退出 1、reward=0。随后同一容器实际函数补测两条加载路径，覆盖可信审计、ubuntu UID 1000 编译、完整类型比较、公理拒绝 sorryAx、canary、冻结/越界/名称偷换/缓存遮蔽/缺失及篡改负例；保留原安全规则和普通 imports，不代表原题证明完成。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-394-hall-bound/attempt-001。Docker 已清理并复核：3 个本题容器（969de4c1b7ab、5e7cb999dac4、5a2e3ac69bc2）均 stop/rm；2 个本题镜像（c22de67bf808、7c2facc90ed4）及 2 个本题网络已删除。预存匹配依赖镜像及共享缓存保留。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata 标记 consistent。完整定义与 Erdos-Hall 1978 Theorem 3（p.481，证明 pp.483–484）及 erdosproblems.com/394 一致；Lean 实际推断自然数 cutoff，是合理限制。t 的正性、非空性、Big-O 方向及迭代对数的最终正性未发现明显问题。公开 Target、golden、GoldenCheck、冻结基线和数学定义均未修改，所有 immutable 哈希一致。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 未命中技能 CSV。已多组检索并读取上游、相关 PR、作者 107 个归档文件和 Starfleet 原始源码包及论坛线索。上游 hall_bound 和 PR 2658/3180 仍有 sorry；Starfleet/Blair 的 FirstQuestion 是更强的实数 cutoff 对数幂节省，但未验证到本题自然数 cutoff 三重对数目标的完整 Lean 衔接。GitHub 全局代码检索需认证，分支枚举遭限流；metadata 如实标记 unknown，未宣称不存在证明。详见证据目录 public-proof-audit.json。"
+    }
+  }
+}

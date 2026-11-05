@@ -8,6 +8,12 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+statement_note = "The target is the valid N=4, k=3 non-representability variant (natural n,m, m>=n+3), not the full open problem. The frozen prose mistakenly repeats k=2; the statement matches the pinned upstream theorem and forum post 4599. Mathematical inputs are unchanged."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact skill CSV task match absent. Upstream main four_three still uses sorry; known non_square/nine proofs do not cover this target. Multi-query searches found an in-progress williamjblair/erdos-686 campaign, now 404/inaccessible, and removed proof experiments in PR 4359 whose history API is rate-limited. A complete public proof cannot be confirmed or excluded."
+public_lean4_proof_urls = ["https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/686.lean", "https://github.com/williamjblair/erdos-686", "https://github.com/google-deepmind/formal-conjectures/pull/4359"]
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/686.lean"

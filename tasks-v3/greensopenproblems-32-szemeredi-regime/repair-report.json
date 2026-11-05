@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-32-szemeredi-regime",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式补上 .lake/packages；最终 Harbor 容器以 ubuntu 执行三路径 rg，找到 Mathlib 的 IsEquivalent，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；原 Dockerfile 缺少最终普通用户构建验证，已补上 USER ubuntu 后的 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的 Harbor Docker 构建和同容器 ubuntu 构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际执行技能 Unicode 脚本及最终复验，均为 no_issue；原头、修改头拒绝和缺失 := 拒绝检查通过。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题原 golden 隔离提取完整类型（4 个外层 forall，universes=[]），预编译并传递审计 ExpectedType、HasLargeGapDilate、HasGap，仅标准公理；两份可信包同步并固定哈希与加载来源。运行时不生成 Spec，完整类型比较替代重新解析 GoldenCheck。最终本地 Harbor 构建验收及 /tests、/opt 包哈希核对通过；两入口均因原题 sorry 退出 1、reward=0，属预期拒绝。两路径在同一最终子容器调用实际 checker 函数，补测可信审计、ubuntu 编译、完整类型、目标公理和 canary；冻结、越界、实例语义偷换、缓存遮蔽、产物缺失/篡改负例通过。原安全函数、正常 import 规则及所有 immutable 哈希保持。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-32-szemeredi-regime/attempt-001/validation-coverage.json。Docker 已清理并核实：容器 dd7e5bcbd3de、819bebc02d5f、13a700c0f085 已 stop/rm；本题镜像 b7c2d2f9b9a3、a2d4f91df5cb 及两个 32s8/32s8f 网络已移除，无本题残留；预存共享依赖镜像与缓存保留。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 consistent。核对 pinned 上游完整定义及 Green《100 open problems》Problem 32 pp.17–18：这是合法的线性密度 Szemeredi 变体。0<c<1 使 omega 最终满足严格界、补集具有正密度、所需取整间隙长度有固定上界；未发现明显错误。未改数学陈述或定义，详见证据 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "marked",
+      "note": "完整 ID 未命中技能 CSV。多组关键词检索并读取 upstream、相关 PR、Mathlib、WIP Szemeredi 和公开 AP 源码，未核实覆盖本目标的完整证明；关键 proof 仓库目录 API 返回 HTTP 403 rate limit，相关发展及桥接覆盖不完整，故 metadata 标为 unknown/blocked，不声称证明不存在。详见证据 public-proof-review.json。"
+    }
+  }
+}

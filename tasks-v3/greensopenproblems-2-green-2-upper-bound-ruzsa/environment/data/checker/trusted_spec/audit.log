@@ -1,0 +1,9 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green2.maxRestrictedSumAvoidingSubsetSize: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0; existential/eventual binders retained in value
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ C > 0,
+  ∀ᶠ (n : ℕ) in Filter.atTop,
+    ∃ A, A.card = n ∧ ↑(Green2.maxRestrictedSumAvoidingSubsetSize A) < Real.exp (C * √(Real.log ↑A.card))
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

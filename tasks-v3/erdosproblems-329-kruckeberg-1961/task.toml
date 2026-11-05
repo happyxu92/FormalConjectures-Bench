@@ -9,6 +9,10 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact skill CSV ID has no match. Upstream main and PRs 2578/3102 retain sorry; other retrieved Sidon formalizations only concern finite sets. Global GitHub code search requires sign-in, API rate limited; no complete proof confirmed. See repair-report.json and task-specific evidence."
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/329.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

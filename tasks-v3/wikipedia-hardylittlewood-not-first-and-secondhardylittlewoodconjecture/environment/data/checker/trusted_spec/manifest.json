@@ -1,0 +1,29 @@
+{
+  "task_id": "wikipedia-hardylittlewood-not-first-and-secondhardylittlewoodconjecture",
+  "target_name": "HardyLittlewood.not_first_and_secondHardyLittlewoodConjecture",
+  "universe_params": [],
+  "platform": "x86_64",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "3e056011a683080760dc1fb67337f0cb16be321079e38c90f028f66a5f75f4fc",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "2b6c5ede36fa6cbcf1e7d5c035bd60e3a1b62e3933233c1a80137fc44454789f",
+    "FCBTrustedSpec.ilean": "c077372f7ab9fd41a3ffaf635ac82ec53015fbaf96e47f73bd09adc1d7898a00",
+    "FCBTrustedSpec.lean": "e63e3362d5e5838f09390073c4947b6e1ada664d5989ff019583be9b7d1d9d83",
+    "FCBTrustedSpec.olean": "3123eca48855df2a55b7ec3843a14f5b0a2c566e135ee93929ce52012174e03f",
+    "generate.py": "d53e3bcc0d528568e3847b021136dca2ad6659f63022ee2c0e93930fb4dad543",
+    "reproduce.sh": "4606b56d04166c190fa2269128730c02ba6962dd6c91631b376fbe3793139507"
+  },
+  "generation": "reproduce.sh; isolated trusted golden; temporary declaration environment discarded; two unrelated original placeholder theorems omitted; all original mathematical definitions retained under original names",
+  "complete_type": "forall implicit k and explicit m in antecedent; implication; negated forall implicit x,y and explicit hx,hy; extracted info.type, not a parsed restatement",
+  "audit": "AuditSpec.lean transitive collectAxioms for ExpectedType and all six prefix definitions; no temporary theorem exported"
+}

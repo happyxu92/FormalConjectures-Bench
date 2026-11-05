@@ -9,6 +9,10 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "consistent"
+public_lean4_proof = true
+public_lean4_proof_status = "known"
+public_lean4_proof_urls = ["https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/69.lean#L50"]
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/69.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

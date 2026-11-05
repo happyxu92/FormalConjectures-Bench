@@ -1,0 +1,35 @@
+{
+  "task_id": "mathoverflow-75792-complexity-five-pow",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式加入 .lake/packages；在最终 Harbor 子容器以 ubuntu 执行三路径 rg，退出 0，找到 Mathlib/Data/Nat/Find.lean 等包内定义。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import；原 Dockerfile 缺少末尾验证，已追加 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的 Harbor 构建成功，同一子容器 ubuntu 重测退出 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本及最终复验，均为 no_issue；原头通过，修改头和缺失 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离 Submission 提取完整类型及有序 universes（空），以匹配 Lean 4.27.0 Docker 生成、编译和独立审计 ExpectedType；两份可信包及 checker 内容/AST 一致。运行时固定预编译来源、哈希和依赖版本，不重新解析命题或回退生成。最终本地 Harbor 镜像 sha256:079f8769fc0558ed1648d3926a0064a489c5335aa7bf2d9be2d4bc65b76aee5f；/tests 上传包和 /opt 包均逐文件匹配本地。两入口均因原始 sorry 预期退出 1，reward=0，不代表原题证明通过；同一子容器两套实际函数补测均退出 0，覆盖 Spec 审计、ubuntu 编译、完整类型、公理检测和 sorry canary，以及冻结/越界/HPow 实例语义偷换/同名缓存遮蔽/产物缺失及篡改负例。所有 immutable 哈希未变，原安全检查保留。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/mathoverflow-75792-complexity-five-pow/attempt-001。Docker 清理完成并核实：已停止并移除本题 3 个容器（spec-g61-7579a1、g61-7579a1、g61-7579a1-final），删除本题两镜像 c78903210707/079f8769fc05 及两网络；镜像 ID/标签均已不存在，共享预存依赖缓存保留。无未完成验收项；未提供原题完整证明。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已核对 task.toml 指定修订的完整前缀和目标。目标是 False ↔ 全称断言，而非要求证明该错误全称断言。n=6 时已有 29 个 1 的表达式，complexity(5^6) ≤ 29 < 30；与 arXiv:1203.6462 §2.2 一致。MathOverflow 直连 403，但原论文及锁定上游可读。仅标记 statement_status=consistent，未改数学输入。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确命中 skill references/public-lean4-proofs.csv，已标 public_lean4_proof=true、catalog_match。来源：https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/Mathoverflow/75792.lean#L204 。依要求无需重新联网确认；未将公开答案放入镜像，未声称已在本题环境编译该公开证明。"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+FCBTrustedSpec.lean:39:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited CongruentNumber.congruentNumber: [propext, Quot.sound, Classical.choice]
+audited CongruentNumber.A: [propext]
+audited CongruentNumber.B: [propext]
+audited CongruentNumber.C: [propext]
+audited CongruentNumber.D: [propext]
+complete outer binders: 4; universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ),
+  Squarefree n →
+    Odd n → CongruentNumber.congruentNumber n → 2 * (CongruentNumber.A n).ncard = (CongruentNumber.B n).ncard
+def CongruentNumber.congruentNumber : ℕ → Prop :=
+fun n => ∃ a b c, a ^ 2 + b ^ 2 = c ^ 2 ∧ ↑n = 2⁻¹ * a * b
+def CongruentNumber.A : ℕ → Set (ℤ × ℤ × ℤ) :=
+fun n => {(x, y, z) | ↑n = 2 * x ^ 2 + y ^ 2 + 32 * z ^ 2}
+def CongruentNumber.B : ℕ → Set (ℤ × ℤ × ℤ) :=
+fun n => {(x, y, z) | ↑n = 2 * x ^ 2 + y ^ 2 + 8 * z ^ 2}
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

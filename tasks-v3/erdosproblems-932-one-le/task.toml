@@ -9,6 +9,10 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "consistent"
+statement_note = "The one_le density-zero variant matches the pinned upstream statement; no obvious mathematical error found. The open two-integer infinitude conjecture is not this target."
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact skill CSV ID not found. Upstream main still uses sorry; PRs 2590 and 3114 only relabel that placeholder. Multi-query web/GitHub/Mathlib searches did not establish a complete proof. Problem/forum were read successfully via direct HTTP after the web-fetch tool returned 403. GitHub global code-search rate/auth restrictions leave the public-proof search blocked; no complete proof is confirmed."
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/932.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

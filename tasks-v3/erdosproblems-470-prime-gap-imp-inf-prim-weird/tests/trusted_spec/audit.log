@@ -1,0 +1,18 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos470.PrimitiveWeird: [propext, Quot.sound, Classical.choice]
+audited Erdos470.AbundancyIndex: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+@Filter.Eventually.{0} Nat
+  (fun (n : Nat) =>
+    @LT.lt.{0} Real Real.instLT (@Nat.cast.{0} Real Real.instNatCast (primeGap n))
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real (@instHDiv.{0} Real (@DivInvMonoid.toDiv.{0} Real Real.instDivInvMonoid))
+          (Real.sqrt (@Nat.cast.{0} Real Real.instNatCast (Nat.nth Nat.Prime n)))
+          (@OfNat.ofNat.{0} Real (nat_lit 10)
+            (@instOfNatAtLeastTwo.{0} Real (nat_lit 10) Real.instNatCast
+              (@Nat.instAtLeastTwoHAddOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))))))) →
+      @Set.Infinite.{0} Nat Erdos470.PrimitiveWeird)
+  (@Filter.atTop.{0} Nat Nat.instPreorder)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

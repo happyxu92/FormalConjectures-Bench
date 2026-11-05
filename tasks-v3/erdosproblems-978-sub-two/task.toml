@@ -9,6 +9,10 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "mismatch"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task-ID CSV miss. Inspected upstream and OpenAI/Bridge978 sources: their proofs require no fixed (degree-2)-power divisor, unlike this task's degree-1 hypothesis. GitHub PR/history API rate-limited; no complete proof of this exact retained statement verified. The retained statement has an explicit degree-9 counterexample; see repair-report.json and external evidence."
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/978.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

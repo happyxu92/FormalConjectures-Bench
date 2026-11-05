@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-32-sh20-sqrt",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式包含三个搜索路径；最终 Harbor 子容器内以 ubuntu 实测 rg 退出0，命中 packages 内 sqrt 定义。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；原 Dockerfile 缺少普通用户最终构建验证，现以 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target 结尾。当前本地 task 的最终 Harbor Docker 构建及同容器 ubuntu 构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "技能 Unicode 脚本修复前、最终复验均为 no_issue；原头通过、修改头和移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题 immutable golden 在匹配 Docker 内隔离生成、预编译并审计完整 ExpectedType（universes=[]）；两份可信包及 checker 内容/AST 一致。固定 Spec/依赖来源，完整类型比较，不运行时解析或生成 Spec；保留原 import、冻结、源码、公理和 canary 规则。最终本地 Harbor 构建成功，上传 /tests、镜像 /opt 包与本地哈希一致；两正式入口均因原题 sorry 预期退出1、reward=0。相同最终子容器内两路径各32项实际函数补测通过，含 ubuntu UID、可信审计、完整类型、额外 False 参数、无 sorry 的 sqrt 名称偷换、目标 sorryAx 拒绝、canary、冻结/越界/缓存遮蔽、产物缺失与篡改拒绝。所有15项 immutable 哈希保持不变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-32-sh20-sqrt/attempt-001；Docker 清理已核实：本次3个容器（spec/32s8-a001/32s8-a001f）均 stop/rm；新建镜像 5bfa156ec3bf、4ea0d152366f 及2个本题网络均已删除；预先存在的共享生成依赖镜像保留。未提供或声称原题完整证明。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核对固定上游、Green Problem32 和 Shakan arXiv:2004.14828 Theorem1：p充分大时 n=floor(sqrt p)>=2，2p/n-2>=2sqrt p-2，取整并缩短间隙即为本题；HasGap 的0起点与论文1起点仅平移。是常数2的已知变体，不是常数100原开放问题。未修改定义、陈述或 golden。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整ID精确匹配技能CSV未命中。已多组关键词检索并读取固定及当前 FormalConjectures、相关PR/issue搜索结果、Lean证明仓库源码/列表、作者论文、wustep讨论、Conjectures.io、aiXiv线索及固定Mathlib；找到的 Green32 公开证明仅为 dirichlet_regime，sh20_sqrt 仍为 sorry。GitHub代码/树/部分PR访问HTTP403限流，无法充分排除分支/fork中的证明，故 metadata 标 unknown/blocked，而非断言不存在。详见证据 review.json 和 source-fetch-results.json；没有将公开答案放入镜像。"
+    }
+  }
+}

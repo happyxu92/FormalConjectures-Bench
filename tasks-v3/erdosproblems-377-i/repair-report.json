@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-377-i",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令显式补入 /opt/formal-conjectures/.lake/packages；在最终 Harbor 子容器以 ubuntu 搜到 package 中的 def centralBinom，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "没有额外上游 import；原 Dockerfile 缺少普通用户最终构建验证，已在末尾 USER ubuntu 后加入 RUN lake build +FormalConjecturesBench.Target。最终本地 Harbor 构建及同容器 ubuntu 实际构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "运行技能脚本，case=unicode_repaired：修复两份 EXPECTED_HEADER 中 𝓝 的代理对编码；原头通过、改头及移除 := 被拒绝；最终脚本复验 no_issue。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离生成并预编译 ExpectedType，完整保留 γ₀、hγ₀ 两个显式参数，universes=[]；独立审计其值及引用前缀的传递公理仅为允许的三项。两份可信包、checker 内容/AST 一致；固定 Spec/依赖加载来源，不运行时生成或重解析。最终 Harbor 从当前本地 task force_build，上传 /tests 和预装 /opt 包全部哈希匹配。两入口均因原题 sorry 预期退出 1，reward=0；同一最终子容器两套实际函数补测各 29 项通过，覆盖可信审计、ubuntu 编译、完整类型比较、目标 sorryAx、canary、冻结/越界、冻结文字不变的 Tendsto 偷换、缓存遮蔽、缺失/篡改及无回退。原安全规则保留，未增加通用 import 白名单。Docker：3 个本题容器及 2 个网络已移除并核实；最终镜像 6f0bfeea314f 已删除。首轮镜像 9e7e8631b269 正被另一题 erdosproblems-377-ub-spec-g61-a001-377d 使用，按共享资源规则保留，未强制删除；原有共享依赖镜像未动。详见 cleanup.json。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-377-i/attempt-001。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "consistent：已读取 EGRS75 原论文 Theorem 2（pp.86–87）、题目来源及固定上游完整源码；本题为已知一阶平均极限，质数筛选、非整除方向、1/x 平均及从 2 开始的对数级数一致。与另一个 ae 变体的 cofinite 错误无关。只标记元数据，数学输入及全部 immutable 文件未变。详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "unknown/blocked：完整 ID 精确匹配技能 CSV 未命中。多组检索及上游、Mathlib、相关仓库/作者页面追踪后，实际读取 PR 2748/2757/3278 的 patch 和完整 Lean 源码，均只改分类且保留 sorry；其他已核对结果不是本目标完整证明。GitHub 全局代码搜索需登录，API code/branches/forks 被限流；关联共享解答仅返回元数据壳，不能确认其内容。不能据此断言不存在公开证明。元数据已标记，详见 public-proof-review.json。"
+    }
+  }
+}

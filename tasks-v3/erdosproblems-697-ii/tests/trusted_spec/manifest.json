@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-697-ii",
+  "target_name": "Erdos697.erdos_697.parts.ii",
+  "universe_params": [],
+  "complete_binders": [
+    "{α : Real}",
+    "(hα : α < 1 / Real.log 2)"
+  ],
+  "platform": "x86_64",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "b8ac4bfc416fef43fff8a2135bc75373e6d7b046cc10670c39e42672d29b01cd",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "9024adbfad4c219a26cde062b74d4da59f5c83977c02c37fd122d9964a8e261d",
+    "AuditTypeIdentity.lean": "a0de39a3572ace57d67a9e0f2ebff9ff6bedd503bc57e1451cc3431a8fdd2335",
+    "DensityProof.lean": "1c27807daf9412cee418133c333dd4549953aca699d43e889ab47bcc95475d61",
+    "FCBTrustedSpec.ilean": "7cd5cb19b5de411e530619fd168338a2ad84ae0157731674def886db30a8afc5",
+    "FCBTrustedSpec.lean": "e638a342427732c8b2aabc84fd9ac9654bbdf983a6dc20a04440fc148a0ba953",
+    "FCBTrustedSpec.olean": "2d5a2c28e2c18cf30b9946d2f5fb701fef4502cbafcfee14fd90dbcbc5a73520",
+    "ProveDensityExists.lean": "814a9b33cf4b93538bc4274d6adf9d76d5b5bc339801b066e90a3e6862c3729c",
+    "generate-spec.py": "1e52d509a14099313849ab8298e8ebe2be9160321dff02b42a06631abbb77d07",
+    "reproduce.sh": "049f485ba361588104d072412557fed7dba2cd855abc23dc44d2b1b93ef20793"
+  },
+  "proof_transformation": "Only the proof of same-name/same-complete-type density_exists is replaced by a kernel-checked periodic-density proof. Every qualifying divisor divides N! for N > exp(m^alpha), so the set is periodic; indicator sums split into full periods and a bounded remainder, proving HasDensity. The original delta choose definition is unchanged and equals the original by rfl (proof irrelevance). Both original golden auxiliary and full target types/universes are independently checked in AuditTypeIdentity.lean. Frozen delta_lt and parts.i proofs remain unchanged, unreferenced by ExpectedType. The temporary target declaration and children are discarded before export. No candidate input participates.",
+  "generation_options": [
+    "autoImplicit=false",
+    "relaxedAutoImplicit=false",
+    "maxHeartbeats=0",
+    "maxRecDepth=4000"
+  ]
+}

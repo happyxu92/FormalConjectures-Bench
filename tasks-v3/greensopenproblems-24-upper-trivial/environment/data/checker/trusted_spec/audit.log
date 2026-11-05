@@ -1,0 +1,17 @@
+audited FCBTrustedSpec.ExpectedType: [Classical.choice, propext, Quot.sound]
+audited Green24.max013AffineTranslates: [Classical.choice, propext, Quot.sound]
+universe parameters in order: []
+complete outer parameter: {n : Nat} (implicit)
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {n : ℕ}, Green24.max013AffineTranslates n ≤ n ^ 2
+def Green24.max013AffineTranslates : ℕ → ℕ :=
+fun n =>
+  sSup
+    {k |
+      ∃ A,
+        A.card = n ∧
+          k =
+            {x ∈ A ×ˢ A |
+                match x with
+                | (x, y) => x ≠ y ∧ x + 3 * (y - x) ∈ A}.card}
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

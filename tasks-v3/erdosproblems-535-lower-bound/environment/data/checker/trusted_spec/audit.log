@@ -1,0 +1,9 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos535.f: [Classical.choice, propext, Quot.sound]
+audited Erdos535.AllBigOmega: [propext, Quot.sound, Classical.choice]
+audited Erdos535.NoConstantPairwiseGcdCoprimeSubsets: [propext, Quot.sound]
+complete outer binder count: 0 (closed existential proposition)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ c > 0, ∀ᶠ (N : ℕ) in Filter.atTop, ↑N ^ (c / Real.log (Real.log ↑N)) ≤ ↑(Erdos535.f 3 N)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

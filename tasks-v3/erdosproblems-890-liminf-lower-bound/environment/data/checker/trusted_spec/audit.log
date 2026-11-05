@@ -1,0 +1,11 @@
+complete outer binders: (k : Nat), explicit; universes: []
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos890.omegaGt: [propext, Quot.sound, Classical.choice]
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (k : ℕ),
+  Filter.liminf (fun n => ∑ i ∈ Finset.range k, ↑(ArithmeticFunction.cardDistinctFactors (n + i))) Filter.atTop ≥
+    ↑k + ↑k.primeCounting - 1
+def Erdos890.omegaGt : ℕ → ℕ → ℕ :=
+fun k n => {x ∈ n.primeFactors | x > k}.card
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos890.omegaGt' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -20,6 +20,12 @@ oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
 verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
+statement_status = "consistent"
+statement_status_note = "CES75 Theorem 8 (printed p.46), with a smaller epsilon absorbing integer rounding, matches the general k>=3 eventual forcing-threshold bound; mathematics unchanged."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID absent from skill CSV. Upstream upper_bound still has sorry; linked Jayyhk/mrricky22 proofs cover k=3 only; PRs 2707/3229 merely change annotations and retain sorry. GitHub code search/repository tree API returned rate-limit 403, preventing complete source coverage. See repair-report.json and external evidence public-proof-review.json."
+public_lean4_proof_urls = ["https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/865.lean", "https://github.com/google-deepmind/formal-conjectures/pull/3229", "https://github.com/mrricky22/erdos-865-lean", "https://github.com/Jayyhk/erdos-lean/blob/f8a51976fd2e66a52b4928c109fb9ae877a1a507/problems/865/Erdos865.lean"]
 
 [verifier]
 timeout_sec = 7200.0

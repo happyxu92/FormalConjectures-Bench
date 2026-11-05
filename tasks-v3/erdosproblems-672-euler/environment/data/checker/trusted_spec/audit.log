@@ -1,0 +1,11 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos672.Erdos672With: [propext, Quot.sound, Classical.choice]
+complete expanded binder count: 10
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Erdos672.Erdos672With 4 2
+def Erdos672.Erdos672With : ℕ → ℕ → Prop :=
+fun k l =>
+  ∀ (s : Finset ℕ),
+    s.card = k → ∀ n > 0, ∀ d > 0, n.gcd d = 1 → (↑s).IsAPOfLengthWith (↑k) n d → ∀ (q : ℕ), ∏ i ∈ s, i ≠ q ^ l
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

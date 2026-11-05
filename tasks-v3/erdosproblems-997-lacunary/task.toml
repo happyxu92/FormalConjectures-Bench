@@ -8,6 +8,12 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+statement_note = "The lacunary almost-everywhere variant matches Erdős (1964), section III, pp. 58–59; eventual lacunarity and finite initial changes are compatible. No obvious mathematical obstruction found; statement and definitions remain unchanged."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_urls = ["https://problems.science/problems/erdos-problems/997", "https://github.com/google-deepmind/formal-conjectures/pull/3247", "https://github.com/google-deepmind/formal-conjectures/pull/2725"]
+public_lean4_proof_note = "No exact task-ID CSV match. Multi-query search and source review did not verify a complete proof of this lacunary variant: upstream still has sorry; PRs 3247/2725 only relabel placeholders; Monticone and Jayyhk prove the prime variant, not this target. Vela proof-status lead returns HTTP 500 and authenticated GitHub code search is unavailable, so existence remains unknown rather than false."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/997.lean"

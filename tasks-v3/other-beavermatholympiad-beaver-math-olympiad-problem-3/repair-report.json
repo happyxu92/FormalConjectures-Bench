@@ -1,0 +1,35 @@
+{
+  "task_id": "other-beavermatholympiad-beaver-math-olympiad-problem-3",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 及其 .lake/packages；在 Harbor 容器以 ubuntu 实际检索到 Mathlib 的 padicValNat 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "没有额外上游 import；保留 ProblemImports 预编译，补上 Dockerfile 最终 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 task 经 Harbor Docker 构建成功，同容器 ubuntu 再构建退出码 0；未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本及最终复验，均为 no_issue，未修改定理头或冻结基线。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden、移除 Submission import 后在匹配 Lean 4.27.0/x86_64 Docker 环境提取完整类型；三个完整参数、universes=[]，独立编译审计仅依赖标准允许公理，临时目标未导出。两份 Spec 包及 checker 内容/AST 一致；固定清单哈希、工具链和依赖路径，仅加载预编译 Spec，无运行时生成回退。保留原源码/冻结/公理/canary 规则和普通 import。当前本地 Harbor 镜像 sha256:9a45efc48be38093f3ab0ec1951a97fdacd94d8faad2f3ba2a87242aad24b813；上传 /tests 与安装 /opt 的 checker、Spec、golden 哈希均吻合。正式和本地入口均退出 1、reward=0，原因仅为原题 sorry 的预期拒绝，不代表完成原题证明。两入口实际函数各完成 29 项补测：Spec 可信审计、观察到 uid1000 的候选编译、完整类型比较、目标公理、sorry canary，以及冻结/越界/语义偷换/缓存遮蔽/产物缺失及篡改负例。无未覆盖的必需路径。所有 immutable 哈希保持不变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/other-beavermatholympiad-beaver-math-olympiad-problem-3/attempt-001/，含 generation.log、delivery.json、validation-coverage.json、static-validation.json。Docker 清理完成并经 inspect/ps 复核：已 stop/rm 本题 spec-g61-a001-b3e7 与 g61-a001-b3e7__env-main-1 两容器，移除上述新建镜像及本题 default 网络；预先存在的共享基础镜像 e21dc171550d 保留，未删除其他任务资源。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "核对锁定上游 BeaverMathOlympiad.lean 与 https://wiki.bbchallenge.org/wiki/Beaver_Math_Olympiad 的问题 3，未发现明显错误。Lean 包含 k=0 不构成问题：递推每步至少增加 3，a(n)>=2，故不可能等于 4^0=1。metadata 标 consistent；数学定义、公开 Target、golden 和 GoldenCheck 均未修改。详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true；按完整 ID 精确命中技能 references/public-lean4-proofs.csv，无需再次联网确认。来源：https://github.com/gotrevor/collatz-cryptid/blob/62a4b7b0c0af9400098694cb5c5e65120ad4dc67/lean/Collatz/BMO/Problem3.lean#L296 。已标记 metadata，未把答案放入镜像，未声称该公开证明已在本题环境编译。证据 public-csv-match.json。"
+    }
+  }
+}

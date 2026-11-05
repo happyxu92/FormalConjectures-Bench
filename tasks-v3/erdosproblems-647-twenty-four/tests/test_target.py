@@ -334,14 +334,23 @@ def main() -> None:
     check_no_banned_patterns_in_editable_sources()
     check_extra_lean_files_confined()
     check_frozen_files_unchanged()
-    restore_dependency_config_cache()
+    load_trusted_spec()
     with make_fresh_golden_project() as tmp:
         project_dir = Path(tmp)
+        check_trusted_type(project_dir)
         check_build(project_dir)
         check_golden_theorem_import(project_dir)
         check_axioms(project_dir)
         check_sorry_canary(project_dir)
 
+
+# Load only the trusted checker-side integration, never a candidate module.
+import importlib.util
+_support_spec = importlib.util.spec_from_file_location(
+    "fcb_fixed_spec_support", TESTS_DIR / "spec_support.py")
+_support = importlib.util.module_from_spec(_support_spec)
+_support_spec.loader.exec_module(_support)
+_support.install(globals())
 
 if __name__ == "__main__":
     main()

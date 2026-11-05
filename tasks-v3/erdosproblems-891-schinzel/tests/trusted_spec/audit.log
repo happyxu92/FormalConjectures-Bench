@@ -1,0 +1,28 @@
+audited ExpectedType and all transitive dependencies: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 2
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (k : Nat),
+  @GE.ge Nat instLENat k (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) →
+    @Filter.Eventually Nat
+      (fun n =>
+        ∃ m,
+          And
+            (@Membership.mem Nat (Finset Nat) (@Finset.instMembership Nat)
+              (@Finset.Ico Nat Nat.instPreorder Nat.instLocallyFiniteOrder n
+                (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+                  (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                    (∏
+                      i ∈
+                        Finset.range
+                          (@HSub.hSub Nat Nat Nat (@instHSub Nat instSubNat) k
+                            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))),
+                      Nat.nth Nat.Prime i)
+                    (Nat.nth Nat.Prime k))))
+              m)
+            (@LT.lt Nat instLTNat k
+              (@DFunLike.coe (@ArithmeticFunction Nat (@MulZeroClass.toZero Nat Nat.instMulZeroClass)) Nat
+                (fun x => Nat) (@ArithmeticFunction.instFunLikeNat Nat (@MulZeroClass.toZero Nat Nat.instMulZeroClass))
+                ArithmeticFunction.cardDistinctFactors m)))
+      (@Filter.atTop Nat Nat.instPreorder)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

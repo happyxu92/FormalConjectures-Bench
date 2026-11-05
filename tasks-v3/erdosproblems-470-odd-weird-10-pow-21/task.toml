@@ -8,6 +8,11 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+statement_note = "Fang arXiv:2207.12906v1 Theorem 1.1 excludes odd weird numbers below 10^21. Nat.Weird is abundant and not pseudoperfect; Odd excludes n=0. This task is the finite exclusion result, not the open unrestricted existence problem. Statement and definitions are unchanged."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "No exact full-ID CSV match. Searched full name, aliases, Fang, Mathlib, upstream and related PRs/forks. PRs 2732/2768/2926/3254 retain sorry despite solved labels; PR 5080 proves a different abundancy-index statement. GitHub code search requires authentication (401), and the ConstELLAte proof index has DNS failure; no complete proof of this exact finite bound was verified. See task repair report evidence."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/470.lean"

@@ -1,0 +1,17 @@
+audited ExpectedType transitive axioms: [propext, Quot.sound, Classical.choice]
+ordered universe parameters: []
+outer binders: 0; entire negated universal proposition preserved
+def FCBTrustedSpec.ExpectedType : Prop :=
+Not
+  (∀ (n b : Nat),
+    @LT.lt Nat instLTNat (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) n →
+      ∀ (a : Fin n → Nat),
+        (∀ (i : Fin n), @GT.gt Nat instLTNat (a i) (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))) →
+          @Eq Nat
+              (∑ i,
+                @HPow.hPow Nat Nat Nat (@instHPow Nat Nat (@Monoid.toNatPow Nat Nat.instMonoid)) (a i)
+                  (@OfNat.ofNat Nat (nat_lit 4) (instOfNatNat (nat_lit 4))))
+              (@HPow.hPow Nat Nat Nat (@instHPow Nat Nat (@Monoid.toNatPow Nat Nat.instMonoid)) b
+                (@OfNat.ofNat Nat (nat_lit 4) (instOfNatNat (nat_lit 4)))) →
+            @LE.le Nat instLENat (@OfNat.ofNat Nat (nat_lit 4) (instOfNatNat (nat_lit 4))) n)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

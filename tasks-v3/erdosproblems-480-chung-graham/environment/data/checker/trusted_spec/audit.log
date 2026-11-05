@@ -1,0 +1,9 @@
+ExpectedType transitive axioms (including referenced prefix): [propext, Quot.sound, Classical.choice]
+complete binder: x : ℕ → ℝ
+complete binder: a✝ : ∀ (n : ℕ), x n ∈ Set.Icc 0 1
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+have c := 1 + ∑' (k : ℕ+), 1 / ↑(Nat.fib (2 * ↑k));
+∀ (x : ℕ → ℝ),
+  (∀ (n : ℕ), x n ∈ Set.Icc 0 1) → ⨅ n, Filter.liminf (fun m => ↑↑n * |x (m + ↑n) - x m|) Filter.atTop ≤ 1 / c
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

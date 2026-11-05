@@ -1,0 +1,12 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos930.nextPrime: [propext, Quot.sound, Classical.choice]
+audited Erdos930.IsPower: [propext]
+complete binder count: 6
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (k l n : ℕ),
+  3 ≤ k →
+    2 ≤ l →
+      Erdos930.nextPrime k ≤ n + k →
+        ∃ p, k ≤ p ∧ Nat.Prime p ∧ ¬l ∣ (∏ m ∈ Finset.Icc (n + 1) (n + k), m).factorization p
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

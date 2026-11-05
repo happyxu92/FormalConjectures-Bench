@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-sierpinskinumber-selfridge-78557",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式列出 /app、/opt/formal-conjectures 和 .lake/packages；Harbor 子容器中按该三路径命令找到 mathlib 的 theorem dvd_refl，退出码 0。证据：attempt-001/instruction-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 Dockerfile 缺少最终普通用户构建验证，现以 USER ubuntu、RUN lake build +FormalConjecturesBench.Target 结尾。本题仅两个标准 imports，无额外上游模块。当前本地 Harbor 镜像构建及子容器 ubuntu 构建均成功；原 sorry 警告不影响依赖加载。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整运行技能 Unicode 脚本及最终复验，均为 no_issue；原头通过，修改头和移除 := 被拒绝，两份 checker 一致；未修改冻结头。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境解析 GoldenCheck，存在名称遮蔽风险。现从本题 immutable golden 隔离提取完整类型及 universes，在匹配 Lean 4.27.0 Docker 依赖中预编译 ExpectedType = Nat.IsSierpinskiNumber 78557（无外层参数、无 universe 参数），独立审计传递公理仅 propext；两份可信包、checker AST/内容和原策略一致。固定 /tests 或本地 /opt 包的清单、golden、版本、依赖和产物哈希，运行时不生成 Spec；固定导入路径并以 ubuntu 编译临时副本，根限定目标进行完整类型比较。当前本地 Harbor 构建镜像 sha256:7df4f249561a1810bd3392dca60401618a9dad673bf84f13d51f2c9e92e7f284；Harbor 上传 /tests 与本地 /opt 包哈希均核对一致。正式入口和本地入口退出 1，reward=0，原因为原题 sorry；同一子容器通过两组各 29 项实际函数补测，含 Spec 加载审计、uid=1000 编译、完整类型比较、sorryAx 拒绝、canary、冻结/越界/语义偷换/缓存遮蔽/缺失与篡改负例。保留正常 import 及原安全规则，未增加外部模块白名单或 initializer 沙箱。所有 immutable 哈希未变；这不表示原题证明通过。证据根目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-sierpinskinumber-selfridge-78557/attempt-001，详见 generation.log、manifest.json（可信包内）、validation-coverage.json、delivery-hashes.json、final-verification.json。Docker 清理完成并核实：本次容器 68a9c3dc230c、b27ff9c523b7 已 stop/rm，任务镜像 7df4f249561a 及网络 7283fa2db033 已删除；预先存在的共享依赖镜像 0824de0f1647 保留。见 cleanup.json、cleanup-commands.json。无未验收的必需分支。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata.statement_status=consistent。核对锁定上游 selfridge_78557、Nat.IsSierpinskiNumber 和 Nat.Composite 完整定义及 MathWorld 的 Selfridge 1962 结果；本题不要求最小性。Python 独立核验覆盖集 {3,5,7,13,19,37,73} 对 n mod 36 全覆盖，且每个除数严格小于所有目标值；n=0 也满足。Wikipedia 链接 HTTP 403，但可访问 MathWorld、锁定源码及有限覆盖证书足以核查此固定命题。数学陈述和定义未改。证据：statement-audit.json、lean-definition-source.txt、composite-definition-source.txt。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "按完整 task ID 精确命中技能 public-lean4-proofs.csv，依据技能直接标记 public_lean4_proof=true；来源 https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/Wikipedia/SierpinskiNumber.lean#L56 。metadata 已同步；未为本项重新联网或声称在锁定环境编译该公开证明，未把答案放入镜像。证据：public-csv-match.json、static-validation.json。"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-32-dirichlet-regime",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures、隐藏 .lake/packages；最终 Harbor 子容器中 ubuntu 实际 rg 找到 Mathlib 的 IsCompact，退出 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import；补齐原先缺少的 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 task 两次 Harbor Docker 构建及最终 ubuntu 重建均成功；未放宽可信依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能实际运行 Unicode 脚本，初次及最终均 no_issue；原始头通过，改头/移除 := 负例拒绝。见 unicode.json、unicode-final.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离 Submission 后由 Lean 提取完整类型和 universes=[]，预编译 ExpectedType 并审计其及 HasGap/HasLargeGapDilate 的传递公理；两份固定包/清单相同。checker 固定工具链与 Spec/依赖加载来源，不运行时生成或重新解析命题，保留原源码/冻结/公理/canary 检查。最终当前本地 Harbor 构建（g61-32d7f）上传 /tests 与镜像 /opt 包和 golden 全部哈希匹配；两入口退出 1、reward=0，仅因原始 sorry 的预期拒绝。同一子容器两包实际函数及 root->ubuntu 编译补测全部通过：可信审计、完整类型正例、目标 sorryAx 拒绝、canary、冻结/越界/缓存遮蔽/缺失/篡改负例；合法 LE ℝ 实例偷换保持冻结文本、可编译且公理合规，但被完整类型比较及完整 checker 拒绝。不声称原题证明通过。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-32-dirichlet-regime/attempt-001；Docker 清理完成并核实：3 个本题容器 9505ed0e0e53/088e5daf2448/bf2f20d6340a、2 个新镜像 1525eb29d20f/07b778264a7f 及 2 个本题网络均已移除；预先存在的共享基础镜像保留，无遗留本题资源。见 cleanup.json/cleanup.log。"
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "statement_status=mismatch，仅标记未改陈述/定义：ω(p)=100+1/(p+1)^2 满足每个 c>0 的最终输入条件；大素数 p 时 floor(ω)=100、要求 gap=p-1，而任何 100 元单位膨胀的补集不可能含 p-1 个连续不同剩余类。当前上游和公开修正版也明确指出边界错误并改用 101≤ω，但本题和 Spec 保留原始 100<ω。见 math-review.json、精确有理数计算及 Green《100 open problems》32 注释。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中；已多组检索并读取固定/当前上游、anatoliiohorodnyk 5da9642 的实际完整 Lean 源码、wustep、Conjectures.io、aiXiv、Mathlib。命中的公开证明仅覆盖修正的 101≤ω 版本，不能覆盖本题。GitHub code search 需登录、API 限流、作者博客 403，故 metadata 为 unknown/blocked，未宣称找不到或已有本题证明；详见 public-proof-review.json、source-fetch.json。"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-18-bmz-corners",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 和 .lake/packages；在本题 Harbor 容器以 ubuntu 执行，命中 package 中 card 定义。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 imports；补充 Dockerfile 最终 USER ubuntu 的 RUN lake build +FormalConjecturesBench.Target。本地 Harbor 当前 Dockerfile 构建成功，容器内同命令复验退出 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本两次，均为 no_issue；原始头、修改头和移除 := 的检查通过，无须修改编码。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "由本题不可变 golden 在匹配 Lean 4.27.0 Docker 中隔离候选，提前提取完整类型及 universe [u_1]，编译、独立审计并同步两份 Spec；checker 固定可信路径和清单哈希，仅加载产物，不运行时重解析或生成。两份 checker 内容/AST、Spec 包及所有 immutable 哈希一致。当前本地 task 经 Harbor 构建镜像 sha256:3e19e956b9a01bb4d46ddd9fd62235c905dc00e633cd5435bc2f64110b24d7c2；/tests 上传包、/opt 包、/app 源码均与本地哈希一致。正式/本地入口均因原始 sorry 预期退出 1、reward 0；同一子容器两套实际函数各完成 29 项补测，覆盖可信加载/审计、ubuntu 编译、含 universe 的完整类型比较、公理审计与 canary、冻结/越界、语义偷换、缓存遮蔽、产物缺失及篡改。无实现故障，未证明原题。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-18-bmz-corners/attempt-001。已 stop/rm 本题生成容器 8e4f666d3272 和 Harbor 容器 d2561236ec19，移除本题网络及镜像 3e19e956b9a0，并 inspect 确认均不存在；无本次资源遗留，预存共享缓存保持不变。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已核对锁定上游完整前缀与目标、Green Problem 18、Solymosi arXiv:1201.3670 Theorem 2.1/3.3 及证明、Austin arXiv:1503.08746 引言。此题是已知 BMZ 计数变体，不是开放的 naive-corner 问题；左右乘法、密度、非平凡 g 和统一 c,m0 与三角移除论证相容，未发现明显数学错误。metadata 标记 consistent；未修改任何数学输入。详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID 精确命中技能 references/public-lean4-proofs.csv，已标记 public_lean4_proof=true；按要求无需再次联网核实。来源：https://github.com/conjectures-io/conjectures-contribution/blob/main/contributions/green-18/4beb78dddc2936f0407d4d88684ab929f406f9ddbc70f94166db51bc1f916da6/script.lean#L135 。本次未在题目环境编译该公开证明，也未将答案加入镜像。"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+FCBTrustedSpec.lean:36:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:51:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited ExpectedType transitive dependencies: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ᶠ (n : ℕ) in Filter.atTop,
+  ∀ (A : Finset ℕ),
+    A.card = n →
+      0 ∉ A →
+        (n ≤ (A ×ˢ A).sup fun x => x.1 / x.1.gcd x.2) ∧
+          ((n = (A ×ˢ A).sup fun x => x.1 / x.1.gcd x.2) ↔
+            ∃ k > 0,
+              A = Finset.image (fun x => k * x) (Finset.Icc 1 n) ∨
+                A = Finset.image (fun x => k * (Finset.Icc 1 n).lcm id / x) (Finset.Icc 1 n))
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

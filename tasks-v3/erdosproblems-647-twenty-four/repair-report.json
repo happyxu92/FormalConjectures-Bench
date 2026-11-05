@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-647-twenty-four",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；在最终 Harbor 子容器以 ubuntu 搜到 sigma_zero_apply，退出码 0。预编译缓存镜像中 /app 不存在的早期探测另行记录，未计为通过。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 imports；原 Dockerfile 缺少最终普通用户构建验证，现以 USER ubuntu、RUN lake build +FormalConjecturesBench.Target 结尾。本地 Harbor 镜像构建及同容器 ubuntu 重建成功，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已运行技能 Unicode 脚本及最终复验，均为 no_issue；原头通过，修改头及移除 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离候选，以匹配 Lean 4.27.0 Docker 提取完整类型（0 外层参数、无 universe 参数），预编译 ExpectedType 并审计传递依赖；两份 Spec、checker 及可信 spec_support 一致。固定加载预编译包，无运行时生成或回退；保留原源码规则、公理审计和 canary。当前本地 task 已经 Harbor 构建，/tests 上传包及 /opt 包与本地哈希一致；正式/本地入口均因原始 sorry 退出 1，reward=0，非实现故障。同一子容器两种入口包各完成 28 项实际函数补测：ubuntu 编译、可信审计、完整类型比较、sorryAx 拒绝、canary、冻结/越界检查、冻结不变的 LE Nat 实例偷换拒绝、模块/缓存遮蔽抵抗、缺失/篡改产物拒绝且不再生成。immutable 哈希全部保持。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-647-twenty-four/attempt-001。Docker 已 stop/rm 本题 Spec 容器及 Harbor 子容器，删除本题镜像 8241f120c2de 和网络 erdosproblems-647-twenty-four-g61-647a-91c3__env_default，均已核实不存在；预先存在的共享依赖镜像保留。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核对锁定上游 647.lean 及 Mathlib sigma 定义：这是 n=24 的已知有限变体，不是 n>24 的开放问题；m=0,...,23，sigma 0 0=0，逐项计算最大值为 26（m=20、22）。题目网站遇 Cloudflare，但锁定源及独立有限计算足以核查本变体。未修改陈述、定义、公开 Target、golden 或 GoldenCheck。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID 精确命中技能 public-lean4-proofs.csv，已标 public_lean4_proof=true。来源：https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/647.lean#L42；依规则无需重新联网确认。此标记不声称已在本题环境编译公开证明，也未将答案放入任务或镜像。"
+    }
+  }
+}

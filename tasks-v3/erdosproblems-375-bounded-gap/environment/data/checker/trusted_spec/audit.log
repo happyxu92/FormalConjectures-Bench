@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos375.Erdos375Prop: [propext]
+complete binder count: 1
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Erdos375.Erdos375Prop →
+  ∃ c > 0,
+    ∀ᶠ (n : ℕ) in Filter.atTop,
+      ↑(Nat.nth Nat.Prime (n + 1)) - ↑(Nat.nth Nat.Prime n) < ↑(Nat.nth Nat.Prime n) ^ (1 / 2 - c)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

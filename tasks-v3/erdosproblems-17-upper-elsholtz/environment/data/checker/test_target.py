@@ -40,7 +40,7 @@ ALLOWED_AXIOMS = set(["propext", "Classical.choice", "Quot.sound"])
 ENV = {"PATH": str(TOOLCHAIN_ROOT / "bin") + ":/usr/bin:/bin",
        "HOME": "/home/ubuntu", "LANG": "C.UTF-8"}
 TASK_ID = "erdosproblems-17-upper-elsholtz"
-SPEC_MANIFEST_SHA256 = "a4f6338feb1f5c7903643511d896000b35bb1258204d7f43e596c13b0748cbbc"
+SPEC_MANIFEST_SHA256 = "fb9f115c1baf9a320f6d8f218c0a3ff22f9a8b67682eee4b7af2bcee2cd9331a"
 SPEC_MANIFEST = None
 
 FROZEN_FILES = sorted(

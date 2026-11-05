@@ -19,7 +19,13 @@ benchmark_bucket = "informal_proof"
 oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
-verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
+verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, compares the complete theorem type with a fixed precompiled trusted Spec, audits theorem axioms, and checks the sorry-detection canary."
+statement_status = "mismatch"
+statement_note = "BeurlingIntegers is a Set.range, losing representation multiplicity, while IsBeurlingPrimes only requires increasing/unbounded generators above 1. Counterexample a(n)=n+2 generates exactly the positive integers, so its count is floor(x)=x+O(1)=x+o(log x), but a(2)=4, not the third prime 5. The frozen target lacks an injectivity/separation hypothesis. Only marked; statement and definitions unchanged. Upstream PR 5464 adds Erdos951Prop, but this task is pinned before that change."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID absent from skill CSV. Multiple web searches and pinned/current upstream Lean inspected. Claimed solve PRs 2718/3240 only change a status attribute and retain sorry; PR 5464 changes the statement and retains sorry. No complete matching proof verified. GitHub global code search/history API rate limited (403), so no definitive negative claim. Evidence: repair-report.json and task-specific jobs evidence directory."
+public_lean4_proof_urls = ["https://github.com/google-deepmind/formal-conjectures/pull/2718", "https://github.com/google-deepmind/formal-conjectures/pull/3240", "https://github.com/google-deepmind/formal-conjectures/pull/5464"]
 
 [verifier]
 timeout_sec = 7200.0

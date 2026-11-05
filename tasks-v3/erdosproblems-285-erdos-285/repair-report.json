@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-285-erdos-285",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 .lake/packages；最终 Harbor 子容器内 ubuntu 使用三路径命令成功搜到 Mathlib 的 irreducible_def IsLittleO。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import；补上 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的两次 Harbor 构建及最终容器内普通用户构建成功，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本，修复前和最终均为 no_issue；原始头通过，修改头及移除 := 均被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重新解析 GoldenCheck，存在名称遮蔽风险。现由本题原始 golden、隔离候选、匹配 Docker 工具链提取并预编译完整 ExpectedType；universes=[]，完整 iff 右侧保留 f/S/hS/h 四参数；独立编译审计仅依赖允许公理。两份可信包、checker 内容及 AST 一致，固定清单和产物哈希，正式 /tests 与本地 /opt 包来源及上传哈希均核验。最终当前本地 Harbor 镜像 c20056a1e5a9 构建完成；两入口因原始 sorry 预期退出 1、reward=0，不代表证明通过。同一最终子容器的实际函数补测均通过：Spec 审计、ubuntu UID=1000 编译、完整类型比较、目标公理/sorryAx 拒绝及 canary；冻结/越界/语义偷换/缓存遮蔽/产物缺失与篡改负例均通过，合法且仅含允许公理的 IsLeast 偷换候选被类型比较拒绝。Target、所有 golden、GoldenCheck、冻结基线和数学定义哈希不变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-285-erdos-285/attempt-001，最终验收在 final/，无未覆盖关键路径。Docker 清理完成并复核：本题 285a001-7d21 的 Spec、初次及最终 Harbor 三个容器均 stop/rm；两张本题新建镜像 5cb52a0c87db、c20056a1e5a9 及两条本题网络均已删除。预存共享依赖镜像保留，未触及其他任务资源；详见 cleanup.json/log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已核对 task.toml 指定的上游目标、完整前缀和定义，以及 Martin 原文 Denser Egyptian fractions (2000), pp.231–232 定义(1)/定理1(3)。t=k+1 的正整数互异分母、最小最大分母和 exp(1)/(exp(1)-1) 渐近常数一致；S 正确排除无法实现的两项展开，小 k 不妨碍 little-o。未发现明显数学错误，仅标记 statement_status=consistent，未修改陈述。题目网站直接访问 403，但原作者论文已实际读取。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确命中技能 public-lean4-proofs.csv，已标记 public_lean4_proof=true/status=known。来源：https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos285.lean#L52 。按要求无需重新联网核实；未下载或注入公开答案，未声称该证明已在本题环境编译。"
+    }
+  }
+}

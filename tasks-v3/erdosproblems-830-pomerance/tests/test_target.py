@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import hashlib
+import importlib.util
 import json
 import os
 import re
@@ -15,6 +16,10 @@ from pathlib import Path
 TASK_DIR = Path(os.environ.get("FCB_TASK_DIR", "/app"))
 TESTS_DIR = Path(os.environ.get("FCB_TESTS_DIR", "/tests"))
 GOLDEN_ENV_DIR = TESTS_DIR / "golden_env"
+SPEC_DIR = (TESTS_DIR / "trusted_spec").resolve()
+TASK_ID = "erdosproblems-830-pomerance"
+SPEC_MANIFEST_SHA256 = "d419a4e2f70208171a8e182a79c04aeff5b1e10e9f8a1d3470de7564c1c2b688"
+SPEC_SUPPORT_SHA256 = "cf484c23041ea0d4d92ae164eea61f432726ecb21a4fd8f51619ade263fca108"
 DEPENDENCY_PACKAGES = Path(
     os.environ.get("FCB_DEPENDENCY_PACKAGES", "/opt/formal-conjectures/.lake/packages")
 )
@@ -242,50 +247,6 @@ def restore_dependency_config_cache() -> None:
         shutil.copy2(src, dst)
 
 
-def make_fresh_golden_project() -> tempfile.TemporaryDirectory[str]:
-    tmp = tempfile.TemporaryDirectory(prefix="formal_conjectures_bench_")
-    project_dir = Path(tmp.name)
-    shutil.copytree(GOLDEN_ENV_DIR, project_dir, dirs_exist_ok=True)
-
-    if not DEPENDENCY_PACKAGES.exists():
-        fail(f"Trusted dependency packages are missing: {DEPENDENCY_PACKAGES}")
-    lake_dir = project_dir / ".lake"
-    lake_dir.mkdir(exist_ok=True)
-    os.symlink(DEPENDENCY_PACKAGES, lake_dir / "packages", target_is_directory=True)
-
-    editable_src = TASK_DIR / EDITABLE_REL
-    editable_dst = project_dir / EDITABLE_REL
-    editable_dst.mkdir(parents=True, exist_ok=True)
-    if editable_src.exists():
-        for src in sorted(editable_src.rglob("*.lean")):
-            if src.is_symlink() or not src.is_file():
-                fail(f"Editable Lean source must be a regular file: {src.relative_to(TASK_DIR)}")
-            rel = src.relative_to(editable_src)
-            dst = editable_dst / rel
-            dst.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(src, dst)
-    return tmp
-
-
-def check_build(project_dir: Path) -> None:
-    result = run(["lake", "build", "+FormalConjecturesBench.Target"], cwd=project_dir)
-    if result.returncode != 0:
-        fail("lake build failed\n" + result.stdout)
-
-
-def lean_output(project_dir: Path, source: str) -> str:
-    tmp = project_dir / "_formal_conjectures_bench_audit.lean"
-    tmp.write_text(source, encoding="utf-8")
-    result = run(["lake", "env", "lean", str(tmp)], cwd=project_dir, timeout=300)
-    try:
-        tmp.unlink()
-    except FileNotFoundError:
-        pass
-    if result.returncode != 0:
-        fail("Lean audit command failed\n" + result.stdout)
-    return result.stdout
-
-
 def parse_axioms(output: str, theorem_name: str) -> set[str]:
     if theorem_name not in output:
         fail(f"Axiom audit output did not mention {theorem_name}\n{output}")
@@ -299,15 +260,6 @@ def parse_axioms(output: str, theorem_name: str) -> set[str]:
     if not raw:
         return set()
     return {item.strip() for item in raw.split(",") if item.strip()}
-
-
-def check_golden_theorem_import(project_dir: Path) -> None:
-    golden_check = TESTS_DIR / "GoldenCheck.lean"
-    dst = project_dir / "GoldenCheck.lean"
-    shutil.copy2(golden_check, dst)
-    result = run(["lake", "env", "lean", str(dst)], cwd=project_dir, timeout=300)
-    if result.returncode != 0:
-        fail("Golden theorem check failed\\n" + result.stdout)
 
 
 def check_axioms(project_dir: Path) -> None:
@@ -334,14 +286,26 @@ def main() -> None:
     check_no_banned_patterns_in_editable_sources()
     check_extra_lean_files_confined()
     check_frozen_files_unchanged()
-    restore_dependency_config_cache()
+    load_trusted_spec()
     with make_fresh_golden_project() as tmp:
         project_dir = Path(tmp)
+        check_trusted_type(project_dir)
         check_build(project_dir)
         check_golden_theorem_import(project_dir)
         check_axioms(project_dir)
         check_sorry_canary(project_dir)
 
+
+# Load only the pinned support file in the trusted package, never a candidate module.
+_support_path = SPEC_DIR / "verifier.py"
+if not _support_path.is_file():
+    fail("Missing trusted Spec verifier support")
+if hashlib.sha256(_support_path.read_bytes()).hexdigest() != SPEC_SUPPORT_SHA256:
+    fail("Trusted Spec verifier support hash mismatch")
+_support_spec = importlib.util.spec_from_file_location("_fcb_fixed_spec_verifier", _support_path)
+_support = importlib.util.module_from_spec(_support_spec)
+_support_spec.loader.exec_module(_support)
+_support.install(globals())
 
 if __name__ == "__main__":
     main()

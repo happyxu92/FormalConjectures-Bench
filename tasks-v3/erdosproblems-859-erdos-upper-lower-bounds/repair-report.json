@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-859-erdos-upper-lower-bounds",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式列出 /app、/opt/formal-conjectures 和 .lake/packages；在最终 Harbor 子容器以 ubuntu 执行搜索，命中 package 内 sigma_apply，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 imports；补上 Dockerfile 最终 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的 Harbor force_build 成功，同一子容器 ubuntu 构建退出码 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行 skill Unicode 脚本两次，均 no_issue；原始头、冻结前缀及 := 边界验证通过，无需改动。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题不可变 golden 隔离提取完整类型及 universes（空），在匹配 Lean 4.27.0/x86_64 Docker 中生成并独立审计 ExpectedType 和 DivisorSumSet；同步两份固定预编译包。checker 固定可信路径、校验清单/版本/哈希，并比较完整类型，不运行时重建 Spec。最终本地 Harbor force_build 验收完成；/tests 与 /opt 包、checker、golden 哈希匹配，双 checker AST/内容及 immutable 哈希全部一致。两入口均因原题 sorry 预期退出 1、reward 0；同一最终子容器的正式/本地/root 函数补测各 29 项通过，覆盖 Spec 审计、实际 ubuntu 编译、完整类型、目标 sorryAx 拒绝、sorry canary、冻结/越界/语义偷换/缓存遮蔽/产物缺失及篡改。语义负例保持冻结文本，helper 将 Erdos859.atTop 定义为底过滤器，合法证明可编译但完整类型比较拒绝。未声称完成原题证明或通用 import/initializer 沙箱。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-859-erdos-upper-lower-bounds/attempt-001。Docker 清理已核实：本题 3 个容器 c96c23860e40、eb011460dac2、57c2d6540b37 已 stop/rm；2 个本题镜像 c4129cc30adb、00c818a9e410 及其 tags、2 个本题网络均已移除，inspect 确认不存在。预先存在的共享依赖缓存镜像保留，未清理其他 task 资源。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata 标记 consistent。读取固定上游、实际自然密度定义、erdosproblems.com/859 和 arXiv:2609.25446v1 的双边界结果：本题是已知较弱变体，非较强渐近等价猜想。distinct divisors、自然密度、正实数指数和 eventually 严格双边界未发现错误；冗余 t0 无害，t=0,1 不影响最终范围。初次网页工具 403 后直接重试源页面成功。数学定义、陈述、Target、golden、GoldenCheck 和冻结基线均未修改。详见证据 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "metadata 标记 public_lean4_proof=unknown、status=blocked。skill CSV 按完整 ID 精确匹配未命中；多组题号/定理名/定义/作者关键词检索，并实际读取上游、PR1524、Conjectures.io 下载源码及作者公开仓库源码。已找到较强渐近猜想的反证、密度存在性及上界证明，但未确认覆盖本题最终双边界的完整证明；题目 proof-claims 所链另一源码仅证明 positive_density。GitHub code search 401，作者仓库 tree API 403 限流；因此不声称已确认不存在公开证明，也未在本题编译公开答案。详见证据 public-proof-review.json。"
+    }
+  }
+}

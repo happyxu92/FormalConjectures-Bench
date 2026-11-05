@@ -1,0 +1,13 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos350.DecidableDistinctSubsetSums: [propext, Quot.sound]
+audited Erdos350.DistinctSubsetSums: [propext, Quot.sound]
+complete binders: [A, hA, s, hs]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (A : Finset ℕ), Erdos350.DecidableDistinctSubsetSums A → ∀ (s : ℝ), 0 < s → ∑ n ∈ A, (1 / ↑n) ^ s < 1 / (1 - 2 ^ (-s))
+def Erdos350.DecidableDistinctSubsetSums.{u_1} : {M : Type u_1} →
+  [AddCommMonoid M] → [DecidableEq M] → Finset M → Prop :=
+fun {M} [AddCommMonoid M] [DecidableEq M] A => ∀ X ⊆ A, ∀ Y ⊆ A, X ≠ Y → X.sum id ≠ Y.sum id
+def Erdos350.DistinctSubsetSums.{u_1} : {M : Type u_1} → [AddCommMonoid M] → Set M → Prop :=
+fun {M} [AddCommMonoid M] A => {X | ↑X ⊆ A}.Pairwise fun X Y => X.sum id ≠ Y.sum id
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

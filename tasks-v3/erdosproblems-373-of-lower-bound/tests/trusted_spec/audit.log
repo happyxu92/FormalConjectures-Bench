@@ -1,0 +1,8 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos373.S: []
+complete binder count: 1; H: ∀ᶠ (n : ℕ) in Filter.atTop,
+  4 * Real.log ↑n < ↑(n * (n - 1)).maxPrimeFac; conclusion: Erdos373.S.Finite
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+(∀ᶠ (n : ℕ) in Filter.atTop, 4 * Real.log ↑n < ↑(n * (n - 1)).maxPrimeFac) → Erdos373.S.Finite
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

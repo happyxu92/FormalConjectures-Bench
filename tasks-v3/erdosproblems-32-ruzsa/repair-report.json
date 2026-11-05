@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-32-ruzsa",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式列出 /app、/opt/formal-conjectures 及 .lake/packages；最终 Harbor 子容器中以 ubuntu 搜到 Mathlib 的 Irrational 定义，rg 退出 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；补上原先缺少的 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地任务经两次 Harbor Docker 构建成功，最终子容器内 ubuntu 再构建退出 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本及最终复验，均为 no_issue；原始头通过，修改头及移除 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden 隔离候选提取并预编译 ExpectedType；完整类型有两个外层参数、无 universe 参数，传递公理审计通过。两份 checker AST/内容及 Spec 包一致，固定可信路径、清单和产物哈希，无运行时生成或原命题重解析。保留原源码/冻结/公理/canary 规则及正常 imports。最终本地 Harbor trial erdosproblems-32-ruzsa-g61-a001-4d92-final 验收成功；/tests 上传包和 /opt 包均与本地哈希一致。正式与本地入口各退出 1、reward=0，原因仅为原题 sorry；同一子容器两种入口配置的实际函数补测全部通过，覆盖 Spec 审计、uid=1000 编译、完整类型比较、sorryAx 拒绝、canary、冻结/越界/语义偷换/缓存遮蔽及缺失/篡改产物拒绝。证据根目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-32-ruzsa/attempt-001；见 generation.log、final/、validation-coverage.json、final-verification.json。Docker 已清理并核实：本题 3 个容器 b2852effc752、dcb69e9d7771、aa81a7c0a6bf，2 个镜像 9c1c161b6447、799013236036 及两条本题网络均已移除；预先存在的共享依赖镜像保留。见 cleanup.json。不是原题证明通过。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已读锁定上游及 Ruzsa 作者原文 https://users.renyi.hu/~ruzsa/cikkek/comprim.dvi，Theorem 2 明确给出最终全覆盖时 liminf B(x)/log x ≥ exp(Euler-Mascheroni)。核对量词、方向、计数区间和 EReal；允许 0 的差异可平移并消去 O(1)/log N。未发现明显错误，metadata 标 consistent；未改任何数学输入。见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。多组检索并读取上游 main/锁定 Lean、原始 PR #2038 全部 patch、Mathlib、作者文献及相关证明集合；未验证到完整匹配 Lean4 证明。GitHub 代码搜索及 fork 列表 API 及题目论坛受 403/限流阻塞，故 metadata 为 unknown/blocked，不断言证明不存在。见 public-proof-review.json 和 source-fetch-results.json。"
+    }
+  }
+}

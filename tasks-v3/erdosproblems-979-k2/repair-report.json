@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-979-k2",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "源码搜索显式加入 /opt/formal-conjectures/.lake/packages；在 Harbor 子容器以 ubuntu 实测 rg 找到 package 中 IsCoprime 定义，退出 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 仅有两项标准 imports，无额外上游模块。补齐 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target；当前本地 Harbor 镜像构建成功，同容器 ubuntu 重测退出 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本两次，均 no_issue；两份头、冻结前缀及 := 边界一致，无代理项。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 golden 隔离候选提前 elaboration 完整目标类型；ExpectedType 为定义值，完整外层参数 0、universes []。保留原 solutionSet，丢弃临时目标及无关占位 theorem；独立编译及传递公理审计通过。两份固定 Spec 源码/产物/清单一致，checker 钉住清单哈希、工具链和依赖优先路径，不在运行时生成 Spec 或重解析预期命题，完整类型比较替代 GoldenCheck 执行且不改其原文件。当前本地 Harbor 镜像 sha256:e66bbb00d021d5c62a27c8ea9fc4f7c649e3975a27aa037fe83db2c96e42b556；上传 /tests、本地 /opt、golden 和 /app 哈希均匹配。两正式入口退出 1/reward 0 是原题 sorry 的预期拒绝；同一子容器两份实际函数补测均通过（Spec 审计、UID1000 编译、完整类型、公理/sorry canary、冻结/越界/合法 helper、冻结文字不变的 Filter.limsup 名称偷换、Spec/依赖缓存遮蔽、缺失及篡改包拒绝且不重新生成）。保留原安全检查及正常 import 规则；未新增外部模块白名单或 initializer 沙箱。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-979-k2/attempt-001/validation-summary.json、delivery-hashes.json、static-validation.json。Docker 清理已核实：本题两个容器（60c7432d5847、f85899d03235）已 stop/rm，镜像 e66bbb00d021 及本题网络已删除；预存共享依赖镜像与缓存保留。证据 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。实际核对 source_file、完整 solutionSet 及 k2 命题，阅读 Erdős 1937 原文 §2（1937-07.pdf，133–136）和题目网站。自然素数平方、二元 multiset（允许重复、忽略顺序）及 limsup=∞ 是已知 k=2 合理变体；有序/无序计数至多因子2，不影响无界性。未发现明显数学错误；陈述、定义、Target、golden、GoldenCheck 和冻结基线未修改。详见 statement-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中；已进行多组题号/完整定理名/旧别名/数学表述/作者/Mathlib/GitHub 搜索，实际读取 upstream、论坛13条评论、3个候选仓库 Lean 源码及 PR 1064/2722/3244/5017。k3 证明不覆盖本题；2722/3244 只有循环链接属性变更且仍 sorry；其他候选是占位或无关算术 fixture。未确认 k2 完整公开证明，GitHub 全局代码检索 HTTP403/rate-limit，故 metadata 标 unknown/blocked，不声称不存在。详见 public-proof-review.json、fetch-results.json 和 followup-results.json。"
+    }
+  }
+}

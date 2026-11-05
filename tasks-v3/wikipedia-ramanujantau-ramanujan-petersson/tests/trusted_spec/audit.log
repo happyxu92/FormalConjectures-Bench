@@ -1,0 +1,8 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited RamanujanTau.Δ: [propext, Quot.sound, Classical.choice]
+audited RamanujanTau.τ: [propext, Quot.sound, Classical.choice]
+complete binder count: 2; conclusion: ↑|RamanujanTau.τ p| ≤ 2 * ↑p ^ (11 / 2)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (p : ℕ), Prime p → ↑|RamanujanTau.τ p| ≤ 2 * ↑p ^ (11 / 2)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

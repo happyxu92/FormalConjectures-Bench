@@ -1,0 +1,6 @@
+audited ExpectedType and all transitive dependencies: [propext, Quot.sound, Classical.choice]
+universe parameters: []; outer binders: 0
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ᶠ (x : ℕ) in Filter.atTop,
+  (∃ p ∈ Finset.Ioo (x * (x - 1)) (x ^ 2), Nat.Prime p) ∧ ∃ p ∈ Finset.Ioo (x ^ 2) (x * (x + 1)), Nat.Prime p
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-318-odd",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令现显式包含 /app、/opt/formal-conjectures 和隐藏 packages；在最终 Harbor 子容器以 ubuntu 实测找到 Mathlib 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；补上 Dockerfile 最终 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。本地 Harbor 构建成功，同容器 ubuntu 重跑构建退出码 0；原题 sorry 警告不等于缺少依赖。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能运行 Unicode 脚本及最终复验，均为 no_issue；原头通过，改头及缺失 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离 Submission，使用匹配 Docker/Lean 4.27.0 提取完整类型与 universes，交付两份相同预编译 Spec；ExpectedType 为 P₁ {n | Odd n}，universes=[]，ExpectedType/P₁ 传递公理审计通过。checker 固定产物和依赖来源、校验清单哈希并比较完整类型，无运行时生成/回退；保留原冻结、源码、公理和 canary 规则。当前本地 task 的 Harbor 镜像 sha256:25cdf273d0ee66944392e86943d366c5cec99874409bec8b35ffb62bdaffde4c 构建成功，/tests 上传包与 /opt 包分别匹配本地哈希。正式与本地入口均因原题 sorry 预期退出 1，reward=0；同一子容器两份实际 checker 函数补测均退出 0，覆盖 Spec 加载/审计、ubuntu uid=1000 编译、完整类型比较、sorryAx 拒绝、canary、冻结/越界、冻结文字不变的 Odd 名称偷换、同名模块/缓存/环境遮蔽、产物缺失/篡改及清单篡改；无已知未覆盖的必需验收路径。公开 Target、golden、GoldenCheck 和冻结基线全部 immutable 哈希不变。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-318-odd/attempt-001（generation.log、delivery-hashes.json、validation-{official,local}.log、static-validation.json 等）。Docker 清理已完成并核实：本题 spec 容器 eacceafb2c7f、Harbor 容器 148a83f1b766 已 stop/rm；本题镜像 25cdf273d0ee 及专属网络 erdosproblems-318-odd-g61-a001-9c7f__env_default 已删除。预先存在的共享预编译镜像保留，未触碰其他任务资源，详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata 标为 consistent。核对固定修订上游 318.lean、完整 P₁ 定义及来源：本题是 Sattler 的奇数集合已知变体，不是完整 Erdős 318。非恒定符号、非空有限集合、排除零和实数倒数均合理；包含 1 与来源从 3 起的表述不造成错误（精确有理恒等式补充核查）。未修改数学内容。erdosproblems.com 返回 403、1975 原论文未取得；已读镜像来源及专著 p.42 的转述，详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true；技能 references/public-lean4-proofs.csv 按完整 ID erdosproblems-318-odd 精确命中，无需重新联网验证证明。来源：https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos318.lean#L782（另有 main 同路径）。已记入 task.toml；没有将公开证明作为答案编译或放入镜像。"
+    }
+  }
+}

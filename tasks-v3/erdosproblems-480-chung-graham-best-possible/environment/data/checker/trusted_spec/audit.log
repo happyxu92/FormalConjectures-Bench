@@ -1,0 +1,12 @@
+FCBTrustedSpec.lean:37:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:49:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited ExpectedType and its transitive references: [propext, Quot.sound, Classical.choice]
+outer let binder: c; explicit complete binders: ε : ℝ, a._@._internal._hyg.0 : #0 > 0
+universe parameters (ordered): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+have c := 1 + ∑' (k : ℕ+), 1 / ↑(Nat.fib (2 * ↑k));
+∀ ε > 0,
+  ¬∀ (x : ℕ → ℝ),
+      (∀ (n : ℕ), x n ∈ Set.Icc 0 1) → ⨅ n, Filter.liminf (fun m => ↑↑n * |x (m + ↑n) - x m|) Filter.atTop ≤ 1 / c - ε
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

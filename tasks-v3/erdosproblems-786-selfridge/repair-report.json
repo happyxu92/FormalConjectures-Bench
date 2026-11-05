@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-786-selfridge",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 和 .lake/packages；最终 Harbor 子容器中 ubuntu 实搜 Mathlib 的 IsMultiplicative，退出码 0，无路径或权限错误。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题没有额外上游 import。补齐 Dockerfile 末尾 USER ubuntu 后的 RUN lake build +FormalConjecturesBench.Target；最终本地 Harbor 构建成功，同一子容器 ubuntu 再构建退出码 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "技能 Unicode 脚本修复前后均为 no_issue；原头通过，改头及删除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden、隔离 Submission 的匹配 Docker 环境独立提取并预编译 ExpectedType，保留 ε、hε 完整参数及空 universes；ExpectedType 与两项前缀定义的传递公理审计通过。两份包和 checker 内容/AST、Harbor 上传 /tests 与镜像 /opt 包及 golden 哈希全部一致。最终当前本地任务 Harbor trial erdosproblems-786-selfridge-g61-a001-786f-final 构建成功；正式入口和 ubuntu 本地入口均因原题 sorry 预期退出 1，reward=0，不代表证明成功。已在同一最终子容器、两份实际 checker 上补测 Spec 加载/可信审计、ubuntu 编译、完整类型比较、目标 sorryAx 拒绝、sorry canary；冻结、越界、额外完整参数、冻结文字不变的 atTop:=⊥ 语义偷换、同名模块/缓存/环境遮蔽、产物缺失与篡改负例全部按预期处理。保留原规则和安全检查，无运行时 Spec 生成或回退。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-786-selfridge/attempt-001。已 stop/rm 本题 Spec 及两次 Harbor 共 3 个容器，移除本题镜像 00c6d889441b、5626cd310d05 及 2 个网络，并核实均不存在；预存共享镜像 e21dc171550d 保留。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "标记 statement_status=mismatch，未修改任何数学输入。Target.lean:120-127 要求精确密度 1/e-ε；原文 1969-14.pdf p.81 为密度 >1/e-ε。对 ε=1/(4e)、1/(2e) 取共同充分大素数 p，非负递增倒数和的跨 1 索引 k 唯一，故得到同一 A 的两个不同精确密度，违反极限唯一性。1965-02.pdf p.182 支持现有重数一条件；distinct-factor 变体本身合理。上游 issue 5667、PR 5769 亦记录并修正该错误；本题仅标记，Spec 保留原命题。详见 statement-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确查询技能 CSV 未命中。完成八组检索，核查 pinned/main、GitHub 相关 PR/issue、Mathlib、原题页及作者仓库。PR 2697/3219 仅修改 solved 标注且仍有 sorry；Gessel 和 Li 的实际 Lean 源码证明 parts.i/ii 的负面结果，不是本题 Selfridge 命题。未找到覆盖当前完整目标的公开证明，但 GitHub 全局代码检索及部分 API 受 403 限流/登录限制，保守标记 unknown/blocked，而非断言不存在。详见 public-proof-review.json。"
+    }
+  }
+}

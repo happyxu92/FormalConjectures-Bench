@@ -1,0 +1,8 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos329.sqrtPartialDensity: [propext, Quot.sound, Classical.choice]
+audited Erdos329.sidonUpperDensity: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ A, IsSidon A ∧ Erdos329.sidonUpperDensity A = 1 / √2
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -20,6 +20,10 @@ oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
 verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact-ID skill CSV miss. Extensive searches and source review found only placeholders or other Giuga results; GitHub API rate limits blocked tracking-issue/PR follow-up comments and current Mathlib tree. See repair evidence public-proof-review.json."
 
 [verifier]
 timeout_sec = 7200.0

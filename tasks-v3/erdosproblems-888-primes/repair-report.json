@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-888-primes",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；当前Harbor子容器ubuntu实测找到mathlib的Nat.findGreatest，退出0。见instruction-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题没有额外上游imports，保留ProblemImports预编译。补上原先缺少的Dockerfile末尾ubuntu RUN lake build +FormalConjecturesBench.Target。最终本地Harbor镜像 sha256:6d95ca1a9fc133130892c1596cdc12ff4150a7fbb78df573ecd8fa3b2690eaca 构建成功；同容器ubuntu构建退出0（7992 jobs）。未发现实际缺失依赖。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已两次运行技能Unicode脚本，case=no_issue；原头通过，改头及移除:=被拒，两份checker一致，无需修改Unicode常量。见unicode.json、unicode-final.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "由本题原始golden在匹配Lean4.27/x86_64 Docker中移除Submission导入后，用Lean parser/elaborator独立提取完整类型，恢复临时声明环境，导出并编译ExpectedType。零外层binders、universes=[]；ExpectedType、p、RequiredCondition传递公理审计仅含标准允许公理，无sorryAx依赖。两份包与checker内容/AST一致，清单SHA256 9f38c5b81dd6dc7f15b17cc7c353ee604cc38e461e0440af485dc0984e524338。固定工具链/搜索路径分别加载Harbor上传/tests包与本地/opt包；不重新解析或生成Spec。最终当前本地task经Harbor构建，两入口退出1/reward0仅因原题sorry；同一最终子容器每入口30项实际函数补测通过，另测Spec/依赖同名缓存遮蔽。覆盖uid1000编译、完整类型匹配、目标sorryAx拒绝、canary、冻结/越界/源码负例、普通helper、冻结文本不变的NatCast实例攻击（编译且公理合规，但完整类型比较及完整checker拒绝）、缺失/篡改产物且不回退生成。/tests、/opt包/checker/golden及公开Target与本地哈希全部一致；所有immutable哈希不变。不是原题完整证明通过。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-888-primes/attempt-001。已清理并核实本题3个容器（e79c84b3a840、ce30601a0c62、1bcf3bb87159）、2个镜像（b7bbcd685395、6d95ca1a9fc1）及2个trial网络；预先存在的共享依赖镜像e21dc171550d和共享构建缓存保留，未动其他资源。见cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核对完整RequiredCondition、p、findGreatest与目标：这是n/log n的primes下界变体；有序四素数平方乘积迫使偶重数，从而ad=bc，结合素数计数下界成立；atTop排除小n的log端点。已读取锁定上游及ulam.ai/research/erdos888.pdf第1、3-4页。原题网站直接访问403/Cloudflare，索引检索可见且独立论文支持本变体。未改数学输入。见math-review.json、math-fetch.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整ID erdosproblems-888-primes 精确命中技能references/public-lean4-proofs.csv；按要求标记public_lean4_proof=true，无需再次联网确认。来源：https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos888.lean#L47。未打包答案，未声称已在锁定环境编译公开证明。见public-csv-match.json。"
+    }
+  }
+}

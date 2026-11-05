@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-modularityconjecture-modularity-conjecture",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式加入 .lake/packages；最终 Harbor 容器内以 ubuntu 执行三路径 rg，找到 mathlib 的 protected class IsElliptic，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 imports，原 ProblemImports 预编译保留。补齐 Dockerfile 最末 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target；当前本地任务两次 Harbor Docker 构建成功，最终容器 ubuntu 实际 lake build 退出 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已运行技能 check_unicode_header.py，case=no_issue；原头、冻结前缀及 := 边界通过，两份 checker 一致，无 Unicode 修改。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题原始 golden 隔离 Submission，使用匹配 Linux/Lean 4.27 Docker 提前提取、编译 ExpectedType；完整保留 E 与 IsElliptic 实例两个参数，universes=[]。独立审计 ExpectedType、七个前缀定义的传递公理并确认临时目标未导出。两份固定包及 checker AST/内容、上传 /tests 与 /opt 包、全部 immutable 哈希一致。最终本地 Harbor trial wikipedia-modularityconjecture-modularity-conjecture-g61-a001-mc7a-final，镜像 sha256:b82ea326b624333820568df44dac6a97ebed870f86ddbcf7d96350be0b719315；两入口均预期因原 sorry 退出 1，reward=0，非实现故障。同一最终子容器中分别调用 /tests 与 /opt checker 实际函数：固定 Spec 加载/审计、ubuntu(uid=1000)编译、完整类型比较、公理审计及 canary 均覆盖；冻结、越界、合法源码的更强伪实例语义偷换、候选缓存/环境遮蔽、产物缺失/篡改均按预期拒绝。无运行时 Spec 生成或回退，无通用 import 白名单或 initializer 沙箱。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-modularityconjecture-modularity-conjecture/attempt-001；详见 manifest、delivery.json、validation-coverage.json 与 Harbor/入口日志。Docker 清理已核实：本题三个容器 5f83f5d054a7、9bbba57e963c、f7fc3bd4d2da 已 stop/rm；两个本题镜像 5b57896b9c4d、b82ea326b624 及两个专用网络均已删除，借用的预存共享依赖镜像保留；见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "已标 statement_status=mismatch，仅标记不改数学输入。(1) Target:45-46 的 qExpansion N 混淆 level 与 period：N>1 时首系数为 0，N=1 时权 2 cusp 空间为零，无法归一化；上游 PR 5519 给出该论证及反方向 Lean refutation（未在本题锁定版本编译）。(2) Target:70-71 的 Nat 减法截断负迹：y²=x³−x 在好素数 5 有 7 个仿射点，正确迹 −2，本定义为 0；LMFDB 32.a3 的 q⁵ 系数亦为 −2，上游 PR 4742 已将 ap 改为 Int。公开 Target、定义、golden、GoldenCheck 及冻结基线全部保持原样；详见 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。经多组检索、上游源码/历史/PR、Mathlib 索引及相关 FLT 项目核查，未找到本题完整保留陈述的公开无 sorry Lean4 证明，已标 public_lean4_proof=false、status=searched；不等于证明绝对不存在。三个声称已解决的 PR 2471/3001/3035 实际目标仍为 sorry；TianyiPeng/subfish 的 Lean 定义和 semistable 模型 theorem/solution 与本题定义及全量范围不同；PR 5519 是反方向反驳。关键候选源码均可访问并已排除；Wikipedia 背景 403 不影响候选核查。详见 public-proof-review.json。"
+    }
+  }
+}

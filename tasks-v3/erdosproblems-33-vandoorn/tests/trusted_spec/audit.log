@@ -1,0 +1,7 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos33.AdditiveBasisCondition: [propext]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+⨅ A, Filter.limsup (fun N => ↑(↑A ∩ Set.Icc 1 N).ncard / ↑√↑N) Filter.atTop ≤ ↑(2 * Real.goldenRatio ^ (5 / 2))
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

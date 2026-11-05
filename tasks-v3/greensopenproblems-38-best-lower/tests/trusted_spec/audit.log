@@ -1,0 +1,13 @@
+FCBTrustedSpec.lean:77:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:85:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green38.IntersectsOnlyAtZero: [propext, Quot.sound, Classical.choice]
+audited Green38.ValidCardinalities: [propext, Quot.sound, Classical.choice]
+audited Green38.LargestAdmissibleCardinality: [propext, Quot.sound, Classical.choice]
+audited Green38.C₁: [propext, Quot.sound, Classical.choice]
+complete binder count: 2
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ ε > 0, ∀ᶠ (n : ℕ) in Filter.atTop, (Green38.C₁ - ε) ^ n ≤ Green38.LargestAdmissibleCardinality n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-939-euler",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 的 rg 命令已显式加入 /opt/formal-conjectures/.lake/packages。最终 Harbor 子容器内以 ubuntu 实际搜索 theorem add_comm，命中 mathlib，退出 0，无路径或权限错误。证据：attempt-001/final-instruction-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 仅导入 ProblemImports 和本地 Submission，无额外上游 import；保留原预编译链。补上 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。最终当前本地 task 的 Harbor Docker 构建成功，同容器 ubuntu 补跑 Target 构建退出 0。证据：final-validation-2/harbor-image-history.txt、ubuntu-target-build.log。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已运行技能 Unicode 脚本并在修复 checker 后复跑，均为 no_issue；原头通过，改头和移除 := 被拒绝，两份 golden/公开 Target 匹配，未修改头常量。证据：unicode.json、unicode-final.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选加载后重新解析 GoldenCheck，存在语义遮蔽。现已从本题原始 golden 隔离 Submission，用匹配 Docker/Lean v4.27.0 的 parser/elaborator 提取完整类型及空 universes，撤销临时 theorem 后导出 ExpectedType；审计其定义值、Not 内 k/下界/S/基数等式四个 binder、Erdos939Sums 的传递公理及临时目标未导出。两份源码/olean/ilean/清单包一致，固定哈希和加载路径，不运行时生成或回退解析。保留原冻结、源码、公理和 canary 检查，无新增通用外部模块白名单或 initializer 沙箱。最终当前本地 task Harbor 镜像 sha256:28addfb25970d0146c2216c25116a5fd47a81448f61db21c19e05e20f0fddb12；/tests Harbor 上传包及 /opt 预装包均与宿主对应文件哈希一致。正式与本地入口均因原始 sorry 退出 1，正式 reward 0，这是预期证明拒绝。该同一容器两份实际 checker 各通过 29 项补测：Spec 加载/审计、uid1000 编译、完整类型匹配、sorryAx 拒绝、canary、冻结/越界等负例、合法 HPow 实例偷换编译且公理通过后由完整类型比较拒绝、候选模块/缓存/环境遮蔽、产物缺失/篡改且不重新生成。所有 immutable 哈希保持不变。中间一次网络子网重用失败已换未占用 10.249.140.0/24 完成最终验收。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-939-euler/attempt-001（validation-summary.json、static-validation.json、final-validation-2/）。Docker 清理已核验：停止并删除本题容器 924ef03ff0d1、839bc4347287、3d5b39692181；删除本题镜像 ffc901204592、597c18479152、28addfb25970 及其 tag；删除本题两个已创建网络，失败尝试网络确认不存在。ps/inspect 验证均已移除；预存匹配依赖镜像和其他资源保留，未执行 prune。cleanup.json 记录完整 ID。无剩余必需验收缺口；不声称原题证明通过。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核对锁定上游 939.lean、完整前缀与 Lander–Parkin 原作者 1966 年发表公告镜像 https://marktomforde.com/academic/miscellaneous/images/ShortestPaper.pdf 。目标是 Euler 变体的否定全称命题；k=5、S={27,84,110,133}、q=144 满足基数 4 及五次幂等式，已独立整数计算核对。允许自然数含零、使用 Finset 不影响该正且互异的反例；此前 powerful-number 定义不参与本目标。题目站及 1967 AMS PDF 返回 403，但原作者公告与明确算术证据足够确认本变体无明显错误。未修改任何数学输入。证据：statement-audit.json、upstream-pinned.lean、lander-parkin-1966.txt。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 task ID erdosproblems-939-euler 精确命中技能 references/public-lean4-proofs.csv，依规则标记 public_lean4_proof=true，无需重新联网确认。来源含 https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/939.lean#L156 ，其余 CSV 链接完整记录于 task.toml 和 public-proof-review.json。本次未将公开答案放入镜像，也未编译公开证明。"
+    }
+  }
+}

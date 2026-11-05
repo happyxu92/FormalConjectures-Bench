@@ -1,0 +1,18 @@
+audited ExpectedType and all transitive prefix dependencies: [propext, Quot.sound, Classical.choice]
+binder f: Lean.BinderInfo.implicit; Polynomial ℤ
+binder hi: Lean.BinderInfo.default; Irreducible f
+binder hd: Lean.BinderInfo.default; 2 < f.natDegree
+binder hp2: Lean.BinderInfo.default; ∀ (x : ℕ), f.natDegree ≠ 2 ^ x
+binder hlc: Lean.BinderInfo.default; 0 < f.leadingCoeff
+binder hp: Lean.BinderInfo.default; ∀ (p : ℕ), Nat.Prime p → ∃ n, ¬↑p ^ (f.natDegree - 1) ∣ Polynomial.eval (↑n) f
+complete binder count: 6
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {f : Polynomial ℤ},
+  Irreducible f →
+    2 < f.natDegree →
+      (∀ (x : ℕ), f.natDegree ≠ 2 ^ x) →
+        0 < f.leadingCoeff →
+          (∀ (p : ℕ), Nat.Prime p → ∃ n, ¬↑p ^ (f.natDegree - 1) ∣ Polynomial.eval (↑n) f) →
+            {n | Powerfree (f.natDegree - 1) (Polynomial.eval (↑n) f)}.HasPosDensity
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

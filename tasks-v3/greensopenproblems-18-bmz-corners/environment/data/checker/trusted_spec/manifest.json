@@ -1,0 +1,70 @@
+{
+  "task_id": "greensopenproblems-18-bmz-corners",
+  "target_name": "Green18.green_18.bmz_corners",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [
+    "u_1"
+  ],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "5ce969809056bf8811226a75c0de3f21b3802e370670f52ba92403c239916a1c",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "53780cabd8383da50b999d1675da17ab883ef68bd94459afc43a85d2c62121ef",
+    "FCBTrustedSpec.ilean": "f78d46f18733c4c9643d469d923145453f51d204ed144b96e20b963372c92788",
+    "FCBTrustedSpec.lean": "815fb3c42fb3884989b414f8339823e7d25fd8c2d73b0995e0a6a604f5a26fd5",
+    "FCBTrustedSpec.olean": "837c2b9655eaa5c9a226bea184b2af76d5b02aeea6429ae48cf2f122fd25bf8f",
+    "audit.log": "7345cb0b176b66bd791a5d6539beff403c196fea882e51ce5c34932cb1d32894",
+    "generate.py": "d8833a15137b01674499d864b23a6037a7214bad84b20e40017826ca5213d58d",
+    "reproduce.sh": "7b737f7f563f7b30b8093921c8101d9bdf43504e8a48b7cce438860c1530741d"
+  },
+  "generation_image": "sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a",
+  "generation_command": [
+    [
+      "docker",
+      "run",
+      "-d",
+      "--network",
+      "none",
+      "--name",
+      "greensopenproblems-18-bmz-corners-spec-g61-a001-c918",
+      "erdos1062-import-20261102__env-main:latest",
+      "sleep",
+      "infinity"
+    ],
+    [
+      "docker",
+      "cp",
+      "/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-18-bmz-corners/attempt-001/generation-input",
+      "greensopenproblems-18-bmz-corners-spec-g61-a001-c918:/tmp/repair-bundle"
+    ],
+    [
+      "docker",
+      "exec",
+      "-u",
+      "root",
+      "greensopenproblems-18-bmz-corners-spec-g61-a001-c918",
+      "bash",
+      "/tmp/repair-bundle/trusted_spec/reproduce.sh"
+    ]
+  ],
+  "audit": "Complete alpha/positivity binders; existential c,m0; all G, Group, Fintype, DecidableEq, A, size and density binders retained; universe u_1. ExpectedType and both counting definitions transitively use only allowed axioms. Temporary target and children absent. Unused open green_18 prefix theorem has sorry but is not a dependency of ExpectedType or counting definitions."
+}

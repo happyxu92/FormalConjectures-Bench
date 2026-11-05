@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos390.f: [Classical.choice, propext, Quot.sound]
+complete outer binder count: 0 (original elaborated expression)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+(fun n => ↑(Erdos390.f n) - 2 * ↑n) =Θ[Filter.atTop] fun n => ↑n / Real.log ↑n
+def Erdos390.f : ℕ → ℕ :=
+fun n => sInf {m | ∃ k f, StrictMono f ∧ n < f 0 ∧ f (k - 1) = m ∧ ∏ i ∈ Finset.Iio k, f i = n.factorial}
+'Erdos390.f' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

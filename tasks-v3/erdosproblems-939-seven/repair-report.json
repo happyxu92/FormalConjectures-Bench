@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-939-seven",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 显式加入 .lake/packages；最终 Harbor 容器内 ubuntu 执行三路径 rg，找到 mathlib/Data/PNat/Prime.lean 的 Coprime 定义，退出 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import。保留 ProblemImports 预编译；Dockerfile 最终以 ubuntu RUN lake build +FormalConjecturesBench.Target。当前本地 Harbor 构建及同容器 ubuntu 构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能脚本执行修复前与最终复验，均 no_issue；原始头、冻结前缀、:= 边界及拒绝负例通过。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden 隔离提取完整类型 (Erdos939.Erdos939Sums 7).Nonempty，外层参数及 universes 均为空；预编译 ExpectedType 及其前缀定义通过传递公理审计，两份包及 checker 内容/AST 一致。固定 /tests 或 /opt 产物来源，运行时不生成、不回退解析命题。最终本地 Harbor force_build 镜像 sha256:9f24112aaf86b61d8cf65c7c2cf45fe7c0544c165e18705a0fbe808071fcad4c；上传包与 /opt 包逐文件哈希一致。两入口均因原题 sorry 预期退出 1/reward 0；同一最终子容器 root/ubuntu 实际函数补测覆盖可信加载/审计、ubuntu UID 1000 编译、完整类型比较、目标公理与 canary、冻结/越界/名称语义偷换/缓存遮蔽/产物缺失及篡改拒绝。语义负例无 sorry、冻结文字未变、仅允许公理，实际被类型比较拒绝。未扩展普通外部 import 规则。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-939-seven/attempt-001（最终验收见 final/）。清理已核实：3 个本题容器、2 个镜像 tag 及对应的 2 个镜像 ID、2 个网络均移除；保留预存共享依赖镜像与构建缓存。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核对锁定上游 939.lean、完整 Erdos939Sums、Nat.Full 与 Finset.Coprime：r=7 时存在 5 个联合互素 7-powerful 自然数，其和亦 7-powerful；是已知存在性变体，不是解决一般开放题。旧定义允许 0/1 且未要求正性只弱化本目标，未见导致目标不成立的错误；未改数学定义或陈述。主站 403，r=7 的 Cambie 归属由锁定原始源与可访问 erdosproblems.ai/E0939 镜像核对；详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID 精确命中技能 CSV，public_lean4_proof=true；来源 https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos939_erdos_939_variants_seven.lean#L152 。按规则无需重新联网验证，未将证明加入镜像、未声称在本环境编译；见 public-csv-match.json。"
+    }
+  }
+}

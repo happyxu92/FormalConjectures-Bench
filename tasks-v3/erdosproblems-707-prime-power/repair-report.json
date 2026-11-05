@@ -1,0 +1,11 @@
+{
+  "task_id": "erdosproblems-707-prime-power",
+  "checks": {
+    "instruction_search": {"has_issue": true, "repair_status": "repaired", "note": "instruction.md 已显式加入 .lake/packages；匹配 Docker 中 rg 找到 Mathlib/Algebra/IsPrimePow.lean，退出码 0。"},
+    "lean_dependency": {"has_issue": true, "repair_status": "repaired", "note": "无额外上游 imports；补齐 Dockerfile 末尾 USER ubuntu 下的 RUN lake build +FormalConjecturesBench.Target。本地 Harbor 构建及容器内 ubuntu 构建均成功。"},
+    "unicode_header": {"has_issue": false, "repair_status": "not_needed", "note": "实际运行技能 Unicode 脚本，case=no_issue；原头、冻结前缀、:= 边界及负例检查通过。"},
+    "semantic_checker": {"has_issue": true, "repair_status": "repaired", "note": "从本题 golden 隔离提取完整类型及 universes=[]，匹配 Docker 中预编译并审计 ExpectedType；两份可信包及 checker AST/内容一致。最终本地 Harbor 构建镜像 1e063caf250d，两处交付哈希核对通过。两入口均按预期因原始 sorry 退出1/reward0；同一子容器分别调用 /tests、/opt checker 实际函数，完成 Spec加载/可信审计、ubuntu编译、完整类型、公理、canary及冻结/越界/语义偷换/缓存遮蔽/缺失/篡改负例，含 root 降权路径。所有 immutable 哈希不变，无必需路径未覆盖。已 stop/rm 本次3个容器（300a49735e1c、74d091f835a3、85b8987dd7c3），删除2个镜像（6ccd533f5ef7、1e063caf250d）及2个专属网络，并核实不存在；预存共享缓存 e21dc171550d 保留。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-707-prime-power/attempt-001/validation-summary.json。"},
+    "statement_fidelity": {"has_issue": false, "repair_status": "not_needed", "note": "statement_status=consistent。与锁定上游 prime_power 变体一致；论文 arxiv.org/html/2510.19804 的 Theorem 9 排除所有正模数，故覆盖 p^2+p+1。已核对 Sidon、offDiag.BijOn 和 IsPrimePow 定义，未发现明显错误；未修改数学输入。"},
+    "public_lean4_proof": {"has_issue": true, "repair_status": "marked", "note": "完整 ID 精确查 CSV 未命中；多组检索后读取 https://github.com/plby/lean-proofs/blob/main/src/v4.24.0/ErdosProblems/Erdos707.lean 。not_erdos_707AM/H2 排除所有非零模数的整数集合扩张，比本题自然数、素数幂限制更强；全文件去注释扫描无 sorry/admit/新增 axiom，仅 import Mathlib。已标 public_lean4_proof=true；未在本题重编译或装入答案。"}
+  }
+}

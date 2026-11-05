@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-375-log",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式加入 /opt/formal-conjectures/.lake/packages；最终 Harbor 容器 ubuntu 实跑搜索，命中 Mathlib/Data/Nat/Log.lean，退出码0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "补预编译实际额外 import FormalConjectures.Wikipedia.LegendreConjecture；Dockerfile 最终为 ubuntu RUN lake build +FormalConjecturesBench.Target。本地 Harbor 构建及同容器 ubuntu 构建成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本两次，均 no_issue；原头通过、修改头及缺少 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已由本题可信 golden 隔离 Submission 提前提取完整类型并预编译 ExpectedType，universes=[]；独立编译审计无目标占位证明依赖，仅允许标准公理。两份可信包及 checker AST/内容一致，固定产物加载、完整类型比较，不运行时解析或回退生成。最终当前本地 task Harbor 镜像 sha256:6c83c4120a2d6c87676a424822a533291a295bdd6cab94e388034f7a11737ae8；/tests 上传及 /opt 包与本地哈希一致。两入口退出1、reward0，仅因原题 sorry；同一最终子容器两套实际函数补测全部通过，覆盖 ubuntu 编译、完整类型、公理/sorry canary、冻结/越界、合法 Real.log 名称偷换的编译及类型拒绝、缓存/同名遮蔽、产物缺失和篡改拒绝且无回退。所有 immutable 哈希未变。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-375-log/attempt-001。Docker 已清理并复核：容器 fac8fa11cf49、5cfbfcf66653、0ed4b63907e6 均已 stop/rm；本题镜像 012e4e3a003e、6c83c4120a2d 及两个自建网络均已移除，按完整ID inspect 确认不存在。保留所有预存资源和共享缓存；详见 cleanup.json/log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 consistent：本题为 RST75 的已知三次 log/loglog 长度 Grimm 变体，不是无限制原猜想。核对完整前缀及 pinned 上游，读取 Erdős-Pomerance 1983 原文引言 p45 对该下界的确认；小 n 可通过缩小 c 排除，Fin k 索引、素性、整除及互异性一致。未发现导致无解的明显错误；未改陈述或定义。详见 statement-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "unknown/blocked，已同步 metadata。完整ID精确匹配技能 CSV 未命中；多组检索覆盖原名/别名、Grimm/RST、上游、Mathlib、GitHub及公开目录。PR2598/3122 仅修改 formally-solved 注解，实际 log 源码仍 sorry，已排除；当前上游仍 sorry，Jayyhk 目录无375。GitHub 全局代码搜索限流、原题页面403、审计站DNS失败，不能宣称充分确认不存在公开完整证明。详见 public-proof-review.json。"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-269-infinite",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式加入 /opt/formal-conjectures/.lake/packages；当前 Harbor 子容器以 ubuntu 运行三路径 rg，找到 Mathlib 中 Nat.prime_two，退出 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 imports；原 Dockerfile 缺少普通用户构建验收门。已以 USER ubuntu 的 RUN lake build +FormalConjecturesBench.Target 结尾，当前本地 task 的 Harbor 构建及容器内 ubuntu 构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本，初检及终检均为 no_issue；原头通过、改头及移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden 隔离 Submission 提取并预编译完整 ExpectedType（P、素数假设、无限性假设三个参数；universes=[]），审计四个前缀定义及其传递公理，仅有允许的标准公理；两份包及 checker AST/内容一致。固定 Spec/依赖加载路径，无运行时生成或源码回退。最终本地 Harbor 子容器 187d80394f06，镜像 089015e44e50；/tests 上传包、/opt 包及本地哈希逐项相符。正式和本地入口均因原题 sorry 退出 1，reward=0，非实现故障；同一容器内 ubuntu 两包及 root 降权路径补测全部通过：可信审计、编译、完整类型比较、公理拒绝 sorryAx、canary、冻结/越界/合法名称语义偷换/缓存遮蔽/缺失/篡改负例。未要求或声称完成原题证明。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-269-infinite/attempt-001。Docker 已清理并复核：容器 a5b4558aea2a、b57564b734ed、187d80394f06，镜像 1111677da89c、089015e44e50 及其全部本题标签、两个本题网络均已删除；预存共享依赖镜像保留，未触及其他任务资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。已读取 pinned 上游完整定义及 erdosproblems.com/269 原题页；来源明确说明无限素数集情形总是无理。本题是该已知变体；tsum 的空前缀项额外加 1，不改变无理性。未修改陈述、定义、golden、GoldenCheck 或冻结基线；所有 immutable-before 哈希一致。详见证据 external-search-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "public_lean4_proof=unknown，status=blocked。完整 task ID 精确匹配技能 CSV 未命中；多组检索覆盖上游、Mathlib、作者仓库和相关 PR。已读取 PR 2565/3089 的实际 Lean，均仅改 formally solved 标签且目标仍为 sorry；5041 及 7292 的源码只证明有限三素数 LCM/核秩结构，不覆盖本目标。当前上游仍为 sorry。GitHub 全局代码搜索 HTTP 401，无法排除未检出的 fork/别名证明，故不声称不存在公开完整证明。来源、检索词及排除理由见证据 external-search-audit.json。"
+    }
+  }
+}

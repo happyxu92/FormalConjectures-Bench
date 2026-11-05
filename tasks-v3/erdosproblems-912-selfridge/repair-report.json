@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-912-selfridge",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式包含 /app、/opt/formal-conjectures 及 .lake/packages；bash 语法检查及 Harbor 子容器 ubuntu 实际搜索 package 中 factorization 定义成功。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 imports；原 Dockerfile 缺普通用户构建验收，现末尾 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。当前本地 Harbor 镜像构建成功，同容器 ubuntu 复测退出 0；可信依赖权限未放宽。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本及最终复验，均 case=no_issue；原头通过、修改头和移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题 immutable golden、隔离候选，在匹配 Lean 4.27.0 Docker 依赖环境独立提取完整类型及 universes，预编译并审计 ExpectedType 和 Erdos912.h（0 外层参数、universes=[]，仅标准公理，无临时目标导出）。两份可信包一致；checker 固定预编译来源、清单/输入/版本/产物哈希，不运行时生成或重解析命题。当前本地 task 经 Harbor force_build 构建，/tests 上传包、/opt 本地包与宿主哈希一致。正式入口及 ubuntu check.sh 均退出 1、reward=0，原题 sorry 被源码规则预期拒绝，不是实现故障；同一 Harbor 子容器两份实际 checker 各完成 29 项补测：可信加载与审计、ubuntu 编译、完整类型比较、公理审计拒绝 sorryAx、canary、冻结/越界/语义偷换/缓存遮蔽/产物缺失及篡改。无 sorry 的名称/实例偷换候选编译及公理审计通过，但完整类型比较和 main 均拒绝。原正常 imports 和安全检查保留。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-912-selfridge/attempt-001（generation.log、delivery-hashes.json、harbor/、validation-summary.json、static-validation.json）。Docker 清理完成：已 stop/rm 本题 spec 容器 erdosproblems-912-selfridge-spec-g61-a001-912d 和 Harbor 容器 erdosproblems-912-selfridge-g61-a001-912d__env-main-1，删除本题镜像 sha256:8794ea10651e4679ec27f2930b5cf2b0569fd0ba10312c31c65aa42d6e2adbf8 及本题网络，inspect 已核实不存在；保留预先存在的共享依赖缓存，详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent；完整 h 定义统计阶乘素因子分解的不同非零指数，Real 1/2 次幂及 Nat atTop 的 Theta 陈述匹配 Erdős 1982 Miscellaneous problems in number theory, Theorem 1, pp.25-26（https://renyi.hu/~p_erdos/1982-08.pdf）及 https://www.erdosproblems.com/912 的已知 Selfridge 阶估计；并非较强的开放渐近常数命题。数学输入、公开 Target、golden、GoldenCheck、冻结基线均未改；15 项 immutable 哈希全部一致。详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中；多组题号、全名、数学陈述、Selfridge/Lean 关键词检索并检查上游、Mathlib、公开仓库、论坛和候选 PR。PR 2585、3109 仅改 solved 元数据且保留 sorry，不是完整证明。未验证到完整公开 Lean4 证明；GitHub 全局代码搜索 API 401、网页需登录，关键搜索覆盖受阻，故 metadata 标记 unknown/blocked，不能宣称不存在。详见证据目录 public-proof-review.json、source-fetch-results.json、proof-followup-fetch-results.json；未将任何公开答案放入镜像。"
+    }
+  }
+}

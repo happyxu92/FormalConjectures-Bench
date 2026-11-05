@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-944-large-k-for-any-r",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages. Actual ubuntu search across all three paths found Mathlib/Algebra/Group/Even.lean's IsSquare definition; exit 0, no path/permission errors. Evidence: instruction-search-package.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports beyond ProblemImports; retained its precompilation before cleanup. Added final USER ubuntu RUN lake build +FormalConjecturesBench.Target. Current local task completed two Harbor Docker builds; final image 071d47ea2f4a73deaaf2d0d392419b996ba2f15bf1a934120255213d3024d260. Explicit ubuntu Target build also exited 0."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran skill Unicode script before and after repair: no_issue; original header accepted, changed header and missing := rejected, original Target and both trusted golden copies matched. Evidence: unicode.json, unicode-final.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Replaced candidate-environment GoldenCheck elaboration with fixed precompiled ExpectedType. Independently generated from this task's original golden without Submission using matching Docker Lean v4.27.0; full r/hr binders and universe [u]. Independent transitive audits of ExpectedType and IsErdos944 admit only the standard three axioms; temporary target absent. Identical pinned source/artifact/manifest packages in tests and /opt checker payload; fixed trusted import paths precede candidates, no runtime generation/fallback. Both checker bytes/AST agree; original frozen/source/axiom/canary policies preserved. Final current-task Harbor image built locally after metadata changes; uploaded /tests and installed /opt package/checker/golden hashes match local files. Both actual entries exit 1, reward 0, solely from untouched target sorry. In the same final child container, both checker locations passed 29 supplemental cases each: fixed Spec load/audit, ubuntu compilation with observed uid 1000, full universe/type comparison, sorryAx rejection/canary, freeze/header/source confinement negatives, legal frozen-text Filter.atTop-to-bottom semantic attack compiled then rejected by complete-type comparison, module/dependency/cache/environment shadowing, and missing/tampered artifacts with no regeneration. All immutable hashes unchanged. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-944-large-k-for-any-r/attempt-001; final-validation/ contains final entry/hash/function results. No original-proof success claimed. Docker cleanup complete: stopped/removed own containers 9d0ff634093c, 3a07680410a4, ceace3c8c9b2; removed own images 3b717a57b1f8 and 071d47ea2f4a plus both Harbor networks. Inspect/ps checks verify absence. Shared pre-existing image, caches and all other resources retained; no prune. See cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent. Checked pinned upstream, complete IsErdos944/IsCritical/IsCriticalEdges definitions, and Martinsson-Steiner Theorem 1 at https://arxiv.org/html/2310.12891v1. This is the known sufficiently-large-k variant for each positive r. Finite witnesses make arbitrary edge-set ncard and arbitrary universe u harmless; quantifier direction and strictness agree. Problem page returned 403 but original paper was accessible. No mathematical statement, definition, Target, golden or GoldenCheck changed. Evidence: math-review.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact full-ID CSV lookup missed; searched multiple theorem/title/author/Lean combinations and followed public source links. Marked public_lean4_proof=true from complete downloaded source https://conjectures.io/results/e7afff2c-bb07-4fa8-92b6-67a530aaad70/solution/download and its published kernel/allowed-axiom verification record. erdos944_ge_six proves arbitrary r, every k>=6, arbitrary universe, with the exact ncard/vertex-critical predicate, hence covers this eventual-k target; no sorry/admit/new axioms in the source body. Upstream itself still has sorry; separate Kitamura/Chan k=4,r=1 proofs are insufficient. Optional replay in this task's v4.27.0 failed elaboration/tactic checks; no successful local replay claimed (currently linked public context uses v4.33.1). Historical catalog/PDF links were unavailable, but complete proof source, linked definitions and published verification were accessible. Proof kept only in evidence, not task or image. Evidence: public-proof-review.json, source-fetch.json, followup-sources.json, public-proof-compile.log."
+    }
+  }
+}

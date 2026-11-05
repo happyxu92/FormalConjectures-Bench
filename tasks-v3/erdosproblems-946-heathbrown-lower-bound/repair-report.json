@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-946-heathbrown-lower-bound",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式加入 /opt/formal-conjectures/.lake/packages，保留 /app 和上游根路径；最终 Harbor 子容器以 ubuntu 实际搜索到 package 中的 IsBigO 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import；原 Dockerfile 缺普通用户最终构建验证，已以 ubuntu RUN lake build +FormalConjecturesBench.Target 结尾。当前本地 task 的最终 Harbor 构建及容器内 ubuntu 重测均成功，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本并最终复验，均为 no_issue；两份原始头、冻结前缀及 := 边界验证通过，无编码修改。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题 golden 隔离提取并预编译完整 ExpectedType（外层参数 0，universes []），审计 ExpectedType 和 erdos946Count 仅依赖标准允许公理，同步两份可信包。checker 固定产物哈希、工具链和可信依赖路径，只比较已 elaboration 的完整类型，无运行时生成或回退。最终本地 Harbor 构建及 /tests 上传包、/opt 包、golden 哈希一致；正式入口与 ubuntu 本地入口均因原题 sorry 预期拒绝（exit 1，reward 0），非实现异常。同一最终子容器两份 checker 各完成 30 项实际补测，覆盖 Spec 审计、ubuntu UID/编译、完整类型、公理、canary、冻结/越界/语义实例偷换/缓存遮蔽/缺失及篡改负例；合法实例偷换能编译且公理合规，但被完整类型比较拒绝。全部 immutable 哈希、checker 字节/AST、Spec 包一致。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-946-heathbrown-lower-bound/attempt-001。Docker 清理已核实：3 个本题容器（f6f04eed4266、1a5c2c072f2a、9790f848c80e）已 stop/rm，2 个本题镜像（67a1135342dc、3523d7869ac8）及 2 个本题网络已删除；预先存在的共享依赖镜像和其他 agent 资源保留。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核对锁定上游 946.lean、官方题页、Heath-Brown 原论文页面及 Hildebrand 1987 p.307：本题是已知 x/(log x)^7 定量下界变体。sigma 0 是除数个数，含 floor 的有限计数、非负实数强制转换及 Big-O 方向与下界相符，零/负输入不影响 atTop。未发现明显数学错误；陈述、定义、Target、golden 和冻结基线均未修改。详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "unknown/blocked，已在 metadata 标记。完整 task ID 未命中技能 CSV；已多组检索并读取上游、作者实际 Lean 源码及支持文件、分支/历史、官方讨论、Mathlib 和相关 PR。Alexeev 的公开证明仅覆盖无限多个解，非本题定量下界；PR 2551/3076 的实际源码仍为 sorry，不能算完整证明。未确认覆盖本目标的公开完整证明；GitHub 跨仓库代码搜索需登录（API 401），进一步 API 请求限流（403），因此不能声称已充分确认不存在。详见 public-proof-review.json 及抓取记录；未把公开答案放入镜像。"
+    }
+  }
+}

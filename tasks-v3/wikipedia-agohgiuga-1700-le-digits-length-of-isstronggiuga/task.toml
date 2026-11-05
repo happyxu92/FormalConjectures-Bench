@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = false
+public_lean4_proof_status = "searched"
+public_lean4_proof_note = "Exact task ID absent from skill CSV; upstream, proof-linked forks, SamuelSchlesinger BorweinBound and published proof collections checked. No complete allowed-axiom proof of this digits bound found; the stronger BorweinBound candidate still has sorry and native_decide dependencies."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/Wikipedia/AgohGiuga.lean"

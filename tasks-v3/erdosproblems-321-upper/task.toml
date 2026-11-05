@@ -9,6 +9,12 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "mismatch"
+statement_status_note = "Only the final iterate is constrained. With Lean Real.log on negative inputs, N=13 and r=4 give log^[8] 13 > 1 but a negative upper bound. Statement and definitions intentionally left unchanged."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID absent from the skill CSV. Upstream upper is sorry (and now has stronger hypotheses). Star Fleet Math's downloaded Lean source proves a different asymptotic terminal-depth theorem, not this finite bound. Original problem comments and GitHub issue/API access were blocked; no covering proof confirmed."
+public_lean4_proof_urls = ["https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/321.lean", "https://www.starfleetmath.com/downloads/verify/erdos-321/erdos-321-solution.zip"]
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/321.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

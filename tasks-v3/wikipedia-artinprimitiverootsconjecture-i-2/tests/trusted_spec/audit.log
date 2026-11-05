@@ -1,0 +1,35 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited ArtinPrimitiveRootsConjecture.S: [propext, Classical.choice, Quot.sound]
+complete outer binders: [a, ha, ha', h]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (a : Int),
+  Not (@IsSquare Int Int.instMul a) →
+    @Ne Int a (@Neg.neg Int Int.instNegInt (@OfNat.ofNat Int (nat_lit 1) (@instOfNat (nat_lit 1)))) →
+      (∀ (q : Nat) [inst : @NeZero Nat (@MulZeroClass.toZero Nat Nat.instMulZeroClass) q]
+          (χ :
+            @DirichletCharacter Complex
+              (@CommGroupWithZero.toCommMonoidWithZero Complex
+                (@Semifield.toCommGroupWithZero Complex (@Field.toSemifield Complex Complex.instField)))
+              q),
+          @DirichletCharacter.IsPrimitive Complex
+              (@CommGroupWithZero.toCommMonoidWithZero Complex
+                (@Semifield.toCommGroupWithZero Complex (@Field.toSemifield Complex Complex.instField)))
+              q χ →
+            ∀ (s : Complex),
+              @Eq Complex (@DirichletCharacter.LFunction q inst χ s)
+                  (@OfNat.ofNat Complex (nat_lit 0) (@Zero.toOfNat0 Complex Complex.instZero)) →
+                s ∉ @Set.image Int Complex (@Int.cast Complex Complex.instIntCast) (@GRH.trivialZeros q χ) →
+                  @Eq Real s.re
+                    (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))
+                      (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))
+                      (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast ⋯)))) →
+        ∃ x,
+          And (@GT.gt Real Real.instLT x (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)))
+            (@Set.HasDensity Nat Nat.instPreorder
+              (@LocallyFiniteOrder.toLocallyFiniteOrderBot Nat Nat.instPreorder Nat.instOrderBot
+                Nat.instLocallyFiniteOrder)
+              (ArtinPrimitiveRootsConjecture.S a) x (@setOf Nat fun p => Nat.Prime p))
+@[reducible] def ArtinPrimitiveRootsConjecture.S : ℤ → Set ℕ :=
+fun a => {p | Nat.Prime p ∧ orderOf ↑a = p - 1}
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

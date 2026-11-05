@@ -1,0 +1,7 @@
+complete outer binder count: 0; quantified sequence and hypotheses are inside Not
+audited ExpectedType transitive dependencies: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬∀ (a : ℕ → ℕ),
+    ((∀ (n : ℕ), a n ≥ 1) ∧ Summable fun x => 1 / ↑(a x)) → ∃ t ≥ 1, Irrational (∑' (n : ℕ), 1 / (↑(a n) + ↑t))
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,11 @@
+{
+  "task_id": "erdosproblems-851-erdos-851",
+  "checks": {
+    "instruction_search": {"has_issue": true, "repair_status": "repaired", "note": "保留已验证修复：搜索命令显式包含 /app、/opt/formal-conjectures、.lake/packages；同题既有 Harbor ubuntu 实搜 primeFactors 退出0。本轮核对 instruction 与验收时哈希相同；见新证据 prior-same-task/instruction-search.log。"},
+    "lean_dependency": {"has_issue": true, "repair_status": "repaired", "note": "保留已验证修复：无额外上游 imports；Dockerfile 最终为 ubuntu RUN lake build +FormalConjecturesBench.Target。Dockerfile、依赖输入和源码与同题已通过的本地 Harbor 构建逐文件哈希一致，复用该真实构建及ubuntu构建证据，不声称本轮重建。"},
+    "unicode_header": {"has_issue": false, "repair_status": "not_needed", "note": "本轮再次实际执行技能 Unicode 脚本，case=no_issue；头、冻结前缀及赋值边界检查通过，无改动。见新证据 unicode.json。"},
+    "semantic_checker": {"has_issue": true, "repair_status": "repaired", "note": "保留同题真实验收：本轮核对checker内容/AST、两份Spec及全部immutable哈希，且从本题golden独立复现生成源码，均与已验收版本一致。ExpectedType保留ε、hε及universes=[]；Romanoff虽含sorry，但可信递归公理审计确认其未进入ExpectedType/TwoPowAddSet传递依赖，无须改前置证明。仅调查标记及报告变更，按用户允许复用同题本地Harbor镜像0a0f10c41a36的实际验收，不重建：两入口预期拒绝原sorry（退出1/reward0），同容器实际函数补测均通过，包括完整类型、ubuntu编译、公理/canary及规定负例，/tests与/opt交付哈希一致。新证据根为 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/retry-seven-20261105/tasks/erdosproblems-851-erdos-851/attempt-001，见engineering-review.json、prior-evidence-provenance.json和prior-same-task/。本轮未创建Docker资源；历史本题资源已删除，本轮再次核实，不影响共享资源。本项不表示原题证明完成。"},
+    "statement_fidelity": {"has_issue": true, "repair_status": "marked", "note": "suspect（未证实为假）：本轮已获取并完整读取Price公开Overleaf main.tex，以及Erdős 1985原文p.75图像；两者明确只给下密度。Price还显式用ω≤Ω推出不同素因子版本，故primeFactors.card不是错误。具体疑点是冻结HasDensity额外要求固定r的密度收敛，现有证明未覆盖；无反例/矛盾，真值仍unknown，不标mismatch、不改目标。详见新证据statement-review.json、price-main.tex和erdos-p75.png。"},
+    "public_lean4_proof": {"has_issue": false, "repair_status": "marked", "note": "searched：完整ID精确匹配CSV未命中；原Overleaf关键阻塞已解决，完整TeX无Lean链接。多组搜索并跟进源问题/论坛、作者原文、wiki、上游PR、Mathlib及其他候选；实际读取plby固定及当前Lean源码与FinalAssembly，仅lowerDensity，不能覆盖冻结HasDensity。Romanoff注释PR仍含sorry；其他检索候选题号不符。经记录范围充分检索未找到公开完整精确目标证明；非不存在证明的断言。详见新证据public-proof-review.json。"}
+  }
+}

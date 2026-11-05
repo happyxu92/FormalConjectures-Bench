@@ -1,0 +1,40 @@
+{
+  "task_id": "wikipedia-riemannzetavalues-irrational-three",
+  "target_name": "RiemannZetaValues.irrational_three",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "40c5595002a07afa477cf9d3c8cc6c289da0f6f9217ebda2003f0b98c3379cdf",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "022a20ac83d73b1edda400048e552736bb32f8db8955eeffd2836cf8cf6c0df7",
+    "FCBTrustedSpec.ilean": "a77bccc5c251de860a23e60b8aa0b2a07574ca9377e249ca3aaa9a734b9d7a4a",
+    "FCBTrustedSpec.lean": "874cee497d96aa76fd0c33acbc4f5cc54d8db32d9d7fc0f4dc0b6f05774d277d",
+    "FCBTrustedSpec.olean": "a6f095e0db511074988a8d49a7b5b47ce8e4ce1de3b61ab962fdc1436419989e",
+    "audit.log": "51ce5cd7d8aa2716fad39c0b91219e50d3f9820e2ddbf58b13297a8bb3a35aa7",
+    "generate.py": "9df131fe5fce04885d414f35f73a94b8a99823265602cb3c773dce9787338d6a",
+    "reproduce.sh": "99d7e87a2154232c639c6a58de4793554e7418ac4fbdecdaeb28b8fca35cac18"
+  },
+  "generation_image": "sha256:e21dc171550d4c49aceba963047d00d1a350ce711019cbd9cb32c4770c7a39df",
+  "generation_command": "python3 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-riemannzetavalues-irrational-three/attempt-001/generate.py",
+  "audit": "Complete closed existential proposition, 0 outer forall binders, no universe parameters. Transitive ExpectedType axioms: propext, Classical.choice, Quot.sound. Untouched prefix contains the original unrelated open sorry theorems, but ExpectedType does not depend on them. Temporary target and child declarations absent."
+}

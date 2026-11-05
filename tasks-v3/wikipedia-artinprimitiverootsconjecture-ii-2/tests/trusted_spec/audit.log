@@ -1,0 +1,18 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited ArtinPrimitiveRootsConjecture.S: [propext, Classical.choice, Quot.sound]
+audited ArtinPrimitiveRootsConjecture.ArtinConstant: [propext, Quot.sound, Classical.choice]
+audited ArtinPrimitiveRootsConjecture.powCorrectionFactor: [propext, Quot.sound, Classical.choice]
+audited ArtinPrimitiveRootsConjecture.entanglementFactor: [propext, Quot.sound, Classical.choice]
+complete binder count: 8
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (a a_0 b : ℤ),
+  a = a_0 * b ^ 2 →
+    (∀ (n : ℤ) (m : ℕ), m ≠ 1 → a ≠ n ^ m) →
+      Squarefree a_0 →
+        ¬a_0 ≡ 1 [ZMOD 4] →
+          (∀ (q : ℕ) [inst : NeZero q] (χ : DirichletCharacter ℂ q),
+              χ.IsPrimitive →
+                ∀ (s : ℂ), DirichletCharacter.LFunction χ s = 0 → s ∉ Int.cast '' GRH.trivialZeros χ → s.re = 1 / 2) →
+            (ArtinPrimitiveRootsConjecture.S a).HasDensity ArtinPrimitiveRootsConjecture.ArtinConstant {p | Nat.Prime p}
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

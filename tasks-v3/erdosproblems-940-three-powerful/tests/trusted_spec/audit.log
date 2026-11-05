@@ -1,0 +1,85 @@
+FCBTrustedSpec.lean:35:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:44:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:53:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:63:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+ExpectedType transitive axioms: [propext, Quot.sound, Classical.choice]
+universe parameters: []; outer binder count: 0
+complete raw expression: Lean.Expr.app
+  (Lean.Expr.app
+    (Lean.Expr.app (Lean.Expr.const `Filter.Eventually [Lean.Level.zero]) (Lean.Expr.const `Nat []))
+    (Lean.Expr.lam
+      `x
+      (Lean.Expr.const `Nat [])
+      (Lean.Expr.app
+        (Lean.Expr.app
+          (Lean.Expr.const `Exists [Lean.Level.succ (Lean.Level.zero)])
+          (Lean.Expr.app (Lean.Expr.const `Multiset [Lean.Level.zero]) (Lean.Expr.const `Nat [])))
+        (Lean.Expr.lam
+          `S
+          (Lean.Expr.app (Lean.Expr.const `Multiset [Lean.Level.zero]) (Lean.Expr.const `Nat []))
+          (Lean.Expr.app
+            (Lean.Expr.app
+              (Lean.Expr.const `And [])
+              (Lean.Expr.app
+                (Lean.Expr.app
+                  (Lean.Expr.app
+                    (Lean.Expr.app (Lean.Expr.const `LE.le [Lean.Level.zero]) (Lean.Expr.const `Nat []))
+                    (Lean.Expr.const `instLENat []))
+                  (Lean.Expr.app
+                    (Lean.Expr.app (Lean.Expr.const `Multiset.card [Lean.Level.zero]) (Lean.Expr.const `Nat []))
+                    (Lean.Expr.bvar 0)))
+                (Lean.Expr.app
+                  (Lean.Expr.app
+                    (Lean.Expr.app (Lean.Expr.const `OfNat.ofNat [Lean.Level.zero]) (Lean.Expr.const `Nat []))
+                    (Lean.Expr.lit (Lean.Literal.natVal 3)))
+                  (Lean.Expr.app (Lean.Expr.const `instOfNatNat []) (Lean.Expr.lit (Lean.Literal.natVal 3))))))
+            (Lean.Expr.app
+              (Lean.Expr.app
+                (Lean.Expr.const `And [])
+                (Lean.Expr.forallE
+                  `s
+                  (Lean.Expr.const `Nat [])
+                  (Lean.Expr.forallE
+                    (Lean.Name.mkNum `a._@._internal._hyg 0)
+                    (Lean.Expr.app
+                      (Lean.Expr.app
+                        (Lean.Expr.app
+                          (Lean.Expr.app
+                            (Lean.Expr.app
+                              (Lean.Expr.const `Membership.mem [Lean.Level.zero, Lean.Level.zero])
+                              (Lean.Expr.const `Nat []))
+                            (Lean.Expr.app (Lean.Expr.const `Multiset [Lean.Level.zero]) (Lean.Expr.const `Nat [])))
+                          (Lean.Expr.app
+                            (Lean.Expr.const `Multiset.instMembership [Lean.Level.zero])
+                            (Lean.Expr.const `Nat [])))
+                        (Lean.Expr.bvar 1))
+                      (Lean.Expr.bvar 0))
+                    (Lean.Expr.app
+                      (Lean.Expr.app
+                        (Lean.Expr.const `Nat.Full [])
+                        (Lean.Expr.app
+                          (Lean.Expr.app
+                            (Lean.Expr.app (Lean.Expr.const `OfNat.ofNat [Lean.Level.zero]) (Lean.Expr.const `Nat []))
+                            (Lean.Expr.lit (Lean.Literal.natVal 2)))
+                          (Lean.Expr.app (Lean.Expr.const `instOfNatNat []) (Lean.Expr.lit (Lean.Literal.natVal 2)))))
+                      (Lean.Expr.bvar 1))
+                    (Lean.BinderInfo.default))
+                  (Lean.BinderInfo.default)))
+              (Lean.Expr.app
+                (Lean.Expr.app
+                  (Lean.Expr.app (Lean.Expr.const `Eq [Lean.Level.succ (Lean.Level.zero)]) (Lean.Expr.const `Nat []))
+                  (Lean.Expr.bvar 1))
+                (Lean.Expr.app
+                  (Lean.Expr.app
+                    (Lean.Expr.app (Lean.Expr.const `Multiset.sum [Lean.Level.zero]) (Lean.Expr.const `Nat []))
+                    (Lean.Expr.const `Nat.instAddCommMonoid []))
+                  (Lean.Expr.bvar 0)))))
+          (Lean.BinderInfo.default)))
+      (Lean.BinderInfo.default)))
+  (Lean.Expr.app
+    (Lean.Expr.app (Lean.Expr.const `Filter.atTop [Lean.Level.zero]) (Lean.Expr.const `Nat []))
+    (Lean.Expr.const `Nat.instPreorder []))
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ᶠ (x : ℕ) in Filter.atTop, ∃ S, S.card ≤ 3 ∧ (∀ s ∈ S, Nat.Full 2 s) ∧ x = S.sum
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

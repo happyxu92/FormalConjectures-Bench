@@ -73,3 +73,6 @@ RUN mkdir -p /opt/formal-conjectures-bench-checker \
 WORKDIR /app
 ENV HOME=/home/ubuntu
 USER ubuntu
+
+# Validate precompiled dependencies using the same ordinary user as the checker.
+RUN lake build +FormalConjecturesBench.Target

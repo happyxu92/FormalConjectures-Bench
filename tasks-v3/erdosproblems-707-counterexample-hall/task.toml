@@ -8,6 +8,12 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "mismatch"
+statement_status_note = "The target omits 0 < n: at n=0, ZMod 0 is the integers and Hall's finite Sidon set extends to an infinite perfect difference set (Alexeev–Mixon, Claim 10). Statement and definitions are intentionally unchanged."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact skill CSV ID absent. Alexeev's public Hall proof assumes nonzero modulus; Tao's proof treats the prime case, neither covers this unchanged n=0-inclusive target. Upstream remains sorry; Erdos problem/forum and Xena pages returned HTTP 403. See repair evidence for searches and source review."
+public_lean4_proof_urls = ["https://github.com/plby/lean-proofs/blob/main/src/v4.24.0/ErdosProblems/Erdos707.lean", "https://github.com/teorth/analysis/blob/main/Analysis/Misc/erdos_707.lean"]
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/707.lean"

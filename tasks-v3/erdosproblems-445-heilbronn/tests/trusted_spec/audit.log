@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos445.Erdos445Prop: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0 (entire elaborated existential proposition retained)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ c₀ < 1, ∀ c > c₀, ∀ᶠ (p : ℕ) in Filter.atTop, Nat.Prime p → ∀ (n : ℕ), Erdos445.Erdos445Prop c p n
+def Erdos445.Erdos445Prop : ℝ → ℕ → ℕ → Prop :=
+fun c p n => ∃ a b, n < a ∧ ↑a < ↑n + ↑p ^ c ∧ n < b ∧ ↑b < ↑n + ↑p ^ c ∧ a * b ≡ 1 [MOD p]
+'Erdos445.Erdos445Prop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

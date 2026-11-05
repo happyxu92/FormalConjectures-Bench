@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-351-x",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 .lake/packages；最终 Harbor 容器以 ubuntu 实际搜到 Mathlib/Data/Set/Operations.lean 的 range 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 Dockerfile 缺少普通用户依赖构建验收，已以 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target 结尾。本题无额外上游 imports；最终本地 Harbor 构建及容器内 ubuntu 构建均成功，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已执行技能 Unicode 脚本并最终复验，case=no_issue；原头通过，改头和移除赋值被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题可信 golden 隔离 Submission 提取完整类型及 universes，匹配 Docker/Lean 4.27.0 中预编译 ExpectedType；无外层参数、universes=[]，相关定义传递公理仅允许的三项。两份可信包及 checker 一致，运行时仅加载固定已校验产物，以完整类型比较替换 GoldenCheck 重解析。最终本地 Harbor trial erdosproblems-351-x-g61-a001-351c-final 构建成功；上传 /tests 与 /opt 包哈希逐项吻合。两入口均因原题 sorry 预期退出 1、reward=0；同一子容器两位置各 31 项实际函数补测通过，覆盖可信审计、ubuntu 编译、完整类型、目标公理、canary、冻结/越界/名称偷换/缓存遮蔽/产物缺失和篡改拒绝。所有 15 个 immutable 哈希及冻结常量保持不变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-351-x/attempt-001/validation-summary.json。Docker 已核实清理：3 个本题容器（2346c12f9f14、28fc11b6ca77、647ef88e5a2c）、2 个本题构建镜像（d9d41ae3544a、e87a06903cf4）及 2 个本题网络均已移除；预先存在的共享依赖镜像和缓存保留。cleanup.exit=0，详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。本题为已知 p=X 特例，非要求解决一般猜想。已读取 Graham, A theorem on partitions (1963), Theorem 3，原刊 pp.439–440（DOI 10.1017/S1446788700039045）：取倒数和 1、索引足够大，在 m−1 应用即得和 m，避开任意有限 B 且像元素互异。已核对自然数范围、ℚ、有限集合差及 n=0 约定；未发现明显数学错误，陈述和定义未改。详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID 精确匹配技能 CSV 未命中，已多组检索并读取实际源码。public_lean4_proof=true： https://github.com/Shashi456/erdos-formalizations/blob/main/Erdos/P283/Proof_flat.lean 的 corollary_7_pos_leading 覆盖更强的正首项情形，取 X 即覆盖本题；独立 Lean rfl 桥接确认公开定义与本题完整类型一致。整份单文件仅导入 Mathlib，无可执行 sorry/admit、新公理或扫描到的逃逸声明。上游 main 的证明链接及 plby 包提供交叉来源。公开完整证明未在本题编译，也未加入任务镜像。题站直接访问 403、GitHub 提交 API 限流、旧 PDF 链接 404 已记录，但实际完整证明源码及 Graham 原刊可访问，不阻碍本次存在性标记。详见 public-proof-review.json、source-fetch-results.json。"
+    }
+  }
+}

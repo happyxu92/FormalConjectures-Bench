@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-886-rosenfeld-bound",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式补上 .lake/packages；在最终 Harbor 容器以 ubuntu 执行三路径 rg，找到 Mathlib 的 divisors 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；Dockerfile 原缺普通用户构建验收，现以 USER ubuntu 的 RUN lake build +FormalConjecturesBench.Target 结尾。本地 Harbor 构建及同容器 ubuntu 再构建均通过。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "技能 Unicode 脚本修复前后均返回 no_issue；原头、修改头和缺失 := 检查通过，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境解析 GoldenCheck，存在名称遮蔽风险。现从本题原始 golden 隔离提取完整 C:Real 与正性参数、universes=[]，在匹配 Lean 4.27.0 Docker 依赖中编译并审计 ExpectedType；两份可信包一致，固定清单/产物/版本/依赖哈希及优先加载路径，无运行时生成或回退。当前本地 task 经 Harbor 构建，已核对上传 /tests 与 /opt 包、checker、golden 哈希。正式入口和 ubuntu check.sh 均因原题 sorry 按预期退出 1、reward=0；同一 Harbor 子容器对两份实际 checker 各完成 29 项补测，覆盖可信审计、ubuntu 编译、完整类型比较、目标公理、canary、冻结/越界、冻结文字不变的 divisors 名称偷换、缓存遮蔽、产物缺失及篡改。原安全检查 AST 保留，所有 immutable 哈希未变；未声称原题证明通过。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-886-rosenfeld-bound/attempt-001。Docker 已清理并复核：本题 spec-g61-886a 与 g61-886a__env-main-1 两容器均 stop/rm，本题 Harbor 镜像和网络已移除；预先存在的共享依赖镜像保留，cleanup.json 显示 success=true、无遗留问题。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata 已标 consistent。核对锁定上游 886.lean、完整前缀、实际 Real 类型及题目/结果来源，当前为已知 Rosenfeld bound 变体，非整个开放问题。对 n>0，d+n/d 为互异整数且落在 [2√n,2√n+C²)，给出基数 ≤1+C²，闭端点及任意 C>0 无明显问题。主站与论文 PDF 返回 403，已读取上游原文件、题目/结果镜像及出版记录并保留访问记录；另作独立数学核查。未修改任何数学陈述或定义。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确命中技能 references/public-lean4-proofs.csv，已标 public_lean4_proof=true；按要求无需重新联网核验，未在本环境重新编译公开证明、未将答案加入镜像。来源：https://github.com/linrock/math-proofs/blob/4a1f92f2aca5f32edb0c681f1e8fdca88b5d9494/erdos-886/Solution.lean#L45 。"
+    }
+  }
+}

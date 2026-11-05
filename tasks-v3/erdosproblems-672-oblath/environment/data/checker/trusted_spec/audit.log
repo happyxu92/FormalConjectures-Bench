@@ -1,0 +1,10 @@
+FCBTrustedSpec.lean:38:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:44:6: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:6: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos672.Erdos672With: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Erdos672.Erdos672With 5 2 ∧ Erdos672.Erdos672With 3 3 ∧ Erdos672.Erdos672With 3 4 ∧ Erdos672.Erdos672With 3 5
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+{r |
+      1 ≤
+        {m ∈ Finset.Ioo (Nat.nth Nat.Prime r) (Nat.nth Nat.Prime r.succ) |
+            m.maxPrimeFac < Nat.nth Nat.Prime r.succ - Nat.nth Nat.Prime r}.card}.HasDensity
+  0
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

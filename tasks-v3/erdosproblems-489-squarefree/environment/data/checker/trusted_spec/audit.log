@@ -1,0 +1,8 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos489.sievedSet: []
+audited Erdos489.GapSumSq: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ L, Filter.Tendsto (fun x => Erdos489.GapSumSq {n | ∃ p, Nat.Prime p ∧ n = p ^ 2} x / ↑x) Filter.atTop (nhds L)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-273-three",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "源码搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；在最终 Harbor 子容器以 ubuntu 实测找到 package 内 add_comm，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外 import；原 Dockerfile 缺少最终普通用户构建验证，现以 USER ubuntu 的 RUN lake build +FormalConjecturesBench.Target 结尾。当前本地 task Harbor 构建成功，同容器 ubuntu 再构建退出码 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际执行技能 Unicode 脚本，修复前及最终均为 no_issue；原头通过，改头和移除 := 均拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离候选提取完整类型及 universes（空），匹配 Lean 4.27.0 Docker 预编译并审计 ExpectedType 传递依赖仅 propext/Quot.sound。两份固定 Spec 包、checker 内容/AST 一致，全部 immutable 哈希保持。最终本地 Harbor 构建及 /tests、/opt 交付哈希核对通过；两实际入口因原题 sorry 预期退出 1、reward=0，并非证明通过。同一最终子容器两套实际函数各 29 项补测通过：可信加载/审计、ubuntu 编译、完整类型、公理/canary、冻结/越界/语义偷换/缓存遮蔽/产物缺失与篡改拒绝。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-273-three/attempt-001。本次 3 个容器（8e7240acec25、df1f86b4bde6、77f9617b4371）已 stop/rm；3 个自建镜像（f51ae48044f9、8619402cccab、6b716004c773）及 2 个实际创建的网络已删除并核实不存在；保留全部预存共享缓存。见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。实际目标是 p≥3、ℕ 上严格覆盖系统的已知变体，不是开放的 p≥5 原问题。核对 pinned CoveringSystem 的有限性、ne_bot/ne_top、互异性及理想平移覆盖；公开构造的 12 个模数均为 p−1>1，独立整数运算验证全部 360 个周期余类被覆盖。主站 403，已读取上游源码及可访问来源。数学定义、陈述、公开 Target、golden 和 GoldenCheck 均未修改；详见 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "unknown/blocked：完整 task ID 精确匹配技能 CSV 未命中。多组检索并读取上游、Mathlib 目录、公开 parity 源码、六个相关 PR 及引用 fork；五个声称 solved 的 PR 仍有 sorry。PR2431 有旧定义下的候选完整构造，但缺本题 ne_top 条件的对应 Lean 验证，原样在 pinned 环境编译失败；尚未核实其对本题完整类型的证明。GitHub 代码搜索需登录、关键 PR 讨论 API 限流、题目主站 403，不能断言无公开证明。已标记 metadata；详见证据目录 public-proof-review.json，未将公开答案放入任务或镜像。"
+    }
+  }
+}

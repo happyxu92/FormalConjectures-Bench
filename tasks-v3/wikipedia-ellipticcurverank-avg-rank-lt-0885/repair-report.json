@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-ellipticcurverank-avg-rank-lt-0885",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 显式补入 /opt/formal-conjectures/.lake/packages；最终 Harbor 子容器以 ubuntu 实际搜索命中 Mathlib/LinearAlgebra/Dimension/Finrank.lean。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题没有额外上游 imports；补齐 Dockerfile 末尾 USER ubuntu 下的 RUN lake build +FormalConjecturesBench.Target。当前本地任务 Harbor 构建及容器内 ubuntu 复测均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按顺序运行技能 Unicode 脚本并最终复验，均为 no_issue；原头通过，改头和移除 := 均被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题可信 golden 隔离提取完整 ExpectedType（外层参数与 universes 均为空），预编译、传递公理审计并同步两份包。固定产物加载和完整类型比较已在最终本地 Harbor 镜像 sha256:936eb67300c4ad900f65c1dde621ffc4aa615267e562421cb6e630f68735411d 验收；/tests 上传包与 /opt 安装包哈希均匹配。两入口 exit=1/reward=0 是原题 sorry 的预期拒绝；同一子容器两份 checker 的后续实际函数补测全部通过，含 ubuntu 编译、类型比较、公理/canary、冻结/越界/语义偷换/缓存遮蔽/缺失/篡改负例。保留原安全与正常 import 规则，未声称原题证明完成。已 stop/rm 本题三个容器（146043b7b3c8、e9cb4b1b8f4e、5f1d086eaf2c），删除本题两镜像（507b101e75c0、936eb67300c4）及两个专属网络，并核实不存在；预存共享依赖镜像/缓存保留。详见 cleanup.json。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-ellipticcurverank-avg-rank-lt-0885/attempt-001/validation-coverage.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 consistent。完整定义与 PPVW2016 §5.1 的约化整模型/高度一致；BS2013 Theorem 3 与 §6 给出无条件 limsup 平均秩 ≤ .88497 < .885，严格方向正确。未发现使本目标不成立的明显错误；数学输入、golden、GoldenCheck、冻结基线全部保持不变。详见证据 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "unknown/blocked：完整 ID 精确匹配技能 CSV 未命中。已多组检索并阅读上游、相关 Lean 源码和 PR；PR3125/2601 仅更改分类且仍含 sorry，Mordell-Weil/单曲线秩证明不覆盖本目标。GitHub 全局代码搜索/仓库树与作者页 HTTP 403，无法确认公开完整证明是否存在；未作不存在断言。详见证据 public-proof-review.json。"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos865.f: [Classical.choice, propext, Quot.sound]
+binder k: ℕ (Lean.BinderInfo.default)
+binder hk: 3 ≤ k (Lean.BinderInfo.default)
+complete binder count: 2
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (k : ℕ), 3 ≤ k → ∃ ε > 0, ∀ᶠ (N : ℕ) in Filter.atTop, ↑(Erdos865.f N k) ≤ (2 / 3 - ε) * ↑N
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

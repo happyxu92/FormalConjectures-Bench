@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-945-lower-bound",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式列出 /app、/opt/formal-conjectures 及其 .lake/packages；最终 Harbor 子容器内以 ubuntu 执行搜索，命中 Mathlib 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 Dockerfile 缺少末尾普通用户依赖验证；Target 无额外上游 import，无需追加预编译模块。现以 USER ubuntu 的 RUN lake build +FormalConjecturesBench.Target 结尾，本地 Harbor 构建和容器内再次构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行 skill Unicode 脚本及最终复验，均为 no_issue；原头通过，修改头及移除 := 均被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已用本题 immutable golden 隔离候选提取完整 elaborated 类型和 universes，预编译 ExpectedType；无外层 forall 或 universe 参数。ExpectedType、F、τ 的传递公理审计通过，两份可信包及 checker AST/内容一致，所有原冻结和源码安全规则保留。最终当前本地 task 经 Harbor 构建成功，镜像 sha256:a2d281776e95b9d41bbd558a7674d42f9f2ea0b27a133d2bb9968e7fe288804e；34 个上传/镜像交付文件哈希一致。两入口因原题 sorry 退出 1、正式 reward=0，属于预期证明拒绝，不声称已证明目标。同一 final2 子容器分别对两份实际 checker 执行各30项补测，覆盖固定 Spec 加载/审计、ubuntu UID1000 编译、完整类型比较、目标公理及 canary，以及冻结/越界/同名 log 语义偷换/缓存遮蔽/缺失和篡改负例，全部符合预期；无未覆盖的要求内关键路径。全部 immutable 哈希不变。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-945-lower-bound/attempt-001。最终重建曾遇本题旧网络子网重叠，改用已检查未占用子网后验收成功，未修改 daemon 或权限。Docker 清理完成：本次 Spec、初次 Harbor、最终 final2 共3个容器已 stop/rm，3个本题镜像已删除并逐一 inspect 确认不存在，2个实际创建网络已删除；失败 final 网络亦确认不存在。预先存在的匹配依赖镜像及共享缓存保留，未动其他题资源；详见 cleanup.json，退出码0。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。已读 pinned upstream 和 Erdős–Mirsky 1952 原论文 https://www.renyi.hu/~p_erdos/1952-12.pdf，p.258 Theorem V 及 pp.269–270 §11。F 的有界 Nat 长度集合、正整数 Ioc、sqrt(log x)/loglog x 下界方向及自然数 atTop 均吻合；有限小输入的分母退化不影响 Big-O。此为已知下界变体，不是解决开放上界问题。数学定义、Target、所有 golden 和 GoldenCheck 均未改。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "unknown/blocked：完整 ID 精确匹配 skill CSV 未命中。已多组检索题号、完整 Lean 名、Erdős–Mirsky 和等价下界，检查 upstream main/history、GitHub PR/分支及证明集合。#2593/#3117 的 fork Lean 源码仍为 sorry；#5089/jkleid 只证明 equivalence，非本题下界；其他线索不覆盖目标。未核实到完整公开证明，但 Erdős 页面/LaTeX 403、GitHub code search 401、problems.science 500，不能断言不存在。metadata 已标记 unknown/blocked；详细查询、来源、源码和排除理由见证据目录 public-search-summary.json。"
+    }
+  }
+}

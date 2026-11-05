@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-346-f-isaddstronglycompletenatseq",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式加入 .lake/packages；Harbor 容器内 ubuntu 实测 rg 成功找到 package 中 Nat.fib 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；补上 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 task 经 Harbor force_build 构建成功，同一子容器 ubuntu 补测构建退出码 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已运行技能 Unicode 脚本及最终复验，均为 no_issue；原头通过，改头和删除 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden 隔离候选，通过 Lean parser/elaborator 提取完整类型及有序 universes（[]，外层参数 0），生成并独立编译审计 ExpectedType；其及 f 的传递依赖仅含标准公理。两份包及 checker AST/内容一致，/tests 上传包和 /opt 包哈希均已与本地核对。固定可信产物优先加载，不运行时解析原命题或回退生成；保留原源码/冻结/公理/canary 检查和普通 import。当前本地 Harbor 镜像构建及两入口均实际执行；原题 sorry 导致两入口退出 1、reward 0，属预期拒绝。同一最终子容器分别调用两份 checker 的真实函数，完成 Spec 审计、ubuntu UID 1000 编译、完整类型比较、目标 sorryAx 拒绝、sorry canary，以及冻结/越界/名称偷换/候选模块及依赖缓存遮蔽/产物缺失和篡改负例，补测退出码均为 0。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-346-f-isaddstronglycompletenatseq/attempt-001。Docker 清理完成：本题 spec、初次及最终 Harbor 共 3 个容器已 stop/rm，2 个本题镜像 tag 及其镜像 ID 已移除，2 个本题网络已移除并逐项核实；预先存在的匹配依赖缓存镜像保留，未操作其他 agent 资源。详见 cleanup.json/owned-resources.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata 标记 consistent。核对完整 f、subsetSums、IsAddComplete 和 IsAddStronglyCompleteNatSeq 定义，以及 Graham 1964《A Property of Fibonacci Numbers》pp.1–3 的性质(C)。本题为已知具体变体，不是一般比值猜想；n=0 的自然数截断和有限初项重复不影响尾部完备性。未发现导致目标不成立的明显错误，数学输入保持不变。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 task ID 未命中技能 CSV。已按题号、完整定理名、Graham/Fibonacci/strong completeness 等多组检索，核查当前上游、Mathlib、论坛全部相关证明链接、原 formalization PR1464 和命名 issue。KitaKen1 的比值极限定理假设完备性；Price 的反例源码只为另一 generated 序列证明完备性，未给出本题 f 的完整证明或转换桥接。未找到覆盖本目标的公开完整 Lean4 证明，metadata 标记 public_lean4_proof=false/status=searched，并非断言不存在。初始关键网页/API 受阻已用直接 HTML 请求恢复；仅次要审计站 DNS 仍不可用。详见 research-review.json、实际下载源码与抓取日志。"
+    }
+  }
+}

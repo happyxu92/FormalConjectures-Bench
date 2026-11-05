@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-727-k-1-2",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式补齐 packages；最终 Harbor 子容器 ubuntu 下执行成功，找到 Mathlib/Data/Nat/Factorial/Basic.lean。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 imports；补上原先缺失的 Dockerfile 末尾 ubuntu RUN lake build +FormalConjecturesBench.Target。当前本地 task 两次 Harbor 构建成功，最终子容器普通用户构建退出 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本及最终复验：no_issue；原头通过，修改头及移除赋值被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离提取并预编译 ExpectedType：完整 k、hk 参数，universes=[]，传递公理为空，临时目标未导出；两份可信包及 checker AST/内容一致。固定来源/哈希/版本校验，无运行时生成或命题重解析。最终本地 Harbor 构建及 /tests、/opt 包哈希一致；两入口因原题 sorry 预期退出 1、reward=0。相同最终子容器中两份 checker 的实际函数补测通过：Spec审计、ubuntu编译、完整类型比较、公理允许/拒绝、sorry canary、冻结/越界/语义偷换/缓存遮蔽/缺失篡改负例。所有 immutable 哈希未变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-727-k-1-2/attempt-001。Docker 已核实清理：本题3个容器（f8f6e43256e3、38b24e933876、c9e29d95638d）、2个镜像（4f182894df5b、2bca5e9ad227）及2个网络均已移除；预存共享依赖镜像保留，详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核对完整前缀、锁定上游、Erdős 727 网页及 EGRS 1975 原文 p.90 扫描页；本题是每个固定 k≥2 的混合阶乘已知变体，而非平方阶乘开放问题。未发现明显数学错误，陈述和定义均未修改。见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "public_lean4_proof=unknown，status=blocked。完整ID精确CSV未命中；多组检索覆盖上游、Mathlib、作者、GitHub及相关仓库。PR 2695/3217及fork仍为sorry；beetree只覆盖k=2,3，Rexyysilent是非形式化候选，均非本题完整证明。关键论坛讨论/证明声明页403，GitHub代码/分支API限流，不能断言没有公开证明。详见 public-search-evidence.json 和抓取日志。"
+    }
+  }
+}

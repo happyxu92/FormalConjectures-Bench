@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-artinprimitiverootsconjecture-part-ii-square-or-minus-one",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令显式补入 /opt/formal-conjectures/.lake/packages；最终 Harbor 子容器中 ubuntu 用该命令实际检出 Mathlib 的 IsSquare 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "按本题额外 import 补预编译 FormalConjectures.Millenium.RiemannHypothesis；Dockerfile 最后保留 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 task 经 Harbor 构建成功，子容器 ubuntu 再构建退出码 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "执行技能 Unicode 脚本并最终复验：case=no_issue；原头通过、修改头和移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 去掉 Submission 导入后，在匹配 Docker 工具链中提前提取并编译 ExpectedType：完整参数 [a, ha]，universes=[]；独立审计 ExpectedType/S 的传递公理，仅含标准允许公理，无临时目标导出。同步两份哈希固定的 Spec 包；checker 固定预编译来源、ubuntu 编译及完整类型比较，不运行时生成或重解析命题。最终本地 Harbor 镜像 6764df3d71ef 构建成功；/tests 上传包、/opt 包、公开 Target/golden 哈希与本地一致。正式及本地入口均退出 1/reward 0，原因仅为原题 sorry。两份包在同一最终子容器分别补测 30 项实际函数路径：Spec 加载/审计、ubuntu UID 1000 编译、完整类型比较、sorryAx 拒绝、canary、冻结/越界及离散 Nat 次序实例语义偷换（合法且仅用允许公理，编译通过但完整类型拒绝）、缓存/环境遮蔽和缺失/篡改负例。原安全检查及正常 import 规则保留；不可变文件、checker AST/内容及两份 Spec 包一致。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-artinprimitiverootsconjecture-part-ii-square-or-minus-one/attempt-001，见 final-review.json、validation-coverage.json、final-validation/。Docker 清理已核实：本次 3 个容器（0f37197501a3、a0754edec626、7fe2815dbee9）、2 个镜像（5e8cbb9b7e05、6764df3d71ef）及 2 个专用网络均已删除，无遗留；预先存在的共享依赖镜像/构建缓存未删除。详见 cleanup.json/log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核对锁定上游完整前缀、S 与相对密度定义及 Lenstra–Moree–Stevenhagen arXiv:1112.4816 §1。平方情形仅可能 p=2；a=-1 时仅可能 p=2,3，故 S 有限、在素数中密度为 0，含 a=0/1 边界；此为已解决例外情形而非开放正密度猜想。Wikipedia/Math.SE 访问受阻，但可读原论文、上游及直接论证足以判断。数学陈述和定义未改。详见 statement-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "按完整 task ID 精确命中技能 public-lean4-proofs.csv，依要求标记 public_lean4_proof=true、status=known，无需重新联网核实。来源：https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/Wikipedia/ArtinPrimitiveRootsConjecture.lean#L198 。未将公开答案加入镜像，未声称该证明已在锁定环境编译。"
+    }
+  }
+}

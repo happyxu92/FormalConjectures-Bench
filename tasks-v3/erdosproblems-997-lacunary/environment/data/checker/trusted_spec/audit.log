@@ -1,0 +1,7 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos997.IsWellDistributed: [propext, Quot.sound, Classical.choice]
+complete binder count: 2
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ → ℕ), IsLacunary n → ∀ᵐ (α : ℝ), ¬Erdos997.IsWellDistributed fun k => Int.fract (α * ↑(n k))
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -4,32 +4,32 @@
     "instruction_search": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "instruction.md 已显式补 /opt/formal-conjectures/.lake/packages；Spec 环境和当前 Harbor 最终容器均实际搜到 Mathlib minFac（退出码 0）。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1095-lower-solved/instruction-search.log、delivery.json。"
+      "note": "保留已有修复：源码搜索显式包含 /app、/opt/formal-conjectures 及其 .lake/packages。当前最终 Harbor 子容器以 ubuntu 实搜到 package 内 minFac，退出码 0。证据：attempt-001/final/instruction-search.log。"
     },
     "lean_dependency": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "完整 Target 仅导入 ProblemImports 和 Submission，无额外上游 import。保留上游预编译命令，在 Dockerfile 末尾 USER ubuntu 后添加 RUN lake build +FormalConjecturesBench.Target。当前本地 Harbor 最终构建及容器内 ubuntu lake build 均成功，原始 sorry 只产生构建警告。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1095-lower-solved/ubuntu-lake-build.log、image-history.txt。"
+      "note": "完整 Target 只有 ProblemImports 和 Submission，无额外上游 imports；保留匹配预编译及 Dockerfile 最终 USER ubuntu 后的 RUN lake build +FormalConjecturesBench.Target。修改后的本地 task 经 Harbor force_build 构建成功，最终同一子容器 ubuntu Target 构建退出码 0；原始 sorry 仅产生构建警告。证据：attempt-001/harbor-final-retry、final/ubuntu-target-build.log。"
     },
     "unicode_header": {
       "has_issue": false,
       "repair_status": "not_needed",
-      "note": "按 skill 运行 Unicode 脚本，修复前与交付复核均为 no_issue；原头接受、修改头和缺失 := 被拒绝。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1095-lower-solved/unicode.json、unicode-final.json。"
+      "note": "实际运行 skill Unicode 脚本，case=no_issue；原头通过，修改头和移除 := 被拒绝，两份 checker 一致，无需修改。证据：attempt-001/unicode.json。"
     },
     "semantic_checker": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "原 checker 在候选环境重解析 GoldenCheck，存在名称遮蔽。已从可信 golden 完整前缀和目标通过 Lean elaborator 提取 ExpectedType value；移除 Submission 导入、恢复临时 theorem 前环境，完整命题及 g 传递公理审计通过，仅标准公理，universe_params=[]。同次预编译包及清单两处逐字节一致，manifest SHA256=03a7a9b308241fb5e7cc8e9aafe4d0af2d0ff5a578e2a66d2ff33abf4672e64f。固定 /tests 或 FCB_TESTS_DIR 下 Spec 来源和工具链/依赖路径；不在运行时生成/重编 Spec，完整类型比较替换原 GoldenCheck 执行路径。未扩展外部模块白名单。当前本地 task 最终 Harbor 镜像 sha256:a03ab539bf583d9e447a84e26995dbf35e45370f0a5544c11bda2266d48d9a60，正式 /tests 和 ubuntu /app/check.sh 两入口均因原始 sorry 返回 1/reward 0，属于预期证明失败；同一子容器两处各 31 项实际函数补测覆盖 Spec 审计、ubuntu UID=1000 编译、完整类型匹配、sorryAx 拒绝、canary、冻结/越界拒绝、冻结文字不变 exp 名称遮蔽候选编译及完整类型拒绝、同名缓存/环境覆盖失败、缺失/损坏包明确失败且无重新生成。两份 checker 内容/AST、包及容器部署哈希与 immutable-before 全部一致；无未验收语义路径。最终复验曾因 Docker 地址池耗尽失败，已仅释放本任务首轮容器和网络后重试成功。证据目录 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1095-lower-solved（generation/package、harbor-final-retry、delivery、validation-coverage、static-audit）。Docker 清理完成：本次 Spec、首轮与最终 Harbor 容器均已移除；仅删除本次两个任务 tag 和失败重试产生的未标记镜像（IDs: sha256:39d74adaff5adb45c01c17506cb7ccaa150e2542d073f56ab7520bd1f28f18d2, sha256:9417b8f00fcaaa5cda21a5251a209a21307f09bdb8a450b4abc122ad2534ed8e, sha256:a03ab539bf583d9e447a84e26995dbf35e45370f0a5544c11bda2266d48d9a60）及本任务两条专用网络；逐项 inspect 均不存在。共享 base image、其他 task 资源及共享构建缓存未动，未使用 prune。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1095-lower-solved/cleanup.json。"
+      "note": "核对并保留同题既有修复，未复制别题验收结论。以本题可信 golden、无候选源码/Lake/cache 的匹配 Docker 独立重现完整类型提取及编译审计，生成源码、olean、ilean 与两份交付包逐字节一致；ExpectedType value 是完整存在量词/渐近命题，无遗漏参数，universe_params=[]，其及 g 的传递公理仅为标准三公理，临时占位定理未导出。清单 SHA256=03a7a9b308241fb5e7cc8e9aafe4d0af2d0ff5a578e2a66d2ff33abf4672e64f。checker 只加载固定 /tests 或 /opt 包，锁定工具链/依赖路径，不运行时生成或重新解析预期命题，完整类型比较在同一 Lean 环境执行。当前本地 task 最终 Harbor 镜像 sha256:2aa68283e52746fb2851d1395eafb95e757a31e908e755c827e5cb763b66c066；Harbor 上传 /tests 与镜像 /opt 的 checker、Spec、golden 全部哈希匹配。正式入口和 ubuntu check.sh 均因原始 sorry 返回 1，reward=0，属于预期证明失败。最终同一子容器两处各 31 项实际函数补测通过，覆盖 Spec 加载/可信审计、UID1000 编译、完整类型匹配、目标 sorryAx 拒绝、canary、冻结/越界负例、冻结文字不变的 exp 名称语义偷换编译成功但完整类型拒绝、同名模块/cache/环境遮蔽失败、产物缺失/篡改明确失败且无回退生成。两份 checker 内容/AST、Spec 包及所有 immutable 哈希一致；原正常 import 规则、源码限制与公理审计保留，未加入外部模块白名单或 initializer 沙箱。最终重建曾遇地址池耗尽，依据 Harbor schema 仅为本任务网络指定已核对未占用的 10.246.195.0/24 后重试成功，无 daemon/权限变更。证据根目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-1095-lower-solved/attempt-001（reproduction、harbor-final-retry、final、static-audit、validation-coverage）。Docker 清理完成：本次 Spec、初轮 Harbor、最终 Harbor 三个容器及两条专用网络均 stop/rm 后核实不存在；本次镜像 317f3350892d、e576f7f73e97、2aa68283e527 及两个 task tag 均已移除或确认自动消失，无遗留本次资源。预先存在的共享缓存镜像 0824de0f1647 和其他任务资源保留，未使用 prune。证据：attempt-001/cleanup.json、docker-after-*.txt。"
     },
     "statement_fidelity": {
       "has_issue": false,
       "repair_status": "not_needed",
-      "note": "statement_status=consistent。对照 task.toml 指定上游完整源、g 定义和 SSW20 论文 Abstract/§1.1-1.2：least n>k+1、minFac>k 一致；Konyagin g(k)>k^(c log k)=exp(c(log k)^2) 蕴含本题 atTop Big-O 下界。有限小 k 不影响；未发现反例或明显定义错误。本题为已知下界变体，未改变命题/定义/Target/golden/GoldenCheck/冻结值。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1095-lower-solved/research-summary.json、sorenson-sorenson-webster.md。"
+      "note": "statement_status=consistent。对照锁定上游、完整 g 定义、当前原题网页及 SSW20 Abstract/§1.1-1.2：least n>k+1、minFac>k 一致；Konyagin g(k)>k^(c log k) 蕴含本题 atTop Big-O 下界。定义集合通过 Lucas/Kummer 的周期构造非空；有限小 k 不影响目标。未发现明显数学错误，保留全部数学输入；这是已知下界变体，不是解决原题全部增长率问题。证据：attempt-001/research-summary.json、paper.pdf、problem.txt、upstream-pinned.lean。"
     },
     "public_lean4_proof": {
       "has_issue": null,
       "repair_status": "not_repaired",
-      "note": "完整 ID 先精确匹配 CSV，未命中。多组关键词、上游 main/PR/issue、Mathlib、GitHub 与相关仓库均检索：plby Erdos1095b.lean 全文只有上界；PR 2502/2809/3325 实际 diff 仍为 sorry，只改分类，全部排除。可访问来源未识别本题完整公开证明，未放入答案、未声称证明不存在。Erdős 正文/论坛 HTTP403、GitHub 代码搜索429/树 API限流及 sources 页面500造成覆盖缺口，metadata public_lean4_proof=unknown、status=blocked。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1095-lower-solved/research-summary.json、network-fetches.json、followup-fetches.json、github-issues-summary.json 与 pr*.diff。"
+      "note": "完整 ID 精确匹配 skill CSV 未命中；已多组检索并跟进原题论坛、proof claims、GitHub、Mathlib、上游和相关仓库。直接 HTTP 成功读取此前工具 403 的论坛，找到 Woett/Lean-files/ErdosProblem1095.lean：其最终下界使用新增 axiom bhp，不符合本题允许公理，故不能标完整证明；openlemma 直接 axiomatize Konyagin，plby 和 ethn-y 只给上界，PR2502/2809/3325 保留 sorry，OPN 是含 sorry 的较弱部分证明。未把公开答案放入 task。GitHub 代码搜索需登录、problems.science sources HTTP500，广泛代码搜索及来源索引覆盖仍受阻，metadata 保持 public_lean4_proof=unknown/status=blocked，并已更新具体原因；不宣称证明不存在。证据：attempt-001/public-csv-match.json、research-summary.json、research-fetches.json、followup-fetches.json 及各 Lean 源码。"
     }
   }
 }

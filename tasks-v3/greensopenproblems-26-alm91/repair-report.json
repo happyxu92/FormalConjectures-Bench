@@ -4,32 +4,32 @@
     "instruction_search": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Added explicit /opt/formal-conjectures/.lake/packages to instruction.md search command; validated in this task Harbor container as ubuntu, finding Mathlib theorem card_powerset. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-26-alm91/attempt-002/instruction-search.log."
+      "note": "保留既有 packages 搜索路径修复。此次在匹配 Docker 和当前本地 Harbor 子容器中以 ubuntu 实测完整三路径 rg，成功找到 Mathlib card_powerset；无路径或权限错误。历史问题标记保留，本轮无需再改。证据见 attempt-001/instruction-search.log、harbor-instruction-search.log。"
     },
     "lean_dependency": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Only ProblemImports and Submission are imported; no extra upstream imports needed. Retained upstream precompile and appended final USER ubuntu lake build +FormalConjecturesBench.Target after copies and permissions. Current local Harbor build succeeded (harbor.exit=0); explicit ubuntu build also completed successfully. Evidence: dependency-static.json, harbor-image-history.txt, ubuntu-lake-build.log in /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-26-alm91/attempt-002."
+      "note": "保留既有 Dockerfile 修复；Target 仅导入 ProblemImports、Submission，无额外上游 imports。最终仍为 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。当前本地 task 经 Harbor force_build 成功（复用匹配本地依赖缓存，非旧 registry 镜像），同一子容器另行 ubuntu lake build 成功。见 dependency-static.json、harbor-config.json、harbor-image-history.log、ubuntu-lake-build.log。"
     },
     "unicode_header": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Skill Unicode script found surrogate-pair encoding of 𝔽 in both EXPECTED_HEADER constants and repaired them with repr; original header, changed header and missing := tests passed. Frozen inputs unchanged. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-26-alm91/attempt-002/unicode.json."
+      "note": "保留既有 𝔽 代理对修复和历史问题标记；本轮实际执行技能 Unicode 脚本，case=no_issue、verification=passed、modified=false，原头通过、改头及缺失 := 被拒绝，两 checker 一致。未改 Target、golden 或冻结基线。见 attempt-001/unicode.json。"
     },
     "semantic_checker": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Generated complete ExpectedType from original golden without Submission, using pinned Lean 4.27.0 x86_64 and dependency revisions; p and Fact p.Prime retained, universe parameters []. Temporary target not exported; transitive ExpectedType and referenced prefix axiom audits allow only standard axioms. Synced hashed precompiled packages and fixed manifest pin; trusted Spec loads before candidate imports, comparison uses its compiled value, with no runtime generation or general external-module whitelist. Current local Harbor trial greensopenproblems-26-alm91-a002-4ad726 built this task and provided /tests; delivery hashes and both checker AST/content and packages match. Official /tests/test.sh and ubuntu /app/check.sh exit 1/reward 0 on original sorry, as expected. Same-container actual functions passed 27 cases under each /tests and /opt package: Spec load/audit, ubuntu build, complete-type match, sorryAx rejection, canary, frozen/source negatives, same-name/cache/env Spec shadow resistance, artifact/manifest corruption and missing artifact fail without regeneration. Frozen-text-preserving Green26.Real.log shadow candidate compiled but full type comparison rejected it. All 15 original immutable hashes unchanged. Logs, commands, image IDs, manifest hashes and coverage are in /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-26-alm91/attempt-002. Cleanup verified: removed own Spec container 12c07f389bc0 and Harbor container a2c19a715912, task image sha256:28bd3204e18f72f45ff776d6ef711e2f9669bbeed36ee34d0ecc88ca25405d7c and own Harbor network greensopenproblems-26-alm91-a002-4ad726__env_default. Shared pre-existing generation image fcb-local/erdosproblems-1-least-n-5:cache-smoke and all other resources/caches retained."
+      "note": "独立核对并保留既有可信 Spec 方案。由本题可信 golden 排除 Submission，在匹配 Lean 4.27.0/x86_64 Docker 中重新生成，源码、olean、ilean 与两份交付包逐字节相同；完整参数 p、Fact p.Prime，universes=[]。独立编译审计确认临时目标未导出，ExpectedType 和引用前缀的传递公理仅标准公理。当前本地 Harbor 构建、两入口及同一子容器每包27项实际函数补测完成；/tests 为 Harbor 上传，上传包、/opt 包、golden、本地哈希一致。正式和本地入口均因原题 sorry 预期退出1/reward0；补测实际覆盖 Spec加载/审计、ubuntu编译、完整类型比较、目标 sorryAx拒绝、canary、冻结/越界/语义偷换/缓存及环境遮蔽/产物缺失篡改。冻结文本不变的 Green26.Real.log 名称偷换可编译，但完整类型比较明确拒绝。保留正常 import 和原安全规则，不引入外部模块通用白名单或 initializer 沙箱。全部15项 immutable 哈希未变；未声称完成原题证明。证据根目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-26-alm91/attempt-001；关键文件 generation-reproduction.json、generation.log、static-validation.json、delivery-hashes.json、functions-*-coverage.json。Docker 清理已核实完成：本题 Spec 容器 0d40593c4ed1、Harbor 容器 0ee4161bbffe 已 stop/rm；本次任务镜像 sha256:5a784c4754514813e5a7fd9e88f286d7a6cc9c17a563253f59a7d92d13670299 及本题 Harbor 网络已移除，inspect 确认不存在。预先存在的共享匹配依赖镜像和其他任务资源未删除。见 cleanup.json、docker-after-*.txt。"
     },
     "statement_fidelity": {
       "has_issue": false,
       "repair_status": "not_needed",
-      "note": "Marked statement_status=consistent. This is the ALM91 logarithmic variant for every prime p, with k and the O constant allowed to depend on p. Cubes are subset-sum sets of linear bases; pointwise Set sum equals multiset-union subset sums. Eventual n avoids log/rounding small-dimension issues; p=2 is harmless. Green Problem 26, the original ALM91 author PDF (Theorem 1.1/Proposition 3.1), and Yu arXiv:2510.01300 introduction confirm the logarithmic result. No mathematical input changed. Sources and review: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-26-alm91/attempt-002/statement-review.txt."
+      "note": "保留 statement_status=consistent。按本题完整定义和量词重新核对：cube 是线性基的子集和，点态 Set 求和对应基的多重并；p 在存在 k 之前，常数可依赖 p，eventually n 避免 log/取整的小维数边界，p=2 无矛盾。实际重读 ALM91 原文 Theorem1.1/Proposition3.1、Green Problem26、Yu 引言；这是全素数的已知对数变体，不是更强的常数基数猜想。数学陈述和定义一概不改。见 statement-audit.json（含原始来源与已读取位置）。"
     },
     "public_lean4_proof": {
       "has_issue": null,
       "repair_status": "not_repaired",
-      "note": "public_lean4_proof=unknown, status=blocked. Exact task ID absent from skill CSV. Searched theorem names, aliases, problem, authors/paper, GitHub issues/PRs/repositories, current upstream and pinned Mathlib. Read PR #2467 and #2999 raw Lean sources/patches: only category changes, alm91 still sorry; initial PR #2368 and current upstream also sorry. No acceptable full proof established. GitHub code search sign-in shell, API rate limits, author access limits and unreliable Google/Bing responses prevent a sufficiently complete negative conclusion. No claim of proof nonexistence or successful proof compilation. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/greensopenproblems-26-alm91/attempt-002/public-proof-review.json and research/followup indexes."
+      "note": "完整ID精确匹配技能CSV无命中。已补充多组题名/定理名/作者/等价表述检索，并重读当前上游及PR2368/2467/2999原始Lean；目标仍sorry，两个声称已形式化的PR仅修改category属性，明确含sorryAx，均排除。aiXiv新线索实际读取，仅有声明/参考文献扫描，无本目标证明。核查固定Mathlib及GitHub结果；代码搜索API403、HTML需登录、作者网页超时等关键访问限制仍在，故metadata和报告保留 public_lean4_proof=unknown、status=blocked，不断言不存在证明。详见 public-csv-match.json、public-proof-review.json、research-fetch-index.json；未将任何公开答案放入题目或镜像。"
     }
   }
 }

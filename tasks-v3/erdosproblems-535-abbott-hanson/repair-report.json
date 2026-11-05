@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-535-abbott-hanson",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 .lake/packages；最终 Harbor 子容器以 ubuntu 实测命中 Batteries/Mathlib Pairwise 定义，退出码 0，无路径错误。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 imports；补齐 Dockerfile 最终 USER ubuntu RUN lake build +FormalConjecturesBench.Target。本地 task 两次 Harbor 构建成功，最终同容器 ubuntu 构建退出 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本及最终复验：no_issue；两份 checker 原头通过，改头/移除 := 被拒绝；未修改冻结头。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden 隔离提取完整类型（含隐式 r、显式 hr，universes=[]），匹配 Lean 4.27 Docker 预编译并独立审计 ExpectedType/f 的传递公理；同步两份可信包，固定清单哈希及加载路径，无运行时生成/命题重解析。最终当前本地 task Harbor 构建、/tests 正式入口与 ubuntu /app/check.sh 已实测（原 sorry 预期 exit 1、reward 0）；同一最终子容器两种包入口补测 Spec 审计、ubuntu 编译、完整类型比较、公理拒绝 sorryAx、canary，以及冻结/越界/语义实例偷换/缓存遮蔽/缺失与篡改负例全部通过。原安全检查保留；两 checker AST/内容、可信包、本地及容器 /tests 与 /opt 哈希一致，所有 immutable 哈希未变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-535-abbott-hanson/attempt-001。Docker 日志及产物已保存；本题容器 2ef2ec5a28f7、148af46b66d2、e86612dc7b66 已 stop/rm，两张新镜像 fc75e511ea7d、6e615ef445ce 及两个本题网络已移除并核实不存在。预先存在的共享生成依赖镜像 e21dc171550d 保留；无本题待清理资源，详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "consistent：这是固定 r≥3 的 Abbott–Hanson 已知上界变体，不是更强开放主猜想。完整 f 定义、量词、有限最大值及 eventual 范围核对无明显错误；依据 Erdős 1973 §4 p.123 原文扫描和 erdosproblems.com/535。仅标记 metadata，数学陈述与定义保持不变。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "unknown/blocked：完整 ID 精确匹配技能 CSV 未命中；多组题号/名称/完整定理名/等价 GCD 关键词搜索，读取 upstream pinned/main（目标仍 sorry）、题目论坛及候选来源；未核实任何完整公开 Lean4 证明。GitHub code search、仓库树和完整 PR 检查被限流，不能断言不存在。metadata 已标记；详见 research-review.json、source-fetch-results.json。"
+    }
+  }
+}

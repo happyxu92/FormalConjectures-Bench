@@ -1,0 +1,12 @@
+FCBTrustedSpec.lean:60:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos951.Erdos951Prop: [propext, Quot.sound, Classical.choice]
+audited Erdos951.erdos_951.variants.isBeurlingPrimes: [propext, Quot.sound, Classical.choice]
+complete binder count: 3
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (a : ℕ → ℝ),
+  IsBeurlingPrimes a →
+    (fun x => ↑(BeurlingIntegers a ∩ Set.Iic x).ncard - x) =o[Filter.atTop] Real.log → a = Nat.cast ∘ Nat.nth Nat.Prime
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

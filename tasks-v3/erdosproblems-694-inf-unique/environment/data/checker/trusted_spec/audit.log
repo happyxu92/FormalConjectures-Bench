@@ -1,0 +1,6 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+complete binder count: 1
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+(∃ n > 0, ∃! m, m.totient = n) → {n | ∃! m, m.totient = n}.Infinite
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

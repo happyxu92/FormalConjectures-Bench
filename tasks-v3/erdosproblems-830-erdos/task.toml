@@ -9,6 +9,11 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "consistent"
+statement_status_note = "The known density-zero upper-bound variant; the literal count also includes perfect-number diagonals, a density-zero contribution. Mathematical inputs unchanged."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact skill CSV miss. Upstream target and claimed-solution PRs 2701/3223 retain sorry; chainstart formalizes constructions, not this bound. GitHub code search requires authentication and file-history API is rate-limited; no verified complete proof found. See repair-report.json and external audit evidence."
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/830.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

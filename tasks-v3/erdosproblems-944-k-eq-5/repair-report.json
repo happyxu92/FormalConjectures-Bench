@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-944-k-eq-5",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 和 .lake/packages；容器实测找到 mathlib 中 chromaticNumber 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "没有额外上游 import；原 Dockerfile 缺少最终普通用户验证，现以 USER ubuntu、RUN lake build +FormalConjecturesBench.Target 结尾。当前本地 task 的两轮 Harbor 构建成功，最终容器 ubuntu 再构建退出码 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本并最终复验，均为 no_issue；原头、冻结前缀及 := 边界通过，修改头与移除 := 的负例被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离 Submission 提前提取完整类型及 universe [u]，编译 ExpectedType 并独立审计其及 IsErdos944 的传递公理；两份 Spec 包、清单及 checker 一致。运行时只加载哈希固定的预编译包，完整类型比较显式实例化 u，无生成或回退解析。最终本地 Harbor 镜像 sha256:45511f422c19ed73754cf3fc172a0f657e27188a7a78df075abbcd60a43c310c；已核对上传 /tests、预装 /opt 及 /app 哈希。两入口退出 1、reward 0 均仅因原题 sorry；同一最终子容器分别以 /tests/root 和 /opt/ubuntu 调用实际函数，已补测 Spec 审计、ubuntu 编译、完整类型、目标公理拒绝 sorryAx、canary、冻结/越界/语义偷换/缓存遮蔽/缺失及篡改负例，全部符合预期。保留原正常 import 和源码安全规则；未扩展外部模块白名单或 initializer 沙箱。所有 immutable 哈希一致。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-944-k-eq-5/attempt-001/validation-summary.json。Docker 已清理并核实：本题容器 7dfa6dacef97、b27fa38bf501、06e1ae5b97b5，镜像 ad468f75224f、45511f422c19 及两个本题 Harbor 网络均已移除；预先存在的共享依赖镜像保留，未删除其他 task 资源。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。已检查完整 IsErdos944、IsCritical、IsCriticalEdges 定义；这是已知 k=5、r=1 的合理 Dirac 变体，非完整开放问题。Martinsson–Steiner 论文引言明确记载 Brown 1992 的 k=5 构造，Brown 作者书目与锁定上游相互印证。有限见证使 ncard 正确计数，任意 universe 可作有限图提升，未见明显数学错误；陈述及定义未改。原问题网页与 Brown 出版商页面 403，已记录访问限制及可访问替代原始研究来源，详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID 精确匹配技能 CSV 未命中；多组检索后读取公开完整源码 https://conjectures.io/results/e7afff2c-bb07-4fa8-92b6-67a530aaad70/solution/download。Erdos944Proof.erdos944_five.{u} 1 覆盖本题完整类型，保留同一 IsErdos944 定义及任意 universe；源码及辅助声明无 sorry/admit/新增公理或禁用逃逸，公开认证记录允许的传递公理仅三项标准公理。已标 public_lean4_proof=true；本次只做源码/依赖检查及认证核对，未在本题锁定环境重编译该公开证明，未将答案放入 task 或镜像。详见 public-proof-review.json。"
+    }
+  }
+}

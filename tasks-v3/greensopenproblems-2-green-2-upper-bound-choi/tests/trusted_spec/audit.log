@@ -1,0 +1,13 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green2.maxRestrictedSumAvoidingSubsetSize: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0 (closed existential proposition)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ o,
+  ∃ (_ : Filter.Tendsto o Filter.atTop (nhds 0)),
+    ∀ᶠ (n : ℕ) in Filter.atTop,
+      ∃ A, A.card = n ∧ ↑(Green2.maxRestrictedSumAvoidingSubsetSize A) ≤ ↑A.card ^ (2 / 5 + o A.card)
+def Green2.maxRestrictedSumAvoidingSubsetSize : Finset ℤ → ℕ :=
+fun A => {S ∈ A.powerset | Disjoint S.restrictedSumset A}.sup Finset.card
+'Green2.maxRestrictedSumAvoidingSubsetSize' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

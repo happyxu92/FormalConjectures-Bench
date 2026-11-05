@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-418-soln",
+  "target_name": "Erdos418.erdos_418.variants.soln",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "d6a776246de074d95a4c9a4e2a952d8718382fa619ea6bf7cfccccb23a5d2088",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "dd08422355ecf2f4a9f2ea37c1868406554565f103bd06cd1f8c9b178b0e71aa",
+    "FCBTrustedSpec.ilean": "e0438e42df9ff8adc118271f073b0db3038d4c869a37b0bb520c9ff240902df4",
+    "FCBTrustedSpec.lean": "05220f0d9b5d30d0153884119eb4cfbb3a53515f77c4c138cacaace7ac8496c1",
+    "FCBTrustedSpec.olean": "bae1c07f9045e122876a075bd8ba5922bd5ed7a8bb41631978b6371b4aad895f",
+    "audit.log": "ac7a90d1cd9372e015b869cf1e6bf7c7dc54909a2fecc00e6f8d3ac6dc340ed3",
+    "generate.py": "31218443b78976907d23a8e86c1390356fa3fb7658cc143758cab51b583405ee",
+    "reproduce.sh": "ede6a2a9636394e9b93ab45c02647e96820f334d723375ff378758ff00312c70"
+  },
+  "generation_image": "sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a",
+  "generation_command": "docker run -d --network none --name erdosproblems-418-soln-spec-g61-a001-418b erdos1062-import-20261102__env-main:latest sleep infinity; docker cp generation-input erdosproblems-418-soln-spec-g61-a001-418b:/tmp/repair-bundle; docker exec -u root erdosproblems-418-soln-spec-g61-a001-418b bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Full closed subset proposition; zero outer forall binders, no universe parameters. ExpectedType transitive axiom audit passes. Original unrelated placeholder theorems remain in trusted prefix but are not dependencies of ExpectedType. Temporary target and children absent."
+}

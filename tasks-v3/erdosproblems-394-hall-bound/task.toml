@@ -8,6 +8,12 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+statement_status_note = "Hall's known upper bound, restricted by Lean inference to natural cutoffs; positive least-divisibility definition matches Erdos-Hall 1978 Theorem 3, pp. 481, 483-484. No mathematical statement or definition changed."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "unknown"
+public_lean4_proof_urls = ["https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/394.lean", "https://github.com/williamjblair/lean-proofs/blob/4f915a323443bfb1709a6805a013812016dca88a/starfleet/erdos-394/Research/FirstQuestion.lean", "https://www.starfleetmath.com/downloads/verify/erdos-394/erdos-394-solution.zip"]
+public_lean4_proof_note = "No exact full-ID CSV match. Upstream and PRs 2658/3180 retain sorry in hall_bound. Starfleet/Blair publishes a stronger logarithmic-saving theorem, but a complete Lean bridge to this exact natural-cutoff Hall target was not verified. GitHub code search requires authentication and branch enumeration was rate-limited; existence for this exact task remains unknown. Public proofs were not bundled into the image."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/394.lean"

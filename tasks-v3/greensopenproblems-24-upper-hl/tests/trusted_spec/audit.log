@@ -1,0 +1,10 @@
+FCBTrustedSpec.lean:54:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green24.max013AffineTranslates: [Classical.choice, propext, Quot.sound]
+audited Green24.variants.gamma: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Green24.variants.gamma ≤ 3 / 4
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

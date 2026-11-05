@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-931-additional-condition-nonempty",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "源码搜索命令已显式包含 /app、/opt/formal-conjectures 和 .lake/packages；最终 Harbor 子容器以 ubuntu 实际 rg 找到 Mathlib 的 Nat.primeFactors，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 imports；原 Dockerfile 缺少最终普通用户构建验证，现以 USER ubuntu、RUN lake build +FormalConjecturesBench.Target 结尾。当前本地 task 已经 Harbor force_build 成功；同一子容器 ubuntu 重验构建退出码 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际执行技能 Unicode 脚本及最终复验，均为 no_issue；原头通过、修改头及删除 := 被拒绝，两份 checker 一致，未修改冻结头或基线。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题 immutable golden 移除 Submission 导入，在匹配 Lean 4.27.0/x86_64 Docker 环境中经 parser/elaborator 提取完整类型及空 universe 列表，编译并独立审计 ExpectedType；仅依赖 propext/Classical.choice/Quot.sound，临时目标未导出。两份可信包及 checker 内容/AST 一致；固定清单哈希、编译产物、可信依赖搜索路径，运行时不生成或重解析 Spec。当前本地 Harbor 镜像 sha256:16345d581e0761c9f93fd9060a6a8c30279841b5cabd48882dd591032a9af892；Harbor 上传 /tests 与 /opt 包及 golden、/app 输入哈希全部核对。两入口退出码均为 1、reward=0，仅因原题 sorry 的预期源码拒绝；同一 Harbor 子容器对 /tests 和 /opt 各完成 29 项实际函数补测：Spec 加载/审计、ubuntu UID 1000 编译、完整类型、公理、sorry canary、冻结/越界/命名语义偷换/缓存遮蔽/产物缺失及篡改负例。语义偷换冻结文字不变且可编译、无非法公理，但被实际完整类型比较拒绝。所有 immutable 哈希保持不变。原题完整证明未提交，不宣称证明通过；不作通用外部模块或 initializer 安全结论。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-931-additional-condition-nonempty/attempt-001（validation-summary.json、delivery-final.json、immutable-final.json、生成/构建/入口日志及命令）。Docker 清理完成：已 stop/rm 本题 Spec 容器 3d7b751cd284 和 Harbor 容器 1804e14a266b，删除本次 Harbor 镜像 sha256:16345d581e0761c9f93fd9060a6a8c30279841b5cabd48882dd591032a9af892 及网络 601f84811957，并逐项 inspect 核实不存在；保留预先存在的共享生成镜像和缓存，无本题资源遗留（cleanup.json）。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核对完整前缀及 pinned 上游 FormalConjectures/ErdosProblems/931.lean 的 additional_condition_nonempty；本题为附加条件的反例存在性变体，不要求证明开放的有限性问题。见证 k₁=10、k₂=3、n₁=0、n₂=13：10≤13≤20，两乘积 10! 与 14·15·16 的素因子集均为 {2,3,5,7}。来源站 erdosproblems.com 返回 403，但 pinned 上游原始源码可读并明确给出同一见证。未改陈述或数学定义。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true；按完整 task ID 精确命中技能 references/public-lean4-proofs.csv，已标记 metadata，无需重新联网确认。来源：https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/931.lean#L61 。仅标记公开证明，未将答案加入 task 或镜像，也未编译该公开证明。"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "task_id": "greensopenproblems-25-upper-ess89",
+  "checks": {
+    "instruction_search": {"has_issue": true, "repair_status": "repaired", "note": "搜索命令已显式加入 .lake/packages；Harbor 子容器中 ubuntu 执行三路径 rg，命中 mathlib 的 def IsTheta，退出码 0。"},
+    "lean_dependency": {"has_issue": true, "repair_status": "repaired", "note": "本题无额外上游 imports；补齐 Dockerfile 最后的 USER ubuntu / RUN lake build +FormalConjecturesBench.Target。本地 Harbor 构建成功，同容器 ubuntu 再构建退出码 0。"},
+    "unicode_header": {"has_issue": false, "repair_status": "not_needed", "note": "技能 Unicode 脚本修复前及最终均为 no_issue；原始头、冻结前缀和 := 边界测试通过。"},
+    "semantic_checker": {"has_issue": true, "repair_status": "repaired", "note": "从本题 golden 隔离 Submission，经 Lean 提取完整类型及有序 universes（空），预编译并独立审计 ExpectedType 和数学定义；两份可信包、checker 内容/AST 一致。固定 /tests 或 /opt 包及工具链路径，无运行时生成或重新解析预期命题。当前本地 task 的 Harbor 镜像 aa423dabe5a0 构建通过，上传包与 /opt 包逐文件哈希吻合。正式和本地入口均退出 1，原题 sorry 导致预期拒绝，reward=0；同一子容器两入口实际函数补测均退出 0，覆盖 Spec 审计、ubuntu UID1000 编译、完整类型匹配、公理 sorryAx 拒绝、canary、冻结/越界/名称偷换/缓存遮蔽/产物缺失篡改负例。语义偷换补测仅在隔离占位证明 fixture 中到达类型比较；不称原题证明通过。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-25-upper-ess89/attempt-001。已 stop/rm 本题两个 25e9 后缀容器，删除 aa423dabe5a0 本题镜像及专属网络，inspect 核实均不存在；预存共享依赖镜像保留。详见 cleanup.json。"},
+    "statement_fidelity": {"has_issue": false, "repair_status": "not_needed", "note": "statement_status=consistent。核对锁定上游、Green 原文 Problem25、完整定义和 restrictedSumset；Theta(N/log N) 是明确限定的已知上界变体，未发现明显矛盾。数学输入全部保持不变；详见 statement-review.json。"},
+    "public_lean4_proof": {"has_issue": null, "repair_status": "not_repaired", "note": "精确完整 ID 未命中技能 CSV。已多组检索上游、GitHub、Mathlib 和作者仓库，并读取 KitaKen1 的两版 Lean 源码：其结果为不同的 little-o upper_pow_23_40 变体，未验证覆盖本题 Theta 目标的完整 Lean 证明。关键代码/tree 搜索及 PR 评论受 GitHub 403 限流，故标记 unknown/blocked，不作不存在断言；详见 public-proof-review.json 和 fetch-results.json。"}
+  }
+}

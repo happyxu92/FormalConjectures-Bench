@@ -1,0 +1,31 @@
+audited FCBTrustedSpec.ExpectedType: [Quot.sound, propext, Classical.choice]
+audited EllipticCurveRank.WeierstrassCurve.elkies28: [propext, Quot.sound]
+complete outer binder count: 0 (original elaborated expression)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+@LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 28) (instOfNatNat (nat_lit 28)))
+  (@Module.finrank.{0, 0} Int
+    (@WeierstrassCurve.Affine.Point.{0} Rat Rat.commRing
+      (@WeierstrassCurve.baseChange.{0, 0} Rat Rat.commRing EllipticCurveRank.WeierstrassCurve.elkies28 Rat Rat.commRing
+        (@Algebra.id.{0} Rat (@CommRing.toCommSemiring.{0} Rat Rat.commRing))))
+    Int.instSemiring
+    (@AddCommGroup.toAddCommMonoid.{0}
+      (@WeierstrassCurve.Affine.Point.{0} Rat Rat.commRing
+        (@WeierstrassCurve.baseChange.{0, 0} Rat Rat.commRing EllipticCurveRank.WeierstrassCurve.elkies28 Rat
+          Rat.commRing (@Algebra.id.{0} Rat (@CommRing.toCommSemiring.{0} Rat Rat.commRing))))
+      (@WeierstrassCurve.Affine.Point.instAddCommGroup.{0} Rat Rat.instField
+        (@WeierstrassCurve.baseChange.{0, 0} Rat Rat.commRing EllipticCurveRank.WeierstrassCurve.elkies28 Rat
+          Rat.commRing (@Algebra.id.{0} Rat (@CommRing.toCommSemiring.{0} Rat Rat.commRing)))
+        instDecidableEqRat))
+    (@AddCommGroup.toIntModule.{0}
+      (@WeierstrassCurve.Affine.Point.{0} Rat Rat.commRing
+        (@WeierstrassCurve.baseChange.{0, 0} Rat Rat.commRing EllipticCurveRank.WeierstrassCurve.elkies28 Rat
+          Rat.commRing (@Algebra.id.{0} Rat (@CommRing.toCommSemiring.{0} Rat Rat.commRing))))
+      (@WeierstrassCurve.Affine.Point.instAddCommGroup.{0} Rat Rat.instField
+        (@WeierstrassCurve.baseChange.{0, 0} Rat Rat.commRing EllipticCurveRank.WeierstrassCurve.elkies28 Rat
+          Rat.commRing (@Algebra.id.{0} Rat (@CommRing.toCommSemiring.{0} Rat Rat.commRing)))
+        instDecidableEqRat)))
+def EllipticCurveRank.WeierstrassCurve.elkies28 : WeierstrassCurve ℚ :=
+{ a₁ := 1, a₂ := -1, a₃ := 1, a₄ := -20067762415575526585033208209338542750930230312178956502,
+  a₆ := 34481611795030556467032985690390720374855944359319180361266008296291939448732243429 }
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

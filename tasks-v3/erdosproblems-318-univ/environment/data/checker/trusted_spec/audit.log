@@ -1,0 +1,13 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos318.P₁: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0 (P₁ univ; quantified f and hypotheses retained inside P₁)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Erdos318.P₁ Set.univ
+def Erdos318.P₁ : Set ℕ → Prop :=
+fun A =>
+  ∀ (f : ℕ → ℝ),
+    (f ∘ Subtype.val ≠ fun x => 1) →
+      (f ∘ Subtype.val ≠ fun x => -1) → Set.range f ⊆ {1, -1} → ∃ S, S.Nonempty ∧ ↑S ⊆ A \ {0} ∧ ∑ n ∈ S, f n / ↑n = 0
+'Erdos318.P₁' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

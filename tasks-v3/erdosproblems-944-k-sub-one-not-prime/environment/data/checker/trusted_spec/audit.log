@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Classical.choice, Quot.sound]
+audited Erdos944.SimpleGraph.IsErdos944: [Classical.choice, propext, Quot.sound]
+complete binder count: 3
+universe parameters: [u]
+def FCBTrustedSpec.ExpectedType.{u} : Prop :=
+∀ (k : ℕ), 4 ≤ k → ¬Nat.Prime (k - 1) → ∃ V G, Erdos944.SimpleGraph.IsErdos944 G k 1
+def Erdos944.SimpleGraph.IsErdos944.{u} : {V : Type u} → SimpleGraph V → ℕ → ℕ → Prop :=
+fun {V} G k r => G.IsCritical k ∧ ∀ (edges : Set (Sym2 V)), G.IsCriticalEdges edges → r < edges.ncard
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos944.SimpleGraph.IsErdos944' depends on axioms: [propext, Classical.choice, Quot.sound]

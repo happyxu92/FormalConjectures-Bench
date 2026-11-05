@@ -9,6 +9,10 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "consistent"
+public_lean4_proof = true
+public_lean4_proof_status = "known"
+public_lean4_proof_urls = ["https://github.com/CoolRmal/erdos455-convex-primes/blob/29f71ff695087a2071faf5d8470b1ada57366e54/Solution.lean", "https://github.com/CoolRmal/erdos455-convex-primes/blob/29f71ff695087a2071faf5d8470b1ada57366e54/Erdos455/Main.lean"]
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/455.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

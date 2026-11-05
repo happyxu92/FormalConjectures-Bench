@@ -1,0 +1,38 @@
+{
+  "task_id": "wikipedia-agohgiuga-isstronggiuga-iff",
+  "target_name": "AgohGiuga.isStrongGiuga_iff",
+  "universe_params": [],
+  "complete_binders": [
+    {
+      "name": "a",
+      "type": "Nat",
+      "binder_info": "implicit"
+    },
+    {
+      "name": "ha",
+      "type": "Nat.Composite a",
+      "binder_info": "default"
+    }
+  ],
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "d4101c17ad5f823dab1b5ba1564d5830aeccddb7cc6cc89334b41e488cf72c7c",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "7202792a523d660150feab406eddbbe7e0773ef55e976c1bd138f8b4c9cf5a3a",
+    "FCBTrustedSpec.ilean": "5a0d932e19c06baa64663e17bcc8bc4cb08a815c54d5a898a5aaae8122e85db9",
+    "FCBTrustedSpec.lean": "5091ebd3cee02ca4356a216036b71c649966fb99628a13f302bd514b96cc5526",
+    "FCBTrustedSpec.olean": "255e484025b21d37e9dd2ad9d2ee6119f3d5aa553195eca8ee455644c0800b1f",
+    "generate.py": "78ce877c07f0a5aedcf853706c2ba669fbbc924f975b182ebd7c20b63ad7f201",
+    "reproduce.sh": "13bc33ab322e3d78344093b8d8accc4cdf8244937abd54df61557fe7e70f0da2"
+  }
+}

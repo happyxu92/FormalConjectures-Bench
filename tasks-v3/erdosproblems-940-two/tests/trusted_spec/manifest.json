@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-940-two",
+  "target_name": "Erdos940.erdos_940.variants.two",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "fa38bf48e81e7dac133c2a3938c9c648d8c87f55010d3f68ba9f53b3dcc2d777",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "ac72e7ab6b06825047975f875a7aa7f10ae762e37075e33e05e7194db094c2ee",
+    "FCBTrustedSpec.ilean": "0f4a9ae42e238b4c78e5e091ceccd5e26b81b09c2f58f687b219ba493c5424de",
+    "FCBTrustedSpec.lean": "6eb525dafe15f711cda486aec800e0e1578113067c9d2eb14280be7d634b218f",
+    "FCBTrustedSpec.olean": "d3e37f93508d83e7f43c07b711be8c1ca2e32251c5b3bad2dc8b352a7ea1cb40",
+    "audit.log": "1b65645c6651913d8a674149ae4c359f03f44255f2790d8356e767c1d101187d",
+    "generate.py": "172743c1532c1b8db2d48aaed6cfa0770cc08ec163b02b115a9cb15c58c7decc",
+    "reproduce.sh": "ede6a2a9636394e9b93ab45c02647e96820f334d723375ff378758ff00312c70"
+  },
+  "generation_image": "sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a",
+  "generation_command": "python3 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-940-two/attempt-001/generate-spec.py",
+  "audit": "Independent import: ExpectedType is a Prop-valued definition of the complete closed density statement, no universe parameters. Transitive axioms only propext, Classical.choice, Quot.sound. Original open erdos_940 theorem retained in prefix but not a dependency. Temporary target and its children absent from export; original environment restored before defining ExpectedType."
+}

@@ -9,6 +9,10 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID absent from skill CSV. Upstream target and PRs 2670/3192 still use sorry; plby proof covers only the weaker 1/sqrt(5) theorem, not sharpness. GitHub code/tree/issue APIs rate-limited and problem discussion blocked; see repair-report.json and attempt-001 search evidence."
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/480.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

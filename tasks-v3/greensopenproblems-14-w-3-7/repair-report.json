@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-14-w-3-7",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令显式补入 /opt/formal-conjectures/.lake/packages；最终 Harbor 容器以 ubuntu 实际搜索到 Mathlib 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "目标无额外上游 import；补上 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的 Harbor 构建及容器内 ubuntu 重建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本并最终复验，均为 no_issue；原头通过，改头及移除 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题不可变 golden 隔离提取完整类型 W 3 7 = 46（零外层参数、零 universe 参数），匹配 Docker/Lean 4.27.0 预编译并审计 ExpectedType、W 及 AP 定义的传递公理。两份可信包及 checker 内容/AST 一致；固定产物来源、哈希/版本/输入校验和完整类型比较已交付，无运行时生成回退。最终本地 Harbor trial greensopenproblems-14-w-3-7-g61-a001-7d93-final-r2：上传 /tests 与镜像 /opt 包及 golden 均逐文件哈希匹配；两入口因原题 sorry 预期退出 1、reward 0，不代表证明通过。同一子容器 root/ubuntu 实际函数补测均通过，覆盖可信审计、ubuntu 编译、完整类型、目标公理拒绝 sorryAx、canary，以及冻结/越界/实例语义偷换/同名模块和缓存遮蔽/缺失和篡改产物负例。一次中间镜像 GoldenCheck 打包错配已留证；仅失效构建上下文时间戳缓存、未改内容后重新构建，最终匹配。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-14-w-3-7/attempt-001。Docker 清理完成并逐一核实：4 个本题容器、3 个本题镜像（2976ad4b1594、860ade2c8705、af83581ebada）及 3 个本题网络均已移除；预先存在的依赖镜像和共享缓存保留，未操作其他任务资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。核对锁定上游及完整定义、Green Problem 14、AKS14(arXiv:1102.5433) p.3 Definition 1.1/Table 1，确为混合两色 W(3,7)=46。AP 基数条件排除零公差退化；未发现明显错误。这是已知精确值变体，不是解决完整渐近问题；数学输入、golden、GoldenCheck 和冻结基线全部保留。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。已用多组题号、完整名称、数学陈述、作者关键词检索并读取上游、注释链接的 Konamiu 固定 fork、formal_ramsey、pblean、open-problems-lab 等实际 Lean 源码；上游/fork 的 W_3_7 仍为 sorry，其他候选为不同数值/对角问题或定性存在性。亦核查相关 PR/issue 和 Mathlib。可访问来源中未验证到完整匹配证明；GitHub 全局代码搜索及 fork 枚举 HTTP 403、作者站点受阻，故 metadata 如实标 unknown/blocked，不断言不存在。详见 public-proof-review.json、public-followup-fetch.json。未把公开答案加入镜像。"
+    }
+  }
+}

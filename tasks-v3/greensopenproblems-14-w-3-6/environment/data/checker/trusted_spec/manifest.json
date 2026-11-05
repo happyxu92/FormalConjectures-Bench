@@ -1,0 +1,40 @@
+{
+  "task_id": "greensopenproblems-14-w-3-6",
+  "target_name": "Green14.W_3_6",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "outer_binders": 0,
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "9911a3002f9d782df80dff082a01885e8dfaa48cdb0b1927636b2b9b24e6494b",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "01d9a3f2381826899a43d2919483b8d46badce895c8ac948bb0cd10226f8bd3a",
+    "FCBTrustedSpec.ilean": "c21cc1bb37065f6b9e3c17f667bbdb0836baf18c82b2262e6df962cf1a7fd05a",
+    "FCBTrustedSpec.lean": "2b49ec6cd14cd839dae811de3eec6756745dc0815b2897c12842d17958d675ad",
+    "FCBTrustedSpec.olean": "9c2ba7770dc67b7ccb75788abf402bba26d9a4558ad1bc2aa26d439c1c8d7843",
+    "generate.py": "0b2d4aa086b9eee4547c86f066b3ec7411607c5bf8d46d30b5be3ce53fac05fa",
+    "reproduce.sh": "ccbc579e4da73bd35ccc865c066219999efb773f84872ec91ac5b3c54f9fc240"
+  },
+  "generation_image": "sha256:e21dc171550d4c49aceba963047d00d1a350ce711019cbd9cb32c4770c7a39df",
+  "generation_command": "docker exec -u root greensopenproblems-14-w-3-6-spec-g61-a001-6d42 bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Independent compiled import passed. ExpectedType value is complete closed Green14.W 3 6 = 32, zero outer binders and universes. ExpectedType and both referenced prefix definitions transitively depend only on propext/Classical.choice/Quot.sound; original unrelated prefix placeholder theorems are not dependencies. Temporary target and children absent."
+}

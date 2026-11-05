@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-artinprimitiverootsconjecture-part-ii-power-squarefreepart-not-modeq-one-2",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md now explicitly includes /app, /opt/formal-conjectures and .lake/packages. The exact search form found Mathlib's orderOf definition as ubuntu in the Harbor container (exit 0)."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added actual extra import FormalConjectures.Millenium.RiemannHypothesis to upstream precompilation. Dockerfile ends with USER ubuntu and RUN lake build +FormalConjecturesBench.Target. Current local Harbor image build and same-container ubuntu build passed."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran the skill Unicode script before and after changes: no_issue; original header, frozen prefix and assignment boundary verified against both golden copies."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated and audited fixed precompiled Spec from this task's isolated golden: 9 complete outer binders, no universe parameters, only allowed transitive axioms. Identical packages and checker AST/bytes verified; all immutable hashes match immutable-before.json. Local Harbor build passed; uploaded /tests and preinstalled /opt checker/Spec/golden hashes match local files. Both real entries reject original sorry (exit 1, reward 0), not an implementation failure. In the same Harbor child, both checker copies passed direct-function coverage: Spec load/audit, observed ubuntu compilation, complete type match, sorryAx rejection, canary, frozen/out-of-bounds negatives, legal frozen-header Odd-to-False semantic attack rejected by full type comparison, cache/module/environment shadowing, missing/tampered artifacts and manifest rejection without regeneration. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-artinprimitiverootsconjecture-part-ii-power-squarefreepart-not-modeq-one-2/attempt-001. Cleanup verified: both owned Spec containers and Harbor child removed/absent; task image sha256:0ec7eabff1fac54d4e0fa07ebd954ade3b9969de9f7bc0f27c27920a4524716c and own Harbor network abc906f70a59 removed/absent. Existing shared generation image/cache retained; no owned resources remain."
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Marked statement_status=suspect only; mathematical inputs remain unchanged. Target h assumes Dirichlet GRH, whereas Hooley uses RH for Dedekind zeta functions of generally nonabelian Kummer fields. Checked pinned GRH definition, arXiv:1112.4816 introduction/Eqs. 1.2-1.4, upstream issue #5701 and fix #5743. The density constant and positive odd-power variant otherwise agree. This is a concrete hypothesis concern, not a counterexample or proof that the retained implication is impossible."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Exact full task ID did not match the skill CSV. Multiple searches covered theorem aliases, Hooley/Lenstra/Moree/Stevenhagen, upstream sources and PRs, Mathlib and public repositories. Actual source excludes upstream sorry, attribute-only PRs #2604/#3128, square-case PR #7060 and cadamcat's infinitude-only proof; none verifies this exact density target. Marked public_lean4_proof=unknown/status=blocked because GitHub branch/history and preprint-directory APIs hit rate limits; no claim that a public proof does not exist. See public-proof-audit.json and fetched sources in the evidence directory."
+    }
+  }
+}

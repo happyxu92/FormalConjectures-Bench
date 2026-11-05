@@ -8,6 +8,11 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "suspect"
+statement_status_note = "The explicit density factors match Lenstra–Moree–Stevenhagen (1112.4816), equations (1.2) and (1.4), but the pinned GRH hypothesis quantifies only Dirichlet L-functions over Q; Hooley uses GRH for the Kummer splitting fields Q(zeta_n, a^(1/n)). This is a hypothesis-strength concern, not a demonstrated counterexample. Statement and definitions are unchanged."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID absent from skill CSV. Multi-query search checked upstream main, tracking issue 3625, Mathlib and candidate Lean projects; cadamcat proves infinitude, not this exact density, and primitive-root-families concerns finite criteria. No complete proof of this target verified; unauthenticated GitHub code search is restricted. Evidence in repair-report.json and the task-specific jobs evidence directory."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/Wikipedia/ArtinPrimitiveRootsConjecture.lean"

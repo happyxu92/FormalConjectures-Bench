@@ -1,0 +1,8 @@
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext]
+audited Erdos399.erdos_399: [propext, Classical.choice, Quot.sound]
+complete binder count: 8
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {n x y k : ℕ}, x.Coprime y → 1 < x * y → 2 < k → k ≠ 4 → n.factorial ≠ x ^ k + y ^ k ∧ n.factorial + y ^ k ≠ x ^ k
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]

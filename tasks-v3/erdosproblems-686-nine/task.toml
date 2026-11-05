@@ -20,6 +20,12 @@ oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
 verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
+statement_status = "consistent"
+statement_note = "The nine variant is a valid affirmative special case: k=3, n=11, m=25 gives 26*27*28 / (12*13*14) = 9, with 25 >= 11+3. The broader all-integers problem is not the task target."
+public_lean4_proof = true
+public_lean4_proof_status = "catalog_match"
+public_lean4_proof_urls = ["https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/686.lean#L104"]
+public_lean4_proof_note = "Exact full task ID erdosproblems-686-nine matched the skill CSV. Existence accepted per the requested catalog rule; the linked current proof was not rechecked or compiled, and no proof was added to the task."
 
 [verifier]
 timeout_sec = 7200.0

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-686-four-two",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "源码搜索命令显式加入 .lake/packages；容器内以 ubuntu 实测 rg 命中 Mathlib 的 IsSquare 定义，退出0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 imports；原 Dockerfile 缺少末尾 ubuntu 构建验证，现已补齐。当前本地 Harbor 构建成功，容器内 ubuntu lake build +FormalConjecturesBench.Target 退出0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "技能 Unicode 脚本修复前后均为 no_issue，头、冻结前缀、:= 边界及反例通过；未改头或冻结哈希。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境运行 GoldenCheck，存在语义重解析问题。现从本题 golden 隔离提取完整类型及 universes（[]），匹配 Docker 预编译并传递公理审计，固定双份 Spec、清单哈希和加载路径；运行时不生成/回退。当前本地 task Harbor 镜像 73b39594c345；/tests 上传包、/opt 包及本地哈希一致。正式与本地入口均预期因原 sorry 退出1/reward0；同一子容器两种入口配置的实际函数补测均通过，覆盖 Spec/类型审计、ubuntu编译、完整类型、目标公理、sorry canary、冻结/越界/语义偷换/同名模块及缓存遮蔽/缺失与篡改负例。immutable 全部不变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-686-four-two/attempt-001。Docker已清理：容器 e79ab2da92f6、0ebb0c726d6a，镜像 73b39594c345，及本题专属网络；核实均不存在。预存共享依赖镜像保留。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 consistent：这是 N=4,k=2 的已知不可能性变体，不是一般开放问题。读 pinned upstream 686.lean 完整定义及原证明；清分母得 (m+1)(m+2)=4(n+1)(n+2)，等价整数乘积 (2m+3-2(2n+3))(2m+3+2(2n+3))=-3，第二因子>=9，矛盾。题目站403，但可信上游源码及镜像资料可读。未修改数学输入。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID erdosproblems-686-four-two 精确命中技能 references/public-lean4-proofs.csv，public_lean4_proof=true；按技能无需联网复验。来源：https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/686.lean#L72 。未将公开答案打包或作为提交编译。"
+    }
+  }
+}

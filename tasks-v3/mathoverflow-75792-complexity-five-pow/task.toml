@@ -21,6 +21,13 @@ difficulty_explanation = "The agent must construct a Lean 4 proof of a research-
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
 verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
 
+statement_status = "consistent"
+statement_note = "False iff the universal five-power complexity claim is correct: n=6 has a 29-one expression, less than 30. Definitions and target unchanged; see arXiv:1203.6462 section 2.2."
+public_lean4_proof = true
+public_lean4_proof_status = "catalog_match"
+public_lean4_proof_urls = ["https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/Mathoverflow/75792.lean#L204"]
+public_lean4_proof_note = "Exact full task ID matched the skill CSV; public proof existence marked without requiring a new search or compilation. No answer was bundled."
+
 [verifier]
 timeout_sec = 7200.0
 

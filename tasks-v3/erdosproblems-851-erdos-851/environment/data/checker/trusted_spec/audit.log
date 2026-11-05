@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos851.TwoPowAddSet: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 2 (ε : ℝ) (hε : ε ∈ Set.Ioo 0 1)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ ε ∈ Set.Ioo 0 1, ∃ r d, (Erdos851.TwoPowAddSet r).HasDensity d ∧ 1 - ε ≤ d
+def Erdos851.TwoPowAddSet : ℕ → Set ℕ :=
+fun r => {x | ∃ k n, ∃ (_ : n.primeFactors.card ≤ r), 2 ^ k + n = x}
+'Erdos851.TwoPowAddSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

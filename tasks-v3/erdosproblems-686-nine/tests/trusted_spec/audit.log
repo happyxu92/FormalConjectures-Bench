@@ -1,0 +1,10 @@
+FCBTrustedSpec.lean:33:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:44:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:55:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:87:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited entire ExpectedType dependency graph (3172 constants): [propext, Quot.sound, Classical.choice]
+universe parameters (ordered): []; complete outer binder count: 0
+def FCBTrustedSpec.ExpectedType : Prop :=
+True ↔ ∃ k ≥ 2, ∃ n, ∃ m ≥ n + k, 9 = ↑(∏ i ∈ Finset.Icc 1 k, (m + i)) / ↑(∏ i ∈ Finset.Icc 1 k, (n + i))
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

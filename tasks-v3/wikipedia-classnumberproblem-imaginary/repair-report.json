@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-classnumberproblem-imaginary",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 及 .lake/packages；在最终 Harbor 子容器中实际搜到 Mathlib 的 classNumber 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题没有额外上游 import；补上 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。最终本地 Harbor 构建成功，同一子容器 ubuntu 构建复验退出码 0（允许原始占位证明的编译警告，不表示证明完成）。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本两次，均为 no_issue；原头通过，改头和移除 := 被拒绝，无需修改冻结头。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题未改动 golden 隔离候选提取完整 set equality 类型及 universes=[]，在匹配 Lean 4.27.0 Docker 环境中预编译 ExpectedType；独立审计 ExpectedType/IsClassNumberOne 无 sorryAx 或新增公理。两份可信包与 checker 内容/AST 一致，清单及产物哈希固定，运行时仅加载 /tests 或本地入口 /opt 的预编译包；不重新解析命题或回退生成。最终本地 Harbor trial wikipedia-classnumberproblem-imaginary-g61-c813-final2 构建成功，上传 /tests、/opt 和本地包/golden 哈希一致。两入口因原 Target 的 sorry 预期退出 1，reward=0；同一子容器两套 checker 实际函数补测均通过：可信加载/审计、ubuntu(uid=1000)编译、完整类型匹配、目标 sorryAx 拒绝、canary，以及冻结/越界/缓存遮蔽/产物缺失及篡改负例。冻结文字不变、合法 Squarefree 名称遮蔽的隔离占位 fixture 编译成功，完整类型比较实际拒绝；这不代表提供了原题证明。所有原源码限制、公理审计和正常 import 规则保留。初次 final 重建网络重叠已记录，改用核查未占用的自有子网后 final2 验收成功。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-classnumberproblem-imaginary/attempt-001/。Docker 已清理并核实：本题 g61-c813 的 spec、初次 Harbor 和 final2 三个容器已 stop/rm；初次/final/final2 三个镜像（ac5100afdee8、05477c246ca6、31ebd1db71b1）及两个自有网络已移除，image inspect 确认镜像 ID 不存在；共享预编译基镜像保留，无遗留本题资源。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已标 statement_status=consistent；核对固定上游、完整 IsClassNumberOne 定义、Mathlib classNumber（整数环的类群）与 Booher《Modular Curves and the Class Number One Problem》定理1。目标是 Stark–Heegner 虚二次数域的九个负平方自由根数，不是前缀中的实二次数域开放猜想；-1/-2 是根数而非判别式 -4/-8，未发现明显数学错误。Wikipedia 403，由可访问原文替代。未修改陈述、数学定义或 golden；详见 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确命中技能 public-lean4-proofs.csv，已标 public_lean4_proof=true。来源：https://github.com/DrMurphyIsIn/tenth-discriminant/tree/f0995bf604056a98f0af0d182ed152c6bd996419/determinant/formalization 。依规则无需重新联网；未声称在本题环境编译公开证明，亦未向任务或镜像加入答案。"
+    }
+  }
+}

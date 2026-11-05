@@ -19,7 +19,13 @@ benchmark_bucket = "informal_proof"
 oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
-verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
+verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary. It imports a fixed precompiled trusted Spec and compares the entire elaborated theorem type."
+statement_status = "consistent"
+statement_note = "This is the known Shakan 2020 Theorem 1 variant, for every prime and every finite A with cardinality > 1. HasGap uses a translated interval of consecutive misses; the natural floor bound is weaker than the paper's real lower bound. No mathematical statement or definition was changed."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_urls = ["https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/GreensOpenProblems/32.lean", "https://github.com/google-deepmind/formal-conjectures/pull/6954", "https://github.com/wustep/maths/tree/main/problems/long-gap-dilate"]
+public_lean4_proof_note = "Exact full task ID has no skill-CSV match. Multi-query search and inspected upstream Lean still show sorry for sh20_general; the linked Green32 Lean proof covers corrected dirichlet_regime, not this target. GitHub code search requires login, API search/tree requests were rate limited, and grep.app returned 429, so public-proof existence remains unknown rather than a claimed negative."
 
 [verifier]
 timeout_sec = 7200.0

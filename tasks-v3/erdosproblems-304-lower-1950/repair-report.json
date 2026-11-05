@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-304-lower-1950",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令显式追加 .lake/packages；最终 Harbor 子容器 ubuntu 实际检索 mathlib 中 isBigO_zero 成功（instruction-search.log）。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 imports。Dockerfile 末尾追加 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target；最终本地 Harbor 构建及容器内 ubuntu 构建均成功。未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按 skill 实际运行 Unicode 脚本及最终复验，均为 no_issue；原头接受，修改头/删除赋值拒绝；未改冻结常量。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden 独立生成、匹配 Docker Lean 4.27.0 预编译并审计 ExpectedType（完整闭合命题，0 外层参数、universes=[]）；实际前缀依赖仅标准公理，无临时目标/sorryAx。两份固定包/manifest 和 checker 完全一致。最终当前本地 task Harbor force_build：erdosproblems-304-lower-1950-g61-a001-7c30-final；/tests 上传包、/opt 包、golden 与宿主哈希一致。两入口原题 sorry 预期拒绝（exit=1/reward=0），非实现错误；同一最终子容器两份实际 checker 函数补测均 exit=0，覆盖 Spec 加载/可信审计、ubuntu UID1000 编译、完整类型比较、sorryAx 拒绝、canary、冻结/越界/合法 def lemma instance、冻结文本不变 Real.log 名称偷换的编译及类型拒绝、同名模块/缓存/环境遮蔽、缺失/篡改包无回退。另在同一容器以 root 调用实际函数复测，验证候选编译确实降权至 ubuntu。原安全函数与 import 规则保留；未扩展外部模块/initializer 沙箱。证据目录 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-304-lower-1950/attempt-001。已清理本题 Spec 容器、两次 Harbor 容器、两份本题镜像 tag 及其独占 image ID、两张本题网络；核实均不存在。预存共享缓存 e21dc171550d 保留，未动其他资源。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。完整检查有理除法、Finset 去重且 n>1、Nat sInf/sSup 与有限分子区间、atTop 定量方向。原文 Erdős 1950, Mat. Lapok 1, pp.193,195，Theorem 2 (7): N(b−1,b)>log log b−1，蕴含本题下界；非原题开放上界。原站 Cloudflare 受阻，但原论文 PDF 和固定上游源码可访问，未见明显错误；未改陈述/定义。详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true；按完整 ID 精确命中技能 CSV（哈希及行见 public-csv-match.json），按要求无需联网复核：https://github.com/thepriceisright/publications/blob/8f055eb3fd1485477c92cbfbdfa4b3c56f192610/erdos/304/Lower1950.lean。仅作公开证明标记，未将答案放入镜像，未宣称已在本题编译该公开证明。"
+    }
+  }
+}

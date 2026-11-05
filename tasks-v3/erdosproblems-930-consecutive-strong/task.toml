@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact skill CSV ID not found. Broad theorem/name/paper/GitHub/Mathlib searches found no verified full proof; upstream consecutive_strong remains sorry. GitHub code search requires login and erdosproblems.com returns 403, so absence is not confirmed."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/930.lean"

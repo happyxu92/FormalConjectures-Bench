@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-975-upper-bound",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Search command now explicitly includes /app, /opt/formal-conjectures and /opt/formal-conjectures/.lake/packages. Executed as ubuntu in the local Harbor container; package Lean definitions found, exit 0."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports. Added final ubuntu RUN lake build +FormalConjecturesBench.Target. Current local Harbor Docker build succeeded using matching cached dependency layers; repeated ubuntu Target build exited 0."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Executed skill Unicode script before and after repair: no_issue, original header accepted, altered header/missing assignment rejected; no Unicode changes needed."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated and independently audited precompiled ExpectedType from this task's immutable golden, without Submission/candidate/Lake caches; complete binders f,hf,hf_pos, no universes, only allowed transitive axioms. Identical pinned packages and checker AST/content verified. Local Harbor image sha256:82d702b3a4a0e38ace73ab88c30f01ecd62ae49df51121ca9fd0259fc1b347d9 built from modified task; /tests uploaded and /opt delivery hashes match host. Both actual entries reject original sorry (exit 1, reward 0), as expected. Same-container actual-function tests passed under root and ubuntu: fixed Spec load/audit, observed uid 1000 compile, full-type comparison, positive target axiom audit and sorryAx rejection, canary, frozen/header/out-of-tree checks, frozen-text Irreducible-to-False semantic attack rejected by full-type comparison, cache/environment shadowing resisted, missing/tampered artifacts rejected without regeneration. All immutable hashes match the pre-existing baseline. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-975-upper-bound/attempt-001. Cleanup verified: removed Spec container b83b996fc984, Harbor container c088117e439a, task image 82d702b3a4a0 and own network 08c9caba484a; retained the pre-existing matching dependency image and shared caches. cleanup.json and Docker after-snapshots record absence."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked consistent only. Compared complete sum definition and target with Erdos 1952, On the sum, printed p.7 theorem (https://users.renyi.hu/~p_erdos/1952-08.pdf). This is the known upper bound, not the open asymptotic. Eventual positivity and floor/index-0 conventions affect only a finite initial segment; constant polynomials also satisfy the upper bound. No obvious mathematical defect found; all mathematical inputs unchanged. Details in statement-audit.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "unknown/blocked. Exact full-ID skill CSV lookup missed. Multiple statement/name/divisor-bound searches, current/pinned upstream, Mathlib, GitHub issues and fork PRs reviewed. PRs 2553/3078 claim formal status but their actual Lean upper_bound still uses sorry; AI research pages provide no complete Lean proof. Official discussion HTTP 403 and global GitHub code search HTTP 401 remain access gaps. No verified public complete Lean4 proof found in retrieved material; not an absence claim. Metadata marked unknown/blocked; public-proof-review.json records sources, branches, searches and exclusions."
+    }
+  }
+}

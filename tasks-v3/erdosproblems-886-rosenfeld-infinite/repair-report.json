@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-886-rosenfeld-infinite",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "源码搜索命令已显式包含 /app、/opt/formal-conjectures 及隐藏 .lake/packages；最终 Harbor 子容器 ubuntu 下实际 rg 命中 mathlib Nimber.add_comm，退出码 0。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-886-rosenfeld-infinite/attempt-001/final-instruction-search.log"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 只有两项标准 import，无额外上游模块；原 Dockerfile 缺普通用户构建验收，现以 USER ubuntu、RUN lake build +FormalConjecturesBench.Target 结尾。最终本地 Harbor 镜像构建及子容器 ubuntu 实测均通过，未放宽依赖权限。证据：harbor-image-history.txt、ubuntu-target-build.log。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "修复前及最终均实际运行技能 Unicode 脚本，case=no_issue；两份原始 EXPECTED_HEADER、冻结前缀及 := 边界核对通过。证据：unicode.json、unicode-final.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "旧 checker 在候选导入后重解析 GoldenCheck 命题。现从本题可信 golden 隔离 Submission，用 Lean parser/elaborator 提取完整类型（零外层参数、universes=[]），提前编译并审计 ExpectedType 和 Erdos886Divisors 的传递公理；两份 Spec 包及 checker 内容/AST 一致。运行时固定工具链和 Spec/依赖优先路径，校验清单、golden、版本与产物哈希，不重建或回退生成。最终当前本地 task Harbor trial=erdosproblems-886-rosenfeld-infinite-g61-a001-886e-final，image=sha256:40a88792692511550f681108295764679699342621a12e07c51460b3bbd2c2a8；/tests 上传包与 /opt 预装包均与本地逐文件哈希一致。两入口因原始 sorry 预期退出 1、reward=0；同一最终子容器分别调用实际函数完成各 28 项补测，覆盖可信加载/审计、ubuntu uid=1000 编译、完整类型比较、目标 sorryAx 拒绝、sorry canary、冻结/越界、合法辅助声明、冻结文本不变的 Erdos886.Set.Infinite 语义偷换（编译成功而类型比较拒绝）、候选同名模块/缓存/环境遮蔽、产物缺失/篡改/清单篡改且无运行时生成。未声称已证明原题。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-886-rosenfeld-infinite/attempt-001；已清理本题 3 个容器、2 个镜像及 2 个网络，逐个 inspect 确认不存在；保留预先存在的共享依赖镜像，未动其他 agent 资源。镜像清理 ID：sha256:937741f0fb869eea139c6a7b0dd4c75974121b939c18b0400c4cc44f343858d8, sha256:40a88792692511550f681108295764679699342621a12e07c51460b3bbd2c2a8；证据 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。完整定义确为自然数因子在严格区间 (sqrt(n),sqrt(n)+16*n^(1/4)) 中至少四个、且这样的 n 无限多；与锁定上游的 rosenfeld_infinite 已知结果变体一致，不是前一开放上界问题。未发现明显数学错误，未修改陈述/定义。已读取锁定上游、出版社记录及可访问二级文献条目；原题页和论文 PDF 直连 403/404 的限制详见 statement-review.json、math-fetch.json，不冒称完整论文已读。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID 精确命中技能 references/public-lean4-proofs.csv，依指示标记 public_lean4_proof=true，无需联网复查或在本环境编译。来源：https://github.com/linrock/math-proofs/blob/4a1f92f2aca5f32edb0c681f1e8fdca88b5d9494/erdos-886/Solution.lean#L38 及 https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos886_erdos_886_variants_rosenfeld_infinite.lean#L145；只标记，未导入答案。证据：public-csv-match.json、public-proof-review.json。"
+    }
+  }
+}

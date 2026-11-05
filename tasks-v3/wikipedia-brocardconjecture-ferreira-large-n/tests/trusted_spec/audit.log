@@ -1,0 +1,7 @@
+audited ExpectedType transitive axioms: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0; eventual variable is internal to Filter.Eventually
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ᶠ (n : ℕ) in Filter.atTop,
+  4 ≤ (Finset.filter Nat.Prime (Finset.Ioo (Nat.nth Nat.Prime n ^ 2) (Nat.nth Nat.Prime (n + 1) ^ 2))).card
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

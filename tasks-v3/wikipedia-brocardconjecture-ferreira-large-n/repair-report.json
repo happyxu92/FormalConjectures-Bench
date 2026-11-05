@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-brocardconjecture-ferreira-large-n",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 和隐藏的 .lake/packages；在最终 Harbor 子容器以 ubuntu 实际检索到 Mathlib 的 Nat.nth 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import，原 ProblemImports 预编译命令保留。补上 Dockerfile 最终 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target；本地 Harbor 构建成功，同一子容器 ubuntu 重跑构建退出 0。未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本两次，均为 no_issue；原始头通过，修改头和删除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden 独立隔离生成、编译并审计 ExpectedType 的完整类型及 universes（均无外层参数）；临时目标未导出，传递公理只有标准三项，不依赖前缀中无关的原始 sorry 定理。两份可信包/清单和 checker 内容及 AST 一致；固定产物哈希与工具链、依赖版本校验，可信路径先于候选，无运行时生成或重解析命题。当前本地 task 经 Harbor force_build 生成镜像 e3f5dd83c379，/tests 上传包及 /opt 包与本地哈希全部一致。正式入口退出 1/reward 0、本地 ubuntu 入口退出 1，均为原题 sorry 的预期源码拒绝，不是证明成功。随后在同一 Harbor 子容器分别调用两份 checker 的真实函数，各通过 29 项覆盖：Spec 加载/独立审计、ubuntu UID 1000 编译、完整类型比较、目标 sorryAx 拒绝、sorry canary、冻结/越界/源码限制，以及冻结头不变的 Brocard.Ioo 名称偷换（能编译但完整类型比较和 main 均拒绝）、同名模块/缓存/环境遮蔽、产物缺失和篡改且无自动再生成。补测 fixture 初次 decide 含自由变量的问题已修正并保留失败日志；最终两套补测退出 0。保留原正常 import 规则及安全检查，不作通用外部模块或 initializer 安全结论。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-brocardconjecture-ferreira-large-n/attempt-001；含生成、审计、版本、哈希、Harbor、入口、覆盖及 immutable-final.json。Docker 清理完成：本次两个容器 bf3a40264ed7、ecd24ec6ae6f 均 stop/rm，镜像 e3f5dd83c379 及本题 b7f3 网络均已删除并 inspect 确认不存在；预先存在的共享依赖镜像和缓存保留。见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。已核对锁定上游完整前缀/目标、Nat.nth 的零起始索引、atTop 的最终全称量词及开区间计数；与 Ferreira arXiv:2307.08725v1 第4节 Proposition 4.8 后关于充分大 n 的 Brocard 陈述一致。索引平移不影响最终性，未发现导致目标明显不成立的定义或陈述错误。仅标记，未修改数学输入；不是对论文分析证明的独立认证。见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "marked",
+      "note": "完整 ID 精确查询技能 CSV 未命中；已按目标名、别名、作者、论文、数学内容多组检索，并读取上游 main、镜像、相关平台及 GitHub PR/分支 Lean 源码。PR 2605/3129 的 formally solved 标题实际仅修改 category，保留 sorry；1436 是原始占位陈述；4143 仅证明带 Oppermann 假设的蕴涵；相关 Legendre/Andrica PR 亦保留 sorry，均不能算本题完整证明。GitHub 全局代码搜索须登录、REST 返回 401，无法完成不同命名/fork 的关键检索，因此元数据 public_lean4_proof=unknown、status=blocked，不能宣称已确认不存在。见 public-csv-match.json、public-proof-review.json 及已保存源码。"
+    }
+  }
+}

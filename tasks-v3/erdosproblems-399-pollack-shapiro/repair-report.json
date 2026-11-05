@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-399-pollack-shapiro",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；最终 Harbor 子容器以 ubuntu 实测找到 Mathlib 的 Nat.factorial 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import，无需追加依赖模块；补齐此前缺少的 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地任务的最终 Harbor 构建及同容器 ubuntu 构建均成功，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本并最终复验，均为 no_issue；原头通过，改头及移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境解析 GoldenCheck，存在语义遮蔽风险。已从不可变 golden 隔离候选提取完整 ExpectedType，保留两个显式 Nat 参数及空 universe 列表，在匹配 Docker 工具链中预编译并独立审计；传递公理仅 propext，临时目标未导出。两份可信包及 checker 内容/AST 一致，固定产物与依赖优先加载，不在运行时生成或回退编译 Spec。最终本地 Harbor 镜像 sha256:95cd9fcb1f4e20fc682e6276a8ff81b1672ee36dfe7bb1e347e140b6eba05572；/tests 上传包、/opt 包、golden 和公开 /app 输入均核对哈希。正式及本地入口均因原题 sorry 预期退出 1，reward=0；同一最终子容器分别对两份 checker 完成各 29 项补测，覆盖可信加载/审计、ubuntu 实际编译、完整类型比较、目标公理、sorry canary、冻结/越界/实例语义偷换/缓存遮蔽/产物缺失与篡改拒绝。普通 import 规则及原安全检查保留，无通用外部模块白名单或 initializer 沙箱。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-399-pollack-shapiro/attempt-001，见 final-verification.json、validation-coverage.json、delivery-final-hashes.json。Docker 清理：本题3个容器和2个网络均已停止/移除并核实；最终镜像95cd9fcb1f4e已删除。首轮镜像4ebc82ca4616被其他任务的容器3006fc65398b正在用作共享预编译缓存，按规则保留且未强删；预先存在的共享基础镜像亦未删除。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。核对完整 golden 前缀及目标：这是 Pollack–Shapiro 的 n!+1≠x^4 已知变体，而非 Erdős 399 全问题。作者托管的 Koymans (2017) PolynomialFactorial.pdf 第1页及参考文献[5]明确佐证 k=4 情形；n=0、x=0/1 等 Nat 边界不产生反例。原 Wiley 论文及官方题目页受 HTTP 阻挡，未据此声称重验完整数学证明。未修改任何数学陈述、定义、Target、golden、GoldenCheck 或冻结基线。详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确匹配技能 CSV 未命中。多组检索覆盖定理全名、等价阶乘四次幂陈述、Brocard/Pollack–Shapiro、上游及 PR、Mathlib、Jayyhk 和 williamjblair 仓库。实际读取源码：上游及 PR 2660/3182 的本目标仍为 sorry；另外两仓库只证明原题反例或 Cambie 变体，均不覆盖本目标。官方 erdosproblems.com 当前题目/历史来源 HTTP 403，部分 GitHub API 限流，故标记 public_lean4_proof=unknown、status=blocked，不断言不存在公开证明。详见 public-proof-review.json、fetch-results.json。"
+    }
+  }
+}

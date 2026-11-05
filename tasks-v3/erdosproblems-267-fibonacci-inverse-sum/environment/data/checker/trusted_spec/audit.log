@@ -1,0 +1,6 @@
+audited ExpectedType and all referenced prefix definitions: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Irrational (∑' (k : ℕ), 1 / ↑(Nat.fib k))
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

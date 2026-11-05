@@ -1,0 +1,8 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+complete binder count: 2
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (A : ℕ → ℕ),
+  (∀ n > 0, IsLeast {x | ∃ t, ∃ (_ : ∃ a, n.factorial = ∏ i, a i ∧ Monotone a ∧ a (Fin.last t) ≤ n), t + 1 = x} (A n)) →
+    (fun n => ↑(A n) - ↑n + ↑n / Real.log ↑n) =o[Filter.atTop] fun n => ↑n / Real.log ↑n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

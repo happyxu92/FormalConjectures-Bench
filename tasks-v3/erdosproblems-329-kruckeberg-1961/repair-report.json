@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-329-kruckeberg-1961",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式加入 /opt/formal-conjectures/.lake/packages；最终 Harbor 子容器中 ubuntu 的 rg 实际检索到 Mathlib 的 limsup 定义。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；保留 ProblemImports 预编译。补上 Dockerfile 末尾 USER ubuntu 的 RUN lake build +FormalConjecturesBench.Target；最终本地 Harbor 镜像构建及子容器内再次构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能执行 Unicode 脚本，修复前及最终复验均为 no_issue；原头通过，改头和移除 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离提取完整 ExpectedType（0 个外层 forall，universes=[]），预编译并审计密度定义的传递依赖，无 sorryAx；两份固定包及 checker AST/内容一致，所有 immutable 哈希未变。最终 Harbor 从当前本地 task force_build；上传 /tests 和 /opt 包均与宿主哈希一致。两入口 exit=1/reward=0 是原题 sorry 的预期拒绝；同一最终子容器中 root/ubuntu 调用实际函数，完成 Spec 加载/审计、ubuntu 编译、完整类型比较、目标公理及 canary、冻结/越界/名称语义偷换/缓存遮蔽/缺失篡改负例。名称攻击有真实无 sorry 证明且公理合法，仍被完整类型比较拒绝。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-329-kruckeberg-1961/attempt-001。Docker cleanup verified: containers 6942eaae4d14, de6d6f7e48e0, 6662199e32bc; images b5bce8687f75, 28da3a3c929b and both g61-a001-7c29 task networks removed. Pre-existing shared generation image/cache preserved; see cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 consistent，未修改陈述或定义。核对 pinned 329.lean、IsSidon、有限区间计数、实数 sqrt 与 atTop limsup；本题是 Krückeberg 达到 1/√2 的已知变体，不是开放的最优密度问题。来源：Erdős 1973 survey pp.128–129 (8.5)，erdosproblems.ai/wiki/problems/integer_sequences/E0329；官网 403，详见 research-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。多组检索并读取 upstream main、PR 2578/3102/4103 Lean 源码，目标均仍 sorry；其他有限 Sidon、Erdős152、metric-entropy 结果不覆盖本命题。未确认完整公开 Lean4 证明；GitHub 全局代码/分叉检索需登录、API 限流，官网 403，因此标记 unknown/blocked，不断言不存在。检索词、候选排除及来源见 research-audit.json。"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-489-squarefree",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "源码搜索命令已显式列出 /app、/opt/formal-conjectures 和隐藏的 .lake/packages；实际以 ubuntu 搜到 Mathlib 定义，无路径错误。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题没有额外上游 import；补齐 Dockerfile 最后的 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的 Harbor 构建及同容器 ubuntu 构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "执行技能 Unicode 脚本，修复两份 EXPECTED_HEADER 中 𝓝 的代理对编码；原头通过，改头及移除 := 被拒绝；最终复验无问题。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden、隔离 Submission 提取完整类型并预编译 ExpectedType，universes=[]；独立审计 ExpectedType、sievedSet、GapSumSq 仅含允许公理，两份包及 checker AST/内容一致。固定 /tests 或 /opt 的预编译来源，不运行时重解析或回退生成。当前本地 Harbor 镜像 a13d14c2c58e 构建成功；上传 /tests 与本地 /opt 包均逐文件哈希一致。两入口因原题 sorry 预期退出1/reward0；同一 Harbor 子容器两路径实际函数补测均通过，覆盖可信审计、ubuntu编译、完整类型比较、目标sorryAx拒绝、canary、冻结/越界/缓存遮蔽/缺失及篡改负例，并实际拒绝冻结文本不变的 Tendsto 名称偷换。所有 immutable 哈希未变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-489-squarefree/attempt-001。Docker 已清理并核实不存在：本题容器 5af9dd68ca9e、84bc423dbefc，镜像 a13d14c2c58e 及其 tag、专用网络 erdosproblems-489-squarefree-g61-489a__env_default；预先存在的共享依赖镜像保留，未触碰其他任务资源。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。本题为已知的平方自由数二阶间隙矩变体，非一般489问题；已核对正整数筛、Nat.nth/count、实数差平方及自然数趋向无穷。Erdős 1951 pp.107–109 (23) 与 Filaseta–Graham–Trifonov §6.2 支持该结论；左右端点截断差异不影响极限。数学陈述、定义及 golden 未修改。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "public_lean4_proof=unknown，status=blocked。完整ID精确匹配技能CSV未命中；多组检索并读取上游489/145、作者站和证明zip、GitHub关联Lean源码及Mathlib。找到 Snyder 的一般稀疏筛定理（Lean4.31），但未找到完成两个素数平方前提的本题完整特化；上游本题仍sorry。原站proof-claims和GitHub tree API均403，不能据此断言不存在。详见 public-proof-review.json 与实际下载证据。"
+    }
+  }
+}

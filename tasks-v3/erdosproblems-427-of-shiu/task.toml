@@ -15,6 +15,12 @@ formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"
 lean_toolchain = "leanprover/lean4:v4.27.0"
 mathlib_commit = "a3a10db0e9d66acbebf76c5e6a135066525ac900"
 theorem_name = "Erdos427.erdos_427.variants.of_shiu"
+statement_status = "consistent"
+statement_status_note = "Conditional Shiu variant; consecutive-prime block and residue argument validates the retained statement, including zero-indexed n=0 and d>0. See repair-report.json and evidence."
+public_lean4_proof = true
+public_lean4_proof_status = "known"
+public_lean4_proof_urls = ["https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos427.lean#L84"]
+public_lean4_proof_note = "Exact full task ID match in skill references/public-lean4-proofs.csv; accepted per skill without further network revalidation or local proof compilation."
 benchmark_bucket = "informal_proof"
 oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."

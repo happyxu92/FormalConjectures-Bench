@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-402-equality",
+  "target_name": "Erdos402.erdos_402.variants.equality",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "b5ee32a1c0a8efc8109f63e6aa346c7be0dcbde8c689b799c0dc7058ce93726a",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "6cf66864e3b271bf9d596ba20d8c3a7dc8c82818cc00c2f509ca193a8f2c5221",
+    "FCBTrustedSpec.ilean": "d9410c854cede5defcde225543e527bccf92ef1d3a4bfc873a74d4c2dea537b5",
+    "FCBTrustedSpec.lean": "da7822cbeaaa5ddd4bf9b28801ff6ca1839b6a7a2aed59aa733b178ba59c3132",
+    "FCBTrustedSpec.olean": "a98a92dce610dbbf39214634e7136a3ac3f0f647041db1f2fa9d363058ac0928",
+    "audit.log": "a86acb8222d428ead784ed21482aff9e15cd4ab946e8bcc6996ea1bb66511156",
+    "generate.py": "9059e0c24137f51260e7964f419054d2eae8ccf45a6ee90b3df85b653a67e7d3",
+    "reproduce.sh": "5fd3e369f51fe917f021d976c13cc7c78f689302a92432ed52b504f3c830288f"
+  },
+  "generation_image": "sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a",
+  "generation_command": "docker cp generation-input erdosproblems-402-equality-spec-g61-402c:/tmp/repair-bundle; docker exec -u root erdosproblems-402-equality-spec-g61-402c bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Full golden declaration extracted using Lean parser/elaborator and then its temporary environment discarded. Independent import proves ExpectedType has all five binders A,h₁,h₂,h₃,h, no universes, and only allowed transitive axioms. Original prefix erdos_402 has sorry but is not referenced by ExpectedType. No target or target children exported."
+}

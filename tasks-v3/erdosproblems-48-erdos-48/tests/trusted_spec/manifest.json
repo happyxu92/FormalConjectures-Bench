@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-48-erdos-48",
+  "target_name": "Erdos48.erdos_48",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "6fa5c3a9a3907255a5712e4cc96903413b0f51cfa3888af960e361fb3b6134a2",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "6d9352adcae1d18794ef79dd370915f9c49c3dd89c74581650c562f1bbfe53a4",
+    "FCBTrustedSpec.ilean": "bc93af2883f4d6faa660a1fb84c5cea21a1f2a5d74eede20e0592b6e35f50670",
+    "FCBTrustedSpec.lean": "65067427bd0a9dc4e6770b9465420c4e53f04d2bad4b7247b41d4303a42d4eb7",
+    "FCBTrustedSpec.olean": "fbbea71b64e225fd1dd7b60b6df982af084fcb6e974b4408b5b99a2573376d83",
+    "audit.log": "4833997b7c7eb2702469c60256b596cca86e4f90b47a0ef13fdac30dc74c2b31",
+    "generate.py": "accba20a228bef9b6462fa210cfb6c972d73725b8aaa341eee1c0b372b6be0ed",
+    "reproduce.sh": "bdf6ba239a07eac07c34dca0d5e8feb126256708270f0b23edf21c7e6d9d92ab"
+  },
+  "generation_image": "sha256:e21dc171550d4c49aceba963047d00d1a350ce711019cbd9cb32c4770c7a39df",
+  "generation_command": "docker run -d --network none --name erdosproblems-48-erdos-48-spec-g61-a001-48f7 fcb-repair/erdosproblems-252-k-eq-four:252four-20261102-183405 sleep infinity; docker cp generation-input erdosproblems-48-erdos-48-spec-g61-a001-48f7:/tmp/repair-bundle; docker exec -u root erdosproblems-48-erdos-48-spec-g61-a001-48f7 bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Complete type extracted via Lean elaborator from this golden, with no candidate input. Zero outer binders and zero universe parameters. Newly generated pattern matcher delta-expanded before discarding the temporary declaration. No temporary theorem/children exported. ExpectedType and all transitive dependencies use only allowed standard axioms."
+}

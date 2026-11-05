@@ -1,0 +1,6 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+{n | ∃ S, S.card ≤ 2 ∧ (∀ s ∈ S, Nat.Full 2 s) ∧ n = S.sum}.HasDensity 0
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

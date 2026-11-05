@@ -20,6 +20,11 @@ oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
 verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
+statement_status = "consistent"
+statement_note = "The complete natural-number statement agrees with Helfgott arXiv:1312.7748: every odd integer greater than five is a sum of three primes; repetitions are permitted. No mathematical input changed."
+public_lean4_proof = false
+public_lean4_proof_status = "searched"
+public_lean4_proof_note = "No eligible complete proof found after full-ID catalog miss and multi-source search. gersh/ternary-goldbach-lean has the equivalent capstone but retains nonstandard source/run axioms, including helfgott_platt_theorem_4_1_source; its foundation-only evidence theorem is conditional. Current FormalConjectures still uses sorry; other projects provide finite cases, reductions, or different theorems. See repair-report.json and external evidence directory. This is not a claim of absolute nonexistence."
 
 [verifier]
 timeout_sec = 7200.0

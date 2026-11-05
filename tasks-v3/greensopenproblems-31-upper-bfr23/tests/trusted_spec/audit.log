@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green31.F: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0; eventual N binder retained in expression
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ᶠ (N : ℕ) in Filter.atTop, Green31.F N ≤ √↑N + 0.998 * ↑N ^ 4⁻¹
+def Green31.F : ℕ → ℝ :=
+fun N => ↑(Finset.Icc 1 N).maxSidonSubsetCard
+'Green31.F' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

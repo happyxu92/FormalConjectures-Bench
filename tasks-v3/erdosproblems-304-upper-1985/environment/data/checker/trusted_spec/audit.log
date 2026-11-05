@@ -1,0 +1,9 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos304.smallestCollectionTo: [Classical.choice, propext, Quot.sound]
+audited Erdos304.smallestCollection: [Classical.choice, propext, Quot.sound]
+audited Erdos304.unitFractionExpressible: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+(fun b => ↑(Erdos304.smallestCollectionTo b)) =O[Filter.atTop] fun b => √(Real.log ↑b)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

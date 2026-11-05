@@ -17,6 +17,12 @@ mathlib_commit = "a3a10db0e9d66acbebf76c5e6a135066525ac900"
 theorem_name = "GaussCircleProblem.exact_form_floor"
 benchmark_bucket = "informal_proof"
 oracle_status = "none"
+statement_status = "consistent"
+statement_status_note = "Matches the closed-disc count for r >= 0 and the classical floor identity (MathWorld, Gauss's Circle Problem, equation (3)); no mathematical changes applied."
+public_lean4_proof = true
+public_lean4_proof_status = "found"
+public_lean4_proof_urls = ["https://github.com/danielpuri1901/erdos-lean-formalization/blob/ebe22c661a2d04633343776a703fc6a6427b784e/Solution.lean", "https://github.com/danielpuri1901/erdos-lean-formalization/blob/main/PROOFS.md"]
+public_lean4_proof_note = "Exact-ID skill CSV missed. Reviewed complete public gauss_circle_exact_form and its local lemmas: same N definition, r/hr binders, Int floor and tsum formula, no placeholders/new axioms in Solution.lean. Different upstream revision; not compiled in this task. Proof is not bundled in the task."
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
 verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."

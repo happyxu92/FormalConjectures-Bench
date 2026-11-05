@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-932-one-le",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式补入 /opt/formal-conjectures/.lake/packages。最终 Harbor 子容器中 ubuntu 按三路径执行 rg，找到 Mathlib 的 add_comm，退出 0，无路径或权限错误；见证据目录 final-instruction-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 Dockerfile 缺少末尾普通用户构建验证。Target 无额外上游 import；保留 ProblemImports 预编译，增加最终 USER ubuntu RUN lake build +FormalConjecturesBench.Target。当前本地 task 的 Harbor Docker 构建及同一最终子容器内 ubuntu Target 构建均成功，后者退出 0；未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本，修复前及最终均为 no_issue；原头通过，改头及删除 := 被拒，两份可信 golden 匹配。见 unicode.json、unicode-final.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 GoldenCheck 在候选导入后重解析预期命题。已从本题原始 golden、移除 Submission 导入，在匹配 Docker/Lean 4.27.0 环境用 elaborator 提取完整类型及 universes，交付预编译 ExpectedType；本题无外层参数、无 universe 参数。独立审计仅依赖 propext/Classical.choice/Quot.sound，临时目标及子声明未导出；冻结前缀中的其他开放定理虽含 sorry，却不在 ExpectedType 依赖中。两份 checker 内容/AST、Spec 包及清单一致；全部 15 个 immutable 哈希不变。固定 /tests 或 /opt 包来源及可信依赖搜索顺序，无运行时 Spec 生成、命题重解析回退或通用外部 import 白名单。当前本地 Harbor 镜像 sha256:f048bc883b3cfc6a22f26f19bc0e210ec8af91286b92bca821920fc8679e4bb9；上传 /tests 和本地 /opt 全部可信文件哈希匹配。正式及 ubuntu 本地入口均退出 1，reward 0，原因是未改原题的 sorry，并非实现故障。最终同一子容器两包位置各 29 项实际函数补测通过：Spec 加载/审计、ubuntu 编译且 uid=1000、完整类型匹配、目标 sorryAx 拒绝、canary、冻结/越界/源码限制负例、冻结文字不变且源码合法的 Finset.Ioo 名称偷换可编译但被完整类型比较拒绝、同名模块/缓存/环境遮蔽、产物缺失及篡改均明确失败且不生成产物。未声称原题证明完成。全部证据位于 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-932-one-le/attempt-001。Docker 清理已完成并核实：本题 Spec/初次 Harbor/最终 Harbor 三个容器 65c1338efd5e、5c9e908a5b43、e50a7858b9a5 已 stop/rm；本题两个镜像 75ba7f7cf21d、f048bc883b3c 及两个网络 c252ca362b96、32b5a15a041d 已移除，inspect/ps 核实不存在。预先存在的共享依赖镜像及其他 agent 资源未动，无 prune；见 cleanup.json、cleanup.log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已标 statement_status=consistent。完整检查 pinned upstream、前缀、maxPrimeFac 和 HasDensity 定义，并读取题目来源及全部论坛评论。目标是至少一个 gap-smooth 整数的索引集合密度为零这一已知变体，不是至少两个的无限性开放问题；严格区间、严格最大素因子界、自然数减法及默认自然密度一致，0/1 的定义边界不影响素数间整数。未发现明显数学错误，数学陈述和定义完全未改。来源 https://www.erdosproblems.com/932；详细证据 statement-and-public-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。多组题号/完整定理名/等价数学描述及 GitHub/Mathlib 检索后，尚未确认公开完整 Lean4 证明，metadata 标 blocked。读取 pinned/main 源码均仍 sorry；实际追踪 PR 2590、3114 的 Lean 源码，均仅改分类标签且保留 sorry，不算证明。题目及全部论坛评论经直接 HTTP 成功读取，未给出该证明；其他候选为不同变体的非 Lean 文本。GitHub 全局代码搜索受 403 限流/登录限制，未能排除未索引 fork/分支或等价命名，故诚实记 unknown/blocked，不断言不存在。检索词、来源、排除依据及限制见 statement-and-public-audit.json；没有把候选答案放入镜像。"
+    }
+  }
+}

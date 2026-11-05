@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-25-upper-ess89-trivial",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 .lake/packages；ubuntu 实测找到 mathlib Finpartition.card_bot，exit=0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 imports；补齐 Dockerfile 最末 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。本地 Harbor 镜像构建及同容器 ubuntu 构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "执行技能 Unicode 脚本：case=no_issue，两份原始头、冻结前缀及 := 边界验证通过；最终复验同样通过。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题 golden 隔离提取完整类型并预编译、审计 ExpectedType（universes=[]），两份包及 checker AST/内容一致。最终本地 Harbor Docker 构建成功，/tests 上传包与 /opt 包逐文件哈希吻合。两入口均因原题 sorry 预期拒绝（exit=1，reward=0）；同一最终子容器中 root/ubuntu 实际函数补测通过：Spec 审计、ubuntu UID=1000 编译、完整类型比较、目标公理审计、sorry canary、冻结/越界/缓存遮蔽/缺失/篡改负例。完整证明且仅标准公理的 atTop 名称偷换保持冻结文字不变，实际被完整类型检查和 main 拒绝。 已停止并删除本题容器 8748a08eee28、d242ada86fa6；首次容器 52f3a65bd167 由重建自动替换且已不存在；镜像 3ccbb771e9b5 及网络 4ddab524c65a 已删除并复核，预先存在的共享依赖镜像保留。 证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-25-upper-ess89-trivial/attempt-001。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已标 consistent。Green《100 open problems》Problem 25 与锁定上游支持此 trivial 变体；k(N)=N 及单点分割给出合理反例，N/log N=O(N)。自然数小端点不影响 eventually；未修改陈述、定义或 golden。见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确命中技能 references/public-lean4-proofs.csv，metadata 已标 public_lean4_proof=true；按要求无需再联网核验或编译公开答案。来源：https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Green25_green_25_variants_upper_ess89_trivial.lean#L149"
+    }
+  }
+}

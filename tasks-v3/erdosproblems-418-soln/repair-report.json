@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-418-soln",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令显式覆盖 /app、上游及 .lake/packages；Harbor 容器中 ubuntu 实际检索到 Mathlib/Data/Nat/Totient.lean:35 的 totient 定义，退出 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import。Dockerfile 末尾补齐 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target；当前本地 Harbor 构建及同容器 ubuntu 构建通过，保留原依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能执行 Unicode 脚本，初次及最终均 no_issue；原始头、冻结前缀、:= 边界和两份 checker 一致性通过。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 移除 Submission 导入，匹配 Docker/Lean 4.27.0 下提取完整类型及 universes（[]），预编译并独立审计 ExpectedType。两份包与 checker AST/内容一致，所有 immutable 哈希保持不变。当前最终 task（含元数据）经 Harbor 构建镜像 4eedfeea36dc；/tests 上传及 /opt 包逐文件哈希匹配。正式/本地入口均因原始 sorry 预期退出 1、reward=0；同一 Harbor 子容器分别实际调用两份 checker 函数，覆盖 Spec 加载/审计、ubuntu 编译(uid 1000)、完整类型比较、sorryAx 拒绝和 canary，并拒绝冻结/越界/缓存遮蔽/产物缺失及篡改负例。冻结文字不变的新 Compl (Set Nat) 实例攻击可编译且被完整类型比较及 main 拒绝。未添加通用 import 白名单或 initializer 沙箱。首次补测遇 Harbor 正常停止容器，重启同容器后通过。最终重建先遇自有网络子网重叠，按帮助重选未占用子网后成功；最终同一子容器两入口补测全部通过。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-418-soln/attempt-001（generation.log、delivery-hashes.json、validation-{official,local}.log、static-validation.json）。已 stop/rm 本题三个容器（Spec及两次Harbor），删除两个本题镜像和两个网络并逐一核实不存在；具体ID见 cleanup.json，预存匹配依赖镜像保留。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。对照 pinned 418.lean 与 Browkin–Schinzel 1995 出版社原摘要（DOI 10.4064/cm-68-1-55-58）：所有 2^k·509203，k≥1，非 n−φ(n)。本题 k+1 精确覆盖正指数；Nat 的 n=0 不增加反例，补集方向及 Euler totient 正确。只标记，未改数学陈述。原题/PDF 部分403，已读可访问出版社完整定理摘要；见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID 精确 CSV 未命中后进行多组检索。发现并通读 https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos418.lean：browkin_schinzel（1642行）对每个 k≥1 证明 IsNoncototient (2^k*509203)，直接覆盖本题。latest（Lean/mathlib 4.33.0）无 sorry/admit/native_decide/新增公理，仅 Mathlib；源码公理输出为三项标准公理。较旧 v4.24.0 使用 native_decide，未作合规证明依据。public_lean4_proof=true；仅源码及依赖链核验，未声称在本题4.27环境编译公开证明，也未把答案放入镜像。GitHub API 部分403不影响已取得完整 latest 源码的存在性结论；详见 public-proof-review.json。"
+    }
+  }
+}

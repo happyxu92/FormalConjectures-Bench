@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-50-erdos-50-singular",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 .lake/packages；最终 Harbor 容器以 ubuntu 执行三路径 rg，找到 Mathlib/Data/Nat/Totient.lean 的 totient_one，退出码0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "没有额外上游 import，无需追加预编译模块；补上 Dockerfile 最终 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。两次当前本地 task Harbor 构建成功；最终容器再次执行普通用户 Target 构建退出0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已在修复前和最终运行技能 check_unicode_header.py，均为 no_issue；原头、冻结前缀及 := 边界正常，未改头或冻结常量。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 golden 隔离 Submission 提取完整类型及 universe，预编译 ExpectedType（f、hf 两参数，无 universe），独立审计两定义及传递公理；两份可信包及 checker 内容/AST 一致。固定工具链与加载路径、哈希校验，无运行时生成/回退；保留原源码与公理安全规则及正常 imports。最终本地 Harbor 子容器核对 /tests 上传包、/opt 包和 golden 哈希；正式、本地入口退出1/reward0，原因仅为原题 sorry。两套实际函数各30项补测通过，覆盖 ubuntu 编译、完整类型、公理拒绝、canary、冻结/越界/缓存遮蔽/缺失/篡改。冻结文字不变的名称攻击在编译阶段被拒；独立保留原头的名称偷换类型 fixture 编译后被完整类型比较拒绝。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-50-erdos-50-singular/attempt-001。已 stop/rm 本题3个容器（b69e330d26b0、67004b1247ae、c13ed502661e），删除2个本题镜像（79b29ec35ca3、d188f5bbaa45）及2个本题网络并核实不存在；保留预先存在的共享依赖缓存，未清理其他任务资源。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "metadata 标记 mismatch，未改陈述/定义/Target/golden/GoldenCheck。Target:42-43 只约束 [0,1]，50-51 却要求全实轴连续；任意实际分布 f 可在2处加孤立值1、其余 x>1 置0，保留假设却不连续。证据 Counterexample.lean 的条件反例在最终容器编译并公理审计通过，无 sorryAx；历史 Schoenberg 存在结果及当前上游区间限制版本作来源旁证。详见 statement-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "按完整ID精确查询技能CSV未命中。多组题号/完整名/语义/Mathlib/GitHub及fork检索，读取 pinned/main Lean、渲染源码、issue270及PR2139；均未验证覆盖保留目标的完整证明。main 已改为区间命题且仍 sorry；Erdős416线索与本题无关。题目页/论坛HTTP403、GitHub代码搜索HTTP429，故 metadata 及检索结论为 unknown/blocked，不宣称不存在公开证明。详见 public-search-review.json、fetch-results.json。"
+    }
+  }
+}

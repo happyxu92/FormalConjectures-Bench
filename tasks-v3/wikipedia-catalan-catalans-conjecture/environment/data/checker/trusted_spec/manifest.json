@@ -1,0 +1,38 @@
+{
+  "task_id": "wikipedia-catalan-catalans-conjecture",
+  "target_name": "Catalan.catalans_conjecture",
+  "universe_params": [],
+  "complete_binder_count": 9,
+  "binder_order": [
+    "a",
+    "b",
+    "x",
+    "y",
+    "ha",
+    "hb",
+    "hx",
+    "hy",
+    "heq"
+  ],
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "1244fdf9f66a022dc32826f2ce2735fec8ac053ad8ba28a25698f3ec693e5b0c",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "0ec238c549fb9cc43a1a3d44203ff84f0d3d1836d8e1a8551b221efb6b878792",
+    "FCBTrustedSpec.ilean": "2154c94f024108cd3c5f498029e3e1f96ffa3b1d644b949052f98d21939c392c",
+    "FCBTrustedSpec.lean": "05a4f003f2354fcdd6e7a0eae3c8e81b298bedfdceed400bc48edff06a39fdf9",
+    "FCBTrustedSpec.olean": "f342772bd2feb53190c04abc9f87264eecc8fade8b3c9f1de533536319035d01",
+    "generate.py": "bde106358fd144aaeb239843a2b59f63305f6db8bf8bbc924c048c38cfe27302",
+    "reproduce.sh": "53bc1cf47bb4f106dec44887bec8c1e6a6cad22c004f78d252e7cdd1781f4a98"
+  }
+}

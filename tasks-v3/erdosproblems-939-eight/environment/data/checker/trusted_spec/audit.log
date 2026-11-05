@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos939.Erdos939Sums: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0 (original elaborated expression)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+(Erdos939.Erdos939Sums 8).Nonempty
+def Erdos939.Erdos939Sums : ℕ → Set (Finset ℕ) :=
+fun r => {S | S.card = r - 2 ∧ S.Coprime ∧ r.Full (∑ s ∈ S, s) ∧ ∀ s ∈ S, r.Full s}
+'Erdos939.Erdos939Sums' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

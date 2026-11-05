@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-27-lower-be23",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 和 .lake/packages；在 Harbor 子容器中以 ubuntu 搜到 package 中 add_comm，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import。Dockerfile 末尾新增 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target；Harbor 本地构建及同子容器 ubuntu 构建成功。未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本，case=no_issue；原始头通过，改头与移除 := 均拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离 Submission 提取完整类型及 universe=[]，预编译并审计 ExpectedType 和前缀定义，仅依赖标准公理。两份 checker 内容/AST、Spec 包及全部 immutable 哈希一致；运行时固定加载已校验产物并比较完整类型，不重新解析预期命题。最终本地 Harbor 镜像 d4ddba962f88 构建成功，/tests 上传包、/opt 包及 golden 均与本地哈希一致。正式/本地入口退出 1、reward=0，仅因原题 sorry；同一子容器两份包及 root 降权各 29 项补测通过，覆盖可信审计、ubuntu 编译、完整类型、目标公理、canary、冻结/越界/名称语义偷换/缓存遮蔽/产物缺失及篡改拒绝；不是原题证明通过。已停止并删除本题容器 38f6fc17d7c6、56cb4f9220c1、104f2e1de383，删除镜像 ad370d12dafd、d4ddba962f88 及两条本题网络，核实无遗留；保留预先存在的共享依赖缓存。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-27-lower-be23/attempt-001（delivery.json、validation-coverage.json、immutable-final.json、cleanup.json 等）。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核对 Green Problem 27 和 Bedert arXiv:2303.15134 Theorem 3；无唯一表示按无序对定义，实数 sInf 沿充分大素数等于非空有限集合的最小基数，目标是已知下界的合理 eventual 版本。未修改任何数学输入。详见证据 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID 精确命中技能 CSV，已标 public_lean4_proof=true；无需重新联网确认，未在本题编译公开证明。来源：https://github.com/xinjiegit/ben_27_formalization/blob/f70352964007662e97a810c880abbfea1e2ea262/Solution.lean。"
+    }
+  }
+}

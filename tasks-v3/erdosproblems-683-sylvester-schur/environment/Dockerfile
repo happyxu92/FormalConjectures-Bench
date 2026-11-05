@@ -26,7 +26,7 @@ RUN git clone https://github.com/google-deepmind/formal-conjectures.git /opt/for
     git -C /opt/formal-conjectures checkout "${FORMAL_CONJECTURES_COMMIT}" && \
     cd /opt/formal-conjectures && \
     lake exe cache get && \
-    lake build FormalConjectures.Util.ProblemImports && \
+    lake build FormalConjectures.Util.ProblemImports FormalConjectures.ErdosProblems.«961» && \
     find /opt/formal-conjectures -type d -name .git -prune -exec rm -rf {} + && \
     rm -rf /root/.cache /tmp/*
 
@@ -38,9 +38,13 @@ RUN apt-get update && apt-get install -y \
     tmux \
   && rm -rf /var/lib/apt/lists/*
 
-# Keep the dependency available for compiled support modules, but do not expose
-# Formal Conjectures problem source files to agents.
-RUN find /opt/formal-conjectures/FormalConjectures -maxdepth 1 -type d -name '*Problems' -prune -exec rm -rf {} +
+# Lake requires the source of the explicitly imported support module too.
+# Retain only 961; the target problem and other problem sources stay removed.
+RUN cp -p /opt/formal-conjectures/FormalConjectures/ErdosProblems/961.lean /tmp/fcb-961.lean \
+  && find /opt/formal-conjectures/FormalConjectures -maxdepth 1 -type d -name '*Problems' -prune -exec rm -rf {} + \
+  && mkdir -p /opt/formal-conjectures/FormalConjectures/ErdosProblems \
+  && cp -p /tmp/fcb-961.lean /opt/formal-conjectures/FormalConjectures/ErdosProblems/961.lean \
+  && rm /tmp/fcb-961.lean
 RUN chmod go-w \
     /opt/formal-conjectures \
     /opt/formal-conjectures/.lake \
@@ -73,3 +77,6 @@ RUN mkdir -p /opt/formal-conjectures-bench-checker \
 WORKDIR /app
 ENV HOME=/home/ubuntu
 USER ubuntu
+
+# Exercise the checker build as the real user against read-only dependencies.
+RUN lake build +FormalConjecturesBench.Target

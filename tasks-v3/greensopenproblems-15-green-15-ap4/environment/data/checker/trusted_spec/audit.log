@@ -1,0 +1,6 @@
+complete outer binder count: 0; full existential proposition retained
+audited ExpectedType transitive axioms: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ K f, LipschitzWith K f ∧ {x | ∃ n, (↑n, f n) = x}.IsAPOfLengthFree 4
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

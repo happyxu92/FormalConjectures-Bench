@@ -1,0 +1,14 @@
+FCBTrustedSpec.lean:66:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+complete outer binder count: 0 (original elaborated expression)
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited GaussCircleProblem.N: [propext, Quot.sound, Classical.choice]
+audited GaussCircleProblem.E: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+¬GaussCircleProblem.E =o[Filter.atTop] fun r => √r * √√(Real.log r)
+@[reducible] def GaussCircleProblem.N : ℝ → ℕ :=
+fun r => {(m, n) | !₂[↑m, ↑n] ∈ Metric.closedBall 0 r}.ncard
+@[reducible] def GaussCircleProblem.E : ℝ → ℝ :=
+fun r => ↑(GaussCircleProblem.N r) - Real.pi * r ^ 2
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,32 @@
+FCBTrustedSpec.lean:52:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:62:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:71:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos786.Set.IsMulCardSet: [propext, Quot.sound]
+audited Erdos786.consecutivePrimesFrom: [propext, Quot.sound, Classical.choice]
+complete parameter ε (Lean.BinderInfo.default): ℝ
+complete parameter hε (Lean.BinderInfo.default): 0 < ε ∧ ε < 1 / Real.exp 1
+complete body: ∀ᶠ (p : ℕ) in Filter.atTop,
+  Nat.Prime p →
+    ∃ k,
+      ∑ q ∈ Erdos786.consecutivePrimesFrom p k, 1 / ↑q < 1 ∧
+        1 < ∑ q ∈ Erdos786.consecutivePrimesFrom p (k + 1), 1 / ↑q ∧
+          {n | ∑ q ∈ Erdos786.consecutivePrimesFrom p k, n.factorization q = 1}.HasDensity (1 / Real.exp 1 - ε) ∧
+            Erdos786.Set.IsMulCardSet {n | ∑ q ∈ Erdos786.consecutivePrimesFrom p k, n.factorization q = 1}
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (ε : ℝ),
+  0 < ε ∧ ε < 1 / Real.exp 1 →
+    ∀ᶠ (p : ℕ) in Filter.atTop,
+      Nat.Prime p →
+        ∃ k,
+          ∑ q ∈ Erdos786.consecutivePrimesFrom p k, 1 / ↑q < 1 ∧
+            1 < ∑ q ∈ Erdos786.consecutivePrimesFrom p (k + 1), 1 / ↑q ∧
+              {n | ∑ q ∈ Erdos786.consecutivePrimesFrom p k, n.factorization q = 1}.HasDensity (1 / Real.exp 1 - ε) ∧
+                Erdos786.Set.IsMulCardSet {n | ∑ q ∈ Erdos786.consecutivePrimesFrom p k, n.factorization q = 1}
+def Erdos786.Set.IsMulCardSet.{u_1} : {α : Type u_1} → [CommMonoid α] → Set α → Prop :=
+fun {α} [CommMonoid α] A => ∀ (a b : Finset α), ↑a ⊆ A → ↑b ⊆ A → a.prod id = b.prod id → a.card = b.card
+def Erdos786.consecutivePrimesFrom : ℕ → ℕ → Finset ℕ :=
+fun p k => Finset.image (Nat.nth fun q => Nat.Prime q ∧ p ≤ q) (Finset.range (k + 1))
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

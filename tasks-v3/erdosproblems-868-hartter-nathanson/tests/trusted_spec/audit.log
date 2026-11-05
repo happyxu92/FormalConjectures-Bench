@@ -1,0 +1,15 @@
+FCBTrustedSpec.lean:47:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:61:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:70:8: warning: declaration uses 'sorry'
+extracted universe parameters: []
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited ExpectedType and all referenced prefix dependencies: [propext, Classical.choice, Quot.sound]
+complete outer binder count: 2
+universe parameters (in order): []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (o : ℕ),
+  1 < o →
+    ∃ A,
+      A.IsAsymptoticAddBasisOfOrder o ∧
+        ∀ B ⊆ A, B.IsAsymptoticAddBasisOfOrder o → ∃ b ∈ B, (B \ {b}).IsAsymptoticAddBasisOfOrder o
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

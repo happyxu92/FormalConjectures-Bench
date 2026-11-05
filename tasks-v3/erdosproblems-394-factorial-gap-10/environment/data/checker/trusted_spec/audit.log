@@ -1,0 +1,14 @@
+FCBTrustedSpec.lean:46:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:56:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:70:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:79:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:89:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:99:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [Classical.choice, propext, Quot.sound]
+audited Erdos394.t: [Classical.choice, propext, Quot.sound]
+complete binder count: 3
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (k : ℕ), 2 ≤ k → k < 10 → Erdos394.t k (Nat.factorial 10) < Erdos394.t (k - 1) (Nat.factorial 10) - 1
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

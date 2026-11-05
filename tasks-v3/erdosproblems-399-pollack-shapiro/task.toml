@@ -19,7 +19,12 @@ benchmark_bucket = "informal_proof"
 oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
-verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
+verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary. It loads a repair-time precompiled trusted Spec and compares the full theorem type."
+statement_status = "consistent"
+statement_note = "Pollack-Shapiro's no-solution result n! = x^4 - 1, corroborated by Koymans (2017), introduction and reference [5]. This task asks that narrower known result, not all of Erdos 399. Nat includes zero: 0!+1=2 and x=0 cannot be solutions. No mathematical statement or definition was changed."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "No exact task-ID CSV match. Searches covered the full target, equivalent factorial/fourth-power descriptions, upstream main and PRs 2660/3182, Mathlib, Jayyhk/erdos-lean and williamjblair/lean-proofs. Read Lean sources: upstream/PR target proofs retain sorry; other repositories prove the counterexample or Cambie variant, not this target. Official erdosproblems.com proof/discussion pages and parts of GitHub API were blocked, so existence remains unknown; see repair evidence public-proof-review.json."
 
 [verifier]
 timeout_sec = 7200.0

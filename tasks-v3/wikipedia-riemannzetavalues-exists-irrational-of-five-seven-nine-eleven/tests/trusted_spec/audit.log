@@ -1,0 +1,6 @@
+audited ExpectedType and transitive dependencies: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+({5, 7, 9, 11} ∩ {a | ∃ x, Irrational x ∧ riemannZeta a = ↑x}).Nonempty
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

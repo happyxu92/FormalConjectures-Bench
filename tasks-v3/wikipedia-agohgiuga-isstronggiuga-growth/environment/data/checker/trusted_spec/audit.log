@@ -1,0 +1,23 @@
+FCBTrustedSpec.lean:63:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:68:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:73:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:99:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:110:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:188:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:196:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:205:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:214:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:223:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:234:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+transitively audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+transitively audited AgohGiuga.IsStrongGiuga: [propext, Quot.sound, Classical.choice]
+complete outer binders: 2; ordered universes: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (G : ℕ → ℕ),
+  (G = fun x => (Finset.filter AgohGiuga.IsStrongGiuga (Finset.Icc 1 x)).card) →
+    ∃ N O, ∀ n ≥ N, ↑(G n) ≤ O * √↑n * Real.log ↑n
+def AgohGiuga.IsStrongGiuga : ℕ → Prop :=
+fun n => n.Composite ∧ n ∣ 1 + ∑ i ∈ Finset.Ioo 0 n, i ^ (n - 1)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AgohGiuga.IsStrongGiuga' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-413-hasposdensity-barrier-expprod",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "保留此前修复：搜索命令显式包含 /app、/opt/formal-conjectures 和 .lake/packages；本轮在当前 Harbor 子容器以 ubuntu 实际搜到 package 定义，见 instruction-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；保留此前补齐的 Dockerfile 最终 USER ubuntu / RUN lake build +FormalConjecturesBench.Target。当前本地 Harbor force_build 成功（匹配缓存层），同一子容器 ubuntu 实际构建退出 0；没有放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "本轮实际运行技能 Unicode 脚本：exit 0、case=no_issue；两份 checker 原头通过，改头及移除 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "保留并完成此前未验收的本题 checker/Spec。可信 golden 隔离候选提取完整类型，0 外层参数、universes=[]；在本轮匹配 Harbor 子容器独立重生成，源码及 olean/ilean 与交付包字节一致。ExpectedType、IsBarrier、expProd 传递公理仅含允许的三项；前缀 parts.i 虽含 sorryAx，但并非其依赖，无需改数学输入或替换证明。当前本地 Harbor 构建、/tests 正式入口及 /opt 本地入口已实际运行：两者 exit 1/reward 0，原因仅为原目标 sorry 的预期源码拒绝。随后在同一子容器调用两份实际 checker，各 30 项补测通过：Spec 加载/可信审计、uid1000 编译、完整类型比较、目标 sorryAx 拒绝、canary、冻结/越界/语义实例偷换/缓存遮蔽/缺失及篡改负例；语义偷换候选具有真实无 sorry 证明且通过公理审计，但被完整类型比较拒绝。两份 checker 内容/AST、Spec 包、Harbor 上传 /tests 与本地、容器 /opt 与本地全部哈希一致；所有 immutable 保持不变。未增加普通外部模块白名单或 initializer 沙箱。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/retry-seven-20261105/tasks/erdosproblems-413-hasposdensity-barrier-expprod/attempt-001/{commands-and-results.md,delivery-audit.json,reproduction.log,validate.log,validate-local.log}。已 stop/rm 本题 retry7-413b 子容器 366357c6d953、移除本题镜像 49df0951610a 及自建网络，并核实均不存在；无遗留本轮资源，未删除既有共享缓存，见 cleanup.json。此验收不表示原题证明通过。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata statement_status=consistent。已读完整前缀、HasPosDensity 定义及 Erdős《Some unconventional problems in number theory》(1979) Theorem 1 p.71、证明 pp.79–80 和 p.80 密度存在性说明（https://www.renyi.hu/~p_erdos/1979-23.pdf）；本题为 expProd barrier 正自然密度已知变体，不是开放的 omega 原问题。空积端点不造成渐近问题，未发现明显错误；数学陈述/定义均未修改。研究记录见本轮 research-findings.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata public_lean4_proof=false、status=searched，表示充分检索后未找到已知完整公开证明，不断言绝对不存在。技能 CSV 完整 ID 无命中；已覆盖多组新旧定理名/题号/数学关键词、上游当前源码及历史 PR、作者库、Mathlib、题目页和完整论坛。直接 urllib 成功取得此前被 Cloudflare 拦截的关键页面。实际读取 PR2662/3184 的固定提交 Lean 源码：只是 category 标签自引用，目标仍为 sorry，不能算证明；PR4760 仅释义，PR6850/issue6591 为不同变体。其余具体线索均排除；次要 constellate 审计镜像 DNS 不通，但非未核实证明线索。详细查询、来源、排除理由和访问限制已保存于本轮 research-findings.json、sources/。"
+    }
+  }
+}

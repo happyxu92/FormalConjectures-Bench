@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos946.erdos946Count: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0 (original elaborated expression)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Erdos946.erdos946Count =O[Filter.atTop] fun x => x / √(Real.log (Real.log x))
+def Erdos946.erdos946Count : ℝ → ℝ :=
+fun x => ↑{n ∈ Finset.range (⌊x⌋₊ + 1) | (ArithmeticFunction.sigma 0) n = (ArithmeticFunction.sigma 0) (n + 1)}.card
+'Erdos946.erdos946Count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

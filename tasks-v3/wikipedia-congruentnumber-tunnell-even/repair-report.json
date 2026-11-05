@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-congruentnumber-tunnell-even",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式添加 /opt/formal-conjectures/.lake/packages；最终 Harbor 子容器执行文档搜索命令找到 Mathlib/Data/Set/Card.lean 的 ncard，exit 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import。原 Dockerfile 缺少末尾普通用户验证；现以 USER ubuntu 执行 RUN lake build +FormalConjecturesBench.Target。当前本地 task 两次 Harbor force_build 成功，最终容器 ubuntu 实际构建 exit 0，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能运行 Unicode 脚本并最终复验，均为 no_issue；原头通过，修改头和移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden 隔离候选提取完整类型及有序 universes（4 个参数、无 universe），匹配 Docker/Lean 4.27.0 编译并独立审计 ExpectedType、congruentNumber、C、D，无 sorryAx 依赖。两份可信包、checker 内容和 AST 相同；固定预编译 Spec 来源并比较完整目标类型，不运行时生成或解析命题。最终当前本地 Harbor 镜像 sha256:1137ea8e86491fe7f6dc31b685e2e25c31b4fb2a7cae291e784fcb10ae02657e；/tests 上传及 /opt 包均与本地哈希相符。两入口 exit 1/reward 0 为原题 sorry 的预期拒绝；同一最终子容器两套实际函数补测覆盖 Spec 审计、ubuntu 编译、完整类型、公理、canary、冻结/越界/Even 语义偷换/缓存遮蔽/缺失和篡改负例，全部通过，不代表完成原题证明。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-congruentnumber-tunnell-even/attempt-001（validation-summary.json 等）。Docker 已清理并核实：本题 3 个容器 d17fb990cf19/12880b61ebcd/22765ef0755b、2 个镜像 297adf2309d3/1137ea8e8649、2 个独占网络均不存在；预先存在的共享预编译基础镜像保留。见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。已核对完整前缀及 pinned 上游。Conrad congnumber.pdf p.12 Theorem 4.11 的 h=2k，经交换前两坐标并乘 2 即本题 D=2C；Squarefree 排除零，正面积可将有符号有理边取绝对值；C、D 正定保证有限。未发现明显数学错误，未修改陈述或定义。见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "marked",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。已多组检索并读取源码：上游和 PR #3131/#2607 的目标仍为 sorry；BSDParidad 只证明计数为偶数；Palomar 仅在假设 balance 下构造映射；ProveTogether 接受的是奇数逆向命题的 Prop 形式化而非证明。GitHub 全局代码搜索 API 401，网页要求登录，故 metadata 和本报告保留 unknown/blocked，不能断言不存在公开证明。见 public-proof-review.json 与源文件/请求日志。"
+    }
+  }
+}

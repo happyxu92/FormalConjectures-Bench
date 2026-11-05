@@ -1,0 +1,8 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos50.IsDistributionOfPhiRatio: [propext, Quot.sound, Classical.choice]
+audited Erdos50.IsPurelySingular: [propext, Quot.sound, Classical.choice]
+complete binder count: 2; f : Real → Real; hf : IsDistributionOfPhiRatio f
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (f : ℝ → ℝ), Erdos50.IsDistributionOfPhiRatio f → Erdos50.IsPurelySingular f
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

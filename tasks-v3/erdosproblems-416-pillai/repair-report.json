@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-416-pillai",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式加入 /opt/formal-conjectures/.lake/packages；实际 rg 找到 package 内 Nat.totient 定义，退出码0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import，保留 ProblemImports 预编译；补齐 Dockerfile 最终 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 Harbor 最终镜像构建及同容器 ubuntu 构建成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际执行技能 Unicode 脚本并最终复验：no_issue；原头通过，修改头及缺失赋值被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden 隔离候选提取完整类型，匹配 Lean4 v4.27.0 Docker 预编译；ExpectedType 与 V 传递公理审计通过，无外层 binder/universe。两可信包及 checker AST/内容一致，固定产物来源与完整类型比较，保留原冻结/源码/公理/canary规则。最终本地 Harbor 镜像 sha256:17f8f59f975a32207c4f12e56c98274e23c490fe250e66b318fc3b54bbb0c407；核对 Harbor 上传 /tests、/opt 包及 golden 哈希。正式与本地入口均因原题 sorry 退出1、reward0；同一最终子容器两入口各28项实际函数补测通过，覆盖可信审计、ubuntu编译、完整类型、目标sorryAx/canary，以及冻结/越界/语义atTop偷换/缓存遮蔽/产物缺失篡改拒绝且不再生成。全部 immutable 哈希保持不变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-416-pillai/attempt-001/。Docker清理已核实：本题3个容器（47a4653b544e、42f62e9e27bb、fbda9e1b0fc7）、2个任务镜像（817fa8b27b26、17f8f59f975a）及2个独占网络均已移除；共享预存依赖镜像保留，无遗留本次资源。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent；核对完整 V 定义、Nat.floor、正整数区间、totient(0)=0及实数atTop。Ford作者论文 The distribution of totients pp.1–2 的 Pillai 上界 V(x)≪x/(log x)^((log 2)/e) 蕴含本目标；未发现明显错误。原题页与Pillai原论文403，以可读作者论文及锁定上游交叉核对。未修改数学定义、Target或golden。详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "标记 public_lean4_proof=unknown、status=blocked。完整ID精确匹配技能CSV未命中；多组检索上游/Mathlib/GitHub与相关公开证明，实际读取源码。上游Pillai仍sorry；已追踪OpenAI渐近公式777模块线索及Conjectures.io倍增结论64,775行解答，但未确认覆盖本题的完整桥接及传递依赖，5个源码请求SSL失败，GitHub代码搜索需登录。不能断言不存在公开证明。详见 public-proof-review.json、fetch-results.json。"
+    }
+  }
+}

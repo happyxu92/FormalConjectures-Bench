@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-888-sarkozy",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 .lake/packages；在最终 Harbor 容器以 ubuntu 搜到 Mathlib/Data/Nat/Find.lean 的 findGreatest，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题没有额外上游 import；补上 Dockerfile 最后的 USER ubuntu / RUN lake build +FormalConjecturesBench.Target。当前本地 task 的 Harbor 构建及容器内同命令均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本并最终复验，均为 no_issue；原头接受、变更头和移除 := 拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离 Submission，在匹配 Lean 4.27.0 Docker 环境提前提取完整类型（0 个外层 binder，universes=[]），预编译并独立审计 ExpectedType、RequiredCondition、p，仅依赖允许公理；临时目标及子声明未导出。两份可信包一致，固定清单和产物哈希，禁止运行时生成或回退，完整类型检查替代旧 GoldenCheck 路径；保留原源码限制、冻结检查、公理审计和 canary。最终本地 Harbor 镜像 e1d464569a924dfe63a150ecf1ddf98669d5650716df46dce87983498e6e80ac；/tests 上传包及 /opt 包与本地哈希一致。两入口均因原题 sorry 预期退出 1、reward=0；同一最终子容器两套实际函数各完成 30 项补测，包括 Spec 审计、ubuntu 编译、完整类型、公理拒绝、canary、冻结/越界、无需 sorry 的 Nat.findGreatest 语义偷换拒绝、缓存遮蔽及产物缺失/篡改拒绝。未提供或声称原题证明通过。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-888-sarkozy/attempt-001。Docker 清理已核实完成：本题新建的 3 个容器（8d8529a8d5dd、2b76fdf44aa2、0ffc9d732dca）、2 个镜像（57e268353e0b、e1d464569a92）及 2 个网络均已移除；预存共享依赖缓存保留。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已核对锁定上游 888.lean、完整 RequiredCondition/p 和 https://www.ulam.ai/research/erdos888.pdf 第 1 节。目标是 Sárközy 已知 F(n)=o(n) 变体；区间、非严格排序、平方乘积、ad=bc 及有界最大值一致，未发现明显数学错误，标记 consistent，不改陈述。题目网站直接访问 403；可访问的论文及锁定上游足以核对该变体，详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "技能 CSV 按完整 task ID 精确命中，已标记 public_lean4_proof=true。来源：https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos888.lean#L47。依要求未重新联网核查或在本题环境编译公开答案，也未将答案打入镜像。"
+    }
+  }
+}

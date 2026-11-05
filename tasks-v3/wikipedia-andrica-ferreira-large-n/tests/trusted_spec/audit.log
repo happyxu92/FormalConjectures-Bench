@@ -1,0 +1,17 @@
+audited entire ExpectedType value and referenced prefix definitions: [propext, Quot.sound, Classical.choice]
+universe parameters in order: []
+complete outer binder count: 0; n : Nat is bound inside Filter.Eventually
+def FCBTrustedSpec.ExpectedType : Prop :=
+@Filter.Eventually.{0} Nat
+  (fun (n : Nat) =>
+    @LT.lt.{0} Real Real.instLT
+      (@HSub.hSub.{0, 0, 0} Real Real Real (@instHSub.{0} Real Real.instSub)
+        (Real.sqrt
+          (@Nat.cast.{0} Real Real.instNatCast
+            (Nat.nth Nat.Prime
+              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) n
+                (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))))
+        (Real.sqrt (@Nat.cast.{0} Real Real.instNatCast (Nat.nth Nat.Prime n))))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+  (@Filter.atTop.{0} Nat Nat.instPreorder)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

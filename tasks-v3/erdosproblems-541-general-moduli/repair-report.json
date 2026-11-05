@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-541-general-moduli",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 显式补齐 .lake/packages；最终 Harbor 容器内以 ubuntu 按三个路径搜索，命中 Mathlib/Data/Set/Card.lean:570 的 ncard 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 仅有两个标准 imports，无额外上游依赖。原 Dockerfile 缺少最终普通用户验证，现以 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target 结尾；最终本地 Harbor 构建和容器内 ubuntu 重验均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本及最终复验，均为 no_issue；原始头、冻结前缀和 := 边界通过，修改头及删除赋值负例被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题 immutable golden 隔离候选，使用匹配 Lean 4.27.0 Docker 提取并预编译 ExpectedType；完整参数 p/a/ha₀，universes=[]，独立导入审计仅含标准公理。Spec 不导出临时目标或无关素数版 sorry 定理，本题无数学前缀定义。两份可信包、checker 内容/AST 一致，全部 15 项 immutable 哈希未变。checker 固定可信产物/依赖来源，运行时不生成、不重解析预期命题；保留原源码、冻结、公理与 canary 检查及普通 import 规则。最终本地 Harbor trial g61-541b9 构建成功，镜像 sha256:1d54832a8e4019719f68473450a84426ac2892c516231d9d859f94ca48deca51；核对 Harbor /tests 上传包与本地 /opt 安装包、golden 和 /app 哈希。正式与本地入口均因原题 sorry 预期退出 1、reward=0，非证明通过；同一子容器两套各 30 项补测通过：实际 Spec 加载/审计、ubuntu 编译、完整类型比较、目标 sorryAx 拒绝、canary、冻结/越界负例、无违规公理但偷换 Set.range 的候选类型拒绝、同名模块/缓存/环境遮蔽、缺失及篡改产物闭锁且不回退生成。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-541-general-moduli/attempt-001（commands.md、generation.log、validation-summary.json、delivery-hashes.json、static-validation.json、Harbor 两次 trial 及日志）。Docker 清理完成并核实：本次 3 个容器（spec-g61-541a9、Harbor g61-541a9/541b9）、2 个自建镜像及 2 个自建网络均已删除；镜像 ID b7aea44e14e4…、1d54832a8e40… 已不存在。预存共享缓存和其他 agent 资源保留，见 cleanup.json/log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。核对锁定上游全文及 Gao–Hamidoune–Wang 原论文 Theorem 1.1（第 2 页）：本目标为其所有正模数结论的逆否形式；额外 p=0 时 Fin 0 和 range 为空。索引子集准确表示允许重复值的子序列，有限 range 的 ncard 无无限集回退问题。数学陈述、定义、公开 Target、golden、GoldenCheck 及冻结基线均未修改。证据 research-audit.json、gao2010.pdf/txt。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 task ID 精确匹配技能 CSV 未命中。经多组关键词及原题/论坛、上游当前与锁定源码、GitHub PR/分支、Mathlib、Alexeev/plby 和 Jayyhk 仓库等检索，未找到覆盖本题全部模数目标的已知完整 Lean4 证明（metadata: public_lean4_proof=false，status=searched，并非断言不存在）。实际读取 v4.24.0、latest 及 Jayyhk Lean 源码，均要求 Fact p.Prime；PR 2682/3204 仅改状态属性且保留 sorry，排除。Web Cloudflare 已通过直接抓取原题和论坛克服；一次递归树 API 限流由可访问的源码列表和已知证明路径补查，无待核实的有效全部模数证明线索。详见 research-audit.json 和 source-*-results.json；未把任何公开答案放入任务。"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos454.f: [Classical.choice, propext, Quot.sound]
+complete outer binder count: 0 (original elaborated expression)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+2 ≤ Filter.limsup (fun n => ↑(Erdos454.f n) - 2 * ↑(Nat.nth Prime n)) Filter.atTop
+def Erdos454.f : ℕ → ℕ :=
+fun n => if n ≤ 1 then 0 else ⨅ i, Nat.nth Prime (n + ↑↑i) + Nat.nth Prime (n - ↑↑i)
+'Erdos454.f' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

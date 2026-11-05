@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-373-of-lower-bound",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；在最终 Harbor 容器以 ubuntu 实际搜到 Mathlib 的 factorial_pos，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 只有两个标准 imports，无需额外预编译模块。Dockerfile 已以 USER ubuntu 的 RUN lake build +FormalConjecturesBench.Target 结尾；当前本地 task 的两次 Harbor 构建及最终容器 ubuntu 构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本及最终复验，均为 no_issue；原始头通过，改头和删除赋值边界被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题不可变 golden 隔离候选提取并编译 ExpectedType，保留完整 H 假设及 S.Finite 结论，universes=[]；ExpectedType 与 S 传递公理审计通过，临时目标未导出。两份 checker AST/内容、Spec 包及全部 immutable 哈希一致。最终本地 Harbor 镜像 sha256:5500d59a9489ef7abc866c5429412ddc3568e02048fae05905a759eb9e4c8a92，/tests 上传包和 /opt 本地包逐文件匹配；两入口实际因原题 sorry 预期退出 1，reward=0，不代表原题证明完成。同一最终容器对两份 checker 的实际函数补测均通过：固定 Spec 加载/审计、ubuntu(uid 1000)编译、完整类型比较、目标公理与 sorry canary、冻结/越界、保持冻结文字的 S.Finite 名称偷换、模块/缓存/环境遮蔽、产物缺失与篡改拒绝且无运行时生成。保留原安全及正常 import 规则；未扩展为通用 initializer 沙箱。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-373-of-lower-bound/attempt-001，重点见 final-validation、final-validation-summary.json、static-validation.json。Docker 清理已核实：容器 66cd81b0f466、f6cbc1948c8d、9efa91c07e81，镜像 d1d6cd608eb1、5500d59a9489 及两个本题专属网络均已删除；预存共享依赖镜像和缓存保留。首次清理工具超时后已后台续跑完成，见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已标 statement_status=consistent。原论文 https://users.renyi.hu/~p_erdos/1976-39.pdf 的定理 2（PDF 第4页，证明第16页）给出相同的 eventual 4 log n 条件；S 的排序、非平凡限制及所有因子指标>1确保有界 n 仅有有限列表。此为条件变体，不是无条件开放原题。未改陈述、定义、Target、golden、GoldenCheck 或冻结基线；见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。已多组检索题号、完整定理名、数学条件、作者与 GitHub/Mathlib，并读取上游及 PR 2746/2755/3267/3276 的实际 Lean 源码；所谓 solved PR 均仍含 sorry，Prove Together 仅为陈述定义。未核实到公开完整证明；GitHub 全局代码搜索和 PR API/评论限流403，原题网站403，故仅标 unknown/blocked，不能断言不存在。检索词、排除依据及访问限制见 public-proof-review.json。"
+    }
+  }
+}

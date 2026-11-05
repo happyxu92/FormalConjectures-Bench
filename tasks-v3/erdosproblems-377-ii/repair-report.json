@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-377-ii",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md now explicitly lists /app, /opt/formal-conjectures and .lake/packages. Final Harbor ubuntu rg found Mathlib/Data/Nat/Choose/Central.lean:36, exit 0; instruction-search.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No additional upstream imports beyond ProblemImports; missing final ordinary-user build added. Dockerfile ends USER ubuntu + RUN lake build +FormalConjecturesBench.Target. Final local-task Harbor build and same-container ubuntu build succeeded; dependency permissions unchanged."
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Skill Unicode script repaired the surrogate-pair 𝓝 in both EXPECTED_HEADER literals, verified original header and rejected mutations/missing :=. Final script case no_issue; unicode.json and unicode-final.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Isolated extraction from this golden Target, Lean 4.27.0 x86_64 matching Docker dependencies: complete two-binder type, universes [], temporary target removed, referenced definition and ExpectedType transitively audited to standard axioms. Two identical pinned precompiled packages; no runtime elaboration/regeneration of expected proposition. Final Harbor local build erdosproblems-377-ii-g61-a001-377b-final; /tests upload and /opt hashes match local. Both original entries exit 1/reward 0 solely for sorry. Both same-container actual-function suites pass Spec audit, observed ubuntu UID 1000 compile, full type comparison, sorryAx rejection/canary, frozen/out-of-bounds/source checks, frozen-text Tendsto-name semantic substitution rejection, cache/module/env shadowing, missing/tampered artifact and manifest rejection without regeneration. Checker AST/content and all immutable hashes match. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-377-ii/attempt-001. Docker cleanup verified: all 3 task containers, both task image tags and image IDs, and own networks removed; pre-existing shared base/cache retained. See cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Consistent solved second-moment variant, not the open uniform-bound question. Checked full f(n) definition, prime/divisibility condition, Icc indices, reindexed gamma series, both parameters and square against EGRS75 Theorem 3 pp.87–88 and definition p.83/Theorem 2. No obvious mathematical defect; only statement_status=consistent marked. Mathematical inputs unchanged. See reviews.json and egrs1975-extracted.md."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Exact full-ID skill CSV miss. Extensive target/definition/second-moment/author searches and accessible upstream, Mathlib and GitHub leads found no verified matching proof. Upstream remains sorry; actual lyfar/egrs75-lean source proves different two-prime Theorem 1, not this Theorem 3. Erdős page/forum HTTP 403, GitHub API rate-limited and code search requires login: metadata unknown/blocked, not a claim of nonexistence. See public-csv-match.json, reviews.json and source-fetch-results.json."
+    }
+  }
+}

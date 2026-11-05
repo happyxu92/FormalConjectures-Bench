@@ -1,0 +1,35 @@
+{
+  "task_id": "oeis-34693-exists-k-best-possible",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md search explicitly includes /app, /opt/formal-conjectures and .lake/packages. Final Harbor ubuntu rg found Mathlib nthRootsFinset, exit 0; instruction-search-final.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream Target imports. Added Dockerfile final USER ubuntu RUN lake build +FormalConjecturesBench.Target; current local Harbor image build and explicit ubuntu build succeeded. No trusted dependency permissions relaxed."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Skill Unicode script executed: no_issue; original header, frozen prefix, assignment boundary and rejection checks passed; unicode.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Independently elaborated this task golden without Submission in matching Lean 4.27.0 Docker; complete ExpectedType has no universe/outer parameters. Fixed artifact manifest 4a30c7d25cf411ecb7541635ead0128f1bdf1ea4f22b9f219384241f61821254. Compiled audit rejects unapproved transitive axioms and confirms temporary target absent. Both trusted packages and checker bytes/AST match; all immutable hashes unchanged. Final current local-task Harbor trial oeis-34693-exists-k-best-possible-g61-a001-4693-delivery built successfully; /tests upload and /opt package hashes match local. Both entries reject original sorry (exit 1, reward 0), as expected. Same final child container direct actual-function tests through both package locations (actual official/local uid 1000, plus extra root-run privilege-drop coverage) covered Spec loading/audit, ubuntu uid 1000 build, normal helper imports, complete type comparison, placeholder sorryAx rejection, allowed-axiom semantic attack, sorry canary, frozen/header/config/tree violations, Real.nthRoot namespace substitution with unchanged frozen text, candidate module/cache/env shadowing, missing/tampered artifacts and manifest with no regeneration. No implementation failures or required untested branches remain. Original theorem proof not supplied. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/oeis-34693-exists-k-best-possible/attempt-001. Cleanup verified (cleanup.json): removed own Spec container and 3 Harbor containers, 3 images c6c4d3bf49cf/964881c3e3f4/04c6779406bd and their 3 networks. Pre-existing shared dependency image 0824de0f1647 retained; no owned resources remain."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked consistent; checked complete pinned upstream prefix/goal and Real.nthRoot definition. Exact witness n=19: 19^74<9^100 gives bound <10; 19*k+1 is 1 or composite for k=0..9 (math-review.json). OEIS direct access 403/Cloudflare recorded, but this independent mathematical verification is decisive. Statement and definitions unchanged."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true: exact complete-ID match in skill references/public-lean4-proofs.csv. Source https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/OEIS/34693.lean#L73 . CSV policy requires no further network verification. Public proof was not compiled or bundled; public-proof-review.json."
+    }
+  }
+}

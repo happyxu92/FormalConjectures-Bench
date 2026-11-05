@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-946-hildebrand-lower-bound",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含三个路径；在当前 Harbor 子容器以 ubuntu 实际找到 packages/mathlib 中 IsBigO 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import。补齐 Dockerfile 最后的 USER ubuntu / RUN lake build +FormalConjecturesBench.Target；当前本地 task 的 Harbor 构建成功，容器内同一构建退出码 0，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本及最终复验，均为 no_issue；两份头、冻结前缀及赋值边界通过，无需修改。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "由本题 immutable golden 隔离候选提取并预编译 ExpectedType；完整外层参数数为 0，universes=[]。独立审计 ExpectedType 和 erdos946Count 的传递公理仅含标准允许公理；原有前缀 sorry 不在其依赖中。两包逐字节同步、清单哈希固定，checker AST/内容相同，所有 immutable 哈希不变。当前本地 Harbor 镜像构建完成，上传 /tests 与 /opt 包均核对哈希。两入口退出 1、reward=0，原因仅为原题 sorry；同一子容器对两份实际 checker 函数各完成 30 项补测，包括 ubuntu 编译、完整类型比较、公理拒绝 sorryAx、canary、冻结/越界/实例语义偷换、同名模块及缓存遮蔽、缺失与篡改产物无回退。未增加通用外部模块白名单或 initializer 沙箱。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-946-hildebrand-lower-bound/attempt-001（generation.log、delivery-hashes.json、validation-summary.json、static-validation.json）。Docker 清理已核实完成：本题两个容器 649a01b6b4be、48d39c7648f3 已 stop/rm，本题 Harbor 镜像 sha256:4c647b476936 及本题网络已删除；预先存在的共享依赖镜像保留。完整资源标识及核验见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已核对 task.toml 指定版本、完整前缀及 Hildebrand (1987) 原论文 p.307 Theorem 1 (1.4)：x/(log log x)^3 下界一致。自然数 floor 截止的非负计数、实数强制转换及 atTop Big-O 方向正确；严格截止改为 ≤ 不影响本下界。题目网站 403，但原论文可读取。metadata 标 consistent，未修改任何数学输入。详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确查技能 CSV 未命中。多组定理名、题号、作者、等价计数表达及 Mathlib/GitHub 检索后，当前上游本目标仍 sorry；实际读取 plby Lean 源码仅证明无限性，不覆盖此定量界；PR 2551/3076 完整 diff 仅改标签且保留 sorry，不能算证明。GitHub 全局代码搜索 403 限流、作者网页超时，故 metadata 和本项诚实标 unknown/blocked，不能断言不存在。未打包或采用公开答案。详见 public-csv-match.json、public-proof-review.json、source-fetch-results.json。"
+    }
+  }
+}

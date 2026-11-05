@@ -4,32 +4,32 @@
     "instruction_search": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Added explicit /opt/formal-conjectures/.lake/packages to the rg command while retaining /app and /opt/formal-conjectures. Actual package definitions found; search-path.log and delivery.json record successful container searches."
+      "note": "Retained existing explicit /app, /opt/formal-conjectures and .lake/packages search paths. Actual instruction search as ubuntu in final Harbor child found Nat.Perfect in the package; exit 0 (instruction-search.log)."
     },
     "lean_dependency": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Only ProblemImports and local Submission imports; no extra upstream precompile required. Added final USER ubuntu RUN lake build +FormalConjecturesBench.Target. Current local Harbor image sha256:a5116e2623291ce3f523f1ce9c4f230bcc534c6d09df5fbdc7c441c93f785cd6 built successfully; image-history.txt and harbor.log record the validation."
+      "note": "Only ProblemImports and local Submission imports; no additional upstream module needed. Retained final USER ubuntu / RUN lake build +FormalConjecturesBench.Target. Current local task was force-built by Harbor after metadata update; final image sha256:305cfd25651ea55b3d8dc7afe5e5664c788b2dbf08adcf95c134c1a5373f2d90. Explicit ubuntu Target build also exits 0."
     },
     "unicode_header": {
       "has_issue": false,
       "repair_status": "not_needed",
-      "note": "Ran skill check_unicode_header.py before semantic changes and again at completion; both no_issue, original/mutated header and missing := boundary checked. See unicode.json and unicode-final.json."
+      "note": "Ran skill Unicode script at start and finish: no_issue; original/mutated headers, frozen prefixes and := boundaries validated. Checkers remain identical."
     },
     "semantic_checker": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Pre-extracted complete ExpectedType from original golden without candidate imports on pinned Lean 4.27.0 x86_64; definition/universe/transitive axiom audits passed (no sorryAx, temporary target absent). Synced and hash-pinned both checker/Spec packages; fixed Spec and dependency search precedence. Current local task Harbor build sha256:a5116e2623291ce3f523f1ce9c4f230bcc534c6d09df5fbdc7c441c93f785cd6 passed. Uploaded /tests and installed /opt checker/Spec/golden hashes match local. Actual official/local entries exit 1 on original sorry, reward 0 (expected, not a solved proof). Both actual checker function paths pass 29 cases each: trusted loading/audit, ubuntu compilation, complete type comparison, sorryAx rejection, canary, frozen/source restrictions, same-name module/cache/env precedence, corrupt/missing artifact rejection without regeneration. A source-legal frozen-text Odd-name shadow compiles but full checker rejects its changed type. AST/content/packages and original 15 immutable hashes pass. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-perfectnumbers-lower-bound/attempt-002/{generation.log,package.log,delivery.json,coverage.json,static-validation.json,immutable-final.json}. Initial function probe raced Harbor stopping its preserved container; restarted that same child and complete retry passed. Docker cleanup: removed both task-owned containers 752ced5d4f71, ee7eac1bf122, task image sha256:a5116e2623291ce3f523f1ce9c4f230bcc534c6d09df5fbdc7c441c93f785cd6 and unique network wikipedia-perfectnumbers-lower-bound-a002-8f27c1__env_default. Shared baseline Spec generation image retained; no other resources or build cache touched. See cleanup.json."
+      "note": "Preserved verified implementation after independent regeneration from this task's immutable golden, without Submission/candidate inputs, on matching Lean 4.27.0 x86_64 Docker. Regenerated source/olean/ilean exactly match both pinned packages. Complete forall n, Odd n, Nat.Perfect n type, empty universe list, temporary-target absence and transitive allowed-axiom audit pass. Verifier only loads fixed hash-validated compiled Spec; no runtime extraction/fallback. Final current-local-task Harbor child 8ea417595742: uploaded /tests and installed /opt checker/Spec/golden hashes match local. Both real entries exit 1 on original sorry, reward 0 (expected proof rejection, not implementation failure). Each package's actual functions pass 30 supplemental cases: trusted audit, ubuntu compile, full type equality, sorryAx rejection/canary, frozen/out-of-tree restrictions, source-legal frozen-text Odd shadow rejection, Spec/dependency module/cache/env precedence, missing/corrupt artifacts without regeneration. Checker AST/content, packages and all 15 immutable hashes agree. No ordinary import whitelist or initializer sandbox added. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-perfectnumbers-lower-bound/attempt-001 (generation.log, harbor/, delivery-hashes.log, coverage.json, static-validation.json). Additional root-started 30-case supplement also passed, exercising ubuntu privilege drop. Cleanup verified: containers 6a6ea9805dc9/1e0c7a217c95/8ea417595742, task images 5d9c9efaf138/305cfd25651e and both unique 91d4 networks removed. Baseline shared generation image 0824de0f1647 and shared build cache retained; no owned resources remain (cleanup.json)."
     },
     "statement_fidelity": {
       "has_issue": false,
       "repair_status": "not_needed",
-      "note": "Marked metadata statement_status=consistent. Checked full prefix and Nat.Perfect positivity, Odd and primeFactorsList multiplicities; pinned upstream and Ochem-Rao primary paper Theorems 1 and 2 match strict >10^1500 and >=101 factors. No obvious false statement found; no mathematical input changed. See statement-review.json and ochem-rao-paper.md."
+      "note": "Retained statement_status=consistent. Read pinned source and full prefix; pinned Nat.Perfect requires positivity and primeFactorsList counts multiplicities. Ochem-Rao primary paper https://www.lirmm.fr/~ochem/opn/opn.pdf Theorems 1 and 2 match strict >10^1500 and >=101 total prime factors. No obvious mathematical error; no mathematical input or frozen baseline changed. See statement-review.json."
     },
     "public_lean4_proof": {
       "has_issue": null,
       "repair_status": "not_repaired",
-      "note": "Exact full task ID absent from skill CSV. Multiple theorem/statement/author/repository searches and Lean source leads inspected: upstream/fork and PRs 2623/3147 still sorry; SublimeGap assumes the bound; other candidates prove different/weaker statements. No full proof verified. Key GitHub code/history/fork/tree APIs restricted, search API unavailable and Bing results unrelated: metadata public_lean4_proof=unknown, status=blocked. This is not evidence of nonexistence. Details and URLs: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-perfectnumbers-lower-bound/attempt-002/public-proof-review.json"
+      "note": "Exact full ID absent from skill CSV. Multi-query searches and actual Lean-source inspection covered upstream/history/linked Euler fork, PRs 2623/3147/3850, Mathlib, umpolungfish, AEjonanonymous and SublimeGap. None verified as a complete proof of both bounds: sorry, different theorems or additional assumed bounds. Current searches/history/tree APIs work, but GitHub code search returns 401 authentication required. Retained metadata unknown/blocked, not an assertion of nonexistence. Sources, queries and exclusion reasons: attempt-001/public-proof-review.json and source-fetches.json."
     }
   }
 }

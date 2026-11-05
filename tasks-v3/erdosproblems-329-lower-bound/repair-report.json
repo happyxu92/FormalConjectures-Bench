@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-329-lower-bound",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式补齐 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages；Harbor 子容器中以 ubuntu 搜到 package 的 def limsup，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 imports；保留 ProblemImports 预编译，并补 Dockerfile 最终 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的 Harbor Docker 构建成功，同一子容器 ubuntu 重建退出码 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "技能 Unicode 脚本修复前及最终均为 no_issue；原始头、两份 golden、冻结前缀和 := 边界核验通过，无需改头。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题不可变 golden 隔离候选，经 Lean elaborator 提取完整类型/universes（[]），预编译并独立审计 ExpectedType 及两项密度定义的传递公理；两份 Spec 包和 checker 内容/AST 一致。固定 /tests 或本地 /opt 可信包、清单哈希和工具链路径，不运行时生成或重新解析原命题。当前本地 Harbor 镜像 sha256:04de8000dbb64d13a56efb445b7ca2b7d2b30b1f96bf23725fb29166c3c4f7fe；核对上传 /tests、/opt 和 /app 共 40 个文件哈希。正式/本地入口均因原题 sorry 预期退出 1（reward 0）；同一子容器两组实际函数补测各 29 项通过，覆盖可信审计、ubuntu UID 1000 编译、完整类型比较、目标公理拒绝 sorryAx、canary、冻结/越界、合法名称+实例偷换的类型拒绝、缓存/同名模块遮蔽、产物缺失/篡改及无回退生成；原安全检查与普通 import/def/lemma/instance 规则保留。全部 immutable 哈希不变，未提供原题证明。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-329-lower-bound/attempt-001（generation/package、Harbor、validation-coverage、delivery-hashes、static-validation）。Docker 已清理并核实：停止/移除本题 spec-g61-a001-6f29 与 Harbor g61-a001-6f29 两容器，移除本题 env_default 网络及上述新建任务镜像；预先存在的共享基镜像保留。cleanup.json 全部检查为 true，无本题遗留资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata 标记 consistent。核对锁定上游 329.lean、IsSidon 定义及题目可读镜像：本题是已知存在 Sidon 集的 sqrt 归一化 limsup ≥ 1/2 下界，不是开放的最优密度问题；Icc 1 N、ncard、自然数到实数转换及 atTop 无明显数学错误。原站 403，镜像与上游一致；数学陈述、定义、golden、GoldenCheck 均未修改。详见 statement-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "metadata 标记 public_lean4_proof=unknown、status=blocked。完整 ID 精确匹配技能 CSV 未命中；执行 15 组题号/定理全名及旧别名/数学检索，核查当前上游、PR/作者仓库、Singer 与 Ortega 实际 Lean 源码等。PR #2578/#3102 的所谓 formally solved 仅改类别，仍为 sorry；有限 Sidon 构造不覆盖本题无限集 limsup。未验证到完整公开证明，但原题站点/论坛 403、GitHub 全局代码搜索需登录，不能宣称已确认不存在。详见 public-csv-match.json、public-proof-review.json、source-fetch-results.json 和 PR patches。"
+    }
+  }
+}

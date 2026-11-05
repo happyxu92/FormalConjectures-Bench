@@ -1,0 +1,40 @@
+{
+  "task_id": "wikipedia-andrica-ferreira-large-n",
+  "target_name": "Andrica.andrica_conjecture.ferreira_large_n",
+  "universe_params": [],
+  "platform": "x86_64",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "1f556400727e1fe9f6a6fa6d631538d79d7db337a00aff87f1b6df122aa254de",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "5c0553e615cb8980699dc70f202f1c099be822fab0b4ab6e5a68c764e62745a8",
+    "FCBTrustedSpec.ilean": "177005e18fd349597829ec9d9d853aeccbea80faae396e8f7f65f99ebd08aac6",
+    "FCBTrustedSpec.lean": "7dcb01248cb98926ee859070382a4c5b90e060ed890ea6a61fa1162fb90ccbd7",
+    "FCBTrustedSpec.olean": "1788989ba3484e24eda9f8865446b8837c607a1f71ba7948c5df94821c2f0a50",
+    "audit.log": "39b2374d26ce35034df8b95073b9a0be6b274e6dbd98366d2caf3107ab84ac9b",
+    "generate.py": "50b322ff9d1747145d7e72c31ebd020410a4843c82bd89b27830f1cab579636e",
+    "reproduce.sh": "68771b928392ba64a48ba2eca8d948981e36f62261ebb2e74a49e1d2bb03e59e"
+  },
+  "generation_image": "sha256:e21dc171550d4c49aceba963047d00d1a350ce711019cbd9cb32c4770c7a39df",
+  "generation_command": "docker exec -u root wikipedia-andrica-ferreira-large-n-spec-g61-a001-a7f3 bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Complete closed Filter.Eventually proposition; zero outer forall binders and universe parameters. n : Nat is preserved inside Eventually. ExpectedType and all referenced prefix definitions transitively use only propext, Classical.choice, Quot.sound. Temporary target and children absent. Original unrelated prefix theorem andrica_conjecture retains its original sorry, but is not referenced by ExpectedType."
+}

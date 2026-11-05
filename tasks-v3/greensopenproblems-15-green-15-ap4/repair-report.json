@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-15-green-15-ap4",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式包含 /app、/opt/formal-conjectures 及其 .lake/packages。最终 Harbor 子容器以 ubuntu 执行该搜索布局，找到 Mathlib/NumberTheory/Real/Irrational.lean 中的已知定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；保留 ProblemImports 预编译。原 Dockerfile 缺少普通用户构建验证，现以 USER ubuntu、RUN lake build +FormalConjecturesBench.Target 结尾；当前本地 task 的 Harbor Docker 构建及同容器 ubuntu 补测构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本并最终复验，case=no_issue。原头匹配、修改头及移除 := 拒绝，两份 checker 一致；未改头或冻结基线。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "旧 checker 在候选环境重解析 GoldenCheck，存在名称语义遮蔽。现从本题可信 golden 隔离候选，使用匹配 Linux x86_64 Lean 4.27.0 Docker 依赖生成并编译 ExpectedType；完整闭合存在命题、0 个外层 forall、无 universe 参数，临时目标不导出，传递依赖仅标准公理且不依赖冻结的另一条 sorry 定理。两份 Spec 包、checker 内容/AST、上传 /tests 与 /opt 包及 golden 哈希均核对一致；运行时固定路径及清单哈希加载，无重解析或缺失重建回退。最终本地 Harbor trial greensopenproblems-15-green-15-ap4-g61-a001-15a4-final，镜像 sha256:684cc2aef57393bf72163385a52afb67f310c3b817dc88fad158a4aeb505ea52。正式 /tests/test.sh 与 ubuntu /app/check.sh 因原题 sorry 预期退出 1、reward=0，不代表原题证明通过。同一子容器两套实际函数补测覆盖 Spec 加载/审计、uid1000 编译、完整类型匹配、sorryAx 拒绝、canary，以及冻结/头/赋值/配置/越界/符号链接/非 Lean 源码/禁用语法负例；保持冻结文本且源码合法的名称偷换候选可编译，但被完整类型检查及 main 拒绝；同名模块/缓存/环境遮蔽无效；缺失/篡改产物与清单明确拒绝且不重建。保留正常 import 与 def/lemma/instance 规则，未添加外部模块白名单或 initializer 沙箱。证据、命令、版本、哈希、日志与覆盖清单位于 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-15-green-15-ap4/attempt-001。Docker 已清理并核实：Spec 容器及两次 Harbor 容器共 3 个、两张本题镜像（adca1d03d78d、684cc2aef573）及两个本题网络均不存在；预先存在的生成依赖镜像 e21dc171550d 与共享缓存保留，未操作其他任务资源。正式与本地各 29 项补测通过；无未完成验收项。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核对锁定上游 GreensOpenProblems/15.lean 的 green_15_ap4、完整前缀及 Set.IsAPOfLengthWith/IsAPOfLengthFree 定义。Green 原文 Problem 15 评论明确给出四项等差级数版本的肯定答案：对 {0,1,3,4} 上无加性立方词取部分和，得到 K=4 的 Lipschitz 图；四点图上 AP 将导致三个等长等和相邻块。基数条件排除了零公差伪四项 AP，N 起点及 Z×Z 嵌入无明显问题。本题是已知四项变体，不是三项开放问题；未修改任何数学陈述或定义。来源 https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf，Problem 15；详见证据 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true；按完整 task ID 精确命中技能 references/public-lean4-proofs.csv，依规则无需重新联网。来源 https://conjectures.io/results/66df312f-30b4-4331-b1fa-04be52f7f8ca/solution#L140 及同页 #L476。已标记 task.toml；仅据技能 CSV 确认，未下载、复制或在本题环境编译该公开证明。证据 public-csv-match.json。"
+    }
+  }
+}

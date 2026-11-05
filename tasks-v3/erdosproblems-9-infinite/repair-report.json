@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-9-infinite",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式补齐 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages；最终 Harbor 容器以 ubuntu 实际 rg 找到 package 内 ArithmeticFunction.sigma，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import，无需追加依赖模块；原 Dockerfile 缺少末尾普通用户验证，已以 USER ubuntu、HOME=/home/ubuntu、RUN lake build +FormalConjecturesBench.Target 结尾。最终本地 Harbor 构建及同容器 ubuntu 构建成功；原始 sorry 警告不影响此依赖检查。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能实际运行 Unicode 脚本，修复前及最终均 case=no_issue；原头通过，改头及移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重新解析 GoldenCheck，存在名称遮蔽风险。现从本题不可变 golden、移除 Submission 导入后，由 Lean parser/elaborator 提取完整类型及 universes=[]，编译为 ExpectedType；独立审计完整前缀及传递公理，临时 sorry 定理及其子声明未导出。两份可信 Spec 包及 checker 内容/AST 一致，固定清单哈希和工具链/依赖来源；运行时不生成或回退编译 Spec。最终当前本地 task 经 Harbor force_build 验收，镜像 sha256:062b88299377b5a14f0a6021dad248aa3129ad3fdb8fd09fb39dd79cdad7932f；Harbor 上传 /tests 与本地 /opt 包逐文件哈希一致。正式入口及 ubuntu check.sh 均退出 1、reward=0，原因仅为原始 sorry 的预期拒绝；未证明原题。于同一最终子容器实际调用两份 checker 函数，各 30 项通过，覆盖可信加载/审计、uid=1000 编译、完整类型、sorryAx 公理拒绝、canary、冻结/越界检查、冻结文字不变的 Erdos9A.Infinite 名称偷换编译成功但类型拒绝、候选模块/缓存/环境遮蔽及缺失/篡改产物无回退。所有 immutable 哈希一致。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-9-infinite/attempt-001（validation-coverage.json、delivery-hashes.json、final-static.json、Harbor 日志）。已 stop/rm 本题 spec、初次及最终 Harbor 三个容器，删除本题两个镜像标签及各自镜像 ID（062b88299377、69f2705fb315）、两个任务网络并核实不存在；共享预存基础镜像/缓存保留，详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata 标记 consistent。已读完整 Erdos9A 定义及目标：自然数域、奇数限制、素数及允许零的指数，目标是已知的无限性变体，不是正上密度开放问题。核对锁定上游 FormalConjectures/ErdosProblems/9.lean，以及 Erdős 1977 原文 p.292（https://users.renyi.hu/~p_erdos/1977-26.pdf）和 Crocker 构造的零指数边界说明，未发现使目标不成立的明显错误；未改数学输入。题目站点受 Cloudflare/403 限制，但原论文和锁定上游可读。详见 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "技能 references/public-lean4-proofs.csv 的 task 列完整 ID 精确命中，metadata 已标 public_lean4_proof=true。来源：https://github.com/linrock/math-proofs/blob/de08009e59829727653bfa20b8d8f7ed1b1baf79/erdos-9/Solution.lean#L25 及 https://github.com/conjectures-io/conjectures-contribution/blob/main/contributions/erdos-9/209a1457e76ff910a3e56e0096977375a1658265a71723541f8a95625bc19800/script.lean#L550 。按要求无需重新联网确认；未在本题环境编译公开证明，未向任务或镜像加入答案。详见 public-proof-review.json。"
+    }
+  }
+}

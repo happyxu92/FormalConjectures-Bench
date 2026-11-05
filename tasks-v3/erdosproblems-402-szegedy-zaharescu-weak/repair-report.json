@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-402-szegedy-zaharescu-weak",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令现显式包含 /app、/opt/formal-conjectures 和 .lake/packages；最终 Harbor 容器中以 ubuntu 实际检索 package 内 theorem add_comm 成功。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 imports；保留 ProblemImports 预编译，补齐 Dockerfile 最末 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。本地 Harbor 构建及同容器 ubuntu 重建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本并最终复验，均为 no_issue；原头通过、修改头和缺失 := 被拒绝，未改头或冻结基线。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题原 golden 隔离 Submission 提取完整类型和 universes=[]，匹配 Docker/Lean 4.27.0 预编译 ExpectedType，并审计传递依赖仅为标准公理；同步两包并固定 manifest/hash、工具链、依赖和 Spec 加载优先级。verifier 不重新解析命题、不编译或回退生成 Spec。最终本地 Harbor 镜像 sha256:3adc52d974e976e901fa2636ea9fa9acd622f5ebefbe88ec1566562eeb1aa634；/tests 上传包及 /opt 包与本地哈希一致。两入口均因原题 sorry 预期退出1/reward0，非原题证明通过；同一子容器两套实际函数补测均退出0，覆盖可信审计、uid1000编译、完整类型匹配、sorryAx拒绝及canary，冻结/越界/缓存遮蔽/产物缺失篡改负例；冻结文本不变的 atTop:=⊥ 合法证明被完整类型比较拒绝。原源码规则和公理检查 AST 保留，未增通用外部import白名单或initializer沙箱。所有 immutable 哈希、checker AST/内容与双包一致性通过。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-402-szegedy-zaharescu-weak/attempt-001（最终验收见 final/）。Docker 清理已核实：本题 spec-g61-402d、g61-402d 与 g61-402d-final 三个容器已 stop/rm；两张本题镜像 1efb0856e5e0 / 3adc52d974e9 及两个自建网络已删除且 inspect 确认不存在。预先存在的匹配依赖缓存镜像保留，未触碰其他资源；详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。核对完整前缀、上游锁定目标、题目原网页及 Ford 2004 p.358 Theorem BS：充分大 n 的界和缩放区间/LCM倒数族等号分类一致；gcd 整除分子，无自然数除法舍入问题，eventually 排除小基数例外。仅标记，未修改任何数学输入。详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整ID精确匹配技能CSV未命中。多组检索并读取上游 main/锁定源码、Mathlib平方自由特例、OPN结构引理及含sorry的主证明、8个fork和PR 2661/3183实际head；两条声称解决的PR仅改category，目标仍sorry，均不覆盖完整公开证明要求。全局GitHub代码搜索401需认证，故 metadata 标 unknown/blocked，不断言不存在公开证明。检索词、来源及排除理由见证据 public-proof-search.json。"
+    }
+  }
+}

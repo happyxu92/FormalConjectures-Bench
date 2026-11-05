@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-32-sh20-general",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；bash 语法检查和最终 Harbor 容器内 ubuntu 搜索均通过，命中 Mathlib/Data/Nat/Totient.lean 的 totient 定义。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import，原先缺少最终普通用户构建验证；Dockerfile 现以 USER ubuntu 下的 RUN lake build +FormalConjecturesBench.Target 结尾。最终本地 Harbor 强制构建及同一子容器内 ubuntu 实测构建均成功，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本并最终复验，均为 no_issue；原始头通过，改头及移除 := 负例被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离 Submission 提前提取完整 elaborated 类型：四个外层 binder、无 universe 参数；预编译 ExpectedType 并独立审计其及 HasGap 的传递依赖，仅含标准允许公理，临时目标未导出。两份可信包及 checker 内容/AST 一致；固定加载 /tests 或 /opt 包，不运行时生成或回退解析命题。最终本地 Harbor 镜像 sha256:91d11cb292400ceb5769ea84edf45eddd8733852157af1b35eca8bba13bd65ea；34 个容器交付文件哈希一致。两入口均因原始 sorry 预期退出 1、reward=0；在同一子容器分别调用两份实际 checker，各完成 29 项补测，覆盖 Spec 加载/审计、ubuntu 编译、完整类型比较、目标 sorryAx 审计、canary、冻结/越界/实例语义偷换/缓存遮蔽/缺失及篡改负例。未提供原题证明。15 项 immutable 哈希均不变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-32-sh20-general/attempt-001。Docker 日志和产物已保存；本题三个容器（73a061986150、5a9a36f73b65、5a3349f6e3ed）、两个新镜像（6f50a13c10cc、91d11cb29240）及两个 Harbor 网络均已移除并复核不存在。预先存在的共享生成镜像 e21dc171550d 保留，未触碰其他任务资源；详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已读取锁定上游源码、Shakan arXiv:2004.14828 Theorem 1 和 Green Problem 32。此题是所有素数及 |A|>1 的已知 Shakan 变体：HasGap 的起点平移与论文等价，Nat.floor 下界弱于论文实数下界，满集和 p=2 时要求零长度。未发现明显错误；metadata 标 consistent，所有数学陈述及定义保持原样。详见 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 task ID 精确匹配技能 CSV 未命中。已进行多组题名/定理名/作者/数学陈述搜索，检查上游锁定及当前 Lean 源码、相关 PR diff、公开证明仓库、Mathlib、作者论文及相关研究/贡献目录。sh20_general 仍为 sorry；所链接的 Green32 完整证明仅针对修正后的 dirichlet_regime，不覆盖本目标。GitHub 代码搜索需登录，API 多处 403 限流，grep.app 429，故 metadata 与结论如实标 unknown/blocked，不能断言没有公开证明。详见 public-proof-review.json、source-fetch-results.json。"
+    }
+  }
+}

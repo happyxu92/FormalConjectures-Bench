@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-14-w-3-10",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 和 /opt/formal-conjectures/.lake/packages；最终 Harbor 子容器以 ubuntu 成功搜到 package 内的 Irrational 定义（instruction-search.log，exit 0）。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 imports，未发现缺失预编译依赖；原 Dockerfile 缺少最终普通用户构建验证，现以 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target 结尾。当前本地任务经 Harbor force_build 成功，同一最终子容器 ubuntu 重建 exit 0；使用锁定 Lean 4.27.0 和依赖修订。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本并最终复验：case=no_issue；原头通过，修改头及移除 := 被拒绝，两份 checker 一致，未修改头或冻结基线。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重新解析 GoldenCheck，存在语义遮蔽风险。已从本题 immutable golden 独立提取完整类型及 universe 参数，交付两份一致的预编译 Spec；ExpectedType 为 W 3 10 = 97，无外层参数/universes，传递依赖仅含允许标准公理，临时目标未导出。运行时固定 /tests 或本地 /opt 包，校验清单/输入/版本/产物哈希，不重建或回退解析；保留原源码规则、公理检查与 canary。最终本地 Harbor 构建及两入口已实际运行：均因原题 sorry exit 1、reward 0，属预期证明拒绝。同一最终子容器两套实际函数补测全部通过：Spec 加载/审计、ubuntu uid 1000 编译、完整类型比较、sorryAx 拒绝及 canary；冻结/越界/实例偷换/同名缓存遮蔽/产物缺失及篡改均被拒绝。上传 /tests、本地 /opt 与宿主哈希一致，checker AST/内容、两份 Spec 和全部 immutable 哈希通过。未提供原题数学证明，不作通用外部 import/initializer 沙箱结论。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-14-w-3-10/attempt-001。Docker 清理已核实：本次3个容器（1dce0f9dffe7、516c8d5b3015、7143b0a66c30）均 stop/rm；2个任务镜像（2ed0ab51bd9c、bf220a970917）及2个任务网络已移除，inspect 确认不存在。预先存在的共享依赖镜像 e21dc171550d 保留，未删除其他任务资源；详见 cleanup.json/log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata.statement_status=consistent。核对 pinned 上游、Green Problem 14 原文及 Ahmed–Kullmann–Snevily arXiv:1102.5433 第3页 Definition 1.1/Table 1：本题为非对称两色 van der Waerden 数 w(2;3,10)=97。已检查 Icc、Fin 2、两色长度、有限集自然数像、IsAPOfLength 的基数约束及 Nat sInf；未发现使本目标不成立的明显错误。并非一般增长问题的完整求解。仅标记，数学陈述及定义保持不变；详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 task ID 未命中技能 CSV。已多组检索题号/完整 Lean 名/非对称数值及别名，读取上游 pinned/current、相关 PR 和 DomTheDeveloper fork、pb-catcher 与 formal_ramsey Lean 源码，并核对 Mathlib、OpenAI/math 和作者页面。W_3_10 仍为 sorry；相关证明涉及其他参数、单向下界或渐近界，不能覆盖本目标。GitHub code search 要求登录且 API code/tree 检索遭 403 限流，故 metadata 标记 public_lean4_proof=unknown、status=blocked，不宣称不存在公开证明。检索词、来源、排除原因和访问限制见 public-proof-review.json。"
+    }
+  }
+}

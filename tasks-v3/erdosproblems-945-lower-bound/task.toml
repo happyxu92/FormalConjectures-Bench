@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID absent from skill CSV. Searched exact theorem, equivalent bounds, upstream history/PRs and proof collections. PRs #2593/#3117 retain sorry; #5089 proves only equivalence. No complete lower-bound proof verified. Erdős page/LaTeX HTTP 403, GitHub code search 401, problems.science 500 prevent a definitive negative search result."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/945.lean"

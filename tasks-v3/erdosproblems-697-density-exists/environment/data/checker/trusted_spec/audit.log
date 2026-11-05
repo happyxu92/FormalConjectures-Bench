@@ -1,0 +1,6 @@
+audited ExpectedType and all transitive dependencies: [propext, Quot.sound, Classical.choice]
+complete binder count: 2; body: ∃ δ, {n | ∃ d, d ≡ 1 [MOD m] ∧ ↑d ∈ Set.Ioo 1 (Real.exp (↑m ^ α)) ∧ d ∣ n}.HasDensity δ
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (m : ℕ) (α : ℝ), ∃ δ, {n | ∃ d, d ≡ 1 [MOD m] ∧ ↑d ∈ Set.Ioo 1 (Real.exp (↑m ^ α)) ∧ d ∣ n}.HasDensity δ
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

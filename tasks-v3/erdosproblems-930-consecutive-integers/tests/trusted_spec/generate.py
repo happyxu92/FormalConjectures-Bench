@@ -1,0 +1,34 @@
+"""Repair-time generation from this task's immutable golden input only."""
+from pathlib import Path
+import json
+pkg = Path(__file__).resolve().parent
+golden = (pkg.parent / 'golden_env/FormalConjecturesBench/Target.lean').read_text()
+prefix, rest = golden.split('-- FORMAL_CONJECTURES_BENCH_TARGET_BEGIN', 1)
+prefix = prefix.replace('import FormalConjecturesBench.Submission\n', '')
+prefix = prefix[:prefix.rindex('/--')]
+target = rest[:rest.rindex('end Erdos930')].strip()
+source = prefix + '''
+-- Elaborate the entire original declaration in an isolated temporary environment.
+-- Export only its complete type, never the temporary placeholder theorem.
+open Lean Elab Command in
+run_cmd do
+  let original ← getEnv
+  let stx ← ofExcept <| Parser.runParserCategory (← getEnv) `command ''' + json.dumps(target, ensure_ascii=False) + '''
+  elabCommand stx
+  let some info := (← getEnv).find? `Erdos930.erdos_930.variants.consecutive_integers
+    | throwError "missing temporary target"
+  let expected := info.type
+  let levels := info.levelParams
+  setEnv original
+  liftTermElabM do
+    addAndCompile <| .defnDecl {
+      name := `FCBTrustedSpec.ExpectedType
+      levelParams := levels
+      type := ← Meta.inferType expected
+      value := expected
+      hints := .abbrev
+      safety := .safe
+    }
+end Erdos930
+'''
+(pkg / 'FCBTrustedSpec.lean').write_text(source)

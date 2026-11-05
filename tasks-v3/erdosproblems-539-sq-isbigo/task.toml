@@ -8,6 +8,12 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+statement_status_note = "Known sqrt(n) lower-bound variant, not the open full asymptotic estimate. Granville-Roesler preprint p.2 gives the pairing argument; allowing zero only costs at most one element and does not change this Big-O lower bound. No mathematical input changed."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_urls = ["https://github.com/KitaKen1/erdos-539-formal-conjectures", "https://github.com/KitaKen1/erdos-539-sqrt-disproof", "https://github.com/google-deepmind/formal-conjectures/pull/4869"]
+public_lean4_proof_note = "Exact skill CSV miss. Upstream target still sorry. Read related exponent-limit/lower-bound and super-sqrt projects; their displayed final statements are not this exact lower Big-O target. Exact target coverage/dependency bridge remains unverified; GitHub issue/PR API and main problem page blocked. Do not infer absence of a public proof."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/539.lean"

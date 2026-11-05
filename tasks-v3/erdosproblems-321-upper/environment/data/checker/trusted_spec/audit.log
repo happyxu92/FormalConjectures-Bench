@@ -1,0 +1,14 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos321.R: [Classical.choice, propext, Quot.sound]
+complete binder: N : ℕ
+complete binder: r : ℕ
+complete binder: hr : 1 ≤ r
+complete binder: hrN : 1 ≤ Real.log^[2 * r] ↑N
+complete binder count: 4
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (N r : ℕ),
+  1 ≤ r →
+    1 ≤ Real.log^[2 * r] ↑N →
+      ↑(Erdos321.R N) ≤ 1 / Real.log 2 * Real.log^[r] ↑N * ↑N / Real.log ↑N * ∏ i ∈ Finset.Icc 3 r, Real.log^[i] ↑N
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

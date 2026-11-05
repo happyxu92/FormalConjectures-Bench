@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-480-chung-graham-best-possible",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式包含 /app、/opt/formal-conjectures 和 .lake/packages；在最终 Harbor 子容器以 ubuntu 实际搜索 Nat.fib 成功（exit 0）。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import；原 Dockerfile 缺少普通用户最终构建验证，已在末尾添加 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的最终 Harbor Docker 构建及容器内 ubuntu 复验均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本，修复前与最终均为 no_issue；原头通过、修改头及移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离 Submission，以匹配 Lean 4.27.0 Docker 依赖提前提取完整类型及空 universes；ExpectedType 保留 c、ε、正性条件，并通过独立传递公理审计。两份固定预编译 Spec 包、清单和 checker 内容/AST 一致；无运行时重新解析、编译或回退生成。最终当前本地 task 经 Harbor force_build 验收，/tests 上传包与 /opt 包均逐文件对上本地哈希。正式入口及 ubuntu check.sh 均仅因原题 sorry 预期退出 1、reward 0；同一最终子容器对两份 checker 各补测 30 项，覆盖 Spec 加载/审计、ubuntu UID/编译、完整类型、公理/sorry canary、冻结/越界、名称+实例语义偷换、同名缓存及依赖遮蔽、产物缺失与篡改拒绝。原正常 import 和安全检查保留，未增加外部模块白名单或 initializer 沙箱；不代表原题证明完成。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-480-chung-graham-best-possible/attempt-001（generation-final.log、harbor.log、delivery-hashes.json、validation-coverage.json、static-validation.json）。Docker 清理已完成并逐一 inspect 核实：3 个本题容器 fc2f0ba0779f、0e111f90902e、f78e093ed71e，2 个镜像 b63649d2802a、7e7afaea05dc 及 2 个独占网络均已移除；预先存在的共享依赖镜像保留，未触及其他 task 资源。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata 标记 consistent。已直接读取 Chung–Graham 1981 PNAS p.4001 原文 Theorem 2 的极值序列 C(x*)=1/c，支持本题对所有 ε>0 的 sharpness 陈述；n 和 Fibonacci 求和均正确排除 0，各 liminf 有界。未发现明显数学错误；未修改陈述、定义、Target、golden、GoldenCheck 或冻结哈希。详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 task ID 精确匹配技能 CSV 未命中。已多组关键词检索并读取上游当前/锁定源码、plby 当前/固定提交证明及 PR 2670/3192 实际 Lean 源码和 diff：plby 仅证明较弱 1/√5 上界，不覆盖本题 sharpness；两 PR 仍为 sorry，仅改分类。关键原题讨论 403、GitHub code/tree/issue APIs 限流且 HTML code search 要求登录，无法排除其他分支/fork。metadata 如实标记 public_lean4_proof=unknown、status=blocked，不宣称不存在完整证明。详见 public-proof-review.json、fetch-results.json 和 followup-fetch-results.json。"
+    }
+  }
+}

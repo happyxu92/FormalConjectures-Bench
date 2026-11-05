@@ -21,6 +21,12 @@ difficulty_explanation = "The agent must construct a Lean 4 proof of a research-
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
 verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
 
+statement_status = "consistent"
+statement_status_note = "The preserved target is the classical negated little-o lower bound, not the open optimal upper bound. N counts the closed Euclidean disk; E is its real-valued error. Soundararajan, arXiv:math/0302010, introduction, recalls the stronger signed Omega-minus bound after x = r^2."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task-ID CSV miss. Inspected upstream pinned/main, rendered source, PRs 2612/3136/7660 and their Lean sources: target remains sorry (2612/3136 only change attributes). Broad and alias searches found no verified complete proof; GitHub global code search requires login and API is rate-limited, so no absence claim. See repair-report.json and external attempt evidence."
+
 [verifier]
 timeout_sec = 7200.0
 

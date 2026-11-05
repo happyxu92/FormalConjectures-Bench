@@ -1,0 +1,11 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos888.p: [propext, Quot.sound, Classical.choice]
+audited Erdos888.RequiredCondition: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0 (original elaborated expression)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+(fun n => ↑n / Real.log ↑n) =O[Filter.atTop] fun n => ↑(Nat.findGreatest (Erdos888.p n) n)
+def Erdos888.p : ℕ → ℕ → Prop :=
+fun n k => ∃ A, Erdos888.RequiredCondition A n ∧ A.card = k
+'Erdos888.p' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

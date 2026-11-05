@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-868-hartter-nathanson",
+  "target_name": "Erdos868.erdos_868.variants.Hartter_Nathanson",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "d14a61014375ccb0aac7d6c3c53ba9e96a54c18188a2d701d8d09de8656d8a40",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "9c5040619419bb245dbec8e97312a0939c0eb261bee4820c60bbe456660e4686",
+    "FCBTrustedSpec.ilean": "a1e5cc59c590a52022bcdce64e684003b62988250a7dab82f2291e107b41ec9e",
+    "FCBTrustedSpec.lean": "35a18317ecf772be64930d5bbb8c11b5dcc00e562197e2397831dfd2e975ce08",
+    "FCBTrustedSpec.olean": "64e52c25d157b566d0c7f8978a3067d969c4ba994f8d1e6f7c38f9f73dad7e2b",
+    "audit.log": "16457652d608776b8257587c14ece930ea5cf37358d23aeb0179ba0814c3401c",
+    "generate.py": "8cec7d05d74ba0df86ad6809d8d558b178c96f2cd1cde7d09bc7c60c222a16a9",
+    "reproduce.sh": "11fac644d0daf9d45fd514dcc2e223bade4d8627ae47b0f7af54ecfc637860e5"
+  },
+  "generation_image": "sha256:e21dc171550d4c49aceba963047d00d1a350ce711019cbd9cb32c4770c7a39df",
+  "generation_command": "docker cp generation-input erdosproblems-868-hartter-nathanson-spec-g61-a001-868h:/tmp/repair-bundle; docker exec -u root erdosproblems-868-hartter-nathanson-spec-g61-a001-868h bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Independent compiled import; full type retains both outer binders (o : Nat, ho : 1 < o) and the entire quantified conclusion. Universe parameters: empty. Recursive axiom audit covers ExpectedType value and all referenced prefix dependencies. Temporary target and children absent. Three unchanged earlier sorry theorems are not referenced by ExpectedType."
+}

@@ -1,0 +1,10 @@
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos961.Erdos961Prop: [propext, Quot.sound, Classical.choice]
+complete binder count: 2
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (k : ℕ), 0 < k → Erdos961.Erdos961Prop k k
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos961.Erdos961Prop : ℕ → ℕ → Prop :=
+fun k n => ∀ m ≥ k + 1, ∃ i ∈ Set.Ico m (m + n), i ∉ (k + 1).smoothNumbers

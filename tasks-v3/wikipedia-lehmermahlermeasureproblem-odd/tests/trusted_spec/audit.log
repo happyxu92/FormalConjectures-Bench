@@ -1,0 +1,23 @@
+FCBTrustedSpec.lean:45:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:56:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:64:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited LehmerMahlerMeasureProblem.mahlerMeasure: [propext, Quot.sound, Classical.choice]
+audited LehmerMahlerMeasureProblem.mahlerMeasureZ: [propext, Quot.sound, Classical.choice]
+audited LehmerMahlerMeasureProblem.Polynomial.HasOddCoeffs: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 3
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (f : Polynomial ℤ),
+  LehmerMahlerMeasureProblem.mahlerMeasureZ f > 1 →
+    LehmerMahlerMeasureProblem.Polynomial.HasOddCoeffs f →
+      LehmerMahlerMeasureProblem.mahlerMeasureZ f ≥
+        LehmerMahlerMeasureProblem.mahlerMeasureZ (Polynomial.X ^ 2 - Polynomial.X - 1)
+def LehmerMahlerMeasureProblem.mahlerMeasure : Polynomial ℂ → ℝ :=
+fun f => ‖f.leadingCoeff‖ * (Multiset.map (fun x => max 1 ‖x‖) f.roots).prod
+def LehmerMahlerMeasureProblem.mahlerMeasureZ : Polynomial ℤ → ℝ :=
+fun f => LehmerMahlerMeasureProblem.mahlerMeasure (Polynomial.map (algebraMap ℤ ℂ) f)
+def LehmerMahlerMeasureProblem.Polynomial.HasOddCoeffs : Polynomial ℤ → Prop :=
+fun f => ∀ i ≤ f.natDegree, Odd (f.coeff i)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

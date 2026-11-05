@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-402-erdos-402",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式列出 /app、/opt/formal-conjectures 及其 .lake/packages；最终 Harbor 子容器中实际 rg 找到 package 内 gcd 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 imports；原 Dockerfile 缺少普通用户最终构建验证，已以 ubuntu 的 RUN lake build +FormalConjecturesBench.Target 结尾。最终本地 Harbor 构建及容器内 ubuntu 补验均成功；原题 sorry 的警告不是依赖故障。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本两次，均 case=no_issue、退出码 0；原头通过，改头及移除 := 被拒绝，未修改头或冻结基线。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离提取完整 A、h₁、h₂ 类型及空 universe 列表，匹配 Lean 4.27 Docker 预编译并审计 ExpectedType，无临时定理或 sorryAx 依赖；两份可信包一致，checker 固定加载产物并比较完整类型，不运行时解析或回退生成。最终本地 Harbor trial erdosproblems-402-erdos-402-g61-a001-402a-final 已验收；/tests 上传包、/opt 包、本地文件及不可变哈希均核对。两入口均因原题 sorry 预期退出 1，reward=0；同一子容器两套实际函数补测均通过，覆盖可信加载/审计、ubuntu 编译、完整类型、目标 sorryAx、公理 canary、冻结/越界、恒真 LE ℚ 实例语义偷换、缓存遮蔽、缺失及篡改产物拒绝。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-402-erdos-402/attempt-001/。Docker 清理已核实：本次 3 个容器（51f4d2a359d0、8f5734a0b54e、5c870cc1faa3）、2 个任务镜像（c099b90bcdc2、a19cc09a3a0e）和 2 个专属网络均已移除；预存共享基镜像及其他 agent 资源保留。清理遇预存 dead 容器 inspect 异常后已处理并重验，详见 cleanup.json/log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核对锁定上游、题目镜像及 Graham gcd 定理来源；Finset 保证互异，0∉A 与 Nonempty 给出正整数非空集合，除法确为 ℚ 除法，非严格不等式及单元素边界正确。未发现明显错误，数学陈述、定义和所有 golden 保持不变。原站及原论文访问 403，替代来源和审查见 statement-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "精确完整 ID 未命中技能 CSV。多组检索并实际读取上游、Mathlib、plby、Open Proof Network 及相关 PR：上游和 PR2661/3183 保留 sorry；Mathlib 仅 squarefree；plby 仅 card≤7000 及充分大范围，仍有中间缺口；OPN 主目标核心孔未完成，已证 spec 只是结构引理。关键官方题目/讨论页返回 403，不能排除未核实的新链接，因此 metadata 标为 unknown/blocked，不宣称不存在公开完整证明。详见 public-proof-review.json；未向任务加入公开答案。"
+    }
+  }
+}

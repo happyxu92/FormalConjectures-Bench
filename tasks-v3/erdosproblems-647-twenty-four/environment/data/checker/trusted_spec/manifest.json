@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-647-twenty-four",
+  "target_name": "Erdos647.erdos_647.variants.twenty_four",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "15c6f501377039145bb9a80d7d822a600fc47e4e9ee7cbbe6b5f3b3b0e31f82d",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "661b131ac346e7f71ae92b02bed702624cdf8e578e8a301aa87fea5b6e96c736",
+    "FCBTrustedSpec.ilean": "629bcdd50ab6caba6400867520469c59f89138c8c5f8b71de2ada5ea20f244ad",
+    "FCBTrustedSpec.lean": "bc20db87f2419fce563d84c068631e9f399dbcfe3b6c9a9f2412cff58df21e4f",
+    "FCBTrustedSpec.olean": "96e98b2717eaee935d37cd7dde7116f7de46eec2864f629096241202204151c6",
+    "audit.log": "ef6fcab7f922fd76c5eca4bd107f4b4be2b1a52f4b6769cd9105035ecc53bb3a",
+    "generate.py": "fa8e3553efc22d25dcd5f3af6dee57db4900fb58502dc957a30a42bcc823b51a",
+    "reproduce.sh": "ede6a2a9636394e9b93ab45c02647e96820f334d723375ff378758ff00312c70"
+  },
+  "generation_image": "sha256:e21dc171550d4c49aceba963047d00d1a350ce711019cbd9cb32c4770c7a39df",
+  "generation_command": "docker run -d --network none --name erdosproblems-647-twenty-four-spec-g61-647a-91c3 fcb-repair/erdosproblems-252-k-eq-four:252four-20261102-183405 sleep infinity; docker cp generation-input erdosproblems-647-twenty-four-spec-g61-647a-91c3:/tmp/repair-bundle; docker exec -u root erdosproblems-647-twenty-four-spec-g61-647a-91c3 bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Original golden Target with Submission import removed; complete type extracted by elaborator with zero outer forall binders and no universe parameters. Temporary target and children absent from exported module. All ExpectedType transitive dependencies use only propext, Classical.choice, Quot.sound. Original open erdos_647 theorem contains sorry but is not a dependency of ExpectedType."
+}

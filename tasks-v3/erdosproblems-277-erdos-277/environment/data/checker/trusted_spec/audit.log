@@ -1,0 +1,6 @@
+audited ExpectedType and transitive dependencies: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+True ↔ ∀ (c : ℝ), ∃ n, ↑((ArithmeticFunction.sigma 1) n) > c * ↑n ∧ ∀ (m : StrictCoveringSystem ℤ), ∃ i, ↑n ∉ m.moduli i
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

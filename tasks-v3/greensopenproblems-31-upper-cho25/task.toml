@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID absent from skill CSV. Searched theorem names, Sidon/CHO25 bounds, upstream, Mathlib, author code and related Singer/Lindstrom formalizations; inspected available Lean sources, none establishes coefficient 0.98183. GitHub code search, branches/forks and some issue/comment retrieval hit rate limits, so absence is not confirmed. See repair-report.json and external evidence."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/GreensOpenProblems/31.lean"

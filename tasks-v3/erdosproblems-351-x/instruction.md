@@ -37,13 +37,20 @@ Use this command to test your final answer:
 cd /app && ./check.sh
 ```
 
-This runs the same substantive checks as the official verifier. If it passes
-without modifying the checker itself, the official verifier is intended to pass.
+This runs the same substantive checks as the official verifier. Both use a fixed,
+precompiled trusted Spec to compare the complete theorem type; the local entry
+loads it from `/opt/formal-conjectures-bench-checker/trusted_spec`, while the
+official verifier loads the uploaded `/tests/trusted_spec`. These trusted files
+are not editable. If the local check passes without modifying the checker itself,
+the official verifier is intended to pass.
 
 For source search, prefer commands such as:
 
 ```bash
-rg --glob '*.lean' 'search term' /app /opt/formal-conjectures
+rg --glob '*.lean' 'search term' \
+  /app \
+  /opt/formal-conjectures \
+  /opt/formal-conjectures/.lake/packages
 ```
 
 Internet access is enabled for this task. You may use external literature and web resources, but the final Lean proof must pass the local verifier.

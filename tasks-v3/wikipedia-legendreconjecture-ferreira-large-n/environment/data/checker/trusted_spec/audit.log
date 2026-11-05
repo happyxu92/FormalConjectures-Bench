@@ -1,0 +1,9 @@
+FCBTrustedSpec.lean:37:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:49:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited ExpectedType and transitive dependencies: [propext, Quot.sound]
+complete outer binder count: 0 (eventual quantifier is inside the closed proposition)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ᶠ (n : ℕ) in Filter.atTop, ∃ p ∈ Set.Ioo (n ^ 2) ((n + 1) ^ 2), Nat.Prime p
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Quot.sound]

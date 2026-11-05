@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-961-well-defined",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；在最终 Harbor 子容器实际搜索 smoothNumbers，退出码0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 imports。原 Dockerfile 缺少最终普通用户构建验证；现以 USER ubuntu 的 RUN lake build +FormalConjecturesBench.Target 结尾。当前本地 task 经 Harbor force_build 构建成功，同一子容器 ubuntu 再构建退出0；sorry 警告非依赖故障。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已执行技能 Unicode 脚本并最终复验，均为 no_issue；原始头通过，修改头及缺少 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离候选，通过 Lean parser/elaborator 提取完整 k、hk 类型及空 universe 参数，在匹配 Lean4.27 Docker 环境编译审计 ExpectedType；其与 Erdos961Prop 的传递依赖仅标准公理，不依赖冻结前缀的 sorry 定理。两份可信包一致，固定清单哈希及加载来源，无运行时生成或回退。当前本地 Harbor 镜像 sha256:183c2971e301f52908a7274a17d04b025ac32474e6b058ef4772900bebcfcffc；上传 /tests、预装 /opt 包、golden、checker 与本地哈希核对通过。正式和本地入口均因原题 sorry 预期退出1/reward0；同一子容器分别调用两份实际 checker 函数，完成 Spec审计、ubuntu编译、完整类型、目标sorryAx拒绝及canary补测；冻结/越界/保留冻结文字而LT Nat实例偷换hk/同名模块及缓存遮蔽/缺失及篡改产物均按预期拒绝，正常def/lemma/instance仍允许。AST、安全检查及所有 immutable 哈希复核通过。证据见 jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-961-well-defined/attempt-001。Docker清理已完成并核实：本题容器 ff54721b76eb、5f55835817cc 已stop/rm；本题镜像183c2971e301及专用网络已删除，共享预存依赖镜像保留；详见cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。本题仅要求 Erdős961 的 well_defined 变体，不是开放的增长率猜想。已核对完整定义、区间与 smoothNumbers 的严格素数界；Hanson1973 p195 的 Sylvester–Schur 定理给出 n=k（k=1另有初等证明）。亦可选任意素数p>k，以区间长度p保证正倍数见证。数学陈述、定义、Target及全部golden均未改。主站403，不影响由已读原始论文及锁定源码进行的有效性判断。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整ID精确匹配技能CSV未命中；已进行10组题号/完整名/等价定理/作者检索并跟进上游、Mathlib、GitHub、Zulip及相关论文。上游well_defined依赖sylvester_schur的sorry；Rei-AIOS仅特殊情形或传递sorry，不能算完整证明。另发现并读取 AllenGrahamHart/FormalConjectures-Bench@482dacc 的 erdos699 完整样式二项式定理，但未验证其到本题的Lean转换及传递依赖，保留有效线索。关键Erdős网页/论坛403、GitHub issue2414限流、代码搜索需认证、Constellate DNS失败；因此public_lean4_proof=unknown/status=blocked，不声称不存在公开证明。详见证据source-review.json；未向镜像放入公开答案。"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-351-x-sq",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "源码搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；在最终 Harbor 子容器以 ubuntu 实测 rg 搜到 package 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import，原 ProblemImports 预编译保留。补上 Dockerfile 最终 USER ubuntu 后的 RUN lake build +FormalConjecturesBench.Target；当前本地 task 经 Harbor force_build 成功，同一子容器再次以 ubuntu 构建退出码 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整运行技能 Unicode 脚本并最终复验，均为 no_issue；原头通过，修改头及移除 := 的负例被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 golden 隔离 Submission 提取完整类型和 universes，匹配 Lean 4.27 Docker 生成并独立审计 ExpectedType；零外层参数、零 universe 参数，三个数学定义和 ExpectedType 的传递依赖仅含标准公理。两份固定预编译包及 checker 内容/AST 一致，运行时不生成或回退编译 Spec。最终本地 Harbor 351f 构建、/tests 上传包与 /opt 包哈希、正式和 ubuntu 本地入口及同一子容器两套实际函数补测均通过；原题 sorry 被预期拒绝，两入口退出 1、reward 0，不代表证明完成。已实测 Spec 加载/审计、ubuntu 编译、完整类型比较、sorryAx 拒绝、canary，以及冻结/越界/语义实例偷换/缓存遮蔽/产物缺失及篡改负例。公开 Target、golden、GoldenCheck、冻结基线与数学定义哈希未变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-351-x-sq/attempt-001，见 validation-summary.json、delivery-hashes.json、immutable-final.json。已 stop/rm 本题容器 02c3f3675e15、16f8058b2f92、3c34cf75c8c4，删除本题两个镜像/标签（b852fa8f62d7、89afd7be4351）和两条专属网络，并核实不存在；保留预先存在的依赖镜像。见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata 标记 consistent。核对固定上游及 van Doorn 原始三页说明 The set {x²+1/x} is strongly complete（Woett/Mathematical-shorts，commit d8c269ba0af3cb3a0ddeaafe4c4cfaf5430ae1a4）：有限移除、不同元素的有限和、充分大整数均一致。Lean 包含 n=0 仅增加 0，不改变结论；这是 X² 变体而非全体多项式问题。未修改陈述或定义。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true。技能 CSV 按完整 ID 精确匹配未命中，随后多组检索并追踪当前上游 formal_proof 链接。已读取 https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos351.lean 及其完整 Erdos283.lean 依赖；后者仅 import Mathlib，corollary_7_pos_leading 的定义和结论覆盖本题 X²（首项系数 1），代码无 sorry/admit/新增公理；亦读取 Shashi456/erdos-formalizations 的 Corollary351、FC 和 README。公开证明为 Lean 4.29.1，未声称在本题 4.27 环境编译，未把答案放入镜像。题目网站/论坛 403、GitHub API 限流已记录，但完整证明源码及原作者说明可访问，故不构成关键证明来源阻塞。见 source-audit.json、search-evidence.json。"
+    }
+  }
+}

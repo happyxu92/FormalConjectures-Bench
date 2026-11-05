@@ -1,0 +1,8 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+complete binder count: 5
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {A : ℕ → ℕ},
+  (∀ (n : ℕ), (1 + √5) / 2 * ↑(A n) < ↑(A (n + 1))) →
+    ∀ {B : Set ℕ}, B ⊆ Set.range A → B.Infinite → ¬IsAddComplete (Set.range A \ B)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

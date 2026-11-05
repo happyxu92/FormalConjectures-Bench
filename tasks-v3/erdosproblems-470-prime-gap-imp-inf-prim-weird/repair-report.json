@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-470-prime-gap-imp-inf-prim-weird",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式加入 .lake/packages；实际执行三路径 rg，命中 mathlib/Mathlib/Data/Ordmap/Ordnode.lean 的 nth 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；保留 ProblemImports 预编译。原 Dockerfile 缺普通用户最终构建验证，现以 USER ubuntu 和 RUN lake build +FormalConjecturesBench.Target 结尾。当前本地 task 的最终 Harbor Docker 构建及同容器 ubuntu 实测构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本，修复前及最终均为 no_issue/passed；原始头通过，修改头和缺少 := 被拒绝，未修改冻结头或哈希。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "由本题可信 golden 独立 elaboration 完整类型和 universes，匹配 Lean 4.27.0/x86_64 Docker 预编译并独立审计 ExpectedType、PrimitiveWeird、AbundancyIndex；无临时目标导出，传递依赖仅标准允许公理，universes=[]、外层参数=0。两份可信包及 checker 字节/AST 一致，固定清单哈希和加载来源，不在运行时生成或重解析命题。最终从当前本地 task 经 Harbor force_build 验收；上传 /tests 与镜像 /opt 包逐文件哈希一致。正式入口及 ubuntu /app/check.sh 均退出 1/reward 0，仅为原题 sorry 的预期拒绝。同一最终子容器分别对两份实际 checker 补测：Spec 加载/审计、uid1000 编译、完整类型匹配、sorryAx 拒绝、canary；冻结/越界/非 Lean/符号链接/配置修改/缓存与同名模块遮蔽/缺失与篡改产物负例均通过。冻结文字不变的 Erdos470.Set.Infinite 名称偷换候选可无 sorry 编译且通过公理审计，但被完整类型比较及完整 checker 拒绝。所有 immutable 哈希保持不变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-470-prime-gap-imp-inf-prim-weird/attempt-001；最终镜像 ce42ce09aec3，最终子容器 cbdca98dfb8f。Docker 清理完成并逐 ID 核实不存在：容器 47b67baeb4eb/6e0fd7b2df25/cbdca98dfb8f、镜像 93218a8bfde5/ce42ce09aec3、网络 81b9817b35db/bdf7169bac26 均已移除；预先存在的共享缓存镜像保留，未清理其他任务资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "仅标 statement_status=suspect：Target:76-79 实际为 ∀ᶠ n, (间隙界 → 无限性)，而 Melfi 2015 p.509 是 (∀ᶠ n, 间隙界) → 无限性。独立打印的完整类型证实作用域，上游 PR 4193 也只添加该括号。存在具体量词作用域错误线索，但未给出原数论命题的反例，不能据较强或开放就判假。PrimitiveWeird、Nat.Weird、primeGap 和严格实数界已核对；Target、所有 golden、数学定义与 Spec 原题类型均未改。详见证据 statement-audit.json 和论文全文。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 task ID 精确匹配技能 CSV 未命中。已多组检索题号、完整定理名、PrimitiveWeird、Melfi、GitHub 和 Mathlib，并读取上游与候选 Lean 源码。PR 2732/2768/2926/3254/3370 均保留本目标 sorry；HowieHwong/P470 仅证明 abundancy_index，不能算本变体证明。未核实到本题完整公开证明；GitHub 代码/历史 API 限流、题目网站 403、证明索引 DNS/500 故障，故 metadata 诚实标 public_lean4_proof=unknown、status=blocked，不作不存在断言。详见证据 public-proof-search.json。"
+    }
+  }
+}

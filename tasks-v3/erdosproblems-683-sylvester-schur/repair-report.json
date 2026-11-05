@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-683-sylvester-schur",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 .lake/packages；最终 Harbor 容器中实际搜到 Mathlib 的 smoothNumbers 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "补充预编译 FormalConjectures.ErdosProblems.«961»，仅保留 Lake 所需的该支持模块源码；Dockerfile 末尾为 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的两轮 Harbor 构建及最终 ubuntu 实测构建成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能脚本及最终复验，均为 no_issue；原头通过，改头和移除 := 被拒绝，未修改冻结头。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题 golden 隔离候选生成、预编译并审计 ExpectedType，保留 n、k、假设三个完整参数，无 universes；P 及 ExpectedType 传递依赖仅有允许公理。两份 checker 内容/AST、Spec 包、所有 immutable 哈希一致。最终本地 Harbor 镜像 9679e104a36a 已验收，核对上传 /tests 与 /opt 包全部哈希。正式及本地入口因原题 sorry 预期返回 1/reward 0；同一最终子容器三套实际函数补测全部通过，覆盖固定 Spec 加载/审计、ubuntu 编译、完整类型比较、目标公理与 canary，以及冻结/越界/实例语义偷换/缓存遮蔽/缺失和篡改负例。未增加通用 import 白名单或 initializer 沙箱。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-683-sylvester-schur/attempt-001。Docker 清理已核实完成：本题 Spec 容器及两轮 Harbor 子容器均已 stop/rm；本题新建镜像 92956c348bbc、9679e104a36a 及其标签均已删除，无残留本题网络；预存共享缓存保留。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。本题为经典 Sylvester–Schur 变体，不是开放的主猜想。核对完整 P 定义、锁定上游 683.lean 及 Erdős 1934 原论文：https://www.renyi.hu/~p_erdos/1934-01.pdf。0<k 且 2k≤n 时，区间 n-k+1,…,n 的大于 k 的素因子不能被 k! 约去；包含 n=2k 端点。数学定义及陈述均未改。题目网站 403 不影响已取得的原论文依据。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID 精确匹配技能 CSV 未命中；经多组关键词及上游、FormalBook、GitHub 和相关作者资料检索，已读取公开完整等价 Lean4 证明 Erdos699Formalization.sylvester_schur：https://github.com/AllenGrahamHart/FormalConjectures-Bench/blob/482dacc4d9335240f26218cdc62032da3100392b/formalizations/erdos699/Erdos699Formalization.lean#L7679。其素因子存在结论覆盖本题全部参数并推出 P>k，源码无 sorry/admit/新公理，不依赖导入的 961 占位定理。metadata 已标 public_lean4_proof=true；未在本题锁定环境重新编译该公开长证明，未向镜像置入答案。"
+    }
+  }
+}

@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact skill CSV ID not found. Upstream main and linked Konamiu source retain W_3_6 as sorry; PR 6061 excludes this case. Related LeanCSP and Ramsey developments do not prove W 3 6 = 32. GitHub global code search requires authentication (HTTP 401), so absence is not confirmed. See repair-report.json and external research evidence."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/GreensOpenProblems/14.lean"

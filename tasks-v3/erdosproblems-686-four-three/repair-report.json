@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-686-four-three",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式加入 /opt/formal-conjectures/.lake/packages；命令语法检查及最终 Harbor 容器内搜索 IsSquare 定义均通过。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 imports；补上原先缺失的 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。最终本地 Harbor 构建及同容器 ubuntu 重跑均成功，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本两次，均为 no_issue；原始头通过，修改头与删除 := 均被拒，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题不可变 golden 隔离候选提取完整 elaborated 类型及 universes=[]，在匹配 Lean 4.27.0 Docker 中生成并独立编译审计 ExpectedType；两份可信包、清单和 checker 已同步。运行时只从固定 /tests 或本地入口 /opt 包加载已校验产物，不重新解析命题或回退生成。最终当前本地 task Harbor 构建成功，上传包及 /opt 包与本地逐文件哈希一致。两入口原题均因 sorry 预期退出1/reward0；同一最终子容器补测 Spec加载/审计、ubuntu编译、完整类型比较、公理拒绝sorryAx、canary，以及冻结/越界/语义偷换/缓存遮蔽/产物缺失和篡改均通过。额外回归展示旧 GoldenCheck 可接受冻结文字不变的条件 Icc 名称偷换，而固定 Spec 比较拒绝。公开 Target、golden、GoldenCheck 和全部 immutable 哈希不变；保留原源码与公理规则，未增加外部模块白名单或 initializer 沙箱。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-686-four-three/attempt-001，最终验收在 final-acceptance/。Docker 清理已核实：本题3个容器已stop/rm，2个网络已移除，两份新建镜像 d6efd35da27c、f0da04f7c381 均已删除并验证不存在。首次清理时另一题短暂使用初次镜像，未强删或触碰其容器；后续核实已无使用者才删除。预存共享缓存保留，本题无遗留资源；详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。实际目标为 N=4,k=3,m>=n+3 的不可能表示变体，与锁定上游及论坛 post-4599 的结果一致；自然数乘积后转有理数，分母恒正。冻结注释误复制 k=2 文字，但命题本身无明显错误；仅标记，不修改任何数学输入。来源和域审计见 research-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=unknown，状态 blocked。技能 CSV 按完整 ID 精确匹配未命中。多组检索并读取当前/锁定上游、原题论坛、AI wiki、作者索引及 GitHub PR/Mathlib 线索；上游 four_three 仍为 sorry，non_square/nine/four_two 不覆盖本目标。相关 williamjblair/erdos-686 campaign 404且无法 git 读取，PR4359 提及移除的证明实验而历史 API 限流，关键线索未核实，不能声称不存在公开完整证明。详见 public-csv-match.json、research-audit.json 和访问日志；未向镜像加入答案。"
+    }
+  }
+}

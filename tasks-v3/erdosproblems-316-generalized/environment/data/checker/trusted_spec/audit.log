@@ -1,0 +1,15 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos316.erdos_316: [propext, Quot.sound, Classical.choice]
+audited Erdos316.erdos_316.variants.multiset: [propext, Quot.sound, Classical.choice]
+binder: n : ℕ
+binder: hn : 2 ≤ n
+complete binder count: 2
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ),
+  2 ≤ n →
+    ∃ A,
+      A.Nonempty ∧
+        0 ∉ A ∧
+          1 ∉ A ∧ ∑ k ∈ A, 1 / ↑k < ↑n ∧ ∀ (P : Finpartition A), P.parts.card = n → ∃ p ∈ P.parts, 1 ≤ ∑ n ∈ p, 1 / ↑n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

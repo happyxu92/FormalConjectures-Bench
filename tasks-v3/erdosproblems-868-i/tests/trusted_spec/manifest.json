@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-868-i",
+  "target_name": "Erdos868.erdos_868.parts.i",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "a6f20c02e339c5b159a2c754a4713ac1b748cf71b96577323c7d8eb783b0a2ed",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "40c17f38c9facb6f2f228986d9d2853c62f90fa94aab63878bb9e9ea3617d3ee",
+    "FCBTrustedSpec.ilean": "bbeb98ec490348d069a7ce17a4bc0ce165c537e56d30c4992b2af5c5d189fd0c",
+    "FCBTrustedSpec.lean": "5d1826a8f5e1c93a5cf3a729db497702f6c2e0dce3bcdb5c3269cc1db46a79e6",
+    "FCBTrustedSpec.olean": "1a635f042782233169d4b4e1b5365dd36fed3dcd5cef02823d9e579b6cd9d5f4",
+    "audit.log": "643c2a1e2ff86b3696928f4ca831c7a3df19f982099c1cbee2c8ce1560096b4e",
+    "generate.py": "e4da6ba013595f3a8900a7d43887ce7470ca20db1fcab8d93275455dbeb17c0b",
+    "reproduce.sh": "ede6a2a9636394e9b93ab45c02647e96820f334d723375ff378758ff00312c70"
+  },
+  "generation_image": "sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a",
+  "generation_command": "docker exec -u root erdosproblems-868-i-spec-g61-a001-c94e bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Independent precompiled Spec import: entire closed Iff proposition (0 outer binders; RHS has A and both hypotheses = 3 binders), no universe parameters; ncard_add_repr prefix and ExpectedType transitively use only permitted standard axioms. Temporary theorem and descendants absent. No candidate loaded."
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-427-shiu",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "源码搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；最终 Harbor 子容器中以 ubuntu 实际搜索到 Mathlib 的 infinite_of_forall_exists_gt，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；保留 ProblemImports 预编译，补上 Dockerfile 最终 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 task 两次 Harbor 构建及最终子容器 ubuntu 构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本并最终复验，均为 no_issue；原始头、冻结前缀及 := 边界校验通过，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden 隔离候选生成并预编译 FCBTrustedSpec.ExpectedType，审计完整六个参数、空 universe 列表及前缀定义传递公理；两份可信包、checker AST/内容与全部 immutable 哈希一致。固定工具链及 Spec/依赖解析来源，运行时无重新解析或生成回退；保留原正常 import 规则与安全检查。最终当前本地 Harbor 镜像 sha256:4b102c1e8313aba0e5684c468749337db3b70b955db868908e53b7ed357a0695；/tests 上传包及 /opt 包与本地哈希一致。两入口因原题 sorry 返回 1、reward=0，属于预期拒绝；同一最终子容器的两套实际函数补测均通过，覆盖 Spec 加载/审计、ubuntu 编译、完整类型比较、目标公理拒绝/允许路径、sorry canary、冻结/越界/名称语义偷换/缓存遮蔽/缺失及篡改负例。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-427-shiu/attempt-001，最终验收见 final/。Docker 已 stop/rm 本次三个容器（6fbced68577e、f7769d0139c5、5e2cc6643280），移除两任务镜像（7ea50c97bdea、4b102c1e8313）及两自建网络，并核实均不存在；预存共享缓存镜像与其他任务资源未动，见 cleanup.json。原题证明未完成，不声称原题证明通过。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已核对锁定上游 427.lean、完整前缀定义与 Shiu 2000 论文作者/出版社摘要（DOI 10.1112/S0024610799007863）。任务确为完整定性 Shiu 连续素数定理；自然数参数、正长度/模数、互素、无限多个零基起点及 Ico/image 均一致，q=1,2 为有效平凡扩展。metadata 标记 consistent；未改数学陈述、定义、公开 Target、golden 或 GoldenCheck。见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID 精确匹配技能 CSV 未命中，随后多组检索并读取上游、原 gist、相关 PR 与实际 Lean 源码。发现 https://github.com/Jayyhk/erdos-lean/blob/main/problems/427/Erdos427.lean 的 shiu_consecutive_primes，完整 vendored Maynard–Tao/BFT 证明仅 import Mathlib，未发现 sorry/admit 或新增公理。原 Jennings gist 与仅改分类的 PR 不计完整证明。公开源码使用 Lean 4.33.0，未在本题重编译；其完整签名到固定 ExpectedType 的覆盖桥已在本题 Harbor/Lean 4.27 实编译并审计标准公理。metadata 标记 public_lean4_proof=true；未将答案加入任务。见 public-proof-audit.json、public-source-scan.json、public-bridge.log。"
+    }
+  }
+}

@@ -17,9 +17,14 @@ mathlib_commit = "a3a10db0e9d66acbebf76c5e6a135066525ac900"
 theorem_name = "Erdos697.erdos_697.parts.ii"
 benchmark_bucket = "informal_proof"
 oracle_status = "none"
+statement_status = "mismatch"
+statement_status_note = "The retained parts.ii hypothesis has the threshold direction reversed. At alpha=0 and m>=3 the qualifying divisor set is empty, so density tends to 0, not 1. Retry7 independently kernel-checks the negation of the exact ExpectedType using a genuinely proved density_exists; only standard axioms. Statement and definitions are preserved."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID is absent from the skill CSV. Direct upstream and PR 2691/3213/5271 sources checked: sorry or corrected statement. Actual plby source proves the opposite threshold direction with a different density definition; Jayyhk catalogue has no 697 entry. Original problem, forum and proof-claims pages were read successfully. No exact full proof verified; problems.science tracker remains HTTP 500 and some GitHub APIs are rate limited, so unknown/blocked is retained."
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
-verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
+verification_explanation = "The verifier checks frozen text and source restrictions, loads a hashed precompiled candidate-independent Spec, compiles candidates as ubuntu with fixed trusted import paths, compares the complete theorem type to ExpectedType, audits theorem axioms, and checks the sorry canary."
 
 [verifier]
 timeout_sec = 7200.0

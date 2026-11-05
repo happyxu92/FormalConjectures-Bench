@@ -8,6 +8,11 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "suspect"
+statement_status_note = "Ordered representation count and endpoint coefficient differ from Erdos-Nathanson 1979, pp. 89 and 100 (Theorem 2); upstream PR 6500 corrects both. No counterexample to this retained variant is established here; statement and definitions are unchanged."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact skill CSV miss. Upstream/forks/PRs checked: fixed_epsilon remains sorry; hjyuh proves Hartter_Nathanson only, plby proves parts i/ii only, PRs 2708/3230 only change attributes and retain sorry. Erdos page/forum blocked by Cloudflare and GitHub APIs were rate limited."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/868.lean"

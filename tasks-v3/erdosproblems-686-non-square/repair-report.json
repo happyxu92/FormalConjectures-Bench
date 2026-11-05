@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-686-non-square",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 .lake/packages；在最终 Harbor 容器以 ubuntu 实际搜索 IsSquare，退出码 0，命中 Mathlib/Algebra/Group/Even.lean。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；补齐 Dockerfile 最终 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的 Harbor Docker 构建成功，容器内 ubuntu 同命令退出码 0；保留可信依赖权限与原命令链。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本并最终复验：均为 no_issue，原始头通过，修改头及缺少 := 被拒绝；未改变冻结常量。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题 golden 隔离 Submission 生成并预编译 ExpectedType，保留完整 iff 类型、零外层 binders、空 universes；独立审计传递依赖仅含允许标准公理，临时目标未导出。两份固定 Spec 包、checker 内容与 AST 一致，原始 immutable 哈希全部匹配。当前本地 task 经 Harbor 构建；上传 /tests 与 /opt 包、golden 均逐文件验哈希。正式入口和 ubuntu 本地入口均因原题 sorry 预期返回 1、reward=0；同一子容器两套实际函数补测通过 Spec 加载/审计、ubuntu(uid1000) 编译、完整类型比较、sorryAx 拒绝及 canary。冻结、越界、同名模块/缓存/环境遮蔽、缺失与篡改产物负例通过；冻结文本不变的 Erdos686.IsSquare 名称偷换可编译但被完整类型检查拒绝。正常 helper/import 规则及原安全检查保留，无通用外部模块白名单或 initializer 沙箱。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-686-non-square/attempt-001。Docker 清理完成并核实：已 stop/rm 本题两个容器（spec-g61-a001-686d 与 g61-a001-686d__env-main-1），移除本题镜像 ac01bc425b79 及本题专属网络；预先存在的共享依赖镜像保留。详见 cleanup.json。无未验收实现路径；未提供或验证原题完整证明。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核对 task.toml 指定的固定修订 686.lean、完整前缀与目标及 erdosproblems.ai 的原题镜像：本题是已解决的非平方 N≥2 变体，不是尚开放的完整原问题。自然数乘积再转有理数、正分母及 m≥n+k 约束未见明显错误；可用 Pell 方程得到 k=2 情形。主站/论坛受 Cloudflare 403 限制，已如实记录，固定上游和镜像可读取。未修改任何数学陈述、定义、golden 或 GoldenCheck。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true。按完整 ID 精确命中技能 references/public-lean4-proofs.csv：https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/686.lean#L128 。依要求直接标记，无须重新联网验证；未将公开证明注入任务，也未宣称已在本题环境编译该证明。"
+    }
+  }
+}

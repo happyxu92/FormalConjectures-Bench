@@ -1,0 +1,33 @@
+{
+  "task_id": "greensopenproblems-14-w-3-3",
+  "target_name": "Green14.W_3_3",
+  "universe_params": [],
+  "complete_outer_binder_count": 0,
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "340ad757ef9f17ac70b6289148822b458c24f68724fe1c3358acd76bbde17763",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "d9b9959a04c51d1309f5ce67954301bebf7e51fb07badfbc34becb74d76cccf1",
+    "FCBTrustedSpec.ilean": "d416166fba91d796e02acf87c43fe5e2998c892966e9a22866b7897f1af356df",
+    "FCBTrustedSpec.lean": "aa0a47645f710f8c48c158a4c8a7639842a30aef53d85fe19b7543cb2f941595",
+    "FCBTrustedSpec.olean": "1ce4dfa03ba8474e8c30b9f00806b2a64b7556032ee133b4ae4c4d9def5e1c0c",
+    "audit.log": "85981e99fc72f6b7dc045d2b5c9db175b6f715d5dedd1d52b56fd13ccccd701d",
+    "generate.py": "c58f3a5ab831af353dad9ac890aa0145832c86c8edb291facaf828ad54cb546e",
+    "reproduce.sh": "47e20f912b4de59da42abcf81f2c579c14d54f4b5561cbd8cb64bcbc8d691cb8"
+  },
+  "generation": {
+    "method": "Lean parser and elaborator on entire original target declaration; retain info.type and ordered levelParams; restore environment before adding ExpectedType definition",
+    "isolation": "pinned Docker Linux dependency; only original golden and generation tools copied; no candidate source, Lake config or cache; fixed explicit LEAN_PATH",
+    "audit": "AuditSpec.lean independently imports precompiled Spec, checks definition value, outer binders, universes, absence of temporary theorem, and allowed transitive axioms of ExpectedType and both referenced prefix definitions. Unrelated original prefix sorry theorems are unchanged and are not dependencies of ExpectedType."
+  }
+}

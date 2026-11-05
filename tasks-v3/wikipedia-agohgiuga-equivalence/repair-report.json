@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-agohgiuga-equivalence",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 和 .lake/packages；在最终 Harbor 容器实际搜索 Bernoulli 定义成功，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 imports；补齐 Dockerfile 最终 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的最终 Harbor 构建及容器内 ubuntu 重建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本两次，均为 no_issue；原头、冻结前缀、赋值边界和两份 checker 一致性验证通过，无需改头。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题可信 golden 隔离 Submission，使用匹配 Lean 4.27.0 Docker 提取完整类型及空 universe 列表，编译并独立审计 ExpectedType 与两项定义，标准公理之外无依赖。两份可信包同步，固定清单与产物哈希；checker 固定可信搜索路径，直接比较 ExpectedType.value 和目标完整 type，不重新解析命题或回退生成。最终本地 Harbor 镜像 6fc6adebc5f8；/tests 上传包与 /opt 包均与本地逐文件哈希一致。正式和本地入口因原题 sorry 预期拒绝（exit 1、reward 0），不表示实现故障或完成原题证明。同一最终子容器内两模式实际函数补测通过：Spec/定义审计、ubuntu UID、编译、完整类型、公理及 sorry canary；冻结/越界/名称遮蔽/完整类型偷换/恶意 coercion/缓存遮蔽/产物缺失及篡改均覆盖。局部名称和错误命题负例仅在隔离临时 fixture 中组装，不修改公开前缀。原正常 import 与源码安全规则保留。所有 immutable 哈希、两份 checker AST/内容和 Spec 包一致性复核通过。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-agohgiuga-equivalence/attempt-001，重点 final-validation-coverage.json、final-delivery-hashes.json、final-verification.log。Docker 清理已验证：本题容器 5511552f3ad9、9bc879edc46c、73afd4411d53 已 stop/rm，镜像 4d8a8f132ee3、6fc6adebc5f8 及两条本题网络已删除；预先存在的匹配依赖镜像和共享构建缓存保留，未使用 prune。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已标记 statement_status=consistent。检查完整定义、p≥2、求和区间、整数分母清除条件及 Bernoulli' 在 p=2 的符号约定；与 Kellner arXiv:math/0409259 第2节及定理2.3比对，未发现明显错误。本题是两个猜想的已知等价性，不是证明任一开放猜想；未修改数学输入。详见证据 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 ID 精确匹配技能 CSV 未命中，继而多组检索并核查上游、Mathlib、相关仓库、fork 和 PR。PR 2983/3019/2482 的等价性仍用 sorry；其他公开 Giuga 结构及 Carmichael 证明不覆盖 Bernoulli 等价目标。本轮充分检索未找到已知完整 Lean4 证明，已标记 public_lean4_proof=false、status=searched，不声称证明不存在。GitHub API 限流已通过 HTML/raw/codeload 补齐关键来源。详见 public-proof-review.json 及下载源码。"
+    }
+  }
+}

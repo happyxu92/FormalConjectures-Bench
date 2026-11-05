@@ -9,6 +9,12 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "suspect"
+statement_status_note = "Pinned sigma asks for a positive natural-density subset, whereas Erdos 1973 Satz I and later bounds establish positive lower density. Upstream issue #5648 / PR #5795 flag this stronger reading; no contradiction to this particular target is established. Statement and definitions retained."
+public_lean4_proof = false
+public_lean4_proof_status = "searched"
+public_lean4_proof_urls = []
+public_lean4_proof_note = "Exact skill CSV miss; varied indexed searches, upstream source and PRs, Mathlib, plby and Jayyhk sources checked. The complete 418 proofs found concern noncototients, not this sigma-density target; PRs #2664/#3186 retain sorry. No known complete proof of the retained target found; not a nonexistence claim."
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/418.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

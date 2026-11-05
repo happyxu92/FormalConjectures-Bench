@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-24-lower-hl",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式加入 /opt/formal-conjectures/.lake/packages；最终 Harbor 容器内以 ubuntu 执行搜索，找到 Mathlib 的 limsup 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；原 Dockerfile 缺少普通用户构建验收，已以 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target 结尾。当前本地 task 经最终 Harbor 构建成功，同一容器 ubuntu 再构建退出码 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际执行技能 check_unicode_header.py 并最终复验，均为 no_issue；原始头通过，改头及移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重新解析 GoldenCheck。现从本题可信 golden 隔离候选提取完整类型并预编译 ExpectedType：0 个外层参数、universe_params=[]；独立审计 ExpectedType、gamma、max013AffineTranslates 的传递公理合规。两份可信包及 checker 内容/AST 一致，15 个 immutable 哈希全匹配。最终本地 Harbor 镜像 ffb7a5cc67c3；/tests 上传包及 /opt 包与宿主哈希一致。正式入口退出 1、reward=0，本地入口退出 1，均仅因原题 sorry 预期拒绝；同一最终子容器的两份 checker 各完成 28 项实际函数补测，覆盖固定 Spec 审计、ubuntu 编译、完整类型比较、目标 sorryAx 拒绝、sorry canary，以及冻结、越界、合法 LE 实例语义偷换、同名源码/缓存/环境遮蔽、产物缺失及篡改负例。无运行时生成或回退；保留正常 import 和原安全规则。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-24-lower-hl/attempt-001/。Docker 清理已核实：容器 a6d87e31db1f、21dfd4ec9154、5a07377fd610 均已 stop/rm；本次镜像 fd0eb380afb6、ffb7a5cc67c3 及两个本题网络均已移除，无残留；预存共享依赖镜像保留。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。核对锁定上游 24.lean、Green Problem 24 及 Aaronson arXiv:1801.07135 Proposition 1.2、Definition 1.3、(1.2)。有界非空自然数 sSup、实数 limsup 及 1/12 非严格下界合理；移除退化解仅减少 n，不影响渐近常数。此为已知下界变体，不是求解原开放精确常数问题。未修改任何数学陈述或定义。详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确命中技能 references/public-lean4-proofs.csv，已标 public_lean4_proof=true，无需联网复核。来源：https://github.com/conjectures-io/conjectures-contribution/blob/main/contributions/green-24-variants-conjecture/10e86c934afdeeb8cb74f4b0ae90e14953920084c1118c6d6a5ede4ad19411a3/script.lean#L114 。未将公开答案放入 task，未声称在本题环境编译该证明。"
+    }
+  }
+}

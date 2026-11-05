@@ -1,0 +1,40 @@
+{
+  "task_id": "wikipedia-artinprimitiverootsconjecture-part-ii-power-squarefreepart-not-modeq-one-2",
+  "target_name": "ArtinPrimitiveRootsConjecture.conditional_artin_primitive_roots.variants.part_ii_power_squarefreePart_not_modeq_one",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "78eb2500417e6e21dfcd764b8a9f7f89c964064fc11523bdef1826a0f3ecd2aa",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "7adfc1c8af6bb020cf42ef30b078e5e1bcecc3a47d1d7822e5ebab34634752ca",
+    "FCBTrustedSpec.ilean": "e39a8554ad4a7a85e6a6a2b4832629c74ceeee3ca2e4451ef57c3903c73f6328",
+    "FCBTrustedSpec.lean": "b9809ead81386a4da493aba975eaab34792c9c9eb5606a1065ceb027d517b751",
+    "FCBTrustedSpec.olean": "ffea3df9418b44c593e0893a7a76a8b34903dd8efda61c05b2c8b345ba73424d",
+    "audit.log": "a2a24857b1f5b41677c1f177bfdedbc31cea518a8551fa43983465c8647d825e",
+    "generate.py": "442d1dded46f074d2ef9eda78d47d7b6cd26d19531fee9a300c843aada002651",
+    "reproduce.sh": "395a0c49b40b5247dc14833717c4d21b976dc4d098e4d23e2ca5fbd4b4216b74"
+  },
+  "generation_image": "sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a",
+  "generation_command": "docker cp generation-input wikipedia-artinprimitiverootsconjecture-part-ii-power-squarefreepart-not-modeq-one-2-spec-g61-8d20:/tmp/repair-bundle; docker exec -u root wikipedia-artinprimitiverootsconjecture-part-ii-power-squarefreepart-not-modeq-one-2-spec-g61-8d20 bash /tmp/generate.sh (generate-in-container.sh retained in repair evidence; compiles the pinned RiemannHypothesis import directly before reproduce.sh)",
+  "audit": "Complete type: a m b ha hb hm₁ hm₂ hb' h, nine outer binders, no universes. ExpectedType value and all four prefix definitions transitively depend only on standard allowed axioms. Temporary target and children absent. Earlier unchanged sorry theorems in prefix are not dependencies."
+}

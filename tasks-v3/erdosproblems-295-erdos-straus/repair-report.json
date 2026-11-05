@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-295-erdos-straus",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "保留已修复的显式 /app、/opt/formal-conjectures、.lake/packages 搜索路径；本轮当前 Harbor 子容器以 ubuntu 实际搜索 Real.log，exit0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 仅两个标准 imports，无额外预编译模块。保留 Dockerfile 最终 USER ubuntu / RUN lake build +FormalConjecturesBench.Target；本轮当前本地 task Harbor force_build 成功，同容器 ubuntu 重建 exit0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本两次，均 no_issue；两份 checker、原头、冻结前缀及 := 边界通过。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已消除旧阻塞：仅在独立 Spec 中为原名、原完整类型 exists_k 填入真实 Lean 证明（调和级数有限前缀＋按分子强归纳的贪心单位分数分解），不改公开 Target/golden/GoldenCheck/数学定义/冻结哈希。独立审计 exists_k、k、ExpectedType 仅含三项允许公理；原前缀无关 sorry 未进入依赖。AuditOriginal 验证原辅助完整类型与 universes、k 类型/定义值及完整目标类型身份；目标 universes=[]、外层参数0，临时目标未导出。匹配 Docker 预编译成功，两可信包和固定清单同步；checker 只从 /tests 或本地 /opt 的固定预编译包加载，不运行时生成/重解析目标/回退。当前本地 Harbor force_build、上传与 /opt 全包哈希、两入口及同容器两位置实际函数补测均完成。原题 sorry 使两入口 exit1/reward0，属于预期证明拒绝；补测真实覆盖可信加载/审计、ubuntu uid1000 编译、完整类型比较、目标 sorryAx 拒绝、canary、冻结/越界/名称偷换/缓存遮蔽/产物缺失及篡改；全部通过。证据根：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/retry-seven-20261105/tasks/erdosproblems-295-erdos-straus/attempt-001。Docker 已清理并核实：本轮3容器（65825b101cae、c31174d365ec、b7db7cf07a5a）、2镜像（12db9f1df12d、cf6a6a0752df）及1网络均已删除；共享预存依赖镜像保留，无本题残留。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent；实际目标为已知 Erdős–Straus 双侧渐近界，不是开放发散猜想或4/n。核对完整冻结定义、pinned 源与 Monthly E2232(1971)不等式(1)公开转述；Fin k.succ 的项数差1由常数吸收，eventually 排除 log 边界，实数减法和 Ioc 严格性无明显矛盾。仅检查标记，未修改数学输入。详见 research-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整ID精确匹配技能 CSV 未命中；重新多组检索并读取直接源码。上游仍 sorry；Sodelin 仅 N=18 有限界；实际跟进声称 solve 的 PR #3096/#2572 的完整 diff、正文和作者分支，只有 category 改动且明确 sorryAx/loophole，不是证明。#6952/#5344 仅定义变更。已绕过 API 限流跟进 tienxion 作者仓库和295论文，文首明确无形式验证、部分结果。当前原题/proof-claim 清单仍403，不能核实所有当前链接，保留 unknown/blocked，不仅因 GitHub 搜索认证而作未知。目标完整公开证明未确认；本轮仅证明 Spec 必需辅助引理，不等于证明目标。详见 source-fetch-results.json、research-review.json。"
+    }
+  }
+}

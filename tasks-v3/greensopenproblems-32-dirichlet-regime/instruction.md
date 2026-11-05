@@ -30,6 +30,9 @@ Verifier rules:
 - The final theorem may depend only on these standard Lean axioms:
   `propext`, `Classical.choice`, `Quot.sound`.
   It must not depend on `sorryAx` or on any task-local axiom.
+- The verifier loads a fixed precompiled trusted Spec and compares the complete
+  theorem type; helper names or instances cannot reinterpret the frozen
+  definitions or the expected proposition.
 
 Use this command to test your final answer:
 
@@ -43,7 +46,10 @@ without modifying the checker itself, the official verifier is intended to pass.
 For source search, prefer commands such as:
 
 ```bash
-rg --glob '*.lean' 'search term' /app /opt/formal-conjectures
+rg --glob '*.lean' 'search term' \
+  /app \
+  /opt/formal-conjectures \
+  /opt/formal-conjectures/.lake/packages
 ```
 
 Internet access is enabled for this task. You may use external literature and web resources, but the final Lean proof must pass the local verifier.

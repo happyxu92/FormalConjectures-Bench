@@ -1,0 +1,13 @@
+FCBTrustedSpec.lean:45:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:56:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [Classical.choice, propext, Quot.sound]
+audited Erdos944.SimpleGraph.IsErdos944: [Classical.choice, propext, Quot.sound]
+complete outer forall binder count: 0; existential V : Type u and graph retained
+universe parameters: [u]
+def FCBTrustedSpec.ExpectedType.{u} : Prop :=
+∃ V G, Erdos944.SimpleGraph.IsErdos944 G 5 1
+def Erdos944.SimpleGraph.IsErdos944.{u} : {V : Type u} → SimpleGraph V → ℕ → ℕ → Prop :=
+fun {V} G k r => G.IsCritical k ∧ ∀ (edges : Set (Sym2 V)), G.IsCriticalEdges edges → r < edges.ncard
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos944.SimpleGraph.IsErdos944' depends on axioms: [propext, Classical.choice, Quot.sound]

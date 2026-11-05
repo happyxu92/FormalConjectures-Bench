@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-847-erdos-847",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit .lake/packages to instruction search. Actual ubuntu rg found the Mathlib ThreeAPFree lemma; see /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-847-erdos-847/attempt-001/instruction-search.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports. Added final USER ubuntu RUN lake build +FormalConjecturesBench.Target; current local Harbor build and direct ubuntu replay succeeded. See postchecks.log and accept-validation/harbor-image-history.txt."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Required skill script ran before and after repair: no_issue; original header accepted, altered header and missing assignment rejected. See unicode.json and unicode-final.json."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Independently extracted complete golden iff type and ordered universe list [] without candidate imports; compiled/audited ExpectedType and HasFew3APs, temporary theorem absent. Identical pinned Spec packages and checker AST/content verified. Current local Harbor acceptance completed, no exception; /tests upload and /opt checker/golden/Spec hashes matched. Both actual entries reject original sorry (exit 1, official reward 0), as expected. In the same acceptance container both real checker modules passed fixed Spec loading/audit, observed ubuntu UID 1000 compilation, full type comparison, target axiom rejection and sorry canary. Frozen/header/config, unconfined source/symlink, legal semantic name shadowing (Infinite/Fin; no sorry or extra axioms), candidate cache/module/env shadowing and missing/tampered artifacts/manifest negatives all reached and rejected at their intended stages; no runtime regeneration. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-847-erdos-847/attempt-001/accept-validation/ and validation-coverage.json. An intermediate duplicate Harbor CLI was interrupted by command timeout after build/verifier; the subsequent accept run completed normally. Cleaned all four owned containers (spec, initial, final, accept), three task image tags/IDs and remaining owned networks with suffix g61-847a-6c29; docker inspect verified absence. Pre-existing shared dependency image retained; no outstanding owned resources. See cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked consistent. Pinned upstream agrees. RRS arXiv:2311.08556 Theorem 1.4 at k=3 supplies an infinite density-rich set not finitely coverable by 3AP-free sets. Quantifiers, coercions, finiteness and empty cover checked; mathematics unchanged. erdosproblems.com returned 403, but original paper and upstream were accessible and sufficient. See statement-review.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact full-ID CSV hit: https://github.com/plby/lean-proofs/blob/dfe2d78128b493c572cf525b1b8edf4897fb7664/src/latest/ErdosProblems/Erdos847.lean#L113 . Set public_lean4_proof=true; no new network verification required, not compiled here. See public-csv-match.json."
+    }
+  }
+}

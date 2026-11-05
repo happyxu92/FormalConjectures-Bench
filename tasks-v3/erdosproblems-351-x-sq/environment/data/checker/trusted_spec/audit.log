@@ -1,0 +1,13 @@
+02c3f3675e15c163cc84e9e9d78c3718a912ffb8178863531749d6e1a408b6f9
+FCBTrustedSpec.lean:55:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:67:18: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos351.imageSet: [propext, Quot.sound]
+audited Erdos351.IsStronglyComplete: [propext, Quot.sound]
+audited Erdos351.HasCompleteImage: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Erdos351.HasCompleteImage (Polynomial.X ^ 2)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

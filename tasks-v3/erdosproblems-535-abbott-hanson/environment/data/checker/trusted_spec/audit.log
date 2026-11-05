@@ -1,0 +1,11 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos535.f: [Classical.choice, propext, Quot.sound]
+audited Erdos535.AllBigOmega: [propext, Quot.sound, Classical.choice]
+audited Erdos535.NoConstantPairwiseGcdCoprimeSubsets: [propext, Quot.sound]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {r : ℕ}, 3 ≤ r → ∀ ε > 0, ∀ᶠ (N : ℕ) in Filter.atTop, ↑(Erdos535.f r N) ≤ ↑N ^ (1 / 2 + ε)
+def Erdos535.f : ℕ → ℕ → ℕ :=
+fun r N =>
+  sSup {k | ∃ A ⊆ Finset.Icc 1 N, (∀ S ⊆ A, S.card = r → ¬∃ d, (↑S).Pairwise fun a b => a.gcd b = d) ∧ A.card = k}
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

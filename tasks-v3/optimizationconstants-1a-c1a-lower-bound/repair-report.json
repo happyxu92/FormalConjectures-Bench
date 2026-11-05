@@ -1,0 +1,35 @@
+{
+  "task_id": "optimizationconstants-1a-c1a-lower-bound",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 和其 .lake/packages；实际 rg 找到 package 中 IntegrableOn 定义，退出码 0。证据：attempt-001/instruction-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 仅有 ProblemImports 和 Submission，无额外上游 imports。补充 Dockerfile 最终 ubuntu RUN lake build +FormalConjecturesBench.Target；最终本地 Harbor Docker 构建和同一子容器 ubuntu 构建均通过。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本并最终复验，均为 no_issue；原头通过、变更头和缺失 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离 Submission 生成并在匹配 Lean 4.27.0 Docker 中预编译 ExpectedType；完整类型 1.2748 ≤ Constant1a.C1a，无参数及 universes，ExpectedType/C1a 传递公理审计通过。两份固定 Spec 包、checker 内容/AST、immutable 哈希一致；运行时只加载固定产物，不解析原命题或回退生成。最终本地 Harbor trial optimizationconstants-1a-c1a-lower-bound-g61-1a8c-final 构建通过，/tests 与 /opt 包及 golden 哈希均匹配。两入口因原题 sorry 预期退出 1、正式 reward=0；同一最终子容器对两份 checker 各完成 28 项实际函数补测，覆盖 Spec 加载/审计、ubuntu UID=1000 编译、完整类型、sorryAx 拒绝、canary、冻结/越界限制、冻结文字不变的 LE 实例语义偷换编译后类型拒绝、同名缓存遮蔽、产物缺失/篡改且无重新生成。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/optimizationconstants-1a-c1a-lower-bound/attempt-001。Docker 清理已核实完成：本题 spec、初次及最终 Harbor 共 3 个容器、2 个网络、2 个新镜像及其 tag 均已移除；预存共享缓存镜像保留，未触及其他 task 资源。清理证据 cleanup.json / cleanup.log。"
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "已标记 statement_status=mismatch，不改陈述/定义/Target/golden。Target:41-44 卷积区间为 [1/2,1]，来源为 [-1/2,1/2]；支撑于 [-1/4,1/4] 的指示函数使前者卷积全为 0。另 forall f 无可积性限制，取 f≡1，区间积分为 1/2，而全实轴实值 Bochner 卷积积分为 0，从而 C1a≤0。独立 MathAudit.lean 已内核验证 ¬ExpectedType，仅依赖标准三公理。来源：Tao constants/1a.html；Matolcsi–Vinuesa arXiv:0907.1379 §2、Theorem 3.2；上游 issue #5696、PR #5749。详细证据 mathematical-review.json、math-audit.log。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 task ID 精确匹配技能 CSV 未命中。执行 11 组多角度检索并核查上游 pinned/main、相关 PR、论文/作者来源、Mathlib 检索、Tomar v13 和 Dualverse 的实际 Lean 源码；上游仍 sorry，相关完整证明使用不同定义/区间/函数类或证明不同命题，不覆盖本题冻结目标。GitHub 全局代码搜索 API 返回 HTTP 401，代码/fork 覆盖受阻，故标记 unknown/blocked，不能断言不存在公开证明。证据 public-proof-review.json、source-fetch.json、lead-code-fetch.json；未将公开答案加入镜像。"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "task_id": "wikipedia-agohgiuga-le-primefactors-card-of-isstronggiuga",
+  "target_name": "AgohGiuga.agoh_giuga.variants.le_primeFactors_card_of_isStrongGiuga",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "fb710fa11340c15f489640d08df91647236ca71bfdfa4051af02256ddc5c8b2b",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "ce09c6f3545ad6e32bd2f7fdd3165aba2b1153581d635112630084d855facdc3",
+    "FCBTrustedSpec.ilean": "22b22e0a052506d7d5f6edad2da9da2335d45cf54174f0ec16e808cc3b25eeb7",
+    "FCBTrustedSpec.lean": "f68d2c7c00b0a75d542188294cc21db911f9b197365d0f87894ea185107d081b",
+    "FCBTrustedSpec.olean": "21f86748d29079ba82f59031bedc948b99599d0f87ca64326866568518bce99e",
+    "audit.log": "27a53656cc068b76a063f1d6424e3e98d4cef47585d58df5541c1af7dd345788",
+    "generate.py": "05f2fccf7c85247e4364db6933220ffd9467d2bd8c10847f589c5f4d02336cd0",
+    "reproduce.sh": "960ab80dac14106d7da2e850b6afae34bfd72d6be0a82e3e607de686eddf7f12"
+  },
+  "generation_image": "sha256:25926448bc53f40a61204b7532fe1097c49138f57f718011e9164bb5725071fb",
+  "generation_command": "docker exec -u root wikipedia-agohgiuga-le-primefactors-card-of-isstronggiuga-spec-g61-a001-9f2c bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Full original type extracted with Lean parser/elaborator, including a : Nat and ha : AgohGiuga.IsStrongGiuga a. No universes. Temporary target and children absent. ExpectedType and IsStrongGiuga audited transitively: no sorryAx/new axioms. Earlier untouched frozen theorems contain sorry but are not dependencies of ExpectedType or IsStrongGiuga."
+}

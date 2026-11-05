@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-riemannzetavalues-exists-irrational-of-five-seven-nine-eleven",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；在本次 Harbor 容器以 ubuntu 实测搜索到 Mathlib/NumberTheory/Real/Irrational.lean 的定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 imports，不需追加预编译模块；原 Dockerfile 缺少末尾普通用户验证，现以 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target 结尾。本地 task 的 Harbor Docker 构建成功，同一容器 ubuntu 再构建成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "修复前和最终均运行技能 check_unicode_header.py，case=no_issue，退出码 0；原始头、冻结前缀及 := 边界核验通过，无需修改 Unicode 常量。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重解析 GoldenCheck，存在语义遮蔽。现从本题 immutable golden 隔离候选，用锁定 Lean 4.27.0/x86_64 Docker 提取完整类型，生成并预编译 ExpectedType；outer binders=0、universe_params=[]，临时目标未导出，类型及传递依赖仅含允许公理。两可信包及 checker 内容/AST 一致，清单和产物哈希固定，运行时无生成或回退；仅临时 Target 复用可信前缀。保留原源码、冻结、公理和 canary 检查及正常 imports，无新增通用白名单/initializer 沙箱。本地 Harbor 镜像 sha256:0e5e20c1e09ece8a2910194fb1a9f62d7ab7326200ea9e4f8fbadd24eefa337c，/tests 上传与 /opt 安装包均逐文件匹配；两入口因原题 sorry 预期退出 1，reward=0，非实现故障。同一子容器分别对正式及本地 checker 各完成 30 项实际函数补测：Spec 加载/可信审计、ubuntu uid 1000 编译、完整类型匹配、sorryAx 目标公理拒绝、canary、冻结/越界、保留冻结文字的名称偷换编译后类型拒绝、缓存与环境遮蔽、产物缺失/篡改且无重新生成。所有 immutable 哈希不变；未提供或声称原题完整证明通过。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-riemannzetavalues-exists-irrational-of-five-seven-nine-eleven/attempt-001。Docker 清理已核实：本题容器 bd5e047928b1、21bd42c99b75 已 stop/rm；本题镜像 0e5e20c1e09e 及网络 95e49ac65d66 已删除并 inspect 确认不存在。预存共享依赖镜像 6b765e0c2f25 保留，未清理他题资源。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已核对 task.toml 指定修订的上游全文、完整前缀与 elaborated 类型。复数参数集合 {5,7,9,11} 中至少一项 zeta 值等于无理实数的复嵌入，符合 Zudilin (2001), Russian Math. Surveys 56(4), p.774 Theorem。作者原文 https://www.math.ru.nl/~zudilin/PS/zeta5-11%24.pdf 已下载并渲染读取；Wikipedia 403 不阻碍主来源核查。未见明显数学错误；metadata 标 consistent，未修改陈述或定义。详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "按完整 task ID 精确命中技能 references/public-lean4-proofs.csv，依要求标 public_lean4_proof=true，无需再联网确认。来源：https://github.com/mo271/formal-conjectures/blob/a14b09f420e81b662b9b3e18d0b9b7ccefbdbeef/FormalConjectures/Wikipedia/RiemannZetaValues.lean#L38 及 https://github.com/mo271/Zeta5/blob/2c80b320d06b4395605edbd413649d19094507af/Apery/Main.lean#L26 。仅标记，未将公开答案放入题目或镜像，未在本题环境重新编译公开证明。证据 public-csv-match.json。"
+    }
+  }
+}

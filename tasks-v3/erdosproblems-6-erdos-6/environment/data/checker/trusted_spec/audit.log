@@ -1,0 +1,7 @@
+audited FCBTrustedSpec.ExpectedType: [Classical.choice, propext, Quot.sound]
+audited primeGap: [Classical.choice, propext, Quot.sound]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+{n | primeGap n < primeGap (n + 1) ∧ primeGap (n + 1) < primeGap (n + 2)}.Infinite
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

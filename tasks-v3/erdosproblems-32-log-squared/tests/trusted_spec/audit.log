@@ -1,0 +1,10 @@
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos32.IsAdditiveComplementToPrimes: [propext, Quot.sound]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ A,
+  Erdos32.IsAdditiveComplementToPrimes A ∧
+    (fun N => ↑{x ∈ Finset.Icc 1 N | x ∈ A}.card) =O[Filter.atTop] fun N => Real.log ↑N ^ 2
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,32 @@
+FCBTrustedSpec.lean:68:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:74:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:84:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:90:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:97:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:104:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:111:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:118:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:125:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:135:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:150:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:154:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:158:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:162:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:166:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:170:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:174:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:178:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:182:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:186:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:190:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:194:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:198:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [Classical.choice, propext, Quot.sound]
+audited Green14.W: [Classical.choice, propext, Quot.sound]
+audited Green14.mixedMonoAPGuaranteeSet: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Green14.W 3 16 = 238
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

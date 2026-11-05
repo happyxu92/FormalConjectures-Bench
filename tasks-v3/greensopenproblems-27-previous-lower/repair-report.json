@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-27-previous-lower",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式包含 /app、/opt/formal-conjectures 及其 .lake/packages；最终 Harbor 子容器中实际找到 Mathlib 的 IsBigOWith 定义，rg 退出 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 只有 ProblemImports 和本地 Submission，无额外上游 imports。补齐 Dockerfile 末尾 USER ubuntu 下的 RUN lake build +FormalConjecturesBench.Target；当前本地 Harbor 构建及最终子容器 ubuntu 实际构建均成功，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能运行 Unicode 脚本并最终复验，两次均为 no_issue、退出 0；原头、冻结前缀、赋值边界及两份 checker 一致性通过。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题可信 golden 隔离候选，使用匹配 Lean 4.27.0 Docker 提取完整类型及 universes=[]，预编译并独立审计 ExpectedType、m、primesAtTop 等，仅含允许公理。两份 Spec 包及 checker 内容/AST 一致，清单哈希固定；运行时只加载对应 /tests 或 /opt 可信包，不重解析命题或回退生成。最终当前本地 Harbor 构建验收成功，两入口原题因 sorry 预期退出 1/reward 0；同一最终子容器中两包的实际函数补测均通过：可信加载/审计、ubuntu 编译、完整类型比较、目标 sorryAx 拒绝、sorry canary、冻结/越界拒绝、冻结文字不变的零值 Real.log 语义偷换被类型比较拒绝、同名模块/缓存/环境遮蔽无效、产物缺失和篡改明确失败且无生成。保留原安全规则和正常 imports，无通用白名单或 initializer 沙箱。所有 immutable 哈希未变。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-27-previous-lower/attempt-001；见 final-review.json、delivery-hashes.json、harbor-final.log、validation-official.log、validation-local.log。Docker 清理完成并复核：本次 3 个容器（1532c79c、9971114e、735ff47a）、2 个镜像（faf396b0、16f28349）及 2 个网络均已移除；预存依赖镜像与共享缓存保留，见 cleanup.json/log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。核对完整定义、锁定上游 Green27 previous_lower、Green 题单第16页问题27及 Bedert arXiv:2303.15134 引言与第2节：无唯一表示指允许重复的无序对，m 是非负基数最小值，充分大素数时集合非空，p=2 的例外不影响 primesAtTop。目标是已知 logarithmic lower 变体，并非解决原开放渐近问题；未发现明显数学错误。陈述及定义未改，详见证据 research.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID 精确匹配技能 CSV 未命中，随后多组检索并追踪上游 PR #6970。找到 Xinjie He 的完整更强下界 NUS.m_lower_bound：https://github.com/xinjiegit/ben_27_formalization/blob/f70352964007662e97a810c880abbfea1e2ea262/NUSLean/Main.lean#L164 。已读 Main/Defs、检查导入闭包无占位或新增公理，并核对公开 Palomar 双内核通过报告及 PR 评论的无序对/infimum/filter 定义转换；其 c*(log p/loglog p)^2 下界涵盖本题 log p 下界。标记 public_lean4_proof=true；仅核对公开源码和 Lean 4.32.0 审计，不声称已在本题 Lean 4.27.0 编译该公开证明，未向 task 或镜像加入答案。Cao–Yuan 的未链接源码声明不作为本结论依据；GitHub 代码搜索 HTTP401 不影响已取得的关键证明来源。详见 research.json、public-proof-audit.json。"
+    }
+  }
+}

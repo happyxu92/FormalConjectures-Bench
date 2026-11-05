@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-946-upper-bound",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式列出 /app、/opt/formal-conjectures 及隐藏 packages 路径；实际容器 rg 找到 Mathlib ArithmeticFunction.sigma，退出码 0。证据：attempt-001/final-instruction-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；补上原先缺失的 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。本地 Harbor 镜像实际构建成功，同容器 ubuntu 再构建退出码 0；未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能运行 Unicode 脚本，初次与最终均为 no_issue；原头通过，修改头及移除 := 被拒绝。未修改冻结头或哈希。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重新解析 GoldenCheck，现改为固定预编译 Spec 和完整类型比较。从本题可信 golden 移除 Submission 导入后隔离提取完整类型及 universes（均无外层参数）；编译与独立传递公理审计通过，两份包和 checker AST/内容一致，全部 immutable 哈希保持。Harbor 从本地修改后的 Dockerfile 构建镜像，镜像/容器及命令见指定证据目录；/tests 上传包和 /opt 本地包哈希逐项核对。正式入口及 ubuntu check.sh 均因原题 sorry 预期退出 1，reward=0；同一容器两位置各 30 项实际函数补测通过，覆盖 Spec 加载/可信审计、ubuntu 编译（实测 UID 1000）、完整类型比较、公理拒绝 sorryAx、canary、冻结/越界/语义实例偷换/缓存遮蔽/缺失篡改负例。未声称证明原题，未扩展普通 import 白名单或 initializer 沙箱。证据根目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-946-upper-bound/attempt-001。Docker 日志产物已保存；已 stop/rm 本题容器 3bde9afb1433、764bc60e4665，删除本次镜像 09e8397749d9 及网络 724aad132a9d，并逐项 inspect 确认不存在；预存共享缓存保留。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 consistent；直接读取作者托管 EPS87 原论文第 1 页摘要，确为 O(x/sqrt(log log x)) 上界。检查计数定义、自然数取整、atTop 及 Big-O 方向；独立 elaboration 确认根号涵盖双重对数，未发现明显错误。仅核查此 upper_bound 变体，不修改陈述或定义。证据：statement-review.json、eps87-page1.png。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。进行了 8 组检索，读取当前上游、plby 固定版本 Lean 源码和 PR 2551/3076 完整 diff；plby 仅证明 infinitude，两个 PR 仅改类别且保留 sorry，不能算本上界证明。GitHub tree/code search 及题目官网受阻，故 metadata 标 unknown/blocked，不断言不存在公开完整证明。详见 proof-review.json、proof-fetch.json 及 github-code-search.json。"
+    }
+  }
+}

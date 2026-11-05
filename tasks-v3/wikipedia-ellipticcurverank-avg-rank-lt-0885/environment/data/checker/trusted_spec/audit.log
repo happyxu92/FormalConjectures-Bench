@@ -1,0 +1,19 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited EllipticCurveRank.RatEllipticCurve.rank: [propext, Quot.sound, Classical.choice]
+audited EllipticCurveRank.RatEllipticCurve.toWeierstrass: [propext, Quot.sound]
+audited EllipticCurveRank.RatEllipticCurve.naiveHeight: [propext]
+audited EllipticCurveRank.RatEllipticCurve.heightLE: [propext]
+complete outer binder count: 0 (original elaborated expression)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Filter.limsup
+    (fun H =>
+      ↑(∑ᶠ (E : ↑(EllipticCurveRank.RatEllipticCurve.heightLE H)), (↑E).rank) /
+        ↑(EllipticCurveRank.RatEllipticCurve.heightLE H).ncard)
+    Filter.atTop <
+  0.885
+@[reducible] def EllipticCurveRank.RatEllipticCurve.rank : EllipticCurveRank.RatEllipticCurve → ℕ :=
+fun E => Module.finrank ℤ (WeierstrassCurve.Affine.Point (E.toWeierstrass.baseChange ℚ))
+def EllipticCurveRank.RatEllipticCurve.heightLE : ℕ → Set EllipticCurveRank.RatEllipticCurve :=
+fun H => {E | E.naiveHeight ≤ H}
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

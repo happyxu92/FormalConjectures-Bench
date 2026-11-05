@@ -1,0 +1,19 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green18.numBmzCorners: [propext, Quot.sound, Classical.choice]
+audited Green18.numNaiveCorners: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 2
+universe parameters: [u_1]
+def FCBTrustedSpec.ExpectedType.{u_1} : Prop :=
+∀ (α : Real),
+  GT.gt.{0} α 0 →
+    ∃ c,
+      And (GT.gt.{0} c 0)
+        (∃ m₀,
+          ∀ (G : Type u_1) [inst : Group.{u_1} G] [inst_1 : Fintype.{u_1} G] [inst_2 : DecidableEq.{u_1 + 1} G]
+            (A : Finset.{u_1} (Prod.{u_1, u_1} G G)),
+            GE.ge.{0} (Fintype.card.{u_1} G) m₀ →
+              GE.ge.{0} (↑(Finset.card.{u_1} A))
+                  (HMul.hMul.{0, 0, 0} α (HPow.hPow.{0, 0, 0} (↑(Fintype.card.{u_1} G)) 2)) →
+                GE.ge.{0} (↑(Green18.numBmzCorners.{u_1} A))
+                  (HMul.hMul.{0, 0, 0} c (HPow.hPow.{0, 0, 0} (↑(Fintype.card.{u_1} G)) 3)))
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

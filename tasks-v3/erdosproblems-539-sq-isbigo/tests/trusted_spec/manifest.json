@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-539-sq-isbigo",
+  "target_name": "Erdos539.erdos_539.variants.sq_isBigO",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "d698b9b59acabd2242bd5d9c89cde52954618572d5926c297fa1450522ebb5ab",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "ecd0cb25cf3e07c6d477883524c0f6eb9c68c9121908c7033b4d92a3e17ca596",
+    "FCBTrustedSpec.ilean": "f6a10a63ae433f89c0e45d16b147b153907518ebf72455509eb9fc6f61a2c86a",
+    "FCBTrustedSpec.lean": "79a12650b121909750291985fc8d9b0c233b4ae465738fda912e36ede5e51ad4",
+    "FCBTrustedSpec.olean": "4dbd5ceb69ec0ad9ec9d4210c35920d8f05afae4febd23e56fb6a3a6409d71ea",
+    "audit.log": "41b7904fdee652ab641fc73f8293d9f5732460eb3558757960ed4d944b775e1f",
+    "generate.py": "39b5c8d250534700b19ed49ce5ca43ca0fe0cc305884323fff17ef13356421a6",
+    "reproduce.sh": "ede6a2a9636394e9b93ab45c02647e96820f334d723375ff378758ff00312c70"
+  },
+  "generation_image": "sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a",
+  "generation_command": "docker cp generation-input erdosproblems-539-sq-isbigo-spec-g61-539a1:/tmp/repair-bundle; docker exec -u root erdosproblems-539-sq-isbigo-spec-g61-539a1 bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "ExpectedType is a Prop definition with zero outer binders and no universes. Full target type extracted via Lean parser/elaborator from this task golden with Submission removed. Temporary target and child declarations absent after environment reset. ExpectedType, IsCofactorLowerBound and cofactorThreshold transitively use only allowed axioms. Original unrelated sorry theorems in frozen prefix are not dependencies of ExpectedType or its definitions."
+}

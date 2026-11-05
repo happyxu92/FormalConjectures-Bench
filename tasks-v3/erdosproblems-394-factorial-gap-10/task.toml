@@ -15,6 +15,11 @@ formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"
 lean_toolchain = "leanprover/lean4:v4.27.0"
 mathlib_commit = "a3a10db0e9d66acbebf76c5e6a135066525ac900"
 theorem_name = "Erdos394.erdos_394.variants.factorial_gap_10"
+statement_status = "consistent"
+statement_status_note = "Known n=10 finite variant (Erdos-Hall 1978, p. 481); exact finite minimum search verifies all k=2,...,9. Mathematical inputs unchanged."
+public_lean4_proof = true
+public_lean4_proof_status = "local_csv_exact_match"
+public_lean4_proof_urls = ["https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/394.lean#L130", "https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos394_erdos_394_variants_lower_bound.lean#L250"]
 benchmark_bucket = "informal_proof"
 oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."

@@ -1,0 +1,35 @@
+"""Repair-time extraction from this task's immutable golden, never a candidate."""
+from pathlib import Path
+import json
+pkg = Path(__file__).resolve().parent
+golden = (pkg.parent / 'golden_env/FormalConjecturesBench/Target.lean').read_text()
+prefix, rest = golden.split('-- FORMAL_CONJECTURES_BENCH_TARGET_BEGIN', 1)
+prefix = prefix.replace('import FormalConjecturesBench.Submission\n', '')
+# Remove only the target's documentation comment; keep all prefix definitions.
+prefix = prefix[:prefix.rindex('/--')]
+target = rest[:rest.rindex('end Mathoverflow75792')].strip()
+source = prefix + '''
+-- Elaborate the complete trusted declaration, extract its type and universes,
+-- restore the environment, then export only the kernel-checked type definition.
+open Lean Elab Command in
+run_cmd do
+  let original ← getEnv
+  let stx ← ofExcept <| Parser.runParserCategory (← getEnv) `command ''' + json.dumps(target, ensure_ascii=False) + '''
+  elabCommand stx
+  let some info := (← getEnv).find? `Mathoverflow75792.complexity_three_pow
+    | throwError "missing temporary target"
+  let expected := info.type
+  let levels := info.levelParams
+  setEnv original
+  liftTermElabM do
+    addAndCompile <| .defnDecl {
+      name := `FCBTrustedSpec.ExpectedType
+      levelParams := levels
+      type := ← Meta.inferType expected
+      value := expected
+      hints := .abbrev
+      safety := .safe
+    }
+end Mathoverflow75792
+'''
+(pkg / 'FCBTrustedSpec.lean').write_text(source)

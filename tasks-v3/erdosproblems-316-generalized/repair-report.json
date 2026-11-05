@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-316-generalized",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、上游和 .lake/packages；在最终 Harbor 容器以 ubuntu 搜到 Mathlib Finpartition 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import；补齐 Dockerfile 最末 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的 Harbor 构建及容器内 ubuntu 重建均成功，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本及最终复验，均为 no_issue；原头通过、修改头和移除 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题不可变 golden 隔离候选提取完整类型，固定 n、hn 两个参数及空 universes；匹配 Docker 工具链预编译、独立审计并同步两份 Spec 包。两 checker AST/内容、可信包及全部 immutable 哈希一致。最终本地 Harbor trial erdosproblems-316-generalized-g61-a001-c7f4-final 构建成功，核对上传 /tests 与 /opt 包哈希；正式/本地入口均以原题 sorry 预期退出 1，reward=0，不代表证明通过。同一子容器分别对两份 checker 实际函数补测 Spec/可信审计、ubuntu 编译、完整类型、目标公理及 canary；冻结/越界、冻结头不变的 Finpartition 名称偷换、缓存遮蔽、缺失和篡改产物负例均按预期拒绝，无运行时生成回退。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-316-generalized/attempt-001。Docker 清理已验证：本题 3 个容器（61b0c760c147、03057672162c、c20d7102104e）、2 个镜像（dc16567fb937、95a9820eda88，含所有本题 tags）及 2 个网络均已移除；预先存在的依赖镜像和共享构建缓存保留，详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已标 statement_status=consistent；核对锁定上游 316.lean、完整前缀、Mathlib Finpartition 定义、作者出版目录及题目镜像，未发现明显错误。目标是 Sándor 的所有 n≥2 广义反例，不是仅二分版本。主站 HTTP 403，原论文全文未取得；判断仅为未发现明显错误。原陈述、定义、Target、golden 和 GoldenCheck 全部不改。详见证据 statement-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "技能 CSV 的 task 列精确命中 erdosproblems-316-generalized；已标 public_lean4_proof=true，两个 anatoliiohorodnyk/lean-fc-proofs 固定修订的 T_Erdos316_erdos_316_variants_generalized.lean#L252 链接写入 task.toml，详见 public-csv-match.json。按规则无需重新联网确认，未将答案放入镜像，未声称在本环境编译该公开证明。"
+    }
+  }
+}

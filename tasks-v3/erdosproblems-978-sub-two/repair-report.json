@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-978-sub-two",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Explicit .lake/packages path added. Actual container rg found Mathlib Nat.Prime with exit 0; instruction-package-search.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports. Added final USER ubuntu RUN lake build +FormalConjecturesBench.Target. Current local Harbor build succeeds; same-container ubuntu rebuild exit 0 (7992 jobs). No trusted dependency permission changes."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Required skill script executed before and after repair: no_issue; original header, prefix and := boundary verified. Frozen constants retain exact original values."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated fixed precompiled ExpectedType from this task golden with no candidate imports, preserving all four binders and no universes. Independent transitive axiom audit succeeds; temporary target absent. Identical trusted packages/checker AST and immutable hashes verified; Harbor-uploaded /tests and image /opt hashes match local packages. Local task force_build image sha256:7d5ba90a3aeae612cc518aaf36b270850f984f0d388fe51ccbd1a5602009f566. Official/local entries exit 1 for original sorry, reward 0 (expected, not a proof pass). In the same Harbor child both checker variants pass 29 direct-function cases: fixed Spec load/audit, observed ubuntu uid 1000, complete type match, sorryAx rejection, canary, frozen/header/config/source restrictions, legal def/lemma/instance, frozen-text Powerfree-name semantic attack compiles but full type comparison rejects (also through main), candidate Spec/dependency cache and environment shadowing, missing/tampered artifacts and manifest with no regeneration. No external import whitelist or initializer sandbox added. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-978-sub-two/attempt-001. Docker cleanup verified: stopped/removed own Spec and Harbor containers, removed own Harbor image tag/ID and network. Baseline generation image retained as shared cache. See cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "statement_status=mismatch; statement/definitions unchanged. hp excludes fixed (degree-1)-powers, conclusion needs (degree-2)-powerfree. Counterexample f(X)=product_{i=0}^8(X-i)+128: monic degree 9, irreducible mod 11 (Rabin/Bezout certificate); f(0)=128 supplies hp for every prime, but 2^7 divides every f(n), so target set is empty. See statement-audit.json/math-audit.py. Current upstream corrects hp to degree-2, but this task deliberately retains its original input."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Exact full-ID skill CSV miss. Multiple searches and actual upstream/OpenAI/Bridge978/mo271 Lean sources inspected. Bridge978 and allDegrees prove a corrected variant requiring no fixed (degree-2)-power divisor, not this retained target; no exact-target proof verified. public_lean4_proof=unknown/status=blocked: GitHub PR 6898/history API rate limited (403); source-site and Oxford access also blocked. See public-proof-review.json. No claim of exhaustive absence and no public proof imported into task."
+    }
+  }
+}

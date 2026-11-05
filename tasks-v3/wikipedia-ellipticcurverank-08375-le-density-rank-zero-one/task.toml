@@ -9,6 +9,10 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact skill CSV miss. Upstream main, mo271 candidate and PRs 2601/3125 retain sorry for this target; Mordell-Weil and individual-curve rank proofs do not establish the density bound. Broad search found no verified complete proof; unauthenticated GitHub code search and PR API access were blocked."
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/Wikipedia/EllipticCurveRank.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-940-two",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式包含 /app、/opt/formal-conjectures 和隐藏 .lake/packages；在最终 Harbor 子容器以 ubuntu 实测，找到 package 内 Lean 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；保留 ProblemImports 预编译链，补齐 Dockerfile 原先缺失的最终 USER ubuntu / RUN lake build +FormalConjecturesBench.Target。当前本地 task 的 Harbor Docker 构建成功，同一子容器 ubuntu 再构建退出码 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本及最终复验，均为 no_issue；原始头通过，修改头和移除 := 均被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题不可变 golden 隔离 Submission，以匹配 Docker 中 Lean 4.27.0 独立提取完整类型及 universes，预编译并审计 ExpectedType；外层参数 0、universes []，传递公理仅允许的三项，临时目标未导出。两份可信包和 checker 内容/AST 一致，运行时固定 /tests 或 /opt 包及可信依赖路径，不重解析或回退生成 Spec。最终本地 Harbor 镜像 sha256:e116e9f8b0b82d702952b6d99141e242a1e2afcfb68e8c3a74ab6e443a5bb549；上传 /tests、/opt 包、golden 与本地哈希均一致。两实际入口退出 1、reward=0，仅因原题 sorry 被源码规则拒绝；同一最终子容器两路径补测均退出 0，覆盖 Spec 加载/审计、实测 ubuntu uid=1000 编译、完整类型匹配、目标 sorryAx 拒绝、canary、冻结/越界/符号遮蔽/缓存遮蔽/产物缺失及篡改负例。冻结文字不变的 Multiset 空类型遮蔽候选可编译、公理干净，但完整类型比较和完整 main 均拒绝。全部 immutable 哈希未变；未增加通用外部模块白名单或 initializer 沙箱。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-940-two/attempt-001（final-verification.json、static-validation.json、final-acceptance/validation-coverage.json）。Docker 已核实清理：本次容器 27c98069b7bf、9476d664c87f、c170cffa48a1 已 stop/rm；新建镜像 86db27d4d1f1、e116e9f8b0b8 及两条本题网络已删除，ID/tag 均不存在；预先存在的共享基镜像和缓存保留，详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "task.toml 标记 consistent。本题仅要求已知的 r=2 密度零变体，不是开放的 r>=3 通式。核读固定上游、完整前缀、Nat.Full 与 Set.HasDensity 定义、https://www.erdosproblems.com/latex/940 及 Baker–Brüdern 1994 来源摘录；零项/空 multiset 只影响有限边界，不造成明显错误。数学陈述、定义、Target、golden 和 GoldenCheck 全部保留原样；详见 research-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中；已多组检索目标名、题号、squarefull/powerful 密度命题、作者论文、FormalConjectures PR/fork 线索、Mathlib 与公开证明目录。上游 main 和声称解决本目标的 PR 3116/2592 实际 Lean 源码均保留 sorry，后两者仅改分类标签，不能算证明。GitHub 全局代码搜索需登录/API 限流、原问题 issue 评论限流，grep.app 安全检查阻断；因此 metadata 标记 public_lean4_proof=unknown、status=blocked，不声称不存在公开证明。详见 public-csv-match.json、research-review.json、research-fetch-results.json、research-followup-results.json；未引入公开答案。"
+    }
+  }
+}

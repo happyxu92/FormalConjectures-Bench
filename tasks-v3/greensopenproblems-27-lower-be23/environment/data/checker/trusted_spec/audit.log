@@ -1,0 +1,19 @@
+FCBTrustedSpec.lean:56:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:62:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:69:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green27.m: [propext, Quot.sound, Classical.choice]
+audited Green27.primesAtTop: [Quot.sound, propext]
+audited Green27.lowerBest: [propext, Quot.sound, Classical.choice]
+audited Green27.upperBest: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0 (original elaborated existential)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ ω,
+  Filter.Tendsto ω Green27.primesAtTop Filter.atTop ∧ ∀ᶠ (p : ℕ) in Green27.primesAtTop, ω p * Real.log ↑p ≤ Green27.m p
+def Green27.m : ℕ → ℝ :=
+fun p => sInf {x | ∃ A, ∃ (_ : 2 ≤ A.card) (_ : HasNoUniqueRepresentation A), ↑A.card = x}
+def Green27.primesAtTop : Filter ℕ :=
+Filter.atTop ⊓ Filter.principal {p | Nat.Prime p}
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

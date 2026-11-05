@@ -8,6 +8,11 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+statement_status_note = "Finite Selfridge Omega-barrier variant, not the open infinitude conjecture. Original Erdos 1979-22 p.68 and independent exact integer sieve agree with largest barrier 99840 below 100000; definitions and statement unchanged."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact skill CSV miss. Broad searches and upstream main/fork PR 2662/3184 source inspection found only sorry, not a proof. GitHub code search requires authentication; audit site DNS and a linked computation repository are unavailable. See repair-report.json and external evidence research records."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/413.lean"

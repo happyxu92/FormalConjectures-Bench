@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-298-erdos-298",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式包含 /app、/opt/formal-conjectures 及其 .lake/packages；实际 rg 命中 mathlib/Mathlib/NumberTheory/Real/Irrational.lean 的 def Irrational，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题仅有 ProblemImports 和 Submission，无额外上游 import。原 Dockerfile 缺最终普通用户构建验证，已以 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target 结尾；当前本地 task 的最终 Harbor Docker 构建及同一容器 ubuntu 实际构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能运行 check_unicode_header.py，初检及最终复检均为 no_issue；原始头通过、修改头和移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 GoldenCheck 在候选导入后重新解析命题，存在实例偷换风险。已从本题可信 golden、隔离 Submission/候选配置及缓存，使用匹配 Lean 4.27.0 Docker 环境提取完整类型及有序 universes=[]，编译并独立审计 ExpectedType 的定义值和传递公理；临时 theorem 未导出。两份包源码、产物、清单一致，checker 固定预编译来源及哈希、比较完整类型，不运行时生成或回退。最终本地 Harbor 镜像 sha256:f36b8fb4a3817737bc81a9af2dfdc15ddf274cc67ebd999bbc9fa7ca2e813beb；已核对上传 /tests、镜像 /opt 包及 golden 哈希。正式入口及 ubuntu 本地入口均因原题 sorry 预期返回 1、reward=0，非实现故障；同一最终子容器对两份 checker 各运行 29 项实际函数补测，覆盖 Spec 审计、ubuntu 编译、完整类型、公理拒绝 sorryAx、canary、冻结/越界/实例语义偷换/缓存遮蔽/缺失及篡改负例。所有 immutable 哈希与预先固定记录一致。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-298-erdos-298/attempt-001，详见 final-verification.json、validation-coverage.json、delivery-hashes.json、static-validation.json。Docker 清理完成并核实：本次 3 个容器（3dac3532d589、016dacb68d47、b686e3cfaf6f）、2 个镜像（e159b983ed50、f36b8fb4a381）及 2 个专用网络已移除；预先存在的共享缓存镜像和其他任务资源未动，详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。已读 pinned 上游、密度定义及 Bloom arXiv:2112.03726v2 Theorem 2：本题要求正自然密度的有限互异正整数单位分数和为 1，是论文正上密度定理的合理特例。HasPosDensity、0∉A、Finset 和 ℚ 中精确等式未见明显错误；未修改任何数学输入。erdosproblems.com/298 返回 403，但原论文及固定上游可读，足以完成核对。详见证据 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确命中技能 references/public-lean4-proofs.csv，已在 task.toml 标记 public_lean4_proof=true。来源：https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos298.lean#L23 。按要求无需重新联网确认；未在本题编译该公开证明，未将答案放入镜像。详见证据 public-csv-match.json。"
+    }
+  }
+}

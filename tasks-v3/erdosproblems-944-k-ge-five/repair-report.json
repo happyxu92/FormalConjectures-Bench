@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-944-k-ge-five",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含三个路径；最终 Harbor 容器内以 ubuntu 实测找到 packages/mathlib/Mathlib/Data/Set/Card.lean 的 ncard 定义。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题没有额外上游 import；补齐 Dockerfile 末尾 USER ubuntu 后的 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的两次 Harbor 构建及最终容器 ubuntu 构建成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "技能 Unicode 脚本修复前及最终均返回 no_issue；原始头、修改头及移除 := 检查通过，无需更改头部。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题不可变 golden 隔离提取并预编译 ExpectedType，保留 k、hk 和 universe u；独立审计 ExpectedType/IsErdos944 无 sorryAx。两份 checker 内容/AST、Spec 包及全部 immutable 哈希一致。最终本地 Harbor 构建镜像 dc208f7acdec8b9d07b982cffc22f97d6196a8bf531f62777015f5fb2370d58d；/tests 上传包与 /opt 包哈希匹配。正式及 ubuntu 本地入口均因原题 sorry 预期退出 1，reward=0；同一子容器两套实际函数补测各 29 项通过，涵盖可信加载/审计、ubuntu 编译、完整类型比较、公理/canary、冻结/越界、合法 LE Nat 实例语义偷换、同名模块/缓存遮蔽和缺失/篡改拒绝且不重新生成。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-944-k-ge-five/attempt-001。Docker 清理完成并复核：已 stop/rm 本题 3 个容器（Spec、初次及最终 Harbor），删除本题镜像 03fdf35a770d、dc208f7acdec 及两个自建网络；均确认不存在。预存共享依赖镜像 6b765e0c2f25 保留，未触及其他 agent 资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。这是 Jensen 2002 已知的 k≥5、r=1 变体，非要求解决完整 Erdős 944。核对完整 IsCritical/IsCriticalEdges/IsErdos944 定义和 arxiv.org/html/2508.08703v1 的摘要、引言及定理1.3，未发现明显错误；有限图见证及 ULift 不受任意 universe 或无限集 ncard 影响。原题网页/出版社403不影响可访问研究论文的交叉核对。数学陈述未修改。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "CSV 完整ID未命中，已多组检索并下载公开完整源码：https://conjectures.io/results/e7afff2c-bb07-4fa8-92b6-67a530aaad70/solution/download。源码 Erdos944Proof.erdos944_all 对任意 universe、k≥4 和 r 成立，取 r=1 覆盖本题；无 sorry/admit/新增公理，发布页记录标准公理下认证。public_lean4_proof=true。额外尝试在本题 v4.27.0 下编译因较新 Mathlib API/策略差异失败，未移植、未声称本题证明通过；代码仅保存于证据目录，未加入题目或镜像。详见 public-proof-review.json、public-compile.log。"
+    }
+  }
+}

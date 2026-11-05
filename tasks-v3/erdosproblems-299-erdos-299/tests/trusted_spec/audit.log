@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+False ↔
+  ∃ a,
+    StrictMono a ∧
+      (∀ (n : ℕ), 0 < a n) ∧
+        (fun n => ↑(a (n + 1)) - ↑(a n)) =O[Filter.atTop] 1 ∧ ∀ (S : Finset ℕ), ∑ i ∈ S, 1 / ↑(a i) ≠ 1
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

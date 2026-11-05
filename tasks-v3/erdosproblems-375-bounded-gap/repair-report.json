@@ -1,0 +1,11 @@
+{
+  "task_id": "erdosproblems-375-bounded-gap",
+  "checks": {
+    "instruction_search": {"has_issue": true, "repair_status": "repaired", "note": "搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；实际 rg 找到 package 内 def nth，退出码0。"},
+    "lean_dependency": {"has_issue": true, "repair_status": "repaired", "note": "已补充 LegendreConjecture 上游预编译，Dockerfile 最终为 USER ubuntu 的 RUN lake build +FormalConjecturesBench.Target。本地 Harbor 重试构建和同一子容器 ubuntu 的实际 Lake 构建均成功；首次镜像导出 daemon EOF 的环境故障保留日志，重试已消除验收缺口。"},
+    "unicode_header": {"has_issue": false, "repair_status": "not_needed", "note": "已运行技能 Unicode 脚本并复验，case=no_issue；两份定理头及冻结边界一致。"},
+    "semantic_checker": {"has_issue": true, "repair_status": "repaired", "note": "从不可变 golden 隔离候选提前提取完整类型（1个外层假设、universes=[]），预编译并审计 ExpectedType/Erdos375Prop，仅依赖标准公理；固定来源加载，不运行时生成或重解析命题。两份 checker/Spec、上传 /tests、预装 /opt 及全部 immutable 哈希一致。当前本地 task 的 Harbor 构建成功；两入口原始 sorry 预期拒绝（exit=1、reward=0），同一子容器两份实际 checker 各29项补测通过，包括ubuntu编译、完整类型、公理、canary、冻结/越界/语义偷换/缓存遮蔽/缺失及篡改。原正常import及安全规则保留。Docker已清理并核实：Spec容器4856b2f3116f、Harbor子容器38ec3b87ee8a、镜像fe44c78c8656及本题网络均已移除；预存依赖镜像和共享缓存保留。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-375-bounded-gap/attempt-001/validation-summary.json。"},
+    "statement_fidelity": {"has_issue": false, "repair_status": "not_needed", "note": "statement_status=consistent。本题为 Grimm 猜想的条件性素数间隙推论，不是开放主猜想。已核对完整定义、上游及 Erdős–Pomerance (1983) pp.45–46；未发现明显数学错误，不改陈述。详见 statement-audit.json。"},
+    "public_lean4_proof": {"has_issue": null, "repair_status": "marked", "note": "unknown/blocked：完整ID精确匹配技能CSV未命中；多组检索及源码核查发现上游和 PR2598/3122 的 bounded_gap 仍为 sorry。PrimeGapsLib 是另一量词/假设的结果。GitHub全局代码检索需认证、独立证明tracker DNS不可达，不能断言不存在公开完整证明。详见 public-proof-audit.json。"}
+  }
+}

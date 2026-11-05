@@ -1,0 +1,41 @@
+FormalConjectures/Millenium/RiemannHypothesis.lean:58:8: warning: declaration uses 'sorry'
+FormalConjectures/Millenium/RiemannHypothesis.lean:80:8: warning: declaration uses 'sorry'
+FormalConjectures/Millenium/RiemannHypothesis.lean:127:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:94:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:102:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:115:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:127:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:142:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:156:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited ArtinPrimitiveRootsConjecture.S: [propext, Classical.choice, Quot.sound]
+audited ArtinPrimitiveRootsConjecture.ArtinConstant: [propext, Quot.sound, Classical.choice]
+audited ArtinPrimitiveRootsConjecture.powCorrectionFactor: [propext, Quot.sound, Classical.choice]
+audited ArtinPrimitiveRootsConjecture.entanglementFactor: [propext, Quot.sound, Classical.choice]
+binder a: ℕ
+binder m: ℕ
+binder b: ℕ
+binder ha: a = b ^ m
+binder hb: ∀ (u v : ℕ), 1 < u → b ≠ v ^ u
+binder hm₁: 1 < m
+binder hm₂: Odd m
+binder hb': ¬b.squarefreePart ≡ 1 [MOD 4]
+binder h: ∀ (q : ℕ) [inst : NeZero q] (χ : DirichletCharacter ℂ q),
+  χ.IsPrimitive → ∀ (s : ℂ), DirichletCharacter.LFunction χ s = 0 → s ∉ Int.cast '' GRH.trivialZeros χ → s.re = 1 / 2
+complete binder count: 9
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (a m b : ℕ),
+  a = b ^ m →
+    (∀ (u v : ℕ), 1 < u → b ≠ v ^ u) →
+      1 < m →
+        Odd m →
+          ¬b.squarefreePart ≡ 1 [MOD 4] →
+            (∀ (q : ℕ) [inst : NeZero q] (χ : DirichletCharacter ℂ q),
+                χ.IsPrimitive →
+                  ∀ (s : ℂ), DirichletCharacter.LFunction χ s = 0 → s ∉ Int.cast '' GRH.trivialZeros χ → s.re = 1 / 2) →
+              (ArtinPrimitiveRootsConjecture.S ↑a).HasDensity
+                (ArtinPrimitiveRootsConjecture.ArtinConstant * ArtinPrimitiveRootsConjecture.powCorrectionFactor m)
+                {p | Nat.Prime p}
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

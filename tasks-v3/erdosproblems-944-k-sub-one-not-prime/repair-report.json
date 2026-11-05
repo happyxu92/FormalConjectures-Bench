@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-944-k-sub-one-not-prime",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式加入 /opt/formal-conjectures/.lake/packages；三路径命令通过 bash 语法检查，并在本题容器检索到 Mathlib 与 Batteries 的 Pairwise 定义，无路径或权限错误。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；补齐 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。本地 Harbor 两次构建成功，最终容器 ubuntu 构建退出 0。原题 sorry 警告不是依赖故障。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本，修复前及最终均为 no_issue；原始头通过，修改头和缺失 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离生成并预编译 ExpectedType，保留 universe [u] 及 k、hk、h 三个完整参数；类型和前缀定义传递公理审计通过。两份可信包一致，checker 固定加载 /tests 或 /opt 预编译包并比较完整类型，无运行时生成或重新解析命题。最终本地 Harbor 子容器两入口均因原始 sorry 预期退出 1/reward 0；同一子容器两包各完成 26 项实际函数补测，包括可信加载/审计、ubuntu 编译、完整类型、公理、canary、冻结/越界/语义偷换/缓存遮蔽/产物缺失与篡改。语义偷换候选可编译且无额外公理，但完整类型检查实际拒绝。上传及预装包、golden、app 基线哈希一致，原安全函数和所有 immutable 哈希不变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-944-k-sub-one-not-prime/attempt-001/。无必需验收缺口；不表示原题已证明。日志和产物已保存；已 stop/rm 本次 3 个容器（4e0cbb0ba9a6、434ad1f8c607、9413019388ff），删除本次 2 个镜像（34dc2d5883f5、cb7dd16fd347）和 2 个网络并核实不存在；保留预先存在的共享缓存，无遗留本次资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。核对 Target:38-39、82-84 及底层 IsCritical/IsCriticalEdges 定义；这是 Lattanzio 的 k-1 非素数变体，有限图见证和 universe 提升适用，未发现明显错误。Martinsson–Steiner 的公开论文引言明确陈述该结果；Erdős 原页和 Lattanzio 出版页 403，已记录限制。数学陈述、定义和 golden 全部未改。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID 精确查技能 CSV 未命中，继续多组检索并实际下载审阅完整公开 Lean4 源码：https://conjectures.io/results/e7afff2c-bb07-4fa8-92b6-67a530aaad70/solution/download 。其中 erdos944_all 对所有 k≥4、所有 r 和 universe 给出相同图性质；取 r=1 即覆盖本目标。源码无 sorry/admit/新公理，结果页报告 Lean kernel 与允许公理审计通过。已标 public_lean4_proof=true；未在本题环境编译该公开证明，也未将答案复制进 task 或镜像。详见证据 statement-and-public-audit.json、source-fetch.json、public-source-scan.json。"
+    }
+  }
+}

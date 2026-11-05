@@ -9,6 +9,12 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "consistent"
+statement_status_note = "This task is the conditional of_lower_bound variant, not the open unconditional Erdos 373 conjecture. Erdos (1976), Theorem 2, pp. 28 and 40 (PDF pp. 4 and 16), gives the eventual 4 log n criterion. S excludes factors 0! and 1! and requires a sorted list with largest index below n-1; bounded n leaves finitely many lists. No obvious false-statement issue found; no mathematical input changed."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "No exact full-ID match in the skill CSV. Multi-query searches and direct source checks found no verified complete proof: upstream main and PR heads 2746, 2755, 3267, 3276 retain sorry (the PRs only change solved tags). Prove Together has a statement-only formalization, not a solution. GitHub global code search and PR comments/API are rate-limited (403), and erdosproblems.com is blocked (403); therefore absence is not confirmed. Evidence: designated attempt-001/public-proof-review.json."
+public_lean4_proof_sources = ["https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/373.lean", "https://github.com/google-deepmind/formal-conjectures/pull/3276", "https://provetogether.ai/problems/42", "https://erdosproblems.ai/wiki/problems/factorials_binomials/E0373"]
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/373.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

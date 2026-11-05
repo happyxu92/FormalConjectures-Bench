@@ -9,6 +9,11 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact skill CSV miss. Upstream and four solve-labelled PRs retain sorry; public finite-bound proofs cover different targets. GitHub global code search requires authentication/rate-limited, so no absence claim. See repair-report.json and external evidence."
+public_lean4_proof_urls = ["https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/357.lean", "https://github.com/google-deepmind/formal-conjectures/pull/3275", "https://github.com/chapinalc/chapinerdos/blob/main/357_partial/Erdos357AdaptiveBound.lean"]
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/357.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

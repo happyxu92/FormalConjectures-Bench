@@ -1,0 +1,40 @@
+{
+  "task_id": "greensopenproblems-14-w-3-15",
+  "target_name": "Green14.W_3_15",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "a4e212dca2845261fa26163dae9609c3f98beb3e257b286f7761a7bcf6055d30",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "6496873dbae4a5a3a53658e8d37a15e495ad997ab83677dc25425a9848dbef87",
+    "FCBTrustedSpec.ilean": "b552841e11f11e49e4b3112c336a3b3a296b39e7243a58188620a765132e9c36",
+    "FCBTrustedSpec.lean": "bc4cc534af07f7848b60c1d142351c1e396301f87051aa7d4b37449fbd0b7121",
+    "FCBTrustedSpec.olean": "95b0017938f7f4f8626ae9c639efa677227ff107c77c76b021902a17dbbdf1b7",
+    "audit.log": "1911c3d83ee80e78dd4cb8acdc99cfc08dce062ba12eb6eff0021bd31da3dafc",
+    "generate.py": "e6a0667a39b81ba131e0eb63d408257c06bf0d829386976acaa0e1b5b8594a1e",
+    "reproduce.sh": "033105cec439801e86b8b5ec80bd8bc618886ff13747f78577735490ef2f539b"
+  },
+  "generation_image": "sha256:e21dc171550d4c49aceba963047d00d1a350ce711019cbd9cb32c4770c7a39df",
+  "generation_command": "docker exec -u root greensopenproblems-14-w-3-15-spec-g61-a001-15e9 bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Extracted complete ConstantInfo.type and levelParams after elaborating the immutable target in an isolated golden-only project. Restored environment removes temporary theorem/children. ExpectedType value is the closed Eq Nat (Green14.W 3 15) 218, zero binders and zero universes. Independent compiled import audits ExpectedType and W/mixedMonoAPGuaranteeSet transitively; no sorryAx dependencies. Unrelated original prefix placeholder theorems retained but not used."
+}

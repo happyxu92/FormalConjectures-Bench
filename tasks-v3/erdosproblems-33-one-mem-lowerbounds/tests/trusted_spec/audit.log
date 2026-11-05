@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos33.AdditiveBasisCondition: [propext]
+complete outer binder count: 0; full existential retained
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ A, Erdos33.AdditiveBasisCondition A ∧ 1 < Filter.limsup (fun N => ↑(A ∩ Set.Icc 1 N).ncard / √↑N) Filter.atTop
+def Erdos33.AdditiveBasisCondition : Set ℕ → Prop :=
+fun A => ∀ (k : ℕ), ∃ n, ∃ a ∈ A, k = a + n ^ 2
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos33.AdditiveBasisCondition' depends on axioms: [propext]

@@ -1,0 +1,8 @@
+FCBTrustedSpec.lean:34:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited ExpectedType transitive axioms: [propext]
+complete binder sequence: [n, hn, hn_odd]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ), 5 < n → Odd n → ∃ p q r, Nat.Prime p ∧ Nat.Prime q ∧ Nat.Prime r ∧ n = p + q + r
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]

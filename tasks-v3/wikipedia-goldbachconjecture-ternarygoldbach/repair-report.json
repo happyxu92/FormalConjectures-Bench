@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-goldbachconjecture-ternarygoldbach",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令显式加入 .lake/packages；匹配 Docker 中以 ubuntu 实际 rg 找到 Mathlib/Data/Nat/Prime/Defs.lean 的 Prime 定义，退出 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；补上 Dockerfile 最终 USER ubuntu 的 RUN lake build +FormalConjecturesBench.Target。本地 Harbor 构建及同容器 ubuntu 复验均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已运行技能 check_unicode_header.py：case=no_issue；原头、冻结前缀、赋值边界及两份 checker 一致性通过。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 golden 隔离提取、预编译并审计 ExpectedType；完整参数 n/hn/hn_odd，universes=[]，传递公理仅 propext。两份包、checker 内容/AST、immutable 哈希一致。最终本地 Harbor final2 构建成功，/tests 上传包与 /opt 包哈希一致；两入口因原题 sorry 预期退出 1、reward=0。同一子容器两份实际函数补测各 30 项通过，含可信审计、ubuntu 编译、全类型比较、公理正/负例、canary、冻结/越界/语义偷换/缓存遮蔽/产物缺失和篡改拒绝。无证明完成声明。已 stop/rm 后缀 g61-a001-7bd2 的 Spec、初次 Harbor、final2 子容器；镜像 52fb93ddcc9e/5afa6a93b01d/c6705034e66a（三个 tag）及两个同后缀网络均已删除并 inspect 确认不存在，预存共享依赖镜像保留。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-goldbachconjecture-ternarygoldbach/attempt-001（final-verification.json、validation-coverage.json、final-*.log、cleanup.json）。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。完整 ℕ 命题与 Helfgott arXiv:1312.7748 摘要及锁定上游一致：每个大于 5 的奇数是三个素数之和，可重复；没有发现明显定义/陈述错误，未修改数学输入。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 task ID 未命中技能 CSV；经 10 组关键词及上游、Mathlib、GitHub、LeanEval 等检索，未找到符合本题公理规则的公开完整 Lean4 证明（searched，并非绝对不存在）。gersh/ternary-goldbach-lean 的等价 capstone 依赖非标准 source/run axioms；实际 Lean 源中 helfgott_platt_theorem_4_1_source 明确是 axiom，基础公理版仅为带 evidence 假设的条件定理。其余候选是有限验证、条件化简或其他问题。关键候选源码均已读取；API 限流通过 raw/HTML 恢复。详见证据 review.json、source-fetch.json 和 sources/。"
+    }
+  }
+}

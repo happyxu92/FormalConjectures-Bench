@@ -1,0 +1,13 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos357.f: [Classical.choice, propext, Quot.sound]
+audited Erdos357.HasDistinctSums: [propext, Quot.sound]
+complete outer binder count: 0 (closed existential proposition)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ o, o =o[Filter.atTop] 1 ∧ ∀ᶠ (n : ℕ) in Filter.atTop, (2 + o n) * √↑n ≤ ↑(Erdos357.f n)
+def Erdos357.HasDistinctSums.{u_1, u_2} : {ι : Type u_1} →
+  {α : Type u_2} → [Preorder ι] → [AddCommMonoid α] → (ι → α) → Prop :=
+fun {ι} {α} [Preorder ι] [AddCommMonoid α] a => Set.InjOn (fun J => ∑ x ∈ J, a x) {J | (↑J).OrdConnected}
+def Erdos357.f : ℕ → ℕ :=
+fun n => sSup {k | ∃ a, Set.range a ⊆ Set.Icc 1 ↑n ∧ StrictMono a ∧ Erdos357.HasDistinctSums a}
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

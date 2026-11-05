@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-350-strengthening",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式包含 /app、/opt/formal-conjectures 及 .lake/packages；在 Harbor 容器以 ubuntu 实搜包内 rpow 定义成功。证据：attempt-001/instruction-rpow-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "实际仅有 ProblemImports 与 Submission，无额外上游 import。补上 Dockerfile 最终 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target；本地 Harbor 构建及容器内 ubuntu 重建成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本，修复前及最终均为 no_issue；原头、冻结前缀与 := 边界复验通过，未改变冻结常量。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离 Submission，经匹配 Lean 4.27.0 Docker 提前提取完整类型并编译、独立审计 ExpectedType；四参数 A/hA/s/hs、universes=[]，传递依赖仅允许标准公理。两份 checker/Spec 包一致，固定 /tests 或本地 /opt 预编译来源，无运行时生成或缺失回退。当前本地 Harbor 两入口均因原题 sorry 预期退出1/reward0；同一子容器实际函数补测覆盖 Spec 加载/审计、ubuntu 编译、完整类型比较、sorryAx 拒绝、canary，以及冻结/越界/实例语义偷换/同名缓存与依赖遮蔽/产物缺失及篡改负例。原源码安全规则保留，未扩展通用 import 白名单。证据根：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-350-strengthening/attempt-001。Docker 清理已核实：停止并移除本题4个容器（Spec及350a/b/c），移除3个任务镜像（26fef3a649b6、43ee255fb1e1、d9dc4f49809d）和3个专属网络；预先存在的共享依赖镜像保留。详见 cleanup.json/log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 consistent：本题要求任意实数 s>0 的 strengthening，并非仅 s=1。完整子集和定义排除0；正底数实幂及 RHS 正性一致，空集无反例；另用 Lean 实证零排除与分母正性。未发现明显数学错误，数学输入完全未改。已读固定/当前上游题目源及书目摘要；AMS 原论文与 Erdős 网站403，未声称已读取全文。详见 source-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "unknown/blocked：按完整ID精确匹配技能CSV未命中。多组题号、完整名、数学陈述、Hanson/Steele/Stenger、Mathlib/GitHub 检索后，已读取 upstream、plby latest/v4.24、XC0R 及 Jayyhk Lean 源；公开证明仅覆盖 s=1，strengthening 在上游及 XC0R 仍为 sorry。Erdős 论坛403、GitHub API限流及未认证代码搜索阻碍关键后续核查，故不宣称不存在完整公开证明。task.toml 已标 unknown/blocked；未将公开答案加入任务。"
+    }
+  }
+}

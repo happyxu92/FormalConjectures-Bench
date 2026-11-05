@@ -1,0 +1,12 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos470.PrimitiveWeird: [propext, Quot.sound, Classical.choice]
+audited Erdos470.AbundancyIndex: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 3
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ), Odd n → n.Weird → 6 ≤ {m | m ∈ n.divisors ∧ Nat.Prime m}.ncard
+def Erdos470.PrimitiveWeird : ℕ → Prop :=
+fun n => n.Weird ∧ ∀ d ∈ n.properDivisors, ¬d.Weird
+def Erdos470.AbundancyIndex : ℕ → ℚ :=
+fun n => ↑(∑ d ∈ n.divisors, d) / ↑n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

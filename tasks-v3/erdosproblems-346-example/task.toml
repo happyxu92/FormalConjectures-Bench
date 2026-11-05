@@ -9,6 +9,12 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "consistent"
+statement_status_note = "The retained nonmonotone, value-deletion variant is not the increasing ratio variant: its liminf denominator is 2. No contradiction found; recurrent enumeration of a Graham strongly complete irredundant set can satisfy this formulation. Statement and definitions unchanged."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID absent from skill CSV. Searched full theorem names, older alias, GitHub PRs/forks, Mathlib and author sources. Upstream example remains sorry; PRs 2473/2886 only change category and retain sorry. Price and Kitamura prove different variants. Official problem/forum were recovered by direct HTTP after web-tool 403; the claimed external proof branch returns 404 and remains unverified. No complete proof of this exact retained target verified."
+public_lean4_proof_urls = ["https://github.com/google-deepmind/formal-conjectures/pull/2473", "https://github.com/google-deepmind/formal-conjectures/pull/2886", "https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos346/Proof.lean", "https://github.com/KitaKen1/erdos346-ratio-limit-lean", "https://www.erdosproblems.com/forum/thread/346"]
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/346.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

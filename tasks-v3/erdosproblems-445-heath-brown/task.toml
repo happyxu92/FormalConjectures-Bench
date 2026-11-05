@@ -9,6 +9,10 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact skill CSV miss. Multiple web/GitHub/Mathlib searches found no verified complete proof; upstream uses sorry and LeanGenius assumes heath_brown_2000 as an axiom. GitHub code/PR-comment API access is rate-limited, so this is not a confirmed negative."
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/445.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

@@ -8,6 +8,11 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+statement_status_note = "The finite balanced-partition definitions match Haugland 2016, arXiv:1609.08000, pp. 1-2. The stronger published upper bound also supports this limsup variant; no obvious mathematical error found. Statement and definitions unchanged."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID absent from skill CSV. Varied searches and upstream/PR/author/Lean-source checks found no verified proof of this upper bound; upstream target is sorry, Linrock proves only the weaker 1/2 upper bound, and other certificates concern lower bounds or are not Lean. Global GitHub code search requires authentication (API 401; web sign-in gate). Erdős problem page and both lower-bound proof claims were recovered via direct HTTP after the web tool returned 403. See repair evidence public-proof-review.json."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/36.lean"

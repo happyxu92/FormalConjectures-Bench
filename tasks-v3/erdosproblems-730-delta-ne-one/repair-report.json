@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-730-delta-ne-one",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式列出三个路径；Harbor 子容器中以 ubuntu 实际 rg 找到 mathlib 定义（退出 0）。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 imports。补齐 Dockerfile 末尾 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target；当前本地 Harbor 镜像构建及同一子容器 ubuntu 再构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "技能 Unicode 脚本修复前和最终均为 no_issue；原头通过，改头和缺失 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden、移除 Submission 导入后在匹配 Lean 4.27.0 Docker 中独立提取完整类型及空 universe 列表，生成并审计 ExpectedType 与 S，仅依赖允许公理。两份固定预编译 Spec 包和 checker 内容/AST 一致；原冻结与源码安全检查保留。当前本地 Harbor 构建镜像 sha256:7ab12d1660c93a8d55effc766c7d4f8f421c5440c2214eba9ba560619e137b3e；/tests 上传包和 /opt 包与本地逐文件哈希一致。两入口因原题 sorry 预期退出 1、reward=0；同一 Harbor 子容器两套实际函数补测各29项通过，覆盖可信加载/审计、ubuntu 编译、完整类型比较、目标公理、canary、冻结/越界/实例偷换/缓存遮蔽/缺失及篡改产物。未提供或验收原题完整证明；不扩展到普通外部模块或 initializer 沙箱。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-730-delta-ne-one/attempt-001。Docker 清理完成并核实：已 stop/rm 本题 Spec 容器 1b87bd0f295b 和 Harbor 容器 a2e673b253bd，移除本题镜像 7ab12d1660c9 及专属网络 1170ce963e1f；预先存在的共享依赖镜像保留。cleanup.json 记录命令及检查结果。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。本题是仅要求一个非相邻自然数对的合理变体，不要求无穷多。完整定义 S 与锁定上游源一致；精确 Legendre 阶乘赋值计算确认 (10003,10005) 具有同样的1540个素因子。题目网页及 OEIS 返回403，未据此臆测；锁定上游和独立有限见证足以核对本变体。数学陈述、定义、Target、golden、GoldenCheck及冻结基线全未改。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID erdosproblems-730-delta-ne-one 精确命中技能 references/public-lean4-proofs.csv；public_lean4_proof=true。来源 https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/730.lean#L71 。按 CSV 标记，无需联网复核；未将公开证明放入镜像，也未声称已在本题编译。"
+    }
+  }
+}

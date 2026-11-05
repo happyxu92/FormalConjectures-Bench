@@ -1,0 +1,12 @@
+FCBTrustedSpec.lean:46:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:53:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited complete type and its transitive dependencies: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ᶠ (p : ℕ) in Filter.atTop,
+  Nat.Prime p →
+    ∀ (a : Fin p → ZMod p),
+      (∃ r, ∀ (S : Finset (Fin p)), S ≠ ∅ → ∑ i ∈ S, a i = 0 → S.card = r) → (Set.range a).ncard ≤ 2
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

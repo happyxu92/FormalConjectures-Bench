@@ -19,7 +19,13 @@ benchmark_bucket = "informal_proof"
 oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
-verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
+verification_explanation = "The verifier compiles candidates as ubuntu with locked dependency paths, compares the complete theorem type against a fixed precompiled trusted Spec, preserves frozen source checks, audits theorem axioms, and checks the sorry-detection canary."
+statement_status = "consistent"
+statement_status_note = "Vose's 1985 upper bound N(b) = O(sqrt(log b)); distinct denominators > 1, rational division, finite maximum over 1 <= a < b and asymptotic atTop agree with this variant. No mathematical input changed. See repair-report.json and external audit evidence."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID absent from skill CSV. Upstream upper_1985 and PR 2480 retain sorry. Public OpenAI ShortEgyptian and Bridge304 prove the stronger log-log upper bound, but a complete public Lean derivation of this exact sqrt-log variant was not verified; GitHub global code search requires authentication (HTTP 401). This is not an assertion that no public proof exists."
+public_lean4_proof_urls = ["https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/ShortEgyptian/Main.lean", "https://github.com/pw/erdosproblemaday-verification/tree/main/304/short-egyptian-fractions-refereed/bridge", "https://github.com/google-deepmind/formal-conjectures/pull/2480"]
 
 [verifier]
 timeout_sec = 7200.0

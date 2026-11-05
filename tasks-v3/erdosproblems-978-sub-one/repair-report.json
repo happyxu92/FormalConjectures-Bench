@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-978-sub-one",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 及 .lake/packages；在实际容器执行并命中 Mathlib Order/Filter/Defs.lean 的 Eventually 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 imports；原 Dockerfile 缺少最终普通用户验证，已补上 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。当前本地 Harbor Docker 构建和 ubuntu 实际构建均已通过（原题 sorry 只产生构建警告，不代表证明通过）。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本，初次及最终均为 no_issue，原头和负例检查通过，未修改冻结头。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题可信 golden 隔离提取并预编译完整 ExpectedType，独立审计全部 5 个参数、universes=[] 及传递公理；两份可信包、checker 内容与 AST、一切 immutable 哈希均核对一致。固定 /tests 或 FCB_TESTS_DIR 下预编译 Spec 来源，不重新解析命题或回退生成。最终从当前本地 task 完成 Harbor Docker 构建（镜像 f06ddaab97d6）；上传 /tests 与 /opt 包哈希吻合，两入口因原 sorry 预期 exit=1/reward=0，不代表原题证明通过。同一子容器两种入口配置下实际函数补测全部通过：Spec 加载/可信审计、ubuntu uid=1000 编译、完整类型、公理拒绝 sorryAx、canary、冻结/越界、冻结文字不变的 Powerfree 语义偷换、缓存/同名模块遮蔽及产物缺失/篡改负例。3 个本题容器、2 个本题镜像及 2 个网络已清理并核实不存在；保留预先存在的借用依赖镜像和共享缓存。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-978-sub-one/attempt-001（validation-coverage.json、delivery-hashes.json、immutable-final.json、cleanup.json）。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "核对 pinned 原文、Powerfree 定义和 Erdős 1953《Arithmetical Properties of Polynomials》pp.416–417；本题是 k−1 次无幂值无穷性的已知变体，不是 k−2 原问题。不可约性给出本原性，非 2 幂次数排除了固定 (k−1) 次幂因子障碍，未发现明显数学错误；metadata=consistent。数学陈述及定义全部未改。详见证据 review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。已多组检索并读取 FC main、PR 2721/3243/3670/7730、OpenAI Main/Model 和 Bridge978 源码：sub_one 仍为 sorry，现有桥接证明覆盖其他变体，未核实覆盖本题（包含三次多项式）的完整证明。GitHub 来源索引限流、Constellate 线索域名无法解析，故标 public_lean4_proof=unknown、status=blocked，不声称证明不存在。检索词、来源与排除理由见证据 review.json、public-*-results.json。"
+    }
+  }
+}

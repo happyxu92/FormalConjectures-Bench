@@ -19,12 +19,12 @@ benchmark_bucket = "informal_proof"
 oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
-verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
+verification_explanation = "The verifier checks frozen files and source policy, loads a hash-pinned precompiled trusted Spec, compiles candidates as ubuntu with fixed trusted import paths, compares the complete theorem type, audits theorem axioms, and checks the sorry-detection canary."
 statement_status = "consistent"
 statement_status_note = "Prime-square example variant; checked against Erdos-Sarkozy (1970), p. 98, and the pinned upstream statement. No mathematical inputs changed."
 public_lean4_proof = "unknown"
 public_lean4_proof_status = "blocked"
-public_lean4_proof_note = "Exact task-ID CSV miss. Reviewed upstream, mo271 linked revisions, Mathlib, lean-genius, and baobingzhang sources; no complete proof of this exact example was verified. Awards PR 3463 claims a plby/lean-proofs formalization, but pinned and main Erdos12.lean URLs return 404 and their directory listings omit the file. GitHub code search requires login; some APIs are rate-limited. See repair-report.json and this task's evidence directory."
+public_lean4_proof_note = "Exact task-ID CSV miss, rechecked in attempt-001. Reviewed upstream, mo271, FormalConjectures PRs 2545/3070, Mathlib, lean-genius, baobingzhang and AlphaProof Nexus sources; goodness-only proofs and parts.i/ii do not cover this fixed prime-square counting example. Awards PR 3463's pinned and main plby Erdos12.lean links still return 404; the accessible full main tree has no exact Erdos12 source. Coverage of this claimed proof remains unknown/blocked. See repair-report.json and run-20261104-gpt61/tasks/erdosproblems-12-example/attempt-001 evidence."
 
 [verifier]
 timeout_sec = 7200.0

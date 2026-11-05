@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos36.Overlap: [propext, Quot.sound, Classical.choice]
+audited Erdos36.MaxOverlap: [propext, Quot.sound, Classical.choice]
+audited Erdos36.M: [Classical.choice, propext, Quot.sound]
+audited Erdos36.MinOverlapQuotient: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Filter.limsup Erdos36.MinOverlapQuotient Filter.atTop ≤ 2 / 5
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

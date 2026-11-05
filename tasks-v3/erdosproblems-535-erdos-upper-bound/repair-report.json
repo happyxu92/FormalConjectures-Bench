@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-535-erdos-upper-bound",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式加入 .lake/packages；最终 Harbor 子容器中三路径 rg 搜索找到 package 内 Nat.factorization，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；原 Dockerfile 缺少末尾 ubuntu 构建验证，已补 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的两次 Harbor 构建及最终容器 ubuntu 实际构建均成功，未放宽可信依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已运行技能 Unicode 脚本并复验，case=no_issue；两份头、冻结前缀及赋值边界一致，无需修改。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden 隔离 Submission 提前 elaboration/编译 ExpectedType，完整含隐式 r、hr、ε、正性四个外层参数，无 universe 参数；临时目标不导出，ExpectedType 与前缀定义传递公理审计通过。两份可信包、checker 字节及 AST 一致，所有 immutable 哈希保持不变。运行时固定 Spec 与依赖路径、校验清单/版本/哈希，仅加载预编译产物并比较完整类型，不解析原命题或回退生成。最终本地 Harbor 镜像 sha256:84bc06dc66076df1d4a95c62313be9c4ce411c6e5a3421e0bc39d517e9dada1e；/tests Harbor 上传包与 /opt 本地入口包均逐文件核对。正式与本地入口均因原题 sorry 预期退出 1、reward=0，不代表原题证明完成；同一最终子容器内两份 checker 的实际函数补测全部通过，覆盖 Spec 审计、ubuntu UID1000 编译、完整类型、公理拒绝 sorryAx、canary、冻结/越界/实例语义偷换/缓存遮蔽/产物缺失及篡改。普通 import 规则及原安全检查保留。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-535-erdos-upper-bound/attempt-001（generation.log、delivery-hashes.json、validation-{official,local}.log、static-validation.json 等）。验收产物已保存。Docker 清理已完成并核实：移除本题 spec-g61-535a1、g61-535a1 与 g61-535a1-final 三个容器，两份本题镜像及两个网络；共享预存在依赖镜像保留。详见 cleanup.json，无未清理的本次资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata 标记 consistent。已读取锁定上游完整定义及 Erdős 1964 原论文 pp.644–645 定理(4)：本题为已知 3/4+ε 上界变体，不是更强开放猜想。f 的基数集合非空且有界，r≥3、所有 ε>0、最终 N、pairwise gcd 与正整数区间无明显错误；forcing size 与最大避免集的差一不影响此上界。数学陈述及定义未改。详见证据 statement-audit.json、erdos1964.pdf/txt。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 task ID 精确匹配技能 CSV 未命中；已进行多组题号/定理名/等价数学陈述/作者关键词检索，读取上游 Lean、证明目录及实际公开贡献源码。上游目标仍为 sorry；公开六引理贡献仅给 f≤N、单调性和极值见证，未覆盖本目标。GitHub code/fork/PR 后续查询受限流，Erdős 原站及论坛 HTTP403，不能确认无公开完整证明；metadata 如实记 unknown/blocked。检索词、来源与排除依据见证据 public-proof-review.json、source-fetch.json。"
+    }
+  }
+}

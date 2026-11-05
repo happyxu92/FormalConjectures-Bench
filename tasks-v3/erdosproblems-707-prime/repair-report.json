@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-707-prime",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式加入 .lake/packages；在本地 Harbor 环境实搜 package 内 add_comm 定理，退出0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；原 Dockerfile 缺少 ubuntu 最终构建验证，已以 RUN lake build +FormalConjecturesBench.Target 结尾。本地 Harbor 构建及同一子容器 ubuntu 构建成功，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "技能 Unicode 脚本初检及终检均为 no_issue，原头、冻结前缀与赋值边界验证通过。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题可信 golden 隔离候选提取并预编译完整 ExpectedType（universes=[]），审计仅依赖标准公理；两份包、checker 内容/AST及 immutable 哈希一致。固定 Spec 路径优先于候选，运行时不重新解析或生成。最终从当前本地 task 经 Harbor force_build 验收，/tests 与 /opt 上传产物哈希匹配。正式/本地入口均因原题 sorry 预期退出1，reward=0；同一子容器每入口29项实际函数补测通过，覆盖可信审计、ubuntu UID1000编译、完整类型、公理、canary及冻结/越界/语义偷换/缓存遮蔽/缺失/篡改负例。未提供原题证明。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-707-prime/attempt-001。Docker 已核实清理：3个本题容器（51437e8728f5、465c31589220、5b14179d493d）、2个任务镜像（1678b77a0233、568686517658）及2个本题网络均已移除；预存共享依赖镜像保留，未清理其他任务资源。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 consistent。核对锁定上游707.lean、实际 IsSidon/IsPerfectDifferenceSet 定义及 Alexeev–Mixon arXiv:2510.19804 Theorem 8；这是合理且已知成立的 prime 变体。模数恒正，不受历史 modulus=0 错误影响。题目网站403，但原论文可读。仅标记，数学输入不变。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true。技能CSV完整ID精确匹配未命中，后经三组检索与源码核查，确认 https://github.com/plby/lean-proofs/blob/main/src/v4.24.0/ErdosProblems/Erdos707.lean 的 Erdos707.not_erdos_707P 完整证明；其允许整数扩张集的结论更强，经自然数嵌入及 not/iff False 对应覆盖本题。全文去注释后无 sorry/admit/新增axiom；另核对作者论文、上游及 teorth 相关代码。未在本题Lean4.27环境编译或装入答案。题目网站及GitHub API受限不妨碍已取得完整关键源码；详见 public-proof-audit.json。"
+    }
+  }
+}

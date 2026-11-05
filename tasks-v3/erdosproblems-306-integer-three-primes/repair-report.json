@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-306-integer-three-primes",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 .lake/packages；在最终 Harbor 子容器以 ubuntu 搜到 Mathlib 的 cardDistinctFactors 定义，退出码 0，无路径错误。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import；补齐 Dockerfile 最后的 USER ubuntu / RUN lake build +FormalConjecturesBench.Target。当前本地 Harbor 构建及同容器 ubuntu 再构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能脚本并最终复验：no_issue；原始头通过，改头及移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "由本题可信 golden 隔离生成并预编译 ExpectedType；保留完整 m、h 参数，无 universes，内联 omega 索引辅助证明并丢弃临时目标，传递公理审计通过。两份可信包及 checker AST/内容一致，immutable 哈希不变。最终当前本地 task 经 Harbor Docker 构建，上传 /tests 与预装 /opt 的 35 项交付哈希核对通过；两入口均因原题 sorry 退出 1/reward 0（预期），同一子容器两位置的实际函数补测覆盖 Spec 加载审计、ubuntu 编译、完整类型比较、目标 sorryAx 审计、canary、冻结/越界/缓存遮蔽/缺失/篡改负例。冻结文字不变的 Finset.Icc 名称偷换 fixture 实际编译后被完整类型比较拒绝；该隔离 fixture 保留占位证明，不声称完成原题证明。未增加通用外部模块白名单或 initializer 沙箱。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-306-integer-three-primes/attempt-001。Docker 清理已核实：停止并移除本题 Spec 容器及两次 Harbor 容器，删除两任务镜像 tag（共同 ID 6b191f5558e6）及两个专用网络；预先存在的共享依赖镜像保留，未触碰其他任务资源。详见 cleanup.json/log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 consistent，未改数学输入。与锁定上游的 integer_three_primes 变体及 Butler–Erdős–Graham, Integers 15 (2015) A51, Theorem 1 (p.2) 一致；不是开放的二素因子有理数原问题。k>0 使嵌套全称下的合取非空；相邻严格递增、区间与 ω=Ω=3 正确表达三个不同素数的分母。原题网站直连 403，但已取得并读取原论文和锁定上游。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确命中技能 CSV，已标记 public_lean4_proof=true；按要求无需重新联网核验。来源：https://github.com/linrock/math-proofs/blob/e1a5e2a3317007f0e31b98bf2e80383187b31238/erdos-306/Solution.lean#L48 。不声称已在本题环境编译该公开证明，未将答案写入镜像。"
+    }
+  }
+}

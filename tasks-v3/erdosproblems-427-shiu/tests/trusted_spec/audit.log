@@ -1,0 +1,14 @@
+FCBTrustedSpec.lean:49:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos427.ShiuTheorem: [propext, Quot.sound, Classical.choice]
+audited Erdos427.erdos427: [propext, Quot.sound, Classical.choice]
+complete unfolded binder count: 6
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Erdos427.ShiuTheorem
+def Erdos427.ShiuTheorem : Prop :=
+∀ (k a q : ℕ),
+  1 ≤ k →
+    1 ≤ q → a.gcd q = 1 → {m | ∀ p ∈ Finset.image (Nat.nth Nat.Prime) (Finset.Ico m (m + k)), p ≡ a [MOD q]}.Infinite
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

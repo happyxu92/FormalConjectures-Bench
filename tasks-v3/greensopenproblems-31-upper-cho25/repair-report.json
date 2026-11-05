@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-31-upper-cho25",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式加入 .lake/packages；bash 语法检查及最终 Harbor 容器内 ubuntu 搜索已通过，命中 Mathlib 的 sqrt 定义。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；原 Dockerfile 缺少末尾普通用户构建验证，现以 USER ubuntu、RUN lake build +FormalConjecturesBench.Target 结尾。最终本地 Harbor 构建及容器内 ubuntu 构建均成功；未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本两次，均为 no_issue；原头通过，修改头及缺失 := 被拒绝；冻结常量未变。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离 Submission 提取并预编译完整 ExpectedType，universes=[]，外层 forall 参数数为0；审计 ExpectedType 与 Green31.F 仅依赖三项允许公理，临时目标未导出。两份固定 Spec 包及 checker 内容/AST 一致，运行时不重新解析命题或回退生成，原安全规则保留。最终本地 Harbor 镜像 sha256:d2fd6e9aee8af9747400f1ddbc1985ea7d11e546124ed4c912ec8b86aa8c2fbd；/tests 上传包、/opt 包和本地哈希相符。两入口均按预期因原题 sorry 退出1、reward=0；同一最终子容器两份实际 checker 各29项补测通过，覆盖可信审计、ubuntu 编译、完整类型比较、目标公理与 canary、冻结/越界/语义偷换/缓存遮蔽/缺失及篡改负例。atTop 偷换为底滤子的合法无 sorry 候选实际编译后被完整类型比较拒绝。公开 Target、golden、GoldenCheck、冻结基线与数学定义全部原哈希不变。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-31-upper-cho25/attempt-001。Docker 清理已完成并核实：3个本题容器（881394836a4b、1c6e920f5abc、15e27d3a4e80）、2个本题镜像（31377b85ce38、d2fd6e9aee8a）及2个本题网络已移除；预存共享依赖镜像保留。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent，数学内容未改。核查完整 F、IsSidon 和有限 powerset 最大基数定义；{1,...,N} 与论文 [0,N) 可平移对应，实指数为1/4，存在统一实常数且对充分大自然数成立。Green 问题31及 CHO25 (arXiv:2310.20032，摘要、Proposition 1.3) 支持 0.98183 上界；这是已知上界变体，不是解决更强开放问题。详见证据 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。已多组检索定理名、Sidon/CHO25 系数、作者、上游、Mathlib、相关仓库/PR，并读取实际 Lean 源码：同命题仍 sorry，Singer/Lindstrom 证明仅给较弱系数1；更强数值界的 Lean 公告只覆盖有限不等式，未覆盖承重引理。GitHub code search、分支/fork 与部分评论 API 遭403限流，部分证书源码未公开核实，故 metadata 标记 unknown/blocked，不断言不存在公开证明。详见证据 public-proof-review.json、fetch-results.json。未将任何公开答案放入 task。"
+    }
+  }
+}

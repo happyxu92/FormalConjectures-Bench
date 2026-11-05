@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-399-sum-two-squares",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 和 .lake/packages；最终 Harbor 容器中 ubuntu 实测命中 Mathlib factorial 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 imports，无需追加模块；原 Dockerfile 缺少普通用户构建验收，现以 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target 结尾。最终本地 Harbor 镜像构建及容器内 ubuntu 构建均成功；sorry 警告不代表证明完成。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本并最终复验，均为 no_issue；原始头通过，改头和移除 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden 隔离 Submission 后，经匹配 Lean 4.27.0 Docker 提取并预编译 ExpectedType：3 个隐式 Nat 参数和 2 个完整假设，universes=[]，传递公理仅 propext，临时目标未导出。两份固定 Spec 包及 checker 内容/AST 一致；清单与产物哈希、版本、依赖和 golden 均校验。运行时只加载可信预编译模块，完整类型比较不重新解析原命题；原安全检查及正常 import 规则保留。最终本地 Harbor 镜像 sha256:5e707549a8fefb9a2354a8a9ce3d5d236dcfaf151edd5f0da71779fe7cec017d；上传 /tests 与镜像 /opt 包分别和本地逐文件哈希一致。正式和本地入口均因原题 sorry 预期退出 1，reward=0；同一最终子容器对两份 checker 各完成 29 项实际函数补测，包括 Spec 审计、ubuntu UID 1000 编译、完整类型、目标公理和 sorry canary，以及冻结/越界/缓存遮蔽/产物缺失篡改负例。保持冻结文本不变的 LT Nat 实例偷换通过源码、编译及公理检查，但被完整类型比较和完整 checker 拒绝。公开 Target、golden、GoldenCheck 和冻结基线所有 immutable 哈希保持不变。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-399-sum-two-squares/attempt-001。日志和产物保存后，已 stop/rm 本题容器 3006fc65398b、75b928bc21ea、294654892ec3；已删除本题镜像 068e8e21240c、5e707549a8fe 及其 tags，移除两个独占网络 682cf9aaa560、c860c25d513b，并逐项 inspect 核实不存在。预先存在的匹配依赖镜像 4ebc82ca4616 和共享缓存保留，未触碰其他任务资源；cleanup.json/cleanup.exit=0。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。核对上游指定完整目标、全部前缀及 Erdős–Obláth 原论文 https://users.renyi.hu/~p_erdos/1937-09.pdf pp.241–242 的 (Ia)：本题是已知 k=2 平方和分类变体，不是 k>2 原问题。1<x*y 排除零变量和 2!=1²+1²；n=0,1 不可能，6! 的解恰为 (12,24) 及交换。未发现明显数学错误；数学定义和陈述未改。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确匹配技能 CSV 未命中。已进行多组题号、定理名、平方和、factorial、Breusch 等检索，并读取上游 main/pin、相关 PR/分支差异、Jayyhk、williamjblair、Mnehmos、Mathlib 等源码。PR 3182/2660 仅改标签且保留 sorry；其余完整证明是基题反例或 Cambie 四次幂变体，不覆盖本目标。GitHub code search 需登录/API 403，erdosproblems.com 为 Cloudflare；关键检索受限，故标 public_lean4_proof=unknown、status=blocked，不声称不存在公开证明。详见 public-search-audit.json、public-fetch-results.json 和相关源码证据。"
+    }
+  }
+}

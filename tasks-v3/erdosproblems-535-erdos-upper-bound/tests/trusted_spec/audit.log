@@ -1,0 +1,12 @@
+FCBTrustedSpec.lean:74:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:84:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos535.f: [Classical.choice, propext, Quot.sound]
+audited Erdos535.NoConstantPairwiseGcdCoprimeSubsets: [propext, Quot.sound]
+audited Erdos535.AllBigOmega: [propext, Quot.sound, Classical.choice]
+complete binder count: 4
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {r : ℕ}, 3 ≤ r → ∀ ε > 0, ∀ᶠ (N : ℕ) in Filter.atTop, ↑(Erdos535.f r N) ≤ ↑N ^ (3 / 4 + ε)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

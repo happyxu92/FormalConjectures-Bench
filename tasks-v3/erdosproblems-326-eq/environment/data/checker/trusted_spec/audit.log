@@ -1,0 +1,8 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ a,
+  ∃ (_ : StrictMono a) (_ : (Set.range a).IsAddBasisOfOrder 2),
+    ∃ x, ∃ (_ : 0 < x), Filter.Tendsto (fun n => ↑(a n) / ↑n ^ 2) Filter.atTop (nhds x)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

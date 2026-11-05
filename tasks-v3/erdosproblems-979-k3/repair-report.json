@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-979-k3",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；bash 语法检查通过，容器 ubuntu 实际搜索命中 Mathlib ArithmeticFunction.sigma（退出码0）。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 imports。补齐 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target；最终本地 Harbor 镜像构建成功，同一子容器 ubuntu 构建退出0。原始占位证明的警告不属于依赖故障。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本及最终复验，均为 no_issue；原始头通过，修改头和缺失 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "由本题固定 golden 在匹配的 Lean 4.27/x86_64 Docker 环境隔离提取完整类型，ExpectedType 无外层参数及 universes；独立编译审计 ExpectedType 与 solutionSet 的传递公理，仅含允许的标准公理。两份可信包及 checker 内容/AST 一致，固定 Spec 与依赖优先加载，无运行时命题重解析、重生成或回退。最终当前本地 task 经 Harbor 构建，/tests 上传包、/opt 包及 golden 与宿主哈希全部一致。两入口均因原题 sorry 预期退出1/reward0；同一最终 Harbor 子容器以 /tests-root、/opt-ubuntu 各完成29项实际函数补测，覆盖 Spec 审计、ubuntu编译、完整类型比较、目标公理拒绝 sorryAx、canary、冻结/越界/语义偷换/缓存遮蔽/产物缺失及篡改。语义攻击保留冻结文字且自身编译和公理审计通过，最终被完整类型比较拒绝。首次镜像 /opt GoldenCheck 缓存错误已记录；仅更新时间戳、内容未变后重新构建，最终交付核对通过。全部 immutable-before 哈希保持。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-979-k3/attempt-001。Docker 清理完成并核实不存在：3个本题容器（e810f9f48572、84b2fdd1b24b、fc90e229c560）、2个本题镜像（b74c432b8821、0a6fc8acc6fe）及2个本题网络；预先存在的共享依赖镜像保留，未动其他任务资源。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。核对固定上游979.lean、完整 solutionSet 定义及 Erdős 1965 原文印刷页224/PDF页30：本题为三素数立方表示数无界的 k=3 变体，不是全部 k>=2 的开放问题。Multiset 允许重数、忽略排列至多影响因子6，不影响无界结论；固定n解集有限，ENat limsup=top 含义正确。未发现明显数学错误，未改陈述或定义。Bloom 页面直接访问403，已有原文及镜像交叉核对，不构成本项未完成。详见 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确命中技能 public-lean4-proofs.csv，已标记 public_lean4_proof=true；按要求无需重新联网确认，也未在本题编译或引入公开答案。来源：https://github.com/KitaKen1/erdos-979-k3/blob/930fcc877fa4a2b4fc7c59614cbbab04a6d834ca/lean/K3Lean/Erdos979K3Final.lean#L46-L47 。证据 public-csv-match.json。"
+    }
+  }
+}

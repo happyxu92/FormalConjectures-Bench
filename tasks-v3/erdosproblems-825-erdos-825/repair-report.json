@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-825-erdos-825",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages. Verified the exact three-path rg command in the final Harbor container as ubuntu: found Nat.properDivisors, exit 0 (final-instruction-search.log). An earlier dependency-only generation image lacked /app; that probe was not counted as validation."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports. Added the missing final USER ubuntu RUN lake build +FormalConjecturesBench.Target. Current local task Harbor image sha256:edb0d6908f3e0ed3397b5156cbe7dd70c6c8a79ed79d23eecdbdba6104796506 built successfully; repeated ubuntu build exit 0."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Required skill script run before and after repair: case=no_issue, original header accepted, changed header/missing assignment rejected, checker copies consistent. No header or frozen baseline changed."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Replaced candidate-time GoldenCheck elaboration with fixed precompiled FCBTrustedSpec.ExpectedType derived independently from this task's original golden in matching Lean 4.27.0 x86_64 Docker dependencies. Full closed equivalence extracted by Lean parser/elaborator, universes []; temporary theorem/children absent and transitive axioms only propext/Classical.choice/Quot.sound. Two packages identical; manifest pinned. Fixed toolchain/import paths ignore candidate caches/environment; no runtime Spec generation or fallback. Current local Harbor build and 38 delivered file hashes match /tests, /opt and /app. Both actual entries exit 1 on original sorry, reward 0 as expected. In the same Harbor child, both delivered checker copies passed actual-function supplement suites: Spec hash/version/load/audit, ubuntu UID 1000 compilation, full type comparison, target sorryAx rejection, sorry canary, frozen/header/config/out-of-bounds/source restrictions, legal ordinary helpers, cache/dependency/env shadow resistance, missing/tampered artifacts/manifest fail closed without regeneration. Frozen-header-preserving Erdos825.id shadow compiled but full type comparison rejected it. Placeholder fixtures were isolated and do not constitute a proof. Original safety functions preserved by AST comparison. Evidence directory: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-825-erdos-825/attempt-001. Docker cleanup verified: stopped/removed spec-g61-a001-825e and g61-a001-825e__env-main-1 containers (both prefixed erdosproblems-825-erdos-825), removed image edb0d6908f3e and this trial's network. All owned resources absent after inspection; pre-existing dependency image/shared cache retained. See cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked consistent. Checked complete prefix/type, pinned upstream 825.lean, Mathlib sigma/properDivisors definitions and Larsen's original 318.tex, Corollary 5 (lines 362-370). Positive real C and strict sigma(n)>Cn give a valid weaker form of the manuscript's >= result; n=0 has false antecedent. Finset subset/sum captures distinct proper divisors. erdosproblems.com direct/history/latex fetches returned 403, but the original author's manuscript was accessible. No mathematical inputs modified. See statement-audit.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true by exact full-ID match in skill references/public-lean4-proofs.csv. Sources: https://github.com/plby/lean-proofs/blob/dfe2d78128b493c572cf525b1b8edf4897fb7664/src/latest/ErdosProblems/Erdos825.lean#L5893 and https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos825.lean#L5886. Per requested CSV policy, no repeat network verification; not compiled or copied into the task image."
+    }
+  }
+}

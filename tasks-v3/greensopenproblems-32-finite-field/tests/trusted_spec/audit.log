@@ -1,0 +1,28 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green32.HasCosetHole: [propext, Quot.sound, Classical.choice]
+audited Green32.HasGap: [propext, Quot.sound, Classical.choice]
+audited Green32.HasLargeGapDilate: [propext, Quot.sound, Classical.choice]
+complete outer Pi binder count: 0; eventual quantifier retained in expression
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+@Filter.Eventually Nat
+  (fun n =>
+    ∀ (A : Finset (Fin n → ZMod (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))),
+      @Eq Nat (@Finset.card (Fin n → ZMod (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) A)
+          (@Nat.floor Real Real.semiring Real.partialOrder
+            (@FloorRing.toFloorSemiring Real Real.instRing Real.linearOrder Real.instIsStrictOrderedRing
+              Real.instFloorRing)
+            (@HPow.hPow Real Nat Real (@instHPow Real Nat (@Monoid.toNatPow Real Real.instMonoid))
+                (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast ⋯)) n).sqrt) →
+        @Green32.HasCosetHole n A
+          (@Nat.floor Real Real.semiring Real.partialOrder
+            (@FloorRing.toFloorSemiring Real Real.instRing Real.linearOrder Real.instIsStrictOrderedRing
+              Real.instFloorRing)
+            (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)
+              (@OfNat.ofNat Real (nat_lit 100) (@instOfNatAtLeastTwo Real (nat_lit 100) Real.instNatCast ⋯))
+              (@HPow.hPow Real Nat Real (@instHPow Real Nat (@Monoid.toNatPow Real Real.instMonoid))
+                  (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast ⋯)) n).sqrt)))
+  (@Filter.atTop Nat Nat.instPreorder)
+def Green32.HasCosetHole : {n : ℕ} → Finset (Fin n → ZMod 2) → ℕ → Prop :=
+fun {n} A L => ∃ W v, L ≤ Nat.card ↥W ∧ ∀ (w : ↥W), v + ↑w ∉ A
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

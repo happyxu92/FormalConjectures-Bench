@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import hashlib
+import importlib.util
 import json
 import os
 import re
@@ -15,6 +16,26 @@ from pathlib import Path
 TASK_DIR = Path(os.environ.get("FCB_TASK_DIR", "/app"))
 TESTS_DIR = Path(os.environ.get("FCB_TESTS_DIR", "/tests"))
 GOLDEN_ENV_DIR = TESTS_DIR / "golden_env"
+SPEC_DIR = (TESTS_DIR / "trusted_spec").resolve()
+TASK_ID = "wikipedia-sierpinskinumber-selfridge-78557"
+SPEC_MANIFEST_SHA256 = "606190ff9f7fd9a6cca746e074e3dd721e32b041945ed7c2e7798959504e3f62"
+_support_spec = importlib.util.spec_from_file_location("fcb_fixed_spec_support", TESTS_DIR / "spec_support.py")
+_support = importlib.util.module_from_spec(_support_spec)
+_support_spec.loader.exec_module(_support)
+_trusted_spec = _support.TrustedSpec(globals())
+
+
+def load_trusted_spec():
+    return _trusted_spec.load()
+
+
+def check_trusted_type(project_dir):
+    _trusted_spec.audit(project_dir)
+
+
+def run_lean(project_dir, arguments, timeout=1200):
+    return _trusted_spec.run(project_dir, arguments, timeout)
+
 DEPENDENCY_PACKAGES = Path(
     os.environ.get("FCB_DEPENDENCY_PACKAGES", "/opt/formal-conjectures/.lake/packages")
 )
@@ -264,19 +285,18 @@ def make_fresh_golden_project() -> tempfile.TemporaryDirectory[str]:
             dst = editable_dst / rel
             dst.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(src, dst)
+    _trusted_spec.transform(project_dir)
     return tmp
 
 
 def check_build(project_dir: Path) -> None:
-    result = run(["lake", "build", "+FormalConjecturesBench.Target"], cwd=project_dir)
-    if result.returncode != 0:
-        fail("lake build failed\n" + result.stdout)
+    _trusted_spec.build(project_dir)
 
 
 def lean_output(project_dir: Path, source: str) -> str:
     tmp = project_dir / "_formal_conjectures_bench_audit.lean"
     tmp.write_text(source, encoding="utf-8")
-    result = run(["lake", "env", "lean", str(tmp)], cwd=project_dir, timeout=300)
+    result = run_lean(project_dir, [str(tmp)], timeout=300)
     try:
         tmp.unlink()
     except FileNotFoundError:
@@ -302,12 +322,7 @@ def parse_axioms(output: str, theorem_name: str) -> set[str]:
 
 
 def check_golden_theorem_import(project_dir: Path) -> None:
-    golden_check = TESTS_DIR / "GoldenCheck.lean"
-    dst = project_dir / "GoldenCheck.lean"
-    shutil.copy2(golden_check, dst)
-    result = run(["lake", "env", "lean", str(dst)], cwd=project_dir, timeout=300)
-    if result.returncode != 0:
-        fail("Golden theorem check failed\\n" + result.stdout)
+    _trusted_spec.compare(project_dir)
 
 
 def check_axioms(project_dir: Path) -> None:
@@ -334,9 +349,10 @@ def main() -> None:
     check_no_banned_patterns_in_editable_sources()
     check_extra_lean_files_confined()
     check_frozen_files_unchanged()
-    restore_dependency_config_cache()
+    load_trusted_spec()
     with make_fresh_golden_project() as tmp:
         project_dir = Path(tmp)
+        check_trusted_type(project_dir)
         check_build(project_dir)
         check_golden_theorem_import(project_dir)
         check_axioms(project_dir)

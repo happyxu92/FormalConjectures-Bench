@@ -57,6 +57,8 @@ RUN find /opt/formal-conjectures/.lake/packages -path '*/.lake/config/*/lakefile
 
 WORKDIR /app
 COPY data/ /app/
+# Detect stale same-sized sibling-task content in a reused local build context.
+RUN echo 'd27972c7e9cf429c29e9d3b29239617b18a10da46c4e7a67f7fdc5da9765db75  /app/checker/GoldenCheck.lean' | sha256sum -c -
 RUN mkdir -p /opt/formal-conjectures-bench-checker \
   && cp -a /app/checker/. /opt/formal-conjectures-bench-checker/ \
   && rm -rf /app/checker \
@@ -73,3 +75,7 @@ RUN mkdir -p /opt/formal-conjectures-bench-checker \
 WORKDIR /app
 ENV HOME=/home/ubuntu
 USER ubuntu
+
+# Exercise the same build as the checker without granting write access to the
+# trusted dependency. Missing precompiled imports must fail the image build.
+RUN lake build +FormalConjecturesBench.Target

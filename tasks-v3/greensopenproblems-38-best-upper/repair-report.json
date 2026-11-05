@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-38-best-upper",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 和隐藏 packages；最终 Harbor 容器中以 ubuntu 搜到 Mathlib 的 IsCompact 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；保留 ProblemImports 预编译。补齐 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target；最终本地 Harbor 构建及容器内 ubuntu 重建成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已运行技能 Unicode 脚本，case=no_issue、退出码 0；原头通过，变更头及缺失 := 被拒绝，未改冻结头。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden 隔离提取完整类型（两个外层参数，universes=[]），预编译并审计 ExpectedType 及前缀定义；两份可信包及 checker AST/内容一致。固定加载预编译产物，临时候选共享可信前缀，比较完整类型，保留原源码限制、公理审计及 canary。最终当前本地 task 经 Harbor 构建，镜像 sha256:3e0d8b21b494a9b47b73ab6f06b6b801a2bec381adbbf7d957865c4ba0e43749；/tests、/opt、/app 文件哈希均匹配。两入口均因原题 sorry 退出 1/reward=0；同一子容器两套实际函数补测全部通过，涵盖 Spec 审计、ubuntu 编译、完整类型、公理拒绝、canary、冻结/越界/实例语义偷换/缓存遮蔽/产物缺失和篡改。一次中间构建发现 /opt GoldenCheck 被兄弟变体缓存污染；已保留失败证据，仅刷新该文件 mtime（内容哈希不变），增加打包哈希校验并重新完整验收成功。不声称原题证明通过；不扩展通用 import/initializer 安全范围。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-38-best-upper/attempt-001。Docker 清理完成并复核：本次 4 个容器（含 Spec 环境）、3 个任务镜像（38u7/38u7f/38u7z）及 3 个对应网络已移除；预先存在的共享依赖镜像 e21dc171550d 和共享缓存保留。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。已读 Green 原题 Problem 38、锁定上游及 Lovasz 1979 第5页 Corollary 5；差集条件对应 C7 强幂独立集，ValidCardinalities 非空且有界，C2 正，任意正 epsilon 的 eventual 上界无明显数学错误。仅标记，数学定义、Target、golden、GoldenCheck 和全部 immutable 哈希保持不变。详见证据 research/math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "unknown/blocked：完整 task ID 未命中技能 CSV。已用多组完整名称、定义名、C7 Shannon capacity/Lovasz theta 关键词检索并读取主要候选源码；上游和 CapacityAtlas 匹配上界仍有 sorry，ShannonBounds 证明的是下界，其他线索是 C5 挑战或无关 Hamiltonicity。GitHub 分支/fork API 返回 403 限流，代码搜索要求登录，不能据此确认不存在公开完整证明；未将公开答案加入任务。metadata 已标记 unknown/blocked。详见证据 research/public-proof-review.json、fetch-results.json。"
+    }
+  }
+}

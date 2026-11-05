@@ -1,0 +1,18 @@
+audited FCBTrustedSpec.ExpectedType: [Quot.sound, propext, Classical.choice]
+audited Green25.Property25: [propext, Quot.sound, Classical.choice]
+audited Green25.bestLower: [propext, Quot.sound, Classical.choice]
+audited Green25.bestUpper: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0 (original elaborated expression)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ k,
+  (∀ᶠ (N : ℕ) in Filter.atTop, 1 ≤ k N ∧ k N ≤ N) ∧
+    (fun N => ↑(k N)) =Θ[Filter.atTop] Green25.bestUpper ∧ ¬∀ᶠ (N : ℕ) in Filter.atTop, Green25.Property25 (k N) N
+def Green25.Property25 : ℕ → ℕ → Prop :=
+fun k N =>
+  1 ≤ k ∧
+    k ≤ N ∧
+      ∀ (P : Finpartition (Finset.Icc 1 N)), P.parts.card = k → 10 * (P.parts.biUnion Finset.restrictedSumset).card ≥ N
+def Green25.bestUpper : ℕ → ℝ :=
+fun N => ↑N / Real.log ↑N
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

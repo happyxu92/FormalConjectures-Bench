@@ -1,0 +1,11 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited CongruentNumber.congruentNumber: [propext, Quot.sound, Classical.choice]
+audited CongruentNumber.C: [propext]
+audited CongruentNumber.D: [propext]
+complete binder count: 4
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ),
+  Squarefree n →
+    Even n → CongruentNumber.congruentNumber n → 2 * (CongruentNumber.C n).ncard = (CongruentNumber.D n).ncard
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

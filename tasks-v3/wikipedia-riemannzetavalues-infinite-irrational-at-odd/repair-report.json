@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-riemannzetavalues-infinite-irrational-at-odd",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "源码搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；在最终 Harbor 子容器以 ubuntu 实跑三路径搜索，命中 Mathlib Irrational 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 仅含两项标准 imports，无额外上游依赖需补编译。Dockerfile 已以 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target 结尾；当前本地 Harbor 构建及子容器 ubuntu 再构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "技能 Unicode 脚本修复前及最终均为 no_issue；两份 checker、原始/可信头、修改头及移除 := 负例通过，无需修改定理头。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境解析 GoldenCheck，存在语义遮蔽风险。已从本题 immutable golden 隔离提取完整类型及 universes=[]，预编译并传递公理审计 ExpectedType，固定清单/工具链/加载路径，两可信包一致。当前本地 task 经 Harbor Docker 构建成功；/tests 上传包及 /opt 包与本地哈希一致。正式/本地入口均因原始 sorry 退出 1，reward=0（非证明通过）；同一子容器两包实际函数补测均通过：Spec 审计、ubuntu uid1000 编译、完整类型比较、sorryAx 拒绝及 canary、冻结/越界/名称偷换/缓存遮蔽/产物缺失与篡改负例，无实现异常。证据 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-riemannzetavalues-infinite-irrational-at-odd/attempt-001；已 stop/rm 本题 Spec 容器 dd6e241fa7ec 和 Harbor 子容器 4c63d1621174；本题镜像 sha256:6eb8fdd1436abb190d50eb0f2e556ec184b19b4c38ee438dde9ec3c1ea991c9b 已删除并核实不存在，网络已回收；预存共享依赖镜像未删除。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata 标记 consistent。已核对完整前缀、锁定上游及 Rivoal 2000 原论文 https://arxiv.org/pdf/math/0008051 第1页摘要/定理1：奇数点无理值有无限多个；n=0 至多影响单点，不改变无限性，实数见证的复数嵌入正确。未发现明显数学错误，陈述、定义、Target、golden、GoldenCheck 及冻结哈希均未改。详见证据 review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。已多组检索 Rivoal/Ball–Rivoal、完整 Lean 名、等价数学命题，读取作者网页/原论文、FormalConjectures 当前与锁定源码及 mo271 fork、Mathlib、相关 Lean 源码；发现的 ζ(3)、ζ(5) 及有限线性无关性证明不覆盖本目标。GitHub 跨仓库 code search 实际 HTTP 403 rate limit，故保留 public_lean4_proof=unknown/status=blocked，不能宣称不存在公开证明。检索及排除证据见 review.json、fetch-results.json、public-csv-match.json；未把公开答案放入镜像。"
+    }
+  }
+}

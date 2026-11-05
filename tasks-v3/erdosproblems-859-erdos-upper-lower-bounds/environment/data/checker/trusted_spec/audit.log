@@ -1,0 +1,14 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos859.DivisorSumSet: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0 (full existential statement retained)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ c₃ > 0,
+  ∃ c₄ > 0,
+    ∃ t₀,
+      ∀ᶠ (t : ℕ) in Filter.atTop,
+        ∃ dₜ, (Erdos859.DivisorSumSet t).HasDensity dₜ ∧ 1 / Real.log ↑t ^ c₃ < dₜ ∧ dₜ < 1 / Real.log ↑t ^ c₄
+def Erdos859.DivisorSumSet : ℕ → Set ℕ :=
+fun t => {n | ∃ s ⊆ n.divisors, t = ∑ i ∈ s, i}
+'Erdos859.DivisorSumSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

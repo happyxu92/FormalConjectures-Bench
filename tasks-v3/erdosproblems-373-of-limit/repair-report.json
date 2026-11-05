@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-373-of-limit",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 和 .lake/packages；最终 Harbor 容器内实际搜索命中 mathlib 的 Nat.factorial_pos。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 imports；补齐 Dockerfile 最末 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。本地 Harbor 构建及容器内 ubuntu 实际构建成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已运行技能 Unicode 脚本并最终复验，均为 no_issue；原始头通过，变更头与移除 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题隔离 golden 提前提取并编译 ExpectedType，完整保留显式 H，无 universe 参数；审计 ExpectedType 与 S 传递公理合规。两份可信包、checker AST/内容和全部 immutable 哈希一致。最终本地 Harbor 两入口因原题 sorry 预期退出 1、reward=0；同一子容器正式/本地实际函数各完成 29 项补测，覆盖类型、公理、canary、语义偷换、缓存遮蔽和缺失/篡改拒绝。39 项上传 /tests、/opt 与 /app 文件哈希匹配。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-373-of-limit/attempt-001/validation-coverage.json。一次容器退出 137 的补测中断已记录，重启本题容器并完整重测成功；不归为证明失败。Docker 清理已核实：移除本题容器 0b788618/c43fc5f6/f7614981、镜像 b2a22338/e85c2265 及两个 7e91 专属网络；保留预存共享基镜像和缓存。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "consistent：核对完整 S、极限假设、原题网页及 Erdős 1976 Theorem 2（PDF 页 4、16），这是合理的条件性已知变体；未发现明显数学错误，陈述、定义及 golden 全未修改。详见证据 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "unknown/blocked：完整 ID 精确匹配技能 CSV 未命中。完成多组题号、完整定理名、因子增长及论文关键词检索；上游仍含 sorry，相关 PR 2746/2755/3267/3276 的实际 Lean 源码亦仍含 sorry；另读公开贡献完整源码，仅有结构引理，不覆盖目标。GitHub 跨 fork 代码检索需认证，部分证明索引不可读，不能断言不存在公开完整证明。详见证据 public-proof-review.json；未将公开答案放入 task。"
+    }
+  }
+}

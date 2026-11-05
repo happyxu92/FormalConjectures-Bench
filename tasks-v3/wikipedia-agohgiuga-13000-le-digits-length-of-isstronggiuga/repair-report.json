@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-agohgiuga-13000-le-digits-length-of-isstronggiuga",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、上游及 .lake/packages；最终 Harbor 容器以 ubuntu 实搜到 Mathlib/Data/Nat/Digits/Defs.lean，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；原 Dockerfile 缺少最终普通用户构建，现以 ubuntu RUN lake build +FormalConjecturesBench.Target 结尾。最终本地 Harbor 强制构建及同容器 ubuntu 构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本并复验：no_issue，原头通过，修改头及缺失 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已隔离本题 golden 生成并编译固定 Spec，完整 a、ha 参数及空 universes 已审计，ExpectedType/IsStrongGiuga 传递依赖仅标准公理。两份可信包及 checker 同步；固定加载路径，无运行时生成或重解析。最终本地 Harbor 构建完成，/tests 上传包及 /opt 包逐文件哈希匹配。两入口因原题 sorry 预期拒绝（exit 1，reward 0）；同一最终子容器 root/ubuntu 各 29 项实际函数补测通过，覆盖 Spec 审计、ubuntu 编译、完整类型、目标 sorryAx、公理 canary、冻结/越界/语义偷换/缓存遮蔽/产物缺失及篡改。首次 List.replicate 攻击 fixture 递归失败已保留日志，改用 DigitList fixture 后编译及类型拒绝均验证。全部 immutable 哈希不变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-agohgiuga-13000-le-digits-length-of-isstronggiuga/attempt-001。Docker 清理已核实：本题 Spec 容器及两个 Harbor 容器均 stop/rm；镜像 65ad7ed0e0dd、100f96a9ed22 及两个专属网络已删除，inspect 确认不存在；预先存在的共享依赖镜像保留，无遗留本题资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。IsStrongGiuga 精确表达合数 n 满足 n | 1+Σ(0<i<n)i^(n−1)；Borwein 等 1996 原文 pp.40–43 给出至少 13,800 位，因此本题 13,000 位是有效较弱变体。已读原论文及锁定上游，未修改陈述、定义、Target、golden 或冻结基线。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "public_lean4_proof=unknown，status=blocked。完整 ID 精确匹配技能 CSV 未命中；多组检索并读取上游、Mathlib 相关搜索、GitHub PR 2482/2983/3019/6819/7660、SamuelSchlesinger BorweinBound（含分支/fork）、ProofAtlas、math-lab 等。目标仍有 sorry，或仅给出较弱结构结果；未验证完整证明。关键 GitHub 全站代码搜索返回 401，不能宣称已确认不存在公开证明；详见外部证据 public-proof-review.json。"
+    }
+  }
+}

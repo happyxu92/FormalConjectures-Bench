@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-318-infinite-ap",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 .lake/packages；最终 Harbor 子容器内三路径 rg 搜索退出 0，并命中 batteries 包中的 Nat.add_comm。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import，无需扩充预编译模块。Dockerfile 末尾新增 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target；当前本地 task 的两次 Harbor Docker 构建成功，同一最终子容器 ubuntu 重建退出 0，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能运行 Unicode 脚本并最终复验，均为 no_issue；原始头通过，修改头及移除 := 的负例被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已由本题可信 golden 在隔离、匹配 Lean 4.27.0 Docker 环境中提取并预编译完整 ExpectedType：隐式 A、显式 hA、无 universe 参数。独立编译审计确认临时目标未导出，ExpectedType/P₁ 传递依赖仅含允许公理；两份包一致且清单哈希固定。checker 只加载入口固定包和可信依赖，不运行生成器、不重解析预期命题、不回退编译，保留原源码规则及公理/canary 检查。最终本地 Harbor 镜像 sha256:02328169d8d56c458d7841df6d5ea0169cf81166b11af87ba431d75462aca744；上传 /tests、安装 /opt 和 /app 基线共 40 项哈希匹配。正式与本地入口均退出 1，reward=0，原题 sorry 按预期被拒绝，非实现故障。同一最终子容器内两入口实际函数补测均退出 0，覆盖固定包加载/可信审计、实际 ubuntu uid1000 编译、完整类型比较、sorryAx 拒绝、canary、冻结/越界/同名模块及缓存遮蔽/缺失和篡改负例；冻结文字不变的高优先级加法实例偷换 AP 假设，编译后由完整类型比较实际拒绝。后续路径使用隔离占位 fixture，不声称原题证明通过。所有 immutable 哈希及两份 checker AST/内容复核通过。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-318-infinite-ap/attempt-001/，详见 final-verification.json、delivery-hashes.json、validation-summary.json。Docker 清理完成并核实：本次 3 个容器、2 个镜像（c1b64959b739、02328169d8d5）及 2 个网络均已移除；预先存在的共享依赖镜像 e21dc171550d 保留，未操作其他任务资源。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核对锁定上游、完整 P₁ 定义和 AP 定义：ENat.card=⊤ 确保无限，排除零分母，非恒定符号及有限非空集合量词正确；本题仅为 Erdős318 的算术级数子问题。问题镜像与原始文献摘录将此结果归于 Sattler 1982b（DOI 10.1016/1385-7258(82)90026-9），未发现使本目标不成立的明显问题。原站 403、未读到 Sattler 全文的限制已记录；没有修改任何数学陈述或定义。详见 statement-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "技能 CSV 按完整 ID erdosproblems-318-infinite-ap 精确命中，已标记 public_lean4_proof=true。来源：https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos318.lean#L599（另有 main 链接）。按要求命中即接受，无需重新联网；未将公开证明写入任务，也不声称已在本题编译。证据 public-csv-match.json。"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+complete binder count: 5
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {f : Polynomial ℤ},
+  Irreducible f →
+    2 < f.natDegree →
+      (∀ (x : ℕ), f.natDegree ≠ 2 ^ x) →
+        0 < f.leadingCoeff → {n | Powerfree (f.natDegree - 1) (Polynomial.eval (↑n) f)}.Infinite
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

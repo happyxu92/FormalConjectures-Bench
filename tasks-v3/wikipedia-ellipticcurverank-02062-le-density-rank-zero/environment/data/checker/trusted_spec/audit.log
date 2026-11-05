@@ -1,0 +1,26 @@
+FCBTrustedSpec.lean:53:0: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:86:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:95:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:103:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:111:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited EllipticCurveRank.RatEllipticCurve: [propext]
+audited EllipticCurveRank.RatEllipticCurve.toWeierstrass: [propext, Quot.sound]
+audited EllipticCurveRank.RatEllipticCurve.rank: [propext, Quot.sound, Classical.choice]
+audited EllipticCurveRank.RatEllipticCurve.naiveHeight: [propext]
+audited EllipticCurveRank.RatEllipticCurve.heightLE: [propext]
+complete outer binder count: 0; H and E are internal bound variables
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+0.2062 ≤
+  Filter.liminf
+    (fun H =>
+      ↑{E | E ∈ EllipticCurveRank.RatEllipticCurve.heightLE H ∧ E.rank = 0}.ncard /
+        ↑(EllipticCurveRank.RatEllipticCurve.heightLE H).ncard)
+    Filter.atTop
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+@[reducible] def EllipticCurveRank.RatEllipticCurve.rank : EllipticCurveRank.RatEllipticCurve → ℕ :=
+fun E => Module.finrank ℤ (WeierstrassCurve.Affine.Point (E.toWeierstrass.baseChange ℚ))
+def EllipticCurveRank.RatEllipticCurve.heightLE : ℕ → Set EllipticCurveRank.RatEllipticCurve :=
+fun H => {E | E.naiveHeight ≤ H}

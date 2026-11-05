@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-266-erdos-266",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "源码搜索命令已显式列出 /app、/opt/formal-conjectures 和 /opt/formal-conjectures/.lake/packages。在本题 Harbor 子容器中以 ubuntu 搜索 package 内实际 lemma summable_geometric_of_norm_lt_one，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 仅有两个基准 imports，无额外上游模块需要预编译；原 Dockerfile 缺少末尾普通用户验证，已追加 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。本地 task 的 Harbor Docker 构建通过，同一子容器 ubuntu 实际构建退出码 0；未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 check_unicode_header.py，初次及最终均 no_issue、退出码 0；两份头部一致，原头通过，改头和缺少 := 被拒绝。冻结头及哈希未改变。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "修复原 checker 在候选环境重解析命题的问题。从本题可信 golden 移除 Submission import 后，用匹配 Lean 4.27.0/x86_64 Docker 独立 elaboration 提取完整类型和有序 universes（为空）；ExpectedType 保留整个外层否定及内部量词，编译后独立审计仅依赖标准三公理，临时目标未导出。两份预编译包、checker 内容/AST 一致，固定清单哈希 e72231eee82e2c761caaa66bd43074070cdc3ad7be895fe6a5cb8f58daf6a42a。运行时固定 Spec 与依赖来源，不生成或回退重编 Spec，保留正常 imports、源码限制、公理审计和 canary。本地 task Harbor 镜像 c79af5462e3e 构建通过；/tests 上传包、/opt 包、golden 与宿主哈希相符。正式及 ubuntu 本地入口均退出 1、reward 0，原因仅为原题 sorry；同一 Harbor 子容器对两份实际 checker 各完成 30 项函数补测：Spec 加载/可信审计、观察 uid 1000 的编译、完整类型比较、sorryAx 拒绝、canary、冻结/越界/同名缓存/缺失及篡改产物负例。冻结文字未变且无 sorry 的 Summable/Irrational 名称偷换候选实际编译、公理审计通过，但完整类型比较及完整 checker 拒绝。所有 immutable-before 哈希保持不变。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-266-erdos-266/attempt-001。Docker 清理已核实：本题容器 a93987a22a0e、7eefc8ad9a1d 已 stop/rm，本题镜像 c79af5462e3e 及专属网络 27c698d739d1 已删除；预先存在的共享依赖镜像 e21dc171550d 保留。详见 cleanup.json；无未清理本题资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核对锁定上游 266.lean、完整前缀与目标，以及 Kovač–Tao https://arxiv.org/html/2406.17593 §2.3 Theorem 2.11：其正整数严格递增序列在所有允许的有理平移下均收敛到有理数，t=0 给出原级数可和，所有正自然平移均允许，故蕴含本题对全称断言的否定。未发现明显量词、取值域、边界或定义错误。题目网站及作者博客返回 403，但主论文和锁定源码可访问且足够核对；未修改任何数学陈述或定义。详见证据 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确命中技能 references/public-lean4-proofs.csv，已标 public_lean4_proof=true，无需重新联网。来源：https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos266.lean#L306 。匹配及 CSV 哈希见 public-csv-match.json；未声称该公开证明在本题环境中已编译，也未复制答案。"
+    }
+  }
+}

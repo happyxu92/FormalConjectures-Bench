@@ -1,0 +1,16 @@
+FCBTrustedSpec.lean:42:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:51:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos349.IsGoodPair: [propext, Quot.sound, Classical.choice]
+complete binder count: 1
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (k : ℕ),
+  ∃ t ∈ Set.Ioo 0 1,
+    ∃ ι,
+      ↑k ≤ Set.univ.encard ∧
+        ∃ I,
+          (∀ (i : ι), 2 ≤ (I i).encard ∧ (I i).Nonempty ∧ IsConnected (I i)) ∧
+            Pairwise (Function.onFun Disjoint I) ∧ ⋃ i, I i ⊆ {α | α > 0 ∧ Erdos349.IsGoodPair t α}
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

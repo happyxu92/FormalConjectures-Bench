@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-510-ruzsa",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式列出 /app、/opt/formal-conjectures 和隐藏 .lake/packages；最终 Harbor 容器中实际搜索到 Mathlib 的 Filter.Tendsto，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；补上 Dockerfile 最终 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的两次 Harbor 构建及最终容器 ubuntu 实际构建成功；未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能运行 Unicode 脚本并最终复验，均为 no_issue；冻结前缀、定理头和赋值边界测试通过。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题可信 golden 隔离 Submission，通过 Lean elaborator 提取完整类型及 universes=[]，预编译并独立审计 ExpectedType，传递依赖仅标准允许公理；两份 Spec 包、checker 内容及 AST 一致。固定工具链/可信导入路径、清单和产物哈希校验，无运行时重新生成或命题解析回退；原冻结、源码限制、公理审计和 canary 保留。最终本地 Harbor 镜像 sha256:68b9b7936b75b3319b0b03ec2f7c0ee426cc049b2c284de48ce4a1b4717dac05；/tests 上传包及 /opt 包与本地哈希一致。两入口均因原题 sorry 预期退出 1，reward=0，并非原题证明通过；同一最终子容器中分别按正式 root/本地 ubuntu 调用实际函数，补测 Spec 加载/审计、ubuntu 编译（实测 uid=1000）、完整类型比较、目标 sorryAx 拒绝和 canary。冻结/越界/语义偷换/缓存遮蔽/产物缺失及篡改负例均通过；cos/exp 名称偷换在冻结文字不变、无 sorry、公理合法时仍被完整类型比较拒绝。所有 15 项 immutable 哈希保持不变。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-510-ruzsa/attempt-001。Docker 清理完成（cleanup.exit=0）：已 stop/rm 本题 spec-g61-510r1、g61-510r1 和 g61-510r1-final 三个容器，移除本题两镜像 530637f5cf65、68b9b7936b75 及两个专属网络；逐一 inspect 确认不存在。预存共享镜像 6b765e0c2f25 和共享缓存保留，无未清理的本题资源。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata 标记 consistent。核对完整前缀、量词、正整数频率、card=N、eventually N、实数强制转换及严格负指数界；与锁定上游 Ruzsa 变体一致。阅读 Ruzsa 原论文和 Bedert 原论文；更强的正幂界亦蕴含本题充分大 N 的严格界。未发现导致目标无法成立的明显错误；所有数学陈述、定义、golden 和 GoldenCheck 未改。详见 statement-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。多组题号、全名、Ruzsa/Chowla/Lean 关键词及 GitHub PR 检索后，实际读取上游、PR 2677/3199/7705 和 lean-genius 候选 Lean 源码：上游仍 sorry，前两 PR 仅改 category，其他为陈述、基础或受限集合结果；lambda(4) 不是本题渐近目标。未验证到公开完整证明；当前 Mathlib 仓库 API 等检索受限，故保守标记 unknown/blocked，不声称不存在。metadata 已同步；详见 public-proof-review.json 和 fetch-results.json。"
+    }
+  }
+}

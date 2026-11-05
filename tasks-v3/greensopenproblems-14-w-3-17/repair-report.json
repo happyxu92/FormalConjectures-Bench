@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-14-w-3-17",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令显式补入 .lake/packages；最终 Harbor 容器 ubuntu 实际执行并命中 mathlib 定理，exit 0（instruction-search.log）。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 Target 无额外上游 import，无需补模块；Dockerfile 原缺普通用户末尾构建，已增加 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。最终本地 Harbor 构建及同容器 ubuntu 构建 exit 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际执行技能 Unicode 脚本及最终复验，均 no_issue；原头、冻结前缀、修改头和移除 := 的负例通过（unicode.json、unicode-final.json）。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离候选提取完整类型 W 3 17 = 279；零外层参数、universes=[]，ExpectedType/W/mixedMonoAPGuaranteeSet 独立公理审计通过。两份预编译包及 checker 内容/AST 一致；固定工具链和加载路径，无运行时生成或回退。最终当前本地 task Harbor 构建 sha256:845efa6611f4797ac163d8b8036daf43ce1b5cdf66d1968a23dd505bd2657dc0 已验收，/tests 上传包与本地 /opt 包、golden、GoldenCheck 哈希全部一致。首轮镜像 /opt GoldenCheck 误为相邻题，保留异常证据并通过显式 COPY 原冻结文件及重新 Harbor 构建解决。两入口因原 sorry 预期 exit 1/reward 0；同一最终子容器两套实际函数补测均通过：可信加载/审计、ubuntu uid1000 编译、完整类型、公理正反例、canary、冻结/越界/缓存/缺失/篡改及无 sorry 的 OfNat 语义偷换 rfl 负例。不是原题证明通过。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-14-w-3-17/attempt-001。Docker 清理完成并逐一 inspect 核实：3 个本题容器、2 个本题构建镜像及2 个本题网络已移除；预先存在的共享 Spec 依赖镜像保留，未使用 prune。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已核对 task.toml 指定原始目标、完整定义和 AKS14 Definition 1.1/Table 1（arXiv:1102.5433，第3页 t=17→279）、Green Problem14、IsAPOfLength 的 cardinality 与非零公差条件；这是合理已知精确值变体，未发现明显数学错误。metadata 标 consistent，数学输入完全不变。详见 statement-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。多组关键词检索并核查上游/main、Mathlib/AP、GitHub PR/fork、实际 PBCatcher Lean 源码、Green14FastKernel20 及依赖桥、lean.golf、openai/math、相关论文；仅发现其他参数/单侧界或 sorry，无本目标已核实完整证明。GitHub code API401且网页要求登录，关键发现来源受阻，保守标 unknown/blocked，不能断言不存在。metadata 同步；详见 public-proof-review.json。"
+    }
+  }
+}

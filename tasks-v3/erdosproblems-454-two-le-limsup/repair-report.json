@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-454-two-le-limsup",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式补上 .lake/packages；在最终 Harbor 子容器中以 ubuntu 执行搜索，找到 Mathlib/Data/Nat/Nth.lean 的 nth_strictMono，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；保留 ProblemImports 预编译，并补上 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 task 经 Harbor force_build 验收，ubuntu 构建成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 check_unicode_header.py，case=no_issue；原头通过，改头和移除 := 均拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离候选提取完整类型及有序 universes，生成并预编译 ExpectedType；无外层参数、universes=[]，ExpectedType 与 f 的传递公理审计通过。两份 checker AST/内容及 Spec 包一致，所有 15 个 immutable 哈希保持不变。固定 /tests 或本地 /opt 包，校验清单、产物、输入、工具链和依赖版本；不运行时生成或回退解析命题。最终本地 Harbor 构建及 40 个交付文件哈希核对通过；两入口因原题 sorry 预期退出 1、reward=0。同一最终子容器分别以 root/ubuntu 调用实际函数，已补测可信审计、ubuntu 编译、完整类型、公理和 canary，以及冻结/越界/名称语义偷换/缓存遮蔽/产物缺失和篡改负例。仅临时验证副本变换；保留原安全检查及正常 import 规则。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-454-two-le-limsup/attempt-001（validation-coverage.json、delivery-hashes.json、final-verification.log、生成及 Harbor 日志）。Docker 清理完成并核实：移除本题容器 6e458feb8d32、dcb80f1bbaf6、ffa0cb0edb99，两份本题镜像 38864d49fbd1、8284b7095659 及两个本题网络；保留预先存在的共享依赖镜像 e21dc171550d。详见 cleanup.json，无遗留本题资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 consistent。核对锁定上游完整定义和目标，并实际阅读 Pomerance 1979 原文 pp.399–400 的 (1.2)、Theorem 2.1 及推论。零基素数索引仅缩小所需半径范围，n≤1 不影响 limsup，非空有限最小值及奇偶性给出下界 2；ENat 有限值截断减法无矛盾。这是已知下界变体，不是原开放无穷 limsup 命题。未修改陈述或定义。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。多组题号、完整名、旧别名、Pomerance、prime number graph/limsup/Lean/Mathlib/fork 关键词检索并追踪源码及 PR：上游仍 sorry；PR 3189/2667 只改分类且保留 sorry，明确承认 sorryAx，不算证明；相关 Erdos453.lean 是乘法不等式，不覆盖本目标。未验证到完整证明，但题目页/论坛 HTTP 403、GitHub 全局代码检索需登录且 API 限流，故 metadata 标记 unknown/blocked，不断言不存在。详见 public-csv-match.json、public-proof-review.json 和 public-fetch-results.json。"
+    }
+  }
+}

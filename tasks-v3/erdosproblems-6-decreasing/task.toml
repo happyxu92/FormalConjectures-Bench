@@ -8,6 +8,12 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+statement_status_note = "BFT15 Corollary 1 gives infinitely many strictly decreasing runs of any fixed length; this target asks for m+1 gaps (m comparisons), with m=0 vacuous. The pinned primeGap definition is the difference of consecutive enumerated primes. No mathematical input was modified."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_urls = ["https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos6.lean", "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/6.lean"]
+public_lean4_proof_note = "Exact task ID absent from the skill CSV. Multiple web and repository searches found an increasing-triple proof (not this arbitrary-length decreasing variant), bounded-gap projects, and the upstream sorry stub. GitHub code search requires authentication (401); proof existence for this exact target remains unknown, not false. See repair-report.json and external attempt evidence."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/6.lean"

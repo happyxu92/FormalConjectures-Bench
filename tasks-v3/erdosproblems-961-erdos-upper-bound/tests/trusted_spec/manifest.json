@@ -1,0 +1,41 @@
+{
+  "task_id": "erdosproblems-961-erdos-upper-bound",
+  "target_name": "Erdos961.erdos_961.variants.erdos_upper_bound",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "0cfdd8081fbcbf8f4dab33a55229d4783b5d9441ef2f63acdeb7b1c332160231",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "11324d2df2f960e985313b10c44c5bd815b3c9b55535cd01a4550d7e5e1be9ab",
+    "FCBTrustedSpec.ilean": "66ee7602a64e82a436c9985152955953685c1b63cea3a4c6ba43f2a1b3d70304",
+    "FCBTrustedSpec.lean": "0de2633e8c67797056a5ca1787af2833107dfde29d69da9f03b19e66242de965",
+    "FCBTrustedSpec.olean": "8bf83ac21bc19511249ad1ae8d5153e10d3d52718319c41d2485761603e422ea",
+    "GenerationFidelity.lean": "9fe292abd82fe0361d723c4c5991ca6e2642e516e04bb993097f5976c15360ae",
+    "WellDefinedProof.lean": "a510a2edaf2a3d1ccf93888e22c1e860db21f311879c511b484c056fb391d865",
+    "generate.py": "a25b54145c65d0e800e9232681ef15f060e61c2d025bb3442387361c35830955",
+    "reproduce.sh": "ad4df2dadd7a76e975c027c3f3afccace1f6da929802da9f010a32b90a9908da"
+  },
+  "generation_image": "sha256:e21dc171550d4c49aceba963047d00d1a350ce711019cbd9cb32c4770c7a39df",
+  "generation_command": "docker cp generation-input erdosproblems-961-erdos-upper-bound-spec-g61-961a:/tmp/repair-bundle; docker exec erdosproblems-961-erdos-upper-bound-spec-g61-961a bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Complete type extracted by elaborator, zero universes/outer binders. Temporary target absent. ExpectedType, f, Erdos961Prop and well_defined have only standard axioms. Generated well_defined has a verified Euclidean proof replacing only the original proof term; GenerationFidelity kernel rfl confirms f definition equal with original proof argument. Unused frozen sorry theorems are not dependencies."
+}

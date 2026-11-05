@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-32-finite-field",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md now explicitly searches /app, /opt/formal-conjectures and .lake/packages. Actual ubuntu rg command found package protected def card, exit 0 without path/permission errors."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports. Added final USER ubuntu RUN lake build +FormalConjecturesBench.Target; current local-task Harbor Docker build and same-container ubuntu Target build succeeded."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran skill Unicode script before and after repair: no_issue; original header, frozen prefix and := boundary negative tests passed; no Unicode modification."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated and independently audited this task complete ExpectedType from isolated immutable golden using matching Lean 4.27.0 Docker dependencies; universes []. Both trusted packages/checkers identical and immutable hashes verified. Fixed /tests or local /opt artifacts are hash/version checked, never regenerated or reparsed at runtime. Current local task Harbor trial greensopenproblems-32-finite-field-g61-32f9 built successfully; uploaded /tests and installed /opt package hashes match local. Both entries exit 1 solely for original sorry, reward 0 (not an implementation failure). Same Harbor subcontainer: both checker versions each passed 29 actual-function checks including trusted audit, ubuntu UID 1000 build, complete type comparison, target allowed/sorryAx audit, sorry canary, frozen/header/assignment/config and out-of-bounds negatives, legal helpers, frozen-text Real.sqrt name-shadow attack rejected by complete type mismatch, Spec cache/env/module shadowing, missing/tampered artifacts and manifest without fallback. Original Target/golden/GoldenCheck/definitions unchanged. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-32-finite-field/attempt-001. Docker cleanup verified: both own Spec/Harbor containers and own task network removed. Created image aadc5035a92b/tag retained because other agent container greensopenproblems-32-sh20-sqrt-spec-g61-32s8-a001 now uses it; no forced deletion. Pre-existing shared base 6b765e0c2f25 retained. See cleanup.json and retained-image-consumer.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked statement_status=consistent. Green 100 Open Problems pp.17-18 explicitly supports Sanders finite-field model; HasCosetHole correctly uses translated subspace cardinality. Eventual n and floors introduce no obstruction; independent averaging/hyperplane sanity argument in research-review.json. Neighboring Dirichlet boundary error is not this independent target and was not changed."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Exact full-ID CSV absent. Completed 17 varied searches, read pinned/current upstream, Green source, relevant PRs and linked author proof file/listing, Mathlib/equivalent affine-coset leads and other candidate repositories. Only corrected Dirichlet proof found; finite_field remains sorry there and upstream. GitHub global code search requires sign-in, author API tree rate-limited and Sanders homepage 403: public_lean4_proof=unknown, status=blocked, not a proof-of-absence claim. See public-csv-match.json, research-review.json and external-fetch-results.json in evidence directory."
+    }
+  }
+}

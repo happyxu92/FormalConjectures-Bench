@@ -1,0 +1,40 @@
+{
+  "task_id": "wikipedia-lehmermahlermeasureproblem-odd",
+  "target_name": "LehmerMahlerMeasureProblem.lehmer_mahler_measure_problem.variants.odd",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "53d331cbe842021f0e4c7c750a69cc9250fe8f5cf7a019e7ff8137987db38e13",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "835e451c43a80b8d81c46563c84ce77df3b33a5f3df7d3d64565108a650d9b11",
+    "FCBTrustedSpec.ilean": "c988f9b7bdd63d20a8c000bfb6cdea453a6dff931494037933ab9970adbe07af",
+    "FCBTrustedSpec.lean": "f62f2db7992beb04753d9a90c3fb4ef51108085285be2416814de4f6cb76e9d1",
+    "FCBTrustedSpec.olean": "afc066729381bd757d00cd2fac603fe33bc2d4d795bffabdafbfb674ded63f88",
+    "audit.log": "825734539926fadcc704b18d28795a172944c3a7102fe09c2088842ef8abc146",
+    "generate.py": "6b39ad5b5441160ed8ed4b9bed24ddd8511c87bbde55d69824c7623b8f4e0841",
+    "reproduce.sh": "ede6a2a9636394e9b93ab45c02647e96820f334d723375ff378758ff00312c70"
+  },
+  "generation_image": "sha256:e21dc171550d4c49aceba963047d00d1a350ce711019cbd9cb32c4770c7a39df",
+  "generation_command": "docker run -d --network none --name wikipedia-lehmermahlermeasureproblem-odd-g61-a001-odd7-spec --entrypoint sleep fcb-repair/erdosproblems-252-k-eq-four:252four-20261102-183405 infinity; docker cp generation-input wikipedia-lehmermahlermeasureproblem-odd-g61-a001-odd7-spec:/tmp/repair-bundle; docker exec -u root wikipedia-lehmermahlermeasureproblem-odd-g61-a001-odd7-spec bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "ExpectedType definition value contains all three binders f, hf, hf' in original order; no universe parameters. Independent compiled import audits transitive axioms of ExpectedType, mahlerMeasure, mahlerMeasureZ, HasOddCoeffs. Temporary target absent. Unrelated original prefix theorems retain original sorry but are not dependencies of ExpectedType."
+}

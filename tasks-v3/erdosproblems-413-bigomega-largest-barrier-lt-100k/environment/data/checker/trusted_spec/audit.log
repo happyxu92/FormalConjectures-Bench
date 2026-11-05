@@ -1,0 +1,12 @@
+FCBTrustedSpec.lean:45:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:55:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:61:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos413.IsBarrier: [propext, Quot.sound, Classical.choice]
+audited Erdos413.expProd: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+IsGreatest {n | n < 10 ^ 5 ∧ Erdos413.IsBarrier (fun m => ↑(ArithmeticFunction.cardFactors m)) n} 99840
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

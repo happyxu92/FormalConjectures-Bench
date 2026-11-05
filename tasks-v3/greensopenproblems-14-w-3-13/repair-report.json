@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-14-w-3-13",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式加入 /opt/formal-conjectures/.lake/packages；最终 Harbor 子容器中原命令成功搜到 Mathlib 的 IsSquare 定义（退出码0）。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；补齐 Dockerfile 末尾 ubuntu 用户 RUN lake build +FormalConjecturesBench.Target。本地 Harbor 实际构建及同容器 ubuntu 重验均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本及最终复验，均为 no_issue、退出码0；未修改定理头或冻结基线。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离生成、预编译并独立审计完整 ExpectedType（W 3 13 = 160，无 binders/universes）；两份可信包及 checker 内容/AST一致，固定产物哈希及加载路径，无运行时生成或命题重解析。当前本地 task 的 Harbor 镜像 sha256:92536b4054b81e3e1f8b167dca1c6a8ac4372a341e0f3917158fcb60c7f83203 构建成功；/tests 上传包和 /opt 包均与本地哈希一致。正式及本地入口各退出1/reward0，原因仅原题 sorry；同一子容器两种入口环境各实际完成28项函数补测：Spec审计、ubuntu UID/编译、完整类型、目标 sorryAx 拒绝、canary、冻结/越界/实例语义偷换/缓存遮蔽/产物缺失与篡改。未宣称原题证明通过。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-14-w-3-13/attempt-001。Docker 清理已核实：本题 spec/Harbor 两容器均 stop/rm，镜像 92536b4054b8 及网络 fad4982580a4 已移除；预先存在的共享依赖镜像 e21dc171550d 保留，未触及其他资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。核对 AKS14（arXiv:1102.5433）p.3 Definition1.1/Table1 的 W(3,13)=160、Green 原题14及完整 Lean 定义；有限区间、颜色及基数排除退化AP均吻合，未发现明显错误。数学陈述、定义、Target、golden、GoldenCheck及所有 immutable 哈希保持不变。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确查技能CSV未命中。已用11组关键词检索，并跟进上游、GitHub issue/公开证明存档、Mathlib、PBLean、OpenAI及论文线索；上游仍为sorry，已读候选均不覆盖本题。GitHub 代码及fork搜索要求登录，存在关键覆盖缺口，故 metadata 仅标记 unknown/blocked，不能断言不存在公开完整证明。详见证据目录 public-proof-review.json。"
+    }
+  }
+}

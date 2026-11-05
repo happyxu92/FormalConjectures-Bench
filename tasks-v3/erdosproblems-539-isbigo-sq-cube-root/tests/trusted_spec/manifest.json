@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-539-isbigo-sq-cube-root",
+  "target_name": "Erdos539.erdos_539.variants.isBigO_sq_cube_root",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "0b65df9734afc20bd6c04d775cc696b774a7821d24dac76871fbfd8084e59c9c",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "720944d17f21c9084bd815501574226ebd0b6fd94dc9aff320671e04ccb424ea",
+    "FCBTrustedSpec.ilean": "d5fcd413039d7e6f55f7e9ae33aef7610219593c655c549095123b8e180e3a7d",
+    "FCBTrustedSpec.lean": "65634b03d88bd0f429f59c07bb52b25704570c43f548401b254192fee6d0d390",
+    "FCBTrustedSpec.olean": "227dd547a12248df4416f3da7973611911e9607c483087aba43a93eaa936880e",
+    "audit.log": "b4aa0ea89cb74dbf84fd4220995d373229785f502e4cf11fe2d8bf3a3e42a631",
+    "generate.py": "d09d6b5257ea1a8d050656719a0b6ab3e00099ee38d72469ea3aaace32e37209",
+    "reproduce.sh": "ede6a2a9636394e9b93ab45c02647e96820f334d723375ff378758ff00312c70"
+  },
+  "generation_image": "sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a",
+  "generation_command": "docker run -d --network none --name erdosproblems-539-isbigo-sq-cube-root-spec-g61-539c1 erdos1062-import-20261102__env-main:latest sleep infinity; docker cp generation-input erdosproblems-539-isbigo-sq-cube-root-spec-g61-539c1:/tmp/repair-bundle; docker exec -u root erdosproblems-539-isbigo-sq-cube-root-spec-g61-539c1 bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Independent import: complete target type has zero outer forall binders and no universe parameters. ExpectedType, IsCofactorLowerBound and cofactorThreshold transitively use only the three allowed axioms. Temporary target and children absent. Other original prefix theorems contain placeholders, but no such theorem/proof is a transitive dependency of ExpectedType or its prefix definitions."
+}

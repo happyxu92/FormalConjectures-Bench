@@ -1,0 +1,9 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos351.HasCompleteImage: [propext, Quot.sound, Classical.choice]
+audited Erdos351.IsStronglyComplete: [propext, Quot.sound]
+audited Erdos351.imageSet: [propext, Quot.sound]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Erdos351.HasCompleteImage Polynomial.X
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

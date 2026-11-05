@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-artinprimitiverootsconjecture-part-ii-power-squarefreepart-modeq-one-2",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Search command now explicitly includes /app, /opt/formal-conjectures and .lake/packages; actual ubuntu rg found orderOf_dvd_card in Mathlib (exit 0)."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Precompiles the actual extra import FormalConjectures.Millenium.RiemannHypothesis. Dockerfile ends with USER ubuntu / RUN lake build +FormalConjecturesBench.Target; current local Harbor image build and same-container ubuntu build succeeded."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Skill Unicode script returned no_issue before and after; original header passes and mutations / missing := fail."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Golden-isolated parser/elaborator extraction produced precompiled ExpectedType with all 9 binders and no universes; transitive audit permits only standard axioms. Identical pinned packages and checker AST/content; all immutable hashes unchanged. Current local Harbor build, /tests upload and /opt package hashes verified. Both entries exit 1 on original sorry (reward 0), as expected, not proof success. In the same Harbor container both actual checker modules passed supplemental Spec load/audit, ubuntu compilation, full type comparison, sorryAx rejection, canary, frozen/out-of-bounds/source-policy/cache/module-shadowing/missing/tampered-artifact negatives. A legal helper Odd := False preserves frozen text and compiles, but full type comparison rejects it. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-artinprimitiverootsconjecture-part-ii-power-squarefreepart-modeq-one-2/attempt-001. Cleanup verified: removed the three task containers (suffixes spec-g61-a001-9a2c, spec2-g61-a001-9a2c, g61-a001-9a2c__env-main-1), task image tag and both created config IDs c6e2891ece8d/5aef86d9f4a9, and own network. Pre-existing shared cache retained; see cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "statement_status=suspect: density factors and maximal odd-power variant agree with arXiv:1112.4816 (1.2),(1.4), but pinned h is only Dirichlet GRH over Q, whereas Hooley needs RH for Kummer-field Dedekind zeta functions. Upstream PR #5743 explicitly confirms this hypothesis misformalization. No counterexample or impossibility established; statement, definitions, golden and Spec mathematics were not corrected."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Exact full ID absent from skill CSV. Twelve varied queries, upstream main, issue #3625, Mathlib and candidate Lean sources checked. cadamcat proves infinitude only; primitive-root-families proves finite criteria. PRs #3128/#2604 only change category attributes and retain sorry; #7060 proves a different zero-density case; #5743 changes the hypothesis, not a proof. No full proof of the retained target verified. Marked unknown/blocked because unauthenticated GitHub code/fork search remains restricted; see research-review.json and downloaded sources in /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-artinprimitiverootsconjecture-part-ii-power-squarefreepart-modeq-one-2/attempt-001."
+    }
+  }
+}

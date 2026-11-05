@@ -1,0 +1,41 @@
+{
+  "task_id": "greensopenproblems-15-green-15-ap4",
+  "target_name": "Green15.green_15_ap4",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "outer_forall_binders": 0,
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "02ce548f6b54b48ac46a58672dcbcd0292a6f150eda9d8794ff2b496e6d7cf5d",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "36fe0109172c0f48d09670bdb8113069d6a27935a7388d6279101828f8e2b766",
+    "FCBTrustedSpec.ilean": "a6d15037183afae521d3f2b415bf1a81c706262ba477f1a44c6e506df8a74443",
+    "FCBTrustedSpec.lean": "02d2095b583a581095a23f88e78bbcd934ccc21cffa83996b8b0702013324e41",
+    "FCBTrustedSpec.olean": "fb4d4ffad97f9bca6c7abea6cb17f041dee94ab06190f9bad53e6c9162800217",
+    "audit.log": "65a7fb2ff2b4b3e3c526d1632630b078ad23b85916b3a1ff3708ec480f579d6f",
+    "generate.py": "595235c77ce74cc9849e98b8711fddc470a78af8a6b1a0f87f0406c65c2550b3",
+    "reproduce.sh": "3113f99be7373f924a2d7664c136ab99e356b35b614bafab2722c95fbd813664"
+  },
+  "generation_image": "sha256:e21dc171550d4c49aceba963047d00d1a350ce711019cbd9cb32c4770c7a39df",
+  "generation_command": "docker run -d --network none --name greensopenproblems-15-green-15-ap4-spec-g61-a001-15a4 --entrypoint sleep sha256:e21dc171550d4c49aceba963047d00d1a350ce711019cbd9cb32c4770c7a39df infinity; docker cp generation-input greensopenproblems-15-green-15-ap4-spec-g61-a001-15a4:/tmp/repair-bundle; docker exec -u root greensopenproblems-15-green-15-ap4-spec-g61-a001-15a4 bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Independent import. Complete closed existential proposition; zero outer forall binders and universe parameters. ExpectedType value is transitively audited against only standard allowed axioms; no dependency on the unrelated frozen sorry theorem. Temporary target and child declarations absent."
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-riemannzetavalues-irrational-three",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 及隐藏 .lake/packages；最终Harbor子容器中实搜到package内Irrational定义，退出0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target无额外上游imports；原Dockerfile缺末尾普通用户构建，已补 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。最终本地Harbor构建和同容器ubuntu复建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能Unicode脚本及最终复验，均为no_issue；两份原始定理头、冻结前缀及 := 边界检查通过。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题可信golden隔离候选提前提取并编译ExpectedType；完整闭合存在命题、0外层binder、universes=[]，实际依赖仅三个允许标准公理。两份包及checker AST/内容一致，全部immutable哈希未变。固定预编译来源及manifest哈希，临时Target复用可信前缀，同环境直接Meta.isDefEq比较ExpectedType.value和候选完整type，保留原安全规则与正常import。最终本地Harbor trial wikipedia-riemannzetavalues-irrational-three-g61-it3b 构建成功；/tests上传包及/opt安装包与本地逐文件哈希相符。两入口因原题sorry预期退出1、reward=0；同一子容器对/tests及/opt各自补测实际函数均退出0，覆盖Spec加载/审计、ubuntu编译、类型匹配/语义偷换拒绝、目标sorryAx审计、canary、冻结/越界/缓存遮蔽/缺失及篡改负例，无实现故障；未构造原题完整证明。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-riemannzetavalues-irrational-three/attempt-001。已 stop/rm 本题3个容器，删除 it3a/it3b 两个任务镜像及两张网络，并核实ID不存在；预先存在的共享基镜像保留。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已核对锁定上游、完整前缀及Mathlib定义；目标是存在无理实数x且ζ(3)=↑x，符合Apéry定理，未发现明显数学错误，标consistent，不改陈述。原文：https://www.numdam.org/item/AST_1979__61__11_0.pdf （pp.11–13）；Wikipedia受403限制但原论文及锁定上游可读。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "按完整task ID精确命中技能CSV，标public_lean4_proof=true；按要求无需重新联网确认，未宣称在本题编译该公开证明，未将答案放入镜像。来源：https://github.com/ahhwuhu/zeta_3_irrational/blob/master/Zeta3Irrational/Basic.lean#L1298"
+    }
+  }
+}

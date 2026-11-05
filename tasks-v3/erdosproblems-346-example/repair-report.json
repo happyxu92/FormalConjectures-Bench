@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-346-example",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "显式补上 .lake/packages；最终 Harbor 子容器中 ubuntu 实际搜索 IsAddStronglyCompleteNatSeq 成功，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 imports；补上 Dockerfile 最终 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。本地 Harbor 构建及容器内 ubuntu 独立构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "技能 Unicode 脚本修复前和最终复验均为 no_issue；原始头、冻结前缀及 := 边界验证通过。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题原始 golden 隔离提取完整类型及空 universe 列表，预编译并审计 ExpectedType 的传递公理；两份可信包一致。checker 固定 /tests 或本地 /opt 的 Spec 及依赖来源，核验清单/产物/输入/版本，不运行时生成或重解析命题。当前本地 task 经 Harbor Docker 两次构建；两入口均仅因原始 sorry 预期拒绝（exit 1，reward 0）。同一最终子容器两入口包的实际函数补测全部通过：Spec 审计、ubuntu UID 1000 编译、完整类型、公理拒绝 sorryAx、canary、冻结/越界/合法名称语义偷换/缓存遮蔽/缺失及篡改负例；上传及 /opt 包、golden 和本地哈希一致，原安全函数 AST 保留，所有 immutable 哈希不变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-346-example/attempt-001，尤其 final-validation/。Docker 清理完成：3 个本题容器、镜像 3e1cd5666e76/a31cef06315c 及其两个 tag、2 个本题网络均已移除并核实不存在；预存缓存和网络未动。初次清理在预存 none 网络处安全断言停止，续清理已完成；见 cleanup.json、cleanup-rest.log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 consistent；完整检查定义及 Graham 原论文。本题 /2 的 liminf 且允许非单调重复序列，与来源的递增相邻比值变体不同，但未发现使本题不成立的问题：可对 Graham 不可无限删除的完备集合反复枚举，在 2 后插入无界大项。未修改任何陈述或定义；详见 statement-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。已多组检索并读取上游、PR/fork、Mathlib、官方论坛、Price 和 Kitamura Lean 源码；相关证明均非本题完整目标，PR 2473/2886 仍保留 sorry。官方页面经直接 HTTP 已恢复访问，但其声称的完整证明分支返回 404，无法审计，故保守标记 unknown/blocked，不声称不存在公开证明。详见 public-proof-review.json；未放入公开答案。"
+    }
+  }
+}

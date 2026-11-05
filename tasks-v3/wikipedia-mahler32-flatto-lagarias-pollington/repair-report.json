@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-mahler32-flatto-lagarias-pollington",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式加入 .lake/packages；在 Docker 内以 ubuntu 执行搜索，成功找到 Mathlib 的 IsCoprime 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 imports；补上 Dockerfile 末尾 USER ubuntu 后的 RUN lake build +FormalConjecturesBench.Target。本地 Harbor 构建及同一验收子容器 ubuntu 构建成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本两次，均为 no_issue；原头通过，修改头及移除 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从不可变 golden 隔离候选、用匹配 Docker 的 Lean 4.27.0 提取完整类型并预编译 ExpectedType：五个参数 p q hq hpq hpq'，universes=[]；ExpectedType 和 Ω 传递公理审计通过。两份 checker AST/内容及可信包一致；固定 /tests 或本地 /opt 包来源、哈希和依赖路径，完整类型比较不重新解析原命题、不运行生成器或回退编译。最终当前 task 经 Harbor 本地构建验收，/tests 上传包及 /opt 包与宿主哈希一致；两入口退出 1、reward=0，原因仅为原题 sorry。已在同一最终子容器分别通过两份 checker 实际函数补测：Spec 加载/审计、ubuntu 编译与 UID、完整类型、公理拒绝 sorryAx、canary、冻结/越界负例、源码合法且标准公理的 LT 实例语义偷换被类型比较拒绝、同名模块/缓存遮蔽、产物缺失/篡改且无运行时生成。原安全规则保留，所有 immutable 哈希未变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-mahler32-flatto-lagarias-pollington/attempt-001/validation-summary.json。已 stop/rm 本次全部三个容器（6410d751d2a7、328c418d1362、a18ae040bb91），删除两个新镜像（3edbd1ebae3d、bc07b9490e15）及两个专用网络并核实不存在；预先存在的共享生成缓存镜像保留。cleanup.json 记录详情。"
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "仅标记 statement_status=suspect，数学陈述及定义不变。Target:58-60 要求严格 1/p < Ω(p/q)，而 Dubickas 2009 p.233 式(1)、FLP 原结果及上游 PR #5732 只给非严格界；该 PR 明言严格版本未证，并已将上游改成 ≤。这是具体错误线索，但本次未给出严格版本的反例或无解证明，故不标 mismatch。来源：https://github.com/google-deepmind/formal-conjectures/pull/5732；详细范围与限制见证据目录 math-and-public-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中；多组关键词检索并读取上游、Mathlib、两个相关仓库及 PR 源码。rwst/Confinement-Certificates 的 spread_lower_bound 仅为 ≤；Coon 仓库为区间逃逸等变体；PR #2494/#2995 仍保留 sorry，均不覆盖本题严格 infimum 界。GitHub code search/API、作者站点及部分关键来源受 403/429 限制，因此 metadata 记 public_lean4_proof=unknown、status=blocked，不宣称不存在公开证明。检索词、源码排除原因及访问日志见证据目录 math-and-public-review.json、fetch-*-results.json。"
+    }
+  }
+}

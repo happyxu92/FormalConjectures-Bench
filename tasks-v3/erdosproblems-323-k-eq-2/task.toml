@@ -8,6 +8,11 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+statement_status_note = "The k=m=2 variant is Landau's sum-of-two-squares asymptotic; zero contributes only one extra counted integer. Definitions and statement preserved."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID absent from the skill CSV. Multiple theorem/name/alias searches and upstream/Mathlib source review found no verified complete proof; GitHub code search requires sign-in / API rate limit, and history/fork coverage remains incomplete. See repair evidence."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/323.lean"

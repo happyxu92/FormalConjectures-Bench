@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-27-upper-be23",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含三个路径；bash 语法及 ubuntu 下 packages 内 AddCommSemigroup 定义搜索均通过。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 imports；补齐 Dockerfile 最终 USER ubuntu 的 RUN lake build +FormalConjecturesBench.Target。本地 Harbor 两次构建及同容器 ubuntu 构建通过，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本并最终复验，均为 no_issue；原头、冻结基线保持不变。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 独立提取完整类型与 universes，匹配 Docker 工具链预编译 ExpectedType；零 universe/外层参数，隐含 Norm 参数已固定为 Real.norm。审计 ExpectedType 及四个前缀定义仅依赖允许公理；临时目标未导出。两份固定 Spec 包、清单及 checker 字节/AST 一致，全部 immutable 哈希不变。最终本地 Harbor 子容器上传 /tests 与预装 /opt 包哈希均匹配；两入口因原题 sorry 预期退出 1、reward=0，不代表证明完成。同一最终子容器直接调用实际函数，验证 Spec 加载/审计、ubuntu 编译、完整类型、公理审计、sorry canary，以及冻结/越界/合法 Norm 实例语义偷换/缓存遮蔽/产物缺失及篡改负例，全部符合预期；无运行时生成回退或新增通用模块白名单。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-27-upper-be23/attempt-001，详见 validation-summary.json、final-validation、audit-complete-type.log、static-final.json。Docker 清理完成并复核不存在：本题 3 个容器、2 个专属网络、镜像 cf31cf4aea17 与 bd8a643291c7 均已删除；预存共享依赖镜像及构建缓存保留，详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "核对锁定上游、Green Problem 27 及 Bedert arXiv:2303.15134v2 Theorem 5：这是已知的 m(p)=O((log p)^2) 上界变体。无唯一表示定义按无序对计数，sInf 在充分大素数处为非空有限集合的最小值；p=2 例外不影响渐近目标。metadata 标 consistent；未修改数学输入。证据 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "按完整 ID 精确命中技能 public-lean4-proofs.csv，已标 public_lean4_proof=true，无需重新联网核验。来源：https://github.com/mkwatson/unique-sums-notes/blob/d4383f93a52e3a916ccce78d5fb7739c3bf3dabc/Green27Upper/Theorem.lean#L26 。未将答案放入镜像，也未声称该公开证明已在本题编译；证据 public-csv-match.json。"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-394-factorial-gap-10",
+  "target_name": "Erdos394.erdos_394.variants.factorial_gap_10",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "c8084bbdbe5f20da71e089eceebd9d869ee1f7db76966f101551c4e72296fc8d",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "a83f5924ab03274bb37298698edecbc36aea51240bce10a75b5aab8e517a625d",
+    "FCBTrustedSpec.ilean": "015a0ea6e56ab3bdd683b35f7f08ca7d8371bb2b3c48faf16b89591d8a3eb6b7",
+    "FCBTrustedSpec.lean": "f9bd4fe5745daeaf9dfa2006fef96bae96359da558c89b59a1adcca6a42ecdc1",
+    "FCBTrustedSpec.olean": "48ec119a52ba44d5a67a1b9cec71df6f6fd179c62572288287597ec07a0877bf",
+    "audit.log": "5038efc11ac43af09c75f39028b8f419e2da58969b0289088db49e46134feb45",
+    "generate.py": "1bd33a850e57c1d209ba922d233b5293a959dd79b6f87c48ad30bb154840d042",
+    "reproduce.sh": "79de15720ddb7777c244e663510e10cac72ddf46a0aac848b52c74462d1b0ba9"
+  },
+  "generation_image": "sha256:66c7f790b6b16325ff759fee9d9fe593242f3d2740cc2be98a38cd6ae0b82dd5",
+  "generation_command": "python3 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-394-factorial-gap-10/attempt-001/prepare-generation.py",
+  "audit": "Independent import of precompiled Spec; complete binders k, 2 <= k, k < 10; no universe parameters. ExpectedType and t transitive axioms audited; temporary target and children absent. Other frozen prefix sorry theorems are not dependencies."
+}

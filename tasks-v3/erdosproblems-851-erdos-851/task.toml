@@ -20,6 +20,11 @@ oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
 verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
+statement_status = "suspect"
+statement_status_note = "Specific unproved strengthening, not a confirmed false statement: the frozen target requires natural density to exist. Erdős's original 1985 paper p.75 and the now-retrieved Price Overleaf main.tex (Theorem 1 and final proof) give only lower density. Price explicitly derives the distinct-prime-factor version from the multiplicity version, so primeFactors.card is not an error. No counterexample to the stronger HasDensity target was found; all mathematical inputs remain unchanged. See retry-seven-20261105 task evidence statement-review.json."
+public_lean4_proof = false
+public_lean4_proof_status = "searched"
+public_lean4_proof_note = "Exact task ID absent from skill CSV. After retrieving and reading Price's complete public Overleaf source, following the problem/forum/wiki and upstream PRs, and inspecting the pinned/current plby Lean target and final assembly plus other search candidates, no public complete proof of this frozen HasDensity target was found. plby proves only lowerDensity; Romanoff annotation PRs retain sorry. This bounded search is not a nonexistence claim. See retry-seven-20261105 task evidence public-proof-review.json."
 
 [verifier]
 timeout_sec = 7200.0

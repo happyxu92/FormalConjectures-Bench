@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [Classical.choice, propext, Quot.sound]
+audited Erdos979.solutionSet: [propext, Quot.sound]
+complete outer binder count: 0 (original elaborated expression)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Filter.limsup (fun n => (Erdos979.solutionSet n 2).encard) Filter.atTop = ⊤
+def Erdos979.solutionSet : ℕ → ℕ → Set (Multiset ℕ) :=
+fun n k => {P | P.card = k ∧ (∀ p ∈ P, Nat.Prime p) ∧ n = (Multiset.map (fun x => x ^ k) P).sum}
+'Erdos979.solutionSet' depends on axioms: [propext, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

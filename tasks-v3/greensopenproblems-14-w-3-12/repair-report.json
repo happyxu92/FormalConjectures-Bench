@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-14-w-3-12",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式加入 .lake/packages。最终 Harbor 子容器中按三个路径执行 rg，退出 0，找到 Mathlib 的 factorial 定义；见证据目录 instruction-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 imports；原 Dockerfile 缺少末尾 ubuntu 构建验收，已补 RUN lake build +FormalConjecturesBench.Target。最终本地 Harbor 构建成功，同一子容器 ubuntu 再构建退出 0，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已运行技能 Unicode 脚本并最终复验，均为 no_issue；原头通过，改头和移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离候选生成并编译 ExpectedType，完整闭命题 Green14.W 3 12 = 135，无外层参数及 universe；临时目标未导出，ExpectedType 及所引前缀定义传递公理审计通过。两份包及 checker 内容/AST 一致，manifest 固定哈希 4aff233356d5979d49a00fd60d4534f5006de809668daf94a7e30b0823b781e9。运行时只加载固定预编译产物，不重新解析命题或回退生成。当前本地 task 经 Harbor force_build 验收，/tests 上传包与 /opt 本地包逐文件哈希均匹配；两入口因原题 sorry 预期退出 1，reward 0。同一最终子容器每入口实际函数补测 29 项通过，覆盖可信审计、ubuntu UID1000 编译、完整类型匹配、sorryAx 拒绝、canary、冻结/越界、冻结文字不变的 OfNat 实例偷换类型拒绝、缓存/模块/环境遮蔽及产物缺失/篡改拒绝且不生成。未扩展普通 import 规则或 initializer 安全范围。公开 Target、两份 golden、GoldenCheck 和冻结哈希均保持原样。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-14-w-3-12/attempt-001（generation-audit-record.json、harbor.log、delivery-hashes.json、validation-coverage.json、final-verification.json）。Docker 已清理并复核：本题 3 个容器、2 个镜像/tag（c97b16832ff7、eb2537ad5154）及 2 个专属网络均已移除；保留预先存在的共享依赖镜像，未触碰其他资源。详见 cleanup.json/cleanup-commands.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata 标记 consistent。已核对完整前缀、Subtype 到 Nat 的集合投影、AP 基数约束、Icc 1 N、两颜色各自长度及 Nat sInf。Green Problem 14 定义相同；AKS14 列出 w(2;3,12)=135，Landman–Robertson–Culver (2005) pp.3–4 给出等价交换颜色值和 [1,134] 见证。未发现本目标明显数学错误；不修改陈述或定义。见 statement-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 task ID 未命中技能 CSV。已多组检索完整名称、非对角数值、作者、Mathlib、GitHub 及分支/fork；读取上游 pinned/main（仍 sorry）、formal_ramsey 和 PBCatcher 的实际 Lean（9/35 非本目标）、OpenAI 渐近 comparator，并跟进 issue #2286 与 PR #2005。未确认本目标完整公开 Lean4 证明；GitHub 代码搜索要求登录，故 metadata 为 unknown/blocked，而非断言不存在。见 public-proof-review.json、fetch-results.json 及保存源码。"
+    }
+  }
+}

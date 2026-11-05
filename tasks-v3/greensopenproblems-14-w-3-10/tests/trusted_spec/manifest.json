@@ -1,0 +1,40 @@
+{
+  "task_id": "greensopenproblems-14-w-3-10",
+  "target_name": "Green14.W_3_10",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "15a11c08c7b076aca0a443e43c235830815bb1be5a69774258a1e510f5ab4f09",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "5bc1a0db145a382e518a9f164216735bc5e0ff28e4aecafa8307e5821e472d89",
+    "FCBTrustedSpec.ilean": "1d7a83d95c5d891212e310f0dbeb5f26b0a60a0eb1558e838f52f6f041be1232",
+    "FCBTrustedSpec.lean": "47e715882201c2424a6a056fdcec30b4cf4e55a52573414b30666a67078f841e",
+    "FCBTrustedSpec.olean": "f6c6eb47f8ab94d12a91e281caaf0b6f8bb0f75c842628f02b20d59a573607e7",
+    "audit.log": "55619cf0ce77e6b0e3cd207f0067a7dcbb7376ef38b847a7236076ed60b217d7",
+    "generate.py": "0a6d6ab2a23a8613665cbc6233658d839988a6aba6b09119351e3fa3b47cc42a",
+    "reproduce.sh": "9bebfc7c4c81873c4de4640d84c3cf1895c0c656c21d822d1ec9651e50e042ae"
+  },
+  "generation_image": "sha256:e21dc171550d4c49aceba963047d00d1a350ce711019cbd9cb32c4770c7a39df",
+  "generation_command": "python3 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-14-w-3-10/attempt-001/generate-spec.py",
+  "audit": "Independent import. Closed equality; no outer explicit, implicit or instance binders; no universe parameters. ExpectedType value and W/mixedMonoAPGuaranteeSet transitive axioms are standard only. Temporary theorem/children absent. Unrelated frozen prefix sorry theorems remain, but are not dependencies of ExpectedType."
+}

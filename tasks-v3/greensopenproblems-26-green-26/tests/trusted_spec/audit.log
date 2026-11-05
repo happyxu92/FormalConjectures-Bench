@@ -1,0 +1,13 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green26.𝔽: [propext]
+audited Green26.𝔽₃: [propext, Quot.sound, Classical.choice]
+audited Green26.StandardCube: [propext, Quot.sound, Classical.choice]
+audited Green26.IsCube: [propext, Quot.sound, Classical.choice]
+binder: n : ℕ
+binder: A : Fin 100 → Set (Green26.𝔽₃ n)
+binder: a✝ : ∀ (i : Fin 100), Green26.IsCube (A i)
+complete binder count: 3
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ) (A : Fin 100 → Set (Green26.𝔽₃ n)), (∀ (i : Fin 100), Green26.IsCube (A i)) → ∑ i, A i = Set.univ
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

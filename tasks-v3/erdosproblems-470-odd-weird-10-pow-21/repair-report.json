@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-470-odd-weird-10-pow-21",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式补入 /opt/formal-conjectures/.lake/packages；在最终 Harbor 子容器以 ubuntu 执行搜索，找到 Mathlib 的 Nat.Weird 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；原 Dockerfile 缺少普通用户最终构建验证，现以 USER ubuntu 后的 RUN lake build +FormalConjecturesBench.Target 结尾。当前本地 task 的 Harbor 构建及同一子容器 ubuntu 构建成功；未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本及最终复验，均 no_issue；原头、修改头和 := 边界测试通过，无需修改头或冻结基线。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题不可变 golden、隔离 Submission，使用匹配 Docker/Lean 4.27.0 提前提取完整类型和空 universe 列表，编译审计 ExpectedType 及两项前缀定义；仅依赖允许的标准公理。两份可信包及 checker AST/内容一致，固定预编译来源、哈希/版本检查和完整类型比较，无运行时重建或回退。最终本地 Harbor 镜像 sha256:6e1dec63f16c8d6868dbebb0cd9c6adfac8c4f4a56f60a6d05c4037637e2b982；/tests 上传包、/opt 包和本地哈希一致。两入口原题 sorry 均预期退出 1，reward=0，不是原题证明通过；同一子容器分别按 /tests、/opt 入口配置补测各 30 项，包括可信审计、实际 ubuntu 编译、完整类型、公理及 canary、冻结/越界/语义偷换/缓存遮蔽/产物缺失与篡改负例。Odd 名称偷换保持冻结文字且通过编译、公理审计，但被完整类型比较拒绝。全部 immutable 哈希保持原样。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-470-odd-weird-10-pow-21/attempt-001，详见 validation-summary.json、final-validation、created-resource-inventory.json。Docker 已清理并核实：容器 40fbb2b45055、c21ed791bd1f、1ae59469abd4，镜像 29cc9af6bc69、f88874f7a886、6e1dec63f16c 及本题两网络均已移除；既有共享依赖镜像保留，无遗留本题资源（cleanup.json）。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。Fang arXiv:2207.12906v1 Theorem 1.1 正是低于 10^21 不存在奇的 weird 数的有限排除结果；Mathlib Weird=abundant 且非 pseudoperfect，Odd 排除零。已核查完整前缀定义；这是合理的已知有限结果，不是解决开放的无限域存在性问题。陈述和定义未改动。详见证据 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。已多组检索并读取上游、Mathlib、Fang 实现、ProofAtlas 和相关 PR/fork；PR 2732/2768/2926/3254 的目标仍为 sorry，5080 的公开完整证明属于 abundancy_index 而非本目标。未核实本目标公开完整 Lean4 证明；GitHub 全局代码搜索 401、ConstELLAte 索引 DNS 失败，另有 API 限流，故 metadata 标记 unknown/blocked，不能断言不存在。详见证据 public-proof-search.json、fetch-results.json、follow-prs-results.json。"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos413.IsBarrier: [propext, Quot.sound, Classical.choice]
+audited Erdos413.expProd: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+{n | Erdos413.IsBarrier (fun m => ↑(Erdos413.expProd m)) n}.HasPosDensity
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

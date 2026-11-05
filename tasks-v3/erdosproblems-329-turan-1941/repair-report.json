@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-329-turan-1941",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式列出 /app、/opt/formal-conjectures 及隐藏的 .lake/packages；在本题 Harbor 容器以 ubuntu 实搜到 Mathlib/Data/Nat/Prime/Defs.lean 的 Prime 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 仅有规定的两个 imports，无额外上游依赖。原 Dockerfile 缺少末尾普通用户验收，现以 USER ubuntu、RUN lake build +FormalConjecturesBench.Target 结尾；本地 Harbor 构建及容器内 ubuntu 构建成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本并最终复验，case=no_issue；原头通过，改头和移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重新解析 GoldenCheck，存在语义遮蔽风险。现从本题不含候选导入的原始 golden 独立提取并预编译 ExpectedType（完整两个参数，universes=[]），审计其及两项密度定义的传递公理，固定清单哈希和 Spec/依赖搜索路径，完整类型比较；两份可信包和 checker 内容/AST 一致，15 项 immutable 哈希均未变。最终本地 Harbor 构建镜像 871f29ad6096；/tests 上传包及 /opt 包哈希均与本地一致。两入口均因原题 sorry 正常退出 1、reward=0；同一 Harbor 子容器两份实际函数补测覆盖 Spec 加载/审计、UID=1000 编译、完整类型、目标 sorryAx 拒绝、canary、冻结/越界/名称偷换/缓存遮蔽/缺失与篡改负例。一次重验网络与本题旧网络重叠，已改用确认未占用子网并重建验收。证据见 jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-329-turan-1941/attempt-001。Docker 清理完成并核实：容器 49ef2ccc645a、2e970a61e41d、acf380bf0111 已 stop/rm；本题镜像 cdcd8ffa94e5、fc86342d9a12、871f29ad6096 及三个标签、两个自建网络已移除，预存共享依赖镜像保留；详见 cleanup.json。原题完整证明未提供，也未宣称证明通过。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "仅标记 statement_status=consistent，未修改数学输入。本题是 Erdős 329 的已知 Erdős–Turán 1941 上界变体，并非开放的精确极值问题。已核对 IsSidon、ncard、[1,N]、实数 sqrt 和 atTop limsup；来源 https://www.erdosproblems.com/329（正文明确 limsup≤1）及 https://www.renyi.hu/~p_erdos/1941-01.pdf pp.213–214 的有限区间上界，未发现明显错误。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。已进行多组题号/别名/数学陈述检索，核查上游主线与固定修订、Mathlib、AlphaProof Nexus、plby/lean-proofs 和 Singer 库。PR 2578/3102 实际源码仅改分类且仍有 sorry；Singer 有相关有限上界但未核实本题完整 limsup 适配证明；TheoremDB R1822 为另一题。GitHub 代码搜索 API 401、网页要求登录，故 metadata 标 public_lean4_proof=unknown/status=blocked，不声称不存在公开证明。详见 attempt-001/research-audit.json 及保存的源码/访问记录。"
+    }
+  }
+}

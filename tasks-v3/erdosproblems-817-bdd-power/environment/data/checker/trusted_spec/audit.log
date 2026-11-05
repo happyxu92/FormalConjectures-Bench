@@ -1,0 +1,9 @@
+FCBTrustedSpec.lean:52:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos817.g: [Classical.choice, propext, Quot.sound]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ O > 0, (fun n => 3 ^ n / ↑n ^ O) =O[Filter.atTop] fun n => ↑(Erdos817.g 3 n)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

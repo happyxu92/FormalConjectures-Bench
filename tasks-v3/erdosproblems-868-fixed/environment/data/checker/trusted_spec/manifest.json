@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-868-fixed",
+  "target_name": "Erdos868.erdos_868.variants.fixed_ε",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "a95e632fb6aebe9fe21bddaa2c089ee87894bb828acda3f87053a9578b7d6ef5",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "13084fd7d4c232d5b448c5dc8ecb13742ee4cbdf5f658545b605162c1a4b7533",
+    "FCBTrustedSpec.ilean": "fe8fc7f39d60014e321d1c88c4f8e689566b556d30ab5a920b666c616dbbfc40",
+    "FCBTrustedSpec.lean": "4574c535487f490f3b3815b3844f0ea8f464ec7cf69f6305b35e7e51f5f6ed44",
+    "FCBTrustedSpec.olean": "86bb45526a9807899e928d960483f520b627056e4d9c76b990a430f8b49e880c",
+    "generate.py": "073a95c1e06716c47c0e08b6017e6ecb8f4a1a9f19753239a478e604e183fabe",
+    "reproduce.sh": "fccd45d1a3db13daaf7180a93fc7c1fc15b3d4d47a67029e0c5551680998a1e7"
+  },
+  "generation_image": "sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a",
+  "generation_command": "docker run -d --network none --name erdosproblems-868-fixed-spec-g61-868a erdos1062-import-20261102__env-main:latest sleep infinity; docker cp generation-input erdosproblems-868-fixed-spec-g61-868a:/tmp/repair-bundle; docker exec -u root erdosproblems-868-fixed-spec-g61-868a bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit_command": "export LEAN_PATH=\"/tmp/repair-bundle/trusted_spec:/opt/formal-conjectures/.lake/build/lib/lean\"; for dep in batteries Qq aesop proofwidgets importGraph LeanSearchClient plausible mathlib; do export LEAN_PATH=\"$LEAN_PATH:/opt/formal-conjectures/.lake/packages/$dep/.lake/build/lib/lean\"; done; /opt/elan/toolchains/leanprover--lean4---v4.27.0/bin/lean AuditSpec.lean",
+  "audit": "Independent import verifies ExpectedType is a definition of Prop, its value is the complete Iff, no outer universe/binder parameters, temporary target and children absent. ExpectedType and ncard_add_repr transitive axioms are standard allowed only. Earlier two frozen golden theorems contain sorry but are not referenced by ExpectedType or ncard_add_repr. No candidate source, Lake configuration or cache loaded."
+}

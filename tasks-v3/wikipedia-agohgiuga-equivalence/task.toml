@@ -20,6 +20,11 @@ oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
 verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
+statement_status = "consistent"
+statement_status_note = "The target is the known equivalence of Agoh and Giuga formulations, not a proof of either open conjecture. Compared the complete definitions with Kellner, arXiv:math/0409259, section 2 and Theorem 2.3; no obvious mathematical error found. Mathematical inputs are unchanged."
+public_lean4_proof = false
+public_lean4_proof_status = "searched"
+public_lean4_proof_note = "Exact task ID absent from skill CSV. Multiple searches and source reviews covered upstream, Mathlib, SamuelSchlesinger, mo271, lean-fc-proofs, and relevant PRs. The exact-equivalence claims in PRs 2983/3019/2482 still use sorry; structural and Carmichael proofs do not prove the Bernoulli equivalence. No known complete proof found in this search; not a claim of nonexistence. Evidence is recorded in the task-specific repair job directory."
 
 [verifier]
 timeout_sec = 7200.0

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-304-upper-1950",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md now explicitly searches /app, /opt/formal-conjectures and .lake/packages. Actual container search found Mathlib's tendsto_log_atTop (exit 0)."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports. Added the missing final ubuntu RUN lake build +FormalConjecturesBench.Target; current local Harbor image build and explicit ubuntu Target build succeeded."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Skill Unicode script ran before and after changes: no_issue; original header accepted, changed header and missing assignment rejected."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Complete-type Spec generated and transitively audited from this task's original golden without Submission; universes []. Both packages, checker AST/content and all immutable hashes verified. Final current-local-task Harbor build succeeded (image 88b9fc6fc257); uploaded /tests and /opt hashes matched. Both entries exit 1 on original sorry, reward 0 as expected. Same-container root/ubuntu function suites passed: fixed Spec/type audit, ubuntu compilation, complete-type comparison, sorryAx rejection/canary, frozen/header/out-of-bounds rejection, frozen-text-preserving NatCast instance attack rejected by type comparison, cache/env shadowing, missing/tampered artifacts without regeneration. No implementation failures remain. Cleanup verified: three own containers (103d148a6ef3, 6f09667a8fbb, 8fb64a659936) and two own images (a4f4771e7499, 88b9fc6fc257) removed; Harbor networks already absent; pre-existing shared cache retained. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-304-upper-1950/attempt-001."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked consistent. Checked the complete definitions and closed Nat-indexed Big-O statement against Erdos 1950 Theorem 1, printed pp. 195, 201-203. Proper fractions, distinct denominators >1, finite maximum and eventual log/loglog upper bound agree. No mathematical inputs changed."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Marked unknown. Exact ID has no skill-CSV match. Multiple searches covered upstream, author sources, GitHub and Mathlib. Retrieved and source-audited OpenAI's 58-module ShortEgyptian proof of a stronger loglog bound with list-based definitions; exact upper_1950 remains sorry upstream. A reported external bridge was not available as inspected Lean source, and a complete bridge to this exact frozen target was not verified. Do not infer absence. See statement-and-public-review.json and public-proof-closure-audit.json in the evidence directory."
+    }
+  }
+}

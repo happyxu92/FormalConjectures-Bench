@@ -1,0 +1,8 @@
+audited FCBTrustedSpec.ExpectedType: [Classical.choice, propext, Quot.sound]
+audited Green14.W: [Classical.choice, propext, Quot.sound]
+audited Green14.mixedMonoAPGuaranteeSet: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Green14.W 3 11 = 114
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

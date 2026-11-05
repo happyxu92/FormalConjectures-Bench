@@ -9,6 +9,10 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact skill CSV miss. Multi-query searches and upstream/source review found no verified complete sh20_sqrt proof; GitHub code/tree and PR access rate-limited. Other Green32 proofs found concern only dirichlet_regime, not this target."
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/GreensOpenProblems/32.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

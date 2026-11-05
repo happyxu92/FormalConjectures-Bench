@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-36-exists",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式包含 /app、/opt/formal-conjectures 及 .lake/packages；最终 Harbor 子容器内实际 rg 找到 mathlib 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import，保留 ProblemImports 预编译；原 Dockerfile 缺少末尾普通用户构建验证，现以 USER ubuntu、RUN lake build +FormalConjecturesBench.Target 结尾。最终本地 Harbor 构建及同容器 ubuntu 构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "实际运行 skill Unicode 脚本：unicode_repaired；两份 EXPECTED_HEADER 的非 BMP 代理对已修复。原头通过、改头和删除 := 被拒绝；最终脚本复验 no_issue，冻结哈希未变。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离候选生成并预编译 ExpectedType，保留完整存在命题；universes=[]、外层 forall 参数数=0，四个数学定义及 ExpectedType 传递公理审计通过。两份包和 checker AST/内容一致，固定产物哈希及工具链/依赖校验，无运行时提取、重编译或回退。最终本地 Harbor trial erdosproblems-36-exists-g61-36a1-final 构建成功，核对 /tests 上传包、/opt 包、golden 及 /app 哈希。正式及 ubuntu 本地入口均因原题 sorry 预期退出 1、reward=0；同一子容器两路径实际函数补测全部通过：可信加载/审计、ubuntu UID=1000 编译、完整类型比较、sorryAx 拒绝、canary、冻结/越界/语义偷换/缓存遮蔽/缺失及篡改产物负例。未宣称原题证明通过；原安全检查与普通 import 规则保留。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-36-exists/attempt-001。Docker 清理已核实完成：本题 3 个容器已停止/移除，2 个本题镜像 tag 及其 image ID 已不存在，2 个本题网络已移除；预先存在的共享依赖缓存保留。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已核对完整定义、锁定上游 36.lean 和 White 论文 arXiv:2201.05704 §1：同一等分最小重叠 M(n)，极限存在且上界 0.3809268534330870，蕴含本题严格小于 0.385694 的较弱变体。iSup 有界、sInf 非空、等基数与并集条件确保各有 n 元，N=0 不影响 atTop。metadata 标记 consistent；数学陈述、定义、所有 golden/GoldenCheck/冻结基线均未修改。详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配 skill CSV 未命中。已用 15 组检索词覆盖上游、作者/文献、Mathlib、GitHub 与证明索引，实际读取 Linrock Solution 及相关 Lean 源码：其收敛性端点缺少 c < 0.385694 数值合取，不能计为本题完整证明；上游本目标仍 sorry，其他证书明确不是 Lean 证明。GitHub 代码搜索需登录、API 限流 403，LeanGenius 仅返回 SPA 壳，关键覆盖不足，metadata 和本报告如实标记 unknown/blocked，不断言公开证明不存在。详见 public-proof-review.json、source-fetch-results.json；未把外部答案放入镜像。"
+    }
+  }
+}

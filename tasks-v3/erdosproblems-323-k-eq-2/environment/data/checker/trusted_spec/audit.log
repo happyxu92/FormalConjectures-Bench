@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos323.f: [Quot.sound, propext, Classical.choice]
+complete outer binder count: 0 (closed existential proposition)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ c > 0, Asymptotics.IsEquivalent Filter.atTop (fun x => ↑(Erdos323.f 2 2 x)) fun x => c * ↑x / √(Real.log ↑x)
+def Erdos323.f : ℕ → ℕ → ℕ → ℕ :=
+fun k m x => {n | n ≤ x ∧ ∃ v, n = ∑ i, v i ^ k}.ncard
+'Erdos323.f' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,12 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos868.ncard_add_repr: [Quot.sound, propext, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+False ↔
+  ∀ (A : Set ℕ),
+    ∀ ε > 0,
+      A.IsAsymptoticAddBasisOfOrder 2 →
+        (∀ᶠ (n : ℕ) in Filter.atTop, ε * Real.log ↑n < ↑(Erdos868.ncard_add_repr A 2 n)) →
+          ∃ B ⊆ A, B.IsAsymptoticAddBasisOfOrder 2 ∧ ∀ b ∈ B, ¬(B \ {b}).IsAsymptoticAddBasisOfOrder 2
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

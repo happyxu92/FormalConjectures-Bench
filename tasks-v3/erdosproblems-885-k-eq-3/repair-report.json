@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-885-k-eq-3",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "源码搜索命令已显式包含 /app、/opt/formal-conjectures 及其 .lake/packages；最终 Harbor 容器以 ubuntu 搜到 Mathlib/Data/Set/Card.lean 的 ncard，退出码0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；补齐 Dockerfile 末尾 ubuntu RUN lake build +FormalConjecturesBench.Target。最终本地 Harbor 构建及同容器 ubuntu 构建均成功，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能实际运行 Unicode 脚本并最终复验，均为 no_issue；两份头、冻结前缀和赋值边界测试通过。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离生成并预编译 ExpectedType，完整类型及 universe 参数为 []；审计 ExpectedType 与 factorDifferenceSet 的传递公理通过。两包及 checker 内容/AST 一致，固定来源加载且无运行时生成/回退。最终本地 Harbor 镜像 5f17314cd144 验收，39项 /tests上传包、/opt包、golden及/app文件哈希全符。两入口因原题 sorry 预期拒绝（退出1、reward0）；同一最终子容器在 /tests/root 及 /opt/ubuntu 补测均退出0，覆盖可信审计、uid1000编译、完整类型、目标 sorryAx 拒绝、canary、冻结/越界/实例语义偷换/缓存遮蔽/缺失及篡改负例；无占位的语义偷换候选编译和公理审计通过但完整类型比较拒绝。首次镜像 GoldenCheck 交付哈希不符，未采信；重建后全符，详见 delivery-incident.json。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-885-k-eq-3/attempt-001。Docker 清理完成并复核：3个本题容器（18a8ee37ffcb、d99c0740f9fe、770c5d2ff22a）、2个本题镜像（b75f8b7c19d1、5f17314cd144）及2个本题网络均已删除；预存共享缓存镜像 e21dc171550d 保留，未操作其他任务资源。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent；已核对锁定上游完整定义与 k=3 命题，以及 Bremner(2019)作者机构网页摘要对 Jiménez-Urroz(1999)已解 k=3 的确认。正整数自然因子与整数因子的绝对差等价，Finset确保三个互异正整数，非空交集有限，ncard适用；未发现明显数学错误。原题站及1999出版社403，未声称读过全文。仅标记，数学输入未改；见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整ID精确命中技能 references/public-lean4-proofs.csv，按要求 public_lean4_proof=true，无需重新联网核验。来源：google-deepmind/formal-conjectures/main/FormalConjectures/ErdosProblems/885.lean#L100；anatoliiohorodnyk/lean-fc-proofs@3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos885_erdos_885_variants_k_eq_3.lean#L87。未将公开证明置入任务，亦未声称在本环境编译该证明。"
+    }
+  }
+}

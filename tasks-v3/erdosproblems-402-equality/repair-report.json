@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-402-equality",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式列出 /app、/opt/formal-conjectures 和隐藏 packages 路径；在最终 Harbor 容器以 ubuntu 实搜 package 中 gcd_comm，退出码0。见 final-instruction-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "没有额外上游 imports；原 Dockerfile 缺末尾普通用户构建验证，已增加 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。本地 task Harbor 构建成功，容器内 ubuntu 再构建退出0，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本并最终复验，均为 no_issue；原始头、冻结前缀及 := 边界通过，两份 checker 一致。见 unicode.json、unicode-final.json。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题不可变 golden 隔离 Submission，用匹配 Docker/Lean4.27 parser/elaborator 提取完整类型与 universes；ExpectedType 独立导入审计确认5个完整参数 A,h₁,h₂,h₃,h、universes=[]、传递公理仅标准三项，未导出临时目标。同步两份源码/预编译产物/固定哈希清单；运行时只加载固定 Spec，不重新解析原命题或回退生成。保留源码限制、正常 import、冻结、公理和 canary 检查。当前本地 Harbor 镜像 sha256:9b60b38a0f5e1daa6fc9a9c5ed412d47b96e7e0b34ba6289d5db7c7df06d2ff4 构建成功；/tests Harbor上传包、/opt包与本地逐文件哈希一致。正式 /tests/test.sh 与 ubuntu /app/check.sh 均因原目标 sorry 预期退出1，reward=0；这不是原题证明通过。同一 Harbor 子容器分别使用两份 checker 实际函数各补测29项：Spec加载/可信审计、ubuntu(uid1000)编译、完整类型比较、目标sorryAx拒绝、canary、冻结/越界/缓存遮蔽/产物缺失及篡改等均通过；冻结文字不变的 Membership 实例语义偷换可编译且公理合规，但被完整类型比较及完整checker拒绝。公开Target、所有golden、GoldenCheck、冻结哈希均不变；两份checker AST/内容和Spec一致。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-402-equality/attempt-001。Docker清理完成：已stop/rm预编译容器551be540e270及Harbor容器1a509de1bd7c，删除本次镜像9b60b38a0f5e及网络cb9d2eb56746；inspect确认均不存在。预存共享缓存保留，未触碰其他agent资源；详见cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。完整检查正自然数、非空、总gcd=1、所有有序对的有理数不等式及三类等号集合；与保留的 equality 变体一致，未发现明显错误。上游PR263解释gcd规范化已排除单元素缩放反例；论文Theorem1.1的来源综述及题目镜像支持分类，小规模例外已包含。原站和论文PDF访问403，未声称读到受阻PDF。仅标记，不修改数学内容。见 math-review.json 和保存的上游/来源文件。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "public_lean4_proof=unknown，status=blocked。完整ID精确匹配技能CSV未命中；已用11组关键词并核查上游main/锁定版本、GitHub PR3183/2661、OPN图及实际Lean结构引理、Mathlib平方自由特例、plby固定提交及奖项PR1677/782/170关联源码。候选分别为sorry/骨架、部分引理或充分大集合的不等式，均未覆盖本题全部等号分类。GitHub code/tree检索限流、erdosproblems.com及论文关键链接403，不能断言不存在公开证明。见 public-csv-match.json、public-proof-review.json 及下载记录。未将公开答案加入镜像。"
+    }
+  }
+}

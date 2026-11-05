@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-ellipticcurverank-twentyeight-le-rank-elkies28",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 .lake/packages；最终 Harbor 子容器中以 ubuntu 找到 Mathlib/LinearAlgebra/Dimension/Finrank.lean 的 finrank 定义。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题没有额外上游 import；补上 Dockerfile 末尾 USER ubuntu 后的 RUN lake build +FormalConjecturesBench.Target。最终本地 Harbor 构建及同容器 ubuntu 复建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本及最终复验，均为 no_issue；原始头、修改头和缺失 := 检查通过，未修改头或冻结基线。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题固定 golden、无 Submission 的独立 Docker 环境提前提取完整类型；universes=[]、外层参数=0，ExpectedType 及其传递依赖仅含允许公理。两份预编译包、清单和 checker 内容/AST 一致；不运行时生成 Spec，不再运行 GoldenCheck。最终本地 Harbor 镜像 da59acfa3fba 构建成功，/tests 上传包与 /opt 包均逐文件核对。两入口 exit=1、reward=0 是原始 sorry 的预期拒绝；同一最终子容器分别以正式/本地 checker 实测固定 Spec 加载审计、ubuntu UID=1000 编译、完整类型比较、sorryAx 拒绝及 canary。冻结/越界/语义 finrank 名称偷换/同名模块与缓存遮蔽/产物缺失和篡改负例全部符合预期。公开 Target、所有 golden、GoldenCheck 和固定 immutable 哈希不变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-ellipticcurverank-twentyeight-le-rank-elkies28/attempt-001，最终验收见 final-acceptance/。Docker 清理已完成并核实：本题三个容器 83933476a604、90e794f17301、e13006f0f4fd 均已 stop/rm；两个本题镜像 ab863db7d582、da59acfa3fba 及两个自建网络已删除。预先存在的共享依赖缓存保留，无遗留本题资源；见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。目标是 Elkies 2006 曲线的无条件秩至少 28，并非条件性的精确秩结论。系数与 https://web.math.pmf.unizg.hr/~duje/tors/rk28.html 一致；Elkies 原文 https://arxiv.org/abs/0709.2908 报告 28 个独立有理点。核对完整前缀及标准点群/finrank 含义，未发现导致本目标不成立的明显错误；只标记，未改数学输入。另以整数运算核验来源所列 28 点满足该方程，不将此宣称为独立性证明。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "public_lean4_proof=false、status=searched，仅表示充分检索未找到已知完整证明。完整 ID 精确查技能 CSV 未命中；检索定理名、曲线、作者、等价独立点表述及 GitHub issues/PR。核查上游 main、mo271 链接及 PR 2601/3125：目标仍 sorry。PR 5309 和 b-mehta/EllipticCurveRank 的 Curve011 只给有限子群证书/附加 Module.Finite 的变体；Stoll 仓库给 Mordell-Weil 和另一秩一例，不是本目标完整证明。当前 Mathlib 全部 9307 个 Lean 文件检索无本目标。GitHub API 限流已用 raw PR、patch、HTML 和 codeload 恢复关键源码；未留待核实的有效完整证明线索。详见证据目录 public-proof-review.json；未在本题编译任何公开完整答案，亦未将其放入镜像。"
+    }
+  }
+}

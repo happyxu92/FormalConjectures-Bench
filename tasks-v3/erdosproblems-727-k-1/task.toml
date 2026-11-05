@@ -15,6 +15,11 @@ formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"
 lean_toolchain = "leanprover/lean4:v4.27.0"
 mathlib_commit = "a3a10db0e9d66acbebf76c5e6a135066525ac900"
 theorem_name = "Erdos727.erdos_727.variants.k_1"
+statement_status = "consistent"
+public_lean4_proof = true
+public_lean4_proof_status = "found"
+public_lean4_proof_urls = ["https://github.com/beetree/math_erdos_727/blob/2c0f2bbbbba46f82011a232233bd0c852c197439/Erdos727/Final.lean"]
+public_lean4_proof_note = "Public unconditional k=2 endpoint is stronger than this k=1 task; factorial-divisibility implication to the full trusted ExpectedType checked in the pinned task environment. Public proof source and published transitive axiom records inspected, not rebuilt here."
 benchmark_bucket = "informal_proof"
 oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."

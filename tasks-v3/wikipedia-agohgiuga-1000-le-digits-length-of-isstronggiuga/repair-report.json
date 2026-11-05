@@ -4,32 +4,32 @@
     "instruction_search": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Added explicit /opt/formal-conjectures/.lake/packages to instruction.md rg command. Actual ubuntu rg finds mathlib card_powerset with all three paths in the current Harbor container; see /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-agohgiuga-1000-le-digits-length-of-isstronggiuga/attempt-002/delivery.json."
+      "note": "保留既有修复：instruction 的 rg 显式包含 /app、/opt/formal-conjectures 和隐藏 packages 路径。在本次 Harbor 容器内以 ubuntu 实测找到 mathlib card_powerset，退出 0。见本次证据目录 delivery.json。"
     },
     "lean_dependency": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Target imports only ProblemImports and local Submission; no extra upstream modules. Preserved upstream precompile command; added final USER ubuntu/HOME/WORKDIR lake build +FormalConjecturesBench.Target. Current local task Harbor build succeeds; final RUN and user recorded in image-history.txt; image sha256:335748b3cd310befe9b4905dcc01b3a2c97ae81d244409e1db8124b4fbc40582."
+      "note": "保留既有最终 ubuntu 构建验证。Target 仅导入 ProblemImports 与本地 Submission，无额外上游 import；原预编译链保留。Dockerfile 最终为 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。本地 task 经 Harbor force_build 成功，容器内 ubuntu 同命令再次退出 0；未放宽依赖权限。见 image-history.txt、ubuntu-target-build.log。"
     },
     "unicode_header": {
       "has_issue": false,
       "repair_status": "not_needed",
-      "note": "Ran skill check_unicode_header.py: case no_issue; original/header mutation/assignment checks pass. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-agohgiuga-1000-le-digits-length-of-isstronggiuga/attempt-002/unicode.json."
+      "note": "实际运行技能 check_unicode_header.py，case=no_issue；原头通过、改头和移除 := 被拒绝，两份 checker 一致。见 unicode.json。"
     },
     "semantic_checker": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Original checker re-elaborated GoldenCheck after editable Submission. Generated/precompiled fixed complete Spec from immutable golden in locked Lean 4.27.0 Linux x86_64 environment, excluding Submission. ExpectedType has a and ha, no universe parameters; transitive audit permits only propext/Classical.choice/Quot.sound. Manifest ed2ffadea1e5a719b408de23278749eccd2b34df5752c5a412c17673358407d5; two checkers and Spec packages identical. Runtime imports fixed artifact before helpers; temporary prefix from Spec; full root-qualified type comparison; existing source/freeze/axiom/canary checks retained and normal imports supported. Current task Harbor uploads /tests; /tests/test.sh and ubuntu /app/check.sh exit 1 for original sorry (reward 0, expected). Both actual function suites exit 0: fixed import/identity, ubuntu compilation, full type match, sorryAx rejection, canary, freeze/source negatives, frozen-text LE Nat instance attack rejected by type mismatch, same-name cache/environment shadowing rejected, missing/tampered packages fail without regeneration. No original proof claimed. Evidence /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-agohgiuga-1000-le-digits-length-of-isstronggiuga/attempt-002/{delivery.json,validation-official.log,validation-local.log,package-summary.json,resources-created.json}. Cleaned own containers 7ae7fdb3e1c (Spec) and 1219037c7d8b (Harbor), task image sha256:335748b3cd310befe9b4905dcc01b3a2c97ae81d244409e1db8124b4fbc40582 and task network; confirmed absent. Earlier image sha256:521577d1787d62d86dc1bd48328cbf6c8b7c8f2f1c205d4cfe261a00907464aa was already absent. Shared pre-existing cache-smoke generation image and other agents/resources left untouched; no prune."
+      "note": "保留并独立复验同题既有修复。本次证据根目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-agohgiuga-1000-le-digits-length-of-isstronggiuga/attempt-001。由本题 immutable golden、排除 Submission，在匹配 Lean 4.27.0 Docker 中重新生成并编译审计；源码/olean/ilean 与交付包逐一同哈希，完整参数 a、ha，universes=[]，ExpectedType 及传递依赖仅使用三个允许公理，临时目标未导出。两份 checker 内容/AST、两份 Spec 包、所有 immutable 哈希一致。checker 固定预编译来源，无运行时生成/重解析回退；保留正常 import 和既有安全检查。本地 task 的 Harbor Docker 镜像 sha256:81b915815e1d14b1590bf2db0fa630dd571f057b7b606b4e8d8294d70102f0b1；Harbor 上传 /tests 与本地 /opt 包、golden、checker 哈希全部匹配。正式 /tests/test.sh 与 ubuntu /app/check.sh 均退出 1、reward=0，仅因原题 sorry，非实现故障。同一子容器两套实际函数补测及来源补测全部退出 0：Spec 加载/审计、ubuntu 编译和 OS 用户、完整类型正例、目标 sorryAx 拒绝、sorry canary、冻结/越界负例、冻结文字不变的 LE 实例偷换在完整类型比较处拒绝、同名模块/缓存/环境变量遮蔽不生效、Spec 及可信依赖实际路径固定、缺失/篡改产物拒绝且不重新生成。见 generation-audit.log、reproduction-hashes.json、delivery.json、validation-{official,local}.log、provenance-{official,local}.log、final-verification.json。未声称原题证明通过。Docker 清理已完成并核实：本次容器 62294b825e0c（Spec）、2a984666fa49（Harbor），任务镜像 81b915815e1d 及其 tag、自建网络均已不存在；预先存在的共享生成缓存及他人资源保留。见 cleanup.json、cleanup.log（退出 0）。"
     },
     "statement_fidelity": {
       "has_issue": false,
       "repair_status": "not_needed",
-      "note": "statement_status=consistent. Inspected entire golden prefix and pinned upstream target. Composite plus sum i^(a-1) over 0<i<a matches strong Giuga counterexample; decimal digits >=1000 is a valid known lower-bound variant, not the open conjecture. MathWorld https://mathworld.wolfram.com/GiugasConjecture.html gives no exceptions below 10^1000 and stronger later bounds. No statement/definition/Target/golden/GoldenCheck/frozen hash changes. Details /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-agohgiuga-1000-le-digits-length-of-isstronggiuga/attempt-002/mathematical-audit.json."
+      "note": "statement_status=consistent。完整检查 golden 前缀及锁定上游：Composite 排除 0、1，IsStrongGiuga 是合数满足 1 至 a-1 的 a-1 次幂和模 a 为 -1；目标为十进制位数至少 1000。MathWorld 给出 10^1000 排除界；Borwein/Maitland/Skerritt 2013 原文给出更强 19,908 位界（https://carmamaths.org/resources/jon/giuga2013.pdf）。这是有效已知下界变体，不是解决完整开放猜想。未发现明显错误，未改陈述、定义或 immutable。见 mathematical-audit.json。"
     },
     "public_lean4_proof": {
       "has_issue": null,
       "repair_status": "not_repaired",
-      "note": "public_lean4_proof=unknown, status=blocked. Exact full task ID not in skill CSV. Searched multiple GitHub issue/repository/theorem-name queries, upstream and forks, local mathlib, general search engines. Read raw PRs 2482/2983/3019/7660 and mo271: exact 1000-digit target still sorry. Related Carmichael/criteria/nine-prime-factor proofs do not cover target; math_gkm Agoh exercise is unrelated polynomial mathematics. No accessed full target proof found, but GitHub code/API rate limits and Google/DDG/GitHub login/JS challenges prevent a conclusive public search. No public proof compiled or inserted. Detailed sources, exclusions and access limits: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/wikipedia-agohgiuga-1000-le-digits-length-of-isstronggiuga/attempt-002/public-proof-audit.json."
+      "note": "public_lean4_proof=unknown，status=blocked。先按完整 ID 精确查技能 CSV，未命中；随后多组定理名/等价界/作者关键词搜索，核查上下游、mo271、PR 2482/2983/3019/7660、PR6819/7660 外链 Lean、跟踪 issue、Mathlib，以及新线索 SamuelSchlesinger、Chokmah 和 ProofAtlas。精确目标仍 sorry；相关完整证明仅为条件、Carmichael 或九素因子界；Samuel 的较强 Borwein 位数界仍有计算 sorry，并使用 native_decide；有限 oracle 不覆盖本题。未找到可访问的完整允许证明，但 GitHub 全局代码搜索 HTTP401 需认证，不能排除其他命名/分支，故不标 false。未编译或插入公开答案。见 public-csv-match.json、public-proof-audit.json 和原始来源/访问日志。"
     }
   }
 }

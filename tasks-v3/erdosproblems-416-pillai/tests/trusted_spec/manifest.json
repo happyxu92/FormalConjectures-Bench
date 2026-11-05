@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-416-pillai",
+  "target_name": "Erdos416.erdos_416.variants.Pillai",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "ae69cf6dab0c98e72e2d59697f06fe7449fb0f280a71fb84996952f53bb8f88a",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "6f88b88f71042120e2d4889ba60ab63692d6f37faed1645b7a9d1e2310449f1c",
+    "FCBTrustedSpec.ilean": "2b1b9417730f06988e29225b9ab5dbf2b165b5f5591b822430b3aa34418895c6",
+    "FCBTrustedSpec.lean": "7036efdee58f3c6ea76a8d1a1bf0795b9c18c78212078d637153139f5250f8c3",
+    "FCBTrustedSpec.olean": "de83f96441e43bdb37100e4a96ca8a860d21501f7738521ded15d5ee41c988d9",
+    "audit.log": "80b1ba479f1c50fa82525876de8340001847833678cbbd8c9344fe56697a343b",
+    "generate.py": "507b770a27a9dab658ce067329258a27bd4dab91fe4e52e89f1c3261a21765dd",
+    "reproduce.sh": "209247dd30ecc3a20668004e768618c229935bd063cb4e307cb8d99b0434a264"
+  },
+  "generation_image": "sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a",
+  "generation_command": "python3 generation.py; bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Closed complete little-o proposition, no outer binders or universes. ExpectedType and V have only standard allowed axioms; temporary target and children absent. Earlier open prefix theorems are retained but neither is a dependency of ExpectedType or V."
+}

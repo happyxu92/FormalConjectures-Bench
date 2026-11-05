@@ -9,6 +9,11 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "mismatch"
+statement_status_note = "The infinitude target and class-group definitions match the known theorem. The frozen prefix isRegularPrime_iff_Bernoulli omits the even-index restriction: p=7, k=3 gives Bernoulli numerator 0, contradicting small_regular_primes. Statements and definitions are unchanged."
+public_lean4_proof = true
+public_lean4_proof_status = "known"
+public_lean4_proof_urls = ["https://github.com/riccardobrasca/KummerCriterion/tree/2a62085d1dd879554ae1c482bfe16ddef6360e47"]
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/Wikipedia/RegularPrimes.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

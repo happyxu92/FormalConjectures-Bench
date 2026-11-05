@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "CSV miss; upstream main still sorry; PRs 2467/2999 only change labels and cite informal papers. Multi-query search found no verified proof; global GitHub code search requires authentication (401)."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/GreensOpenProblems/26.lean"

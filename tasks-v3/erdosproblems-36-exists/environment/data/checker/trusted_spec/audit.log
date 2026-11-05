@@ -1,0 +1,24 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos36.MinOverlapQuotient: [propext, Quot.sound, Classical.choice]
+audited Erdos36.M: [Classical.choice, propext, Quot.sound]
+audited Erdos36.MaxOverlap: [propext, Quot.sound, Classical.choice]
+audited Erdos36.Overlap: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0; existential witness retained inside expression
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ c, Filter.Tendsto Erdos36.MinOverlapQuotient Filter.atTop (nhds c) ∧ c < 0.385694
+def Erdos36.MinOverlapQuotient : ℕ → ℝ :=
+fun N => ↑(Erdos36.M N) / ↑N
+def Erdos36.M : ℕ → ℕ :=
+fun n =>
+  sInf
+    {x |
+      ∃ A B, ∃ (_ : Disjoint A B) (_ : A ∪ B = Finset.Icc 1 (2 * ↑n)) (_ : A.card = B.card), Erdos36.MaxOverlap A B = x}
+def Erdos36.MaxOverlap : Finset ℤ → Finset ℤ → ℕ :=
+fun A B => iSup (Erdos36.Overlap A B)
+def Erdos36.Overlap : Finset ℤ → Finset ℤ → ℤ → ℕ :=
+fun A B k =>
+  {x ∈ A.product B |
+      match x with
+      | (a, b) => a - b = k}.card
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

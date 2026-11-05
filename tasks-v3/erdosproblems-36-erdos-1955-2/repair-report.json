@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-36-erdos-1955-2",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式添加 /opt/formal-conjectures/.lake/packages；最终 Harbor 容器内以 ubuntu 实际搜索并命中 package 中的 Tendsto 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 imports；原 Dockerfile 缺少末尾普通用户构建验证，现以 ubuntu RUN lake build +FormalConjecturesBench.Target 结尾。修改后本地 Harbor 构建及同容器 ubuntu 再构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已执行技能 check_unicode_header.py 并最终复验：case=no_issue；原头通过，修改头及移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden 隔离候选提前 elaboration 完整类型及 universes（无 universe 参数、外层 binder 为 0），交付并固定校验预编译 ExpectedType；审计其与 Overlap/MaxOverlap/M/MinOverlapQuotient 的传递依赖仅含标准公理，临时目标未导出。两份包、checker AST/内容及全部 immutable 哈希核对通过。最终本地 Harbor trial=erdosproblems-36-erdos-1955-2-g61-a001-36a9-final，镜像 sha256:0883a2572b55aaedfc2aea3477d614b202f1fa6c39d28f81f9a21ba673153db5；/tests 上传包与 /opt 本地包逐文件哈希匹配。正式及 ubuntu 本地入口均因原题 sorry 预期退出 1、reward=0；同一容器两份 checker 实际函数补测全部通过，覆盖 Spec 加载/可信审计、uid=1000 编译、完整类型匹配、sorryAx 拒绝、允许公理路径、sorry canary、冻结/越界/语义偷换/缓存遮蔽/缺失及篡改负例。未证明原题；未发现验收故障。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-36-erdos-1955-2/attempt-001。Docker 清理已核实：本题 3 个容器及 2 个网络均已移除，最终镜像 0883a2572b55 已删除。初次镜像 9d340556c0cd 被其他任务容器 erdosproblems-36-haugland-1996-spec-g61-a001-36h7 使用，非强制删除被 Docker 拒绝后按规则保留；未触及该容器。预先存在的依赖镜像及共享缓存保留。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已标 statement_status=consistent，未修改数学输入。核对 pinned 上游 36.lean、完整前缀定义、Erdős 1955-13 原论文摘要及 White arXiv:2201.05704 引言。本目标为已知 limsup 上界 1/2：中央长度 n 区间给出 M(n)≤ceil(n/2)，故所述上界成立；n=0 不影响尾部。另穷举核对 M(1..6) 并测试中央构造，不充作 Lean 证明。题目网站 HTTP 403，但原论文及作者论文可读；详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "技能 CSV 的 task 列精确命中 erdosproblems-36-erdos-1955-2，已标 public_lean4_proof=true/status=known。来源：https://github.com/linrock/math-proofs/blob/22db103d7b6109baca46f2623a7287b965a56936/erdos-36/Solution.lean#L68 及 https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos36_minimum_overlap_variants_upper_erdos_1955.lean#L360 。按要求无需再次联网；未在本环境重新编译公开证明，也未将答案装入镜像。"
+    }
+  }
+}

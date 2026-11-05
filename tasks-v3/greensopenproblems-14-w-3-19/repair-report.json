@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-14-w-3-19",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 及 .lake/packages；Harbor 验收子容器内以 ubuntu 搜到 Mathlib 的 def Irrational，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "实际 Target 仅导入两个标准模块，无额外上游 imports。补齐原 Dockerfile 缺失的末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target；最终本地 Harbor 构建及容器内 ubuntu 补建均成功，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本及最终复验，均为 no_issue；原头通过，改头和移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题可信 golden 隔离候选提前提取并预编译完整 ExpectedType：Green14.W 3 19 = 349，无外层参数或 universe 参数。独立审计 ExpectedType、W 和 mixedMonoAPGuaranteeSet 的传递依赖仅有标准允许公理，临时目标未导出。两份 checker 固定可信预编译包及依赖来源，不在运行时生成 Spec 或重解析命题。最终 Harbor trial greensopenproblems-14-w-3-19-g61-a001-19cf-final 使用当前本地 task 构建；/tests 上传包、/opt 包和本地文件全部哈希吻合。两入口均退出 1、reward=0，原因仅为原题 sorry；同一子容器内正式与本地 checker 各 29 项实际函数补测通过，覆盖可信加载/审计、ubuntu 编译、完整类型、公理、canary、冻结/越界/实例偷换/缓存遮蔽/产物缺失及篡改。初次发现的 /opt 旧 GoldenCheck 打包异常已通过仅刷新构建输入时间戳并重建解决，所有 immutable 内容哈希保持原值。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-14-w-3-19/attempt-001。Docker 清理已核实：本次 4 个容器、3 个任务镜像（006d95731508、b9ff23312160、fecf846771b2）及 3 个网络均已移除；预存共享生成镜像保留，未操作其他任务资源。见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已核对完整定义、锁定上游目标、Green Problem 14 及 AKS14（arxiv.org/html/1102.5433，Definition 1.1、§3.1）。本题要求已知精确值 w(2;3,19)=349；颜色、区间、AP 基数与最小值定义相符，未发现明显错误。仅标记 statement_status=consistent，数学陈述及定义未修改。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 task ID 精确匹配技能 CSV 未命中。已用多组名称/数值/作者/等价表述检索并读取上游、作者网页及相关 Lean 来源：上游 W_3_19 仍为 sorry；formal_ramsey 证明的是 3 项双色值 9；OpenAI/相关 refinement 是渐近界；issue #7680/Zenodo 对应 3/20、3/21 而非本题。未确认覆盖本目标的完整 Lean4 证明。GitHub 全局代码搜索 HTTP 401，未索引 fork/branch 不能充分核查，故 metadata 如实标 unknown/blocked，不断言不存在公开证明。详见证据目录 public-proof-review.json 和 source-fetch-results.json。"
+    }
+  }
+}

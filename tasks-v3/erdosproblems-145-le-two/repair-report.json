@@ -4,32 +4,32 @@
     "instruction_search": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Added the explicit /opt/formal-conjectures/.lake/packages search root. Executed the three-root rg command in this task's Spec container (package Ordnode.nth found) and the delivered Harbor container (Mathlib Tendsto found); see instruction-search.log and delivery.json in the task evidence directory."
+      "note": "保留已有显式 packages 搜索路径修复。三路径 rg 在本次隔离 Spec 容器及最终 Harbor 容器均找到 package 中 Tendsto，退出 0。证据：attempt-001/instruction-search.log、delivery-final.json。"
     },
     "lean_dependency": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Target has only ProblemImports and local Submission imports; no additional upstream precompile target is needed. Added final Dockerfile RUN lake build +FormalConjecturesBench.Target after USER ubuntu. Current local Harbor image sha256:51ff5bfb1e5785147cc12058f4c81e17c9858d393ae93c14fdcbfd51182abb94 built successfully, and the same ubuntu build was executed again with exit 0. See delivery.json for image history and build output."
+      "note": "保留已有 Dockerfile 修复。实际 Target 只有 ProblemImports 与本地 Submission，无额外上游 import；末尾仍为 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。本次当前本地 task 经 Harbor force_build 成功（允许缓存），最终镜像 sha256:2c7b5111c234a9c0df080d20cb6cbfdeffddd60e4670b56cd2a064f930dd1159；同容器 ubuntu 再构建退出 0。证据：harbor-final/、harbor-final-image-history.txt、delivery-final.json。"
     },
     "unicode_header": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Ran the skill Unicode script in step 3: unicode_repaired, both EXPECTED_HEADER surrogate pairs fixed using repr; original trusted header accepted, changed header/missing := rejected, copies equal. Original Target and both golden trees unchanged. Evidence: unicode.json; final AST/header and runtime negative tests also pass."
+      "note": "保留前次 Unicode 修复；本次按顺序实际运行技能脚本，case=no_issue、verification=passed、modified=false，两份 checker 一致。原始头通过、修改头及缺少 := 被拒绝；未刷新任何冻结基线。证据：unicode.json、static-verification.json。"
     },
     "semantic_checker": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Generated and independently audited FCBTrustedSpec from this task's golden in pinned Lean 4.27.0 x86_64 Docker environment, without candidate/helper imports. ExpectedType preserves alpha/h_alpha binders and universe order []; temporary target absent, ExpectedType/s/A transitive axioms allowed. Identical precompiled packages and pinned manifest 23ff792f242da78b5a7abedd1c2c23e8426a0b9538346f85531585f22422dcc5; fixed Spec and dependency import paths, no runtime regeneration or candidate Lake configuration. Current local task Harbor image built; uploaded /tests and installed /opt packages, checkers and golden hashes match. Formal /tests/test.sh and ubuntu /app/check.sh both exit 1 due original sorry, reward 0 (expected). Actual checker functions pass all supplemental paths at both package locations: ubuntu compiler UID, ordinary import/def/lemma/instance, independent Spec audit, complete type match, sorryAx rejection, canary, frozen/out-of-tree negatives, name/instance type substitutions rejected, same-name module/cache/environment poison ignored, missing/tampered artifacts fail without regeneration. Evidence directory: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-145-le-two; generation/package/delivery logs, validation-official-r2.log and validation-local-r2.log exit 0. Initial supplemental launch before fixture copy exited 2; corrected copy and both full reruns passed. Docker cleanup verified (cleanup.json, exit 0): stopped/removed containers c640416da0b4 and 316ee1a571ac, removed own image sha256:51ff5bfb1e5785147cc12058f4c81e17c9858d393ae93c14fdcbfd51182abb94 (erdosproblems-145-le-two-pi145two-c83f__env-main:latest) and task-specific network erdosproblems-145-le-two-pi145two-c83f__env_default; inspect confirmed all absent. Pre-existing generation base and all unrelated resources/shared build cache retained. This does not prove the original theorem."
+      "note": "保留并独立复验已有实现。本题 golden 在候选隔离、匹配 Lean 4.27.0 x86_64 Docker 环境重生成及编译审计，源码/olean/ilean 与交付包逐项哈希相同；完整类型包含隐式实数 alpha、区间假设，universes=[]。ExpectedType/s/A 仅依赖允许公理，临时目标未导出。两份 checker AST/内容、固定清单及 Spec 包一致；运行时固定预编译来源，无命题重解析/生成回退，保留原 import 与安全规则。最终当前本地 task 的 Harbor 构建完成；Harbor 上传 /tests 与预装 /opt 的 checker/Spec/golden 哈希均匹配。正式及 ubuntu 本地入口各退出 1、reward=0，原因仅为原始 sorry。最终同一子容器两套实际函数补测各 33 项通过：Spec 加载/可信类型审计、ubuntu 编译、完整类型比较、目标 sorryAx 拒绝、canary、冻结/越界/名称及实例语义偷换拒绝、同名缓存/环境遮蔽无效、产物缺失及篡改明确失败且不生成。首次补测遇到 Harbor 正常停止容器，已启动同一容器重跑通过；最终轮亦全通过。证据根目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-145-le-two/attempt-001（generation.log、reproduction-hashes.json、delivery-final.json、validation-final-{official,local}.log、static-verification.json）。这不是原定理证明通过。Docker 清理已验证（cleanup.json，退出 0）：停止并移除本次容器 b579c219a5f2、89c38f6c240a、da29fd08182a，删除本次镜像 c20c4121ba8e、2c7b5111c234 及两个带本题独特后缀的网络；inspect 均确认不存在。所有预存资源、共享生成基础镜像及 BuildKit 缓存保留。"
     },
     "statement_fidelity": {
       "has_issue": false,
       "repair_status": "not_needed",
-      "note": "Marked statement_status=consistent. Checked full squarefree enumeration, preimage/floor index set, real gap subtraction and rpow, alpha in [0,2], finite real limit at positive infinity against pinned upstream, erdosproblems.com/145 and Filaseta's author paper. This is the known le_two variant, not the unrestricted open problem. No obvious invalidity found; no mathematical input changed. Evidence: math-audit.json and sources/."
+      "note": "statement_status 保持 consistent。完整核对 s/A、自然 floor 的索引集、实数差及 rpow、闭区间 alpha∈[0,2]、正无穷有限实极限；与锁定上游及 Filaseta 作者论文引言的 Erdős 1951 已知结果一致。论文另一端点求和约定的末项差由短区间界趋零。本题是 le_two 合理变体，未发现明显错误；不改数学输入。原题网页新访问 403，作者论文与锁定源码可访问。证据：math-audit.json、sources/。"
     },
     "public_lean4_proof": {
       "has_issue": null,
       "repair_status": "not_repaired",
-      "note": "Full task ID exact CSV lookup has no match. Searched pinned/current upstream and history, multiple GitHub queries, Mathlib, AlphaProof Nexus, author/problem sources, proof repositories, branches/PRs and equivalent statements. Read exact head Lean sources of upstream PRs 2515/2836/3352: le_two still uses sorry. lean-genius uses new axioms; contribution112 proves only alpha=0 and 1. Award PR3266 advertises plby source absent from its pinned complete repository tree (404). No complete allowed-axiom proof confirmed. Marked metadata unknown/blocked because GitHub code search returns 401, grep.app 429 and general search services are unavailable/challenged; this is not a claim that no public proof exists. Evidence: public-proof-local-match.json, public-proof-audit.json, sources/*fetch*results.json and downloaded actual Lean sources. No public solution copied into the task or image."
+      "note": "本次按完整 ID 精确匹配技能 CSV，未命中。完成九组公开检索并读取当前上游、PR 精确 head、Mathlib、Nexus 及候选源码：PR2515/2836/3352/5809 的 le_two 仍为 sorry；lean-genius 依赖新增公理；contribution112 仅 alpha=0,1；awards3266 实际提交只有无关有限算术事实，其宣称的 plby 完整证明在 pinned/main 均 404，完整树也无该文件。通用网页搜索本次可用，但 GitHub 代码搜索 401、grep.app 429，关键宣称来源不可验证，故保留 public_lean4_proof=unknown/status=blocked，不能断言不存在。证据：public-csv-match.json、public-proof-audit.json、public-proof-fetch-results.json、followup-proof-fetch-results.json 及实际 Lean 源码。未向 task/镜像放入公开答案。"
     }
   }
 }

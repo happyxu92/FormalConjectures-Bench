@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-regularprimes-infinitude-of-irregularprimes",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；最终 Harbor 子容器中 ubuntu 实际 rg 找到 mathlib 的 bernoulli 定义，退出 0，无路径或权限错误。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 Dockerfile 缺少最终普通用户构建验证；已以 USER ubuntu / RUN lake build +FormalConjecturesBench.Target 结尾。Target 仅导入 ProblemImports 与本地 Submission，无额外上游 imports。当前本地 task 的 Harbor 构建成功，同容器 ubuntu 再构建退出 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本，修复前及最终均为 no_issue；原始头通过，改头及移除 := 拒绝，两份 golden 和 checker 匹配。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选 helper 后重新解析预期类型。现从本题原始 golden 隔离 Submission，用 Lean elaborator 提取完整类型和 universes，生成并预编译 ExpectedType；无外层参数、无 universe 参数。ExpectedType 及 IsRegularPrime/regularPrimes/irregularPrimes 传递审计仅有三项标准公理，临时目标未导出。两份可信包、checker 内容/AST 一致，15 项 immutable 哈希不变；运行时仅加载固定哈希产物，可信路径先于候选，无重生成回退，无新增通用 import 白名单或 initializer 沙箱。最终当前本地 Harbor 镜像 sha256:d8f2959c3facb12241ece6f663d4441c508649f4564f830770354f64f4bbeac0；/tests Harbor 上传包及 /opt 包均核对本地哈希。两入口各退出 1、正式 reward=0，原因均为未改原题的 sorry。最终同一子容器两个包位置各 28 项函数补测通过：Spec 加载/可信审计、ubuntu uid=1000 编译、完整类型匹配、sorryAx 拒绝、canary、冻结/越界/源码负例、冻结文字不变的 qualified-name 语义偷换编译后类型比较拒绝、缓存/同名模块/环境遮蔽及缺失/篡改产物拒绝且不重生成。初次最终重建遇本题网络子网重叠，另选未占用子网后验收成功。未提供或声称完成原题证明。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-regularprimes-infinitude-of-irregularprimes/attempt-001（validation-summary.json、final-validation/、static-validation.json、generation*、statement-audit.json）。Docker 清理完成并经 inspect/ps 核实：本题容器 a151fe93f659、ceb7ed87363c、8614bf180c4b，镜像 6a3aa12443d3、e797c846e71b、d8f2959c3fac 及两个实际创建的本题网络均已删除；失败重试网络未创建。保留预存共享依赖镜像/缓存，未触碰其他任务资源，未 prune。见 cleanup.json 和 cleanup.log。"
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "仅标记 statement_status=mismatch，数学文件未修改。目标无限多个非正则素数及 class-group 定义与已知 Jensen 定理一致；错误位于冻结前缀 isRegularPrime_iff_Bernoulli（Target.lean:67-69），遗漏偶数索引限制。p=7,k=3 时 bernoulli' 3=0，故 RHS 为假，与 small_regular_primes 中 7 正则矛盾。证据 StatementProbe.lean 实际编译退出 0：算术反例不含 sorryAx，引用原前缀推出矛盾则含原有 sorryAx，不是可接受任务答案。来源：锁定上游 RegularPrimes.lean；https://mathworld.wolfram.com/RegularPrime.html 明列 B_(2k)；Keith Conrad https://kconrad.math.uconn.edu/blurbs/gradnumthy/fltreg.pdf 第1页确认定义及 7 正则。Wikipedia 403 已记录，替代关键来源已读取。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确命中技能 references/public-lean4-proofs.csv，按技能标记 public_lean4_proof=true；来源 https://github.com/riccardobrasca/KummerCriterion/tree/2a62085d1dd879554ae1c482bfe16ddef6360e47 。无需重新联网确认，未在本题锁定环境编译该公开证明，未将答案放入任务或镜像。见 public-proof-audit.json。"
+    }
+  }
+}

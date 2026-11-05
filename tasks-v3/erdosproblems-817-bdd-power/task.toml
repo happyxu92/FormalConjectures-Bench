@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = false
+public_lean4_proof_status = "searched"
+public_lean4_proof_note = "Exact skill CSV miss. Searched theorem/aliases/authors, upstream main and PRs, Mathlib and public repositories. PRs 2698/3220 retain sorry; Costa Zenodo 22638810 proves the different negative main question, not bdd_power. No complete proof of this target located; see repair-report.json and external evidence."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/817.lean"

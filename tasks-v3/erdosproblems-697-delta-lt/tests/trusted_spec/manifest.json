@@ -1,0 +1,39 @@
+{
+  "task_id": "erdosproblems-697-delta-lt",
+  "target_name": "Erdos697.erdos_697.variants.delta_lt",
+  "universe_params": [],
+  "complete_binders": [
+    "(m : Nat)",
+    "(α : Real)"
+  ],
+  "platform": "x86_64",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "b07857c1a390a907693c80a3800e2d962c73aa426d2e82a8c2e3702f6586f3a5",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "13b3520f15aeb76405180762f5edf9058fffc4466db60cc6408b58fa9b1b6360",
+    "DensityProof.lean": "1c27807daf9412cee418133c333dd4549953aca699d43e889ab47bcc95475d61",
+    "FCBTrustedSpec.ilean": "b8c78e529855eefd429c790569834c4fbd8d8cd89c385923d38214b4a880d6b8",
+    "FCBTrustedSpec.lean": "1191283d13330b55dfbfcc7bbb0ef89b0170b14a0601f5a9e9cf2236fb3c1e70",
+    "FCBTrustedSpec.olean": "6a6a5cf6a4f6bbc5cb5c78a48f3e75149201ececbb7a0495e30ac7ff5909a379",
+    "ProveDensityExists.lean": "814a9b33cf4b93538bc4274d6adf9d76d5b5bc339801b066e90a3e6862c3729c",
+    "generate-spec.py": "dd0c4ce4b78391576c9e40ef37e8fe32e063c6e192031317e4feca9a229e0bc4",
+    "reproduce.sh": "5e78f2d8cadaf333b7cfc2d11e193290bdc606b6f96c840667aee86f8d415544"
+  },
+  "proof_transformation": "Only the proof body of density_exists is replaced by a kernel-checked periodic-set proof. Its original name, complete type and universe parameters, δ definition and target complete type are unchanged; see separate repair-time AuditTypeIdentity.lean. No original temporary target proof is exported.",
+  "generation_options": [
+    "autoImplicit=false",
+    "relaxedAutoImplicit=false",
+    "maxHeartbeats=0",
+    "maxRecDepth=4000"
+  ]
+}

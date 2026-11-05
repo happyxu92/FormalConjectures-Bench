@@ -1,0 +1,24 @@
+audited FCBTrustedSpec.ExpectedType: [Quot.sound, propext, Classical.choice]
+audited Erdos442.Real.maxLogOne: [propext, Quot.sound, Classical.choice]
+audited Erdos442.Set.bddProdUpper: [propext, Quot.sound, Classical.choice]
+audited Erdos442.Set.instFintypeElemProdNatBddProdUpper._proof_1: [propext, Quot.sound, Classical.choice]
+audited Erdos442.Set.instFintypeElemProdNatBddProdUpper._proof_2: [propext, Quot.sound, Classical.choice]
+audited Erdos442.Set.instFintypeElemProdNatBddProdUpper: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0; quantified A and implication stored inside iff
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+False ↔
+  ∀ (A : Set ℕ),
+    Filter.Tendsto
+        (fun x => 1 / Erdos442.Real.maxLogOne (Erdos442.Real.maxLogOne x) * ∑ n ∈ (A ∩ Set.Icc 1 ⌊x⌋₊).toFinset, 1 / ↑n)
+        Filter.atTop Filter.atTop →
+      Filter.Tendsto
+        (fun x =>
+          1 / (∑ n ∈ (A ∩ Set.Icc 1 ⌊x⌋₊).toFinset, 1 / ↑n) ^ 2 *
+            ∑ nm ∈ (Erdos442.Set.bddProdUpper A x).toFinset, 1 / ↑(nm.1.lcm nm.2))
+        Filter.atTop Filter.atTop
+def Erdos442.Real.maxLogOne : ℝ → ℝ :=
+fun x => max (Real.log x) 1
+@[reducible] def Erdos442.Set.bddProdUpper : Set ℕ → ℝ → Set (ℕ × ℕ) :=
+fun A x => {y | y ∈ (A ∩ Set.Icc 1 ⌊x⌋₊) ×ˢ (A ∩ Set.Icc 1 ⌊x⌋₊) ∧ y.1 < y.2}
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

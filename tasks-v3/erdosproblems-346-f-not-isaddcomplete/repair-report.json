@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-346-f-not-isaddcomplete",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 .lake/packages；容器内 ubuntu 搜索已找到 Mathlib 的 Irrational 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；补齐 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 Harbor 镜像构建及容器内同命令均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已运行技能 Unicode 脚本，初次及最终均为 no_issue；原始头通过，改头及缺失 := 负例拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题 golden 隔离生成并审计完整 ExpectedType（B、h、hB；universes=[]），两份预编译可信包、清单及 checker AST/内容一致。最终当前本地 task 的 Harbor Docker 构建成功，/tests 上传包与 /opt 包及本地哈希一致。两入口均因原题 sorry 预期退出1，正式 reward=0；同一子容器对两路径实际函数补测通过：Spec 加载/可信审计、ubuntu 编译、完整类型比较、sorryAx 拒绝、canary，以及冻结/越界/冻结头不变的名称偷换/缓存遮蔽/产物缺失及篡改负例。所有 immutable 哈希未变；未提供原题证明。已核实清理本次3个容器（7d7f9e307d8a、2571e1099160、3b6b41f02382）、2个任务镜像（b8a67fa49ada、dd985f10299d）和2个网络；预先存在的共享依赖镜像保留，无本次资源遗留。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-346-f-not-isaddcomplete/attempt-001（最终验收 final-acceptance/）。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。已核对锁定上游、subsetSums/IsAddComplete 定义及 Graham 1964 原文 pp.1–3 的性质(D)。无限删值的本目标是合理已知变体；n=0 增加零不改变子集和。题目网页 403，但原始论文可读。未修改数学输入。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "按完整 task ID 精确命中技能 public-lean4-proofs.csv，已标记 public_lean4_proof=true；按要求未重新联网确认或在本环境编译公开答案。来源：https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/346.lean#L151。"
+    }
+  }
+}

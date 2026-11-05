@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-agohgiuga-1700-le-digits-length-of-isstronggiuga",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 和隐藏 .lake/packages；在最终 Harbor 子容器以 ubuntu 实测找到 Mathlib 的 Nat.digits 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题没有额外上游 imports；补齐 Dockerfile 最后的 USER ubuntu / RUN lake build +FormalConjecturesBench.Target。当前本地 task 的 Harbor 构建和同一子容器 ubuntu 重建均成功，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行 skill Unicode 脚本，修复前及最终均为 no_issue；定理头、冻结前缀和两份 checker 一致，无需 Unicode 修改。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重新解析 GoldenCheck，已改为提前从本题 golden 隔离提取完整类型并编译固定 Spec：两个参数、无 universes，独立传递公理审计通过；两份可信包与 checker 内容/AST 一致。最终本地 Harbor 镜像 1db2031dfb36 的 /tests 上传包、/opt 包及 golden 哈希均与本地一致。两真实入口因原题 sorry 按预期退出 1、reward=0；同一子容器分别以正式位置和 ubuntu 本地位置调用实际函数，覆盖可信加载/审计、ubuntu 编译、完整类型、公理、canary、冻结/越界、名称语义偷换、缓存遮蔽及产物缺失/篡改负例，全部符合预期。15 项 immutable 哈希不变；保留原正常 import 规则及安全检查。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-agohgiuga-1700-le-digits-length-of-isstronggiuga/attempt-001/，详见 final-verification.json、validation-coverage.json、final-acceptance/。Docker 清理已完成：本题 spec 容器及 Harbor 后缀 17ac/17ad 容器均已 stop/rm；本次镜像 aa42dd126496、1db2031dfb36 及两个独占网络均移除并核实不存在，保留预存共享依赖镜像。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已核对锁定上游、完整前缀与 Bedocchi 原论文 pp.229–230、236。IsStrongGiuga 是满足原幂和同余的合数；n < 10^1700 时必为素数，故反例至少有 1701 位，符合目标 length > 1700。未发现明显数学错误；metadata 标 consistent，未修改任何陈述或定义。详见证据 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 ID 精确匹配 skill CSV 未命中。多组关键词检索并阅读上游、proof 链接 fork、GitHub 讨论、Mathlib、SamuelSchlesinger 项目及公开证明集合。未找到本目标完整合规 Lean4 证明；较强 BorweinBound 候选仍有 sorry/native_decide 依赖，其他已公开证明仅覆盖结构定理或 9 个素因子。关键来源初始访问限制已通过直接下载恢复；无待核实的有效证明线索。metadata 标 public_lean4_proof=false、status=searched；不是断言证明不存在。详见 public-proof-review.json。"
+    }
+  }
+}

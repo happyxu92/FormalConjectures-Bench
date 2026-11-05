@@ -70,6 +70,13 @@ RUN mkdir -p /opt/formal-conjectures-bench-checker \
   && chown -R ubuntu:ubuntu /app/FormalConjecturesBench \
   && chown -h ubuntu:ubuntu /app/.lake/packages
 
+# Copy the frozen task-specific wrapper explicitly into the installed checker.
+COPY data/checker/GoldenCheck.lean /opt/formal-conjectures-bench-checker/GoldenCheck.lean
+
 WORKDIR /app
 ENV HOME=/home/ubuntu
 USER ubuntu
+
+# Exercise the same build as the checker without granting write access to the
+# trusted dependency. Missing precompiled imports must fail the image build.
+RUN lake build +FormalConjecturesBench.Target

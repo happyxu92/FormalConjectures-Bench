@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-283-graham",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式包含 /app、/opt/formal-conjectures 及其 .lake/packages。最终 Harbor 容器以 ubuntu 实测找到 mathlib 的 Nimber.add_comm，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 imports；保留 ProblemImports 预编译，补齐 Dockerfile 末尾 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的最终 Harbor 镜像构建及容器内 ubuntu 构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 check_unicode_header.py，修复前后均为 no_issue、退出码 0；两份 EXPECTED_HEADER、冻结哈希及原始 Target 均未改变。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题固定 golden 隔离 Submission，在匹配 Lean 4.27.0/x86_64 Docker 中提取完整 Condition Polynomial.X 类型（无外层参数、universes=[]），生成并独立编译审计 ExpectedType 及 Condition 的传递公理；临时目标未导出。两份可信包、checker 内容/AST 一致，清单固定且只加载预编译产物，无运行时生成或回退。最终从当前本地 task 经 Harbor 构建镜像 sha256:8b8b266997443719797df2aae3eddaffb16036052e087e33ca99c6d2055399af；核对 /tests 上传包、/opt 本地包及 /app 共 38 个文件哈希。正式、本地入口均 exit=1、reward=0，原因是原题 sorry 的预期源码拒绝；同一最终子容器两套包各 29 项实际函数补测通过，覆盖可信审计、ubuntu 编译、完整类型比较、目标公理、sorry canary、冻结/越界/名称偷换/缓存遮蔽/缺失及篡改拒绝。原安全检查和普通 import 规则保留，未扩展外部模块白名单或 initializer 沙箱。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-283-graham/attempt-001。Docker 清理已完成并逐项 inspect 核实不存在：3 个本题容器 53e3e384724d/d174178e12c5/e0de66a12ebf、2 个本题镜像 f779563e8fa7/8b8b26699744 及 2 个本题网络 feefc421236c/a7b6ff362582；预先存在的匹配依赖镜像及其他资源保留。cleanup.exit=0，无未清理的本题资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核对锁定上游 283.lean、完整 Condition 定义及 Graham 1963 A theorem on partitions 原文 p.435/Theorem 1：所有大于 77 的整数可分拆为不同正整数且倒数和为 1，蕴含本题 p=X 的最终整数变体。Fin(k+1) 的零哨兵不参与 Icc 1 (last k) 求和，StrictMono 保证正且不同，倒数为有理数；未发现明显错误。题目网站 403，但原论文及锁定上游可访问。仅标注 metadata，未改数学输入。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID erdosproblems-283-graham 精确命中技能 references/public-lean4-proofs.csv，已标记 public_lean4_proof=true。来源为 anatoliiohorodnyk/lean-fc-proofs 的 T_Erdos283_erdos_283_variants_graham.lean#L383，提交 5da9642575b26c2c816a49bcb56b33fed5456619 及 3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd；完整 URLs 已保存 task.toml 和证据 public-csv-match.json。按技能无需重新联网，未在本题环境编译或打包公开答案。"
+    }
+  }
+}

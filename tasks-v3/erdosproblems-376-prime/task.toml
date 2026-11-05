@@ -9,6 +9,11 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_urls = ["https://github.com/lyfar/egrs75-lean/tree/a57f16fed45f21262dd990085510091624582ffc"]
+public_lean4_proof_note = "CSV exact ID absent. Promising public EGRS75 Lean4 proof requires distinct primes; this task also permits p=q. Full-target bridge and transitive axiom audit remain unverified; GitHub code/branches/forks/actions API queries were rate-limited (403). No claim that a public proof does not exist."
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/376.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

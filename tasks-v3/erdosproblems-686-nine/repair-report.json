@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-686-nine",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令显式补入 /opt/formal-conjectures/.lake/packages；最终 Harbor 容器以 ubuntu 实测找到 Mathlib 的 IsSquare，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题没有额外上游 import；补齐 Dockerfile 末尾 USER ubuntu 下的 RUN lake build +FormalConjecturesBench.Target。当前本地 task 两次 Harbor 构建成功，最终容器 ubuntu 构建退出码 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本，case=no_issue；原头通过，修改头和移除 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题不可变 golden 隔离提取完整类型及 universes，预编译并审计 ExpectedType 的 3172 个传递依赖；外层参数和 universes 均为空，仅允许标准公理。两份 checker/Spec 包一致，固定预编译加载，不运行时生成或重新解析命题；保留源码限制、冻结检查、公理审计和 canary。最终本地 Harbor 镜像 ef6db3d1c322 的 /tests 上传包及 /opt 包与本地逐文件哈希一致。两入口退出 1、reward=0，原因仅原始 sorry；同一子容器分别通过正式/本地 checker 实际函数补测：可信审计、ubuntu 编译、完整类型比较、公理审计拒绝 sorryAx、canary，以及冻结/越界/Finset.Icc 名称偷换/缓存遮蔽/产物缺失与篡改负例。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-686-nine/attempt-001。Docker 已清理：容器 65cc6090210e、d7811043f772、d0a3389c0606，镜像 631c4559f9ac、ef6db3d1c322 及其本题 tags、两个本题网络均已删除并核实；未删除预存基础镜像或共享缓存。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 consistent；与锁定上游 nine 变体一致。k=3,n=11,m=25 满足边界，26*27*28=9*(12*13*14)，证明该具体存在命题数学上成立；并非声称解决所有整数的原问题。原题网站直接访问 403，已读取锁定 GitHub 源并独立验证整数恒等式。数学陈述、定义、公开 Target、所有 golden、GoldenCheck 及冻结哈希均未改。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "按完整 ID 精确命中技能 CSV，依要求标记 public_lean4_proof=true，无需再次联网核实。来源：https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/686.lean#L104 。未把公开答案加入任务，未声称在锁定环境编译该公开证明。"
+    }
+  }
+}

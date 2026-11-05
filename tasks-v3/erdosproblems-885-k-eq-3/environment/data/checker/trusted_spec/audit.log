@@ -1,0 +1,10 @@
+FCBTrustedSpec.lean:46:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:57:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos885.factorDifferenceSet: [propext, Classical.choice, Quot.sound]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ Ns, (∀ n ∈ Ns, 1 ≤ n) ∧ Ns.card = 3 ∧ (⋂ n ∈ Ns, Erdos885.factorDifferenceSet n).ncard ≥ 3
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

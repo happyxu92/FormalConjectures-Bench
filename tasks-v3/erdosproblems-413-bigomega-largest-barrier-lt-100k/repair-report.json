@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-413-bigomega-largest-barrier-lt-100k",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 packages；在实际镜像以 ubuntu 搜到 Mathlib 的 cardFactors 定义，退出 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 Dockerfile 缺最终普通用户构建验证；Target 无额外上游 import，已以 USER ubuntu / RUN lake build +FormalConjecturesBench.Target 结尾；最终本地 Harbor 构建及同容器 ubuntu 重建均通过。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际执行技能 Unicode 脚本及终检，均为 no_issue；原始头通过、改头和移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题可信 golden 隔离候选，用 Lean parser/elaborator 提取完整类型，预编译并审计 ExpectedType（0 外层参数、0 universes，仅允许标准公理）；两份可信包一致并固定哈希/加载来源，运行时不重新生成。两份 checker AST/内容、所有 immutable 哈希复核通过。最终本地 Harbor force_build（g61-413b）核对 /tests 上传与 /opt 包哈希；两入口原 sorry 均预期拒绝（exit 1/reward 0）。同一子容器两种入口路径补测 Spec/公理审计、ubuntu 编译、完整类型比较、目标 sorryAx、canary，以及冻结、越界、语义偷换、缓存遮蔽、产物缺失/篡改，全部通过。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-413-bigomega-largest-barrier-lt-100k/attempt-001；已 stop/rm 本题 3 个容器，删除本题 a/b 两个镜像 tag 及其 2 个 image、两个专属网络，逐项核实不存在；保留预存共享依赖镜像。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已标 statement_status=consistent。核对完整 IsBarrier 定义、Omega 的重数计数及 0/1 边界、原始上游、Erdos 1979-22 p.68 和原题网页；独立精确筛法确认 <100000 的最大 barrier 为 99840。这是合理的有限 Selfridge 变体，不是开放的无限性命题；未修改陈述、定义或 golden。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "unknown/blocked：技能 CSV 按完整 ID 精确未命中；多组检索覆盖完整定理名/旧名、99840/Selfridge/barrier、上游/Mathlib/GitHub 分支与 PR、原题论坛。实际读取 main、PR 2662/3184 的 fork Lean 源码，目标仍为 sorry，仅改 formally solved 标签，不构成证明。其他线索涉及不同变体或 Rust 数值计算。GitHub 全局代码搜索 401、审计站点 DNS 失败、计算仓库 404，故不声称不存在公开证明；详见 research-audit.json。"
+    }
+  }
+}

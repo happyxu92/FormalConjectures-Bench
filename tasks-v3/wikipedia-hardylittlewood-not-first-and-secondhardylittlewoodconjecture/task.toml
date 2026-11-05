@@ -8,6 +8,11 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "suspect"
+statement_status_note = "The pinned first-conjecture predicate gives only an IsBigO upper bound and allows repeated offsets; it does not supply the prime-tuple occurrence needed by Richards. See upstream issue 4996 and PR 5835. These are concrete definition/antecedent concerns, not an unconditional disproof of the retained implication. Mathematical inputs are unchanged."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact full task ID missed the skill CSV. Multi-query search, pinned/current upstream, issue/PR search and candidate diffs reviewed; PR 2992 only changes an attribute and retains sorry, so is not a proof. GitHub code/fork search and mathlib API coverage were rate-limited (403); no eligible complete proof confirmed, not a verified nonexistence claim. Evidence: repair-report.json and external attempt-001/research-review.json."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/Wikipedia/HardyLittlewood.lean"

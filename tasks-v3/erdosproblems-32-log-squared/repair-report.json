@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-32-log-squared",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式加入 .lake/packages；最终 Harbor 容器中命令实际搜到 Mathlib 的 IsBigOWith，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import；Dockerfile 现以 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target 结尾。当前本地任务 Harbor 构建及最终同一容器 ubuntu 构建均成功；原始 sorry 警告不表示依赖故障。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本及最终复验，均为 no_issue；原始头、冻结前缀和 := 边界检查通过，无需修改头。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题不可变 golden 隔离 Submission 提取完整类型和 universes=[]，预编译并审计 ExpectedType 及原前缀定义；两份固定包、清单 pin 和 checker 内容/AST 一致。最终本地 Harbor trial erdosproblems-32-log-squared-g61-a001-f4b2-final 已核对 /tests 上传包与 /opt 本地包全部哈希；两入口均按预期拒绝原题 sorry（exit 1，reward 0）。同一子容器对两包实际函数补测通过：可信类型审计、ubuntu uid 1000 编译、完整类型比较、目标 sorryAx 拒绝、canary、冻结/越界/语义偷换/缓存遮蔽/缺失和篡改负例，且不运行时生成或回退 Spec。所有 immutable 哈希不变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-32-log-squared/attempt-001；详见 commands.md、final-review.json、validation-summary.json。Docker 清理已核实：本题 f4b2 的 3 个容器、3 个自建镜像（08e08f5e6491、96dbe9cd148d、c66dbfb02030）、2 个网络均已移除；共享预编译镜像保留，无残留本题资源，见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata 标为 consistent。目标是已知 O((log N)^2) 变体，不是开放 little-o 问题。完整定义及量词、自然数区间、计数强制转换和渐近边界与 Erdős 1954 Theorem 1（pp.847–849）及 Dai–Pan 2014 Introduction（p.209）一致；未发现明显错误，数学输入未改。来源和核对见证据 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。已用 11 组题号、完整定理名、定义、作者/论文、GitHub/Mathlib 关键词检索并读取候选来源；当前上游准确目标仍为 sorry，已核查线索未给出完整 Lean4 证明。但 Erdős Problems 页面/论坛返回 403，GitHub 代码/仓库树搜索受限，关键覆盖未完成；metadata 如实标 unknown/blocked，不声称已确认不存在。详见证据 public-proof-research.json、research-fetch-results.json。"
+    }
+  }
+}

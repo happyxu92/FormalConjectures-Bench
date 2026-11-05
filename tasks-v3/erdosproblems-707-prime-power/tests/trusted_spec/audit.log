@@ -1,0 +1,6 @@
+complete outer binder count: 0
+universe parameters: []
+ExpectedType transitive axioms: [propext, Quot.sound, Classical.choice]
+def FCBTrustedSpec.ExpectedType : Prop :=
+(∀ (A : Set ℕ), A.Finite → IsSidon A → ∃ B p, IsPrimePow p ∧ A ⊆ B ∧ IsPerfectDifferenceSet B (p ^ 2 + p + 1)) ↔ False
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

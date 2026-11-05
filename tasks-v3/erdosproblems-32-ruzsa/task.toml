@@ -21,6 +21,12 @@ difficulty_explanation = "The agent must construct a Lean 4 proof of a research-
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
 verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
 
+statement_status = "consistent"
+statement_note = "Ruzsa, On the additive completion of primes, Theorem 2 (author DVI, users.renyi.hu/~ruzsa/cikkek/comprim.dvi): eventual full coverage implies the liminf lower bound exp(Euler-Mascheroni). Allowing 0 in A is harmless by translation; mathematical inputs remain unchanged."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID absent from skill CSV. Multi-query searches, upstream source and original PR, Mathlib, author sources and proof collections found no verified matching complete Lean4 proof. GitHub code/fork APIs and the problem forum were blocked; not a claim of nonexistence."
+
 [verifier]
 timeout_sec = 7200.0
 

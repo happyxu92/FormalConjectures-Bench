@@ -1,0 +1,9 @@
+audited ExpectedType and all transitive references: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 3 (q, StrictMono q, prime/convexity hypothesis)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (q : ℕ → ℕ),
+  StrictMono q →
+    (∀ (n : ℕ), Nat.Prime (q n) ∧ q (n + 2) - q (n + 1) ≥ q (n + 1) - q n) →
+      Filter.liminf (fun n => ↑(q n) / ↑n ^ 2) Filter.atTop > 0.352
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

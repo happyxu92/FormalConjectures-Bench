@@ -19,7 +19,13 @@ benchmark_bucket = "informal_proof"
 oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
-verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
+verification_explanation = "The verifier builds the Lean project as ubuntu with fixed trusted imports, checks the theorem header and frozen prefix, compares the complete theorem type against a precompiled trusted Spec, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
+statement_status = "consistent"
+statement_note = "Necessary-condition variant. The non-pseudoperfect number 70 has sigma(70)=144>140, forcing C>2. No mathematical statement or definition was changed."
+public_lean4_proof = true
+public_lean4_proof_status = "catalog_match"
+public_lean4_proof_urls = ["https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/825.lean#L54", "https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos825_erdos_825_variants_necessary_cond.lean#L63"]
+public_lean4_proof_note = "Exact full task ID matched lean-task-repair/references/public-lean4-proofs.csv; accepted per skill without rechecking online. Public proof was not bundled or compiled in the pinned task environment."
 
 [verifier]
 timeout_sec = 7200.0

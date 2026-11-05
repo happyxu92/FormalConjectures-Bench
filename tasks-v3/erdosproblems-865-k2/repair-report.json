@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-865-k2",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 的搜索命令已显式包含 /app、/opt/formal-conjectures 和其 .lake/packages；最终 Harbor 容器中以 ubuntu 实际检索到 Mathlib 的 card_empty，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import，无需追加模块。补齐 Dockerfile 最后的 USER ubuntu / RUN lake build +FormalConjecturesBench.Target；当前本地 task 的最终 Harbor 构建成功，同容器 ubuntu 复验退出码 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本并最终复验，均为 no_issue；原始头通过，修改头与移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题未改动 golden、隔离 Submission 提前提取并预编译 ExpectedType；保留 N、A、包含和基数假设四个外层参数，universes=[]，传递公理审计通过。两份可信包及 checker 内容/AST 一致，运行时仅加载固定产物并比较完整类型。最终本地 Harbor trial erdosproblems-865-k2-g61-a001-865b-final 镜像 sha256:c9a9a61757313766884155be96e246b3e6d0d2f723f48e5c17b168494de349d3；/tests 上传包、/opt 包与本地哈希一致。正式及本地入口均因原题 sorry 预期退出 1，reward=0；同容器两种入口环境各 30 项实际函数补测通过，覆盖 Spec 审计、ubuntu 编译、完整类型、公理、canary、冻结/越界/语义偷换/缓存遮蔽/缺失/篡改。合法 Icc 名称偷换可通过旧 GoldenCheck，但被固定完整类型拒绝。所有 15 个 immutable 哈希未变，无验收缺口；未声称原题证明通过。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-865-k2/attempt-001。Docker 已停止并移除本题 3 个容器（b6c525803fdb、bbae10165d05、a685b94cd337），移除两次 Harbor 镜像（3e373cd98836、c9a9a6175731）及 2 个本题网络，逐一 inspect 确认不存在；预存共享基镜像保留。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。已读取锁定上游 865.lean 及本题完整前缀；目标是注释明确的 folklore k=2 变体，不是三元素主猜想。最大元 m 的互补配对给出无解配置 card A≤floor(m/2)+1≤N+1，验证 N+2 阈值、正整数区间和不同性无明显错误。题目网页/论坛 HTTP 403 已记录，不影响该独立数学核查。数学陈述、定义、Target、golden、GoldenCheck 均未修改。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "按完整 ID erdosproblems-865-k2 精确命中技能 public-lean4-proofs.csv，已标记 public_lean4_proof=true。来源：https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/865.lean#L67 。依据技能集合确认公开证明，未将答案加入任务，也未声称已在本题环境编译该公开证明。"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+FCBTrustedSpec.lean:42:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:52:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ c,
+  ∃ (_ : 0 < c),
+    ∀ᶠ (N : ℕ) in Filter.atTop,
+      ∀ (A : Finset ℕ), 0 ∉ A → A.card = N → ∃ θ, ∑ n ∈ A, Real.cos (↑n * θ) < -c * ↑N ^ (1 / 7)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

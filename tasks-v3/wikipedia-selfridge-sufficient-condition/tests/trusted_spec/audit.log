@@ -1,0 +1,13 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Selfridge.fermatFactors: [propext, Quot.sound, Classical.choice]
+complete binder: n : ℕ
+complete binder: hn : Prime n.fermatNumber
+complete binder: hn' : n ≥ 5
+complete conclusion: ¬Monotone Selfridge.fermatFactors
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ), Prime n.fermatNumber → n ≥ 5 → ¬Monotone Selfridge.fermatFactors
+def Selfridge.fermatFactors : ℕ → ℕ :=
+fun n => n.fermatNumber.primeFactors.card
+'Selfridge.fermatFactors' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

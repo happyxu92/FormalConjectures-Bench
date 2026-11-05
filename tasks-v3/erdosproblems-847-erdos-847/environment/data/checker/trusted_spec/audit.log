@@ -1,0 +1,7 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos847.HasFew3APs: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+False ↔ ∀ (A : Set ℕ), Infinite ↑A → Erdos847.HasFew3APs A → ∃ n S, (∀ (i : Fin n), ThreeAPFree (S i)) ∧ A = ⋃ i, S i
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

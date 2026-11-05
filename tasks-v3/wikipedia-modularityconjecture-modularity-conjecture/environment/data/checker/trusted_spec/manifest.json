@@ -1,0 +1,51 @@
+{
+  "task_id": "wikipedia-modularityconjecture-modularity-conjecture",
+  "target_name": "ModularityConjecture.modularity_conjecture",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "full_binders": [
+    {
+      "name": "E",
+      "kind": "explicit",
+      "type": "WeierstrassCurve ℚ"
+    },
+    {
+      "name": "inst",
+      "kind": "instImplicit",
+      "type": "E.IsElliptic"
+    }
+  ],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "8ec1eabc3124d972b44f51196050ee620a96df6c30d62f1ef96b0e387d8b8b0c",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "e6765cb290a5576cdbad5be978a9f3da1b5ac59b1f0dbbb7b8a92018429f3eff",
+    "FCBTrustedSpec.ilean": "b589a6658b48f5596c02cf0f6e1f96882c630c9341efd5eb8fdd489a8f6e10fa",
+    "FCBTrustedSpec.lean": "a0ab94730c4da12e0197b75950e6337f47be433a41c3017eec373f501c0e4e83",
+    "FCBTrustedSpec.olean": "708bbaeddd72794394d8e20ff7c52b1a9764f2271b6a09072e5c1ab6566c2dc4",
+    "generate.py": "a3d656a4bf99fd084612941936f0927e7ca1309973695d6d225b7883b837fd5a",
+    "reproduce.sh": "ecd03ffe17636f9dce460fe7fe46821db02effc1ee3dc633e9505e3b5ef92d9e"
+  },
+  "generation_image": "sha256:e21dc171550d4c49aceba963047d00d1a350ce711019cbd9cb32c4770c7a39df",
+  "generation_command": "bash /tmp/repair-bundle/trusted_spec/reproduce.sh (isolated original golden inputs; no candidate import or Lake configuration)",
+  "audit": "Independent compiled import verified Prop-valued ExpectedType, ordered full binders E and IsElliptic instance, no universes, absence of temporary target/children; transitive axioms of ExpectedType and all seven prefix definitions restricted to standard allowed axioms."
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-377-ae",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；Harbor 子容器中以 ubuntu 执行并找到 Mathlib 的 minFac 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import；原 Dockerfile 缺少末尾普通用户构建验证，已追加 USER ubuntu 后的 RUN lake build +FormalConjecturesBench.Target。本地 Harbor 实际构建成功，同一子容器 ubuntu 复测退出码 0；未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "实际运行技能脚本，case=unicode_repaired：修复两份 EXPECTED_HEADER 中 𝓝 的代理对编码；原始头通过、改头及删除 := 均拒绝，最终复验 no_issue。公开 Target、golden 和冻结基线未变。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离候选、用锁定 Lean 4.27.0 / x86_64 依赖独立提取完整类型：两个外层显式参数、universes=[]。预编译 ExpectedType 及前缀定义传递公理审计通过；两份可信包及 checker 内容/AST 相同。固定 manifest 哈希与编译产物来源；运行时不生成 Spec、不重解析命题、不回退编译。当前本地 task 经 Harbor Docker force_build 验收，镜像 sha256:7a890a4e35df9ee4134e6dd6179fcc6927cdeec1a3ac27a249f6da3f757c8533。上传 /tests 与预装 /opt 包、checker、golden 全部匹配本地哈希。正式入口和 ubuntu check.sh 均因原始 sorry 预期退出 1，reward=0；同一子容器分别调用两份实际函数补测通过：Spec 加载/可信审计、uid=1000 编译、完整类型比较、目标 sorryAx 拒绝、sorry canary、冻结/越界/名称偷换/缓存遮蔽/缺失与篡改产物负例。名称偷换保持冻结文字不变、可编译且由完整类型比较实际拒绝。保留原安全规则及正常 imports，不扩展通用模块白名单或 initializer 沙箱。所有 immutable 哈希核对通过。原题未证明。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-377-ae/attempt-001（generation、delivery-hashes、validation-summary、两份 validation 日志、static-validation）。Docker 清理已完成并核实：stop/rm 两容器 8e887005d892、93794ea9c9f0，删除本题新建镜像 7a890a4e35df 及网络 5b00ce2405f7；镜像 ID/tag、容器及网络均已不存在。预存共享镜像 e21dc171550d 和缓存保留，未动其他 agent 资源。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "已仅标记 statement_status=mismatch，数学输入不变。cofinite 在 ℕ 上等于 atTop，原结论要求 f(n) 通常收敛而非密度一收敛。EGRS75 原论文 p.84 Fact/Theorem 1（https://renyi.hu/~p_erdos/1975-27.pdf）取 p=3,q=5,A=1,B=2，得无穷多个 n 使 f(n)≥8/15；另一方面对数凹性给 γ₀≤(3/4)log 2<21/40<8/15，构成矛盾。p.83、89 实际只主张密度一；上游修正 PR 5792 亦印证。原论文已下载并检查图像以确认 OCR 遗失的 ≥ 与 ≤。详见证据 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "unknown/blocked。完整 ID 精确匹配技能 CSV 未命中；已用定理名、定义名、题号、作者和等价密度表述进行多组检索，读取上游 pinned/main/history、相关 PR 实际补丁与 Lean 源码、Mathlib 和 EGRS75 相关 Lean 项目。PR 2748/2757/3278 仅修改属性，保留 sorry；main 改为另一密度一陈述但仍 sorry；lyfar/egrs75-lean 是两素数无穷性定理，非本目标。未验证到符合本题的公开完整证明；GitHub 全局代码搜索须登录、commit API 限流，不能宣称充分排除所有公开证明。元数据标记 unknown/blocked；详见 public-csv-match.json、public-proof-review.json、public-fetch.json。"
+    }
+  }
+}

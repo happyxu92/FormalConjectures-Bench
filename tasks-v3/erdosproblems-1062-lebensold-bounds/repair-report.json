@@ -4,32 +4,32 @@
     "instruction_search": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Added explicit /opt/formal-conjectures/.lake/packages alongside /app and /opt/formal-conjectures. Exact command exercised as ubuntu; found Mathlib theorem card_powerset in package source. See search-path.log and delivery.json."
+      "note": "保留已有显式 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages 搜索命令；在匹配容器及最终 Harbor 容器中以 ubuntu 实际搜索到 Mathlib card_powerset，退出0。"
     },
     "lean_dependency": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Explicitly precompile extra import Mathlib.Topology.Basic; Dockerfile ends with USER ubuntu and RUN lake build +FormalConjecturesBench.Target. Current local-task Harbor image built successfully and same ubuntu build returned 0; image history and ubuntu-lake-build.log retained."
+      "note": "核对实际额外 import Mathlib.Topology.Basic 已预编译；保留 Dockerfile 最终 USER ubuntu / RUN lake build +FormalConjecturesBench.Target。当前本地 task 经 Harbor force_build 构建，最终同一容器 ubuntu Target 构建退出0。"
     },
     "unicode_header": {
       "has_issue": false,
       "repair_status": "not_needed",
-      "note": "Skill Unicode script run before semantic changes and again at final delivery; both no_issue, original header accepted, changed header/missing := rejected. No surrogate encoding defect."
+      "note": "按技能运行 Unicode 脚本并最终复验，均为 no_issue；原头通过、改头及移除 := 拒绝。"
     },
     "semantic_checker": {
       "has_issue": true,
       "repair_status": "repaired",
-      "note": "Replaced candidate-environment GoldenCheck parsing with repair-time parser/elaborator extraction of full type into precompiled FCBTrustedSpec.ExpectedType; target universes []. Independent transitive audit of ExpectedType, ForkFree and f allows only standard axioms, temporary target absent. Both packages/checkers identical; locked Spec/toolchain/dependency paths precede candidate modules and caches; normal import policy retained. Manifest SHA256 35a5d40a36a3f755079684c364985de5ac6dd6ef7a2e8120878c28f4e86dcdf2. Current local Harbor image sha256:64f39b99b3260f0b9b4c042bf4a323300e3fccb40f09cfd6e12aaaab175b6cf4. Official /tests and ubuntu /app/check.sh each exit1/reward0 solely for original sorry; direct actual-function suites pass for both /tests and /opt packages: load/audit, ubuntu compilation, full type comparison, sorryAx rejection/canary, legal helpers, frozen/outside sources, semantic LE-instance mismatch, cache/environment shadowing and missing/corrupt package rejection without regeneration. No proof claimed. All immutable-before hashes unchanged. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1062-lebensold-bounds (delivery.json, static-final.json, validation-*.json/log, spec-generation-final.log, Harbor records). Docker cleanup verified: removed own containers a3a482f53121 (Spec) and bf34976d9290 (Harbor), own image 64f39b99b326/tag erdosproblems-1062-lebensold-bounds-pi-e92b61__env-main:latest, and own network eec9b814cda6. Pre-existing shared base image retained; other resources/cache untouched. Full IDs and commands in cleanup.json."
+      "note": "保留并独立复验已有修复：从本题可信 golden 移除 Submission import，在匹配 Docker 内重新 parser/elaborator 提取完整类型及 universe 参数[]；重生成源码/olean/ilean 与两份交付包逐字节一致，ExpectedType/ForkFree/f 传递公理审计通过。两份 checker 内容/AST、可信包及全部15项固定 immutable 哈希一致；原源码规则、公理审计和 canary 保留，无通用外部模块白名单或 initializer 沙箱。最终当前本地 task 的 Harbor 镜像 e49fdc3ce6c3cd5c8fb5c3ac2bfd96c628f721c53694720bc29722e89f612594；上传 /tests 与安装 /opt 包均核对本地哈希。正式入口和 ubuntu check.sh 均退出1/reward0，仅因原始 sorry；同一最终子容器两套实际函数补测均退出0，覆盖 Spec加载/可信审计、ubuntu编译、完整类型比较、sorryAx审计及canary、冻结/越界/语义LE实例偷换/模块缓存遮蔽/产物缺失及篡改拒绝且不运行时生成。未声称原题证明通过。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-1062-lebensold-bounds/attempt-001（commands.md、generation.log、spec-reproduction.json、harbor/、validation-*.json/log、static-final.json）。Docker 清理已核实：本次3个容器75acb9dff2f4/e8b73fd43a06/a4af524cc285、2个镜像32e1518f597b/e49fdc3ce6c3及2个本题9c7d网络均已移除；预先存在的共享依赖镜像保留，未触及其他资源。完整ID、命令及不存在验证见cleanup.json。"
     },
     "statement_fidelity": {
       "has_issue": false,
       "repair_status": "not_needed",
-      "note": "Marked consistent. Full ForkFree/f and eventual inequalities agree with Lebensold DOI10.1002/sapm1977563291 publisher-deposited Crossref abstract and current Erdős1062 LaTeX. Finite positive interval/max-cardinality definition, natural-domain eventuality, casts, constants and directions inspected; no obvious error. All mathematical inputs preserved. Direct publisher full text blocked; see research-review.json."
+      "note": "保持 metadata statement_status=consistent。完整核对 ForkFree、有限正整数区间、Nat.findGreatest 最大基数、自然数最终性、实数转换、常数和两个≤方向，未发现明显数学错误；与 Lebensold DOI10.1002/sapm1977563291 的出版社摘要及 Erdős1062 完整 LaTeX 一致。出版社全文403，但上述原始摘要和题目源可读；数学输入均未修改。见 research-review.json。"
     },
     "public_lean4_proof": {
       "has_issue": null,
       "repair_status": "not_repaired",
-      "note": "Marked unknown/blocked. Exact ID absent from public-lean4-proofs.csv; lower-bound row is another target. Fresh upstream, PR2499/2794/3310 raw Lean (still sorry), Conjectures.io 74209-line parts.ii submission, forums, contribution and proof repository trees inspected; no complete exact numerical bracket proof established. General search authentication/challenges, unusable Bing results and later GitHub rate limits prevent a definitive broader search; remaining weak leads and exclusions documented in /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261102-pi/tasks/erdosproblems-1062-lebensold-bounds/research-review.json. No public answer copied into task."
+      "note": "完整 task ID 精确匹配技能 CSV 未命中，附近 lower_bound 非本题。已进行12组不同关键词及GitHub/Mathlib检索，重读当前上游和PR2499/2794/3310原始Lean（本目标仍sorry）；下载并核对Conjectures.io 74209行源码，其终点为parts.ii而非本题数值双界。Awards PR883仅为2n/3下界。未确立本题公开完整证明；GitHub代码/API限流及LeanGenius实质内容不可访问，故保留 public_lean4_proof=unknown/status=blocked，不断言不存在。来源、候选排除、未核实线索及访问限制见本次证据 research-review.json、research/fetch-results.json、public-csv-match.json。"
     }
   }
 }

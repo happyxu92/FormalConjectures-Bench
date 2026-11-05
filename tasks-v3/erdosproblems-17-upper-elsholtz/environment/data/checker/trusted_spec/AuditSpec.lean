@@ -15,5 +15,8 @@ run_cmd do
         throwError "untrusted axiom {ax} in {name}"
     logInfo m!"audited {name}: {axioms}"
   logInfo m!"universe parameters: {info.levelParams}"
+-- Print the stored value with every binder/coercion/instance visible, rather
+-- than only the pretty-printed proposition or the type `Prop` of its wrapper.
+set_option pp.all true in
 #print FCBTrustedSpec.ExpectedType
 #print axioms FCBTrustedSpec.ExpectedType

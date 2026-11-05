@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-selfridge-sufficient-condition",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Explicitly added /opt/formal-conjectures/.lake/packages. Final Harbor ubuntu search found Mathlib/NumberTheory/Fermat.lean:def fermatNumber; exit 0."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports. Added final USER ubuntu RUN lake build +FormalConjecturesBench.Target; final local Harbor build and same-container ubuntu build passed. Original Target remains unchanged."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran skill check_unicode_header.py: no_issue; original header accepted and altered header/missing := rejected. No header or baseline changes."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Golden-only Spec compiled/audited in matching Lean 4.27.0 x86_64 Docker; complete n, hn, hn' binders, no universes; ExpectedType/fermatFactors transitive axioms allowed. Both packages and checker AST/content identical; immutable hashes unchanged. Fixed artifact/hash/version/dependency loading, no runtime generation or candidate cache precedence. Final current-task Harbor sc71-final built locally; uploaded /tests and /opt hashes matched. Both entries reject original sorry (exit 1, reward 0), not an implementation error. Same-container actual-function tests passed through both packages: trusted audit, uid1000 compilation, complete type, sorryAx rejection, canary, frozen/out-of-tree/source-policy, unchanged-text Prime-shadow type mismatch, cache/environment shadowing, missing/tampered artifacts with no regeneration. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-selfridge-sufficient-condition/attempt-001/validation-coverage.json, delivery-hashes.json, generation.log, harbor-image-history.txt. Docker cleanup verified: removed both sc71/sc71-final Harbor containers, spec-g61-sc71 container, both task image tags/IDs and both task networks; pre-existing shared dependency image retained."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent. Target.lean:124,131,143-145 matches pinned Selfridge sufficient condition: F_5=641*6700417 has two distinct prime factors, a prime F_n with n>=5 has one, contradicting Monotone. Upstream pinned source and MathWorld FermatNumber equation (12) checked; Wikipedia/OEIS direct access 403 recorded. No mathematical changes."
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Exact task-ID match in skill references/public-lean4-proofs.csv; public_lean4_proof=true. Source https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/Wikipedia/Selfridge.lean#L147 . Accepted per requested CSV rule, not re-fetched or compiled; no answer added to task."
+    }
+  }
+}

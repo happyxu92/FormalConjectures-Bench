@@ -1,0 +1,6 @@
+audited ExpectedType and all transitive dependencies: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0; full existential proposition retained
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ C > 0, Infinite ↑{n | 4 ≤ {d ∈ Finset.Ioo ⌊√↑n⌋₊ ⌈√↑n + C * ↑n ^ (1 / 4)⌉₊ | d ∣ n}.card}
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

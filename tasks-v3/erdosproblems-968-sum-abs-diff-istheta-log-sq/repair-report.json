@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-968-sum-abs-diff-istheta-log-sq",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式包含 /app、上游和 .lake/packages；最终 Harbor 容器中检索 primeCounting' 成功，退出码0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import；原 Dockerfile 缺少最终普通用户依赖验证，已以 USER ubuntu 的 RUN lake build +FormalConjecturesBench.Target 结尾。当前本地 Harbor 构建成功，容器内 ubuntu 重建退出码0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本并复验：case=no_issue，两份 checker 一致，原始头通过，变更头和移除赋值被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已替换候选加载后解析 GoldenCheck 的路径。从本题 immutable golden 隔离提取完整 Lean 类型和 universes=[]，预编译并审计 ExpectedType/u 仅依赖标准公理；两份可信包和 checker 内容/AST 一致。固定 /tests 或本地 /opt 包加载，无运行时生成或回退；临时 Target 共享可信前缀。原安全检查保留。当前本地 Harbor 构建及两入口已实际运行，原始 sorry 导致两入口预期退出1/reward0；独立 fixture 已覆盖 Spec 审计、ubuntu 编译、完整类型、公理审计和 canary，以及冻结/越界/语义名称偷换/缓存遮蔽/产物缺失及篡改拒绝。所有 immutable 哈希保持。证据位于 jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-968-sum-abs-diff-istheta-log-sq/attempt-001。最终以当前 task.toml 本地 Harbor 重建再次验收，final 镜像 bbbb011b2c60；两入口各28项实际函数补测全部通过，上传 /tests 与镜像 /opt 共33个文件哈希匹配。无未覆盖必需修复路径；原题完整证明仍未提供。Docker 已 stop/rm 本次3个容器，删除本次2个镜像（76d6188cca69、bbbb011b2c60）及2个 Harbor 网络并核实不存在；共享依赖基镜像保留。详见 final-acceptance.json、cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核对完整 u 定义、primeCounting' 严格截止和 atTop/log-square 渐近命题；对应 Erdős–Prachar 1961/62 原文 Satz1，pp.251–253。0-based 索引和正分母正确，有限初始项不影响渐近结果。主 density 问题不属于本目标。未修改数学陈述或定义；原题网页403，原论文通过 web PDF 成功读取，提取文本已保存。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true。完整ID精确匹配技能CSV未命中；多组检索并追踪上游PR7621找到 https://github.com/linrock/math-proofs/blob/f2c06c925dd01819fcb0bf4674d302850108cb8a/erdos-968/Solution.lean#L32 。目标和 u 定义一致，已读取端点及主渐近证明、递归获取检查全部非Mathlib依赖，无实际占位证明或新增公理；Blueprint 中未使用的 sorry_using 实现不构成目标依赖。此公开包使用 Lean4.35.0-rc2，未在本题 Lean4.27 环境重新编译；未将答案放入镜像。证据见 public-proof-review.json。"
+    }
+  }
+}

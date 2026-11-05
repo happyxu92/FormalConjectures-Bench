@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-36-white-2022",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit .lake/packages search path; bash syntax and ubuntu rg of the known Mathlib sigma_apply declaration passed (instruction-search.log)."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No additional upstream imports. Added final USER ubuntu RUN lake build +FormalConjecturesBench.Target; both current-local Harbor Docker builds and final-container ubuntu build succeeded."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Skill Unicode script ran successfully: no_issue; original header and assignment boundaries verified, both checker copies agree (unicode.json)."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated fixed Spec independently from this task golden on Lean 4.27.0 x86_64; complete type has no outer binders/universes, transitive axiom audit clean. Identical pinned packages and checker AST/content; Harbor-uploaded /tests and image /opt hashes verified. Final local Harbor trial erdosproblems-36-white-2022-g61-white-a1-7d92-final built successfully; both entry points exit 1 for original sorry, reward 0. Same-container actual-function tests passed under root/ubuntu: trusted loading/audit, uid-1000 compilation, full type equality, sorryAx rejection, canary, frozen/header/assignment and confinement checks, legal helpers, frozen-text atTop.liminf name substitution rejected by type comparison, candidate module/cache/environment shadowing resisted, missing/tampered artifacts and manifest rejected without regeneration. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-36-white-2022/attempt-001. Cleanup complete: stopped/removed the Spec container and both Harbor containers; removed both task images and networks, verified absent. Shared pre-existing dependency image retained. See cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "statement_status=suspect only: retained Target line 138 is strict (0.379005 < liminf), whereas White arXiv:2201.05704 Theorem 1 and section 5.1 prove >= only; upstream issue 5642/PR 5799 correct to non-strict. This is not a counterexample or established impossibility (the problem site itself prints strictness and newer certificate projects claim stronger bounds). No mathematical input changed. See research-review.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Exact full ID absent from skill CSV. Extensive multi-query search and actual source review: upstream White result remains sorry; Linrock classical bounds do not reach this goal; PR 2894 admits sorryAx; numerical certificate repos are not Lean proofs. No complete allowed-axiom proof verified. GitHub global code search HTTP 401 leaves public_lean4_proof=unknown/status=blocked; see research-review.json and fetched source evidence."
+    }
+  }
+}

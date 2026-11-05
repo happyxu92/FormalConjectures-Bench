@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-978-i",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "源码搜索命令已显式补齐 .lake/packages；在最终 Harbor 子容器实际找到 Mathlib 的 natDegree 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "没有额外上游 import；补齐 Dockerfile 最终 USER ubuntu 下的 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的 Harbor 构建及容器内 ubuntu 构建均成功；未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本并最终复验，均为 no_issue；原头、冻结前缀及赋值边界测试通过，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题原始 golden 隔离生成、预编译并独立审计 ExpectedType：完整 6 个 binder、无 universe 参数，传递依赖仅有允许公理；两份固定包一致。checker 固定加载来源并比较完整类型，不运行时生成或回退。最终本地 Harbor trial erdosproblems-978-i-g61-978a1-final2 构建成功，/tests 上传包及 /opt 包、checker 和 golden 全部哈希匹配。两入口均因原始 sorry 预期返回 1，reward=0；同一子容器的两套实际函数补测均成功，覆盖 Spec 审计、ubuntu 编译、完整类型、目标公理、canary、冻结/越界/HasPosDensity 语义偷换/缓存遮蔽/产物缺失与篡改。原安全规则和正常 import 保留，未扩展外部模块白名单或 initializer 沙箱。一次最终重验因复用本题子网失败，已换用核对空闲的独立子网并完成重验。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-978-i/attempt-001。Docker 清理已核实：本次 3 个容器及 2 个网络均已移除，d7d73397ffad/7991ddba9a30 两个不用的镜像已删除；816143cefc7c 镜像已被其他 agent 的 978-sub-one/978-sub-two Spec 容器复用，依规则保留且未强删。预先存在的共享缓存未改动；详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。核对完整前缀、Powerfree、HasPosDensity、锁定上游、题目原页、Hooley 原文摘要及 Heath-Brown 2011 引言：本题是 degree−1 幂自由值的正自然密度结果，hp 排除固定素数幂因子；其余限制是合理特例。未发现导致目标不成立的明显错误；所有数学输入和 immutable 哈希保持不变。详见证据 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 ID 未命中技能 CSV。充分多组检索并核查上游、Mathlib、GitHub PR/fork、OpenAI 63 模块及公开 bridge 后，未找到覆盖本完整目标（包括三次情形）的已知公开完整 Lean4 证明，标记 public_lean4_proof=false/status=searched，并非断言不存在。PR 2721/3243 只改标签仍有 sorry；OpenAI allDegrees 和 bridge 是 degree≥4 的 degree−2 结果，不是本题。访问限制、替代读取和逐项排除见 public-proof-review.json；没有未跟进的有效本目标证明线索。未将公开答案放入 task。"
+    }
+  }
+}

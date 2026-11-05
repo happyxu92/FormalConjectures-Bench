@@ -1,0 +1,17 @@
+complete outer binder: r : ℚ, explicit; body: SumOfThreeCubes.IsSumOfThreeCubes #0
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited SumOfThreeCubes.IsSumOfThreeCubes: []
+audited SumOfThreeCubes.isSumOfThreeCubes_2: [propext]
+audited SumOfThreeCubes.isSumOfThreeCubes_33: [propext, Quot.sound, Classical.choice]
+audited SumOfThreeCubes.isSumOfThreeCubes_42: [propext, Quot.sound, Classical.choice]
+audited SumOfThreeCubes.mod_9_of_isSumOfThreeCubes: [propext, Quot.sound, Classical.choice]
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (r : Rat),
+  @SumOfThreeCubes.IsSumOfThreeCubes.{0} Rat
+    (@NormedRing.toRing.{0} Rat
+      (@NormedCommRing.toNormedRing.{0} Rat (@NormedField.toNormedCommRing.{0} Rat Rat.instNormedField)))
+    r
+def SumOfThreeCubes.IsSumOfThreeCubes.{u_1} : {R : Type u_1} → [Ring R] → R → Prop :=
+fun {R} [Ring R] n => ∃ x y z, n = x ^ 3 + y ^ 3 + z ^ 3
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

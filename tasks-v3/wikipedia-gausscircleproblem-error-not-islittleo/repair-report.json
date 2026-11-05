@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-gausscircleproblem-error-not-islittleo",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式列出 /app、/opt/formal-conjectures 及其 .lake/packages；最终 Harbor 容器以 ubuntu 搜索 package 内 def sqrt，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 仅有两个默认 imports，无额外上游模块。原 Dockerfile 缺少普通用户验证，已以 USER ubuntu / RUN lake build +FormalConjecturesBench.Target 结尾；当前本地 task 的 Harbor 构建及同容器 ubuntu 构建均成功，未放宽可信依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本并最终复验，均为 no_issue；原头通过、修改头和删除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重解析 GoldenCheck。已从本题可信 golden 隔离提取完整类型（0 个外层 binder、universes=[]），用匹配 Docker/Lean 4.27.0 预编译并传递审计 ExpectedType、N、E；两份固定 Spec 包、manifest、checker 内容及 AST 一致。冻结 error_le 本身含 sorry，但不属于 ExpectedType/N/E 的传递依赖。固定加载来源，缺失或篡改明确失败且不回退生成；临时 Target 共用 Spec 前缀，完整类型比较拒绝 atTop 名称偷换，保留原源码限制、公理审计和 canary，无新增通用模块白名单。最终当前本地 task 经 Harbor Docker force_build 验收；/tests 上传包、/opt 包及 golden 哈希与本地相符。正式和本地入口均因原题 sorry 预期退出 1，reward=0；同一最终子容器对两份 checker 各补测 28 项，覆盖 Spec 审计、实测 uid=1000 编译、完整类型比较、sorryAx 拒绝、canary、冻结/越界/缓存遮蔽及缺失/篡改负例，均符合预期。全部 immutable 哈希不变。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-gausscircleproblem-error-not-islittleo/attempt-001。Docker 清理完成并复核：3 个本题容器 1316deb4c9b8/840c1c11b338/0c75795a0672 已 stop/rm；本次镜像 e3bb7d27d8e5、104fb2b76dce 及各自 tag 已删除，2 个本题网络已删除。预存共享依赖镜像 e21dc171550d 保留，未删除其他任务资源；详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已标 statement_status=consistent，不修改陈述。核对完整 N/E 定义、锁定上游及 Soundararajan arXiv:math/0302010 引言/定理1：x=r² 后经典 Omega 下界推出本题否定 little-o；闭圆盘计数、实数减法、sqrt(sqrt(log r))、atTop 及范数方向一致。小半径和负半径不影响渐近目标。这是已知下界，不是开放最优上界。Wikipedia 403；已读取 MathWorld 及原研究论文替代，详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。多组题名、完整定理名、Hardy–Landau、等价渐近表述、GitHub/Mathlib 查询；读取上游 pinned/main、渲染源码、相关 PR 及实际 PR-head Lean 源码。2612/3136 仅更改属性且保留 sorry，7660 仅链接其他两个定理的证明，本目标仍 sorry，均不能算完整证明。GitHub 全局代码搜索需登录、API 限流，无法充分排除其他 fork/命名下的证明；metadata 已标 unknown/blocked，不宣称不存在。详见 public-csv-match.json、public-proof-review.json、fetch-results.json。"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos400.g: [Classical.choice, propext, Quot.sound]
+complete binder count: 2; k type: ℕ; hk type: k ≥ 2
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ k ≥ 2, (fun n => ↑(Erdos400.g k n)) =O[Filter.atTop] fun n => Real.log ↑n
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

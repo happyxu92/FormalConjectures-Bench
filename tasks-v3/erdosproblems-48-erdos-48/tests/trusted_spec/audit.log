@@ -1,0 +1,7 @@
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited ExpectedType and transitive dependencies: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+True ↔ {x | Prod.casesOn x fun fst snd => (fun n m => n.totient = (ArithmeticFunction.sigma 1) m) fst snd}.Infinite
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

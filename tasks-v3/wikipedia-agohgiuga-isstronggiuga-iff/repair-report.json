@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-agohgiuga-isstronggiuga-iff",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；Harbor 容器中以 ubuntu 运行三路径 rg，命中 Mathlib 的 ProbablePrime，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；原 Dockerfile 缺少末尾普通用户构建验证，现以 USER ubuntu、RUN lake build +FormalConjecturesBench.Target 结尾。当前本地 task Harbor 构建及容器内 ubuntu 构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本，case=no_issue；原始头通过，修改头和移除 := 均拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题可信 golden 隔离 Submission，提前 elaboration 并编译 FCBTrustedSpec.ExpectedType；保留完整 {a : Nat} (ha : a.Composite)，universes=[]，传递公理审计通过。两份 Spec 包与 checker 一致，清单固定输入、版本和产物哈希；运行时只加载固定产物，完整类型比较不重新解析命题。当前本地 task Harbor 镜像 sha256:77bfa5bab9fc5792297ab1b87eee3727d7bad2ef6dad263b51a75eaa7c640a3d 验收完成；/tests 上传包、/opt 包及所有 immutable 哈希匹配。两真实入口均因原题 sorry 退出 1，reward=0，是预期证明拒绝；在同一子容器中分别通过 /tests 和 /opt checker 的实际函数补测 Spec 审计、ubuntu 编译、完整参数类型比较、sorryAx 公理拒绝、canary、冻结/越界/实例语义偷换/缓存遮蔽/缺失和篡改负例。未修改公开 Target、golden、GoldenCheck、冻结常量或数学定义；未增加通用外部模块白名单或 initializer 沙箱。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-agohgiuga-isstronggiuga-iff/attempt-001/validation-coverage.json。已 stop/rm 本题 Spec 容器 wikipedia-agohgiuga-isstronggiuga-iff-spec-g61-a001-42bf 及 Harbor 容器 wikipedia-agohgiuga-isstronggiuga-iff-g61-a001-42bf__env-main-1；已删除本题镜像 77bfa5bab9fc 和网络，inspect/ps 复核均不存在。本题无遗留资源，预先存在的共享依赖镜像未删除；详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。Tipu《A Note on Giuga’s Conjecture》(2007) p.158、式(2)明确给出本题等价刻画；已核对 Composite、强 Giuga 幂和、FermatPsp/Carmichael 定义、素因子和及自然数见证。独立 Lean 审计确认 1/a 在求和外。此题不是要求解决开放猜想。Wikipedia 403，但原论文全文可读；未修改陈述。详见证据 math-review.json、tipu-paper.md。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "按完整 task ID 精确命中技能 public-lean4-proofs.csv，已标记 public_lean4_proof=true。来源：https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_AgohGiuga_isStrongGiuga_iff.lean#L412 。按要求无需重新联网；未将公开答案安装或在本题环境编译。匹配及 CSV 哈希见证据 public-proof-review.json。"
+    }
+  }
+}

@@ -9,6 +9,12 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "consistent"
+statement_status_note = "Spiro's fixed-shift 5040 variant agrees with the pinned source and Hildebrand 1987, p.307; sigma 0 counts divisors. No mathematical statement or definition was changed."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID absent from skill CSV. Multiple targeted searches and source reviews found no checked proof for shift 5040; the linked plby proof covers shift 1 only. GitHub repository-tree and code-search API requests were rate-limited (403), so discovery coverage remains incomplete."
+public_lean4_proof_urls = ["https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/946.lean", "https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos946.lean"]
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/946.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

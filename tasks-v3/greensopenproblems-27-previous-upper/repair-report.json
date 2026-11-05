@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-27-previous-upper",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式加入 /opt/formal-conjectures/.lake/packages；ubuntu 实际 rg 检索到 package 中的 sqrt 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 imports；原 Dockerfile 缺少最终普通用户构建验证，已添加 USER ubuntu 后的 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的两次 Harbor 构建及容器内 ubuntu 构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整执行技能 Unicode 脚本并最终复验，均为 no_issue；原始头通过，修改头和移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题 immutable golden 隔离候选提取完整类型并在匹配 Lean 4.27.0 Docker 中编译、独立审计 ExpectedType；无 universe 参数或外层 binders，仅依赖允许公理。两份可信包及 checker 内容/AST 一致。固定 /tests 或 /opt 包来源及可信依赖路径，不运行时生成或重解析命题；仅临时候选改用 Spec 前缀，完整根限定类型比较取代 GoldenCheck 执行。最终当前本地 task 经 Harbor force_build 验收；上传 /tests、/opt 包和 golden 哈希均匹配。两入口因原题 sorry 预期 exit 1/reward 0；同一最终子容器 root/ubuntu 直接函数补测各 29 项通过，包括可信审计、uid 1000 编译、完整类型、目标 sorryAx 拒绝、canary、冻结/越界、保持冻结文字且无 sorry 的 sqrt 名称偷换、同名模块/缓存/环境遮蔽及产物缺失/篡改无回退。保留原正常 import 与源码安全规则，不声称通用 initializer 沙箱安全。原 Target、golden、GoldenCheck 和冻结常量哈希未变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-27-previous-upper/attempt-001/validation-coverage.json、static-validation.json、commands.json。Docker 清理完成并核实：本题 3 个容器（6056fc3a9760、129d1c87e1f9、3bfe05078b13）、2 个镜像（5edb0d49ed9f、e5006fed3fb8）及 2 个网络均已移除；保留预先存在的匹配依赖镜像及共享构建缓存，未 prune。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata 已标 consistent。核对 pinned 27.lean、Green 原文 Problem 27（green.txt:704–712）、Bedert arXiv:2303.15134 引言及 Theorem 5（bedert.txt:34–45,114–120）和 allUniqueSums/HasNoUniqueRepresentation 定义：本题是已知旧上界 m(p)=O(sqrt(p))，无明显数学错误，不是开放的精确增长问题。非空/非负、无序表示和沿素数渐近条件相符；小素数不影响此渐近上界。未修改陈述或定义。详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "按完整 ID 精确命中技能 public-lean4-proofs.csv，metadata public_lean4_proof=true。来源：https://github.com/mkwatson/unique-sums-notes/blob/d4383f93a52e3a916ccce78d5fb7739c3bf3dabc/Green27Upper/Theorem.lean#L26 。按技能直接接受 CSV 记录，未重新联网验证或在本环境编译公开证明，未将答案放入 task。详见 public-proof-review.json。"
+    }
+  }
+}

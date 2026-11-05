@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task-ID CSV miss. Multi-query searches and accessible upstream/related Lean sources found no complete proof of this lower bound; GitHub global code search was rate-limited/authentication-blocked, so absence is not asserted. See repair-report.json and attempt-001 public-search evidence."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/Wikipedia/EllipticCurveRank.lean"

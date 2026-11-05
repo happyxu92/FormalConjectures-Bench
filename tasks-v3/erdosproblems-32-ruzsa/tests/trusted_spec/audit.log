@@ -1,0 +1,13 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos32.IsAdditiveComplementToPrimes: [propext, Quot.sound]
+complete outer binder count: 2 (A : Set Nat; additive-complement implication)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (A : Set ℕ),
+  Erdos32.IsAdditiveComplementToPrimes A →
+    ↑(Real.exp Real.eulerMascheroniConstant) ≤
+      Filter.liminf (fun N => ↑{x ∈ Finset.Icc 1 N | x ∈ A}.card / ↑(Real.log ↑N)) Filter.atTop
+def Erdos32.IsAdditiveComplementToPrimes : Set ℕ → Prop :=
+fun A => ∀ᶠ (n : ℕ) in Filter.atTop, ∃ p, Nat.Prime p ∧ ∃ a ∈ A, n = p + a
+'Erdos32.IsAdditiveComplementToPrimes' depends on axioms: [propext, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

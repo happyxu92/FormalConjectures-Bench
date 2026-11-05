@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-399-erdos-oblath",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式包含三个路径；Harbor 子容器内 ubuntu 实测命中 packages/mathlib 中 factorial 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；补齐 Dockerfile 最后的 USER ubuntu / RUN lake build +FormalConjecturesBench.Target。当前本地 task 经 Harbor force_build 构建成功，同一子容器 ubuntu 再构建退出码 0；原始 sorry 警告不是依赖故障。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本并最终复验，均为 no_issue；原头通过，修改头及缺失 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重新解析 GoldenCheck。现从本题 immutable golden 隔离生成、编译和审计固定 ExpectedType：4 个隐式 Nat 参数、4 个假设、universes=[]，传递公理仅 propext；临时目标未导出。两包及两 checker 内容/AST、上传 /tests 和镜像 /opt 哈希一致。锁定 Spec/依赖/工具链路径，ubuntu 编译临时候选，以完整类型比较替代 GoldenCheck 运行时解析，保留原源码、冻结、公理及 canary 规则和正常 import。当前本地 Harbor 镜像 747a107bb60f：正式和本地入口均按预期拒绝原始 sorry（exit=1，reward=0）；同一容器两个包各补测 29 项，涵盖 Spec 审计、ubuntu UID、完整类型、目标公理、canary、冻结/越界/实例语义偷换/缓存遮蔽/缺失篡改，无未覆盖的必需路径。非原题证明通过。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-399-erdos-oblath/attempt-001。Docker 清理完成：本题两个容器已 stop/rm，镜像 747a107bb60f 和专属网络已移除并核实不存在；预存共享依赖镜像保留，未清理资源无。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 consistent。核对锁定上游、完整前缀及原论文 Erdős–Obláth 1937 pp.241–243：互素且 k>2、k≠4 的双符号无解为已知合理变体；xy>1 排除平凡解，Nat 的 n=0 边界亦无反例。未修改任何数学输入，所有 immutable 哈希一致。详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "public_lean4_proof=false，status=searched；完整 ID 未命中技能 CSV。多组题名/定理名/等价陈述检索，并读取上游 main、PR 2660/3182 头部完整 Lean 源码和补丁、Jayyhk、William Blair、Mnehmos 候选及原题来源。精确目标仍有 sorry；其他完整证明仅为原题反例或 Cambie k=4 加号变体。API 限流经 HTML/git/raw 替代核查，无已识别的关键来源仍受阻。经充分检索未找到本目标的已知公开完整 Lean4 证明，不声称证明不存在；详见 public-proof-review.json。"
+    }
+  }
+}

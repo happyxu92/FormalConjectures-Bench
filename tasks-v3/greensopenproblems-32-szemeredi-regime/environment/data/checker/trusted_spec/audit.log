@@ -1,0 +1,19 @@
+FCBTrustedSpec.lean:84:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:90:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:104:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Green32.HasLargeGapDilate: [propext, Quot.sound, Classical.choice]
+audited Green32.HasGap: [propext, Quot.sound, Classical.choice]
+universe parameters: []; full outer forall count: 4
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (c : ℝ),
+  0 < c ∧ c < 1 → ∀ (ω : ℕ → ℝ), (Asymptotics.IsEquivalent Filter.atTop ω fun p => c * ↑p) → Green32.HasLargeGapDilate ω
+def Green32.HasLargeGapDilate : (ℕ → ℝ) → Prop :=
+fun ω =>
+  ∀ᶠ (p : ℕ) in Filter.atTop,
+    Nat.Prime p →
+      100 < ω p ∧ ω p < ↑p ∧ ∀ (A : Finset (ZMod p)), A.card = ⌊ω p⌋₊ → ∃ c, Green32.HasGap (c • A) ⌊100 * ↑p / ω p⌋₊
+def Green32.HasGap : {p : ℕ} → Finset (ZMod p) → ℕ → Prop :=
+fun {p} A L => ∃ x, ∀ i < L, x + ↑i ∉ A
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

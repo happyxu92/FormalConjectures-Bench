@@ -26,7 +26,7 @@ RUN git clone https://github.com/google-deepmind/formal-conjectures.git /opt/for
     git -C /opt/formal-conjectures checkout "${FORMAL_CONJECTURES_COMMIT}" && \
     cd /opt/formal-conjectures && \
     lake exe cache get && \
-    lake build FormalConjectures.Util.ProblemImports && \
+    lake build FormalConjectures.Util.ProblemImports FormalConjectures.Millenium.RiemannHypothesis && \
     find /opt/formal-conjectures -type d -name .git -prune -exec rm -rf {} + && \
     rm -rf /root/.cache /tmp/*
 
@@ -73,3 +73,6 @@ RUN mkdir -p /opt/formal-conjectures-bench-checker \
 WORKDIR /app
 ENV HOME=/home/ubuntu
 USER ubuntu
+
+# Exercise the checker build without write access to trusted dependencies.
+RUN lake build +FormalConjecturesBench.Target

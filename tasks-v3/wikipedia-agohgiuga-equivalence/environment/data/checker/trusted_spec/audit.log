@@ -1,0 +1,8 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited AgohGiuga.AgohGiugaCongr: [propext, Quot.sound, Classical.choice]
+audited AgohGiuga.AgohGiugaSum: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+AgohGiuga.AgohGiugaCongr ↔ AgohGiuga.AgohGiugaSum
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

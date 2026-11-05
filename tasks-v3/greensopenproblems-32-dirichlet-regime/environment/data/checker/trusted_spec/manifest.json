@@ -1,0 +1,29 @@
+{
+  "task_id": "greensopenproblems-32-dirichlet-regime",
+  "target_name": "Green32.green_32.variants.dirichlet_regime",
+  "universe_params": [],
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "758f621520ec147a57f2bd8d8b9a5b0d57c53f247022689696e28f67f08288d1",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "b5eb369ba7a658919000e2bc63afed0344689816b70b80e68f9e25d6e0f9e710",
+    "FCBTrustedSpec.ilean": "7ba861653a9afc27d4f4609733c260d1d654148a7a3f207cc560a64759c833a1",
+    "FCBTrustedSpec.lean": "ee0371fdf9dbca2b40e987667bede1a7bf1e892afa07626db160c685f61608b3",
+    "FCBTrustedSpec.olean": "24150f87acf7a3db9352b43664d6c563b62d8659c5d29761d86e97dee70a88b0",
+    "audit.log": "aab705ba23d53103ea6d95b1b2bbad7b4a641dbefc2768f50f1e6fb76f6dc9d6",
+    "generate.py": "525c860866970632677a867defc69d13db0ce367a3fa2c2142445911efbb73db",
+    "reproduce.sh": "6c30adee65c926baca293de3f79ae98a95fc7963532dc3f528271583511e7f2f"
+  },
+  "generation": "bash trusted_spec/reproduce.sh (isolated golden-only bundle, pinned Docker dependency/toolchain)",
+  "audit": "AuditSpec.lean checks definition value, closed existential, universe list, no exported temporary theorem and transitive axioms of ExpectedType/HasGap/HasLargeGapDilate; see audit.log"
+}

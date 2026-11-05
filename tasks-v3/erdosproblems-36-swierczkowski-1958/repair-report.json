@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-36-swierczkowski-1958",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式包含 /app、/opt/formal-conjectures 和隐藏的 .lake/packages；Harbor 子容器中以 ubuntu 实搜到 Mathlib 的 def liminf（exit 0）。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题仅有 ProblemImports 和本地 Submission，无额外上游 import。补充 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target；本地 Harbor 构建及同容器 ubuntu 再构建成功。原题 sorry 警告不等于依赖故障。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已运行技能 Unicode 脚本，初检及最终复检均为 no_issue；原头通过，修改头和移除 := 均拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题 golden 隔离生成并独立审计完整 ExpectedType（零外层参数，universes=[]），两份预编译 Spec/清单一致且固定哈希；不运行时重解析或生成。最终本地 Harbor 镜像 sha256:58b7d0fb5a67ba72dfde61e57306670e48c66a478418881cf15fe006848ec214，/tests 上传包与 /opt 包均匹配本地。两入口原题 sorry 导致 exit 1/reward 0 属预期拒绝；同一最终子容器分别以 root/ubuntu 调用实际 checker，Spec加载/审计、ubuntu编译（UID1000）、完整类型、公理与canary、冻结/越界/语义偷换/缓存遮蔽/缺失及篡改负例全部通过；正常 Mathlib import/def/lemma/instance 实编译通过。保留原安全规则、Target、golden、GoldenCheck及全部immutable哈希。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-36-swierczkowski-1958/attempt-001；见 validation-final、delivery-hashes、static-validation、immutable-final。未构造本题完整证明。Docker 已 stop/rm 三容器 234a93a54068、3f5da3c569e1、86c0ba42abf5，移除并复查两镜像 95ecad593d58、58b7d0fb5a67 及两专用网络；本题无遗留资源，预先存在的共享缓存保留，详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。完整核对 Overlap、MaxOverlap、M、MinOverlapQuotient 和上游锁定目标：这是最小重叠常数的历史弱下界变体，未发现明显数学错误。Tao 的常数表对应 (4-√6)/5；White 2023 论文摘要的更强极限下界 >0.379005 支持本题严格 liminf 不等式。原问题站点 403、旧文献链接 404 已记录；可访问的原始研究摘要和题目来源足以核查。未修改数学陈述、定义、Target、golden 或 GoldenCheck。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "按完整 task ID 精确命中技能 references/public-lean4-proofs.csv，已标 public_lean4_proof=true；按要求无需再次联网核验。来源：https://github.com/linrock/math-proofs/blob/22db103d7b6109baca46f2623a7287b965a56936/erdos-36/Solution.lean#L60 。未将公开答案放入任务，未声称在本环境编译过此公开证明。"
+    }
+  }
+}

@@ -8,6 +8,10 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+public_lean4_proof = true
+public_lean4_proof_urls = ["https://github.com/linrock/math-proofs/blob/8c9a8ab727c1f06935b48a5ab4db145572cab9e9/erdos-33/Solution.lean"]
+public_lean4_proof_status = "known_public"
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/33.lean"

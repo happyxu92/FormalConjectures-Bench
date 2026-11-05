@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-697-density-exists",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式列出 /app、/opt/formal-conjectures 和隐藏 packages 路径；最终 Harbor 容器内 ubuntu 的 rg 命令成功找到 package 中 densityProcess 定义。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题仅有 ProblemImports 与 Submission，无额外上游 import；补上 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。当前本地 task 的 Harbor 构建成功，最终子容器 ubuntu 重跑构建退出 0，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本两次，均为 no_issue；原头通过，修改头及移除 := 均被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden 隔离 elaboration 提取完整类型（m : Nat、alpha : Real；universes=[]），预编译并审计 ExpectedType 全部传递公理，临时目标未导出；两份可信包及 checker AST/内容、全部 immutable 哈希一致。固定 Spec/依赖加载路径，不运行时生成或重解析命题。最终当前 task 的 Harbor final2 构建及 /tests、/opt 包上传哈希核对通过；正式和 ubuntu 本地入口均因原题 sorry 预期退出 1、reward=0。在同一 final2 子容器中，两个入口包的实际函数补测均通过：Spec 审计、UID1000 编译、完整类型、目标 sorryAx 拒绝、sorry canary、冻结/越界/语义偷换/缓存遮蔽/缺失及篡改负例。旧 GoldenCheck 接受 HasDensity 名称偷换而新完整类型比较拒绝。保留正常源码规则及公理检查，无通用外部模块白名单。网络重试采用独立空闲子网，未改 daemon。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-697-density-exists/attempt-001。Docker 清理已核实：本次 spec、初次及 final2 共 3 个容器已 stop/rm，3 个本题镜像 tag/ID（a90c09204c9c、41ef982bf86d、6e3cb32bf3f2）均已移除，本题网络均不存在；预先存在的共享依赖镜像保留，未触及其他资源。详见 cleanup.json/log。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata.statement_status=consistent。已读取指定修订上游 697.lean 和实际 Set.HasDensity 定义；固定 m、alpha 的合格正因子有限，其倍数并集具有正整数周期（空集另论），故自然密度存在，m=0 亦无反例。本题是密度存在性辅助变体，不是阈值极限定理。题目网页及 Hall 论文页面 403，未声称读过受阻全文；数学判断有独立周期性依据。陈述及定义未修改；详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 task ID 精确命中技能 public-lean4-proofs.csv，已设置 metadata.public_lean4_proof=true；按要求不再联网核验，也未向镜像放入答案或声称在本环境编译公开证明。来源：https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos697.lean#L364；证据 public-csv-match.json。"
+    }
+  }
+}

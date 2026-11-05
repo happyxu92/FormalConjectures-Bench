@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-971-many-small",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式加入隐藏 .lake/packages；在最终 Harbor 子容器以 ubuntu 执行搜索，命中 Mathlib/Data/Nat/Totient.lean 的 totient 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import；原 Dockerfile 缺少普通用户最终验证，已追加 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target。当前本地任务 Harbor 构建及同容器 ubuntu 再构建成功；原有 sorry 警告不是依赖故障。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能执行 Unicode 脚本并最终复验，均为 no_issue；原头、冻结前缀、赋值边界及负例通过。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离 Submission，使用匹配 Docker/Lean 4.27.0 提取完整类型；两个外层参数为 epsilon 及正性假设，universes=[]。ExpectedType 与 leastCongruentPrime 传递公理审计通过；两份固定预编译包、manifest、checker 内容/AST 一致。最终本地 Harbor 镜像 erdosproblems-971-many-small-g61-971b__env-main 实测 /tests 上传包及 /opt 本地包哈希一致。正式及 ubuntu 本地入口均因原题 sorry 预期拒绝（exit=1，reward=0）；同一子容器分别调用实际函数补测 Spec 加载/审计、uid1000 编译、完整类型比较、sorryAx 拒绝及 canary 均完成。冻结不变但把 atTop 偷换为底滤子的合法候选能编译且仅用标准公理，完整类型比较实际拒绝。冻结/越界/同名缓存遮蔽/产物缺失和篡改负例均符合预期，无运行时重建或回退。保留原源码安全规则及正常 import 范围；不声称原题已获证明。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-971-many-small/attempt-001。已停止并移除本题容器 91b1485eecbd、5a1199b1614c、3ab5d2ff14c1，删除本题镜像 7b8b2d9a7b92、c395e6dda7e0 及两个专属网络；inspect/ps 复核不存在。预先存在的共享预编译镜像保留，未清理任何其他任务资源。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata 标为 consistent。核对锁定上游源码、完整前缀定义及 Erdős 1949 原论文 Theorem 2（p.57，证明 pp.58–60）：每个 epsilon>0、正比例 C(epsilon)、充分大 d 的 many_small 变体一致；非主问题的晚素数结论。d=0/1 不影响 eventual 量词，未发现明显无解错误；所有数学输入保持原样。详见证据 mathematical-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 task ID 精确匹配技能 CSV 未命中。已多组检索题号/定理名/leastCongruentPrime/Brun、上游/Mathlib/GitHub及相关作者项目；上游 main、PR 2720/3242 的实际 Lean 源码仍有目标 sorry，PR 仅修改标签。Li 的已宣称完整项目针对不同的晚素数主命题，不能作为本任务证明。GitHub 全局及 Mathlib 代码检索、部分树/API 请求被 403 限流，故 metadata 及报告保留 unknown/blocked，不断言不存在公开证明。详见证据 public-proof-review.json、实际抓取源码及访问日志；未将公开答案放入任务。"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-940-three-powerful",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令显式补入 /opt/formal-conjectures/.lake/packages；Harbor 容器 ubuntu 实测找到 Mathlib/NumberTheory/Real/Irrational.lean 的定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import。补齐 Dockerfile 最终 USER ubuntu 的 RUN lake build +FormalConjecturesBench.Target；当前本地 task 经 Harbor force_build 成功，同一子容器 ubuntu 再构建退出码 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能运行 Unicode 脚本，修复前及最终均为 no_issue；原始头、修改头和移除赋值边界测试通过。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题不可变 golden、移除 Submission 导入后独立 elaboration，保存完整类型及空 universe 参数；匹配 Lean 4.27.0 Docker 中预编译与独立导入审计通过，ExpectedType 传递依赖仅标准公理。两份可信包、checker 内容及 AST 一致，全部 immutable 哈希未变。checker 固定 /tests 或本地 /opt 下预编译包及依赖来源，不运行时生成或重新解析预期命题。当前本地 Harbor 镜像 sha256:1e266fab7d4966e74ba351f9b82e099106e6b92088a51755c05aef6485e620ce，上传 /tests、镜像 /opt 与本地包/原始文件哈希一致。正式及本地入口退出码均为 1、reward=0，原因是原始目标 sorry 的预期源码拒绝，并非实现故障。同一子容器分别经两份实际 checker 函数补测 Spec 加载/审计、ubuntu 编译、完整类型比较、目标 sorryAx 拒绝、canary、冻结/越界/语义偷换/缓存遮蔽/产物缺失及篡改，均通过。语义负例在冻结文字不变时将 Erdos940.atTop 定义为底滤子，候选可编译但完整类型比较及完整 checker 均拒绝。原安全策略函数及常量 AST 未变；未扩展通用 import 白名单或 initializer 沙箱。已 stop/rm 本题生成容器 erdosproblems-940-three-powerful-spec-g61-940p-a001 与 Harbor 子容器 erdosproblems-940-three-powerful-g61-940p-a001__env-main-1，移除本题创建的镜像 sha256:1e266fab7d4966e74ba351f9b82e099106e6b92088a51755c05aef6485e620ce 及网络，并逐一核实不存在；预先存在的共享依赖缓存镜像保留，未删除其他任务资源。详细证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-940-three-powerful/attempt-001。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 consistent。本题是 Heath-Brown 的充分大自然数至多三个 2-powerful 数之和的已知变体，不是 r≥3 的开放密度问题。核对完整前缀、Nat.Full 定义及 Eventually/Multiset 量词。Berndt–Moree 2024 综述明确给出同一结论并引 1988 原文（已保存 PDF 和文本）；未发现明显数学错误，数学输入未改。原题网页 403，1988 原章全文未取得，详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "标记 unknown/blocked。完整 task ID 未命中技能 CSV；多组名称、数学陈述、Mathlib、GitHub 与别名 Erdos1107.variants.two 检索后，已读取 upstream 及别名 Lean 源码，目标均为 sorry。PR 3116/2592 虽宣称已形式证明，实际 patch 只改分类且保留 sorry，已排除；其他检索候选不覆盖本题。GitHub 代码搜索限流 403、关键题目/论坛页面 403，故不能宣称充分确认不存在公开完整证明。详细检索及排除证据见 public-proof-review.json；未打包公开答案。"
+    }
+  }
+}

@@ -4,20 +4,31 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import platform
 import re
 import shutil
 import subprocess
 import sys
 import tempfile
+import tomllib
 from pathlib import Path
 
 
 TASK_DIR = Path(os.environ.get("FCB_TASK_DIR", "/app"))
 TESTS_DIR = Path(os.environ.get("FCB_TESTS_DIR", "/tests"))
 GOLDEN_ENV_DIR = TESTS_DIR / "golden_env"
-DEPENDENCY_PACKAGES = Path(
-    os.environ.get("FCB_DEPENDENCY_PACKAGES", "/opt/formal-conjectures/.lake/packages")
-)
+SPEC_DIR = (TESTS_DIR / "trusted_spec").resolve()
+TASK_ID = "erdosproblems-375-log"
+SPEC_MANIFEST_SHA256 = "95aea84e0c539267dbf2f8d9bfc19e9b3a8a5d4aadb7856350c7d85e00b775e6"
+SPEC_MANIFEST = None
+DEPENDENCY_ROOT = Path("/opt/formal-conjectures")
+TOOLCHAIN_ROOT = Path("/opt/elan/toolchains/leanprover--lean4---v4.27.0")
+LEAN = TOOLCHAIN_ROOT / "bin/lean"
+DEPENDENCY_PACKAGES = DEPENDENCY_ROOT / ".lake/packages"
+DEPENDENCY_LIBS = [DEPENDENCY_PACKAGES / name / ".lake/build/lib/lean"
+    for name in ("batteries", "Qq", "aesop", "proofwidgets", "importGraph",
+                 "LeanSearchClient", "plausible", "mathlib")]
+DEPENDENCY_LIBS += [DEPENDENCY_ROOT / ".lake/build/lib/lean", TOOLCHAIN_ROOT / "lib/lean"]
 DEPENDENCY_CONFIG_BACKUP = Path(
     os.environ.get(
         "FCB_DEPENDENCY_CONFIG_BACKUP",
@@ -32,8 +43,10 @@ EXPECTED_PREFIX_SHA256 = "61c676ea270bd8b44e1d81d709eaf73bc55111fd86272227b4b585
 EXPECTED_HEADER = "theorem erdos_375.variants.log : \u2203 c > 0, \u2200 n k : \u2115,\n    k < c * (Real.log n / (Real.log (Real.log n))) ^ 3 \u2192 (\u2200 i < k, \u00ac (n + i + 1).Prime) \u2192\n    \u2203 p : Fin k \u2192 \u2115, p.Injective \u2227 \u2200 i, (p i).Prime \u2227 p i \u2223 n + i + 1"
 THEOREM_NAME = "Erdos375.erdos_375.variants.log"
 ALLOWED_AXIOMS = set(["propext", "Classical.choice", "Quot.sound"])
-ELAN_PATHS = ["/opt/elan/bin", os.path.expanduser("~/.elan/bin")]
-ENV = {**os.environ, "PATH": f"{':'.join(ELAN_PATHS)}:{os.environ.get('PATH', '')}"}
+# Fixed compiler and dependencies; candidate environment and Lake caches cannot
+# replace the already-elaborated trusted module or its dependencies.
+ENV = {"PATH": str(TOOLCHAIN_ROOT / "bin") + ":/usr/bin:/bin",
+       "HOME": "/home/ubuntu", "LANG": "C.UTF-8"}
 
 FROZEN_FILES = sorted(
     path.relative_to(GOLDEN_ENV_DIR)
@@ -242,16 +255,77 @@ def restore_dependency_config_cache() -> None:
         shutil.copy2(src, dst)
 
 
+def sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def load_trusted_spec() -> dict:
+    global SPEC_MANIFEST
+    path = SPEC_DIR / "manifest.json"
+    if not path.is_file():
+        fail("Missing trusted Spec manifest")
+    if sha256(path) != SPEC_MANIFEST_SHA256:
+        fail("Trusted Spec manifest hash mismatch")
+    manifest = json.loads(path.read_text())
+    if manifest["task_id"] != TASK_ID or manifest["target_name"] != THEOREM_NAME:
+        fail("Trusted Spec belongs to a different task")
+    if manifest["universe_params"] != [] or manifest["platform"] != platform.machine():
+        fail("Trusted Spec universe parameters/platform mismatch")
+    for name, digest in manifest["files"].items():
+        if Path(name).name != name:
+            fail("Invalid trusted Spec filename")
+        artifact = SPEC_DIR / name
+        if not artifact.is_file():
+            fail(f"Missing trusted Spec artifact: {name}")
+        if sha256(artifact) != digest:
+            fail(f"Trusted Spec artifact hash mismatch: {name}")
+    for name, digest in manifest["golden_files"].items():
+        artifact = GOLDEN_ENV_DIR / name
+        if not artifact.is_file() or sha256(artifact) != digest:
+            fail(f"Trusted Spec golden input mismatch: {name}")
+    version = run([str(LEAN), "--version"], cwd=SPEC_DIR)
+    if version.returncode or version.stdout.strip() != manifest["lean_version"]:
+        fail("Trusted Spec Lean version mismatch")
+    if sha256(DEPENDENCY_ROOT / "lake-manifest.json") != manifest["dependency_manifest_sha256"]:
+        fail("Trusted dependency revision manifest mismatch")
+    for lib in DEPENDENCY_LIBS:
+        if not lib.is_dir():
+            fail(f"Missing precompiled dependency directory: {lib}")
+    SPEC_MANIFEST = manifest
+    print("Loaded fixed precompiled trusted Spec", flush=True)
+    return manifest
+
+
+def lean_env(project_dir: Path) -> dict:
+    return {**ENV, "LEAN_PATH": ":".join(map(str, [SPEC_DIR, *DEPENDENCY_LIBS, project_dir]))}
+
+
+def run_lean(project_dir: Path, arguments: list[str], timeout: int = 1200):
+    import pwd
+    account = pwd.getpwnam("ubuntu")
+    def drop_privileges():
+        os.setgroups([])
+        os.setgid(account.pw_gid)
+        os.setuid(account.pw_uid)
+    if os.geteuid() not in (0, account.pw_uid):
+        fail("Candidate compiler must run as ubuntu")
+    def flatten(options, prefix=""):
+        for name, value in options.items():
+            if isinstance(value, dict):
+                yield from flatten(value, prefix + name + ".")
+            else:
+                yield f"-D{prefix}{name}={str(value).lower()}"
+    options = list(flatten(tomllib.loads((GOLDEN_ENV_DIR / "lakefile.toml").read_text())["leanOptions"]))
+    return subprocess.run([str(LEAN), *options, *arguments], cwd=project_dir,
+        text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+        env=lean_env(project_dir), timeout=timeout,
+        preexec_fn=drop_privileges if os.geteuid() == 0 else None)
+
+
 def make_fresh_golden_project() -> tempfile.TemporaryDirectory[str]:
     tmp = tempfile.TemporaryDirectory(prefix="formal_conjectures_bench_")
     project_dir = Path(tmp.name)
     shutil.copytree(GOLDEN_ENV_DIR, project_dir, dirs_exist_ok=True)
-
-    if not DEPENDENCY_PACKAGES.exists():
-        fail(f"Trusted dependency packages are missing: {DEPENDENCY_PACKAGES}")
-    lake_dir = project_dir / ".lake"
-    lake_dir.mkdir(exist_ok=True)
-    os.symlink(DEPENDENCY_PACKAGES, lake_dir / "packages", target_is_directory=True)
 
     editable_src = TASK_DIR / EDITABLE_REL
     editable_dst = project_dir / EDITABLE_REL
@@ -264,19 +338,56 @@ def make_fresh_golden_project() -> tempfile.TemporaryDirectory[str]:
             dst = editable_dst / rel
             dst.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(src, dst)
+    # Transform only the verification copy; share all frozen definitions from Spec.
+    target = editable_dst / "Target.lean"
+    _, rest = target.read_text().split(MARKER, 1)
+    target.write_text("import FCBTrustedSpec\nimport FormalConjecturesBench.Submission\n"
+        "open Set Filter Topology Asymptotics\nnamespace Erdos375\n" + MARKER + rest)
+    if os.geteuid() == 0:
+        import pwd
+        account = pwd.getpwnam("ubuntu")
+        for item in (project_dir, *project_dir.rglob("*")):
+            os.chown(item, account.pw_uid, account.pw_gid)
     return tmp
 
 
 def check_build(project_dir: Path) -> None:
-    result = run(["lake", "build", "+FormalConjecturesBench.Target"], cwd=project_dir)
-    if result.returncode != 0:
-        fail("lake build failed\n" + result.stdout)
+    done, active = set(), set()
+    def build(source: Path):
+        source = source.resolve()
+        if source in done:
+            return
+        if source in active:
+            fail(f"Cyclic candidate imports: {source}")
+        active.add(source)
+        result = run_lean(project_dir, ["--deps", str(source)])
+        if result.returncode:
+            fail("Lean import parsing failed\n" + result.stdout)
+        for line in result.stdout.splitlines():
+            dep = Path(line)
+            if not dep.is_absolute() or dep.suffix != ".olean":
+                fail("Unresolved candidate import\n" + result.stdout)
+            dep = dep.resolve()
+            if dep.is_relative_to(project_dir):
+                child = dep.with_suffix(".lean")
+                if not child.is_file():
+                    fail(f"Missing candidate import source: {child}")
+                build(child)
+            elif not dep.is_file():
+                fail(f"Missing precompiled import: {dep}")
+        result = run_lean(project_dir, ["-o", str(source.with_suffix(".olean")), str(source)])
+        if result.returncode:
+            fail("Lean candidate build failed\n" + result.stdout)
+        active.remove(source)
+        done.add(source)
+    build(project_dir / TARGET_REL)
+    print("Candidate compiled as ubuntu with fixed import paths", flush=True)
 
 
 def lean_output(project_dir: Path, source: str) -> str:
     tmp = project_dir / "_formal_conjectures_bench_audit.lean"
     tmp.write_text(source, encoding="utf-8")
-    result = run(["lake", "env", "lean", str(tmp)], cwd=project_dir, timeout=300)
+    result = run_lean(project_dir, [str(tmp)], timeout=300)
     try:
         tmp.unlink()
     except FileNotFoundError:
@@ -301,13 +412,17 @@ def parse_axioms(output: str, theorem_name: str) -> set[str]:
     return {item.strip() for item in raw.split(",") if item.strip()}
 
 
+def check_trusted_type(project_dir: Path) -> None:
+    if SPEC_MANIFEST is None:
+        fail("Trusted Spec was not validated")
+    print(lean_output(project_dir, (SPEC_DIR / "AuditSpec.lean").read_text()), end="", flush=True)
+
+
 def check_golden_theorem_import(project_dir: Path) -> None:
-    golden_check = TESTS_DIR / "GoldenCheck.lean"
-    dst = project_dir / "GoldenCheck.lean"
-    shutil.copy2(golden_check, dst)
-    result = run(["lake", "env", "lean", str(dst)], cwd=project_dir, timeout=300)
-    if result.returncode != 0:
-        fail("Golden theorem check failed\\n" + result.stdout)
+    # Compare the full candidate type against the already-elaborated value.
+    lean_output(project_dir, "import FCBTrustedSpec\nimport FormalConjecturesBench.Target\n"
+        f"example : _root_.FCBTrustedSpec.ExpectedType := @_root_.{THEOREM_NAME}\n")
+    print("Complete theorem type matches trusted Spec", flush=True)
 
 
 def check_axioms(project_dir: Path) -> None:
@@ -334,9 +449,10 @@ def main() -> None:
     check_no_banned_patterns_in_editable_sources()
     check_extra_lean_files_confined()
     check_frozen_files_unchanged()
-    restore_dependency_config_cache()
+    load_trusted_spec()
     with make_fresh_golden_project() as tmp:
         project_dir = Path(tmp)
+        check_trusted_type(project_dir)
         check_build(project_dir)
         check_golden_theorem_import(project_dir)
         check_axioms(project_dir)

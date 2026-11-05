@@ -1,0 +1,11 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos968.u: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0 (original elaborated expression)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+(fun x => ∑ n ∈ Finset.Iio x.primeCounting', |Erdos968.u (n + 1) - Erdos968.u n|) =Θ[Filter.atTop] fun x =>
+  Real.log ↑x ^ 2
+def Erdos968.u : ℕ → ℝ :=
+fun n => ↑(Nat.nth Nat.Prime n) / (↑n + 1)
+'Erdos968.u' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-agohgiuga-le-primefactors-card-of-isstronggiuga",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式列出 /app、/opt/formal-conjectures 和隐藏的 .lake/packages；匹配 Docker 内以 ubuntu 实际搜到 package 中的 Lean 定理，无路径错误。证据：attempt-001/instruction-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题没有额外上游 import，保留 ProblemImports 预编译；补上 Dockerfile 最末 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。最终本地 task 的 Harbor 强制构建成功，同一子容器 ubuntu 构建退出 0；原有 sorry 仅产生构建警告。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能运行 Unicode 脚本及最终复验，均为 no_issue；原始头通过，改头和移除 := 被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重解析 GoldenCheck。现从本题可信 golden 隔离导出完整 ExpectedType，两个 binders 为 a、ha，universes=[]；匹配 Lean 4.27.0 Docker 编译并独立审计，ExpectedType 及 IsStrongGiuga 仅依赖三种标准公理，临时目标不导出。两份可信包一致，checker 固定哈希、工具链及加载路径，不运行时生成或回退。最终当前本地 task 经 Harbor force_build 构建并上传 /tests；40 个容器交付文件与本地哈希吻合。两入口实际退出 1、reward=0，原因均为原题 sorry；同一最终 Harbor 子容器两份 checker 的函数补测全部通过：Spec 加载/审计、ubuntu UID 1000 编译、完整参数类型比较、目标 sorryAx 拒绝及 canary，以及冻结、越界、实例语义偷换、缓存遮蔽、缺失/篡改产物负例。原有源码规则与公理检查 AST 保持，所有 immutable 哈希不变。证据根目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-agohgiuga-le-primefactors-card-of-isstronggiuga/attempt-001；关键记录 final-acceptance.log、final-delivery-hashes.json、final-validation-{official,local}.log。Docker 清理已验证：本题容器 f6238a8efc78、ab83fa993462、92515880e430 已 stop/rm；本题镜像 3d700bec8c9c、35cf47de5112 及两个专属网络已删除并 inspect 确认不存在；预存依赖缓存 25926448bc53 保留。详见 cleanup.json，未遗留本题资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。完整核对 composite、指数 a-1、Ioo 0 a 及 distinct primeFactors.card；与 Tipu《A Note on Giuga's Conjecture》(2007) 第158页的 strong Giuga 定义及至少九个素因子结论一致。非 weak Giuga 断言，未发现明显数学错误。Wikipedia 403，但原论文可读；数学陈述、定义、Target 和 golden 均未修改。详见 math-and-public-review.json、tipu.txt。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID 精确匹配技能 CSV 未命中；多组检索后追踪 FormalConjectures PR #7660 找到 https://github.com/danielpuri1901/erdos-lean-formalization/blob/d22ecd7653a24f616d6bfb523fbc973ff40ef1d6/Solution.lean#L110 。实际读取完整 Solution.lean、Solution/GiugaIff.lean 及其 pinned 上游定义，核对本任务完整类型一致，所用证明无 sorry/admit、新公理或 native_decide；Challenge 中的占位证明未被导入或使用。已标记 public_lean4_proof=true；公开工程使用 Lean 4.33.1，本次未在任务 4.27.0 环境编译该答案，亦未将答案放入任务或镜像。GitHub 部分 API/代码搜索受限不影响已取得的精确证明及依赖核对。详见 public-csv-match.json、math-and-public-review.json 和 public-proof/。"
+    }
+  }
+}

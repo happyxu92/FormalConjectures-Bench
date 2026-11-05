@@ -1,0 +1,44 @@
+{
+  "task_id": "erdosproblems-316-generalized",
+  "target_name": "Erdos316.erdos_316.variants.generalized",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "outer_parameters": [
+    "n : Nat",
+    "hn : 2 ≤ n"
+  ],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "2164d35ef4266145eab8a271dba77d163591f43bb7ef5b2524069b517f0fd0ea",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "462b488024c1c975505cd5cbeb9af0eccdd3b47c3d8fbd6de19334d832df600f",
+    "FCBTrustedSpec.ilean": "f7a98d0ea86c50f1fee69738f4ad2f65654692573ca97417fe56689bfaab3f77",
+    "FCBTrustedSpec.lean": "02bcc33b954481dca197e4e8965e5f47ac536c23d660bf57751e2af00f230820",
+    "FCBTrustedSpec.olean": "de63b375cb0625aa84acd7df1b1d8eb48b3915141b00456c86f150061ae61c02",
+    "audit.log": "edad4e1f14dcf6d877f3b65e85f139ffa514c417c542904a1459efbcf9e78e57",
+    "generate.py": "5cc2833fe7aff061f11197520463b3625cf6474624a8cfcdfc2f6dc0955c0d74",
+    "reproduce.sh": "9061ae83f8a40fc3ef729d829578482c195c84cdb23dfd908c0831649675db9c"
+  },
+  "generation_image": "sha256:e21dc171550d4c49aceba963047d00d1a350ce711019cbd9cb32c4770c7a39df",
+  "generation_command": "docker run -d --network none --name erdosproblems-316-generalized-spec-g61-a001-c7f4 fcb-repair/erdosproblems-252-k-eq-four:252four-20261102-183405 sleep infinity; docker cp generation-input erdosproblems-316-generalized-spec-g61-a001-c7f4:/tmp/repair-bundle; docker exec -u root erdosproblems-316-generalized-spec-g61-a001-c7f4 bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Independent import; n and hn preserved, zero universe parameters; ExpectedType value and retained prefix theorems transitively use only allowed standard axioms. Temporary target and all children absent."
+}

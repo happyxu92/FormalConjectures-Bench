@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos683.P: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 3
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n k : ℕ), 0 < k ∧ k ≤ n / 2 → Erdos683.P n k > k
+def Erdos683.P : ℕ → ℕ → ℕ :=
+fun n k => (n.choose k).primeFactors.sup id
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos683.P' depends on axioms: [propext, Classical.choice, Quot.sound]

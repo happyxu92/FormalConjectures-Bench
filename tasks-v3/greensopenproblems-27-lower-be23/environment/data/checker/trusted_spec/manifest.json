@@ -1,0 +1,30 @@
+{
+  "task_id": "greensopenproblems-27-lower-be23",
+  "target_name": "Green27.green_27.variants.lower_be23",
+  "universe_params": [],
+  "outer_binder_count": 0,
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "b740cea4854ef5ba1dab4f4724e6714476c117d5cf3179efc9f867f7b10f9c96",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "4c746a54b3d27d42a48253793f8ccb0df75fa8120543e9cc2faa14713f8da410",
+    "FCBTrustedSpec.ilean": "c3c38e0c08ebd2df2e51349a1f904b358438f602b0f5f56784932485db51cc83",
+    "FCBTrustedSpec.lean": "c7ba559f1f55e4db994e34180e850fc4fb022ec8d6ae06b5287bca301ccf56ad",
+    "FCBTrustedSpec.olean": "85c5c413c51357294002929b71dad5fd5926edbe232f8edc089eba33d552a7b7",
+    "audit.log": "45ca781bc6062b853cc9932b417b390b9e74628b8f29309320188465538dd235",
+    "generate.py": "8c42a1454a5110c1d94242a2cfa0b69e4da6e500662c1135d135b87f50845c39",
+    "reproduce.sh": "a5c939f36b80f0d8353b72aba7f883f5a7c938e7e511693df6030dc04656a7b5"
+  },
+  "generation": "golden prefix minus Submission import and final target doc; Lean parser/elaborator extracts full type and levels, restores original environment, addAndCompile definition",
+  "audit": "AuditSpec.lean imports compiled module, rejects exported temporary target, audits ExpectedType and prefix definitions transitively; no nonstandard axioms in expected type"
+}

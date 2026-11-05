@@ -1,0 +1,12 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos535.AllBigOmega: [propext, Quot.sound, Classical.choice]
+audited Erdos535.NoConstantPairwiseGcdCoprimeSubsets: [propext, Quot.sound]
+complete binder count: 2
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {r : ℕ},
+  3 ≤ r →
+    ∃ c_r > 0,
+      ∀ (k : ℕ) (A : Finset ℕ),
+        Erdos535.AllBigOmega k A → Erdos535.NoConstantPairwiseGcdCoprimeSubsets r A → ↑A.card ≤ c_r ^ k * ↑k.factorial
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

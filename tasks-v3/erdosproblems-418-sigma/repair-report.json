@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-418-sigma",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式加入 .lake/packages；最终 Harbor 容器 ubuntu 的三个路径搜索命中 Mathlib/Data/Nat/Totient.lean，退出 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；补齐 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。两次本地 Harbor 构建及最终容器普通用户复验成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本并最终复验，均 no_issue；原头、冻结哈希及 := 边界保持不变。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "可信 golden 隔离生成并审计完整 ExpectedType（外层参数 0、universes []），两份固定预编译包同步，禁止候选缓存遮蔽且无运行时生成回退。最终本地 Harbor 镜像 eae22596e7f7，上传 /tests 与 /opt 包哈希均匹配；两入口按预期因原题 sorry 返回 1/reward 0。同容器两路径实际函数补测全部通过：可信审计、ubuntu 编译、完整类型、目标 sorryAx 审计、canary、冻结/越界/语义偷换/缓存遮蔽/缺失及篡改负例。未增加普通 import 白名单或 initializer 沙箱。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-418-sigma/attempt-001；已 stop/rm 本题容器 ad099ccd2efc、542fd8273942、75264f3ed9b0，移除本题镜像 bbd14394eb16、eae22596e7f7 及两张自建网络并核实；保留预先存在的共享缓存。"
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "仅标 suspect，未证伪本目标：HasPosDensity 要求存在正自然密度子集，而 Erdős 1973 第83页 Satz I、Pollack–Pomerance 第3页仅给正下密度；一般正下密度集合不必包含正自然密度子集。上游 issue #5648 / PR #5795 明确指出该疑点。数学陈述、定义、golden、Spec 输入均未修改；详见证据 research-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 ID 精确匹配技能 CSV 未命中；经多组关键词及题页/论坛、上游、Mathlib、plby、Jayyhk 等源码检索，未找到覆盖保留目标的公开完整 Lean4 证明，已标 public_lean4_proof=false/status=searched。plby/Jayyhk 证明的是不属于 n−φ(n) 值域的整数有无穷多个；PR #2664/#3186 仅改属性并保留 sorry。关键页面曾受阻但已直接抓取核查；可选 GitHub Mathlib tree API 仍限流。此结论不声称证明不存在；详见 research-audit.json。"
+    }
+  }
+}

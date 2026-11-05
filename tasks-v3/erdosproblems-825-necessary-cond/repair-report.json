@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-825-necessary-cond",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 及 .lake/packages；匹配 Docker 中实际 rg 找到 Mathlib 的 properDivisors（退出码 0）。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 imports；原 Dockerfile 缺少最终普通用户构建验证，现以 USER ubuntu 后 RUN lake build +FormalConjecturesBench.Target 结尾。最终本地 Harbor 构建及同容器 ubuntu 构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "执行 skill Unicode 脚本及最终复验，case=no_issue；原头、冻结前缀和 := 边界校验通过，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重新解析 GoldenCheck，存在实例/名称语义遮蔽。已从本题固定 golden、移除 Submission 导入后在 Lean 4.27.0 匹配 Docker 提前提取完整 C/hC/h 类型（universes=[]），独立审计无 sorryAx/新增公理，交付两份同源固定预编译 Spec。运行时固定包哈希及依赖路径，禁止回退生成，以完整类型比较替代 GoldenCheck 路径；原冻结/源码/公理/canary 规则保留。最终本地 Harbor 子容器两入口均按预期因原始 sorry 拒绝（退出码 1，reward=0），并在同容器分别以 root/ubuntu 调用实际函数补齐全部关键路径，Spec 加载/可信审计、ubuntu 编译、完整类型、目标 sorryAx、canary、冻结/越界、实例语义偷换、缓存遮蔽、产物缺失/篡改负例均符合预期。/tests 上传包及 /opt 包与本地哈希一致，immutable 全匹配。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-825-necessary-cond/attempt-001；不声称原题证明通过。已 stop/rm 容器 c7e1f3eda1ab、e9698393aa57、a367afa9c2b3，删除镜像 2cd3058abd88、d15794f7b95b 及其 task tags，并删除本题 g61-825a-943b 与 -final 两个网络，均核实不存在；预先存在的匹配依赖镜像与共享缓存保留。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent；实际目标是必要条件变体，而非 Larsen 存在性原问题。核对 pinned upstream、Mathlib sigma/properDivisors 完整定义及 MathWorld Weird Number：70 的真因子为 1,2,5,7,10,14,35，sigma=144，128 个子集均无和为70；若 C≤2 则 h 在70矛盾，故严格 C>2 有效。原题站直访403，替代来源及独立有限核验充分支持本项；数学陈述、定义、golden、GoldenCheck 均未修改。详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true；按完整 ID 精确命中技能 CSV（public-csv-match.json）。来源：https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/825.lean#L54 | https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos825_erdos_825_variants_necessary_cond.lean#L63。按要求无需重新联网；未在本题锁定环境编译公开证明，未将答案放入任务。"
+    }
+  }
+}

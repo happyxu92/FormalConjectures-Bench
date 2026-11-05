@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-392-lower",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md now explicitly searches /app, /opt/formal-conjectures and /opt/formal-conjectures/.lake/packages. The exact search paths found a known package theorem as ubuntu in the final Harbor container (exit 0)."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports. Added the missing final Dockerfile USER ubuntu RUN lake build +FormalConjecturesBench.Target guard. Both current-local-task Harbor builds succeeded; the final same-container ubuntu build exited 0. Original dependency permissions retained."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran the skill Unicode script before and after repair: no_issue. Original header, frozen prefix and := checks pass; mutated headers and missing assignments are rejected."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Replaced candidate-time GoldenCheck proposition parsing with a repair-time elaborated/precompiled trusted Spec derived independently from this task's golden, excluding Submission. Full A/hA type and ordered empty universe list audited; ExpectedType transitively uses only allowed axioms. Both identical packages and checker AST/content verified. Fixed toolchain/import paths, pinned manifest/artifact/input hashes, no runtime regeneration. Final current-local-task Harbor build: erdosproblems-392-lower-g61-392f-final__env-main, image sha256:ab0f609a7c72974997d9080be0a073fb891ab8936e5399b18e7831e4f7902a2a. Uploaded /tests and installed /opt checker/Spec/golden hashes match local. Official and local entries reject original sorry (exit 1, official reward 0), not infrastructure failure. Both same-container 29-case direct suites pass: trusted audit, ubuntu compilation, full-type comparison, target sorryAx rejection, canary, frozen/out-of-bounds/source checks, legal helper declarations, frozen-text IsLeast semantic attack rejected by type mismatch, cache/module/environment shadowing, missing/tampered artifacts and manifest with no regeneration. All 15 immutable hashes unchanged. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-392-lower/attempt-001 (generation/package logs, final-validation, validation-coverage.json, delivery hashes, static audit). Cleanup verified: all three own containers, both own networks and final image ab0f609a7c72 removed. First-build image 66c7f790b6b1 retained because another agent's erdosproblems-394-factorial-gap-10-spec-g61-394a now uses it as shared cache; ordinary removal refused, no force or other-agent resource modification. Pre-existing shared base retained. See cleanup.json."
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Marked consistent. This is the explicitly stated factors-at-most-n variant A(n)=n-n/log(n)+o(n/log(n)), not the original n-squared problem. Checked pinned upstream, primary problem page and Tao's forum proof sketch, positive minimum counts, monotone final-factor bound, casts, logs and atTop small-n behavior. Independent Lean extraction confirms real subtraction/division. No obvious false-statement defect found; Target, definitions, golden and GoldenCheck unchanged. See statement-audit.json."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "unknown/blocked; exact full-ID skill CSV miss. Multiple theorem/alias/factorial/fork/Mathlib queries and actual sources inspected: upstream still sorry; PNT+/teorth IEANTN factors_le_n proves only the one-sided existence bound; plby A_asymptotic assumes unproved RefinementProperty. Followed author forum/blueprint, moved source, PR784 and issues648/649. No complete proof of this full IsLeast/little-o task verified. GitHub global exact code search returned 401, so do not claim no public proof exists. Metadata marked unknown/blocked; details and fetched source hashes in public-proof-audit.json and source-fetch.json. No public proof copied into the task or image."
+    }
+  }
+}

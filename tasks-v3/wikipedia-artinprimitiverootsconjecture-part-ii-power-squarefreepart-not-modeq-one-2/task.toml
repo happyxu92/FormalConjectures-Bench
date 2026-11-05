@@ -19,7 +19,12 @@ benchmark_bucket = "informal_proof"
 oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
-verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
+verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary. The full theorem type is compared with a fixed, independently elaborated and precompiled trusted Spec."
+statement_status = "suspect"
+statement_status_note = "The pinned hypothesis is Dirichlet GRH, whereas Hooley uses RH for Dedekind zeta functions of Kummer fields. Upstream issue #5701 and fix #5743 confirm the hypothesis discrepancy. This is a concrete formalization concern, not a counterexample or proof of impossibility; statement and definitions are unchanged."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID absent from the skill CSV. Upstream density target still has sorry; PRs #2604/#3128 only change attributes; cadamcat's proof establishes infinitude, not the required density. Broader source search and exclusions are recorded in repair evidence; GitHub branch/history API rate limits leave discovery coverage incomplete."
 
 [verifier]
 timeout_sec = 7200.0

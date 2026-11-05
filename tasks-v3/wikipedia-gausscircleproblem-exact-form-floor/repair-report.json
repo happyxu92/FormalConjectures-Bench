@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-gausscircleproblem-exact-form-floor",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令显式补入 /opt/formal-conjectures/.lake/packages；最终 Harbor 容器内 ubuntu 实测三个路径，匹配 mathlib 的 Set.ncard 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；补齐 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。最终当前本地 task 经 Harbor Docker 构建成功，同一容器 ubuntu 再构建退出 0；没有放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能运行 Unicode 脚本并最终复验，均为 no_issue；两份 checker、原始 Target 和可信 golden 的头及冻结边界一致，无需修改。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden 隔离候选生成并预编译 ExpectedType，完整保留 r/hr、universes=[]；ExpectedType 与 N/E 传递公理审计通过，同步两份源码/产物/清单。checker 固定已校验 Spec 和工具链/依赖来源，临时 Target 共用可信前缀，比较完整类型，无运行时命题解析或产物回退生成。当前本地 task 最终 Harbor 构建成功；/tests 上传与 /opt 包、checker、golden 哈希逐文件匹配。正式入口及 ubuntu check.sh 均因原始 sorry 退出 1/reward=0，不代表证明完成；同一 Harbor 子容器实际调用两份 checker 函数，补测 Spec 审计、uid=1000 编译、原完整类型匹配、sorryAx 拒绝及 canary，冻结/越界/实例语义偷换/缓存遮蔽/缺失及篡改负例全部通过。保留原源码安全检查和正常 import 规则，无外部模块白名单或 initializer 沙箱。首次网络冲突已用独立空闲子网解决。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-gausscircleproblem-exact-form-floor/attempt-001，见 final-review.json、validation-coverage.json、delivery-hashes.json、immutable-final.json。Docker 清理已核实完成：Spec 容器 fe7238861990、最终 Harbor 容器 26664b0330b7 均已 stop/rm；本题镜像 7fba71284933 及独立网络已删除，之前构建镜像亦核实不存在。预先存在的匹配依赖镜像与共享缓存保留，未清理其他任务资源；详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 statement_status=consistent。核对锁定上游、完整 N/E 定义和已 elaboration 的 Int 等式，与 MathWorld Gauss's Circle Problem 式(3)一致：r≥0、闭圆盘、整数 floor 差、Nat 索引有限支撑 tsum 均正确，r=0 时两端为1；未发现明显数学错误。Wikipedia 返回403，以成功读取的 MathWorld 和上游交叉核对。所有数学输入保持不变；详见 source-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID 精确匹配技能 CSV 未命中；多组检索追踪论文→PROOFS.md→公开接受提交 ebe22c661a2d04633343776a703fc6a6427b784e。完整读取 Solution.lean 的 gauss_circle_exact_form 及其全部本地引理，N 定义和目标头与本题逐字一致，无 sorry/admit 或新增公理；type_of% 引用目标类型而非占位证明。已标记 public_lean4_proof=true。来源：https://github.com/danielpuri1901/erdos-lean-formalization/blob/ebe22c661a2d04633343776a703fc6a6427b784e/Solution.lean 。源码核对完成，未在本题旧工具链重编译，也未将答案放入 task 或镜像；详见 source-review.json、public-source-comparison.json。"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos888.RequiredCondition: [propext, Quot.sound, Classical.choice]
+audited Erdos888.p: [propext, Quot.sound, Classical.choice]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+(fun n => ↑(Nat.findGreatest (Erdos888.p n) n)) =o[Filter.atTop] Nat.cast
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

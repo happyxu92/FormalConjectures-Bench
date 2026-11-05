@@ -9,6 +9,9 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "consistent"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task-ID CSV miss. Pinned/main and PR 2552/3077 target proofs remain sorry; partial Sylvester-Schur work does not prove this asymptotic bound. GitHub global code search and Erdős forum blocked; no complete public Lean4 proof confirmed."
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/961.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

@@ -8,6 +8,11 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "mismatch"
+statement_status_note = "Confirmed wrong-constant formalization: Rivoal (2012), Theorem 2(ii), concerns Euler–Mascheroni gamma, not Catalan G. Upstream issue #5716 and fix #5726 confirm the error. The retained Catalan disjunction is not thereby disproved; all mathematical inputs remain unchanged. The dependency also defines the negative of the usual Gompertz constant, which does not affect transcendence."
+public_lean4_proof = false
+public_lean4_proof_status = "searched"
+public_lean4_proof_note = "Exact task ID absent from skill CSV. Multi-query search of the retained Catalan/Gompertz statement, aliases, upstream main and PR #5726, Mathlib, Prove2Me and Catalan formalization repositories found no complete public Lean4 proof. Prove2Me has the different Euler–Mascheroni statement with sorry; Catalan irrationality and irrationality-measure proofs are insufficient. Evidence: attempt-001/public-proof-search.json."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/Wikipedia/Transcendental.lean"

@@ -1,0 +1,16 @@
+FCBTrustedSpec.lean:85:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:90:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:95:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:101:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited OeisA63880.unitaryDivisors: [propext, Quot.sound, Classical.choice]
+audited OeisA63880.usigma: [propext, Quot.sound, Classical.choice]
+audited OeisA63880.a: [propext, Quot.sound, Classical.choice]
+audited OeisA63880.A: [propext, Quot.sound, Classical.choice]
+audited OeisA63880.isPrimitiveTerm: [Quot.sound, propext, Classical.choice]
+complete binder count: 2
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ {n : ℕ}, OeisA63880.a n → ∃ m s, OeisA63880.isPrimitiveTerm m ∧ Squarefree s ∧ m.Coprime s ∧ n = m * s
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

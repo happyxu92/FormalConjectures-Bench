@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-697-i",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "保留前轮修复：instruction 显式包含 /app、/opt/formal-conjectures 和隐藏 packages。此次在匹配 Docker 及最终 Harbor 子容器以 ubuntu 实际搜索到 package 中 Filter.Tendsto，退出 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 imports；保留 Dockerfile 最后 USER ubuntu、RUN lake build +FormalConjecturesBench.Target。本轮当前本地 task 的 Harbor force_build 成功，镜像 3641cc8d46c6；同一子容器 ubuntu 重建退出 0，Lean 4.27.0/x86_64，依赖修订与锁定清单一致。原题 sorry 警告不代表证明通过。"
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "保留此前 𝓝 代理对修复；本轮实际运行技能 Unicode 脚本并最终复验 no_issue，原头、修改头、移除 := 均按预期判定。两份 checker 内容及 AST 一致，冻结头和前缀哈希未刷新。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "消除了前轮真实阻塞：仅在独立 Spec 中用 kernel 验证的周期集密度证明替换同名同完整类型 density_exists 的证明，δ 的 choose 定义及所有数学输入不变。取有界合格 d 的共同周期 N!，按商余分解周期计数并证明归一化余项趋零。参考只读兄弟题保存的一般引理，但由本题 golden 独立生成、编译和验收。原始 density_exists/目标完整类型、参数及 universes=[] 审计一致，δ 与原定义 rfl 相等；ExpectedType、δ、density_exists 传递公理仅三项标准公理。冻结 delta_lt 的 sorry 不在该依赖闭包，未修改。交付两份一致预编译包，manifest SHA256 fe3e9e96ce67e35a056190b15f817fa8c70dc545ee2e062f33eb82e27ab253d9；checker 固定可信路径、哈希、工具链和依赖来源，不运行时生成或解析命题；同环境比较 ExpectedType.value 与候选完整 type，保留原源码规则、公理审计及 canary，无通用外部模块白名单。本轮当前本地 Harbor 构建及上传 /tests、本地 /opt 包哈希核对通过。两入口实际退出 1、正式 reward=0，均仅原目标 sorry 的预期拒绝；同一 Harbor 子容器两份实际 checker 各 28 项补测全部符合预期，覆盖 Spec 加载/审计、ubuntu 编译、完整类型、公理拒绝、canary、冻结、越界、冻结文字不变的 Tendsto 名称偷换、同名源码/缓存遮蔽及产物缺失/篡改无回退。并未提供原目标证明。证据及生成/审计命令：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/retry-seven-20261105/tasks/erdosproblems-697-i/attempt-001。Docker 日志、产物已保存；本次 Spec/Harbor 两个容器已 stop/rm，镜像 3641cc8d46c6 及任务 tag、自建 697i 网络均已删除，inspect 核实 remaining={}。预先存在的匹配依赖镜像保留，未删除共享或其他 agent 资源；cleanup.exit=0。"
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "保留 statement_status=mismatch，仅标记、不改命题。Target.lean:57 假设 β=1/log 2 < α 却要求 δ(m,α)→0；完整定义与 https://www.erdosproblems.com/697 的密度相同，而 Hall 定理在此范围给出极限 1。取 α=β+1，由极限唯一性矛盾。此次实际读取原题页面、完整前缀和上游 #5271 原始修正补丁，确认方向错误；另有未被目标引用的 delta_lt 在 m=0 缺条件。公开 Target、所有 golden、GoldenCheck、数学定义/假设及 immutable-before 固定哈希均保持不变。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 ID 精确匹配 skill CSV 未命中；充分检索后未找到本题保留陈述的已知公开完整 Lean4 证明，标 searched，不是绝对不存在。实际读取 plby/lean-proofs 完整 Erdos697 源码，其最终结论为阈值下趋 0、阈值上趋 1，不覆盖本题。新跟进上游 #2691/#3213 的 raw patches，确认只是 category 声称已证明、仍全部 sorry；#5271 只修陈述。进一步检查 Jayyhk 实际目录 README（无 697，直接目标路径 404）、Woett 的无关 Hall 源码、Blair 目录及原题论坛。GitHub API 限流未被直接当成 unknown，已用实际源码、issue-search 和 patch-diff 替代核查具体线索；ScienceDirect 原论文 403 如实记录。主要相关来源和实际候选已覆盖，无待核实的具体完整证明线索。详见本轮 research-summary.json、source-fetch-results.json 及原始补丁；未将公开目标答案放入镜像。"
+    }
+  }
+}

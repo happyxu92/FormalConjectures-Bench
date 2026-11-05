@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-358-i",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已显式补齐 /app、/opt/formal-conjectures、/opt/formal-conjectures/.lake/packages；Harbor 容器中以 ubuntu 实搜 package 定理 sigma_apply 成功。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import。Dockerfile 末尾新增 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target；最终本地 Harbor 构建及同容器 ubuntu 构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本，初检和终检均 no_issue；原头通过，修改头及缺失 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离提取并编译完整 ExpectedType，universes=[]、无外层 binders；独立审计其值及引用定义的传递公理，仅标准公理。两份可信包和 checker 内容/AST 一致；固定清单、产物及依赖加载来源，不运行时生成或重解析命题。保留原冻结、源码、公理和 canary 检查。最终 task.toml 更新后再次由当前本地 task 经 Harbor 构建；核对 Harbor 上传 /tests 和镜像 /opt 中 checker、Spec、golden 全部哈希。正式/本地入口因原始 sorry 预期退出1、reward0；同一最终 Harbor 子容器中两套实际函数补测通过：可信加载/审计、uid1000 编译、完整类型比较、sorryAx 拒绝、canary，以及冻结/越界/语义偷换/缓存遮蔽/产物缺失及篡改负例。所有 immutable 哈希不变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-358-i/attempt-001，详见 validation-summary.json、delivery-hashes.json、static-validation.json。已 stop/rm 本题 spec、initial、final 三容器，删除本题镜像 5e770f645261 和 b530e626f668 及两个专属网络，逐项核实不存在；共享预存依赖镜像保留，详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "consistent：核对锁定上游完整定义及题目来源镜像；自然数严格递增序列是合理正整数变体。n>0 时空区间不贡献且表示数有限；n=0 特例不影响 atTop 趋于无穷。未发现明显错误，数学输入未修改。原站及 Tao PDF 直读403，未声称完整审计论文；详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID 精确命中技能 public-lean4-proofs.csv，已标记 public_lean4_proof=true。来源：https://github.com/plby/lean-proofs/blob/1268917deaaaa0d674f651287027baa26cea9920/src/latest/ErdosProblems/Erdos358.lean#L9111 。按要求无需重复联网核验；未在本题环境编译该公开证明，也未将答案加入镜像。"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-697-ii",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "保留此前已修复的三路径搜索命令，显式包含 .lake/packages；本轮最终 Harbor 子容器中 ubuntu 执行成功找到 package 内 exp_one_lt_three，退出 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题仅导入 ProblemImports 与 Submission，无额外上游 import。保留 Dockerfile 最后的 USER ubuntu / RUN lake build +FormalConjecturesBench.Target；本轮当前本地 task 的 Harbor force_build 完成，最终容器 ubuntu 重跑构建退出 0，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "保留此前修复的 repr Unicode 头；本轮开始及结束均实际执行技能脚本，结果 no_issue、不修改文件。原始头通过，改头及移除 := 被拒绝，两份 checker 内容及 AST 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本轮从本题 golden 隔离生成并独立预编译 Spec：以有界除数集合的 N! 周期性真实证明同名同完整类型 density_exists，保留 δ 的 choose 定义；原辅助引理及完整目标类型/universes 独立比较通过（隐式 α:ℝ、显式 hα，universes=[]）。ExpectedType、δ、density_exists 传递审计仅含标准三公理；未被引用的冻结 delta_lt/parts.i 仍原样含 sorry，不在预期类型依赖闭包。临时目标未导出，两份哈希包一致。checker 固定加载 /tests 或 /opt 的预编译包，无运行时重解析/回退，保留源码规则、冻结、公理及 canary；完整类型比较实际拒绝冻结文字不变的 Tendsto 语义偷换。当前本地 Harbor 镜像 53176a94c0e7 构建及上传/预装包逐文件哈希核对通过；两入口因原题 sorry 预期退出 1、reward=0。同一子容器两份实际函数补测各 29 项全部符合预期，覆盖可信审计、ubuntu 编译、完整类型、公理拒绝、canary、冻结/越界/缓存遮蔽/缺失与篡改负例；未增加通用外部模块白名单或 initializer 沙箱。Docker 清理已完成并核实：本轮两个容器 d95da7d2e095、f0373b3606a8 已 stop/rm，任务镜像 53176a94c0e7 和网络 b766339e85ca 已移除；预存共享依赖镜像保留，未删除其他任务资源。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/retry-seven-20261105/tasks/erdosproblems-697-ii/attempt-001。"
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "保留 metadata.statement_status=mismatch，仅标记不改数学输入。原目标阈值方向反了：α=0<1/log 2，m≥3 时 exp(m^0)=e<3，合格 d 必须 1<d<3 且 d≡1 mod m，矛盾；故 δ 最终为 0，不可能趋于 1。本轮 StatementCounterexample.lean 在最终 Harbor 容器通过实际 checker 的 ubuntu 编译，直接证明 ¬FCBTrustedSpec.ExpectedType，仅标准三公理。已实际读取原题网页、当前上游与 PR5271；所有公开 Target、golden、GoldenCheck 和原始 immutable 哈希不变。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中；保留 metadata.public_lean4_proof=unknown/status=blocked。多组题号、完整名、旧别名、Hall、密度及作者关键词检索，实际核对上游、PR2691/3213/5271、plby Lean 源码及 Jayyhk 目录。上游/旧 PR 仍 sorry，plby 证明相反的修正阈值且改用 limUnder，不覆盖保留目标；Jayyhk 无 697 条目。原题/论坛/证明声明页本轮直接读取成功，无证明声明；关键 problems.science 证明索引仍 HTTP500，部分 GitHub API 限流，因此不虚报 false。详见证据目录 research-review.json 和 source-fetch-results.json；density_exists 的辅助证明不等于本题完整证明。"
+    }
+  }
+}

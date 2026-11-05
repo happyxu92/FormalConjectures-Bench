@@ -9,6 +9,12 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "consistent"
+statement_note = "Definitions match the discrete balanced minimum-overlap problem. White (2022), Theorem 1, gives 0.379005, strictly stronger than this target; the historical attribution is Moser rather than Haugland, not a mathematical obstruction. Statement unchanged."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact skill CSV miss. Upstream target still sorry; linrock proves weaker bounds, and Dualverse proves a continuum bound without the task's discrete liminf bridge. GitHub global code search requires sign-in and API history/tree queries were rate-limited; no claim of nonexistence."
+public_lean4_proof_urls = ["https://github.com/linrock/math-proofs/blob/22db103d7b6109baca46f2623a7287b965a56936/erdos-36/Solution.lean", "https://github.com/dualverse-ai/station_data_v2/tree/main/artifacts/erdos_minimum_overlap/formal_proofs/s1"]
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/36.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

@@ -1,0 +1,10 @@
+FCBTrustedSpec.lean:47:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:71:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos930.IsPower: [propext]
+complete binder count: 4
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n k : ℕ), 0 ≤ n → 2 ≤ k → ¬Erdos930.IsPower (∏ m ∈ Finset.Icc (n + 1) (n + k), m)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

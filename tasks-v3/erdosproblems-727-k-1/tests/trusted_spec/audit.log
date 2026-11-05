@@ -1,0 +1,6 @@
+audited ExpectedType and its transitive dependencies: [propext]
+complete outer forall binder count: 0; original letI k := 1 elaborated by Lean
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+True ↔ {n | (n + 1).factorial ^ 2 ∣ (2 * n).factorial}.Infinite
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]

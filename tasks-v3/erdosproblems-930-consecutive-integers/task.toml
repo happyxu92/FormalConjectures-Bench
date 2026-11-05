@@ -8,6 +8,11 @@ authors = [{ name = "Allen Graham Hart" }]
 keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
+statement_status = "consistent"
+statement_note = "The preserved target is Erdos-Selfridge (1975), Theorem 1: k >= 2 consecutive positive integers starting at n+1, n natural. This is the solved r=1 variant, not the general open multi-interval problem."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID absent from skill CSV. Multiple keyword searches plus upstream, Mathlib, proof repositories and PR/fork leads checked; PRs 2588/3112 retain sorry and are not proofs. No verified complete proof found; global GitHub code search requires authentication (401), and subsequent API requests hit rate limits. See external repair evidence; existence remains unknown."
 category = "formal_mathematics"
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/930.lean"

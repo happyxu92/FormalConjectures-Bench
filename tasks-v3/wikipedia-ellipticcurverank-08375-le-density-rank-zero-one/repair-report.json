@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-ellipticcurverank-08375-le-density-rank-zero-one",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式加入 /opt/formal-conjectures/.lake/packages；匹配 Docker 内以 ubuntu 执行三路径 rg，找到 Mathlib 的 finrank 定义，退出 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题没有额外上游 import，无需追加模块；原 Dockerfile 缺普通用户构建验证，现最终以 ubuntu RUN lake build +FormalConjecturesBench.Target。当前本地 task 的 Harbor Docker 构建成功，同一容器 ubuntu 再构建退出 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 check_unicode_header.py：no_issue，原始头通过，改头和缺失 := 被拒绝；未修改头或冻结基线。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "由本题不可变 golden 隔离候选提前 elaboration，提取完整目标类型及空 universe 列表；独立编译审计 ExpectedType 和相关前缀定义，仅依赖允许公理，两份包一致。checker 固定 /tests 或本地 /opt 包与工具链/依赖路径，验证哈希后仅加载预编译产物，完整类型比较不再解析原命题、不回退生成。保留原源码、冻结、公理及 canary 检查。当前本地 Harbor 镜像 sha256:5e8fae0657dd94717467e9e7e58177bb8a100d442ebc6727373a515c09aab800；上传 /tests 与 /opt 包及 golden 共 35 文件哈希核对通过。两入口均因原题 sorry 预期退出 1/reward 0；同一子容器分别以正式和本地 checker 实际函数补测 Spec 加载/可信审计、ubuntu 编译、完整类型、公理、canary、冻结/越界/缓存遮蔽/产物缺失及篡改负例全部通过。冻结文字不变的恶意 LE ℝ 实例可编译且无额外公理，但被完整类型比较及 main 拒绝。全部 immutable 哈希不变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-ellipticcurverank-08375-le-density-rank-zero-one/attempt-001。Docker 清理已核实：容器 e96c499f50a7、da4542171403 已 stop/rm，本题镜像 5e8fae0657dd 及 e83a 专属网络已删除；既有共享缓存 6b765e0c2f25 保留，无本题新增资源遗留（cleanup.json）。此项不是原题证明通过。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "对照锁定上游及 Bhargava–Shankar https://arxiv.org/html/1312.7859 引言和定理4：约化整数短 Weierstrass 模型、非零判别式、朴素高度、Mordell–Weil 秩和至少 83.75% 的 liminf 下界未见导致目标不成立的错误。小高度空集不影响极限。辅助冻结 MW 实例的任意群/模结构泛化另有上游 PR4355 修正，已记录，但不是 rank/ExpectedType 的依赖，不能据此认定本目标错误。陈述、定义和 golden 均未修改；详见 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 task ID 精确匹配技能 CSV 未命中。多组名称/常数/等价分数/作者关键词检索，核查上游 main、mo271 源码、PR2601/3125 实际补丁、Stoll Mordell–Weil/单曲线 rank 源码、Mathlib、作者网页及来源浏览器；目标仍 sorry，PR 仅改分类，局部秩结果不覆盖本密度命题。未验证到完整公开证明；GitHub 全局代码搜索、PR API 和当前 Mathlib API 遭 403 限流，故标 unknown/blocked，不宣称不存在。metadata 已同步。详见 public-proof-review.json 和 public-source-fetch.json。"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos4.Erdos4For: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0; full Iff value preserved
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+True ↔ ∀ C > 0, Erdos4.Erdos4For C
+def Erdos4.Erdos4For : ℝ → Prop :=
+fun C =>
+  {n |
+      ↑(Nat.nth Nat.Prime (n + 1)) - ↑(Nat.nth Nat.Prime n) >
+        C * Real.log (Real.log ↑n) * Real.log (Real.log (Real.log (Real.log ↑n))) /
+            Real.log (Real.log (Real.log ↑n)) ^ 2 *
+          Real.log ↑n}.Infinite
+'Erdos4.Erdos4For' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

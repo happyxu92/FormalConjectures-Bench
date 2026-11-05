@@ -1,0 +1,15 @@
+audited ExpectedType and transitive dependencies: [Classical.choice, propext, Quot.sound]
+complete binder: f, Lean.BinderInfo.default, type: ℕ → ℕ
+complete binder: S, Lean.BinderInfo.default, type: Set ℕ
+complete binder: hS, Lean.BinderInfo.default, type: S = {k | ∃ n, StrictMono n ∧ 0 ∉ Set.range n ∧ 1 = ∑ i, 1 / ↑(n i)}
+complete binder: h, Lean.BinderInfo.default, type: ∀ k ∈ S,
+  IsLeast {x | ∃ n, ∃ (_ : StrictMono n) (_ : 0 ∉ Set.range n) (_ : 1 = ∑ i, 1 / ↑(n i)), n (Fin.last k) = x} (f k)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (f : ℕ → ℕ) (S : Set ℕ),
+  S = {k | ∃ n, StrictMono n ∧ 0 ∉ Set.range n ∧ 1 = ∑ i, 1 / ↑(n i)} →
+    (∀ k ∈ S,
+        IsLeast {x | ∃ n, ∃ (_ : StrictMono n) (_ : 0 ∉ Set.range n) (_ : 1 = ∑ i, 1 / ↑(n i)), n (Fin.last k) = x}
+          (f k)) →
+      ∃ o, ∃ (_ : o =o[Filter.atTop] 1), ∀ k ∈ S, (1 + o k) * Real.exp 1 / (Real.exp 1 - 1) * (↑k + 1) ≤ ↑(f k)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

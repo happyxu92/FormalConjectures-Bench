@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-14-w-3-5",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 及 .lake/packages；最终 Harbor 容器内以 ubuntu 实际搜到 package 中的 sigma_apply，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 imports；补齐 Dockerfile 末尾 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。最终本地 Harbor 构建及同容器 ubuntu 再构建均通过。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能运行 Unicode 脚本并最终复验，均为 no_issue；两份头部与可信原始 Target 一致，修改头及移除 := 的负例被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "已从本题不可变 golden 隔离提取完整 Lean 类型和 universes（无外层参数、无 universe 参数），预编译并独立审计 ExpectedType、W 及 AP 保证集的传递公理；两份 Spec 和 checker 内容/AST 一致。固定加载可信包，不运行时生成或重解析命题，保留原安全规则。最终本地 Harbor trial greensopenproblems-14-w-3-5-g61-a001-35bd-verified，镜像 sha256:2f697ec24023b8016fa33d66158931276cf73355fd636608bf55930de308eed4；上传 /tests 与安装 /opt 全包哈希均匹配。两入口因原题 sorry 预期退出 1、reward 0；同一子容器两套实际函数补测均退出 0，覆盖可信审计、ubuntu 编译、完整类型比较、目标 sorryAx 拒绝、canary、冻结/越界检查、合法 OfNat 实例语义偷换的类型拒绝、同名缓存遮蔽、产物缺失/篡改且不回退生成。曾发现旧构建上下文中的 GoldenCheck 内容不符，保留证据，仅刷新该文件 mtime（字节及固定哈希不变）并添加 Docker 打包哈希断言后重新 Harbor 构建，最终一致性验收通过。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-14-w-3-5/attempt-001，详见 validation-summary.json、delivery.json、immutable-final.json。未提供原题完整证明，不声称原题证明通过。Docker 清理已完成并逐一 inspect 确认：移除本次 4 个容器（d1a15228f8a9、c09056a4f579、760318f53f24、d010e7e52c3c）、3 个镜像（2f697ec24023、38c98a13d33b、c4c595281677）及 3 个专用网络；预先存在的共享依赖镜像保留。详见 cleanup.json/log，无遗留本题资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已标 statement_status=consistent。核对锁定上游 14.lean:48-58,157、Green 原文 Problem 14 及 Ahmed–Kullmann–Snevily arXiv:1102.5433 第3页 Definition 1.1/Table 1，W(3,5)=22。检查 Icc 1 N、两种颜色、AP 基数/公差及 Nat sInf 的边界，未发现明显错误。这是已知精确值任务而非一般渐近问题；数学定义、Target、所有 golden 和 GoldenCheck 均保持原字节。详见 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "完整 ID 精确命中技能 references/public-lean4-proofs.csv，已标 public_lean4_proof=true。来源：https://github.com/Konamiu/formal-conjectures/blob/d6a68af97f6ca7856d892569d88ab1ecc8e927bf/FormalConjectures/GreensOpenProblems/14.lean#L313 。按要求接受 CSV 标记，未重新联网核验或在本题编译该公开证明，未将答案复制进任务。"
+    }
+  }
+}

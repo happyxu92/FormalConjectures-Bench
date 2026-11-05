@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-2-green-2-upper-bound-ruzsa",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 已显式加入 /opt/formal-conjectures/.lake/packages；shell 语法及 Harbor 容器内 package 定义搜索通过。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import。已补 Dockerfile 最终 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target；当前本地 task 的 Harbor Docker 构建及同一容器 ubuntu 构建均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整运行技能 Unicode 脚本并最终复验，均为 no_issue；原始头通过，修改头和移除 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题原始 golden 隔离候选提取完整类型，universes=[]；匹配 Docker 预编译 ExpectedType，审计其及前缀定义仅依赖标准允许公理。两份可信包与 checker AST/内容一致，固定路径/哈希/版本验证，无运行时生成或回退解析。Harbor 本地构建镜像 sha256:3caf46dbb36955ddb34cb9c8cd93683ca3f3902e45b612468f4cb418b6912f14；上传 /tests 和镜像 /opt 包均与本地哈希一致。正式、本地入口均因原始 sorry 预期退出 1，reward=0，不代表原题证明通过；同一子容器两路径各 30 项实际函数补测通过，包括 ubuntu UID=1000、完整类型、公理/sorry canary、冻结/越界、合法 LT 实例语义偷换、缓存遮蔽、产物缺失及篡改拒绝。所有 immutable 哈希保持。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-2-green-2-upper-bound-ruzsa/attempt-001。已 stop/rm 并核实本题容器 51da596d7435、df74c0ccde5b 不存在；已删除并核实本题镜像 3caf46dbb369 及网络 fde792db0edf 不存在。预存共享依赖镜像保留；详见 cleanup.json，无遗留本题资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。已核对完整定义、实际 restrictedSumset 的 offDiag 定义、锁定上游、Green Problem 2 及 Sanders 原文 Theorem 1.1 (Ruzsa)。任意充分大基数的最坏情况构造与指数上界一致，增大正 C 可吸收常数并取严格不等式。未发现明显错误；保留全部数学输入。详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "unknown/blocked：完整 task ID 精确匹配技能 CSV 未命中；多组检索并核查当前上游（仍为 sorry）、Mathlib、作者资料、相关仓库源码、PR/issue 与 aiXiv 索引，未验证到覆盖本目标的完整证明。GitHub 全局代码检索及 forks/branches API 受 403 限流，网页代码搜索需登录，不能据此断言不存在。metadata 已如实标记 unknown/blocked；检索词、排除理由及访问限制见 public-proof-review.json。"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-346-gt-goldenratio-not-isaddcomplete",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令显式包含 /app、/opt/formal-conjectures 及隐藏 .lake/packages；最终 Harbor 子容器以 ubuntu 搜到 mathlib/Data/Real/Sqrt.lean 的 sqrt_nonneg，exit 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 只有两个标准 imports，无需增加上游预编译模块。补齐原来缺少的 Dockerfile 末尾 ubuntu RUN lake build +FormalConjecturesBench.Target；当前本地 Harbor force_build 成功，同子容器 ubuntu 实测构建 exit 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本及最终复验均为 no_issue；原头、冻结前缀、:= 边界及两份 checker 一致性通过。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重新解析 GoldenCheck，存在语义遮蔽风险。现由本题可信 golden 隔离生成预编译 ExpectedType，保留 A,hA,B,h,hB 全部5参数、空 universes；编译审计仅允许标准公理。两包和 checker AST/内容相同；固定来源/hash/版本校验，无运行时生成或回退。最终本地 Harbor 构建、/tests 上传与 /opt 包/golden 哈希一致。正式及 ubuntu 本地入口均因原题 sorry 预期 exit 1、reward 0，非证明通过；同一最终子容器两套实际函数补测均成功，涵盖 Spec/审计、ubuntu编译、完整类型、公理审计拒绝sorryAx、canary、冻结/越界、语义名称偷换、缓存/环境遮蔽、缺失/篡改负例，普通定义及实例规则保留。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-346-gt-goldenratio-not-isaddcomplete/attempt-001。Docker清理：已核实移除本题3个容器 9f825d6057e4,0d488d2a688c,b1534bfe8a6c；本题镜像 6539ee6b3231,5a083c69d2bc 及两个专属网络；预先存在的共享依赖镜像保留。详 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 consistent，数学输入未修改。读取 Erdos–Graham (1980) 印刷页56–57（book-052/053.png）；p.57明确指出逐项比值>黄金比例自动满足任意无限删项后不完全。Lean IsAddComplete 是最终可表示为有限不同项之和；实数乘法、B无限子集、严格性及A(0)=0边界一致。本题是该已知充分条件，不是整个极限猜想。主站403，已获取并阅读作者站原书扫描；详 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "按完整 ID 精确命中 skill references/public-lean4-proofs.csv；public_lean4_proof=true。来源 https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/346.lean#L159；依用户要求无需重新联网核验，未在本题编译或复制公开答案。"
+    }
+  }
+}

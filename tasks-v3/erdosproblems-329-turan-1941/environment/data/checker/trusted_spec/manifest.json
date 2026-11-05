@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-329-turan-1941",
+  "target_name": "Erdos329.erdos_329.variants.turan_1941",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "b345814f370e710760b2288324614076f9bf4037871034a75888803bc105e890",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "3a55088509aca2a14efc9d1f687601dbe38f6d53892320eb56c0d04e19e8c0bd",
+    "FCBTrustedSpec.ilean": "cc755779cb001a1e9eaae7c1db7a647cbdb18f7707ecd922db9bff29ea49fc6a",
+    "FCBTrustedSpec.lean": "9b197d571ff3c0e8dfeab83cb27892ba988122c6d5bfa0c3b7cd3fc766edb5ab",
+    "FCBTrustedSpec.olean": "bc97fa635daeeabf34477249b68c02b14a0c8a703f24b678b694778f30136a6b",
+    "audit.log": "ce7ae0fb5602d2a635bd5e286bcc8c8b00d566dab43f9f23916279a40650bdbd",
+    "generate.py": "44caf131d14a78829fb4c17e76c023dec8ff1e6a288440bf10117e4fa9aa150c",
+    "reproduce.sh": "13bc33ab322e3d78344093b8d8accc4cdf8244937abd54df61557fe7e70f0da2"
+  },
+  "generation_image": "sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a",
+  "generation_command": "docker run -d --network none --name erdosproblems-329-turan-1941-spec-g61-a001-e329 sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a sleep infinity; docker cp generation-input erdosproblems-329-turan-1941-spec-g61-a001-e329:/tmp/repair-bundle; docker exec -u root erdosproblems-329-turan-1941-spec-g61-a001-e329 bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Complete original type has exactly two outer binders (A : Set Nat and IsSidon A), no universes. Temporary target and children absent. ExpectedType, sqrtPartialDensity and sidonUpperDensity have only standard allowed transitive axioms; unrelated prefix placeholder theorems are not dependencies."
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-707-counterexample-mian-chowla",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages. Final Harbor container successfully ran the three-path rg command for package definition ncard (exit 0)."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra upstream imports. Added Dockerfile final USER ubuntu RUN lake build +FormalConjecturesBench.Target; current local Harbor image build and explicit ubuntu Target build succeeded."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran skill Unicode script before and after repair: no_issue; original header accepted, changed header and missing := rejected; copies agree."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated ExpectedType independently from original golden with Lean 4.27.0 in matching Docker; complete A/hA binders, universe parameters []. Kernel/transitive axiom audit passed; both fixed precompiled packages and checker AST/content agree. Final local Harbor image sha256:dd8d204794b49edd1f81914fe5655711f5a9a45023b239a33be5521ac86ace6f built from this task after metadata updates. /tests upload and /opt package/golden/checker hashes match local files. Official and local entries both exit 1, reward 0, solely due to original sorry. Same-container actual-function fixtures passed fixed Spec audit/load, ubuntu uid 1000 build, complete type comparison, target axiom rejection/allowed-axiom path and sorry canary; frozen/out-of-tree/semantic-name substitution/cache shadowing/missing-tampered package negatives rejected. No runtime Spec generation, import whitelist, or initializer sandbox. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-707-counterexample-mian-chowla/attempt-001. Docker cleanup verified: removed the spec container and both Harbor containers (suffix 707d4), both task image tags/IDs and their two task networks. Preexisting shared cache retained."
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "Marked statement_status=mismatch only. Target.lean:103-105 includes n=0 and does not require B finite. ZMod 0=Int (compiled rfl check), and finite Sidon seed {1,2,4,8,13} extends to an infinite perfect difference set, contradicting the target. See Alexeev–Mixon arXiv:2510.19804 Definition 5/Claim 10, upstream PR5493 and math-review.json. Statement, definitions, golden and ExpectedType intentionally unchanged."
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Exact full-ID skill CSV lookup missed. Substantial multi-query search and actual Lean-source/PR review found no complete public proof of this retained zero-inclusive statement (status searched, not an absolute absence claim). Alexeev/plby proofs require nonzero modulus; upstream exact target/PR variants still contain sorry. Read author sources, FormalConjectures, Mathlib tree, teorth, forum, qed.bot, PR2952/3615/3633/5493/1138. API/Cloudflare restrictions overcome for key sources via direct raw/patch fetches; no unresolved promising lead. No external proof compiled or bundled. See public-proof-review.json."
+    }
+  }
+}

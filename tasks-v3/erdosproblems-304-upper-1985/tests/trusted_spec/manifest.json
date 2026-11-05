@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-304-upper-1985",
+  "target_name": "Erdos304.erdos_304.variants.upper_1985",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "893d4d9d01304d9bd5c78c9825e686d06c934efd5628286df84b36645974d23e",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "484d274a040e745c18ea6e21a0a6170d8bd81eb90c40e2636a2a0348d551f02a",
+    "FCBTrustedSpec.ilean": "1ddf40ab564f2e6630af7bc4757f6bd56a9a58605940cd49a5ac36209ed00350",
+    "FCBTrustedSpec.lean": "15811caf24866c9074b60e400aa7e31df9a2ac7ea4a29a93877a33dc459f398a",
+    "FCBTrustedSpec.olean": "f2aca81a66c89bd728c77dcb87e2ffd263235a417bded75bcceb5023c6971f8a",
+    "audit.log": "3ef25788660dac51438c625a17083ba16f47ef0a91b1e09411cf406f02539c7b",
+    "generate.py": "8e1e49cf8c1c2c16493fed19c747434a851d3996f0dd89d49445870492ce9dfa",
+    "reproduce.sh": "1ef4b0d69377de34284bfc73ba38a192dc76a6a0289fc7e8cb4e613b22677745"
+  },
+  "generation_image": "sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a",
+  "generation_command": "docker run -d --network none --name erdosproblems-304-upper-1985-spec-g61-a001-4e91 erdos1062-import-20261102__env-main:latest sleep infinity; docker cp generation-input erdosproblems-304-upper-1985-spec-g61-a001-4e91:/tmp/repair-bundle; docker exec -u root erdosproblems-304-upper-1985-spec-g61-a001-4e91 bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Independent import, zero outer binders, no universe parameters. ExpectedType, smallestCollectionTo, smallestCollection and unitFractionExpressible transitively depend only on standard allowed axioms. Temporary target and children absent. Frozen upper_1950 and lower_1950 placeholders remain verbatim but do not occur in the audited dependency closures."
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "other-beavermatholympiad-beaver-math-olympiad-problem-4",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction 已显式加入 .lake/packages；在本次 Harbor 容器以 ubuntu 实际搜索成功，命中 mathlib/Mathlib/Data/Nat/Totient.lean:35 的 totient 定义。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import；补齐 Dockerfile 最终 USER ubuntu 后的 RUN lake build +FormalConjecturesBench.Target。本地 Harbor force_build 镜像 e8cde87ea03f 构建完成，同一容器 ubuntu 再构建退出 0。原始 sorry 警告不属于依赖故障。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际运行技能 Unicode 脚本并最终复验，均为 no_issue；未修改定理头或冻结基线。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "原 checker 在候选环境重新解析 GoldenCheck，已改为固定预编译 Spec。独立匹配 Docker 从本题 immutable golden 提取全部 a/a_ini/a_rec 参数及空 universes；ExpectedType 传递公理仅 propext，临时目标及子声明未导出。两份包及 checker 内容/AST 一致，清单固定哈希，Harbor 上传 /tests 与本地 /opt 包逐文件哈希一致。当前本地 task 经 Harbor force_build 验收；正式及 ubuntu 本地入口均因原题 sorry 预期退出 1、reward=0。在同一 Harbor 子容器对两份实际 checker 补测：Spec 加载/审计、ubuntu UID1000 编译、完整三参数类型比较、目标 sorryAx 拒绝、canary、冻结/越界/源码限制、冻结文本不变且仅改变 HMod 实例的可编译无非法公理攻击由完整类型比较拒绝、同名模块/缓存/环境变量遮蔽无效、产物缺失/篡改/清单篡改明确拒绝且无重建，均通过。所有 immutable 哈希未变；这不是原题证明通过。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/other-beavermatholympiad-beaver-math-olympiad-problem-4/attempt-001（generation.log、delivery.json、validation-{official,local}.log、Harbor 结果）。Docker 清理已核实：移除本题 Spec 容器 0fe31fa9c2f1、Harbor 容器 5beb40cc4bf0、本题镜像 e8cde87ea03f 及专属网络；预先存在的共享依赖镜像 e21dc171550d 保留。见 cleanup.json/log，无本题遗留资源。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata 标记 consistent。核对锁定 upstream BeaverMathOlympiad.lean:146-183 及 BusyBeaverWiki BMO#4 的完整递推和闭式解；本题声明与上游一致。自然数截减在该序列上不造成错误：a1=0，之后模3余数按 2,0,0,0 周期变化；else 的总化不改变所求结论。未改陈述或定义。来源及闭式/1024项辅助检查见 statement-audit.json（有限计算不冒充 Lean 证明）。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "按完整 task ID 精确命中技能 references/public-lean4-proofs.csv，已标 public_lean4_proof=true；按要求不重新联网验证。来源：https://github.com/gotrevor/collatz-cryptid/blob/62a4b7b0c0af9400098694cb5c5e65120ad4dc67/lean/Collatz/BMO/Problem4.lean#L106 。未将公开证明放入任务或声称在本题环境编译；见 public-csv-match.json。"
+    }
+  }
+}

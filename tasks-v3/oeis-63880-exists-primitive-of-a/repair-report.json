@@ -1,0 +1,35 @@
+{
+  "task_id": "oeis-63880-exists-primitive-of-a",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令显式补入 .lake/packages；在最终 Harbor 子容器以 ubuntu 实际搜索 package 定义成功。证据：attempt-001/final-instruction-search.log。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import；原 Dockerfile 缺普通用户最终构建。现以 USER ubuntu、RUN lake build +FormalConjecturesBench.Target 结尾，当前本地 task 的 Harbor 构建及容器内复验均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本并最终复验：case=no_issue，两份 checker 一致，原始头通过，改头及缺失 := 被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 移除 Submission import 后，在匹配 Docker/Lean 4.27.0 中独立提取完整类型（隐式 n、假设 h；universes=[]），预编译并审计 ExpectedType 及五项前缀定义，无 sorryAx 依赖；两包及固定清单同步。checker 固定预编译来源并比较完整类型，不运行时生成。当前本地 Harbor 镜像 sha256:eafdb9203677d01fb12f0f51867764a5e112bd6568451955b040e78d646af3de 构建成功，/tests 上传包及 /opt 包所有哈希与本地一致；两入口均因原题 sorry 预期退出 1、正式 reward=0，不代表证明通过。同一 Harbor 子容器内分别以 root/ubuntu 调用真实函数，完成 Spec 加载/审计、ubuntu UID=1000 编译、完整类型比较、目标 sorryAx 拒绝、canary，以及冻结/越界/源规则/缓存遮蔽/产物缺失与篡改负例。Squarefree 名称偷换保持冻结文本，在占位 fixture 中编译后被完整类型比较实际拒绝；未声称其通过完整源规则。AST、原安全规则及 immutable 哈希复核通过。证据目录：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/oeis-63880-exists-primitive-of-a/attempt-001。Docker 清理已完成并核实：本题两个容器（314ca85fdf6b、172d4c6fa01e）、Harbor 镜像 eafdb9203677 及本题专属网络均已移除；预先存在的共享依赖镜像保留。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整定义与固定上游 OEIS/63880.lean 的 research solved 目标一致。正整数限制、原始项定义及平方自由互素分解均合理；素数幂 sigma/usigma 比值单调可解释 primitive 分解，未发现明显错误。OEIS 直访受 Cloudflare/403 阻挡，已记录；固定上游源码及 Set.IsPrimitive 定义已实际读取。metadata 标 consistent；未修改数学输入。详见 statement-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "技能 CSV 按完整 task ID 精确命中，public_lean4_proof=true；按要求无需重新联网确认。来源：https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/5da9642575b26c2c816a49bcb56b33fed5456619/Proofs/T_OeisA63880_exists_primitive_of_a.lean#L491 及同文件 3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd 修订。未将公开答案写入镜像，未在本题环境编译该公开证明。"
+    }
+  }
+}

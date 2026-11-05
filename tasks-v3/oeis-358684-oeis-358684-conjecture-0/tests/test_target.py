@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import hashlib
+import importlib.util
 import json
 import os
 import re
@@ -32,6 +33,21 @@ EXPECTED_PREFIX_SHA256 = "0f415ff684426e288488893edb418282d23cca5e8b0386cf00c0f1
 EXPECTED_HEADER = "theorem oeis_358684_conjecture_0 (n : \u2115) :\n    padicValNat 2 (minFac (fermatNumber n) - 1) \u2264 2 ^ n - a n"
 THEOREM_NAME = "OeisA358684.oeis_358684_conjecture_0"
 ALLOWED_AXIOMS = set(["propext", "Classical.choice", "Quot.sound"])
+SPEC_DIR = TESTS_DIR / "trusted_spec"
+SPEC_MANIFEST_SHA256 = "8b007233ea8345d1481f44d6a178510adc17a414bd06c51c09717c2e024c5401"
+_support_spec = importlib.util.spec_from_file_location("fcb_fixed_verifier", SPEC_DIR / "verifier.py")
+_support = importlib.util.module_from_spec(_support_spec)
+_support_spec.loader.exec_module(_support)
+VERIFIER = _support.TrustedVerifier(TESTS_DIR, "oeis-358684-oeis-358684-conjecture-0", THEOREM_NAME, SPEC_MANIFEST_SHA256)
+
+
+def load_trusted_spec() -> dict:
+    return VERIFIER.load()
+
+
+def check_trusted_type(project_dir: Path) -> None:
+    VERIFIER.audit(project_dir)
+
 ELAN_PATHS = ["/opt/elan/bin", os.path.expanduser("~/.elan/bin")]
 ENV = {**os.environ, "PATH": f"{':'.join(ELAN_PATHS)}:{os.environ.get('PATH', '')}"}
 
@@ -243,47 +259,15 @@ def restore_dependency_config_cache() -> None:
 
 
 def make_fresh_golden_project() -> tempfile.TemporaryDirectory[str]:
-    tmp = tempfile.TemporaryDirectory(prefix="formal_conjectures_bench_")
-    project_dir = Path(tmp.name)
-    shutil.copytree(GOLDEN_ENV_DIR, project_dir, dirs_exist_ok=True)
-
-    if not DEPENDENCY_PACKAGES.exists():
-        fail(f"Trusted dependency packages are missing: {DEPENDENCY_PACKAGES}")
-    lake_dir = project_dir / ".lake"
-    lake_dir.mkdir(exist_ok=True)
-    os.symlink(DEPENDENCY_PACKAGES, lake_dir / "packages", target_is_directory=True)
-
-    editable_src = TASK_DIR / EDITABLE_REL
-    editable_dst = project_dir / EDITABLE_REL
-    editable_dst.mkdir(parents=True, exist_ok=True)
-    if editable_src.exists():
-        for src in sorted(editable_src.rglob("*.lean")):
-            if src.is_symlink() or not src.is_file():
-                fail(f"Editable Lean source must be a regular file: {src.relative_to(TASK_DIR)}")
-            rel = src.relative_to(editable_src)
-            dst = editable_dst / rel
-            dst.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(src, dst)
-    return tmp
+    return VERIFIER.make_project(TASK_DIR)
 
 
 def check_build(project_dir: Path) -> None:
-    result = run(["lake", "build", "+FormalConjecturesBench.Target"], cwd=project_dir)
-    if result.returncode != 0:
-        fail("lake build failed\n" + result.stdout)
+    VERIFIER.build(project_dir)
 
 
 def lean_output(project_dir: Path, source: str) -> str:
-    tmp = project_dir / "_formal_conjectures_bench_audit.lean"
-    tmp.write_text(source, encoding="utf-8")
-    result = run(["lake", "env", "lean", str(tmp)], cwd=project_dir, timeout=300)
-    try:
-        tmp.unlink()
-    except FileNotFoundError:
-        pass
-    if result.returncode != 0:
-        fail("Lean audit command failed\n" + result.stdout)
-    return result.stdout
+    return VERIFIER.output(project_dir, source)
 
 
 def parse_axioms(output: str, theorem_name: str) -> set[str]:
@@ -302,12 +286,7 @@ def parse_axioms(output: str, theorem_name: str) -> set[str]:
 
 
 def check_golden_theorem_import(project_dir: Path) -> None:
-    golden_check = TESTS_DIR / "GoldenCheck.lean"
-    dst = project_dir / "GoldenCheck.lean"
-    shutil.copy2(golden_check, dst)
-    result = run(["lake", "env", "lean", str(dst)], cwd=project_dir, timeout=300)
-    if result.returncode != 0:
-        fail("Golden theorem check failed\\n" + result.stdout)
+    VERIFIER.compare(project_dir)
 
 
 def check_axioms(project_dir: Path) -> None:
@@ -334,9 +313,10 @@ def main() -> None:
     check_no_banned_patterns_in_editable_sources()
     check_extra_lean_files_confined()
     check_frozen_files_unchanged()
-    restore_dependency_config_cache()
+    load_trusted_spec()
     with make_fresh_golden_project() as tmp:
         project_dir = Path(tmp)
+        check_trusted_type(project_dir)
         check_build(project_dir)
         check_golden_theorem_import(project_dir)
         check_axioms(project_dir)

@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-817-bdd-power",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "instruction.md 搜索命令已显式列出 /app、/opt/formal-conjectures 及 .lake/packages；bash 语法检查及最终 Harbor 容器内 ubuntu 实搜 Mathlib 中 isBigO_zero 成功。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 import。补上 Dockerfile 最终 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target；当前本地 task 的两次 Harbor force_build 和最终容器内 ubuntu 构建均成功，未放宽依赖权限。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已实际运行技能 Unicode 脚本及最终复验，均为 no_issue；原头、冻结前缀和 := 边界通过，修改头和缺失赋值被拒绝。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable 对应 golden 隔离 Submission，经匹配 Docker/Lean 4.27.0 提取完整 info.type 与 universes=[]，编译并审计 ExpectedType 和 g；两份可信包、checker 内容/AST 及全部 immutable 哈希一致。checker 只从入口固定 Spec 包加载并校验产物，不运行时生成或重新解析预期命题，临时 Target 共用可信前缀，保留原源码规则、公理审计和 canary。最终本地 Harbor trial erdosproblems-817-bdd-power-g61-817a-62f9-final 构建成功；/tests 上传包、/opt 包与本地哈希一致。两入口实际因原题 sorry 返回 1/reward=0，属预期证明拒绝；同一最终子容器两入口 checker 的实际函数补测均通过，覆盖 Spec 加载/审计、uid=1000 编译、完整类型比较、目标 sorryAx 拒绝/允许公理路径、sorry canary、冻结/越界、冻结文字不变的 HDiv 实例偷换（可编译且无额外公理，但完整类型比较拒绝）、同名模块/缓存/环境遮蔽、产物缺失/篡改及禁止回退。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-817-bdd-power/attempt-001/，详见 generation.log、manifest、harbor-final.log、delivery-hashes.json、validation-official.log、validation-local.log、static-validation.json。Docker 清理已完成并核实：移除本题 spec、初次 Harbor、final Harbor 共3个容器，删除本题两镜像（5afdbe9b4012、75bcbbfd6256）并确认完整镜像 ID 不存在；无本题残留容器/镜像/网络，保留预先存在的匹配依赖缓存。详见 cleanup.json、cleanup.log 和 docker-after-*。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "metadata.statement_status=consistent。本题是已知多项式损失下界变体，不是原问题更强的无损失猜想。已核对完整 g 定义、正整数区间、幂集和空和、IsAPOfLengthFree、sInf 非空性、实指数和 atTop/Big-O 方向。Korsky arXiv:2606.24139 §1/§4 给出更强的 c·3^n/√n 下界；Costa arXiv:2609.06303 的反向主问题结果不否定本变体。未发现明显数学错误，未改任何陈述或定义。来源网页 erdosproblems.com/817 为 403，已读取锁定上游和论文交叉核对；详见 research-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。多轮检索目标名、题号、数学表述、作者、上游/PR、Mathlib 及公开仓库后未找到本目标的公开完整 Lean4 证明（metadata.public_lean4_proof=false，status=searched；不是不存在证明的断言）。当前上游 bdd_power 仍为 sorry；PR2698/3220 实际补丁仅改分类且保留 sorry；Zenodo22638810 的 Lean 证书已成功下载、校验并读取相关源码，证明无多项式损失主问题的否定，不覆盖本下界。其他候选为数值验证、不同问题或不含817。GitHub API/代码搜索及题目站访问有限制，但具体关键线索均已通过原始源码、补丁或归档核实，无待跟进有效证明线索。检索词、来源、排除理由和访问限制详见外部证据 research-audit.json、fetch-evidence-results.json、pr2698.patch、pr3220.patch 和 zenodo-audit.json；未将公开证明编入任务。"
+    }
+  }
+}

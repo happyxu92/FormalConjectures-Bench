@@ -1,0 +1,10 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos587.MaxNotSqSum: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0 (closed existential proposition)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∃ O > 0, ∃ O' > 0, ∀ᶠ (N : ℕ) in Filter.atTop, ↑(Erdos587.MaxNotSqSum N) ≤ O' * Real.nthRoot 3 ↑N * Real.log ↑N ^ O
+def Erdos587.MaxNotSqSum : ℕ → ℕ :=
+fun N => {A ∈ (Finset.Icc 1 N).powerset | ∀ S ⊆ A, S ≠ ⊥ → ¬IsSquare (∑ n ∈ S, n)}.sup Finset.card
+'Erdos587.MaxNotSqSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

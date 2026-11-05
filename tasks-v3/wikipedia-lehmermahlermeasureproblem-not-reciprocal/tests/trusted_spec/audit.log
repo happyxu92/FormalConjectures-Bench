@@ -1,0 +1,19 @@
+FCBTrustedSpec.lean:45:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:56:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited LehmerMahlerMeasureProblem.mahlerMeasure: [propext, Quot.sound, Classical.choice]
+audited LehmerMahlerMeasureProblem.mahlerMeasureZ: [propext, Quot.sound, Classical.choice]
+audited LehmerMahlerMeasureProblem.lehmerPolynomial: [propext, Quot.sound, Classical.choice]
+binder f: Polynomial ℤ
+binder hf: LehmerMahlerMeasureProblem.mahlerMeasureZ f > 1
+binder hf': f.reverse ≠ f
+complete binder count: 3
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (f : Polynomial ℤ),
+  LehmerMahlerMeasureProblem.mahlerMeasureZ f > 1 →
+    f.reverse ≠ f →
+      LehmerMahlerMeasureProblem.mahlerMeasureZ f ≥
+        LehmerMahlerMeasureProblem.mahlerMeasureZ (Polynomial.X ^ 3 - Polynomial.X - 1)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

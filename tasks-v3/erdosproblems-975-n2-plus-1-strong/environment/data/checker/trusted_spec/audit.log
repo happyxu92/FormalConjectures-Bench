@@ -1,0 +1,7 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos975.Erdos975Sum: [propext, Quot.sound, Classical.choice]
+complete outer binder count: 0; complete Big-O proposition retained
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+(fun x => Erdos975.Erdos975Sum (Polynomial.X ^ 2 + 1) x - 3 / Real.pi * x * Real.log x) =O[Filter.atTop] id
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

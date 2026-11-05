@@ -9,6 +9,10 @@ keywords = ["lean4", "theorem-proving", "formal-mathematics"]
 
 [metadata]
 category = "formal_mathematics"
+statement_status = "consistent"
+public_lean4_proof = false
+public_lean4_proof_status = "searched"
+public_lean4_proof_note = "Multi-query search found no known complete Lean4 proof of this full parts.i target, including degree 3. Upstream remains sorry; PRs 2721/3243 only relabel attributes; OpenAI allDegrees and its inspected bridge concern degree-minus-two for degree >= 4. Access limits and source exclusions are recorded in the task repair evidence; this is not a nonexistence claim."
 source = "google-deepmind/formal-conjectures"
 source_file = "FormalConjectures/ErdosProblems/978.lean"
 formal_conjectures_commit = "233a10e857ef78e79fd9fe661d37db724089170a"

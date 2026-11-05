@@ -1,0 +1,35 @@
+{
+  "task_id": "greensopenproblems-24-upper-hl",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 及其 .lake/packages；ubuntu 实测找到 Mathlib/Order/LiminfLimsup.lean 中的 limsup，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "本题无额外上游 import；保留 ProblemImports 预编译，并在 Dockerfile 最后以 ubuntu RUN lake build +FormalConjecturesBench.Target。当前本地 Harbor 镜像构建及容器内 ubuntu 构建通过。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能执行 Unicode 脚本及最终复验，均 no_issue；原始头、冻结前缀、:= 边界及两份 golden 一致，无需改动。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离 Submission 提取完整类型并预编译 ExpectedType；外层参数 0、universes=[]，ExpectedType、gamma、max013AffineTranslates 的传递公理审计通过。两份包和 checker 一致；固定清单/哈希、Lean/依赖和加载路径，不运行时生成或重解析原命题。当前本地任务 Harbor force_build 验收、/tests 与 /opt 包及 golden 哈希核对、正式和 ubuntu 本地入口完成；原题 sorry 导致两入口退出 1、reward=0，属预期证明拒绝。已在同一 Harbor 子容器对两份实际 checker 补测 Spec 审计、uid=1000 编译、完整类型匹配、sorryAx 审计和 canary，以及冻结/越界/合法 LE 实例语义偷换/候选缓存遮蔽/产物缺失及篡改负例，均符合预期。未扩展普通 import 白名单或 initializer 沙箱。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/greensopenproblems-24-upper-hl/attempt-001。最终 Harbor 子容器内两份 checker 各 28 项补测通过；最终镜像 295e0bccd7b7。Docker 清理已完成并核验：本题 3 个容器（spec、初次及 final Harbor）、2 个网络和 2 个镜像（8d9102ab53b0、295e0bccd7b7）均已移除；预先存在的共享生成依赖镜像 e21dc171550d 保留，未影响其他资源。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "标记 consistent，未修改陈述或定义。核对 Green Problem 24 与 Aaronson arXiv:1801.07135 pp.1–3、Definition 1.3、(1.2)：本题是已知 gamma≤3/4 变体，不是开放精确值 1/3。计数对应 -2x+3y-z=0，x≠y 仅删除 n 个对角解；Nat sSup 非空有界，n=0 的除法不影响 atTop。冻结前缀另有 green_24 的 answer 作用域问题，但它不是本题目标或可信类型的依赖。详见 research-audit.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "完整 ID 精确匹配技能 CSV 未命中。多组检索并核查上游 pinned/main、PR2358 实际 Lean diff、aiXiv trace、issue5005 和 Mathlib；main 的 upper_HL 仍为 sorry，PR2358 仅证明 upper_trivial。未核实覆盖本目标的完整公开 Lean4 证明。GitHub 跨仓库代码搜索要求登录，LeanCoin 来源 404（其已知 PR 已排除），故 metadata 标记 unknown/blocked，不声称不存在。检索词、来源、排除原因与访问日志保存在证据目录 research-audit.json 和 source-fetch-results.json。"
+    }
+  }
+}

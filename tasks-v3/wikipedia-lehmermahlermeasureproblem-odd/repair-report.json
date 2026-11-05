@@ -1,0 +1,35 @@
+{
+  "task_id": "wikipedia-lehmermahlermeasureproblem-odd",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Added explicit /opt/formal-conjectures/.lake/packages to rg command. Final Harbor child ubuntu search found package IsCoprime definitions, exit 0; instruction-search.log."
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "No extra imports beyond ProblemImports and Submission. Added Dockerfile final USER ubuntu RUN lake build +FormalConjecturesBench.Target; final local Harbor build and same-child ubuntu build succeeded (exit 0). Original sorry warning is not a dependency failure."
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "Ran skill check_unicode_header.py before and after repair: no_issue; original header accepted, changed header and missing := rejected; no constants changed."
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Generated independent Spec from this task golden in matching Lean 4.27.0 x86_64 Docker environment; complete type has three binders f,hf,hf' and no universes. ExpectedType/prefix transitive axioms audited; temporary target absent. Fixed, hash-pinned /tests or local /opt precompiled packages; no runtime generation/GoldenCheck fallback. Current finalized local task built via Harbor wikipedia-lehmermahlermeasureproblem-odd-g61-a001-odd7-final3; uploaded and /opt checker/Spec/golden hashes match local. Both actual entries reject original sorry (exit 1, reward 0), expected proof failure. Same-child actual-function supplements passed all 28 cases for each entry: fixed Spec audit, observed ubuntu UID 1000 compilation, full type comparison, sorryAx rejection, canary, frozen/header/boundary and legal-helper rules, semantic LE-instance attack compile followed by type mismatch, cache/module/env shadowing, missing/tampered artifacts and manifest without regeneration. Initial context reconstruction exposed nested Polynomial namespace shadow; fixed root-qualified open and repeated full local Harbor acceptance. Evidence: /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/wikipedia-lehmermahlermeasureproblem-odd/attempt-001 (validation-coverage.json, delivery-hashes.json, immutable-final.json, generation.log, Harbor logs/history). Docker cleanup verified: four owned containers, three task images (IDs verified absent) and three owned networks removed; pre-existing shared base preserved."
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "statement_status=mismatch; statement/definitions unchanged. Missing nonreciprocity makes the target false. Counterexample f=X^6+X^5-X^4-X^3-X^2+X+1 has all coefficients odd and 1<M(f)=1.55603019132<phi=M(X^2-X-1). Exact proof via f/x^3=q(x+1/x), q(t)=t^3+t^2-4t-3 and its three real root intervals is in statement-audit.json. Borwein–Hare–Mossinghoff 2004, Cor.1.2 p.333 requires nonreciprocity; Table1 p.337 lists this example: https://www.cecm.sfu.ca/~pborwein/PAPERS/P184_1.pdf ."
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "Exact full task ID absent from skill CSV. Multiple name/statement/author searches, pinned/current upstream, PR6499, issue7722 mirror, Mathlib source and related repositories inspected. No qualifying proof located (upstream still sorry; corrected assumptions are not this target; Python exposition and geometric Mahler theorem excluded). GitHub global code search HTTP403/rate-limit prevents complete fork/branch coverage: metadata public_lean4_proof=unknown, status=blocked, not a claim of nonexistence. public-proof-review.json and fetch logs record sources/limits."
+    }
+  }
+}

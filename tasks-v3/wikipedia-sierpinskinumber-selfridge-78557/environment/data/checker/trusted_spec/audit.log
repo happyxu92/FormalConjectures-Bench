@@ -1,0 +1,8 @@
+audited FCBTrustedSpec.ExpectedType: [propext]
+audited Nat.IsSierpinskiNumber: [propext]
+complete outer binder count: 0; universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+Nat.IsSierpinskiNumber 78557
+def Nat.IsSierpinskiNumber : ℕ → Prop :=
+fun k => ¬2 ∣ k ∧ ∀ (n : ℕ), (k * 2 ^ n + 1).Composite
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext]

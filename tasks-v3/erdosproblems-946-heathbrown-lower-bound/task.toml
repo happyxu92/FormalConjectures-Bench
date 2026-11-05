@@ -20,6 +20,12 @@ oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
 verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
+statement_status = "consistent"
+statement_status_note = "Known quantitative Heath-Brown lower-bound variant. The nonnegative count and Big-O direction agree with the standard x/(log x)^7 lower bound; no obvious mathematical error found. Statement and definitions are unchanged."
+public_lean4_proof = "unknown"
+public_lean4_proof_status = "blocked"
+public_lean4_proof_note = "Exact task ID is absent from the skill CSV. Multi-query searches and upstream/author/PR source checks did not confirm a complete quantitative proof. Alexeev's linked proof covers infinitude only; PRs 2551 and 3076 retain sorry. GitHub global code search requires authentication and further API requests were rate-limited, so absence is not confirmed. Evidence: public-proof-review.json in the task's run-20261104-gpt61 attempt-001 jobs directory."
+public_lean4_proof_urls = ["https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/946.lean", "https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos946.lean", "https://github.com/google-deepmind/formal-conjectures/pull/3076", "https://github.com/google-deepmind/formal-conjectures/pull/2551"]
 
 [verifier]
 timeout_sec = 7200.0

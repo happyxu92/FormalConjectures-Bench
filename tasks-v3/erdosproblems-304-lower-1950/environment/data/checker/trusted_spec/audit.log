@@ -1,0 +1,15 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos304.unitFractionExpressible: [propext, Quot.sound, Classical.choice]
+audited Erdos304.smallestCollection: [Classical.choice, propext, Quot.sound]
+audited Erdos304.smallestCollectionTo: [Classical.choice, propext, Quot.sound]
+complete outer binder count: 0 (original elaborated expression)
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+(fun b => Real.log (Real.log ↑b)) =O[Filter.atTop] fun b => ↑(Erdos304.smallestCollectionTo b)
+def Erdos304.unitFractionExpressible : ℕ → ℕ → Set ℕ :=
+fun a b => {k | ∃ s, s.card = k ∧ (∀ n ∈ s, n > 1) ∧ ↑a / ↑b = ∑ n ∈ s, (↑n)⁻¹}
+def Erdos304.smallestCollection : ℕ → ℕ → ℕ :=
+fun a b => sInf (Erdos304.unitFractionExpressible a b)
+def Erdos304.smallestCollectionTo : ℕ → ℕ :=
+fun b => sSup {x | ∃ a ∈ Finset.Ico 1 b, Erdos304.smallestCollection a b = x}
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

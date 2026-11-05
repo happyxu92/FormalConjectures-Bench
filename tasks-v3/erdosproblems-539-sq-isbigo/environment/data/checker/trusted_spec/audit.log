@@ -1,0 +1,8 @@
+audited FCBTrustedSpec.ExpectedType: [propext, Quot.sound, Classical.choice]
+audited Erdos539.IsCofactorLowerBound: [propext, Quot.sound, Classical.choice]
+audited Erdos539.cofactorThreshold: [Classical.choice, propext, Quot.sound]
+complete binder count: 0
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+(fun n => √↑n) =O[Filter.atTop] fun n => ↑(Erdos539.cofactorThreshold n)
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

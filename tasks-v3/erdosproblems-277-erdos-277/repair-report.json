@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-277-erdos-277",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 和 .lake/packages；在本题 Harbor 子容器以 ubuntu 实际检索到 Mathlib 的 sigma 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；补上 Dockerfile 最终 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target。本地 task Harbor 构建成功，同容器 ubuntu 再构建退出码 0；原始 sorry 仅产生编译警告。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已运行技能 Unicode 脚本及最终复验，均为 no_issue；原始头通过，修改头和删除赋值被拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden 隔离 Submission，以匹配 Docker/Lean 4.27.0 提取完整类型和空 universe 列表，预编译并独立审计 ExpectedType，仅依赖允许公理；两份可信包、checker AST/内容和全部 immutable 哈希一致。固定 /tests 或 /opt Spec 及可信依赖来源，运行时不生成或重新解析命题。当前本地 task 的 Harbor 镜像 sha256:b72cced399c2dd9be3ec378b97bc730d4df30167d07c820810d4be072ca2d312 构建、上传包哈希与两入口已验收；两入口因原始 sorry 预期退出 1，reward=0，不代表证明完成。同一子容器在正式/root 与本地/ubuntu 路径均实际补测 Spec 加载/可信审计、uid=1000 编译、完整类型比较、sorryAx 拒绝、canary、冻结/越界限制、无 sorry 且冻结文字不变的名称及 LT 实例偷换（编译及公理审计通过、完整类型比较拒绝）、缓存遮蔽、产物缺失/篡改且无回退。证据位于 /root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-277-erdos-277/attempt-001。Docker 已清理并核实不存在：本题 Spec 容器 4ad1d83aaa2f、Harbor 子容器 00e586065fab、最终镜像 b72cced399c2 及本题独有网络；预先存在的依赖镜像和共享缓存保留。详见 cleanup.json。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "statement_status=consistent。核对 pinned 上游、完整 StrictCoveringSystem 定义、Mathlib sigma、Haight 论文出版社原始摘录及题目镜像；整数的非零真理想对应模数 d>1，成员关系即整除，有限性和模数互异条件正确。全实数 c 的表述与正 c 版本等价，严格不等式排除 n=0。未发现明显数学错误，未改陈述或定义。erdosproblems.com 直接访问 403 已记录；出版社仅公开摘录。详见 math-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "public_lean4_proof=true；按完整 ID 精确命中技能 references/public-lean4-proofs.csv，无需重新联网核证。来源：https://github.com/plby/lean-proofs/blob/1268917deaaaa0d674f651287027baa26cea9920/src/latest/ErdosProblems/Erdos277.lean#L1294（另有 main 链接）。已同步 task.toml；未下载证明、未将答案置入镜像，未声称在本题环境编译该公开证明。"
+    }
+  }
+}

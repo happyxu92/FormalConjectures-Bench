@@ -20,6 +20,12 @@ oracle_status = "none"
 difficulty_explanation = "The agent must construct a Lean 4 proof of a research-mathematics-adjacent theorem against a pinned Mathlib/Formal Conjectures environment."
 solution_explanation = "No bundled oracle is provided. This task is intended for internet-enabled formalization of a statement known to be solved informally."
 verification_explanation = "The verifier builds the Lean project, checks the theorem header and frozen prefix, bans known escape hatches, audits theorem axioms, and checks the sorry-detection canary."
+statement_status = "consistent"
+statement_status_note = "Known r=8 existence variant: six distinct jointly coprime 8-powerful natural summands with 8-powerful sum. The pinned definition allows zero; this weakens the positive-number formulation and does not make this existence claim false. Original definitions and statement retained."
+public_lean4_proof = true
+public_lean4_proof_status = "known"
+public_lean4_proof_urls = ["https://github.com/anatoliiohorodnyk/lean-fc-proofs/blob/3f1ddbf82a5ad0b603145e93fdb84c43adc8f6fd/Proofs/T_Erdos939_erdos_939_variants_eight.lean#L163"]
+public_lean4_proof_note = "Exact full task-ID match in skill references/public-lean4-proofs.csv; accepted per skill without re-fetching or compiling the public proof."
 
 [verifier]
 timeout_sec = 7200.0

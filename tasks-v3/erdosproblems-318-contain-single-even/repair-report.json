@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-318-contain-single-even",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 及 .lake/packages；最终 Harbor 容器中以 ubuntu 搜到 Mathlib 的 sigma_apply，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "Target 无额外上游 imports，保留 ProblemImports 预编译；补齐 Dockerfile 末尾 USER ubuntu 的 RUN lake build +FormalConjecturesBench.Target。当前本地 task 两次 Harbor Docker 构建完成，最终同容器 ubuntu 构建退出码 0。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "实际执行技能 Unicode 脚本及最终复验，均 no_issue、退出码 0；原头接受，修改头和移除 := 拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题 immutable golden 隔离 Submission 提取并预编译完整 ExpectedType（隐式 A、显式 hA，universes=[]）；独立审计仅依赖标准公理，两份可信包一致。checker 固定预编译来源、校验清单及产物，不运行时生成或重新解析预期命题。最终本地 Harbor 构建验收完成，/tests 上传包与本地及 /opt 包哈希一致；正式与本地入口均因原始 sorry 预期退出 1、reward=0，并非实现异常。同一最终容器分别补测 /tests、/opt 及 root 调用路径：Spec 审计、实测 UID1000 编译、完整类型、目标公理和 canary 均覆盖；冻结、越界、保持冻结文字的 Even 名称偷换、缓存/同名模块遮蔽、产物缺失和篡改均按预期拒绝。原安全函数保留，未扩展外部 import 白名单或沙箱；所有 immutable 哈希未变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-318-contain-single-even/attempt-001/（final-acceptance.log、delivery.json、validation-*.log）。Docker 已核实清理：三个本次容器（8bd49e5d8542、f4422dadd242、6cbada1df664）、两个任务镜像（0da3da507bef、ac30f205b2f6）及两个本次网络均已移除；仅保留预先存在的共享依赖镜像和共享构建缓存。见 cleanup.json、cleanup.log。"
+    },
+    "statement_fidelity": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "已标 statement_status=mismatch，未改陈述、定义、golden 或冻结基线。反例 A={0}：偶数部分 ncard=1，而 A\\{0} 为空，P₁ A 空泛成立。证据目录 Counterexample.lean 在匹配 Docker 与最终 Harbor 容器中证明 ¬ ExpectedType，公理仅 propext/Classical.choice/Quot.sound。原始来源为 task.toml 锁定的 318.lean；当前上游已加无限性并排除 0，公开 Alexeev 源码另以 {2} 反驳原陈述。见 research-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": null,
+      "repair_status": "not_repaired",
+      "note": "public_lean4_proof=unknown，status=blocked。完整 task ID 精确匹配技能 CSV 未命中；已多组检索定理名、题号、作者、GitHub、Mathlib及上游，并读取实际候选源码。Alexeev 的 pinned Lean 文件证明本题原陈述的否定及加强假设的变体，不是本目标证明；Ren 的 pinned 包覆盖其他三个端点并复用该源码。主站及论坛 HTTP 403，故不虚报充分排除所有公开证明。检索词、来源、排除理由和访问限制见 research-review.json、public-proof-csv.json、source-fetch.json、followup-fetch.json。"
+    }
+  }
+}

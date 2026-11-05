@@ -1,0 +1,13 @@
+FCBTrustedSpec.lean:125:8: warning: declaration uses 'sorry'
+FCBTrustedSpec.lean:1:8: warning: declaration uses 'sorry'
+audited FCBTrustedSpec.ExpectedType: [propext, Classical.choice, Quot.sound]
+audited OeisA358684.a: [propext, Quot.sound, Classical.choice]
+audited OeisA358684.log2_minFac_le: [propext, Quot.sound, Classical.choice]
+complete outer binders: (n : Nat), explicit, dependent
+universe parameters: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+∀ (n : ℕ), padicValNat 2 (n.fermatNumber.minFac - 1) ≤ 2 ^ n - OeisA358684.a n
+def OeisA358684.a : ℕ → ℕ :=
+fun n => 2 ^ n - n.fermatNumber.minFac.log2
+'OeisA358684.a' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

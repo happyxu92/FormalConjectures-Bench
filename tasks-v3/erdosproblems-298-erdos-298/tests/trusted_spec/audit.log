@@ -1,0 +1,6 @@
+outer declaration binders: 0; all quantified A and hypotheses remain inside iff
+audited ExpectedType transitive axioms: [propext, Quot.sound, Classical.choice]
+universe parameters in order: []
+def FCBTrustedSpec.ExpectedType : Prop :=
+True ↔ ∀ (A : Set ℕ), 0 ∉ A → A.HasPosDensity → ∃ S, ↑S ⊆ A ∧ ∑ n ∈ S, 1 / ↑n = 1
+'FCBTrustedSpec.ExpectedType' depends on axioms: [propext, Classical.choice, Quot.sound]

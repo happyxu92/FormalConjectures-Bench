@@ -1,0 +1,35 @@
+{
+  "task_id": "erdosproblems-318-univ",
+  "checks": {
+    "instruction_search": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "搜索命令已显式包含 /app、/opt/formal-conjectures 及其 .lake/packages；最终 Harbor 容器内以 ubuntu 搜到 package 中的 IsSquare 定义，退出码 0。"
+    },
+    "lean_dependency": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "无额外上游 import；原 Dockerfile 缺少最终普通用户构建验证，已以 USER ubuntu 下 RUN lake build +FormalConjecturesBench.Target 结尾。当前本地 task 的最终 Harbor 构建及容器内 ubuntu 重跑均成功。"
+    },
+    "unicode_header": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "按技能运行 Unicode 脚本及最终复验，均为 no_issue；原头通过，修改头及缺失 := 均拒绝，两份 checker 一致。"
+    },
+    "semantic_checker": {
+      "has_issue": true,
+      "repair_status": "repaired",
+      "note": "从本题可信 golden 隔离 Submission，经 Lean parser/elaborator 提取完整类型和 universes，预编译并独立审计 ExpectedType = Erdos318.P₁ Set.univ，universes=[]，无临时定理或 sorryAx 依赖。两份可信包及 checker 已同步；固定路径、版本、输入和产物哈希校验，无运行时生成或回退。最终本地 Harbor 镜像 b16af2f95748；/tests 上传包与本地及 /opt 包哈希一致。正式及本地入口均因原题 sorry 预期退出 1，正式 reward=0；同一最终子容器内两入口及额外 root 调用各完成 30 项函数补测，覆盖可信审计、ubuntu 编译、完整类型、公理、canary、冻结/越界、univ 名称偷换、缓存遮蔽和产物缺失/篡改拒绝。全部 immutable 哈希不变。证据：/root/FormalConjectures-Bench/jobs/number-theory-informal-repair/run-20261104-gpt61/tasks/erdosproblems-318-univ/attempt-001。Docker 清理已核实：本题 3 个容器（493bdc482317、ae35d0b561ef、e6643b730e72）、2 个新镜像（a2cd6a9da012、b16af2f95748）及 2 个网络均已移除；预存共享依赖镜像 e21dc171550d 保留，未清理资源为零。"
+    },
+    "statement_fidelity": {
+      "has_issue": false,
+      "repair_status": "not_needed",
+      "note": "已独立阅读 Erdős–Graham (1980) 原书印刷第 42 页扫描件并核对完整 P₁ 定义。此题为正整数上非恒定 ±1 序列的已知 univ 变体；排除零、有限非空集合及全局符号范围条件无明显错误。metadata 标记 consistent；陈述、定义及 golden 未改。原网页直连 403，原书直连失败，采用已有原书扫描件独立渲染阅读，来源与哈希见 statement-review.json。"
+    },
+    "public_lean4_proof": {
+      "has_issue": true,
+      "repair_status": "marked",
+      "note": "按完整 task ID 精确命中技能 public-lean4-proofs.csv，metadata 已标 public_lean4_proof=true。来源：https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos318.lean#L761；依技能无需再次联网核验，未在本题编译公开证明或将答案放入镜像。详见 public-csv-match.json。"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "task_id": "erdosproblems-470-odd-weird-10-pow-21",
+  "target_name": "Erdos470.erdos_470.variants.odd_weird_10_pow_21",
+  "lean_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "platform": "x86_64",
+  "universe_params": [],
+  "formal_conjectures_commit": "233a10e857ef78e79fd9fe661d37db724089170a",
+  "dependency_manifest_sha256": "5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+  "dependency_revisions": {
+    "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "plausible": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+    "LeanSearchClient": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+    "importGraph": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+    "proofwidgets": "c04225ee7c0585effbd933662b3151f01b600e40",
+    "aesop": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+    "Qq": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+    "batteries": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+    "Cli": "55c37290ff6186e2e965d68cf853a57c0702db82"
+  },
+  "golden_files": {
+    "FormalConjecturesBench/Submission.lean": "4919cd44bdb3f7bf6676d21c6e253add691fc9effc7539c957d70cf2372f2b93",
+    "FormalConjecturesBench/Target.lean": "f88157f97c6d7d6475960bc73002bf08f36dadc8e75b8a4ba164260cc9a4d758",
+    "FormalConjecturesBench.lean": "9ff749b150e2f79d5e851e684e136f3ebb098432763e5e29c60cf28b45b80c90",
+    "lake-manifest.json": "b69e8c86a26f6e9a3a2936143635543e5a430bba4e1fb6d8a1cfdfabd7712f71",
+    "lakefile.toml": "e32daf54e2a99ae40c3edc6cf9585313360153c3a71cb1d38a4ec8e5153f15db",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb"
+  },
+  "files": {
+    "AuditSpec.lean": "bebb690acedcbcbf24dc302c4aceb4c734309c693df24e5b273189b7ac4bf8a1",
+    "FCBTrustedSpec.ilean": "7dc231f887c85520a40da97e280774addfd49e592fd3ffed6f4712acbc56c921",
+    "FCBTrustedSpec.lean": "004de14f3aa22276453d5d6dc6bb4be14202fa9ec579c2f885b98b016ebfec9c",
+    "FCBTrustedSpec.olean": "615a7171775389102fe392313c0eb8f375f5fd0f0ac6683f199cda61e6cc0f63",
+    "audit.log": "9bdf7008722c088d864c7306423873f120fe3213280d24da49c7662c7c2a8d76",
+    "generate.py": "5d5415b1830da63bcc2e49aba6c1a9152cf7ae544b06561b9a2e0a131c0eb22c",
+    "reproduce.sh": "ff9691e13b54ea22793e9c5b344980270584906cb741aaa5aa7333a12201122a"
+  },
+  "generation_image": "sha256:6b765e0c2f2503ee3818b3da5a0fdf24070a4773338acda6948d090217a7065a",
+  "generation_command": "docker cp generation-input erdosproblems-470-odd-weird-10-pow-21-spec-g61-470e:/tmp/repair-bundle; docker exec -u root erdosproblems-470-odd-weird-10-pow-21-spec-g61-470e bash /tmp/repair-bundle/trusted_spec/reproduce.sh",
+  "audit": "Independent module import audits ExpectedType and both prefix definitions PrimitiveWeird/AbundancyIndex transitively. Complete type has 3 explicit outer binders n,bound,oddness and negated Weird conclusion; universe parameters empty. Temporary target and descendants absent. Other unchanged prefix theorems contain original sorry but are not dependencies of the audited definitions."
+}
